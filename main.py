@@ -14,29 +14,37 @@ NEO4J_URI = os.getenv("NEO4J_URI")
 NEO4J_DRIVER = GraphDatabase.driver(NEO4J_URI, auth=NEO4J_AUTH)
 SESSION = NEO4J_DRIVER.session()
 
-def db_merge_gmpd_ncbi():
-    keys = gmpd.get_unique_pairings()
+def add_taxons():
+    keys = gmpd.get_unique_taxons()
 
-    for key in keys:
-        Host, Pathogen = key.split("|")
-        ncbi_id = ncbi.id_search(f"{Host} {Pathogen}")
+    # Get the hosts and label as both taxons and hosts
+    for key in keys[0]:
+        # print(f'CREATE (:Taxon:Host {{species: "{key}"}}')
+        SESSION.run(
+            f'CREATE (:Taxon:Host {{species: "{key}"}})'
+        )
+    
+    # Get the pathogens and label as both taxons and pathogens
+    for key in keys[1]:
+        # print(f'CREATE (:Taxon:Pathogen {{species: "{key}"}}')
+        SESSION.run(
+            f'CREATE (:Taxon:Pathogen {{species: "{key}"}})'
+        )
+    
 
-        if ncbi_id:
-            ncbi_metadata = ncbi.get_metadata(ncbi_id)
-            taxon = {**ncbi_metadata, "TaxId": ncbi_id}
+if __name__ == "__main__":
+    gmpd_rows = gmpd.get_rows()
+    add_taxons()
+    # for index, row in enumerate(gmpd_rows):
+         
+            
+        # Get the host species
+        # Get the parasite species
+        # Because they're on the same row, set the relationship as "Parasite infects species"
+        
 
-            # add taxon and lineage to database
-            ncbi.merge_taxon(taxon, SESSION)
 
-        else:
-            ## save broken search terms to file
-            with open("not_found.txt", "a") as f:
-                f.write(f"{Host}, {Pathogen}")
-                f.write("\n")
-                f.close()
-
-        # resepect api rate limit
-        time.sleep(0.4)
+    
 
 # SESSION.run('CREATE (:Message {message: "Hello World"})-[:FROM]->(:Planet {name: "Earth"})')
 
