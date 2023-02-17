@@ -36,8 +36,8 @@ if __name__ == "__main__":
 
         # Create relationship between hosts and pathogens
         SESSION.run(
-            'MATCH (s:Taxon:Host {species: $species}), (p:Taxon:Pathogen {species: $ParasiteGMPD}) '
-            'MERGE (p)-[:INFECTS]->(s)',
+            'MATCH (h:Taxon:Host {species: $species}), (p:Taxon:Pathogen {species: $ParasiteGMPD}) '
+            'MERGE (p)-[:INFECTS]->(h)',
             species=row["species"],
             ParasiteGMPD=row["ParasiteGMPD"]
         )
