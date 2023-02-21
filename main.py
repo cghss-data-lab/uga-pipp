@@ -34,7 +34,7 @@ if __name__ == "__main__":
             intermediateTransmission = row["intermediate"]
         ).single().get("n")
 
-        # Create relationship between hosts and pathogens
+        # Create INFECTS relationship between hosts and pathogens
         SESSION.run(
             'MATCH (h:Taxon:Host {species: $species}), (p:Taxon:Pathogen {species: $ParasiteGMPD}) '
             'MERGE (p)-[:INFECTS]->(h)',
