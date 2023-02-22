@@ -16,8 +16,10 @@ Canis aureus,Rabies,Lyssavirus Rabies lyssavirus,1,0,0,0
 Canis aureus,Small intestinal trematodes,Haplorchis taichui,NA,NA,NA,NA
 Canis aureus,Spotted fevers - Old World,Rickettsia raoultii,NA,NA,NA,NA
 Canis aureus,Toxocariasis,Toxocara canis,1,0,0,0
-Canis aureus,Trichinosis,"Trichinella spiralis, Trichinella britovi",0,1,0,0
-Canis aureus,Ehrlichiosis - human monocytic,"Ehrlichia canis, Ehrlichia chaffeensis",0,0,1,0
+Canis aureus,Trichinosis,Trichinella spiralis,0,1,0,0
+Canis aureus,Trichinosis,Trichinella britovi,0,1,0,0
+Canis aureus,Ehrlichiosis - human monocytic,Ehrlichia canis,0,0,1,0
+Canis aureus,Ehrlichiosis - human monocytic,Ehrlichia chaffeensis,0,0,1,0
 Canis latrans,Toxocariasis,Toxocara canis,1,0,0,0
 Canis latrans,Trypanosomiasis - American,Trypanosoma cruzi,0,0,1,0
 Canis latrans,Tularemia,Francisella tularensis,1,1,1,0
@@ -29,7 +31,8 @@ Canis latrans,Dirofilariasis,Dirofilaria immitis,0,0,1,0
 Canis latrans,Eastern equine encephalitis,Alphavirus Eastern equine encephalitis virus,0,0,1,0
 Canis latrans,Echinococcosis - multilocular,Echinococcus multilocularis,0,0,0,1
 Canis latrans,Echinococcosis - unilocular,Echinococcus granulosus,0,1,0,1
-Canis latrans,Ehrlichiosis - human monocytic,"Ehrlichia canis, Ehrlichia chaffeensis",0,0,1,0
+Canis latrans,Ehrlichiosis - human monocytic,Ehrlichia canis,0,0,1,0
+Canis latrans,Ehrlichiosis - human monocytic,Ehrlichia chaffeensis,0,0,1,0
 Canis latrans,Giardiasis,Giardia duodenalis,1,1,0,0
 Canis latrans,Leptospirosis,Leptospira interrogans,1,1,0,0
 Canis latrans,Lyme disease,Borrelia burgdorferi,0,0,1,0
@@ -39,11 +42,17 @@ Canis latrans,Powassan,Flavivirus sp.,NA,NA,NA,NA
 Canis latrans,Rabies,Lyssavirus Rabies lyssavirus,1,0,0,0
 Canis latrans,Spotted fevers - New World,Rickettsia rickettsii,0,1,1,0
 Canis latrans,Toxoplasmosis,Toxoplasma gondii,1,1,0,1
-Canis lupus,Coenurosis,"Taenia crassiceps, Taenia hydatigena, Taenia krabbei, Taenia multiceps, Taenia pisiformis, Taenia polyacantha",0,1,0,1
+Canis lupus,Coenurosis,Taenia crassiceps,0,1,0,1
+Canis lupus,Coenurosis,Taenia hydatigena,0,1,0,1
+Canis lupus,Coenurosis,Taenia krabbei,0,1,0,1
+Canis lupus,Coenurosis,Taenia multiceps,0,1,0,1
+Canis lupus,Coenurosis,Taenia pisiformis,0,1,0,1
+Canis lupus,Coenurosis,Taenia polyacantha,0,1,0,1
 Canis lupus,Cysticercosis,Taenia crassiceps,0,1,0,1
 Canis lupus,Diphyllobothriasis,Diphyllobothrium latum,0,0,0,1
 Canis lupus,Dipylidiasis,Dipylidium caninum,0,0,0,1
-Canis lupus,Dirofilariasis,"Dirofilaria immitis, Dirofilaria repens",0,0,1,0
+Canis lupus,Dirofilariasis,Dirofilaria immitis,0,0,1,0
+Canis lupus,Dirofilariasis,Dirofilaria repens,0,0,1,0
 Canis lupus,Eastern equine encephalitis,Alphavirus Eastern equine encephalitis virus,0,0,1,0
 Canis lupus,Echinococcosis - multilocular,Echinococcus multilocularis,0,0,0,1
 Canis lupus,Echinococcosis - unilocular,Echinococcus granulosus,0,1,0,1
@@ -79,17 +88,21 @@ Callorhinus ursinus,Nanophyetiasis,Nanophyetus salmincola,0,1,0,1
 Atilax paludinosus,Paragonimiasis,Paragonimus africanus,0,0,0,1
 Atilax paludinosus,Rabies,Lagos bat virus,NA,NA,NA,NA
 Cerdocyon thous,Angiostrongyliasis,Angiostrongylus vasorum,0,1,0,1
-Cerdocyon thous,Bartonellosis - cat borne,"Bartonella clarridgeiae, Bartonella henselae",0,1,1,0
-Cerdocyon thous,Bartonellosis - other systemic,"Bartonella clarridgeiae, Bartonella henselae",0,1,1,0
+Cerdocyon thous,Bartonellosis - cat borne,Bartonella clarridgeiae,0,1,1,0
+Cerdocyon thous,Bartonellosis - cat borne,Bartonella henselae,0,1,1,0
+Cerdocyon thous,Bartonellosis - other systemic,Bartonella clarridgeiae,0,1,1,0
+Cerdocyon thous,Bartonellosis - other systemic,Bartonella henselae,0,1,1,0
 Cerdocyon thous,Capillariasis - extraintestinal,Capillaria aerophila,0,1,0,1
 Cerdocyon thous,Dioctophyma renale infection,Dioctophyma renale,0,0,0,1
 Cerdocyon thous,Dipylidiasis,Dipylidium caninum,0,0,0,1
 Cerdocyon thous,Leishmaniasis - cutaneous,Leishmania amazonensis,NA,NA,NA,NA
 Cerdocyon thous,Leishmaniasis - visceral,Leishmania chagasi,0,0,1,1
-Cerdocyon thous,Leptospirosis,"Leptospira santarosai Brasiliensis, Leptospira santarosai Fluminense",NA,NA,NA,NA
+Cerdocyon thous,Leptospirosis,Leptospira santarosai Brasiliensis,NA,NA,NA,NA
+Cerdocyon thous,Leptospirosis,Leptospira santarosai Fluminense,NA,NA,NA,NA
 Cerdocyon thous,Rabies,Lyssavirus Rabies lyssavirus,1,0,0,0
 Cerdocyon thous,Toxoplasmosis,Toxoplasma gondii,1,1,0,1
-Cerdocyon thous,Trypanosomiasis - American,"Trypanosoma cruzi, Trypanosoma evansi",0,0,1,0
+Cerdocyon thous,Trypanosomiasis - American,Trypanosoma cruzi,0,0,1,0
+Cerdocyon thous,Trypanosomiasis - American,Trypanosoma evansi,0,0,1,0
 Erignathus barbatus,Toxoplasmosis,Toxoplasma gondii,1,1,0,1
 Genetta genetta,Echinococcosis - unilocular,Echinococcus granulosus,0,1,0,1
 Genetta genetta,Leishmaniasis - cutaneous,Leishmania donovani,0,0,1,1
@@ -103,8 +116,10 @@ Bassariscus astutus,Trypanosomiasis - American,Trypanosoma cruzi,0,0,1,0
 Caracal caracal,Anthrax,Bacillus anthracis,0,1,0,0
 Caracal caracal,Toxoplasmosis,Toxoplasma gondii,1,1,0,1
 Chrotogale owstoni,Influenza,Influenzavirus A Influenza A virus,1,0,0,0
-Chrysocyon brachyurus,Bartonellosis - cat borne,"Bartonella clarridgeiae, Bartonella vinsonii",0,1,1,0
-Chrysocyon brachyurus,Bartonellosis - other systemic,"Bartonella clarridgeiae, Bartonella vinsonii",0,1,1,0
+Chrysocyon brachyurus,Bartonellosis - cat borne,Bartonella clarridgeiae,0,1,1,0
+Chrysocyon brachyurus,Bartonellosis - cat borne,Bartonella vinsonii,0,1,1,0
+Chrysocyon brachyurus,Bartonellosis - other systemic,Bartonella clarridgeiae,0,1,1,0
+Chrysocyon brachyurus,Bartonellosis - other systemic,Bartonella vinsonii,0,1,1,0
 Chrysocyon brachyurus,Dirofilariasis,Dirofilaria immitis,0,0,1,0
 Chrysocyon brachyurus,Leptospirosis,Leptospira interrogans,1,1,0,0
 Chrysocyon brachyurus,Rabies,Lyssavirus Rabies lyssavirus,1,0,0,0
@@ -212,7 +227,8 @@ Lutra lutra,Microsporidiosis,Encephalitozoon cuniculi,NA,NA,NA,NA
 Lutra lutra,Opisthorchiasis,Opisthorchis felineus,0,0,0,1
 Lutra lutra,Streptococcus suis infection,Streptococcus suis,1,1,0,0
 Lutra lutra,Toxoplasmosis,Toxoplasma gondii,1,1,0,1
-Pseudalopex griseus,Bartonellosis - other systemic,"Bartonella vinsonii, Bartonella rochalimae",0,1,1,0
+Pseudalopex griseus,Bartonellosis - other systemic,Bartonella rochalimae,0,1,1,0
+Pseudalopex griseus,Bartonellosis - other systemic,Bartonella vinsonii,0,1,1,0
 Pseudalopex griseus,Leptospirosis,Leptospira interrogans,1,1,0,0
 Pseudalopex gymnocercus,Echinococcosis - unilocular,Echinococcus granulosus,0,1,0,1
 Pseudalopex gymnocercus,Lagochilascariasis,Lagochilascaris major,NA,NA,NA,NA
@@ -241,7 +257,8 @@ Lynx pardinus,Leishmaniasis - visceral,Leishmania infantum,1,0,1,1
 Lynx pardinus,Leptospirosis,Leptospira interrogans,1,1,0,0
 Lynx pardinus,Toxocariasis,Toxocara cati,1,0,0,0
 Lynx pardinus,Toxoplasmosis,Toxoplasma gondii,1,1,0,1
-Lynx rufus,Bartonellosis - cat borne,"Bartonella henselae, Bartonella koehlerae",0,0,1,0
+Lynx rufus,Bartonellosis - cat borne,Bartonella henselae,0,0,1,0
+Lynx rufus,Bartonellosis - cat borne,Bartonella koehlerae,0,0,1,0
 Lynx rufus,Cryptosporidiosis,Cryptosporidium sp.,NA,NA,NA,NA
 Lynx rufus,Echinococcosis - American polycystic,Echinococcus oligarthrus,0,0,0,1
 Lynx rufus,Giardiasis,Giardia duodenalis,1,1,0,0
@@ -297,7 +314,10 @@ Nyctereutes procyonoides,Scabies,Sarcoptes scabiei,1,1,0,0
 Nyctereutes procyonoides,Taeniasis,Taenia polyacantha,0,1,0,1
 Nyctereutes procyonoides,Toxocariasis,Toxocara canis,1,0,0,0
 Nyctereutes procyonoides,Toxoplasmosis,Toxoplasma gondii,1,1,0,1
-Nyctereutes procyonoides,Trichinosis,"Trichinella spiralis, Trichinella nativa, Trichinella pseudospiralis, Trichinella britovi",0,1,0,0
+Nyctereutes procyonoides,Trichinosis,Trichinella spiralis,0,1,0,0
+Nyctereutes procyonoides,Trichinosis,Trichinella nativa,0,1,0,0
+Nyctereutes procyonoides,Trichinosis,Trichinella pseudospiralis,0,1,0,0
+Nyctereutes procyonoides,Trichinosis,Trichinella britovi,0,1,0,0
 Nyctereutes procyonoides,Tularemia,Francisella tularensis,1,1,1,0
 Nyctereutes procyonoides,Anaplasmosis,Anaplasma phagocytophilum,0,0,1,0
 Nyctereutes procyonoides,Bartonellosis - cat borne,Bartonella henselae,0,0,1,0
@@ -308,7 +328,9 @@ Nyctereutes procyonoides,Dipylidiasis,Dipylidium caninum,0,0,0,1
 Nyctereutes procyonoides,Dirofilariasis,Dirofilaria immitis,0,0,1,0
 Nyctereutes procyonoides,Echinococcosis - multilocular,Echinococcus multilocularis,0,0,0,1
 Nyctereutes procyonoides,Leishmaniasis - visceral,Leishmania infantum,1,0,1,1
-Nyctereutes procyonoides,Lyme disease,"Borrelia garinii, Borrelia afzelii, Borrelia valaisiana",0,0,1,0
+Nyctereutes procyonoides,Lyme disease,Borrelia garinii,0,0,1,0
+Nyctereutes procyonoides,Lyme disease,Borrelia afzelii,0,0,1,0
+Nyctereutes procyonoides,Lyme disease,Borrelia valaisiana,0,0,1,0
 Odobenus rosmarus,Brucellosis,Brucella spp.,NA,NA,NA,NA
 Odobenus rosmarus,Coccidioidomycosis,Coccidioides immitis,0,1,0,0
 Odobenus rosmarus,Trichinosis,Trichinella spiralis,0,1,0,0
@@ -345,7 +367,8 @@ Procyon lotor,Histoplasmosis,Histoplasma capsulatum,0,1,0,0
 Procyon lotor,Influenza,Influenzavirus A Influenza A virus,1,0,0,0
 Procyon lotor,Japanese spotted fever,Rickettsia japonica,NA,NA,NA,NA
 Procyon lotor,Leptospirosis,Leptospira interrogans,1,1,0,0
-Procyon lotor,Lyme disease,"Borrelia afzelii, Borrelia garinii",0,0,1,0
+Procyon lotor,Lyme disease,Borrelia afzelii,0,0,1,0
+Procyon lotor,Lyme disease,Borrelia garinii,0,0,1,0
 Procyon lotor,Metagonimiasis,Metagonimus yokogawai,0,0,0,1
 Procyon lotor,Plesiomonas infection,Plesiomonas shigelloides,0,1,0,0
 Procyon lotor,Powassan,Flavivirus sp.,NA,NA,NA,NA
@@ -362,7 +385,8 @@ Procyon lotor,West Nile fever,Flavivirus West Nile virus,0,0,1,0
 Procyon lotor,Yersiniosis,Yersinia pseudotuberculosis,1,1,0,0
 Procyon lotor,Anaplasmosis,Anaplasma phagocytophilum,0,0,1,0
 Procyon lotor,Babesiosis,Babesia microti,0,0,1,0
-Procyon lotor,Bartonellosis - other systemic,"Bartonella vinsonii, Borrelia rochalimae",0,1,1,0
+Procyon lotor,Bartonellosis - other systemic,Bartonella vinsonii,0,1,1,0
+Procyon lotor,Bartonellosis - other systemic,Borrelia rochalimae,0,1,1,0
 Procyon lotor,Baylisascariasis,Baylisascaris procyonis,0,1,0,1
 Procyon lotor,California encephalitis group,Orthobunyavirus California encephalitis orthobunyavirus,0,0,1,0
 Procyon lotor,Campylobacteriosis,Campylobacter sp.,NA,NA,NA,NA
@@ -382,8 +406,14 @@ Puma concolor,Tularemia,Francisella tularensis,1,1,1,0
 Herpailurus yagouaroundi,Echinococcosis - American polycystic,Echinococcus oligarthrus,0,0,0,1
 Herpailurus yagouaroundi,Toxoplasmosis,Toxoplasma gondii,1,1,0,1
 Pusa hispida,Rabies,Lyssavirus Rabies lyssavirus,1,0,0,0
-Speothos venaticus,Bartonellosis - cat borne,"Bartonella clarridgeiae, Bartonella henselae, Bartonella vinsonii, Bartonella rochalimae",0,1,1,0
-Speothos venaticus,Bartonellosis - other systemic,"Bartonella clarridgeiae, Bartonella vinsonii, Bartonella henselae, Bartonella rochalimae",0,1,1,0
+Speothos venaticus,Bartonellosis - cat borne,Bartonella clarridgeiae,0,1,1,0
+Speothos venaticus,Bartonellosis - cat borne,Bartonella henselae,0,1,1,0
+Speothos venaticus,Bartonellosis - cat borne,Bartonella vinsonii,0,1,1,0
+Speothos venaticus,Bartonellosis - cat borne,Bartonella rochalimae,0,1,1,0
+Speothos venaticus,Bartonellosis - other systemic,Bartonella clarridgeiae,0,1,1,0
+Speothos venaticus,Bartonellosis - other systemic,Bartonella henselae,0,1,1,0
+Speothos venaticus,Bartonellosis - other systemic,Bartonella rochalimae,0,1,1,0
+Speothos venaticus,Bartonellosis - other systemic,Bartonella vinsonii,0,1,1,0
 Speothos venaticus,Echinococcosis - American polycystic,Echinococcus vogeli,NA,NA,NA,NA
 Speothos venaticus,Lagochilascariasis,Lagochilascaris minor,NA,NA,NA,NA
 Speothos venaticus,Leishmaniasis - visceral,Leishmania infantum,1,0,1,1
@@ -397,13 +427,16 @@ Arctocephalus australis,Anisakiasis,Contracaecum osculatum,0,1,0,1
 Arctocephalus australis,Toxoplasmosis,Toxoplasma gondii,1,1,0,1
 Arctocephalus forsteri,Toxoplasmosis,Toxoplasma gondii,1,1,0,1
 Arctocephalus gazella,Toxoplasmosis,Toxoplasma gondii,1,1,0,1
-Arctocephalus townsendi,Leptospirosis,"Leptospira interrogans Canicola, Leptospira interrogans Icterohaemorrhagiae, Leptospira interrogans Bratislava",1,1,0,0
+Arctocephalus townsendi,Leptospirosis,Leptospira interrogans Canicola,1,1,0,0
+Arctocephalus townsendi,Leptospirosis,Leptospira interrogans Icterohaemorrhagiae,1,1,0,0
+Arctocephalus townsendi,Leptospirosis,Leptospira interrogans Bratislava,1,1,0,0
 Taxidea taxus,Influenza,Influenzavirus A Influenza A virus,1,0,0,0
 Taxidea taxus,Toxoplasmosis,Toxoplasma gondii,1,1,0,1
 Panthera uncia,Toxoplasmosis,Toxoplasma gondii,1,1,0,1
 Urocyon cinereoargenteus,Anaplasmosis,Anaplasma phagocytophilum,0,0,1,0
 Urocyon cinereoargenteus,Bartonellosis - cat borne,Bartonella vinsonii,0,1,1,0
-Urocyon cinereoargenteus,Bartonellosis - other systemic,"Bartonella vinsonii, Bartonella rochalimae",0,1,1,0
+Urocyon cinereoargenteus,Bartonellosis - other systemic,Bartonella rochalimae,0,1,1,0
+Urocyon cinereoargenteus,Bartonellosis - other systemic,Bartonella vinsonii,0,1,1,0
 Urocyon cinereoargenteus,Dirofilariasis,Dirofilaria immitis,0,0,1,0
 Urocyon cinereoargenteus,Rabies,Lyssavirus Rabies lyssavirus,1,0,0,0
 Urocyon cinereoargenteus,Trypanosomiasis - American,Trypanosoma cruzi,0,0,1,0
@@ -436,7 +469,9 @@ Ursus arctos,Bunyaviridae infections - misc.,Phlebovirus Bhanja virus,0,0,1,0
 Ursus arctos,California encephalitis group,Orthobunyavirus California encephalitis orthobunyavirus,0,0,1,0
 Ursus arctos,Cryptosporidiosis,Cryptosporidium sp.,NA,NA,NA,NA
 Ursus arctos,Histoplasmosis,Histoplasma capsulatum,0,1,0,0
-Ursus arctos,Leptospirosis,"Leptospira interrogans Canicola, Leptospira interrogans Icterohaemorrhagiae, Leptospira interrogans Grippotyphosa",1,1,0,0
+Ursus arctos,Leptospirosis,Leptospira interrogans Canicola,1,1,0,0
+Ursus arctos,Leptospirosis,Leptospira interrogans Icterohaemorrhagiae,1,1,0,0
+Ursus arctos,Leptospirosis,Leptospira interrogans Grippotyphosa,1,1,0,0
 Ursus arctos,Ornithosis,Chlamydia psittaci,1,1,1,0
 Ursus arctos,Phleboviruses - Old World,Phlebovirus Sandfly fever Naples phlebovirus,0,0,1,0
 Ursus arctos,Q-fever,Coxiella burnetii,1,1,1,0
@@ -463,7 +498,8 @@ Vulpes lagopus,Trichinosis,Trichinella sp.,NA,NA,NA,NA
 Vulpes vulpes,Anaplasmosis,Anaplasma phagocytophilum,0,0,1,0
 Vulpes vulpes,Babesiosis,Babesia microti,0,0,1,0
 Vulpes vulpes,Bartonellosis - cat borne,Bartonella clarridgeiae,0,1,1,0
-Vulpes vulpes,Bartonellosis - other systemic,"Bartonella vinsonii, Bartonella rochalimae",0,1,1,0
+Vulpes vulpes,Bartonellosis - other systemic,Bartonella rochalimae,0,1,1,0
+Vulpes vulpes,Bartonellosis - other systemic,Bartonella vinsonii,0,1,1,0
 Vulpes vulpes,California encephalitis group,Orthobunyavirus California encephalitis orthobunyavirus,0,0,1,0
 Vulpes vulpes,Capillariasis - extraintestinal,Capillaria aerophila,0,1,0,1
 Vulpes vulpes,Coenurosis,Taenia multiceps,0,1,0,1
@@ -494,13 +530,18 @@ Vulpes vulpes,Q-fever,Coxiella burnetii,1,1,1,0
 Vulpes vulpes,Rabies,Lyssavirus Rabies lyssavirus,1,0,0,0
 Vulpes vulpes,Rickettsia felis infection,Rickettsia felis,NA,NA,NA,NA
 Vulpes vulpes,Sarcocystosis,Sarcocystis sp.,NA,NA,NA,NA
-Vulpes vulpes,Spotted fevers - Old World,"Rickettsia massiliae, Rickettsia helvetica",NA,NA,NA,NA
-Vulpes vulpes,Taeniasis,"Taenia pisiformis, Taenia serialis, Taenia taeniformis",0,1,0,1
+Vulpes vulpes,Spotted fevers - Old World,Rickettsia massiliae,NA,NA,NA,NA
+Vulpes vulpes,Spotted fevers - Old World,Rickettsia helvetica,NA,NA,NA,NA
+Vulpes vulpes,Taeniasis,Taenia pisiformis,0,1,0,1
+Vulpes vulpes,Taeniasis,Taenia serialis,0,1,0,1
+Vulpes vulpes,Taeniasis,Taenia taeniformis,0,1,0,1
 Vulpes vulpes,Thelaziasis,Thelazia callipaeda,0,0,1,0
 Vulpes vulpes,Tick-borne encephalitis,Flavivirus Tick-borne encephalitis virus,0,0,1,0
 Vulpes vulpes,Toxocariasis,Toxocara canis,1,0,0,0
 Vulpes vulpes,Toxoplasmosis,Toxoplasma gondii,1,1,0,1
-Vulpes vulpes,Trichinosis,"Trichinella spiralis, Trichinella pseudospiralis, Trichinella britovi",0,1,0,0
+Vulpes vulpes,Trichinosis,Trichinella spiralis,0,1,0,0
+Vulpes vulpes,Trichinosis,Trichinella pseudospiralis,0,1,0,0
+Vulpes vulpes,Trichinosis,Trichinella britovi,0,1,0,0
 Vulpes vulpes,Tuberculosis,Mycobacterium bovis,1,1,0,0
 Vulpes vulpes,Tularemia,Francisella tularensis,1,1,1,0
 Vulpes vulpes,West Nile fever,Flavivirus West Nile virus,0,0,1,0
@@ -536,7 +577,8 @@ Martes pennanti,Toxoplasmosis,Toxoplasma gondii,1,1,0,1
 Nandinia binotata,Trypanosomiasis - African,Trypanosoma brucei,1,0,1,0
 Mustela altaica,Toxoplasmosis,Toxoplasma gondii,1,1,0,1
 Mustela erminea,Cryptosporidiosis,Cryptosporidium sp.,NA,NA,NA,NA
-Mustela erminea,Trichinosis,"Trichinella spiralis, Trichinella britovi",0,1,0,0
+Mustela erminea,Trichinosis,Trichinella spiralis,0,1,0,0
+Mustela erminea,Trichinosis,Trichinella britovi,0,1,0,0
 Mustela itatsi,Gnathostomiasis,Gnathostoma nipponicum,NA,NA,NA,NA
 Mustela lutreola,Leptospirosis,Leptospira icterohaemorrhagiae,1,1,0,0
 Mustela lutreola,Lyme disease,Borrelia burgdorferi,0,0,1,0
@@ -612,7 +654,9 @@ Mustela putorius,Cryptococcosis,Cryptococcus gattii,NA,NA,NA,NA
 Mustela putorius,Dirofilariasis,Dirofilaria immitis,0,0,1,0
 Mustela putorius,Influenza,Influenzavirus A Influenza A virus,1,0,0,0
 Mustela putorius,Rabies,Lyssavirus Rabies lyssavirus,1,0,0,0
-Neovison vison,Cryptosporidiosis,"Cryptosporidium canis, Cryptosporidium meleagridis, Cryptosporidium parvum",1,1,0,0
+Neovison vison,Cryptosporidiosis,Cryptosporidium canis,1,1,0,0
+Neovison vison,Cryptosporidiosis,Cryptosporidium meleagridis,1,1,0,0
+Neovison vison,Cryptosporidiosis,Cryptosporidium parvum,1,1,0,0
 Neovison vison,Dioctophyma renale infection,Dioctophyma renale,0,0,0,1
 Neovison vison,Leptospirosis,Leptospira icterohaemorrhagiae,1,1,0,0
 Neovison vison,Paragonimiasis,Paragonimus kellicotti,0,0,0,1
