@@ -1,4 +1,4 @@
-species,disease,ParasiteGMPD,close,nonclose,vector,intermediate
+host_species,disease,pathogen_species,close,nonclose,vector,intermediate
 Canis adustus,Leptospirosis,Leptospira icterohaemorrhagiae,1,1,0,0
 Canis adustus,Rabies,Lyssavirus Rabies lyssavirus,1,0,0,0
 Canis aureus,Anaplasmosis,Anaplasma phagocytophilum,0,0,1,0
