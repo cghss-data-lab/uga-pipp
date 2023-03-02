@@ -15,29 +15,29 @@ NEO4J_DRIVER = GraphDatabase.driver(NEO4J_URI, auth=NEO4J_AUTH)
 SESSION = NEO4J_DRIVER.session()
 
 def db_merge_gmpd_ncbi(host_species, pathogen_species):
-    host_ncbi_id = ncbi.id_search(f"{host_species}")
-    if host_ncbi_id:
-        host_ncbi_metadata = ncbi.get_taxon(host_ncbi_id)
-        host_taxon = {**host_ncbi_metadata, "TaxId": host_ncbi_id}
-        ncbi.merge_taxon(host_taxon, SESSION)
-        time.sleep(0.4)
+    try:
+        host_ncbi_id = ncbi.id_search(f"{host_species}")
+        if host_ncbi_id:
+            host_ncbi_metadata = ncbi.get_taxon(host_ncbi_id)
+            host_taxon = {**host_ncbi_metadata, "TaxId": host_ncbi_id}
+            ncbi.merge_taxon(host_taxon, SESSION)
+            time.sleep(0.4)
 
-    else:
+    except Exception as e:
         with open("not_found.txt", "a") as f:
-            f.write(f"{host_species}\n")
-            f.close()
+            f.write(f"Error getting taxon for host {host_species}: {e}\n")
 
-    pathogen_ncbi_id = ncbi.id_search(f"{pathogen_species}")
-    if pathogen_ncbi_id:
-        pathogen_ncbi_metadata = ncbi.get_taxon(pathogen_ncbi_id)
-        pathogen_taxon = {**pathogen_ncbi_metadata, "TaxId": pathogen_ncbi_id}
-        ncbi.merge_taxon(pathogen_taxon, SESSION)
-        time.sleep(0.4)
-
-    else:
+    try:
+        pathogen_ncbi_id = ncbi.id_search(f"{pathogen_species}")
+        if pathogen_ncbi_id:
+            pathogen_ncbi_metadata = ncbi.get_taxon(pathogen_ncbi_id)
+            pathogen_taxon = {**pathogen_ncbi_metadata, "TaxId": pathogen_ncbi_id}
+            ncbi.merge_taxon(pathogen_taxon, SESSION)
+            time.sleep(0.4)
+        
+    except Exception as e:
         with open("not_found.txt", "a") as f:
-            f.write(f"{pathogen_species}\n")
-            f.close()
+             f.write(f"Error getting taxon for pathogen {pathogen_species}: {e}\n")           
 
 if __name__ == "__main__":
     gmpd_rows = carnivoreGMPD.get_rows()
