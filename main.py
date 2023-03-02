@@ -21,7 +21,7 @@ def db_merge_gmpd_ncbi(host_species, pathogen_species):
             host_ncbi_metadata = ncbi.get_taxon(host_ncbi_id)
             host_taxon = {**host_ncbi_metadata, "TaxId": host_ncbi_id}
             ncbi.merge_taxon(host_taxon, SESSION)
-            time.sleep(0.4)
+            time.sleep(0.5) # 2 requests/second -- NCBI allows 3 but 0.4 caused errors
 
     except Exception as e:
         with open("not_found.txt", "a") as f:
@@ -33,7 +33,7 @@ def db_merge_gmpd_ncbi(host_species, pathogen_species):
             pathogen_ncbi_metadata = ncbi.get_taxon(pathogen_ncbi_id)
             pathogen_taxon = {**pathogen_ncbi_metadata, "TaxId": pathogen_ncbi_id}
             ncbi.merge_taxon(pathogen_taxon, SESSION)
-            time.sleep(0.4)
+            time.sleep(0.5)
         
     except Exception as e:
         with open("not_found.txt", "a") as f:
