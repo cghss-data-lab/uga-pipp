@@ -1,8 +1,10 @@
 from loguru import logger
 
 
+# clean taxonomic rank
 def sanitize_rank(rank):
     return rank.title().replace(" ", "")
+
 
 
 def merge_taxon_node(taxon, SESSION):
