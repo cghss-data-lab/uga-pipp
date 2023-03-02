@@ -22,12 +22,22 @@ def db_merge_gmpd_ncbi(host_species, pathogen_species):
         ncbi.merge_taxon(host_taxon, SESSION)
         time.sleep(0.4)
 
+    else:
+        with open("not_found.txt", "a") as f:
+            f.write(f"{host_species}\n")
+            f.close()
+
     pathogen_ncbi_id = ncbi.id_search(f"{pathogen_species}")
     if pathogen_ncbi_id:
         pathogen_ncbi_metadata = ncbi.get_taxon(pathogen_ncbi_id)
         pathogen_taxon = {**pathogen_ncbi_metadata, "TaxId": pathogen_ncbi_id}
         ncbi.merge_taxon(pathogen_taxon, SESSION)
         time.sleep(0.4)
+
+    else:
+        with open("not_found.txt", "a") as f:
+            f.write(f"{pathogen_species}\n")
+            f.close()
 
 if __name__ == "__main__":
     gmpd_rows = carnivoreGMPD.get_rows()
