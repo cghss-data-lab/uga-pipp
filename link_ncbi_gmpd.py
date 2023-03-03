@@ -24,7 +24,6 @@ def create_ncbi_taxon(host_species, pathogen_species, SESSION):
         else:
             write_to_not_found(f"No NCBI ID for host {host_species}: \n")
 
-
     except Exception as e:
         write_to_not_found(f"Error getting taxon for host {host_species}: {e} \n")
 
