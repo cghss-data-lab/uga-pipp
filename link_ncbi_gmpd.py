@@ -16,7 +16,7 @@ def create_ncbi_taxon(host_species, pathogen_species, SESSION):
         # if a term exists, then get the taxon metadata for that ID
         # merge the taxon on TaxID
         if host_ncbi_id:
-            host_ncbi_metadata = ncbi.get_taxon(host_ncbi_id)
+            host_ncbi_metadata = ncbi.get_metadata(host_ncbi_id)
             host_taxon = {**host_ncbi_metadata, "TaxId":host_ncbi_id}
             ncbi.merge_taxon(host_taxon, SESSION)
             time.sleep(SLEEP_TIME)
@@ -31,7 +31,7 @@ def create_ncbi_taxon(host_species, pathogen_species, SESSION):
     try:
         pathogen_ncbi_id = ncbi.id_search(f"{pathogen_species}")
         if pathogen_ncbi_id:
-            pathogen_ncbi_metadata = ncbi.get_taxon(pathogen_ncbi_id)
+            pathogen_ncbi_metadata = ncbi.get_metadata(pathogen_ncbi_id)
             pathogen_taxon = {**pathogen_ncbi_metadata, "TaxId": pathogen_ncbi_id}
             ncbi.merge_taxon(pathogen_taxon, SESSION)
             time.sleep(SLEEP_TIME)
