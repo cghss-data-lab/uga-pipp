@@ -1,7 +1,6 @@
 import ncbi
 from bs4 import Tag
 
-
 def get_taxon(ncbi_id):
     """Request metadata by NCBI taxonomy ID, and return cleaned object"""
 

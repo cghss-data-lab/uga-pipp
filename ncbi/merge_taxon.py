@@ -12,6 +12,7 @@ def merge_taxon_node(taxon, SESSION):
 
     rank = sanitize_rank(taxon["Rank"])
 
+    # Use rank, TaxID, and name as merge conditions
     SESSION.run(
         f'MERGE (n:Taxon:{rank} {{name: "{taxon["ScientificName"]}", '
         f'  Rank: "{rank}", '
