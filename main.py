@@ -23,18 +23,6 @@ if __name__ == "__main__":
         host_species = row['host_species']
         pathogen_species = row['pathogen_species']
 
-        # Check if host or pathogen has been processed yet
-        if host_species in tax_list:
-            print(f"{host_species} has already been checked")
-            continue
-        elif pathogen_species in tax_list:
-            print(f"{pathogen_species} has already been checked")
-            continue
-        else:
-            # Add the species to the set
-            tax_list.add(host_species)
-            tax_list.add(pathogen_species)
-
         # Create taxa from NCBI
         link_ncbi_gmpd.create_ncbi_taxon(host_species, pathogen_species, SESSION)
 
