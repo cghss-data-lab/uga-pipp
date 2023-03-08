@@ -38,8 +38,11 @@ if __name__ == "__main__":
         # Create taxa from NCBI
         link_ncbi_gmpd.create_ncbi_taxon(host_species, pathogen_species, SESSION)
 
-        # Label the NCBI taxon nodes
-        link_ncbi_gmpd.label_ncbi_taxon(host_species, pathogen_species, SESSION)
+        # # Label the NCBI taxon nodes
+        # # Commented out because host / pathogen status is dependent on the interaction between species (not the taxon itself)
+        # # To re-add, uncomment below and in link_ncbi_gmpd.py
+
+        # link_ncbi_gmpd.label_ncbi_taxon(host_species, pathogen_species, SESSION)
 
         # Create pairings
         link_ncbi_gmpd.link_host_pathogen(host_species, pathogen_species, SESSION)
