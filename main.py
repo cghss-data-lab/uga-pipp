@@ -4,7 +4,7 @@ from neo4j import GraphDatabase
 from dotenv import load_dotenv
 
 import carnivoreGMPD
-import gmpd.link_ncbi_gmpd as link_ncbi_gmpd
+import gmpd.link_gmpd_to_ncbi as link_gmpd_to_ncbi
 
 load_dotenv()
 
@@ -24,7 +24,7 @@ if __name__ == "__main__":
         pathogen_species = row['pathogen_species']
 
         # Create taxa from NCBI
-        link_ncbi_gmpd.create_ncbi_taxon(host_species, pathogen_species, SESSION)
+        link_gmpd_to_ncbi.create_ncbi_taxon(host_species, pathogen_species, SESSION)
 
         # # Label the NCBI taxon nodes
         # # Commented out because host / pathogen status is dependent on the interaction between species (not the taxon itself)
@@ -33,6 +33,6 @@ if __name__ == "__main__":
         # link_ncbi_gmpd.label_ncbi_taxon(host_species, pathogen_species, SESSION)
 
         # Create pairings
-        link_ncbi_gmpd.link_host_pathogen(host_species, pathogen_species, SESSION)
+        link_gmpd_to_ncbi.link_host_pathogen(host_species, pathogen_species, SESSION)
 
     NEO4J_DRIVER.close()

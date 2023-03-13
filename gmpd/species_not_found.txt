@@ -1,1 +1,15 @@
 No NCBI ID for pathogen Leptospira icterohaemorrhagiae 
+Error getting taxon for pathogen Francisella tularensis: 'NoneType' object has no attribute 'Taxon'
+No NCBI ID for pathogen Babesia spp. 
+Error getting taxon for host Callorhinus ursinus: 'NoneType' object has no attribute 'Taxon' 
+No NCBI ID for pathogen Dioctophyma renale 
+No NCBI ID for pathogen Leptospira santarosai Brasiliensis 
+No NCBI ID for pathogen Leptospira santarosai Fluminense 
+No NCBI ID for pathogen Dioctophyma renale 
+Error getting taxon for host Chrysocyon brachyurus: 'NoneType' object has no attribute 'Taxon' 
+No NCBI ID for pathogen Influenzavirus A Influenza A virus (H5N8) 
+No NCBI ID for pathogen Leptospira icterohaemorrhagiae 
+Error getting taxon for host Hyaena hyaena: 'NoneType' object has no attribute 'Taxon' 
+No NCBI ID for pathogen Babesia spp. 
+Error getting taxon for host Mungos mungo: 'NoneType' object has no attribute 'Taxon' 
+Error getting taxon for host Leopardus geoffroyi: 'NoneType' object has no attribute 'Taxon' 
