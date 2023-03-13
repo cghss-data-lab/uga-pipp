@@ -4,7 +4,7 @@ from neo4j import GraphDatabase
 from dotenv import load_dotenv
 
 import carnivoreGMPD
-import link_ncbi_gmpd
+import gmpd.link_ncbi_gmpd as link_ncbi_gmpd
 
 load_dotenv()
 
