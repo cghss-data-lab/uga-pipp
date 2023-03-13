@@ -1,7 +1,7 @@
 import ncbi
 import time
 
-NOT_FOUND_FILE = "species_not_found.txt"
+NOT_FOUND_FILE = "gmpd/species_not_found.txt"
 SLEEP_TIME = 0.5 #2 requests/second
 
 def write_to_not_found(message):
