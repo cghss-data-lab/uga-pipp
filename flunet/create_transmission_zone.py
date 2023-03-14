@@ -7,4 +7,4 @@ def create_transmission_zone(zone, SESSION):
     should be expanded to tie that node into the GeoNames system
     """
     logger.info(f" CREATE transmission zone node ({zone})")
-    SESSION.run(f'CREATE (n:TransmissionZone:Geo {{name: "{zone}"}})')
+    SESSION.run(f'MERGE (n:TransmissionZone:Geo {{name: "{zone}"}})')
