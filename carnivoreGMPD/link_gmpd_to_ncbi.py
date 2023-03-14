@@ -9,37 +9,34 @@ def write_to_not_found(message):
         f.write(message)
 
 def create_ncbi_taxon(host_species, pathogen_species, SESSION):
+    looked_up = set()
+    
+    def lookup_taxon(ncbi_id):
+        if ncbi_id and ncbi_id not in looked_up:
+            looked_up.add(ncbi_id)
+            taxon_metadata = ncbi.get_metadata(ncbi_id)
+            taxon = {**taxon_metadata, "TaxId":ncbi_id}
+            ncbi.merge_taxon(taxon, SESSION)
+            time.sleep(SLEEP_TIME)
+        
+        elif not ncbi_id:
+            write_to_not_found(f"No NCBI ID for species: {pathogen_species} \n")
+    
     try:
         # search for the TaxID that matches the host_species name
         host_ncbi_id = ncbi.id_search(host_species)
-
-        # if a term exists, then get the taxon metadata for that ID
-        # merge the taxon on TaxID
-        if host_ncbi_id:
-            host_ncbi_metadata = ncbi.get_metadata(host_ncbi_id)
-            host_taxon = {**host_ncbi_metadata, "TaxId":host_ncbi_id}
-            ncbi.merge_taxon(host_taxon, SESSION)
-            time.sleep(SLEEP_TIME)
-        
-        else:
-            write_to_not_found(f"No NCBI ID for host {host_species}: \n")
+        lookup_taxon(host_ncbi_id)
 
     except Exception as e:
         write_to_not_found(f"Error getting taxon for host {host_species}: {e} \n")
 
     try:
         pathogen_ncbi_id = ncbi.id_search(f"{pathogen_species}")
-        if pathogen_ncbi_id:
-            pathogen_ncbi_metadata = ncbi.get_metadata(pathogen_ncbi_id)
-            pathogen_taxon = {**pathogen_ncbi_metadata, "TaxId": pathogen_ncbi_id}
-            ncbi.merge_taxon(pathogen_taxon, SESSION)
-            time.sleep(SLEEP_TIME)
-
-        else:
-            write_to_not_found(f"No NCBI ID for pathogen {pathogen_species} \n")
+        lookup_taxon(pathogen_ncbi_id)
 
     except Exception as e:
-        write_to_not_found(f"Error getting taxon for pathogen {pathogen_species}: {e}\n")    
+        write_to_not_found(f"Error getting taxon for pathogen {pathogen_species}: {e}\n")
+
 
 # # Commented out because host / pathogen status is dependent on the interaction between species (not the taxon itself)
 # # To re-add, uncomment below and in main.py; change t:Taxon in link_host_pathogen to h:Host and p:Pathogen
