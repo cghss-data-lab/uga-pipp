@@ -11,7 +11,7 @@ def ingest_gmpd(SESSION):
         host_tax_id, pathogen_tax_id = gmpd.link_gmpd_to_ncbi(row, SESSION)
         citation = row["Citation"]
         prevalence = row["Prevalence"]
-        collected = row["Hosts Sampled"]
+        collected = row["HostsSampled"]
         
         # Create the Report node if it doesn't exist, and set its label to GMPD
         query = """
