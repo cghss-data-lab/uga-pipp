@@ -1,5 +1,4 @@
 from .get_rows import get_rows 
-from .column_to_ncbi import column_to_ncbi
 from .create_country import create_country
 from .ingest_flunet import ingest_flunet
 from .get_agent_groups import get_agent_groups
