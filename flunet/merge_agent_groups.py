@@ -16,4 +16,3 @@ def merge_agent_groups(agent_groups, SESSION):
         ncbi_metadata = ncbi.get_metadata(ncbi_id)
         taxon = {**ncbi_metadata, "TaxId": ncbi_id}
         ncbi.merge_taxon(taxon, SESSION)
-        time.sleep(SLEEP_TIME)
