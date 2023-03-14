@@ -8,5 +8,5 @@ def create_country(country, zone, SESSION):
     logger.info(f" CREATE country node ({country})")
     SESSION.run(
         f'MATCH  (zone:TransmissionZone {{name: "{zone}"}}) '
-        f'CREATE (n:Country:Geo {{name: "{country}"}})-[:IN]->(zone) '
+        f'MERGE (n:Country:Geo {{name: "{country}"}})-[:IN]->(zone) '
     )
