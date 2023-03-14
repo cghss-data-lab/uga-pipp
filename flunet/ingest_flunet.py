@@ -63,7 +63,7 @@ def ingest_flunet(SESSION):
             SESSION.run(
                 f'MATCH (c:Country {{name: "{country}"}}) '
                 + match_agent_groups
-                + f"\nCREATE (detection:FluNet:Detection {{"
+                + f"\nMERGE (detection:FluNet:Detection {{"
                 f"  flunetRow: {index}, "
                 f'  start: date("{start_date_obj.date()}"), '
                 f"  duration: duration({{days: 7}}), "
