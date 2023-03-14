@@ -2,7 +2,7 @@ import csv
 
 def get_rows():
     rows = []
-    with open("carnivoreGMPD/data/carnivoreGMPD.csv") as pairings_file:
-        rows = list(csv.DictReader(pairings_file))
+    with open("gmpd/data/GMPD_main.csv") as gmpd_file:
+        rows = list(csv.DictReader(gmpd_file))
 
     return rows
