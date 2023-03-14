@@ -1,5 +1,7 @@
 import ncbi
 from bs4 import Tag
+import time
+SLEEP_TIME = 0.5
 
 def get_metadata(ncbi_id):
     """Request metadata by NCBI taxonomy ID, and return cleaned object"""
@@ -39,7 +41,7 @@ def get_metadata(ncbi_id):
                     "Rank": taxon.Rank.getText(),
                 }
             )
-
+            time.sleep(SLEEP_TIME)
     taxon_metadata["LineageEx"] = lineage_ex
 
     return taxon_metadata
