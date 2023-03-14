@@ -1,5 +1,6 @@
 import flunet
 from loguru import logger
+from datetime import datetime
 
 def ingest_flunet(SESSION):
     flunet_rows = flunet.get_rows()
@@ -51,19 +52,23 @@ def ingest_flunet(SESSION):
                 f'\nMATCH (taxon{ncbi_id}:Taxon {{TaxId: "{ncbi_id}"}}) '
             )
             create_group_relationships += (
-                f"CREATE (detection)-[:DETECTED {{count: {row[col]}}}]->(taxon{ncbi_id}) "
+                f"CREATE (detection)-[:DETECTS {{count: {row[col]}}}]->(taxon{ncbi_id}) "
             )
 
-        SESSION.run(
-            f'MATCH (c:Country {{name: "{country}"}}) '
-            + match_agent_groups
-            + f"\nCREATE (detection:FluNet:Detection {{"
-            f"  flunetRow: {index}, "
-            f'  start: date("{row["Start date"]}"), '
-            f"  duration: duration({{days: 7}}), "
-            f'  collected: {row["Collected"] or 0}, '
-            f'  processed: {row["Processed"] or 0}, '
-            f'  positive: {row["Total positive"] or 0}, '
-            f'  negative: {row["Total negative"] or 0} '
-            f"}})-[:IN]->(c)" + create_group_relationships
-        )
+            # Parse the date string into a datetime object
+            start_date_str = row["Start date"]
+            start_date_obj = datetime.strptime(start_date_str, "%m/%d/%y")
+
+            # Use the datetime object in your Cypher query
+            SESSION.run(
+                f'MATCH (c:Country {{name: "{country}"}}) '
+                + match_agent_groups
+                + f"\nCREATE (detection:FluNet:Detection {{"
+                f"  flunetRow: {index}, "
+                f'  start: date("{start_date_obj.date()}"), '
+                f"  duration: duration({{days: 7}}), "
+                f'  collected: {row["Collected"] or 0}, '
+                f'  processed: {row["Processed"] or 0}, '
+                f'  positive: {row["Total positive"] or 0}, '
+                f'  negative: {row["Total negative"] or 0} '
+                f"}})-[:IN]->(c)" + create_group_relationships)
