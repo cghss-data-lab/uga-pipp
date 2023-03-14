@@ -1,7 +1,7 @@
 import flunet
 from loguru import logger
 
-def ingest_flunet():
+def ingest_flunet(SESSION):
     flunet_rows = flunet.get_rows()
 
     # get mapping from flunet columns

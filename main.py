@@ -19,6 +19,6 @@ def get_geonames_id(name):
 
 if __name__ == "__main__":
     ingest_gmpd(SESSION)
-    # ingest_flunet()
+    # ingest_flunet(SESSION)
 
     NEO4J_DRIVER.close()
