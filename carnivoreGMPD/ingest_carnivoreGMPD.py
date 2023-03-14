@@ -1,7 +1,7 @@
 import carnivoreGMPD
 import carnivoreGMPD.link_gmpd_to_ncbi as link_gmpd_to_ncbi
 
-def ingest_gmpd(SESSION):
+def ingest_carnivoreGMPD(SESSION):
 
     tax_list = set()
     gmpd_rows = carnivoreGMPD.get_rows()

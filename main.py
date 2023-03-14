@@ -3,7 +3,7 @@ import os
 from neo4j import GraphDatabase
 from dotenv import load_dotenv
 
-from carnivoreGMPD import ingest_gmpd
+from carnivoreGMPD import ingest_carnivoreGMPD
 from flunet import ingest_flunet
 
 load_dotenv()
@@ -18,7 +18,7 @@ def get_geonames_id(name):
     pass
 
 if __name__ == "__main__":
-    ingest_gmpd(SESSION)
+    ingest_carnivoreGMPD(SESSION)
     # ingest_flunet(SESSION)
 
     NEO4J_DRIVER.close()
