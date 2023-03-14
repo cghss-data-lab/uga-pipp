@@ -44,7 +44,7 @@ def ingest_flunet():
                 continue
 
             match_agent_groups += f'\nMATCH (taxon{ncbi_id}:Taxon {{TaxId: $ncbi_id_{ncbi_id}}}) '
-            create_group_relationships += f"CREATE (report)-[:DETECTED {{count: $row_{col}}}]->(taxon{ncbi_id}) "
+            create_group_relationships += f"CREATE (report)-[:IDENTIFIES {{count: $row_{col}}}]->(taxon{ncbi_id}) "
 
         params = {}
         for col in columns:
