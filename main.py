@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 
 from carnivoreGMPD import ingest_carnivoreGMPD
 from flunet import ingest_flunet
+from gmpd import ingest_gmpd
 
 load_dotenv()
 
@@ -19,7 +20,10 @@ def get_geonames_id(name):
 
 if __name__ == "__main__":
     
-    ingest_carnivoreGMPD(SESSION)
-    ingest_flunet(SESSION)
+    # ingest_carnivoreGMPD(SESSION)
+    # ingest_flunet(SESSION)
+    ingest_gmpd(SESSION)
+    
+
 
     NEO4J_DRIVER.close()
