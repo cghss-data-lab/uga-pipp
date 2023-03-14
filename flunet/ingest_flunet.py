@@ -8,6 +8,7 @@ def ingest_flunet(SESSION):
     # to agents or agent groups
     columns = flunet_rows[0].keys()
     agent_groups = flunet.get_agent_groups(columns)
+
     # Make sure the agent groups and their
     # taxons exist in the database
     flunet.merge_agent_groups(agent_groups, SESSION)

@@ -1,5 +1,8 @@
 import ncbi
 from loguru import logger
+import time
+
+SLEEP_TIME = 0.5 #2 requests/second
 
 
 def id_search(name):
@@ -13,6 +16,7 @@ def id_search(name):
 
     try:
         ncbi_id = soup.find("Id").getText()
+        time.sleep(SLEEP_TIME)
 
     except AttributeError:
         errors = soup.find("ErrorList")
