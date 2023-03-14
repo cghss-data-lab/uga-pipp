@@ -44,6 +44,6 @@ def create_ncbi_taxon(host_species, pathogen_species, SESSION):
 def link_host_pathogen(host_species, pathogen_species, SESSION):
     pairings_query = (
         "MATCH (t1:Taxon {name: $host_species}), (t2:Taxon {name: $pathogen_species}) "
-        "MERGE (t2)-[:CARRIES]->(t1) "
+        "MERGE (t1)-[:CARRIES]->(t2) "
     )
     SESSION.run(pairings_query, host_species=host_species, pathogen_species=pathogen_species)
