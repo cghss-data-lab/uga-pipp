@@ -8,7 +8,7 @@ def write_to_not_found(message):
     with open(NOT_FOUND_FILE, "a") as f:
         f.write(message)
 
-def create_ncbi_taxon(row, SESSION):
+def link_gmpd_to_ncbi(row, SESSION):
     global searched_terms
     try:
         host_species = row["HostReportedName"]
