@@ -18,7 +18,8 @@ def get_geonames_id(name):
     pass
 
 if __name__ == "__main__":
+    
     ingest_carnivoreGMPD(SESSION)
-    # ingest_flunet(SESSION)
+    ingest_flunet(SESSION)
 
     NEO4J_DRIVER.close()
