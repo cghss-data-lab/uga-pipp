@@ -52,7 +52,7 @@ def ingest_flunet(SESSION):
                 f'\nMATCH (taxon{ncbi_id}:Taxon {{TaxId: "{ncbi_id}"}}) '
             )
             create_group_relationships += (
-                f"CREATE (detection)-[:DETECTS {{count: {row[col]}}}]->(taxon{ncbi_id}) "
+                f"CREATE (detection)-[:REPORTS {{count: {row[col]}}}]->(taxon{ncbi_id}) "
             )
 
             # Parse the date string into a datetime object
