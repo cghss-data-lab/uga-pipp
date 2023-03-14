@@ -38,21 +38,6 @@ def create_ncbi_taxon(host_species, pathogen_species, SESSION):
         write_to_not_found(f"Error getting taxon for pathogen {pathogen_species}: {e}\n")
 
 
-# # Commented out because host / pathogen status is dependent on the interaction between species (not the taxon itself)
-# # To re-add, uncomment below and in main.py; change t:Taxon in link_host_pathogen to h:Host and p:Pathogen
-# def label_ncbi_taxon(host_species, pathogen_species, SESSION):
-#     host_query = (
-#         "MERGE (t:Taxon {name: $host_species})"
-#         "SET t:Host"
-#     )
-#     SESSION.run(host_query, host_species=host_species)
-
-#     pathogen_query = (
-#         "MERGE (t:Taxon {name: $pathogen_species})"
-#         "SET t:Pathogen"
-#     )
-#     SESSION.run(pathogen_query, pathogen_species=pathogen_species)
-
 def link_host_pathogen(host_species, pathogen_species, SESSION):
     pairings_query = (
         "MATCH (t1:Taxon {name: $host_species}), (t2:Taxon {name: $pathogen_species}) "
