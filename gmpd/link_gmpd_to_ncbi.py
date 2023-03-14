@@ -66,6 +66,11 @@ def link_gmpd_to_ncbi(row, SESSION):
             else:
                 pass
 
+        # Return the host and pathogen tax IDs
+        host_tax_id = host_ncbi_id
+        pathogen_tax_id = pathogen_ncbi_id
+        return (host_tax_id, pathogen_tax_id)
+
     except Exception as e:
         write_to_not_found(f"Error getting taxon: {e}\n")
 
