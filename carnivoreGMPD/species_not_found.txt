@@ -1,1 +1,4 @@
 No NCBI ID for pathogen Leptospira icterohaemorrhagiae 
+No NCBI ID for pathogen Babesia spp. 
+Error getting taxon for host Cerdocyon thous: 'NoneType' object has no attribute 'Taxon' 
+No NCBI ID for pathogen Dioctophyma renale 
