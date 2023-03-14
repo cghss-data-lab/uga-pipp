@@ -1,2 +1,0 @@
-from .link_gmpd_to_ncbi import create_ncbi_taxon
-from .link_gmpd_to_ncbi import link_host_pathogen
