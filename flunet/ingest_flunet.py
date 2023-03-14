@@ -8,8 +8,8 @@ def ingest_flunet(SESSION):
     # to agents or agent groups
     columns = flunet_rows[0].keys()
     agent_groups = flunet.get_agent_groups(columns)
-    
-    # Make sure the agent groups and their taxons exist in the database
+    # Make sure the agent groups and their
+    # taxons exist in the database
     flunet.merge_agent_groups(agent_groups, SESSION)
 
     created_countries = set()
@@ -17,7 +17,7 @@ def ingest_flunet(SESSION):
 
     for index, row in enumerate(flunet_rows):
         # skip rows where no samples were collected
-        if not row.get("Collected") or row["Collected"] == "0":
+        if row["Collected"] == "" or row["Collected"] == "0":
             continue
 
         logger.info(f"Creating FluNet Report {index}")
@@ -38,37 +38,31 @@ def ingest_flunet(SESSION):
         match_agent_groups = ""
         create_group_relationships = ""
 
-        for col, ncbi_id in agent_groups.items():
-            # skip detection columns with no values or with zero specimens detected
-            if not row.get(col) or row[col] == "0":
+        for col in agent_groups.keys():
+            # skip detection columns with no values
+            # or with zero specimens detected
+            if not row[col] or row[col] == "0":
                 continue
 
-            match_agent_groups += f'\nMATCH (taxon{ncbi_id}:Taxon {{TaxId: $ncbi_id_{ncbi_id}}}) '
-            create_group_relationships += f"CREATE (report)-[:IDENTIFIES {{count: $row_{col}}}]->(taxon{ncbi_id}) "
+            ncbi_id = agent_groups[col]
 
-        params = {}
-        for col in columns:
-            params[f"row_{col}"] = row.get(col) or 0
-        for col, ncbi_id in agent_groups.items():
-            params[f"ncbi_id_{ncbi_id}"] = ncbi_id
-        params["country"] = country
+            match_agent_groups += (
+                f'\nMATCH (taxon{ncbi_id}:Taxon {{TaxId: "{ncbi_id}"}}) '
+            )
+            create_group_relationships += (
+                f"CREATE (detection)-[:DETECTED {{count: {row[col]}}}]->(taxon{ncbi_id}) "
+            )
 
-        query = (
-            "MATCH (c:Country {name: $country})"
+        SESSION.run(
+            f'MATCH (c:Country {{name: "{country}"}}) '
             + match_agent_groups
-            + "\nCREATE (report:FluNet:Report {"
-            "  flunetRow: $index, "
-            '  start: date($row_Start_date), '
-            "  duration: duration({days: 7}), "
-            '  collected: $row_Collected, '
-            '  processed: $row_Processed, '
-            '  positive: $row_Total_positive, '
-            '  negative: $row_Total_negative '
-            "})-[:IN]->(c)"
-            + create_group_relationships
+            + f"\nCREATE (detection:FluNet:Detection {{"
+            f"  flunetRow: {index}, "
+            f'  start: date("{row["Start date"]}"), '
+            f"  duration: duration({{days: 7}}), "
+            f'  collected: {row["Collected"] or 0}, '
+            f'  processed: {row["Processed"] or 0}, '
+            f'  positive: {row["Total positive"] or 0}, '
+            f'  negative: {row["Total negative"] or 0} '
+            f"}})-[:IN]->(c)" + create_group_relationships
         )
-
-        try:
-            SESSION.run(query, params)
-        except Exception as e:
-            logger.error(f"Failed to create FluNet report {index}: {str(e)}")
