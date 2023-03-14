@@ -2,7 +2,6 @@ import ncbi
 import time
 
 NOT_FOUND_FILE = "carnivoreGMPD/species_not_found.txt"
-SLEEP_TIME = 0.5 #2 requests/second
 
 def write_to_not_found(message):
     with open(NOT_FOUND_FILE, "a") as f:
@@ -17,7 +16,6 @@ def create_ncbi_taxon(host_species, pathogen_species, SESSION):
             taxon_metadata = ncbi.get_metadata(ncbi_id)
             taxon = {**taxon_metadata, "TaxId":ncbi_id}
             ncbi.merge_taxon(taxon, SESSION)
-            time.sleep(SLEEP_TIME)
         
         elif not ncbi_id:
             write_to_not_found(f"No NCBI ID for species: {pathogen_species} \n")
