@@ -1,10 +1,12 @@
 from loguru import logger
 
-
-def create_transmission_zone(zone, SESSION):
+def create_country(country, zone, SESSION):
     """
-    For now just creates a TransmissionZone node alone, but
-    should be expanded to tie that node into the GeoNames system
+    For now, just merges the country into its zone,
+    but this should be expanded to use geonames.
     """
-    logger.info(f" CREATE transmission zone node ({zone})")
-    SESSION.run(f'CREATE (n:TransmissionZone:Geo {{name: "{zone}"}})')
+    logger.info(f" CREATE country node ({country})")
+    SESSION.run(
+        f'MATCH  (zone:TransmissionZone {{name: "{zone}"}}) '
+        f'CREATE (n:Country:Geo {{name: "{country}"}})-[:IN]->(zone) '
+    )

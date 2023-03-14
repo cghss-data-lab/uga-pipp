@@ -1,24 +1,10 @@
 from loguru import logger
 
 
-def create_transmission_zone(zone, session):
+def create_transmission_zone(zone, SESSION):
     """
-    Creates a TransmissionZone node and links it to the GeoNames system.
-    
-    Args:
-        zone (str): Name of the transmission zone.
-        session (neo4j.Session): Neo4j session object.
-
-    Returns:
-        None
+    For now just creates a TransmissionZone node alone, but
+    should be expanded to tie that node into the GeoNames system
     """
-    query = """
-        CREATE (n:TransmissionZone:Geo {name: $name})
-        RETURN n
-    """
-    params = {"name": zone}
-    try:
-        result = session.run(query, params)
-        logger.info(f"Created transmission zone node ({zone})")
-    except Exception as e:
-        logger.error(f"Error creating transmission zone node ({zone}): {e}")
+    logger.info(f" CREATE transmission zone node ({zone})")
+    SESSION.run(f'CREATE (n:TransmissionZone:Geo {{name: "{zone}"}})')
