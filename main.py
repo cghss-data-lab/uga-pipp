@@ -23,7 +23,4 @@ if __name__ == "__main__":
     # ingest_carnivoreGMPD(SESSION)
     # ingest_flunet(SESSION)
     ingest_gmpd(SESSION)
-    
-
-
     NEO4J_DRIVER.close()
