@@ -20,6 +20,8 @@ def get_geonames_id(name):
 
 if __name__ == "__main__":
     
+    # # carnivoreGMPD is a subset of GMPD which has host-pathogen pairings, instead of :REPORTS relationship
+    # # Would not recommend using both
     # ingest_carnivoreGMPD(SESSION)
     ingest_gmpd(SESSION)
     ingest_flunet(SESSION)
