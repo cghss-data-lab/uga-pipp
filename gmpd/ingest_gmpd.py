@@ -8,22 +8,26 @@ def ingest_gmpd(SESSION):
     # Make sure taxons exist in the database
     # Cast variables for properties
     for row in gmpd_rows:
-        host_tax_id, pathogen_tax_id = gmpd.link_gmpd_to_ncbi(row, SESSION)
-        citation = row["Citation"]
-        prevalence = row["Prevalence"]
-        collected = row["HostsSampled"]
-        
-        # Create the Report node if it doesn't exist, and set its label to GMPD
-        query = """
-        MERGE (r:GMPD:Report {citation:$citation, prevalence:$prevalence, collected:$collected})
-        RETURN r
-        """
-        parameters = {"citation": citation, "prevalence": prevalence, "collected": collected}
-        result = SESSION.run(query, parameters)
-        report_node = result.single()[0]
+        host_tax_id_returned = gmpd.link_gmpd_to_ncbi(row, SESSION)
+        pathogen_tax_id_returned = gmpd.link_gmpd_to_ncbi(row, SESSION)
 
-        # Create the relationships between the Report node and the host / pathogen taxons
-        if host_tax_id and pathogen_tax_id:
+        if host_tax_id_returned and pathogen_tax_id_returned:
+            host_tax_id, pathogen_tax_id = host_tax_id_returned, pathogen_tax_id_returned
+
+            citation = row["Citation"]
+            prevalence = row["Prevalence"]
+            collected = row["HostsSampled"]
+
+            # Create the Report node if it doesn't exist, and set its label to GMPD
+            query = """
+            MERGE (r:GMPD:Report {citation:$citation, prevalence:$prevalence, collected:$collected})
+            RETURN r
+            """
+            parameters = {"citation": citation, "prevalence": prevalence, "collected": collected}
+            result = SESSION.run(query, parameters)
+            report_node = result.single()[0]
+
+            # Create the relationships between the Report node and the host / pathogen taxons
             query = """
             MATCH (r:GMPD:Report), (h:Taxon {TaxId: $host_tax_id}), (p:Taxon {TaxId: $pathogen_tax_id})
             MERGE (r)-[hr:REPORTS {host: 1}]->(h)
@@ -31,3 +35,4 @@ def ingest_gmpd(SESSION):
             """
             parameters = {"host_tax_id": host_tax_id, "pathogen_tax_id": pathogen_tax_id}
             result = SESSION.run(query, parameters)
+
