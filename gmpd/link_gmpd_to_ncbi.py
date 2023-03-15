@@ -10,66 +10,56 @@ def write_to_not_found(message):
 
 def link_gmpd_to_ncbi(row, SESSION):
     global searched_terms
+    host_species = row["HostReportedName"]
+    pathogen_species = row["ParasiteReportedName"]
+    
     try:
-        host_species = row["HostReportedName"]
-        pathogen_species = row["ParasiteReportedName"]
-        
+        # Search for host species
         if host_species not in searched_terms:
-            # search for the TaxID that matches the host_reported name
-            host_ncbi_id = ncbi.id_search(host_species)
             searched_terms.add(host_species)
+            host_ncbi_id = ncbi.id_search(host_species)
 
-            # if a term exists, then get the taxon metadata for that ID
-            # merge the taxon on TaxID
             if host_ncbi_id:
                 host_ncbi_metadata = ncbi.get_metadata(host_ncbi_id)
                 host_taxon = {**host_ncbi_metadata, "TaxId":host_ncbi_id}
                 ncbi.merge_taxon(host_taxon, SESSION)
+                return host_ncbi_id
 
-            elif row["HostCorrectedName"] not in searched_terms:
-                # if the reported name doesn't match, try the corrected name
-                host_ncbi_id = ncbi.id_search(row["HostCorrectedName"])
-                searched_terms.add(row["HostCorrectedName"])
+        if row["HostCorrectedName"] and row["HostCorrectedName"] not in searched_terms:
+            searched_terms.add(row["HostCorrectedName"])
+            host_ncbi_id = ncbi.id_search(row["HostCorrectedName"])
 
-                if host_ncbi_id:
-                    host_ncbi_metadata = ncbi.get_metadata(host_ncbi_id)
-                    host_taxon = {**host_ncbi_metadata, "TaxId":host_ncbi_id}
-                    ncbi.merge_taxon(host_taxon, SESSION)
+            if host_ncbi_id:
+                host_ncbi_metadata = ncbi.get_metadata(host_ncbi_id)
+                host_taxon = {**host_ncbi_metadata, "TaxId":host_ncbi_id}
+                ncbi.merge_taxon(host_taxon, SESSION)
+                return host_ncbi_id
 
-                else:
-                    write_to_not_found(f"No NCBI ID for host {host_species} or {row['HostCorrectedName']}: \n")
+        write_to_not_found(f"No NCBI ID for host {host_species} or {row['HostCorrectedName']}: \n")
 
-            else:
-                pass
-
+        # Search for pathogen species
         if pathogen_species not in searched_terms:
-            pathogen_ncbi_id = ncbi.id_search(pathogen_species)
             searched_terms.add(pathogen_species)
+            pathogen_ncbi_id = ncbi.id_search(pathogen_species)
 
             if pathogen_ncbi_id:
                 pathogen_ncbi_metadata = ncbi.get_metadata(pathogen_ncbi_id)
-                pathogen_taxon = {**pathogen_ncbi_metadata, "TaxId": pathogen_ncbi_id}
+                pathogen_taxon = {**pathogen_ncbi_metadata, "TaxId":pathogen_ncbi_id}
                 ncbi.merge_taxon(pathogen_taxon, SESSION)
+                return pathogen_ncbi_id
 
-            elif row["ParasiteCorrectedName"] not in searched_terms:
-                pathogen_ncbi_id = ncbi.id_search(row["ParasiteCorrectedName"])
-                searched_terms.add(row["ParasiteCorrectedName"])
+        if row["ParasiteCorrectedName"] and row["ParasiteCorrectedName"] not in searched_terms:
+            searched_terms.add(row["ParasiteCorrectedName"])
+            pathogen_ncbi_id = ncbi.id_search(row["ParasiteCorrectedName"])
 
-                if pathogen_ncbi_id:
-                    pathogen_ncbi_metadata = ncbi.get_metadata(pathogen_ncbi_id)
-                    pathogen_taxon = {**pathogen_ncbi_metadata, "TaxId": pathogen_ncbi_id}
-                    ncbi.merge_taxon(pathogen_taxon, SESSION)
+            if pathogen_ncbi_id:
+                pathogen_ncbi_metadata = ncbi.get_metadata(pathogen_ncbi_id)
+                pathogen_taxon = {**pathogen_ncbi_metadata, "TaxId":pathogen_ncbi_id}
+                ncbi.merge_taxon(pathogen_taxon, SESSION)
+                return pathogen_ncbi_id
 
-                else:
-                    write_to_not_found(f"No NCBI ID for pathogen {pathogen_species} or {row['ParasiteCorrectedName']} \n")
-
-            else:
-                pass
-
-        # Return the host and pathogen tax IDs
-        host_tax_id = host_ncbi_id
-        pathogen_tax_id = pathogen_ncbi_id
-        return (host_tax_id, pathogen_tax_id)
+        write_to_not_found(f"No NCBI ID for pathogen {pathogen_species} or {row['ParasiteCorrectedName']} \n")
+        return None
 
     except Exception as e:
         write_to_not_found(f"Error getting taxon: {e}\n")
