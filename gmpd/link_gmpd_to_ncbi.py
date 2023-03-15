@@ -3,10 +3,14 @@ import ncbi
 NOT_FOUND_FILE = "gmpd/species_not_found.txt"
 
 searched_terms = set()
+not_found_terms = set()
 
 def write_to_not_found(message):
-    with open(NOT_FOUND_FILE, "a") as f:
-        f.write(message)
+    global not_found_terms
+    if message not in not_found_terms:
+        with open(NOT_FOUND_FILE, "a") as f:
+            f.write(message)
+        not_found_terms.add(message)
 
 def search_and_merge(term, SESSION):
     global searched_terms
@@ -38,7 +42,7 @@ def link_gmpd_to_ncbi(row, SESSION):
                 if pathogen_ncbi_id:
                     return (host_ncbi_id, pathogen_ncbi_id)
         
-        else:
+        if not host_ncbi_id:
             write_to_not_found(f"No NCBI ID for host {host_species} or {row['HostCorrectedName']}: \n")
 
         pathogen_ncbi_id = search_and_merge(pathogen_species, SESSION)
@@ -50,7 +54,7 @@ def link_gmpd_to_ncbi(row, SESSION):
             if pathogen_ncbi_id:
                 return (None, pathogen_ncbi_id)
 
-        else:
+        if not pathogen_ncbi_id:
             write_to_not_found(f"No NCBI ID for pathogen {pathogen_species} or {row['ParasiteCorrectedName']} \n")
 
         return (None, None)
