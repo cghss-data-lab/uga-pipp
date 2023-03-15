@@ -19,7 +19,7 @@ def ingest_gmpd(SESSION):
         MERGE (r:GMPD:Report {citation:$citation, prevalence:$prevalence, collected:$collected, sampleType:$sampleType})
         RETURN r
         """
-        parameters = {"citation": citation, "prevalence": prevalence, "collected": collected}
+        parameters = {"citation": citation, "prevalence": prevalence, "collected": collected, "sampleType": sampleType}
         result = SESSION.run(query, parameters)
         report_node = result.single()[0]
 
