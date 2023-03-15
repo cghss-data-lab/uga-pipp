@@ -28,23 +28,25 @@ def link_gmpd_to_ncbi(row, SESSION):
         if host_ncbi_id:
             return host_ncbi_id
 
-        if row["HostCorrectedName"]:
+        elif row["HostCorrectedName"]:
             host_ncbi_id = search_and_merge(row["HostCorrectedName"], SESSION)
             if host_ncbi_id:
                 return host_ncbi_id
 
-        write_to_not_found(f"No NCBI ID for host {host_species} or {row['HostCorrectedName']}: \n")
+        else:
+            write_to_not_found(f"No NCBI ID for host {host_species} or {row['HostCorrectedName']}: \n")
 
         pathogen_ncbi_id = search_and_merge(pathogen_species, SESSION)
         if pathogen_ncbi_id:
             return pathogen_ncbi_id
 
-        if row["ParasiteCorrectedName"]:
+        elif row["ParasiteCorrectedName"]:
             pathogen_ncbi_id = search_and_merge(row["ParasiteCorrectedName"], SESSION)
             if pathogen_ncbi_id:
                 return pathogen_ncbi_id
 
-        write_to_not_found(f"No NCBI ID for pathogen {pathogen_species} or {row['ParasiteCorrectedName']} \n")
+        else:
+            write_to_not_found(f"No NCBI ID for pathogen {pathogen_species} or {row['ParasiteCorrectedName']} \n")
 
         return None
 
