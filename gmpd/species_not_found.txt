@@ -1,1 +1,0 @@
-Error getting taxon: cannot access local variable 'host_ncbi_id' where it is not associated with a value

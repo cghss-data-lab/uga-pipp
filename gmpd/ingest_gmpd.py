@@ -23,10 +23,11 @@ def ingest_gmpd(SESSION):
         report_node = result.single()[0]
 
         # Create the relationships between the Report node and the host / pathogen taxons
-        query = """
-        MATCH (r:GMPD:Report), (h:Taxon {TaxId: $host_tax_id}), (p:Taxon {TaxId: $pathogen_tax_id})
-        MERGE (r)-[hr:REPORTS {host: 1}]->(h)
-        MERGE (r)-[pr:REPORTS {pathogen: 1}]->(p)
-        """
-        parameters = {"host_tax_id": host_tax_id, "pathogen_tax_id": pathogen_tax_id}
-        result = SESSION.run(query, parameters)
+        if host_tax_id and pathogen_tax_id:
+            query = """
+            MATCH (r:GMPD:Report), (h:Taxon {TaxId: $host_tax_id}), (p:Taxon {TaxId: $pathogen_tax_id})
+            MERGE (r)-[hr:REPORTS {host: 1}]->(h)
+            MERGE (r)-[pr:REPORTS {pathogen: 1}]->(p)
+            """
+            parameters = {"host_tax_id": host_tax_id, "pathogen_tax_id": pathogen_tax_id}
+            result = SESSION.run(query, parameters)
