@@ -7,7 +7,7 @@ def ingest_gmpd(SESSION):
 
     # Make sure taxons exist in the database
     # Cast variables for properties
-    for row_id, row in enumerate(gmpd_rows):
+    for GMPDrow, row in enumerate(gmpd_rows):
 
         citation = row["Citation"]
         prevalence = row["Prevalence"]
@@ -16,10 +16,10 @@ def ingest_gmpd(SESSION):
 
         # Create the Report node if it doesn't exist, and set its label to GMPD
         query = """
-        MERGE (r:GMPD:Report {citation:$citation, prevalence:$prevalence, collected:$collected, sampleType:$sampleType, row_id:$row_id})
+        MERGE (r:GMPD:Report {citation:$citation, prevalence:$prevalence, collected:$collected, sampleType:$sampleType, GMPDrow:$GMPDrow})
         RETURN r
         """
-        parameters = {"citation": citation, "prevalence": prevalence, "collected": collected, "sampleType": sampleType, "row_id": row_id}
+        parameters = {"citation": citation, "prevalence": prevalence, "collected": collected, "sampleType": sampleType, "GMPDrow": GMPDrow}
         result = SESSION.run(query, parameters)
         report_node = result.single()[0]
 
@@ -29,19 +29,19 @@ def ingest_gmpd(SESSION):
 
             # Create the relationships between the Report node and the host taxon
             query = """
-            MATCH (r:GMPD:Report {row_id: $row_id}), (h:Taxon {TaxId: $host_ncbi_id})
+            MATCH (r:GMPD:Report {GMPDrow: $GMPDrow}), (h:Taxon {TaxId: $host_ncbi_id})
             MERGE (r)-[hr:REPORTS {host: 1}]->(h)
             """
-            parameters = {"row_id": row_id,"host_ncbi_id": host_ncbi_id}
+            parameters = {"GMPDrow": GMPDrow,"host_ncbi_id": host_ncbi_id}
             result = SESSION.run(query, parameters)
 
         if pathogen_ncbi_id:
 
             # Create the relationships between the Report node and the pathogen taxon
             query = """
-            MATCH (r:GMPD:Report {row_id: $row_id}), (p:Taxon {TaxId: $pathogen_ncbi_id})
+            MATCH (r:GMPD:Report {GMPDrow: $GMPDrow}), (p:Taxon {TaxId: $pathogen_ncbi_id})
             MERGE (r)-[pr:REPORTS {pathogen: 1}]->(p)
             """
-            parameters = {"row_id": row_id, "pathogen_ncbi_id": pathogen_ncbi_id}
+            parameters = {"GMPDrow": GMPDrow, "pathogen_ncbi_id": pathogen_ncbi_id}
             result = SESSION.run(query, parameters)
 
