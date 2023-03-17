@@ -52,7 +52,7 @@ def ingest_flunet(SESSION):
                 f'\nMATCH (taxon{ncbi_id}:Taxon {{TaxId: "{ncbi_id}"}}) '
             )
             create_group_relationships += (
-                f"MERGE (report)-[:REPORTS {{pathogen: 1}}]->(taxon{ncbi_id}) "
+                f"MERGE (report)-[:REPORTS {{count: {row[col]}, pathogen: 1}}]->(taxon{ncbi_id}) "
             )
 
             # Parse the date string into a datetime object
