@@ -12,14 +12,15 @@ def ingest_gmpd(SESSION):
         citation = row["Citation"]
         prevalence = row["Prevalence"]
         collected = row["HostsSampled"]
-        sampleType = row["SamplingType"]        
+        sampleType = row["SamplingType"]    
+        dataSource = "GMPD"    
 
         # Create the Report node if it doesn't exist, and set its label to GMPD
         query = """
-        MERGE (r:GMPD:Report {citation:$citation, prevalence:$prevalence, collected:$collected, sampleType:$sampleType, gmpdRow:$gmpdRow})
+        MERGE (r:GMPD:Report {citation:$citation, prevalence:$prevalence, collected:$collected, sampleType:$sampleType, gmpdRow:$gmpdRow, dataSource = $dataSource})
         RETURN r
         """
-        parameters = {"citation": citation, "prevalence": prevalence, "collected": collected, "sampleType": sampleType, "gmpdRow": gmpdRow}
+        parameters = {"citation": citation, "prevalence": prevalence, "collected": collected, "sampleType": sampleType, "gmpdRow": gmpdRow, "dataSource": dataSource}
         result = SESSION.run(query, parameters)
         report_node = result.single()[0]
 
