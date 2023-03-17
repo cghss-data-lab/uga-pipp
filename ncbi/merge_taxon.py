@@ -9,12 +9,13 @@ def merge_taxon_node(taxon, SESSION):
     logger.info(f' MERGE node ({taxon["ScientificName"]})')
 
     rank = sanitize_rank(taxon["Rank"])
+    taxon_id = int(taxon["TaxId"])
 
     # Use rank, TaxID, and name as merge conditions
     SESSION.run(
         f'MERGE (n:Taxon:{rank} {{name: "{taxon["ScientificName"]}", '
         f'  Rank: "{rank}", '
-        f'  TaxId: "{taxon["TaxId"]}" '
+        f'  TaxId: {taxon_id} '
         f"}})"
     )
 
@@ -25,12 +26,14 @@ def merge_taxon_link(parent, child, SESSION):
         f'-[:CONTAINS]->({child["ScientificName"]})'
     )
 
+    parent_taxid = int(parent["TaxId"])
+    child_taxid = int(child["TaxId"])
+
     SESSION.run(
-        f'MATCH (parent:Taxon {{TaxId: "{parent["TaxId"]}"}}), '
-        f'  (child:Taxon {{TaxId: "{child["TaxId"]}"}}) '
+        f'MATCH (parent:Taxon {{TaxId: {parent_taxid}}}), '
+        f'  (child:Taxon {{TaxId: {child_taxid}}}) '
         f"MERGE (parent)-[:CONTAINS]->(child) "
     )
-
 
 def merge_lineage(lineage, SESSION):
     for index, taxon in enumerate(lineage):
