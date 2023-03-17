@@ -32,7 +32,7 @@ def ingest_gmpd(SESSION):
             MATCH (r:GMPD:Report {gmpdRow: $gmpdRow}), (h:Taxon {TaxId: $host_ncbi_id})
             MERGE (r)-[hr:REPORTS {host: 1}]->(h)
             """
-            parameters = {"gmpdRow": gmpdRow,"host_ncbi_id": host_ncbi_id}
+            parameters = {"dataSourceRow": gmpdRow,"host_ncbi_id": host_ncbi_id}
             result = SESSION.run(query, parameters)
 
         if pathogen_ncbi_id:
@@ -42,6 +42,6 @@ def ingest_gmpd(SESSION):
             MATCH (r:GMPD:Report {gmpdRow: $gmpdRow}), (p:Taxon {TaxId: $pathogen_ncbi_id})
             MERGE (r)-[pr:REPORTS {pathogen: 1}]->(p)
             """
-            parameters = {"gmpdRow": gmpdRow, "pathogen_ncbi_id": pathogen_ncbi_id}
+            parameters = {"dataSourceRow": gmpdRow, "pathogen_ncbi_id": pathogen_ncbi_id}
             result = SESSION.run(query, parameters)
 
