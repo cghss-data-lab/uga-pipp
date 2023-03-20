@@ -21,12 +21,7 @@ def ingest_gmpd(SESSION):
                                 dataSourceRow:$dataSourceRow,
                                 citation:$citation, 
                                 sampleType:$sampleType, 
-                                start: $start,
-                                duration: $duration, 
-                                collected: $collected, 
-                                processed: $processed, 
-                                positive: $positive, 
-                                negative: $negative, 
+                                collected: $collected,  
                                 prevalence:$prevalence})
         RETURN r
         """
@@ -36,12 +31,7 @@ def ingest_gmpd(SESSION):
             "dataSourceRow": dataSourceRow, 
             "citation": citation, 
             "sampleType": sampleType,
-            "start": None, 
-            "duration": None,
             "collected": collected,
-            "processed": None,
-            "positive": None,
-            "negative": None,
             "prevalence": prevalence, 
         }
 

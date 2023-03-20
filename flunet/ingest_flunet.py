@@ -52,43 +52,24 @@ def ingest_flunet(SESSION):
                 f'\nMATCH (taxon{ncbi_id}:Taxon {{TaxId: "{ncbi_id}"}}) '
             )
             create_group_relationships += (
-                f"MERGE (report)-[:REPORTS {{count: {row[col]}, pathogen: 1}}]->(taxon{ncbi_id}) "
+                f"CREATE (report)-[:REPORTS {{count: {row[col]}}}]->(taxon{ncbi_id}) "
             )
 
             # Parse the date string into a datetime object
             start_date_str = row["Start date"]
             start_date_obj = datetime.strptime(start_date_str, "%m/%d/%y")
 
-            query = """
-                MATCH (c:Country {name: $country})
-                """ + match_agent_groups + """
-                MERGE (report:FluNet:Report {
-                    dataSource: $dataSource,
-                    dataSourceRow: $index,
-                    citation: $citation,
-                    sampleType: $sampleType,
-                    start: $start_date,
-                    duration: $duration,
-                    collected: $collected,
-                    processed: $processed,
-                    positive: $positive,
-                    negative: $negative,
-                    prevalence: $prevalence
-                })-[:IN]->(c)
-                """ + create_group_relationships
-            parameters = {
-                "dataSource": "GMPD",
-                "country": country,
-                "index": index,
-                "citation": None,
-                "sampleType": None,
-                "start_date": start_date_obj, 
-                "duration": duration({"days": 7}),
-                "collected": int(row.get("Collected", None)), 
-                "processed": int(row.get("Processed", None)), 
-                "positive": int(row.get("Total positive", None)), 
-                "negative": int(row.get("Total negative", None)),
-                "prevalence": int(row.get("Total positive", 0)) / int(row.get("Collected", 1))
-            }
-            result = SESSION.run(query, parameters)
-
+            # Use the datetime object in your Cypher query
+            SESSION.run(
+                f'MATCH (c:Country {{name: "{country}"}}) '
+                + match_agent_groups
+                + f"\nMERGE (report:FluNet:Report {{"
+                f"  dataSource: 'FluNet', "
+                f"  dataSourceRow: {index}, "
+                f'  start: date("{start_date_obj.date()}"), '
+                f"  duration: duration({{days: 7}}), "
+                f'  collected: {row["Collected"] or 0}, '
+                f'  processed: {row["Processed"] or 0}, '
+                f'  positive: {row["Total positive"] or 0}, '
+                f'  negative: {row["Total negative"] or 0} '
+                f"}})-[:IN]->(c)" + create_group_relationships)
