@@ -39,7 +39,7 @@ def ingest_gmpd(SESSION):
             "start": None, 
             "duration": None,
             "collected": collected,
-            "processed": processed,
+            "processed": None,
             "positive": None,
             "negative": None,
             "prevalence": prevalence, 
