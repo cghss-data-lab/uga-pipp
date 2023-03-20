@@ -10,14 +10,14 @@ def ingest_gmpd(SESSION):
     for dataSourceRow, row in enumerate(gmpd_rows):
 
         citation = row["Citation"]
-        prevalence = float(row["Prevalence"])
-        collected = int(row["HostsSampled"])
+        prevalence = row["Prevalence"]
+        collected = row["HostsSampled"]
         sampleType = row["SamplingType"]    
         dataSource = "GMPD"    
 
         # Create the Report node if it doesn't exist, and set its label to GMPD
         query = """
-        MERGE (r:GMPD:Report {dataSource: $dataSource, 
+        MERGE (r:GMPD:CaseReport {dataSource: $dataSource, 
                                 dataSourceRow:$dataSourceRow,
                                 citation:$citation, 
                                 sampleType:$sampleType, 
