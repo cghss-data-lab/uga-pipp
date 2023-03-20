@@ -68,8 +68,8 @@ def ingest_flunet(SESSION):
                 f"  dataSourceRow: {index}, "
                 f'  start: date("{start_date_obj.date()}"), '
                 f"  duration: duration({{days: 7}}), "
-                f'  collected: {row["Collected"] or 0}, '
-                f'  processed: {row["Processed"] or 0}, '
-                f'  positive: {row["Total positive"] or 0}, '
-                f'  negative: {row["Total negative"] or 0} '
+                f'  collected: toInteger({row["Collected"] or 0}), '
+                f'  processed: toInteger({row["Processed"] or 0}), '
+                f'  positive: toInteger({row["Total positive"] or 0}), '
+                f'  negative: toInteger({row["Total negative"] or 0}) '
                 f"}})-[:IN]->(c)" + create_group_relationships)
