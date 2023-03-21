@@ -12,7 +12,7 @@ def ingest_gmpd(SESSION):
         reference = row["Citation"]
         prevalence = row["Prevalence"]
         collected = row["HostsSampled"]
-        sampleType = row["SamplingType"]    
+        detectionType = row["SamplingType"]    
         dataSource = "GMPD"    
 
         # Create the Report node if it doesn't exist, and set its label to GMPD
@@ -20,7 +20,7 @@ def ingest_gmpd(SESSION):
         MERGE (r:GMPD:CaseReport {dataSource: $dataSource, 
                                 dataSourceRow:$dataSourceRow,
                                 reference:$reference, 
-                                sampleType:$sampleType, 
+                                detectionType:$dectionType, 
                                 collected: $collected,  
                                 prevalence:$prevalence})
         RETURN r
@@ -30,7 +30,7 @@ def ingest_gmpd(SESSION):
             "dataSource": dataSource,
             "dataSourceRow": dataSourceRow, 
             "reference": reference, 
-            "sampleType": sampleType,
+            "detectionType": detectionType,
             "collected": collected,
             "prevalence": prevalence, 
         }
