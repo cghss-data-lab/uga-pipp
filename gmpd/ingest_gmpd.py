@@ -9,7 +9,7 @@ def ingest_gmpd(SESSION):
     # Cast variables for properties
     for dataSourceRow, row in enumerate(gmpd_rows):
 
-        citation = row["Citation"]
+        reference = row["Citation"]
         prevalence = row["Prevalence"]
         collected = row["HostsSampled"]
         sampleType = row["SamplingType"]    
@@ -19,7 +19,7 @@ def ingest_gmpd(SESSION):
         query = """
         MERGE (r:GMPD:CaseReport {dataSource: $dataSource, 
                                 dataSourceRow:$dataSourceRow,
-                                citation:$citation, 
+                                reference:$reference, 
                                 sampleType:$sampleType, 
                                 collected: $collected,  
                                 prevalence:$prevalence})
@@ -29,7 +29,7 @@ def ingest_gmpd(SESSION):
         parameters = {
             "dataSource": dataSource,
             "dataSourceRow": dataSourceRow, 
-            "citation": citation, 
+            "reference": reference, 
             "sampleType": sampleType,
             "collected": collected,
             "prevalence": prevalence, 
