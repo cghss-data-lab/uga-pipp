@@ -20,7 +20,7 @@ def ingest_gmpd(SESSION):
         MERGE (r:GMPD:CaseReport {dataSource: $dataSource, 
                                 dataSourceRow:$dataSourceRow,
                                 reference:$reference, 
-                                detectionType:$dectionType, 
+                                detectionType:$detectionType, 
                                 collected: $collected,  
                                 prevalence:$prevalence})
         RETURN r
