@@ -2,7 +2,7 @@ import ncbi
 from loguru import logger
 import time
 
-SLEEP_TIME = 0.5 #2 requests/second
+SLEEP_TIME = 0.4 #3 requests/second
 
 
 def id_search(name):

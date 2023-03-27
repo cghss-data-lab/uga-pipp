@@ -1,7 +1,5 @@
 import ncbi
-import time
 
-SLEEP_TIME = 0.5
 
 
 def merge_agent_groups(agent_groups, SESSION):
