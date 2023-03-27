@@ -44,7 +44,7 @@ def ingest_gmpd(SESSION):
 
             # Create the relationships between the Report node and the host taxon
             query = """
-            MATCH (r:GMPD:Report {dataSourceRow: $dataSourceRow}), (h:Taxon {TaxId: $host_ncbi_id})
+            MATCH (r:GMPD:CaseReport {dataSourceRow: $dataSourceRow}), (h:Taxon {TaxId: $host_ncbi_id})
             MERGE (r)-[hr:REPORTS {host: 1}]->(h)
             """
             parameters = {"dataSourceRow": dataSourceRow,"host_ncbi_id": host_ncbi_id}
@@ -54,7 +54,7 @@ def ingest_gmpd(SESSION):
 
             # Create the relationships between the Report node and the pathogen taxon
             query = """
-            MATCH (r:GMPD:Report {dataSourceRow: $dataSourceRow}), (p:Taxon {TaxId: $pathogen_ncbi_id})
+            MATCH (r:GMPD:CaseReport {dataSourceRow: $dataSourceRow}), (p:Taxon {TaxId: $pathogen_ncbi_id})
             MERGE (r)-[pr:REPORTS {pathogen: 1}]->(p)
             """
             parameters = {"dataSourceRow": dataSourceRow, "pathogen_ncbi_id": pathogen_ncbi_id}
