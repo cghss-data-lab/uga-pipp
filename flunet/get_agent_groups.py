@@ -25,7 +25,7 @@ def get_ncbi_id(key):
     ncbi_term = column_to_ncbi_name(key)
 
     if ncbi_term:
-        return ncbi.id_search(ncbi_term)
+        return int(ncbi.id_search(ncbi_term))
 
     return None
 
