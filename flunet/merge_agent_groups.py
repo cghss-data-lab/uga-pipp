@@ -1,7 +1,5 @@
 import ncbi
 
-
-
 def merge_agent_groups(agent_groups, SESSION):
     """
     Merge the taxons for the agent group into the
