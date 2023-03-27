@@ -53,7 +53,7 @@ def ingest_flunet(SESSION):
                     f'\nMATCH (taxon{ncbi_id}:Taxon {{TaxId: {ncbi_id}}}) '
                 )
                 create_group_relationships += (
-                    f"CREATE (report)-[:REPORTS {{count: {row[col]}}}]->(taxon{ncbi_id}) "
+                    f"MERGE (report)-[:REPORTS {{count: {row[col]}}}]->(taxon{ncbi_id}) "
                 )
 
                 # Parse the date string into a datetime object
@@ -64,7 +64,7 @@ def ingest_flunet(SESSION):
                 cypher_query = (
                     f'MATCH (c:Country {{name: "{country}"}}) '
                     + match_agent_groups
-                    + f"\nCREATE (report:FluNet:CaseReport {{"
+                    + f"\nMERGE (report:FluNet:CaseReport {{"
                     f"  dataSource: 'FluNet', "
                     f"  dataSourceRow: {index}, "
                     f'  start: date("{start_date_obj.date()}"), '
