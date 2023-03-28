@@ -1,46 +1,22 @@
-import requests
-import os
-from dotenv import load_dotenv
+from loguru import logger
 
-load_dotenv()
-
-GEO_AUTH = os.getenv("GEO_USER")
-
-def geo_id_search(search_query):
+def geo_id_search(geoname):
     """
-    Searches for a location in GeoNames and returns a dictionary with its information.
+    Searches for a location using its name 
+    Returns integer Geonames ID
     """
-    base_url = "http://api.geonames.org/searchJSON"
+
+    logger.info(f"Searching geonames for term {geoname}")
     params = {
-        "q": search_query, 
+        "q": geoname, 
         "maxRows": 1, 
-        "username": GEO_AUTH, 
         "fuzzy":0.8
         }
 
-    response = requests.get(base_url, params=params)
-    data = response.json()
+    data = geo_api("searchJSON", params)
 
     if data.get("totalResultsCount") == 0:
         return None
 
-    geoId = data.get("geonames")[0]["geonameId"]
-    
+    geoId = int(data["geonames"][0]["geonameId"])
     return geoId
-
-   
-    # return {
-    #     "GeoId": result.get("geonameId")
-    # }
-
-        # "name": result.get("name"),
-        # "countryName": result.get("countryName"),
-        # "continent": result.get("continentCode"),
-        # "adminDivision1": result.get("adminCode1"),
-        # "adminDivision2": result.get("adminCode2"),
-        # "adminDivision3": result.get("adminCode3"),
-        # "adminDivision4": result.get("adminCode4"),
-        # "adminDivision5": result.get("adminCode5"),
-        # "latitude": result.get("lat"),
-        # "longitude": result.get("lng"),
-        # "population": result.get("population")
