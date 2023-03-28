@@ -1,4 +1,6 @@
+from geonames import geo_api
 from loguru import logger
+
 
 def geo_id_search(geoname):
     """
