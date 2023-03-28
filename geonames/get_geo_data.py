@@ -1,46 +1,20 @@
-import geonames
-from bs4 import Tag
-import time
+from geonames import geo_id_search
+from geonames import geo_api
+from loguru import logger
 
-def get_metadata(geoId):
-    """Request metadata by Geonames ID, and return cleaned object"""
+def get_geo_data(geoname):
+    """Search by Geonames ID
+     Return location metadata"""
 
-    params = {"db": "Taxonomy", "id": geoId}
-    soup = ncbi.api_soup("efetch", params)
+    geoId = geo_id_search(geoname)
 
-    taxon = soup.TaxaSet.Taxon
+    logger.info(f"Searching metadata for ID {geoId}")
+    params = {
+        "q": geoId, 
+        "maxRows": 1
+        }
 
-    taxon_metadata = {
-        "ScientificName": taxon.ScientificName.getText(),
-        "ParentTaxId": taxon.ParentTaxId.getText(),
-        "Rank": taxon.Rank.getText(),
-        "Division": taxon.Division.getText(),
-        "GeneticCode": {"GCId": taxon.GCId.getText(), "GCName": taxon.GCName.getText()},
-        "MitoGeneticCode": {
-            "MGCId": taxon.MGCId.getText(),
-            "MGCName": taxon.MGCName.getText(),
-        },
-        "Lineage": taxon.Lineage.getText(),
-        "CreateDate": taxon.CreateDate.getText(),
-        "UpdateDate": taxon.UpdateDate.getText(),
-        "PubDate": taxon.PubDate.getText(),
-    }
+    data = geo_api("getJSON", params)
+    # Specify specific data
+    return data
 
-    if taxon.otherNames:
-        taxon["OtherNames"] = (taxon.OtherNames.getText(),)
-
-    # parse lineage
-    lineage_ex = []
-    for taxon in taxon.LineageEx.children:
-        if isinstance(taxon, Tag):
-            lineage_ex.append(
-                {
-                    "TaxId": taxon.TaxId.getText(),
-                    "ScientificName": taxon.ScientificName.getText(),
-                    "Rank": taxon.Rank.getText(),
-                }
-            )
-        time.sleep(SLEEP_TIME)
-    taxon_metadata["LineageEx"] = lineage_ex
-
-    return taxon_metadata
