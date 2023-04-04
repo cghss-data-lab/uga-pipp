@@ -22,3 +22,4 @@ def geo_id_search(geoname):
 
     geoId = int(data["geonames"][0]["geonameId"])
     return geoId
+

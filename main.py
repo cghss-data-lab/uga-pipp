@@ -15,8 +15,6 @@ NEO4J_URI = os.getenv("NEO4J_URI")
 NEO4J_DRIVER = GraphDatabase.driver(NEO4J_URI, auth=NEO4J_AUTH)
 SESSION = NEO4J_DRIVER.session()
 
-def get_geonames_id(name):
-    pass
 
 if __name__ == "__main__":
     
