@@ -80,11 +80,18 @@ def get_geo_hierarchy(geoname):
         "geonameId":geoId
     }
 
+    # Dictionary object returned by geo_api with hierarchical information
     hierarchy = geo_api("hierarchyJSON",params)
+    hierarchy_names = hierarchy.get("geonames")
 
-    return hierarchy
+    # Traverse hierarchy to obtain parents of each location
+    parents = []
 
+    for geo in hierarchy_names:
+        parent=geo.get("name")
+        parents.append(parent)
 
+    return parents
 
 print(get_geo_hierarchy("Kansas"))
 
