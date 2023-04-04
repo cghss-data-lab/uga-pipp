@@ -10,6 +10,9 @@ def merge_geo(geoname, SESSION):
 
     # Search for the location by name and get its ID
     geoId = geo_id_search(geoname)
+    if not geoId:
+        logger.warning(f"Cannot find geoname ID for {geoname}")
+        return
 
     # Use the ID to get the location's hierarchy
     params = {"geonameId": geoId}
@@ -33,7 +36,6 @@ def merge_geo(geoname, SESSION):
  # Create nodes and CONTAINS relationships for each level in the hierarchy
     for i in range(len(hierarchy_list)):
         place = hierarchy_list[i]
-        logger.info(f"MERGE node for {place}")
         params = {
             "name": place["name"],
             "geonameId": place.get("geonameId", None),
@@ -49,8 +51,6 @@ def merge_geo(geoname, SESSION):
 # Create relationship to parent, except for first item (Earth)
         if i > 0:
             parent = hierarchy_list[i-1]
-            logger.info(f"MERGE relationship to {parent}")
-
             SESSION.run("""
                 MATCH (child:Geo {name: $child_name})
                 MATCH (parent:Geo {name: $parent_name})
