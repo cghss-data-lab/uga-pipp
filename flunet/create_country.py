@@ -13,5 +13,5 @@ def create_country(country, zone, SESSION):
 
     SESSION.run(
     f'MATCH  (zone:TransmissionZone {{name: "{zone}"}}) '
-    f'MERGE (n:Country:Geo {{name: "{country}"}})-[:IN]->(zone) '
+    f'MERGE (g:Geo {{name: "{country}"}})-[:IN]->(zone) '
 )
