@@ -3,6 +3,7 @@ from geonames import geo_id_search
 from geonames import geo_api
 from geonames import get_geo_data
 
+
 def merge_geo(geoname, SESSION):
     """
     Search for a location by Geonames ID, obtain its hierarchy,
