@@ -29,28 +29,28 @@ def link_gmpd_to_ncbi(row, SESSION):
     pathogen_species = row["ParasiteReportedName"]
     
     try:
-        host_ncbi_id = search_and_merge(host_species, SESSION)
+        host_ncbi_id = int(search_and_merge(host_species, SESSION))
         if host_ncbi_id:
-            pathogen_ncbi_id = search_and_merge(pathogen_species, SESSION)
+            pathogen_ncbi_id = int(search_and_merge(pathogen_species, SESSION))
             if pathogen_ncbi_id:
                 return (host_ncbi_id, pathogen_ncbi_id)
 
         elif row["HostCorrectedName"]:
-            host_ncbi_id = search_and_merge(row["HostCorrectedName"], SESSION)
+            host_ncbi_id = int(search_and_merge(row["HostCorrectedName"], SESSION))
             if host_ncbi_id:
-                pathogen_ncbi_id = search_and_merge(pathogen_species, SESSION)
+                pathogen_ncbi_id = int(search_and_merge(pathogen_species, SESSION))
                 if pathogen_ncbi_id:
                     return (host_ncbi_id, pathogen_ncbi_id)
         
         if not host_ncbi_id:
             write_to_not_found(f"No NCBI ID for host {host_species} or {row['HostCorrectedName']}: \n")
 
-        pathogen_ncbi_id = search_and_merge(pathogen_species, SESSION)
+        pathogen_ncbi_id = int(search_and_merge(pathogen_species, SESSION))
         if pathogen_ncbi_id:
             return (None, pathogen_ncbi_id)
 
         elif row["ParasiteCorrectedName"]:
-            pathogen_ncbi_id = search_and_merge(row["ParasiteCorrectedName"], SESSION)
+            pathogen_ncbi_id = int(search_and_merge(row["ParasiteCorrectedName"], SESSION))
             if pathogen_ncbi_id:
                 return (None, pathogen_ncbi_id)
 
