@@ -9,21 +9,21 @@ def merge_geo(geoname_or_id, SESSION):
     Search for a location by name and return ID, obtain its hierarchy,
     and create nodes and relationships for each parent.
     """
-    # Determine whether geoname_or_id is a geoname or a geoid
+    # Determine whether geoname_or_id is a geoname or a geonameId
     if isinstance(geoname_or_id, str):
         # Search for the location by name and get its ID
-        geoId = geo_id_search(geoname_or_id)
-        if not geoId:
+        geonameId = geo_id_search(geoname_or_id)
+        if not geonameId:
             logger.warning(f"Cannot find geoname ID for {geoname_or_id}")
             return
     elif isinstance(geoname_or_id, int):
-        geoId = geoname_or_id
+        geonameId = geoname_or_id
     else:
         logger.warning(f"{geoname_or_id} is not a valid geoname or geoname ID")
         return
 
     # Use the ID to get the location's hierarchy
-    params = {"geonameId": geoId}
+    params = {"geonameId": geonameId}
     hierarchy = geo_api("hierarchyJSON", params)
     hierarchy_list = hierarchy.get("geonames")
     
@@ -59,11 +59,11 @@ def merge_geo(geoname_or_id, SESSION):
     if hierarchy_list:
         for i in range(len(hierarchy_list)):
             place = hierarchy_list[i]
-            geoId = place.get("geonameId", None)
-            if geoId:
-                metadata = get_geo_data(geoId)
+            geonameId = place.get("geonameId", None)
+            if geonameId:
+                metadata = get_geo_data(geonameId)
                 params = {
-                    "geonameId": int(geoId),
+                    "geonameId": int(geonameId),
                     "name": metadata.get("name"),
                     "adminCode1": metadata.get("adminCodes1", {}).get("ISO3166_2", "N/A"),
                     "adminType":metadata.get("adminTypeName","N/A"),

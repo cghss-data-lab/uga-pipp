@@ -20,6 +20,6 @@ def geo_id_search(geoname):
     if data.get("totalResultsCount") == 0:
         return None
 
-    geoId = int(data["geonames"][0]["geonameId"])
-    return geoId
+    geonameId = int(data["geonames"][0]["geonameId"])
+    return geonameId
 

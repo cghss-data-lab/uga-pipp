@@ -2,18 +2,16 @@ import ncbi
 
 NOT_FOUND_FILE = "gmpd/species_not_found.txt"
 
-searched_terms = set()
-not_found_terms = set()
 
 def write_to_not_found(message):
-    global not_found_terms
+    not_found_terms = set()
     if message not in not_found_terms:
         with open(NOT_FOUND_FILE, "a") as f:
             f.write(message)
         not_found_terms.add(message)
 
 def search_and_merge(term, SESSION):
-    global searched_terms
+    searched_terms = set()
     if term not in searched_terms:
         searched_terms.add(term)
         ncbi_id = ncbi.id_search(term)

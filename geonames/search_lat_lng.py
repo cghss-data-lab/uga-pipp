@@ -11,7 +11,7 @@ def search_lat_lng(lat, lng):
         logger.warning(f"No nearby places found for lat: {lat}, lng: {lng}")
         return None
 
-    geoId = result["geonames"][0]["geonameId"]
+    geonameId = result["geonames"][0]["geonameId"]
 
     # Return the name of the nearest place
-    return geoId
+    return geonameId
