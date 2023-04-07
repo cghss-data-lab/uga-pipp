@@ -3,6 +3,19 @@ from geonames import geo_id_search
 from geonames import geo_api
 from geonames import get_geo_data
 
+def get_iso(iso2):
+
+    params = {
+        "country": iso2,
+        "maxRows": 1
+    }
+
+    result = geo_api("countryInfoJSON", params)
+
+    data = result["geonames"][0]["isoAlpha3"]
+
+    return data
+
 
 def merge_geo(geoname_or_id, SESSION):
     """
@@ -34,7 +47,8 @@ def merge_geo(geoname_or_id, SESSION):
             name: $name, 
             adminCode1: $adminCode1,
             adminType: $adminType,
-            countryCode: $countryCode,
+            iso2: $iso2,
+            iso3: $iso3,
             fclName: $fclName, 
             fcode: $fcode,
             fcodeName: $fcodeName,
@@ -60,15 +74,19 @@ def merge_geo(geoname_or_id, SESSION):
         for i in range(len(hierarchy_list)):
             place = hierarchy_list[i]
             geonameId = place.get("geonameId", None)
+            iso2 = place.get("countryCode",None)
+
             if geonameId:
                 metadata = get_geo_data(geonameId)
+
                 params = {
                     "geonameId": int(geonameId),
                     "name": metadata.get("name"),
                     "adminCode1": metadata.get("adminCodes1", {}).get("ISO3166_2", "N/A"),
                     "adminType":metadata.get("adminTypeName","N/A"),
-                    "countryCode":metadata.get("countryCode","N/A"),
-                    "fclName": metadata.get("fclName", None),
+                    "iso2":metadata.get("countryCode","N/A"),
+                    "iso3": get_iso(iso2) if metadata.get("fcode") == "PCLI" else "N/A",
+                    "fclName": metadata.get("fclName", "N/A"),
                     "fcode":metadata.get("fcode",None),
                     "fcodeName": metadata.get("fcodeName", None),
                     "lat": metadata.get("lat", None),
@@ -83,7 +101,6 @@ def merge_geo(geoname_or_id, SESSION):
                     SESSION.run(geo_query_with_label, params)
                 else:
                     SESSION.run(geo_query, params)
-
 
             # Create relationship to parent, except for first item (Earth)
             if i > 0:
