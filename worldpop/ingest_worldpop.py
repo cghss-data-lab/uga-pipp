@@ -1,6 +1,13 @@
 from datetime import datetime
 from worldpop import get_rows
 from loguru import logger
+import ncbi
+import geonames
+
+def search_and_merge(TaxId, SESSION):
+    ncbi_metadata = ncbi.get_metadata(TaxId)
+    taxon = {**ncbi_metadata, "TaxId":TaxId}
+    ncbi.merge_taxon(taxon, SESSION)
 
 def ingest_worldpop(SESSION):
     pop_rows = get_rows()
@@ -51,6 +58,7 @@ def ingest_worldpop(SESSION):
             # under_40_mortality_rate = float(row["Q0040"])
             # net_migration = float(row["NetMigrations"]*1000)
             net_migration_rate = float(row["CNMR"])
+            TaxId = 9606
 
             pop_query = """
                 MERGE (p:Pop {dataSource: $dataSource, 
@@ -102,6 +110,9 @@ def ingest_worldpop(SESSION):
             # Create the Population node
             SESSION.run(pop_query, parameters)
 
+            # Create the GeoNames country if it doesn't exist
+            geonames.merge_geo(row["Location"], SESSION)
+
             # Match GeoNames country to population country on ISO2
             SESSION.run(
                 f'MATCH (g:Geo {{iso2: "{iso2}"}}) '
@@ -111,3 +122,20 @@ def ingest_worldpop(SESSION):
                 f'MERGE (p)-[:INHABITS]->(g)',
                 props=parameters
             )
+
+            # Match Taxon node to population on TaxId
+
+            search_and_merge(TaxId, SESSION)
+            
+            logger.info(f"Creating linkage for {TaxId}")
+
+            SESSION.run(
+                f'MATCH (t:Taxon {{TaxId: {TaxId}}}) '
+                f'MERGE (p:Pop {{TaxId: {TaxId}}}) '
+                f'ON CREATE SET p = $props '
+                f'ON MATCH SET p += $props '
+                f'MERGE (p)-[:COMPRISES]->(t)',
+                props=parameters
+            )
+
+
