@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 # from carnivoreGMPD import ingest_carnivoreGMPD
 from flunet import ingest_flunet
 from gmpd import ingest_gmpd
+from worldpop import ingest_worldpop
 
 load_dotenv()
 
@@ -24,6 +25,8 @@ if __name__ == "__main__":
 
     ingest_gmpd(SESSION)
     ingest_flunet(SESSION)
+    ingest_worldpop(SESSION)
+
 
 
 
