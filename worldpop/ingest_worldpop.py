@@ -28,9 +28,9 @@ def ingest_worldpop(SESSION):
                 estimate = False
             raw_date = datetime(year, 7, 1)
             date = raw_date.strftime('%Y-%m-%d')
-            total_pop = (float(row['TPopulation1July']) * 1000)
-            total_male_pop = (float(row['TPopulationMale1July'])*1000)
-            total_female_pop = (float(row['TPopulationFemale1July'])*1000)
+            total_pop = (int(row['TPopulation1July']) * 1000)
+            total_male_pop = (int(row['TPopulationMale1July'])*1000)
+            total_female_pop = (int(row['TPopulationFemale1July'])*1000)
             pop_density_sqkm = float(row["PopDensity"])
             pop_sex_ratio = float(row["PopSexRatio"])
             median_age = float(row["MedianAgePop"])
@@ -58,7 +58,7 @@ def ingest_worldpop(SESSION):
             # under_40_mortality_rate = float(row["Q0040"])
             # net_migration = float(row["NetMigrations"]*1000)
             net_migration_rate = float(row["CNMR"])
-            TaxId = 9606
+            TaxId = 9606 # Tax ID for humans
 
             pop_query = """
                 MERGE (p:Pop {dataSource: $dataSource, 
