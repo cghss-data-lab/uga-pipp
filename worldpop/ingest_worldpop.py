@@ -19,8 +19,8 @@ def ingest_worldpop(SESSION):
                 estimate = True
             else:
                 estimate = False
-            date = datetime(year, 7, 1)
-            formatted_date = date.strftime('%Y-%m-%d')
+            raw_date = datetime(year, 7, 1)
+            date = raw_date.strftime('%Y-%m-%d')
             total_pop = (float(row['TPopulation1July']) * 1000)
             total_male_pop = (float(row['TPopulationMale1July'])*1000)
             total_female_pop = (float(row['TPopulationFemale1July'])*1000)
@@ -55,7 +55,7 @@ def ingest_worldpop(SESSION):
             pop_query = """
                 MERGE (p:Pop {dataSource: $dataSource, 
                                 dataSourceRow:$dataSourceRow,
-                                date:date($formatted_date),
+                                date:date($date),
                                 totalPopulation:$total_pop, 
                                 totalMalePop:$total_male_pop, 
                                 totalFemalePop: $total_female_pop,  
@@ -79,7 +79,7 @@ def ingest_worldpop(SESSION):
             parameters = {
                 "dataSource":dataSource,
                 "dataSourceRow":dataSourceRow,
-                "formatted_date":formatted_date,
+                "date":date,
                 "total_pop":total_pop,
                 "total_male_pop":total_male_pop,
                 "total_female_pop":total_female_pop,
