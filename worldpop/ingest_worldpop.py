@@ -5,12 +5,15 @@ import ncbi
 import geonames
 
 def search_and_merge(TaxId, SESSION):
+    logger.info(f'CREATING node {TaxId}')
     ncbi_metadata = ncbi.get_metadata(TaxId)
     taxon = {**ncbi_metadata, "TaxId":TaxId}
     ncbi.merge_taxon(taxon, SESSION)
 
 def ingest_worldpop(SESSION):
     pop_rows = get_rows()
+    TaxId = 9606 # Tax ID for humans
+    search_and_merge(TaxId, SESSION)
 
     for index, row in enumerate(pop_rows):
         iso2 = row["ISO2_code"]
@@ -28,9 +31,9 @@ def ingest_worldpop(SESSION):
                 estimate = False
             raw_date = datetime(year, 7, 1)
             date = raw_date.strftime('%Y-%m-%d')
-            total_pop = (int(row['TPopulation1July']) * 1000)
-            total_male_pop = (int(row['TPopulationMale1July'])*1000)
-            total_female_pop = (int(row['TPopulationFemale1July'])*1000)
+            total_pop = (float(row['TPopulation1July']) * 1000)
+            total_male_pop = (float(row['TPopulationMale1July'])*1000)
+            total_female_pop = (float(row['TPopulationFemale1July'])*1000)
             pop_density_sqkm = float(row["PopDensity"])
             pop_sex_ratio = float(row["PopSexRatio"])
             median_age = float(row["MedianAgePop"])
@@ -58,7 +61,6 @@ def ingest_worldpop(SESSION):
             # under_40_mortality_rate = float(row["Q0040"])
             # net_migration = float(row["NetMigrations"]*1000)
             net_migration_rate = float(row["CNMR"])
-            TaxId = 9606 # Tax ID for humans
 
             pop_query = """
                 MERGE (p:Pop {dataSource: $dataSource, 
@@ -113,29 +115,17 @@ def ingest_worldpop(SESSION):
             # Create the GeoNames country if it doesn't exist
             geonames.merge_geo(row["Location"], SESSION)
 
-            # Match GeoNames country to population country on ISO2
-            SESSION.run(
-                f'MATCH (g:Geo {{iso2: "{iso2}"}}) '
-                f'MERGE (p:Pop {{iso2: "{iso2}"}}) '
-                f'ON CREATE SET p = $props '
-                f'ON MATCH SET p += $props '
-                f'MERGE (p)-[:INHABITS]->(g)',
-                props=parameters
-            )
-
-            # Match Taxon node to population on TaxId
-
-            search_and_merge(TaxId, SESSION)
-            
-            logger.info(f"Creating linkage for {TaxId}")
-
+            # Match Taxon node to population on TaxId and connect to Geo through Pop
             SESSION.run(
                 f'MATCH (t:Taxon {{TaxId: {TaxId}}}) '
                 f'MERGE (p:Pop {{TaxId: {TaxId}}}) '
                 f'ON CREATE SET p = $props '
                 f'ON MATCH SET p += $props '
-                f'MERGE (p)-[:COMPRISES]->(t)',
+                f'MERGE (p)-[:COMPRISES]->(t) '
+                f'MERGE (g:Geo {{iso2: "{iso2}"}}) '
+                f'MERGE (p)-[:INHABITS]->(g)',
                 props=parameters
             )
+
 
 
