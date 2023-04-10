@@ -43,7 +43,7 @@ def merge_geo(geoname_or_id, SESSION):
     # Define query
     geo_query = """
         MERGE (g:Geo {
-            dataSource: $dataSource
+            dataSource: $dataSource,
             geonameId: $geonameId,
             name: $name, 
             adminCode1: $adminCode1,
@@ -81,8 +81,8 @@ def merge_geo(geoname_or_id, SESSION):
                 metadata = get_geo_data(geonameId)
 
                 params = {
-                    "geonameId": int(geonameId),
                     "dataSource": "GeoNames",
+                    "geonameId": int(geonameId),
                     "name": metadata.get("name"),
                     "adminCode1": metadata.get("adminCodes1", {}).get("ISO3166_2", "N/A"),
                     "adminType":metadata.get("adminTypeName","N/A"),
