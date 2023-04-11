@@ -10,45 +10,49 @@ def write_to_not_found(message):
             f.write(message)
         not_found_terms.add(message)
 
-def search_and_merge(term, SESSION):
-    searched_terms = set()
-    if term not in searched_terms:
-        searched_terms.add(term)
-        ncbi_id = ncbi.id_search(term)
-        if ncbi_id:
-            ncbi_metadata = ncbi.get_metadata(ncbi_id)
-            taxon = {**ncbi_metadata, "TaxId":ncbi_id}
-            ncbi.merge_taxon(taxon, SESSION)
-            return ncbi_id
-    return None
+def search_and_merge(term, searched_terms, not_found_terms, SESSION):
+    if term in searched_terms and term in not_found_terms:
+        return None
 
-def link_gmpd_to_ncbi(row, SESSION):
+    searched_terms.add(term)
+    ncbi_id = ncbi.id_search(term)
+    if ncbi_id:
+        ncbi_metadata = ncbi.get_metadata(ncbi_id)
+        taxon = {**ncbi_metadata, "TaxId":ncbi_id}
+        ncbi.merge_taxon(taxon, SESSION)
+        return ncbi_id
+    else:
+        not_found_terms.add(term)
+        return None
+
+
+def link_gmpd_to_ncbi(row, searched_terms, not_found_terms, SESSION):
     host_species = row["HostReportedName"]
     pathogen_species = row["ParasiteReportedName"]
     
     try:
-        host_ncbi_id = int(search_and_merge(host_species, SESSION))
+        host_ncbi_id = int(search_and_merge(host_species, searched_terms, not_found_terms, SESSION))
         if host_ncbi_id:
-            pathogen_ncbi_id = int(search_and_merge(pathogen_species, SESSION))
+            pathogen_ncbi_id = int(search_and_merge(pathogen_species, searched_terms, not_found_terms, SESSION))
             if pathogen_ncbi_id:
                 return (host_ncbi_id, pathogen_ncbi_id)
 
         elif row["HostCorrectedName"]:
-            host_ncbi_id = int(search_and_merge(row["HostCorrectedName"], SESSION))
+            host_ncbi_id = int(search_and_merge(row["HostCorrectedName"], searched_terms, not_found_terms, SESSION))
             if host_ncbi_id:
-                pathogen_ncbi_id = int(search_and_merge(pathogen_species, SESSION))
+                pathogen_ncbi_id = int(search_and_merge(pathogen_species, searched_terms, not_found_terms, SESSION))
                 if pathogen_ncbi_id:
                     return (host_ncbi_id, pathogen_ncbi_id)
         
         if not host_ncbi_id:
             write_to_not_found(f"No NCBI ID for host {host_species} or {row['HostCorrectedName']}: \n")
 
-        pathogen_ncbi_id = int(search_and_merge(pathogen_species, SESSION))
+        pathogen_ncbi_id = int(search_and_merge(pathogen_species, searched_terms, not_found_terms, SESSION))
         if pathogen_ncbi_id:
             return (None, pathogen_ncbi_id)
 
         elif row["ParasiteCorrectedName"]:
-            pathogen_ncbi_id = int(search_and_merge(row["ParasiteCorrectedName"], SESSION))
+            pathogen_ncbi_id = int(search_and_merge(row["ParasiteCorrectedName"], searched_terms, not_found_terms, SESSION))
             if pathogen_ncbi_id:
                 return (None, pathogen_ncbi_id)
 
@@ -60,3 +64,4 @@ def link_gmpd_to_ncbi(row, SESSION):
     except Exception as e:
         write_to_not_found(f"Error getting taxon: {e}\n")
         return (None, None)
+
