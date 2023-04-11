@@ -10,4 +10,4 @@ def create_transmission_zone(zone, SESSION):
     logger.info(f" CREATE transmission zone node ({zone})")
     # merge_geo(zone, SESSION)
 
-    SESSION.run(f'MERGE (n:TransmissionZone:Geo {{name: "{zone}"}})')
+    SESSION.run(f'MERGE (n:TransmissionZone:Geography {{name: "{zone}"}})')

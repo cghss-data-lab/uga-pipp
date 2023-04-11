@@ -42,7 +42,7 @@ def merge_geo(geoname_or_id, SESSION):
     
     # Define query
     geo_query = """
-        MERGE (g:Geo {
+        MERGE (g:Geography {
             dataSource: $dataSource,
             geonameId: $geonameId,
             name: $name, 
@@ -108,7 +108,7 @@ def merge_geo(geoname_or_id, SESSION):
             if i > 0:
                 parent = hierarchy_list[i-1]
                 SESSION.run("""
-                    MATCH (child:Geo {name: $child_name})
-                    MATCH (parent:Geo {name: $parent_name})
+                    MATCH (child:Geography {name: $child_name})
+                    MATCH (parent:Geography {name: $parent_name})
                     MERGE (parent)-[:CONTAINS]->(child)
                 """, {"child_name": metadata["name"], "parent_name": parent["name"]})

@@ -54,7 +54,7 @@ def ingest_gmpd(SESSION):
 
             # Create the Report node if it doesn't exist, and set its label to GMPD
             query = """
-                MATCH (g:Geo {geonameId: $geonameId})
+                MATCH (g:Geography {geonameId: $geonameId})
                 MERGE (r:GMPD:CaseReport {dataSource: $dataSource, 
                                             dataSourceRow: $dataSourceRow,
                                             reference: $reference, 

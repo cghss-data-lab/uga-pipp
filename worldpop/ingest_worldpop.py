@@ -64,7 +64,7 @@ def ingest_worldpop(SESSION):
             duration = 'P1Y' # set duration to 1 year
 
             pop_query = """
-                MERGE (p:Pop {dataSource: $dataSource, 
+                MERGE (p:Population {dataSource: $dataSource, 
                                 dataSourceRow:$dataSourceRow,
                                 date:date($date),
                                 duration:duration($duration),
@@ -121,11 +121,11 @@ def ingest_worldpop(SESSION):
             # Match Taxon node to population on TaxId and connect to Geo through Pop
             SESSION.run(
                 f'MATCH (t:Taxon {{TaxId: {TaxId}}}) '
-                f'MERGE (p:Pop {{TaxId: {TaxId}}}) '
+                f'MERGE (p:Population {{TaxId: {TaxId}}}) '
                 f'ON CREATE SET p = $props '
                 f'ON MATCH SET p += $props '
                 f'MERGE (p)-[:COMPRISES]->(t) '
-                f'MERGE (g:Geo {{iso2: "{iso2}"}}) '
+                f'MERGE (g:Geography {{iso2: "{iso2}"}}) '
                 f'MERGE (p)-[:INHABITS]->(g)',
                 props=parameters
             )
