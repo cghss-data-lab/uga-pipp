@@ -89,26 +89,29 @@ def merge_geo(geoname_or_id, SESSION):
                     "iso2":metadata.get("countryCode","N/A"),
                     "iso3": get_iso(iso2) if metadata.get("fcode") == "PCLI" else "N/A",
                     "fclName": metadata.get("fclName", "N/A"),
-                    "fcode":metadata.get("fcode",None),
-                    "fcodeName": metadata.get("fcodeName", None),
-                    "lat": metadata.get("lat", None),
-                    "lng": metadata.get("lng", None),
+                    "fcode":metadata.get("fcode","N/A"),
+                    "fcodeName": metadata.get("fcodeName", "N/A"),
+                    "lat": metadata.get("lat", 0),
+                    "lng": metadata.get("lng", 0),
                     "elevation": metadata.get("elevation", "N/A")
                 }
                 # Get the label for this node based on its fcode value
                 label = fcode_to_label.get(metadata.get("fcode"))
-                if label:
-                    # Add the label to the node creation query
-                    geo_query_with_label = f"{geo_query}\nSET g:{label}"
-                    SESSION.run(geo_query_with_label, params)
-                else:
-                    SESSION.run(geo_query, params)
 
-            # Create relationship to parent, except for first item (Earth)
-            if i > 0:
-                parent = hierarchy_list[i-1]
-                SESSION.run("""
-                    MATCH (child:Geography {name: $child_name})
-                    MATCH (parent:Geography {name: $parent_name})
-                    MERGE (parent)-[:CONTAINS]->(child)
-                """, {"child_name": metadata["name"], "parent_name": parent["name"]})
+                if params["name"] is not None:
+                    if label in fcode_to_label:
+                        # Add the label to the node creation query
+                        geo_query_with_label = f"{geo_query}\nSET g:{label}"
+                        SESSION.run(geo_query_with_label, params)
+                    else:
+                        SESSION.run(geo_query, params)
+
+
+                    # Create relationship to parent, except for first item (Earth)
+                    if i > 0:
+                        parent = hierarchy_list[i-1]
+                        SESSION.run("""
+                            MATCH (child:Geography {name: $child_name})
+                            MATCH (parent:Geography {name: $parent_name})
+                            MERGE (parent)-[:CONTAINS]->(child)
+                        """, {"child_name": metadata["name"], "parent_name": parent["name"]})
