@@ -6,9 +6,7 @@ from datetime import datetime
 
 def ingest_gmpd(SESSION):
     gmpd_rows = gmpd.get_rows()
-    searched_terms = set()
-    not_found_terms = set()
-
+    
     # Make sure taxons exist in the database
     # Cast variables for properties
     for dataSourceRow, row in enumerate(gmpd_rows):
@@ -77,7 +75,7 @@ def ingest_gmpd(SESSION):
 
             SESSION.run(query, parameters)
 
-        host_ncbi_id, pathogen_ncbi_id = gmpd.link_gmpd_to_ncbi(row, searched_terms, not_found_terms, SESSION)
+        host_ncbi_id, pathogen_ncbi_id = gmpd.link_gmpd_to_ncbi(row, SESSION)
 
         if host_ncbi_id:
             host_ncbi_id = int(host_ncbi_id)
