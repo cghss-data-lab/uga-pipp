@@ -1,9 +1,26 @@
 from loguru import logger
+from functools import cache
+
 from geonames import geo_id_search
 from geonames import geo_api
 from geonames import get_geo_data
 
+@cache
+def get_hierarchy(geonameId):
+    params = {"geonameId": geonameId}
+    hierarchy = geo_api("hierarchyJSON", params)
+    hierarchy_list = hierarchy.get("geonames")
+    return hierarchy_list
+
+@cache
+def get_geo_data_cache(geonameId):
+    return get_geo_data(geonameId)
+
+ISO_CACHE = {}
+@cache
 def get_iso(iso2):
+    if iso2 in ISO_CACHE:
+        return ISO_CACHE[iso2]
 
     params = {
         "country": iso2,
@@ -13,19 +30,30 @@ def get_iso(iso2):
     result = geo_api("countryInfoJSON", params)
 
     data = result["geonames"][0]["isoAlpha3"]
+    ISO_CACHE[iso2] = data
 
     return data
 
-
+@cache
 def merge_geo(geoname_or_id, SESSION):
     """
     Search for a location by name and return ID, obtain its hierarchy,
     and create nodes and relationships for each parent.
     """
+
+    # Dictionary to cache the results of geo_id_search
+    id_cache = {}
+
     # Determine whether geoname_or_id is a geoname or a geonameId
     if isinstance(geoname_or_id, str):
-        # Search for the location by name and get its ID
-        geonameId = geo_id_search(geoname_or_id)
+        # Check if we have the geoname ID cached
+        if geoname_or_id in id_cache:
+            geonameId = id_cache[geoname_or_id]
+        else:
+            # Search for the location by name and get its ID
+            geonameId = geo_id_search(geoname_or_id)
+            # Cache the result
+            id_cache[geoname_or_id] = geonameId
         if not geonameId:
             logger.warning(f"Cannot find geoname ID for {geoname_or_id}")
             return
@@ -36,10 +64,8 @@ def merge_geo(geoname_or_id, SESSION):
         return
 
     # Use the ID to get the location's hierarchy
-    params = {"geonameId": geonameId}
-    hierarchy = geo_api("hierarchyJSON", params)
-    hierarchy_list = hierarchy.get("geonames")
-    
+    hierarchy_list = get_hierarchy(geonameId)
+
     # Define query
     geo_query = """
         MERGE (g:Geography {
@@ -78,7 +104,7 @@ def merge_geo(geoname_or_id, SESSION):
             iso2 = place.get("countryCode",None)
 
             if geonameId:
-                metadata = get_geo_data(geonameId)
+                metadata = get_geo_data_cache(geonameId)
 
                 params = {
                     "dataSource": "GeoNames",
