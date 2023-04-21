@@ -5,12 +5,12 @@ cache = {}
 searched_terms = set()
 not_found_terms = set()
 
-def write_to_not_found(message):
+def write_to_not_found(term):
     global not_found_terms
-    if message not in not_found_terms:
+    if term not in not_found_terms:
         with open(NOT_FOUND_FILE, "a") as f:
-            f.write(message)
-        not_found_terms.add(message)
+            f.write(term)
+        not_found_terms.add(term)
 
 def search_and_merge(term, SESSION):
     global cache, searched_terms, not_found_terms
