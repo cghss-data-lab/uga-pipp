@@ -1,6 +1,8 @@
 from geonames import geo_api
 from loguru import logger
+from functools import cache
 
+@cache
 def search_lat_lng(lat, lng):
     # Use the lat, long to find nearest place
     params = {"lat": lat, "lng": lng}
