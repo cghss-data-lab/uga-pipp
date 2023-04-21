@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import os
 from dotenv import load_dotenv
+# import time
+# SLEEP_TIME=3.6 # implement rate limit at 1000 requests per hour
 
 load_dotenv()
 
@@ -19,4 +21,5 @@ def geo_api(service, params):
 
     response = requests.get(base_url, params=params)
     data = response.json()
+    # time.sleep(SLEEP_TIME)
     return data
