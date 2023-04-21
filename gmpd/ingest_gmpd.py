@@ -3,6 +3,7 @@ from geonames import merge_geo
 import gmpd
 from loguru import logger
 from datetime import datetime
+from functools import cache
 
 def ingest_gmpd(SESSION):
     gmpd_rows = gmpd.get_rows()
@@ -59,7 +60,7 @@ def ingest_gmpd(SESSION):
                                             detectionType: $detectionType, 
                                             collected: $collected,  
                                             prevalence: $prevalence})
-                CREATE (r)-[:IN]->(g)
+                MERGE (r)-[:IN]->(g)
                 RETURN r
             """
 
