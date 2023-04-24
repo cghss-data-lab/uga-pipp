@@ -30,4 +30,5 @@ if __name__ == "__main__":
 
 
 
-    NEO4J_DRIVER.close()
+    NEO4J_DRIVER.close()      
+ 
