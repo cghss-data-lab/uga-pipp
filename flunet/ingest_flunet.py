@@ -1,4 +1,5 @@
 import flunet
+from geonames import merge_geo
 from loguru import logger
 from datetime import datetime
 
@@ -15,9 +16,6 @@ def ingest_flunet(SESSION):
         # taxons exist in the database
         flunet.merge_agent_groups(agent_groups, SESSION)
 
-        created_countries = set()
-        created_transmission_zones = set()
-
         for index, row in enumerate(flunet_rows):
             # skip rows where no samples were collected
             if row["Collected"] == "" or row["Collected"] == "0":
@@ -25,18 +23,9 @@ def ingest_flunet(SESSION):
 
             logger.info(f"Creating FluNet Report {index}")
 
-            zone = row["Transmission zone"]
             country = row["Territory"]
 
-            # if it's a new zone, create it before continuing
-            if zone not in created_transmission_zones:
-                flunet.create_transmission_zone(zone, SESSION)
-                created_transmission_zones.add(zone)
-
-            # if it's a new country, create the country
-            if country not in created_countries:
-                flunet.create_country(country, zone, SESSION)
-                created_countries.add(country)
+            merge_geo(country,SESSION)
 
             match_agent_groups = ""
             create_group_relationships = ""
@@ -53,7 +42,7 @@ def ingest_flunet(SESSION):
                     f'\nMATCH (taxon{ncbi_id}:Taxon {{TaxId: {ncbi_id}}}) '
                 )
                 create_group_relationships += (
-                    f"MERGE (report)-[:REPORTS {{count: {row[col]},pathogen:1}}]->(taxon{ncbi_id}) ")
+                    f"CREATE (report)-[:REPORTS {{count: {row[col]},pathogen:1}}]->(taxon{ncbi_id}) ")
 
                 # Parse the date string into a datetime object
                 start_date_str = row["Start date"]
@@ -61,7 +50,7 @@ def ingest_flunet(SESSION):
 
                 # Write query with metadata
                 cypher_query = (
-                    f'MATCH (c:Country {{name: "{country}"}}) '
+                    f'MATCH (g:Geography {{name: "{country}"}}) '
                     + match_agent_groups 
                     + f"\nMERGE (report:FluNet:CaseReport {{"
                     f"  dataSource: 'FluNet', "
@@ -72,7 +61,7 @@ def ingest_flunet(SESSION):
                     f'  processed: {row["Processed"] or 0}, '
                     f'  positive: {row["Total positive"] or 0}, '
                     f'  negative: {row["Total negative"] or 0} '
-                    f"}})-[:IN]->(c)" + create_group_relationships
+                    f"}})-[:IN]->(g)" + create_group_relationships
                 )
 
                 # Execute the Cypher query
