@@ -16,11 +16,9 @@ def get_hierarchy(geonameId):
 def get_geo_data_cache(geonameId):
     return get_geo_data(geonameId)
 
-ISO_CACHE = {}
+
 @cache
 def get_iso(iso2):
-    if iso2 in ISO_CACHE:
-        return ISO_CACHE[iso2]
 
     params = {
         "country": iso2,
@@ -30,7 +28,6 @@ def get_iso(iso2):
     result = geo_api("countryInfoJSON", params)
 
     data = result["geonames"][0]["isoAlpha3"]
-    ISO_CACHE[iso2] = data
 
     return data
 
