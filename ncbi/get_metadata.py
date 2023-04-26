@@ -24,7 +24,8 @@ def get_metadata(ncbi_id):
         "Lineage": taxon.Lineage.getText(),
         "CreateDate": taxon.CreateDate.getText(),
         "UpdateDate": taxon.UpdateDate.getText(),
-        "PubDate": taxon.PubDate.getText()
+        "PubDate": taxon.PubDate.getText(),
+        "dataSource":"NCBI Taxonomy"
     }
 
     if taxon.otherNames:
