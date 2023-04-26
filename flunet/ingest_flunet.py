@@ -42,27 +42,27 @@ def ingest_flunet(SESSION):
                     f'\nMATCH (taxon{ncbi_id}:Taxon {{TaxId: {ncbi_id}}}) '
                 )
                 create_group_relationships += (
-                    f"CREATE (report)-[:REPORTS {{count: {row[col]},pathogen:1}}]->(taxon{ncbi_id}) ")
+                    f"CREATE (report)-[:REPORTS {{count: {row[col]}, subtype:'{col}', pathogen:1}}]->(taxon{ncbi_id}) ")
 
                 # Parse the date string into a datetime object
                 start_date_str = row["Start date"]
                 start_date_obj = datetime.strptime(start_date_str, "%m/%d/%y")
 
-                # Write query with metadata
-                cypher_query = (
-                    f'MATCH (g:Geography {{name: "{country}"}}) '
-                    + match_agent_groups 
-                    + f"\nMERGE (report:FluNet:CaseReport {{"
-                    f"  dataSource: 'FluNet', "
-                    f"  dataSourceRow: {index}, "
-                    f'  start: date("{start_date_obj.date()}"), '
-                    f"  duration: duration({{days: 7}}), "
-                    f'  collected: {row["Collected"] or 0}, '
-                    f'  processed: {row["Processed"] or 0}, '
-                    f'  positive: {row["Total positive"] or 0}, '
-                    f'  negative: {row["Total negative"] or 0} '
-                    f"}})-[:IN]->(g)" + create_group_relationships
-                )
+            # Write query with metadata
+            cypher_query = (
+                f'MATCH (g:Geography {{name: "{country}"}}) '
+                + match_agent_groups 
+                + f"\nMERGE (report:FluNet:CaseReport {{"
+                f"  dataSource: 'FluNet', "
+                f"  dataSourceRow: {index}, "
+                f'  start: date("{start_date_obj.date()}"), '
+                f"  duration: duration({{days: 7}}), "
+                f'  collected: {row["Collected"] or 0}, '
+                f'  processed: {row["Processed"] or 0}, '
+                f'  positive: {row["Total positive"] or 0}, '
+                f'  negative: {row["Total negative"] or 0} '
+                f"}})-[:IN]->(g)" + create_group_relationships
+            )
 
             # Execute the Cypher query
             SESSION.run(cypher_query)
