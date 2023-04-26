@@ -29,7 +29,6 @@ def get_ncbi_id(key):
 
     return None
 
-
 def get_agent_groups(columns):
     """
     Take the columns of the FluNet CSV, identify
