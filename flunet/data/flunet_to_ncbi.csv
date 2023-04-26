@@ -1,12 +1,8 @@
-A (H1),H1N2 subtype
+A (H1),Influenza A Virus
 A (H1N1)pdm09,H1N1 subtype
-A (H3),H3N2 subtype
-A (H5),H5N1 subtype
+A (H3),Influenza A Virus
+A (H5),Influenza A Virus
 A (not subtyped),Influenza A Virus
-A (total),Influenza A Virus
 B (Yamagata),Influenza B Virus
 B (Victoria),Influenza B Virus
 B (not subtyped),Influenza B Virus
-B (total),Influenza B Virus
-Total positive,Orthomyxoviridae
-Total negative,Orthomyxoviridae
