@@ -64,8 +64,8 @@ def ingest_flunet(SESSION):
                     f"}})-[:IN]->(g)" + create_group_relationships
                 )
 
-                # Execute the Cypher query
-                SESSION.run(cypher_query)
+            # Execute the Cypher query
+            SESSION.run(cypher_query)
 
     except Exception as e:
         logger.error(f"An exception occurred: {e}")
