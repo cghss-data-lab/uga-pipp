@@ -1,5 +1,7 @@
 import ncbi
+from functools import cache
 
+@cache
 def merge_agent_groups(agent_groups, SESSION):
     """
     Merge the taxons for the agent group into the
