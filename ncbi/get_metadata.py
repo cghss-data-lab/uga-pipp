@@ -24,7 +24,7 @@ def get_metadata(ncbi_id):
         "Lineage": taxon.Lineage.getText(),
         "CreateDate": taxon.CreateDate.getText(),
         "UpdateDate": taxon.UpdateDate.getText(),
-        "PubDate": taxon.PubDate.getText(),
+        "PubDate": taxon.PubDate.getText()
     }
 
     if taxon.otherNames:
@@ -39,6 +39,7 @@ def get_metadata(ncbi_id):
                     "TaxId": taxon.TaxId.getText(),
                     "ScientificName": taxon.ScientificName.getText(),
                     "Rank": taxon.Rank.getText(),
+                    "dataSource":"NCBI Taxonomy"
                 }
             )
         time.sleep(SLEEP_TIME)
