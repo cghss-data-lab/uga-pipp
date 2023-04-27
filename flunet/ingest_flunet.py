@@ -38,12 +38,15 @@ def ingest_flunet(SESSION):
 
                 ncbi_id = int(agent_groups[col])
 
+                create_group_relationships += (
+                    f"CREATE (report)-[:REPORTS {{count: {row[col]}, subtype:'{col}', pathogen:1}}]->"
+                    f"(taxon{ncbi_id}:Taxon {{TaxId: {ncbi_id}}}) "
+                )
+
                 match_agent_groups += (
                     f'\nMATCH (taxon{ncbi_id}:Taxon {{TaxId: {ncbi_id}}}) '
                 )
-                create_group_relationships += (
-                    f"CREATE (report)-[:REPORTS {{count: {row[col]}, subtype:'{col}', pathogen:1}}]->(taxon{ncbi_id}) ")
-
+                
                 # Parse the date string into a datetime object
                 start_date_str = row["Start date"]
                 start_date_obj = datetime.strptime(start_date_str, "%m/%d/%y")
