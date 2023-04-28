@@ -49,7 +49,7 @@ def ingest_flunet(SESSION):
                 ncbi_id = int(agent_groups[col])
 
                 create_group_relationships += (
-                    f"CREATE (report)-[:REPORTS {{caseCount: {row[col]}, subtype:'{col}', pathogen:1}}]->"
+                    f"CREATE (report)-[:REPORTS {{detectionCount: {row[col]}, subtype:'{col}', pathogen:1}}]->"
                     f"(taxon{ncbi_id}:Taxon {{TaxId: {ncbi_id}}}) "
                 )
 
@@ -59,7 +59,7 @@ def ingest_flunet(SESSION):
                 
                 # Parse the date string into a datetime object
                 start_date_str = row["Start date"]
-                start_date_obj = datetime.strptime(start_date_str, "%m/%d/%y")
+                start_date_obj = datetime.strptime(start_date_str, "%Y/%d/%y")
 
         
             # Create the relationship for humans outside the loop
