@@ -1,7 +1,14 @@
 import flunet
+import ncbi
 from geonames import merge_geo
 from loguru import logger
 from datetime import datetime
+
+def search_and_merge(TaxId, SESSION):
+    logger.info(f'CREATING node {TaxId}')
+    ncbi_metadata = ncbi.get_metadata(TaxId)
+    taxon = {**ncbi_metadata, "TaxId":TaxId}
+    ncbi.merge_taxon(taxon, SESSION)
 
 def ingest_flunet(SESSION):
     try:
@@ -15,6 +22,9 @@ def ingest_flunet(SESSION):
         # Make sure the agent groups and their
         # taxons exist in the database
         flunet.merge_agent_groups(agent_groups, SESSION)
+
+        human = 9606 # Tax ID for humans
+        search_and_merge(human, SESSION)
 
         for index, row in enumerate(flunet_rows):
             # skip rows where no samples were collected
@@ -39,7 +49,7 @@ def ingest_flunet(SESSION):
                 ncbi_id = int(agent_groups[col])
 
                 create_group_relationships += (
-                    f"CREATE (report)-[:REPORTS {{count: {row[col]}, subtype:'{col}', pathogen:1}}]->"
+                    f"CREATE (report)-[:REPORTS {{caseCount: {row[col]}, subtype:'{col}', pathogen:1}}]->"
                     f"(taxon{ncbi_id}:Taxon {{TaxId: {ncbi_id}}}) "
                 )
 
@@ -51,6 +61,13 @@ def ingest_flunet(SESSION):
                 start_date_str = row["Start date"]
                 start_date_obj = datetime.strptime(start_date_str, "%m/%d/%y")
 
+        
+            # Create the relationship for humans outside the loop
+            create_human_relationship += (
+                f"CREATE (report)-[:REPORTS {{caseCount: {row['Total positive']}, host: 1}}]->"
+                f"(taxon{human}:Taxon {{TaxId: {human}}}) "
+            )
+
             # Write query with metadata
             cypher_query = (
                 f'MATCH (g:Geography {{name: "{country}"}}) '
@@ -58,13 +75,13 @@ def ingest_flunet(SESSION):
                 + f"\nMERGE (report:FluNet:CaseReport {{"
                 f"  dataSource: 'FluNet', "
                 f"  dataSourceRow: {index}, "
-                f'  start: date("{start_date_obj.date()}"), '
+                f'  start: {start_date_obj.date()}, '
                 f"  duration: duration({{days: 7}}), "
                 f'  collected: {row["Collected"] or 0}, '
                 f'  processed: {row["Processed"] or 0}, '
                 f'  positive: {row["Total positive"] or 0}, '
                 f'  negative: {row["Total negative"] or 0} '
-                f"}})-[:IN]->(g)" + create_group_relationships
+                f"}})-[:IN]->(g)" + create_group_relationships + create_human_relationship
             )
 
             # Execute the Cypher query
