@@ -30,8 +30,7 @@ def test_duplicate_nodes(query: str) -> None:
     for node in nodes:
         # Transoforms the dictionary into a tuple of tuples,
         # each element is (key, value) from the dictionary
-        # This algorithm might need to sort the nodes before checking. TODO
-        item = tuple(node.items())
+        item = tuple(sorted(node.items()))
         if item not in visited_nodes:
             visited_nodes.add(item)
             unique_nodes.append(node)
