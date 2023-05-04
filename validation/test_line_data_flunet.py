@@ -2,7 +2,6 @@ import os
 from dotenv import load_dotenv
 from neo4j_driver import Neo4jDatabase
 
-
 load_dotenv()
 
 URI = os.environ["URI"]
@@ -12,10 +11,15 @@ DATABASE = os.environ["DATABASE"]
 
 neo4j_connection = Neo4jDatabase(URI, DATABASE, AUTH, PASSWORD)
 
+# ingest_gmpd(SESSION)
+# ingest_flunet(SESSION)
+# ingest_worldpop(SESSION)
+
 
 def create_query_line_data():
     return
 
 
 if __name__ == "__main__":
-    pass
+    with open("./flunet/data/flunet_1995_2022.csv", "r") as flunet:
+        flunet.read()
