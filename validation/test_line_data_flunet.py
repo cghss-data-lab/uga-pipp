@@ -53,10 +53,7 @@ def is_flunet_node_accurate(row: dict, node: dict) -> bool:
     node_dictionary["End date"] = end - start
  """
     node_dictionary_values = node_dictionary.values()
-    print(node_dictionary_values)
     node = [str(element) for element in node.values()]
-    print(node)
-
     return collections.Counter(list(node_dictionary_values)) == collections.Counter(
         list(node)
     )
@@ -97,11 +94,19 @@ if __name__ == "__main__":
 
     with open("./flunet/data/flunet_1995_2022.csv", "r") as flunet:
         header = next(flunet).split(",")
+        total = 0
+        empty = 0
+
         for row in flunet:
             row = row.split(",")
             # Create a dictionary with the line data
             row_as_dictionary = {k: v for k, v in zip(header, row)}
             query = create_query_line_data(row_as_dictionary[""])
             query_results = neo4j_connection.run_query(query)
-
             line_data_accuracy = test_flunet_line_data(row_as_dictionary, query_results)
+            print(line_data_accuracy)
+            if not line_data_accuracy:
+                empty += 1
+            total = +1
+
+        print("Empty: ", empty / total)
