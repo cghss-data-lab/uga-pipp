@@ -76,10 +76,12 @@ def test_flunet_line_data(csv_row: dict, query_result: list) -> dict:
             territory_name = dict(adjacent_node)["name"]
             accuracy["territory"] = territory == territory_name
         # Check reported nodes
+        adj_name = adjacent_node["name"]
+        adj_accuracy = is_strain_accurate(csv_row, adj_name)
+        accuracy[adj_name] = adj_accuracy
+    return accuracy
 
-        return True
 
-    return False
 if __name__ == "__main__":
 
     with open("./flunet/data/flunet_1995_2022.csv", "r") as flunet:
