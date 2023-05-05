@@ -54,6 +54,16 @@ def test_flunet_line_data(csv_row: dict, query_results: list) -> bool:
             node_accuracy = is_flunet_node_accurate(csv_row, node)
             accuracy["node"] = node_accuracy
             is_node_checked = True
+        # Check territorial scope
+        if type_relationship == "IN":
+            territory = csv_row["Territory"]
+            territory_name = dict(adjacent_node)["name"]
+            accuracy["territory"] = territory == territory_name
+        # Check reported nodes
+
+        return True
+
+    return False
 if __name__ == "__main__":
 
     with open("./flunet/data/flunet_1995_2022.csv", "r") as flunet:
