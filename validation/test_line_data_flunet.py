@@ -85,6 +85,12 @@ def test_flunet_line_data(csv_row: dict, query_result: list) -> dict:
 if __name__ == "__main__":
 
     with open("./flunet/data/flunet_1995_2022.csv", "r") as flunet:
-        header = next(flunet)  # remove header
+        header = next(flunet).split(",")
         for row in flunet:
-            query = create_query_line_data
+            row = row.split(",")
+            # Create a dictionary with the line data
+            row_as_dictionary = {k: v for k, v in zip(header, row)}
+            query = create_query_line_data(row_as_dictionary[""])
+            query_results = neo4j_connection.run_query(query)
+
+            line_data_accuracy = test_flunet_line_data(row_as_dictionary, query_results)
