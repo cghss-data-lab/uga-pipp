@@ -104,9 +104,9 @@ if __name__ == "__main__":
             query = create_query_line_data(row_as_dictionary[""])
             query_results = neo4j_connection.run_query(query)
             line_data_accuracy = test_flunet_line_data(row_as_dictionary, query_results)
-            print(line_data_accuracy)
+            print(line_data_accuracy, total)
             if not line_data_accuracy:
                 empty += 1
-            total = +1
+            total += 1
 
         print("Empty: ", empty / total)
