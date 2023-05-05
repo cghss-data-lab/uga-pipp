@@ -68,7 +68,7 @@ def test_flunet_line_data(csv_row: dict, query_result: list) -> dict:
         node, relationship, adjacent_node, type_relationship = result.values()
         # Check the primary node
         if not is_node_checked:
-            node_accuracy = is_flunet_node_accurate(csv_row, node)
+            node_accuracy = is_flunet_node_accurate(csv_row, dict(node))
             accuracy["node"] = node_accuracy
             is_node_checked = True
         # Check territorial scope
