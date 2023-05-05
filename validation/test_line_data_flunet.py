@@ -17,7 +17,7 @@ flunet_to_ncbi = {}
 with open("./flunet/data/flunet_to_ncbi.csv", "r") as flunet_ncbi:
     for record in flunet_ncbi:
         key, value = record.split(",")
-        flunet_to_ncbi[key] = value
+        flunet_to_ncbi[value] = key
 
 
 def create_query_line_data(row_number: int) -> str:
@@ -53,16 +53,10 @@ def is_flunet_node_accurate(row: dict, node: dict) -> bool:
 
 
 def is_strain_accurate(row: dict, strain_name: str) -> bool:
-    if strain_name == "Influenza A Virus" and row["A (total)"] == 0:
-        return False
-
-    if strain_name == "Influenza B Virus" and row["B (total)"] == 0:
-        return False
-
-    if strain_name == "H1N1 subtype" and row["A (H1N1)pdm09"] == 0:
-        return False
-
-    return True
+    strain = flunet_to_ncbi[strain_name]
+    if row[strain] != 0:
+        return True
+    return False
 
 
 def test_flunet_line_data(csv_row: dict, query_results: list) -> bool:
