@@ -38,9 +38,16 @@ def is_flunet_node_accurate(row: dict, node: dict) -> bool:
         "Total negative",
     ]
 
-    node_dictionary = [row[key] for key in keys]
+    node_dictionary = {key: row[key] for key in keys}
+    node_dictionary["Start date"] = datetime.strptime(node_dictionary["Start date"])
+    node_dictionary["End date"] = datetime.strptime(node_dictionary["End date"])
+    node_dictionary["End date"] = (
+        node_dictionary["End date"] - node_dictionary["End date"]
+    )
 
-    return collections.Counter(node_dictionary) == collections.Counter(
+    node_dictionary_values = node_dictionary.values()
+
+    return collections.Counter(node_dictionary_values) == collections.Counter(
         list(node.values())
     )
 
