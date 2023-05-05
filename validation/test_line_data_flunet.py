@@ -38,12 +38,12 @@ def is_flunet_node_accurate(row: dict, node: dict) -> bool:
         "Total negative",
     ]
 
+    node["start"] = node["start"].strftime("%m/%d/%y")
+
     node_dictionary = {key: row[key] for key in keys}
-    node_dictionary["Start date"] = datetime.strptime(node_dictionary["Start date"])
-    node_dictionary["End date"] = datetime.strptime(node_dictionary["End date"])
-    node_dictionary["End date"] = (
-        node_dictionary["End date"] - node_dictionary["End date"]
-    )
+    start = datetime.strptime(node_dictionary["Start date"])
+    end = datetime.strptime(node_dictionary["End date"])
+    node_dictionary["End date"] = end - start
 
     node_dictionary_values = node_dictionary.values()
 
