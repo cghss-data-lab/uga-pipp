@@ -18,8 +18,10 @@ with open("./flunet/data/flunet_to_ncbi.csv", "r") as flunet_ncbi:
         flunet_to_ncbi[key] = value
 
 
-
-def create_query_line_data(csv_row: str) -> str:
+def create_query_line_data(row_number: int) -> str:
+    # Query node by row number, return node and first order relationships including nodes
+    # The wuery should match the row data
+    query = f"MATCH(n)-[r]-(b) WHERE n:FluNet AND n:CaseReport AND n.dataSourceRow = {row_number} RETURN n, r, b, type(r)"
     return query
 
 
