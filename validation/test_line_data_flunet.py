@@ -32,7 +32,7 @@ def is_flunet_node_accurate(row: dict, node: dict) -> bool:
     keys = [
         "",
         "Start date",
-        "End date",
+        # "End date",
         "Collected",
         "Processed",
         "Total positive",
@@ -41,15 +41,24 @@ def is_flunet_node_accurate(row: dict, node: dict) -> bool:
 
     node["start"] = node["start"].strftime("%m/%d/%y")
 
+    node
+
+    node.pop("dataSource", None)  # Remove data source
+    node.pop("duration", None)  # Remove data source
     node_dictionary = {key: row[key] for key in keys}
-    start = datetime.strptime(node_dictionary["Start date"], "%m/%d/%y")
-    end = datetime.strptime(node_dictionary["End date"], "%m/%d/%y")
+    node_dictionary["Start date"] = datetime.strptime(
+        node_dictionary["Start date"], "%m/%d/%y"
+    ).strftime("%m/%d/%y")
+    """end = datetime.strptime(node_dictionary["End date"], "%m/%d/%y")
     node_dictionary["End date"] = end - start
-
+ """
     node_dictionary_values = node_dictionary.values()
+    print(node_dictionary_values)
+    node = [str(element) for element in node.values()]
+    print(node)
 
-    return collections.Counter(node_dictionary_values) == collections.Counter(
-        list(node.values())
+    return collections.Counter(list(node_dictionary_values)) == collections.Counter(
+        list(node)
     )
 
 
