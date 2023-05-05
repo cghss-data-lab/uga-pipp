@@ -25,8 +25,22 @@ def create_query_line_data(row_number: int) -> str:
     return query
 
 
-def test_flunet_line_data() -> None:
-    return
+def is_flunet_node_accurate(row: dict, node: dict) -> bool:
+    keys = [
+        "",
+        "Start date",
+        "End date",
+        "Collected",
+        "Processed",
+        "Total positive",
+        "Total negative",
+    ]
+
+    node_dictionary = [row[key] for key in keys]
+
+    return collections.Counter(node_dictionary) == collections.Counter(
+        list(node.values())
+    )
 
 
 if __name__ == "__main__":
