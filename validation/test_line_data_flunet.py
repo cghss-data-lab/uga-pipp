@@ -59,11 +59,11 @@ def is_strain_accurate(row: dict, strain_name: str) -> bool:
     return False
 
 
-def test_flunet_line_data(csv_row: dict, query_results: list) -> bool:
+def test_flunet_line_data(csv_row: dict, query_result: list) -> dict:
     # Verify node exists
     accuracy = {}
     is_node_checked = False
-    for result in query_results:
+    for result in query_result:
         node, relationship, adjacent_node, type_relationship = result.values()
         # Check the primary node
         if not is_node_checked:
