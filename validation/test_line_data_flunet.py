@@ -20,7 +20,7 @@ with open("./flunet/data/flunet_to_ncbi.csv", "r") as flunet_ncbi:
 
 def create_query_line_data(row_number: int) -> str:
     # Query node by row number, return node and first order relationships including nodes
-    # The wuery should match the row data
+    # The query should match the row data
     query = f"MATCH(n)-[r]-(b) WHERE n:FluNet AND n:CaseReport AND n.dataSourceRow = {row_number} RETURN n, r, b, type(r)"
     return query
 
@@ -43,6 +43,17 @@ def is_flunet_node_accurate(row: dict, node: dict) -> bool:
     )
 
 
+def test_flunet_line_data(csv_row: dict, query_results: list) -> bool:
+    # Verify node exists
+    accuracy = {}
+    is_node_checked = False
+    for result in query_results:
+        node, relationship, adjacent_node, type_relationship = result.values()
+        # Check the primary node
+        if not is_node_checked:
+            node_accuracy = is_flunet_node_accurate(csv_row, node)
+            accuracy["node"] = node_accuracy
+            is_node_checked = True
 if __name__ == "__main__":
 
     with open("./flunet/data/flunet_1995_2022.csv", "r") as flunet:
