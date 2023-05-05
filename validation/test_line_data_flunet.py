@@ -17,9 +17,6 @@ with open("./flunet/data/flunet_to_ncbi.csv", "r") as flunet_ncbi:
         key, value = record.split(",")
         flunet_to_ncbi[key] = value
 
-# ingest_gmpd(SESSION)
-# ingest_flunet(SESSION)
-# ingest_worldpop(SESSION)
 
 
 def create_query_line_data(csv_row: str) -> str:
