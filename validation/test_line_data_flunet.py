@@ -52,6 +52,19 @@ def is_flunet_node_accurate(row: dict, node: dict) -> bool:
     )
 
 
+def is_strain_accurate(row: dict, strain_name: str) -> bool:
+    if strain_name == "Influenza A Virus" and row["A (total)"] == 0:
+        return False
+
+    if strain_name == "Influenza B Virus" and row["B (total)"] == 0:
+        return False
+
+    if strain_name == "H1N1 subtype" and row["A (H1N1)pdm09"] == 0:
+        return False
+
+    return True
+
+
 def test_flunet_line_data(csv_row: dict, query_results: list) -> bool:
     # Verify node exists
     accuracy = {}
