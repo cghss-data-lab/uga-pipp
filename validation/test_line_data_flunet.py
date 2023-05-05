@@ -17,6 +17,7 @@ flunet_to_ncbi = {}
 with open("./flunet/data/flunet_to_ncbi.csv", "r") as flunet_ncbi:
     for record in flunet_ncbi:
         key, value = record.split(",")
+        value = value.strip()
         flunet_to_ncbi[value] = key
 
 
