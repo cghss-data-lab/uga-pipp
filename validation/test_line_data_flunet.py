@@ -11,6 +11,12 @@ DATABASE = os.environ["DATABASE"]
 
 neo4j_connection = Neo4jDatabase(URI, DATABASE, AUTH, PASSWORD)
 
+flunet_to_ncbi = {}
+with open("./flunet/data/flunet_to_ncbi.csv", "r") as flunet_ncbi:
+    for record in flunet_ncbi:
+        key, value = record.split(",")
+        flunet_to_ncbi[key] = value
+
 # ingest_gmpd(SESSION)
 # ingest_flunet(SESSION)
 # ingest_worldpop(SESSION)
@@ -25,11 +31,6 @@ def test_flunet_line_data() -> None:
 
 
 if __name__ == "__main__":
-    flunet_to_ncbi = {}
-    with open("./flunet/data/flunet_to_ncbi.csv", "r") as flunet_ncbi:
-        for record in flunet_ncbi:
-            key, value = record.split(",")
-            flunet_to_ncbi[key] = value
 
     with open("./flunet/data/flunet_1995_2022.csv", "r") as flunet:
         header = next(flunet)  # remove header
