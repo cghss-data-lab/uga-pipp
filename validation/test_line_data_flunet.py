@@ -115,8 +115,8 @@ if __name__ == "__main__":
     with open("./flunet/data/flunet_1995_2022.csv", "r") as flunet:
         header = next(flunet).split(",")
         total = 0
-        empty = 0
-        correct = 0
+        null = 0
+        correct, incorrect = 0, 0
         for row in flunet:
             total += 1  # Count total number of rows
             row = row.split(",")
@@ -124,7 +124,7 @@ if __name__ == "__main__":
             row_as_dictionary = {k: v for k, v in zip(header, row)}
 
             if is_line_null(row_as_dictionary):
-                empty += 1  # Count empty rows
+                null += 1  # Count empty rows
                 continue
 
             query = create_query_line_data(row_as_dictionary[""])
@@ -133,22 +133,20 @@ if __name__ == "__main__":
 
             if all(line_data_accuracy.values()):
                 correct += 1  # Count correct values
+            else:
+                with open("./validation/logs/flunet_validation.log", "a") as log_file:
+                    incorrect += 1
+                    msg = "ERROR: " + row_as_dictionary[""] + "\n"
+                    log_file.write(msg)
 
-            print(
-                "Total: ",
-                total,
-                "Empty: ",
-                empty,
-                "Correct: ",
-                correct,
-                end="\r",
-            )
-
+            print(total, end="\r")
         print(
             "Total: ",
             total,
             "Empty: ",
-            empty,
+            null,
             "Correct: ",
             correct,
+            "Incorrect: ",
+            incorrect,
         )
