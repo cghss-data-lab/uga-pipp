@@ -42,14 +42,15 @@ def is_flunet_node_accurate(row: dict, node: dict) -> bool:
     node["start"] = node["start"].strftime("%m/%d/%y")
 
     node.pop("dataSource", None)  # Remove data source
-    node.pop("duration", None)  # Remove data source
+    node.pop("duration", None)  # Remove duration
     node_dictionary = {key: row[key] for key in keys}
     node_dictionary["Start date"] = datetime.strptime(
         node_dictionary["Start date"], "%m/%d/%y"
     ).strftime("%m/%d/%y")
-    """end = datetime.strptime(node_dictionary["End date"], "%m/%d/%y")
-    node_dictionary["End date"] = end - start
- """
+    # Empty strings to zero
+    node_dictionary = {
+        key: ("0" if value == "" else value) for key, value in node_dictionary.items()
+    }
     node_dictionary_values = node_dictionary.values()
     node = [str(element) for element in node.values()]
     return collections.Counter(list(node_dictionary_values)) == collections.Counter(
