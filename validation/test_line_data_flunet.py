@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import collections
 from datetime import datetime
 from neo4j_driver import Neo4jDatabase
+import time
 
 load_dotenv()
 
@@ -111,21 +112,42 @@ def test_flunet_line_data(csv_row: dict, query_result: list) -> dict:
 
 if __name__ == "__main__":
 
+    start = time.time()
+
     with open("./flunet/data/flunet_1995_2022.csv", "r") as flunet:
         header = next(flunet).split(",")
+        # row_count = sum(1 for row in flunet)
         total = 0
         empty = 0
-
+        correct = 0
         for row in flunet:
+            total += 1  # Count total number of rows
             row = row.split(",")
             # Create a dictionary with the line data
             row_as_dictionary = {k: v for k, v in zip(header, row)}
+
+            if is_line_null(row_as_dictionary):
+                empty += 1  # Count empty rows
+                continue
+
             query = create_query_line_data(row_as_dictionary[""])
             query_results = neo4j_connection.run_query(query)
             line_data_accuracy = test_flunet_line_data(row_as_dictionary, query_results)
-            print(line_data_accuracy, total)
-            if not line_data_accuracy:
-                empty += 1
-            total += 1
 
-        print("Empty: ", empty / total)
+            if all(line_data_accuracy.values()):
+                correct += 1  # Count correct values
+
+            print(
+                "Total: ",
+                total,
+                "Empty: ",
+                empty,
+                "Correct: ",
+                correct,
+                end="\r",
+            )
+
+        print("Not empty: ", total - empty, "Incorrect: ", total - empty - correct)
+
+    end = time.time()
+    print(end - start)
