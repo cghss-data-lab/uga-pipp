@@ -57,6 +57,27 @@ def is_flunet_node_accurate(row: dict, node: dict) -> bool:
     )
 
 
+def is_line_null(line_data: dict) -> bool:
+    keys = (
+        "Collected",
+        "Processed",
+        "A (H1)",
+        "A (H1N1)pdm09",
+        "A (H3)",
+        "A (H5)",
+        "A (not subtyped)",
+        "A (total)",
+        "B (Yamagata)",
+        "B (Victoria)",
+        "B (not subtyped)",
+        "B (total)",
+        "Total positive",
+        "Total negative",
+    )
+
+    return all(line_data[key] == "" for key in keys)
+
+
 def is_strain_accurate(row: dict, strain_name: str) -> bool:
     strain = flunet_to_ncbi[strain_name]
     if row[strain] != 0:
