@@ -59,7 +59,7 @@ def ingest_flunet(SESSION):
                 
                 # Parse the date string into a datetime object
                 start_date_str = row["Start date"]
-                start_date_obj = datetime.strptime(start_date_str, "%Y/%d/%y")
+                start_date_obj = datetime.strptime(start_date_str, "%m/%d/%y")
 
         
             # Create the relationship for humans outside the loop
