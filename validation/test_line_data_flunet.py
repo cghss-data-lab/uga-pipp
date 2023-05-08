@@ -41,8 +41,6 @@ def is_flunet_node_accurate(row: dict, node: dict) -> bool:
 
     node["start"] = node["start"].strftime("%m/%d/%y")
 
-    node
-
     node.pop("dataSource", None)  # Remove data source
     node.pop("duration", None)  # Remove data source
     node_dictionary = {key: row[key] for key in keys}
