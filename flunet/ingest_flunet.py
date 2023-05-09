@@ -34,12 +34,30 @@ def ingest_flunet(SESSION):
             logger.info(f"Creating FluNet Report {index}")
 
             country = row["Territory"]
-
             merge_geo(country,SESSION)
 
-            match_agent_groups = ""
-            create_group_relationships = ""
+            # Create the report node
+            # Parse the date string into a datetime object
+            start_date_str = row["Start date"]
+            start_date_obj = datetime.strptime(start_date_str, "%m/%d/%y")
 
+            # Parse the date string into a datetime object
+            end_date_str = row["End date"]
+            end_date_obj = datetime.strptime(end_date_str, "%m/%d/%y")
+
+            report_props = {
+                "dataSource":"FluNet",
+                "dataSourceRow":index,
+                "reportDate":start_date_obj,
+            }
+
+            create_report_query = f"""
+                MATCH (g:Geography {{name: '{country}'}})
+                MERGE (report:Report:FluNet {{ {', '.join([f"{k}: {v}" for k, v in report_props.items()])} }})
+                CREATE (report)-[:IN]->(g)
+            """
+
+            create_event_queries = []
             for col in agent_groups.keys():
                 # skip detection columns with no values
                 # or with zero specimens detected
@@ -47,42 +65,39 @@ def ingest_flunet(SESSION):
                     continue
 
                 ncbi_id = int(agent_groups[col])
+                event_relationship_props = {
+                    "subtype": col,
+                    "role": "pathogen",
+                    "detectionCount":int(row[col])
+                }
 
-                create_group_relationships += (
-                    f"CREATE (report)-[:REPORTS {{detectionCount: {row[col]}, subtype:'{col}', pathogen:1}}]->"
-                    f"(taxon{ncbi_id}:Taxon {{TaxId: {ncbi_id}}}) "
-                )
+                event_props = {
+                    "startDate":start_date_obj,
+                    "endDate":end_date_obj,
+                    "duration":{"days":7},
+                    "totalSpecimensCollected":int(row["Collected"]),
+                    "totalSpecimensProcessed":int(row["Processed"] or 0),
+                    "totalSpecimensPositive":int(row["Total positive" or 0]),
+                    "totalSpecimensNegative":int(row["Total negative"] or 0),
+                }
 
-                match_agent_groups += (
-                    f'\nMATCH (taxon{ncbi_id}:Taxon {{TaxId: {ncbi_id}}}) '
-                )
-                
-                # Parse the date string into a datetime object
-                start_date_str = row["Start date"]
-                start_date_obj = datetime.strptime(start_date_str, "%m/%d/%y")
+                create_event_query = f"""
+                    MATCH (taxon:Taxon {{TaxId: {ncbi_id}}})
+                    MERGE (event:Event:Outbreak {{ {', '.join([f"{k}: {v}" for k, v in event_props.items()])} }})                    
+                    CREATE (report)-[:REPORTS]->(event)
+                    CREATE (event)-[:INVOLVES {{{', '.join([f"{k}: {v}" for k, v in event_relationship_props.items()])}}}]->(taxon)
+                """
 
-        
-            # Create the relationship for humans outside the loop
-            create_human_relationship += (
-                f"CREATE (report)-[:REPORTS {{caseCount: {row['Total positive']}, host: 1}}]->"
-                f"(taxon{human}:Taxon {{TaxId: {human}}}) "
-            )
+                create_event_queries.append(create_event_query)
 
-            # Write query with metadata
-            cypher_query = (
-                f'MATCH (g:Geography {{name: "{country}"}}) '
-                + match_agent_groups 
-                + f"\nMERGE (report:FluNet:CaseReport {{"
-                f"  dataSource: 'FluNet', "
-                f"  dataSourceRow: {index}, "
-                f'  start: {start_date_obj.date()}, '
-                f"  duration: duration({{days: 7}}), "
-                f'  collected: {row["Collected"] or 0}, '
-                f'  processed: {row["Processed"] or 0}, '
-                f'  positive: {row["Total positive"] or 0}, '
-                f'  negative: {row["Total negative"] or 0} '
-                f"}})-[:IN]->(g)" + create_group_relationships + create_human_relationship
-            )
+            # Create the INVOLVES relationships for humans
+            create_human_query = f"""
+                MATCH (taxon:Taxon {{TaxId: {human}}})
+                CREATE (event)-[:INVOLVES {{caseCount: {int(row.get('Total positive', 0))}, role: 'host'}}]->(taxon)
+            """
+
+            # Write the full Cypher query
+            cypher_query = create_report_query + "\n" + "\n".join(create_event_queries) + "\n" + create_human_query
 
             # Execute the Cypher query
             SESSION.run(cypher_query)
