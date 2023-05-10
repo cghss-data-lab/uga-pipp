@@ -13,7 +13,7 @@ DATABASE = os.environ["DATABASE"]
 neo4j_connection = Neo4jDatabase(URI, DATABASE, AUTH, PASSWORD)
 
 
-def run_line_validation():
+def flunet_validation() -> None:
 
     with open("./flunet/data/flunet_1995_2022.csv", "r") as flunet:
         header = next(flunet).split(",")

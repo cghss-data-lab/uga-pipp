@@ -1,5 +1,5 @@
-from test_flunet.validation import run_line_validation
+from test_flunet.validation import flunet_validation
 
 
 if __name__ == "__main__":
-    run_line_validation()
+    flunet_validation()
