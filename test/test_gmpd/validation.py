@@ -18,4 +18,10 @@ neo4j_connection = Neo4jDatabase(URI, DATABASE, AUTH, PASSWORD)
 
 
 def gmpd_validation() -> None:
-    pass
+
+    with open("./gmpd/GMPD_main.csv", "r") as gmpd:
+        header = next(gmpd).split(",")
+
+        for row in gmpd:
+            row = row.split(",")
+            row_as_dictionary = {key: value for key, value in zip(header, row)}
