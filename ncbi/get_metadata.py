@@ -1,8 +1,10 @@
 import ncbi
 from bs4 import Tag
 import time
+from functools import cache
 SLEEP_TIME = 0.4
 
+@cache
 def get_metadata(ncbi_id):
     """Request metadata by NCBI taxonomy ID, and return cleaned object"""
 
