@@ -1,4 +1,4 @@
-from test_flunet.test_line_data_flunet import run_line_validation
+from test_flunet.validation import run_line_validation
 
 
 if __name__ == "__main__":
