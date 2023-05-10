@@ -110,7 +110,7 @@ def test_flunet_line_data(csv_row: dict, query_result: list) -> dict:
     return accuracy
 
 
-if __name__ == "__main__":
+def run_line_validation():
 
     with open("./flunet/data/flunet_1995_2022.csv", "r") as flunet:
         header = next(flunet).split(",")
@@ -134,7 +134,7 @@ if __name__ == "__main__":
             if all(line_data_accuracy.values()):
                 correct += 1  # Count correct values
             else:
-                with open("./validation/logs/flunet_validation.log", "a") as log_file:
+                with open("./test/logs/flunet_validation.log", "a") as log_file:
                     incorrect += 1
                     msg = "ERROR: " + row_as_dictionary[""] + "\n"
                     log_file.write(msg)
