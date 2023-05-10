@@ -10,6 +10,11 @@ def search_and_merge(TaxId, SESSION):
     taxon = {**ncbi_metadata, "TaxId":TaxId}
     ncbi.merge_taxon(taxon, SESSION)
 
+# Define function to format date string into ISO format
+def get_iso_date(date_str):
+    date_obj = datetime.strptime(date_str, '%m/%d/%y')
+    return date_obj.strftime('%Y-%m-%d')
+
 def ingest_flunet(SESSION):
     try:
         flunet_rows = flunet.get_rows()
@@ -24,6 +29,7 @@ def ingest_flunet(SESSION):
         flunet.merge_agent_groups(agent_groups, SESSION)
 
         human = 9606 # Tax ID for humans
+        # Create human node
         search_and_merge(human, SESSION)
 
         for index, row in enumerate(flunet_rows):
@@ -34,30 +40,19 @@ def ingest_flunet(SESSION):
             logger.info(f"Creating FluNet Report {index}")
 
             country = row["Territory"]
-            merge_geo(country,SESSION)
+            merge_geo(country, SESSION)
 
             # Create the report node
-            # Parse the date string into a datetime object
-            start_date_str = row["Start date"]
-            start_date_obj = datetime.strptime(start_date_str, "%m/%d/%y")
-
-            # Parse the date string into a datetime object
-            end_date_str = row["End date"]
-            end_date_obj = datetime.strptime(end_date_str, "%m/%d/%y")
-
-            report_props = {
-                "dataSource":"FluNet",
-                "dataSourceRow":index,
-                "reportDate":start_date_obj,
-            }
-
             create_report_query = f"""
-                MATCH (g:Geography {{name: '{country}'}})
-                MERGE (report:Report:FluNet {{ {', '.join([f"{k}: {v}" for k, v in report_props.items()])} }})
-                CREATE (report)-[:IN]->(g)
+                MERGE (r:Document:CaseReport:FluNet {{
+                    dataSource: '{"FluNet"}',
+                    dataSourceRow: {index},
+                    reportDate: date('{get_iso_date(row["Start date"])}')
+                }})
             """
 
-            create_event_queries = []
+            SESSION.run(create_report_query)
+
             for col in agent_groups.keys():
                 # skip detection columns with no values
                 # or with zero specimens detected
@@ -65,42 +60,47 @@ def ingest_flunet(SESSION):
                     continue
 
                 ncbi_id = int(agent_groups[col])
-                event_relationship_props = {
+                event_rel_props = {
                     "subtype": col,
                     "role": "pathogen",
-                    "detectionCount":int(row[col])
-                }
-
-                event_props = {
-                    "startDate":start_date_obj,
-                    "endDate":end_date_obj,
-                    "duration":{"days":7},
-                    "totalSpecimensCollected":int(row["Collected"]),
-                    "totalSpecimensProcessed":int(row["Processed"] or 0),
-                    "totalSpecimensPositive":int(row["Total positive" or 0]),
-                    "totalSpecimensNegative":int(row["Total negative"] or 0),
+                    "detectionCount": int(row[col])
                 }
 
                 create_event_query = f"""
-                    MATCH (taxon:Taxon {{TaxId: {ncbi_id}}})
-                    MERGE (event:Event:Outbreak {{ {', '.join([f"{k}: {v}" for k, v in event_props.items()])} }})                    
-                    CREATE (report)-[:REPORTS]->(event)
-                    CREATE (event)-[:INVOLVES {{{', '.join([f"{k}: {v}" for k, v in event_relationship_props.items()])}}}]->(taxon)
+                    MATCH (r:Document:CaseReport:FluNet {{dataSourceRow: {index}}})
+                    MERGE (r)-[:REPORTS]->(e:Event:Outbreak {{
+                        eventId: {index},
+                        startDate: date('{get_iso_date(row["Start date"])}'),
+                        endDate: date('{get_iso_date(row["End date"])}'),
+                        duration: 'P7D',
+                        totalSpecimensCollected: {int(row["Collected"] or 0)},
+                        totalSpecimensProcessed: {int(row["Processed"] or 0)},
+                        totalSpecimensPositive: {int(row["Total positive"] or 0)},
+                        totalSpecimensNegative: {int(row["Total negative"] or 0)}
+                    }})
+                    WITH e
+                    MATCH (g:Geography {{name: '{country}'}})
+                    MERGE (e)-[:IN]->(g)
+                    WITH e
+                    MERGE (t:Taxon {{TaxId: {ncbi_id}}})
+                    MERGE (e)-[:INVOLVES {{
+                                            subtype: '{event_rel_props['subtype']}',
+                                            role: '{event_rel_props['role']}',
+                                            detectionCount: {event_rel_props['detectionCount']}
+                    }}]->(t)
                 """
 
-                create_event_queries.append(create_event_query)
+                SESSION.run(create_event_query)
 
             # Create the INVOLVES relationships for humans
             create_human_query = f"""
-                MATCH (taxon:Taxon {{TaxId: {human}}})
-                CREATE (event)-[:INVOLVES {{caseCount: {int(row.get('Total positive', 0))}, role: 'host'}}]->(taxon)
-            """
+                    MATCH (t:Taxon {{TaxId: {human}}})
+                    MATCH (e:Event:Outbreak {{eventId: {index}}})
+                    MERGE (e)-[:INVOLVES {{caseCount: {int(row['Total positive'],0)}, role: 'host'}}]->(t)
+                """
 
-            # Write the full Cypher query
-            cypher_query = create_report_query + "\n" + "\n".join(create_event_queries) + "\n" + create_human_query
+            SESSION.run(create_human_query)
 
-            # Execute the Cypher query
-            SESSION.run(cypher_query)
 
     except Exception as e:
         logger.error(f"An exception occurred: {e}")
