@@ -1,5 +1,13 @@
-def create_query_line_data(row_number: int) -> str:
-    # Query node by row number, return node and first order relationships including nodes
-    # The query should match the row data
-    query = f"MATCH(n)-[r]-(b) WHERE n:GMPD AND n:CaseReport AND n.dataSourceRow = {row_number} RETURN n, r, b, type(r)"
-    return query
+from collections import Counter
+
+
+def is_node_accurate(row: dict, node: dict) -> bool:
+    prunned_row = {
+        "collected": row["NumSamples"],
+        "dataSourceRow": row[""],
+        "detectionType": row["SamplingBasis"],
+        "prevalence": row["Prevalence"],
+        "reference": row["Citation"],
+    }
+
+    return Counter(list(prunned_row)) == Counter(list(node))
