@@ -31,7 +31,7 @@ def flunet_validation() -> None:
                 null += 1  # Count empty rows
                 continue
 
-            query = create_query_line_data(row_as_dictionary[""])
+            query = create_query_line_data("FluNet", row_as_dictionary[""])
             query_results = neo4j_connection.run_query(query)
             line_data_accuracy = test_flunet_line_data(row_as_dictionary, query_results)
 
