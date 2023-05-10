@@ -12,5 +12,8 @@ PASSWORD = os.environ["PASSWORD"]
 DATABASE = os.environ["DATABASE"]
 
 
-if __name__ == "__main__":
+neo4j_connection = Neo4jDatabase(URI, DATABASE, AUTH, PASSWORD)
+
+
+def gmpd_validation() -> None:
     pass
