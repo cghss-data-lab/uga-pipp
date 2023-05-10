@@ -1,7 +1,8 @@
 import os
 from dotenv import load_dotenv
 from neo4j_driver import Neo4jDatabase
-from .tests import is_line_null, create_query_line_data, test_flunet_line_data
+from .tests import is_line_null, test_flunet_line_data
+from create_query import create_query_line_data
 
 load_dotenv()
 

@@ -3,6 +3,8 @@ from dotenv import load_dotenv
 import collections
 from datetime import datetime
 from neo4j_driver import Neo4jDatabase
+from create_query import create_query_line_data
+
 
 load_dotenv()
 
