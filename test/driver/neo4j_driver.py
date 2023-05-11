@@ -15,6 +15,3 @@ class Neo4jDatabase:
         with self.driver.session() as session:
             result = session.run(query)
             return list(result)
-
-    def close(self) -> None:
-        self.driver.close()
