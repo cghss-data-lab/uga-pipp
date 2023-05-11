@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from neo4j_driver import Neo4jDatabase
 from .tests import is_line_null, test_flunet_line_data
 from create_query import create_query_line_data
+from write_logs import write_log
 
 load_dotenv()
 
@@ -38,6 +39,11 @@ def flunet_validation() -> None:
             if all(line_data_accuracy.values()):
                 correct += 1  # Count correct values
             else:
+                write_log("flunet_validation", row_as_dictionary[""])
+                incorrect += 1
+
+            print("T", total, "E", null, "NE", total - null, end="\r")
+    return incorrect
                 with open("./test/logs/flunet_validation.log", "a") as log_file:
                     incorrect += 1
                     msg = "ERROR: " + row_as_dictionary[""] + "\n"
