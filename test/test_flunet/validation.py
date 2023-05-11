@@ -7,9 +7,7 @@ def flunet_validation(neo4j_driver) -> int:
 
     with open("./flunet/data/flunet_1995_2022.csv", "r") as flunet:
         header = next(flunet).split(",")
-        total = 0
-        null = 0
-        correct, incorrect = 0, 0
+        incorrect = 0
         for row in flunet:
             total += 1  # Count total number of rows
             row = row.split(",")
@@ -17,20 +15,16 @@ def flunet_validation(neo4j_driver) -> int:
             row_as_dictionary = {k: v for k, v in zip(header, row)}
             # Count and skip empty rows
             if is_collected_null(row_as_dictionary) or is_line_null(row_as_dictionary):
-                null += 1
                 continue
             # Query database and test accuracy
             query = create_query_line_data("FluNet", row_as_dictionary[""])
             query_results = neo4j_driver.run_query(query)
             line_data_accuracy = test_flunet_line_data(row_as_dictionary, query_results)
 
-            if all(line_data_accuracy.values()):
-                correct += 1  # Count correct values
-            else:
+            if not all(line_data_accuracy.values()):
                 write_log("flunet_validation", row_as_dictionary[""])
                 incorrect += 1
 
-            print("T", total, "E", null, "NE", total - null, end="\r")
     return incorrect
 
 
