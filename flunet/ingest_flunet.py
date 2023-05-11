@@ -33,9 +33,10 @@ def ingest_flunet(SESSION):
         search_and_merge(human, SESSION)
 
         for index, row in enumerate(flunet_rows):
-            # skip rows where no samples were collected
-            if row["Collected"] == "" or row["Collected"] == "0":
-                continue
+            
+            # # Uncomment to skip rows where no samples were collected
+            # if row["Collected"] == "" or row["Collected"] == "0":
+            #     continue
 
             logger.info(f"Creating FluNet Report {index}")
 
