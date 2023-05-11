@@ -1,4 +1,4 @@
-from .tests import test_flunet_line_data, is_collected_null
+from .tests import is_line_null, test_flunet_line_data, is_collected_null
 from driver.create_query import create_query_line_data, count_nodes
 from write_logs import write_log
 
@@ -16,7 +16,7 @@ def flunet_validation(neo4j_driver) -> int:
             # Create a dictionary with the line data
             row_as_dictionary = {k: v for k, v in zip(header, row)}
             # Count and skip empty rows
-            if is_line_null(row_as_dictionary):
+            if is_collected_null(row_as_dictionary) or is_line_null(row_as_dictionary):
                 null += 1
                 continue
             # Query database and test accuracy
