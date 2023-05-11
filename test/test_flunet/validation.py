@@ -1,21 +1,9 @@
-import os
-from dotenv import load_dotenv
-from neo4j_driver import Neo4jDatabase
-from .tests import is_line_null, test_flunet_line_data, is_collected_null
-from create_query import create_query_line_data, count_nodes
+from .tests import test_flunet_line_data, is_collected_null
+from driver.create_query import create_query_line_data, count_nodes
 from write_logs import write_log
 
-load_dotenv()
 
-URI = os.environ["URI"]
-AUTH = os.environ["AUTH"]
-PASSWORD = os.environ["PASSWORD"]
-DATABASE = os.environ["DATABASE"]
-
-neo4j_connection = Neo4jDatabase(URI, DATABASE, AUTH, PASSWORD)
-
-
-def flunet_validation() -> None:
+def flunet_validation(neo4j_driver) -> int:
 
     with open("./flunet/data/flunet_1995_2022.csv", "r") as flunet:
         header = next(flunet).split(",")
@@ -33,7 +21,7 @@ def flunet_validation() -> None:
                 continue
             # Query database and test accuracy
             query = create_query_line_data("FluNet", row_as_dictionary[""])
-            query_results = neo4j_connection.run_query(query)
+            query_results = neo4j_driver.run_query(query)
             line_data_accuracy = test_flunet_line_data(row_as_dictionary, query_results)
 
             if all(line_data_accuracy.values()):
@@ -46,7 +34,7 @@ def flunet_validation() -> None:
     return incorrect
 
 
-def flunet_count() -> bool:
+def flunet_count(neo4j_driver) -> bool:
     with open("./flunet/data/flunet_1995_2022.csv", "r") as flunet:
         header = next(flunet).split(",")
         null = 0
@@ -64,7 +52,7 @@ def flunet_count() -> bool:
             total += 1
 
     count_query = count_nodes("FluNet")
-    result = neo4j_connection.run_query(count_query)
+    result = neo4j_driver.run_query(count_query)
 
     database_count = dict(result[0])["count(n)"]
     row_count = total - null
