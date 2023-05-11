@@ -12,3 +12,16 @@ DATABASE = os.environ["DATABASE"]
 
 neo4j_connection = Neo4jDatabase(URI, DATABASE, AUTH, PASSWORD)
 
+
+def test_flunet_count():
+    assert flunet_count(neo4j_connection) == True
+
+
+def test_flunet_accuracy():
+    assert flunet_validation(neo4j_connection) == 0
+
+
+neo4j_connection.close()
+
+# if __name__ == "__main__":
+# flunet_count(neo4j_connection)
