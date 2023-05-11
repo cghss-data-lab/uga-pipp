@@ -26,11 +26,11 @@ def flunet_validation() -> None:
             row = row.split(",")
             # Create a dictionary with the line data
             row_as_dictionary = {k: v for k, v in zip(header, row)}
-
+            # Count and skip empty rows
             if is_line_null(row_as_dictionary):
-                null += 1  # Count empty rows
+                null += 1
                 continue
-
+            # Query database and test accuracy
             query = create_query_line_data("FluNet", row_as_dictionary[""])
             query_results = neo4j_connection.run_query(query)
             line_data_accuracy = test_flunet_line_data(row_as_dictionary, query_results)
@@ -43,7 +43,7 @@ def flunet_validation() -> None:
                     msg = "ERROR: " + row_as_dictionary[""] + "\n"
                     log_file.write(msg)
 
-            print(total, end="\r")
+            print("T", total, "E", null, "NE", total - null, end="\r")
         print(
             "Total: ",
             total,

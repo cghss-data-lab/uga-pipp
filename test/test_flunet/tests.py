@@ -40,6 +40,7 @@ def is_flunet_node_accurate(row: dict, node: dict) -> bool:
 
 
 def is_line_null(line_data: dict) -> bool:
+    # Verify if line is all empty or all zeros
     keys = (
         "Collected",
         "Processed",
@@ -57,7 +58,7 @@ def is_line_null(line_data: dict) -> bool:
         "Total negative",
     )
 
-    return all(line_data[key] == "" for key in keys)
+    return all(line_data[key] in ("", "0") for key in keys)
 
 
 def is_strain_accurate(row: dict, strain_name: str) -> bool:
