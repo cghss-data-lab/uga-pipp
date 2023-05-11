@@ -17,4 +17,4 @@ class Neo4jDatabase:
             return list(result)
 
     def close(self) -> None:
-        self.drive.close()
+        self.driver.close()
