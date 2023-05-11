@@ -46,9 +46,6 @@ def flunet_count(neo4j_driver) -> bool:
                 null += 1
             else:
                 write_log("flunet_count", row_as_dictionary[""])
-                with open("./test/logs/flunet_validation.log", "a") as log_file:
-                    msg = ",".join(row_as_dictionary.values())
-                    log_file.write(msg)
             total += 1
 
     count_query = count_nodes("FluNet")
