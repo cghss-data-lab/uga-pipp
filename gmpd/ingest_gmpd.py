@@ -13,7 +13,6 @@ def ingest_gmpd(SESSION):
     for dataSourceRow, row in enumerate(gmpd_rows):
 
         reference = row["Citation"]
-        prevalence = row["Prevalence"]
         collected = row["HostsSampled"]
         detectionType = row["SamplingType"]    
         dataSource = "GMPD"
@@ -31,8 +30,7 @@ def ingest_gmpd(SESSION):
                                             dataSourceRow:$dataSourceRow,
                                             reference:$reference, 
                                             detectionType:$detectionType, 
-                                            collected: $collected,  
-                                            prevalence:$prevalence})
+                                            collected: $collected})
                 RETURN r
                 """
 
@@ -42,7 +40,6 @@ def ingest_gmpd(SESSION):
                 "reference": reference, 
                 "detectionType": detectionType,
                 "collected": collected,
-                "prevalence": prevalence
             }
             result = SESSION.run(query, parameters)
 
@@ -58,8 +55,7 @@ def ingest_gmpd(SESSION):
                                             dataSourceRow: $dataSourceRow,
                                             reference: $reference, 
                                             detectionType: $detectionType, 
-                                            collected: $collected,  
-                                            prevalence: $prevalence})
+                                            collected: $collected})
                 MERGE (r)-[:IN]->(g)
                 RETURN r
             """
@@ -70,8 +66,7 @@ def ingest_gmpd(SESSION):
                 "dataSourceRow": dataSourceRow, 
                 "reference": reference, 
                 "detectionType": detectionType,
-                "collected": collected,
-                "prevalence": prevalence
+                "collected": collected
             }
 
             SESSION.run(query, parameters)
