@@ -26,6 +26,10 @@ def test_gmpd_count():
     assert gmpd_count(neo4j_connection) == 0
 
 
+def test_gmpd_accuracy():
+    assert gmpd_validation() == 0
+
+
 neo4j_connection.close()
 
 # if __name__ == "__main__":
