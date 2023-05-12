@@ -43,6 +43,9 @@ def ingest_flunet(SESSION):
             country = row["Territory"]
             merge_geo(country, SESSION)
 
+            # eventId is disease, report date, country
+            eventId = "Flu-" + str(country) + "-" + str(row["Start date"])
+
             # Create the report node
             create_report_query = f"""
                 MATCH(g:Geography {{name: "{country}"}})
@@ -68,9 +71,6 @@ def ingest_flunet(SESSION):
                     "role": "pathogen",
                     "caseCount": int(row[col])
                 }
-
-                # eventId is disease, report date, country
-                eventId = "Flu-" + str(country) + "-" + str(row["Start date"])
 
                 create_event_query = f"""
                     MATCH (r:Report:FluNet {{dataSourceRow: {index}}})
@@ -101,7 +101,7 @@ def ingest_flunet(SESSION):
             # Create the INVOLVES relationships for humans
             create_human_query = f"""
                     MATCH (t:Taxon {{TaxId: {human}}})
-                    MATCH (e:Event:Outbreak {{eventId: {index}}})
+                    MATCH (e:Event:Outbreak {{eventId: "{eventId}"}})
                     MERGE (e)-[:INVOLVES {{caseCount: {int(row['Total positive'] or 0)}, role: 'host'}}]->(t)
                 """
 
