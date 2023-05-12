@@ -70,12 +70,12 @@ def ingest_flunet(SESSION):
                 }
 
                 # eventId is disease, report date, country
-                eventId = "Flu-" + str(row["Start date"]) + "-" + str(country)
+                eventId = "Flu-" + str(country) + "-" + str(row["Start date"])
 
                 create_event_query = f"""
                     MATCH (r:Report:FluNet {{dataSourceRow: {index}}})
                     MERGE (r)-[:REPORTS]->(e:Event:Outbreak {{
-                        eventId: '{eventId}',
+                        eventId: "{eventId}",
                         startDate: date('{get_iso_date(row["Start date"])}'),
                         endDate: date('{get_iso_date(row["End date"])}'),
                         duration: 'P7D',
