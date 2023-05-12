@@ -6,5 +6,5 @@ def create_query_line_data(source: str, row_number: int) -> str:
 
 
 def count_nodes(source: str) -> str:
-    query = f"MATCH(n:{source}) RETURN count(n)"
+    query = f"MATCH(n:{source}) RETURN n.dataSourceRow"
     return query
