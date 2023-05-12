@@ -34,9 +34,9 @@ def ingest_flunet(SESSION):
 
         for index, row in enumerate(flunet_rows):
             
-            # # Uncomment to skip rows where no samples were collected
-            # if row["Collected"] == "" or row["Collected"] == "0":
-            #     continue
+            # Skip rows where no data
+            if row["Collected"] == "" and row["Processed"] == "" and row["Total positive"] == "" and row["Total negative"] == "":
+                continue
 
             logger.info(f"Creating FluNet Report {index}")
 
@@ -45,11 +45,13 @@ def ingest_flunet(SESSION):
 
             # Create the report node
             create_report_query = f"""
-                MERGE (r:Document:CaseReport:FluNet {{
+                MATCH(g:Geography {{name: "{country}"}})
+                MERGE (r:Report:FluNet {{
                     dataSource: '{"FluNet"}',
                     dataSourceRow: {index},
                     reportDate: date('{get_iso_date(row["Start date"])}')
                 }})
+
             """
 
             SESSION.run(create_report_query)
@@ -64,13 +66,16 @@ def ingest_flunet(SESSION):
                 event_rel_props = {
                     "subtype": col,
                     "role": "pathogen",
-                    "detectionCount": int(row[col])
+                    "caseCount": int(row[col])
                 }
 
+                # eventId is disease, report date, country
+                eventId = "Flu-" + str(row["Start date"]) + "-" + str(country)
+
                 create_event_query = f"""
-                    MATCH (r:Document:CaseReport:FluNet {{dataSourceRow: {index}}})
+                    MATCH (r:Report:FluNet {{dataSourceRow: {index}}})
                     MERGE (r)-[:REPORTS]->(e:Event:Outbreak {{
-                        eventId: {index},
+                        eventId: '{eventId}',
                         startDate: date('{get_iso_date(row["Start date"])}'),
                         endDate: date('{get_iso_date(row["End date"])}'),
                         duration: 'P7D',
@@ -80,14 +85,14 @@ def ingest_flunet(SESSION):
                         totalSpecimensNegative: {int(row["Total negative"] or 0)}
                     }})
                     WITH e
-                    MATCH (g:Geography {{name: '{country}'}})
+                    MATCH (g:Geography {{name: "{country}"}})
                     MERGE (e)-[:IN]->(g)
                     WITH e
                     MERGE (t:Taxon {{TaxId: {ncbi_id}}})
                     MERGE (e)-[:INVOLVES {{
                                             subtype: '{event_rel_props['subtype']}',
                                             role: '{event_rel_props['role']}',
-                                            detectionCount: {event_rel_props['detectionCount']}
+                                            caseCount: {event_rel_props['caseCount']}
                     }}]->(t)
                 """
 
@@ -97,7 +102,7 @@ def ingest_flunet(SESSION):
             create_human_query = f"""
                     MATCH (t:Taxon {{TaxId: {human}}})
                     MATCH (e:Event:Outbreak {{eventId: {index}}})
-                    MERGE (e)-[:INVOLVES {{caseCount: {int(row['Total positive'],0)}, role: 'host'}}]->(t)
+                    MERGE (e)-[:INVOLVES {{caseCount: {int(row['Total positive'] or 0)}, role: 'host'}}]->(t)
                 """
 
             SESSION.run(create_human_query)
