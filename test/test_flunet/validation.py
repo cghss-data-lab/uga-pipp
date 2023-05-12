@@ -29,23 +29,21 @@ def flunet_validation(neo4j_driver) -> int:
 
 
 def flunet_count(neo4j_driver) -> bool:
+    count_query = count_nodes("FluNet")
+    result = neo4j_driver.run_query(count_query)
+    result = set([str(dict(r)["n.dataSourceRow"]) for r in result])
     with open("./flunet/data/flunet_1995_2022.csv", "r") as flunet:
         header = next(flunet).split(",")
-        null = 0
-        total = 0
+        csv = set()
         for row in flunet:
             row = row.split(",")
             row_as_dictionary = {k: v for k, v in zip(header, row)}
             if is_collected_null(row_as_dictionary) or is_line_null(row_as_dictionary):
-                null += 1
+                continue
             else:
-                write_log("flunet_count", row_as_dictionary[""])
-            total += 1
+                csv.add(row_as_dictionary[""])
 
-    count_query = count_nodes("FluNet")
-    result = neo4j_driver.run_query(count_query)
-
-    database_count = dict(result[0])["count(n)"]
-    row_count = total - null
-    print(database_count, row_count)
-    return database_count == row_count
+        difference = csv ^ result
+        for row_number in difference:
+            write_log("flunet_count", row_number)
+        return len(difference)
