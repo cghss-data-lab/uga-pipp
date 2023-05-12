@@ -8,3 +8,8 @@ def create_query_line_data(source: str, row_number: int) -> str:
 def count_nodes(source: str) -> str:
     query = f"MATCH(n:{source}) RETURN n.dataSourceRow"
     return query
+
+
+def duplicated_row_numbers(source: str, row_number: int) -> str:
+    query = f" MATCH (n:{source}) WITH n.dataSourceRow as row, count(*) as count WHERE cnt > 1 RETURN no, count"
+    return query
