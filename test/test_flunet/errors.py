@@ -10,3 +10,10 @@ class AccuracyError(Exception):
         self.values = values
         self.message = message
         super().__init__(message)
+
+
+class DiscrepancyError(Exception):
+    def __init__(self, values, message) -> None:
+        self.values = values
+        self.message = message
+        super().__init__(message)
