@@ -1,21 +1,7 @@
 from datetime import datetime
 from typing import Optional, Dict
 import pydantic
-from driver.create_query import create_query_line_data
-
-
-class ZeroError(Exception):
-    def __init__(self, value, message) -> None:
-        self.value = value
-        self.message = message
-        super().__init__(message)
-
-
-class AccuracyError(Exception):
-    def __init__(self, values, message) -> None:
-        self.values = values
-        self.message = message
-        super().__init__(message)
+from errors import ZeroError, AccuracyError, DiscrepancyError
 
 
 class FluNet(pydantic.BaseModel):
@@ -26,7 +12,27 @@ class FluNet(pydantic.BaseModel):
     negative: int
     positive: int
     processed: int
-    # start: datetime
+    start: datetime
+
+    @pydantic.root_validator(pre=true)
+    @classmethod
+    def consistent_collection_processing(cls, values):
+        if values["collected"] != values["processed"]:
+            raise DiscrepancyError(
+                values=values,
+                message="Number of collected samples differs from processed samples.",
+            )
+        return values
+
+    @pydantic.root_validator(pre=true)
+    @classmethod
+    def consistent_collection_processing(cls, values):
+        if values["processed"] != values["positive"] + values["negative"]:
+            raise DiscrepancyError(
+                values=values,
+                message="Number of negative and positive samples differ from processed samples.",
+            )
+        return values
 
     @pydantic.validator("collected")
     @classmethod
