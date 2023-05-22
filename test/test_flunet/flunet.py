@@ -36,7 +36,7 @@ class FluNet(pydantic.BaseModel):
 
     @pydantic.validator("collected")
     @classmethod
-    def collected_null(cls, value):
+    def collected_nonpositive(cls, value):
         if value <= 0:
             raise ZeroError(
                 value=value, message="Collected is less than or equal to zero."
@@ -45,7 +45,7 @@ class FluNet(pydantic.BaseModel):
 
     @pydantic.validator("negative")
     @classmethod
-    def negative_null(cls, value):
+    def negative_nonpositive(cls, value):
         if value <= 0:
             raise ZeroError(
                 value=value, message="Negative is less than or equal to zero."
@@ -54,7 +54,7 @@ class FluNet(pydantic.BaseModel):
 
     @pydantic.validator("positive")
     @classmethod
-    def positive_null(cls, value):
+    def positive_nonpositive(cls, value):
         if value <= 0:
             raise ZeroError(
                 value=value, message="Positive is less than or equal to zero."
@@ -63,7 +63,7 @@ class FluNet(pydantic.BaseModel):
 
     @pydantic.validator("processed")
     @classmethod
-    def processed_null(cls, value):
+    def processed_nonpositive(cls, value):
         if value <= 0:
             raise ZeroError(
                 value=value, message="Processed is less than or equal to zero."
