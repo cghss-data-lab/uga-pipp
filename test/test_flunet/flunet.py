@@ -83,3 +83,11 @@ class FluNetReport(pydantic.BaseModel):
             raise AccuracyError(
                 values=values, message="FluNet node and data are not equal."
             )
+
+    @pydantic.root_validator(pre=True)
+    @classmethod
+    def adjacent_node_accuracy(cls, values):
+        for node, node_type in values["adjacent_nodes"]:
+            if node_type == "REPORT":
+                pass
+        return values
