@@ -13,3 +13,8 @@ def count_nodes(source: str) -> str:
 def duplicated_row_numbers(source: str, row_number: int) -> str:
     query = f" MATCH (n:{source}) WITH n.dataSourceRow as row, count(*) as count WHERE cnt > 1 RETURN no, count"
     return query
+
+
+def count_taxons(source: str, row_number: int) -> str:
+    query = f"MATCH (g:{source})-[:REPORTS]->(t:Taxon) WHERE g.dataSourceRow = {row_number} RETURN count(t)"
+    return query
