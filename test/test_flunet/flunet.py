@@ -14,7 +14,7 @@ class FluNet(pydantic.BaseModel):
     processed: int
     start: datetime
 
-    @pydantic.root_validator(pre=true)
+    @pydantic.root_validator(pre=True)
     @classmethod
     def consistent_collection_processing(cls, values):
         if values["collected"] != values["processed"]:
@@ -24,7 +24,7 @@ class FluNet(pydantic.BaseModel):
             )
         return values
 
-    @pydantic.root_validator(pre=true)
+    @pydantic.root_validator(pre=True)
     @classmethod
     def consistent_collection_processing(cls, values):
         if values["processed"] != values["positive"] + values["negative"]:
