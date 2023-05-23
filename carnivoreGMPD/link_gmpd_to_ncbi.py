@@ -20,7 +20,7 @@ def create_ncbi_taxon(host_species, pathogen_species, SESSION):
             # merge the taxon on TaxID
             if host_ncbi_id:
                 host_ncbi_metadata = ncbi.get_metadata(host_ncbi_id)
-                host_taxon = {**host_ncbi_metadata, "TaxId":host_ncbi_id}
+                host_taxon = {**host_ncbi_metadata, "taxId":host_ncbi_id}
                 ncbi.merge_taxon(host_taxon, SESSION)
         
             else:
@@ -32,7 +32,7 @@ def create_ncbi_taxon(host_species, pathogen_species, SESSION):
 
             if pathogen_ncbi_id:
                 pathogen_ncbi_metadata = ncbi.get_metadata(pathogen_ncbi_id)
-                pathogen_taxon = {**pathogen_ncbi_metadata, "TaxId": pathogen_ncbi_id}
+                pathogen_taxon = {**pathogen_ncbi_metadata, "taxId": pathogen_ncbi_id}
                 ncbi.merge_taxon(pathogen_taxon, SESSION)
 
             else:

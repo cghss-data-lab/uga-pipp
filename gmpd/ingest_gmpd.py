@@ -13,9 +13,13 @@ def ingest_gmpd(SESSION):
     for dataSourceRow, row in enumerate(gmpd_rows):
 
         reference = row["Citation"]
-        totalSpecimensCollected = row["NumSamples"]
+        totalSpecimensCollected = int(row["NumSamples"])
         prevalence = row["Prevalence"]
-        totalSpecimensPositive = round(prevalence * totalSpecimensCollected)
+        if prevalence and prevalence != "NA":
+            prevalence = float(prevalence)
+            totalSpecimensPositive = round(prevalence * totalSpecimensCollected)
+        else:
+            totalSpecimensPositive = "Unknown"
         detectionType = row["SamplingType"]    
         dataSource = "GMPD"
         long = row["Longitude"]
@@ -72,7 +76,7 @@ def ingest_gmpd(SESSION):
             role = "host"
             # Create the relationships between the Report node and the host taxon
             query = """
-            MATCH (r:GMPD:Report {dataSourceRow: $dataSourceRow}), (h:Taxon {TaxId: $host_ncbi_id})
+            MATCH (r:GMPD:Report {dataSourceRow: $dataSourceRow}), (h:Taxon {taxId: $host_ncbi_id})
             MERGE (r)-[hr:ASSOCIATES {role: $role}]->(h)
             """
             parameters = {"dataSourceRow": dataSourceRow, "host_ncbi_id": host_ncbi_id, "role":role}
@@ -83,7 +87,7 @@ def ingest_gmpd(SESSION):
             role = "pathogen"
             # Create the relationships between the Report node and the pathogen taxon
             query = """
-            MATCH (r:GMPD:Report {dataSourceRow: $dataSourceRow}), (p:Taxon {TaxId: $pathogen_ncbi_id})
+            MATCH (r:GMPD:Report {dataSourceRow: $dataSourceRow}), (p:Taxon {taxId: $pathogen_ncbi_id})
             MERGE (r)-[pr:ASSOCIATES {role: $role, detectionType: $detectionType, totalSpecimensCollected: $totalSpecimensCollected, totalSpecimensPositive: $totalSpecimensPositive}]->(p)
             """
             parameters = {"dataSourceRow": dataSourceRow, "pathogen_ncbi_id": pathogen_ncbi_id, "role":role, "detectionType":detectionType,"totalSpecimensCollected":totalSpecimensCollected, "totalSpecimensPositive":totalSpecimensPositive}

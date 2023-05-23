@@ -14,24 +14,24 @@ def get_metadata(ncbi_id):
     taxon = soup.TaxaSet.Taxon
 
     taxon_metadata = {
-        "ScientificName": taxon.ScientificName.getText(),
-        "ParentTaxId": taxon.ParentTaxId.getText(),
-        "Rank": taxon.Rank.getText(),
-        "Division": taxon.Division.getText(),
-        "GeneticCode": {"GCId": taxon.GCId.getText(), "GCName": taxon.GCName.getText()},
-        "MitoGeneticCode": {
+        "scientificName": taxon.ScientificName.getText(),
+        "parentTaxId": taxon.ParentTaxId.getText(),
+        "rank": taxon.Rank.getText(),
+        "division": taxon.Division.getText(),
+        "geneticCode": {"GCId": taxon.GCId.getText(), "GCName": taxon.GCName.getText()},
+        "mitoGeneticCode": {
             "MGCId": taxon.MGCId.getText(),
             "MGCName": taxon.MGCName.getText(),
         },
-        "Lineage": taxon.Lineage.getText(),
-        "CreateDate": taxon.CreateDate.getText(),
-        "UpdateDate": taxon.UpdateDate.getText(),
-        "PubDate": taxon.PubDate.getText(),
+        "lineage": taxon.Lineage.getText(),
+        "createDate": taxon.CreateDate.getText(),
+        "updateDate": taxon.UpdateDate.getText(),
+        "pubDate": taxon.PubDate.getText(),
         "dataSource":"NCBI Taxonomy"
     }
 
     if taxon.otherNames:
-        taxon["OtherNames"] = (taxon.OtherNames.getText(),)
+        taxon["otherNames"] = (taxon.OtherNames.getText(),)
 
     # parse lineage
     lineage_ex = []
@@ -39,13 +39,13 @@ def get_metadata(ncbi_id):
         if isinstance(taxon, Tag):
             lineage_ex.append(
                 {
-                    "TaxId": taxon.TaxId.getText(),
-                    "ScientificName": taxon.ScientificName.getText(),
-                    "Rank": taxon.Rank.getText(),
+                    "taxId": taxon.TaxId.getText(),
+                    "scientificName": taxon.ScientificName.getText(),
+                    "rank": taxon.Rank.getText(),
                     "dataSource":"NCBI Taxonomy"
                 }
             )
         time.sleep(SLEEP_TIME)
-    taxon_metadata["LineageEx"] = lineage_ex
+    taxon_metadata["lineageEx"] = lineage_ex
 
     return taxon_metadata

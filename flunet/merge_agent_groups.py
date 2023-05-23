@@ -10,5 +10,5 @@ def merge_agent_groups(agent_groups, SESSION):
     """
     for ncbi_id in agent_groups.values():
         ncbi_metadata = ncbi.get_metadata(ncbi_id)
-        taxon = {**ncbi_metadata, "TaxId": ncbi_id}
+        taxon = {**ncbi_metadata, "taxId": ncbi_id}
         ncbi.merge_taxon(taxon, SESSION)

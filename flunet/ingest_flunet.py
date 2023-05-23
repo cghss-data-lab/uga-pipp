@@ -4,10 +4,10 @@ from geonames import merge_geo
 from loguru import logger
 from datetime import datetime
 
-def search_and_merge(TaxId, SESSION):
-    logger.info(f'CREATING node {TaxId}')
-    ncbi_metadata = ncbi.get_metadata(TaxId)
-    taxon = {**ncbi_metadata, "TaxId":TaxId}
+def search_and_merge(taxId, SESSION):
+    logger.info(f'CREATING node {taxId}')
+    ncbi_metadata = ncbi.get_metadata(taxId)
+    taxon = {**ncbi_metadata, "taxId":taxId}
     ncbi.merge_taxon(taxon, SESSION)
 
 # Define function to format date string into ISO format
@@ -88,7 +88,7 @@ def ingest_flunet(SESSION):
                     MATCH (g:Geography {{name: "{country}"}})
                     MERGE (e)-[:IN]->(g)
                     WITH e
-                    MERGE (t:Taxon {{TaxId: {ncbi_id}}})
+                    MERGE (t:Taxon {{taxId: {ncbi_id}}})
                     MERGE (e)-[:INVOLVES {{
                                             subtype: '{event_rel_props['subtype']}',
                                             role: '{event_rel_props['role']}',
@@ -100,7 +100,7 @@ def ingest_flunet(SESSION):
 
             # Create the INVOLVES relationships for humans
             create_human_query = f"""
-                    MATCH (t:Taxon {{TaxId: {human}}})
+                    MATCH (t:Taxon {{taxId: {human}}})
                     MATCH (e:Event:Outbreak {{eventId: "{eventId}"}})
                     MERGE (e)-[:INVOLVES {{caseCount: {int(row['Total positive'] or 0)}, role: 'host'}}]->(t)
                 """

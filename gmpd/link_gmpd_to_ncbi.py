@@ -1,7 +1,6 @@
 import ncbi
 
 NOT_FOUND_FILE = "gmpd/species_not_found.txt"
-cache = {}
 searched_terms = set()
 not_found_terms = set()
 
@@ -20,22 +19,21 @@ def search_and_merge(term, SESSION):
     if term in cache:
         taxon = cache[term]
         ncbi.merge_taxon(taxon, SESSION)
-        ncbi_id = taxon["TaxId"]
+        ncbi_id = taxon["taxId"]
 
     else:
         searched_terms.add(term)
         ncbi_id = ncbi.id_search(term)
         if ncbi_id:
             ncbi_metadata = ncbi.get_metadata(ncbi_id)
-            taxon = {**ncbi_metadata, "TaxId":ncbi_id}
+            taxon = {**ncbi_metadata, "taxId": ncbi_id}
             ncbi.merge_taxon(taxon, SESSION)
             cache[term] = taxon
         else:
             not_found_terms.add(term)
             return None
-    
-    return ncbi_id
 
+    return ncbi_id
 
 def link_gmpd_to_ncbi(row, SESSION):
     global searched_terms, not_found_terms

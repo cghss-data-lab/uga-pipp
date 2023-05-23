@@ -4,16 +4,16 @@ from loguru import logger
 import ncbi
 import geonames
 
-def search_and_merge(TaxId, SESSION):
-    logger.info(f'CREATING node {TaxId}')
-    ncbi_metadata = ncbi.get_metadata(TaxId)
-    taxon = {**ncbi_metadata, "TaxId":TaxId}
+def search_and_merge(taxId, SESSION):
+    logger.info(f'CREATING node {taxId}')
+    ncbi_metadata = ncbi.get_metadata(taxId)
+    taxon = {**ncbi_metadata, "taxId":taxId}
     ncbi.merge_taxon(taxon, SESSION)
 
 def ingest_worldpop(SESSION):
     pop_rows = get_rows()
-    TaxId = 9606 # Tax ID for humans
-    search_and_merge(TaxId, SESSION)
+    taxId = 9606 # Tax ID for humans
+    search_and_merge(taxId, SESSION)
 
     for index, row in enumerate(pop_rows):
         iso2 = row["ISO2_code"]
@@ -34,33 +34,33 @@ def ingest_worldpop(SESSION):
             totalPopulation = (float(row['TPopulation1July']) * 1000)
             # totalMalePop = (float(row['TPopulationMale1July'])*1000)
             # totalFemalePop = (float(row['TPopulationFemale1July'])*1000)
-            popDensity = float(row["PopDensity"])
-            popSexRatio = float(row["PopSexRatio"])
+            # popDensity = float(row["PopDensity"])
+            # popSexRatio = float(row["PopSexRatio"])
             medianAge = float(row["MedianAgePop"])
-            # nat_change = (float(row["NatChange"])*1000)
-            naturalChangeRate = (float(row["NatChangeRT"]))
-            # pop_change = (float(row["PopChange"])*1000)
-            populationGrowthRate = (float(row["PopGrowthRate"]))
+            naturalChange = (float(row["NatChange"])*1000)
+            # naturalChangeRate = (float(row["NatChangeRT"]))
+            populationChange = (float(row["PopChange"])*1000)
+            # populationGrowthRate = (float(row["PopGrowthRate"]))
             # pop_doubling = (float(row["DoublingTime"]))
-            # births = (float(row["Births"])*1000)
-            crudeBirthRate = float(row["CBR"])
-            totalFertilityRate = float(row["TFR"])
-            netReproductionRate = float(row["NRR"])
+            births = (float(row["Births"])*1000)
+            # crudeBirthRate = float(row["CBR"])
+            # totalFertilityRate = float(row["TFR"])
+            # netReproductionRate = float(row["NRR"])
             # mean_age_childbearing = float(row["MAC"])
-            # deaths = float(row["Deaths"]*1000)
+            deaths = float(row["Deaths"]*1000)
             # male_deaths = float(row["MaleDeaths"]*1000)
             # female_deaths = float(row["FemaleDeaths"]*1000)
-            crudeDeathRate = float(row["CDR"])
+            # crudeDeathRate = float(row["CDR"])
             lifeExpectancy = float(row["LEx"])
             # life_expectancy_male = float(row["LExMale"])
             # life_expectancy_female = float(row["LExFemale"])
-            # infant_deaths = float(row["InfantDeaths"]*1000)
-            infantMortalityRate = float(row["IMR"])
-            # under_5_deaths = float(row["Under5Deaths"]*1000)
-            underFiveMortalityRate = float(row["Q5"])
+            infantDeaths = float(row["InfantDeaths"]*1000)
+            # infantMortalityRate = float(row["IMR"])
+            underFiveDeaths = float(row["Under5Deaths"]*1000)
+            # underFiveMortalityRate = float(row["Q5"])
             # under_40_mortality_rate = float(row["Q0040"])
-            # net_migration = float(row["NetMigrations"]*1000)
-            netMigrationRate = float(row["CNMR"])
+            netMigration = float(row["NetMigrations"]*1000)
+            # netMigrationRate = float(row["CNMR"])
             duration = 'P1Y' # set duration to 1 year
 
             pop_query = """
@@ -69,19 +69,15 @@ def ingest_worldpop(SESSION):
                                 date:$date,
                                 duration:$duration,
                                 totalPopulation:$totalPopulation, 
-                                popDensity:$popDensity,
-                                popSexRatio: $popSexRatio,
                                 medianAge: $medianAge,
-                                naturalChangeRate: $naturalChangeRate,
-                                populationGrowthRate: $populationGrowthRate,
-                                crudeBirthRate: $crudeBirthRate,
-                                totalFertilityRate: $totalFertilityRate,
-                                netReproductionRate: $netReproductionRate,
-                                crudeDeathRate: $crudeDeathRate,
+                                naturalChange: $naturalChange,
+                                populationChange: $populationChange,
+                                births: $births,
+                                deaths: $deaths,
                                 lifeExpectancy: $lifeExpectancy,
-                                infantMortalityRate: $infantMortalityRate,
-                                underFiveMortalityRate: $underFiveMortalityRate,
-                                netMigrationRate: $netMigrationRate,
+                                infantDeaths: $infantDeaths,
+                                underFiveDeaths: $underFiveDeaths,
+                                netMigration: $netMigration,
                                 estimate: $estimate})
                 RETURN p
                 """
@@ -92,19 +88,15 @@ def ingest_worldpop(SESSION):
                 "date":date,
                 "duration":duration,
                 "totalPopulation":totalPopulation,
-                "popDensity":popDensity,
-                "popSexRatio":popSexRatio,
                 "medianAge":medianAge,
-                "naturalChangeRate":naturalChangeRate,
-                "populationGrowthRate":populationGrowthRate,
-                "crudeBirthRate":crudeBirthRate,
-                "totalFertilityRate":totalFertilityRate,
-                "netReproductionRate":netReproductionRate,
-                "crudeDeathRate":crudeDeathRate,
+                "naturalChange":naturalChange,
+                "populationChange":populationChange,
+                "births":births,
+                "deaths":deaths,
                 "lifeExpectancy":lifeExpectancy,
-                "infantMortalityRate":infantMortalityRate,
-                "underFiveMortalityRate":underFiveMortalityRate,
-                "netMigrationRate":netMigrationRate,
+                "infantDeaths":infantDeaths,
+                "underFiveDeaths":underFiveDeaths,
+                "netMigration":netMigration,
                 "estimate":estimate
             }
 
@@ -113,8 +105,8 @@ def ingest_worldpop(SESSION):
 
             # Match Taxon node to population on TaxId and connect to Geo through Pop
             SESSION.run(
-                f'MATCH (t:Taxon {{TaxId: {TaxId}}}) '
-                f'MERGE (p:Population {{TaxId: {TaxId}}}) '
+                f'MATCH (t:Taxon {{taxId: {taxId}}}) '
+                f'MERGE (p:Population {{taxId: {taxId}}}) '
                 f'ON CREATE SET p = $props '
                 f'ON MATCH SET p += $props '
                 f'MERGE (p)-[:COMPRISES]->(t) '
