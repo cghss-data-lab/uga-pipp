@@ -17,6 +17,9 @@ class FluNet(pydantic.BaseModel):
     @pydantic.root_validator(pre=True)
     @classmethod
     def consistent_collection_processing(cls, values):
+        """
+        Check number of collected and processed samples are equal.
+        """
         if values["collected"] != values["processed"]:
             raise DiscrepancyError(
                 values=values,
@@ -27,6 +30,9 @@ class FluNet(pydantic.BaseModel):
     @pydantic.root_validator(pre=True)
     @classmethod
     def consistent_collection_processing(cls, values):
+        """
+        Check number of processed samples is equal to the sym of positive and negative samples.
+        """
         if values["processed"] != values["positive"] + values["negative"]:
             raise DiscrepancyError(
                 values=values,
@@ -72,7 +78,7 @@ class FluNet(pydantic.BaseModel):
 
 
 class FluNetReport(pydantic.BaseModel):
-    row_point: dict
+    row_data: dict
     neo4j_point: FluNet
     adjacent_nodes: list[Tuple[dict, str]]
 
