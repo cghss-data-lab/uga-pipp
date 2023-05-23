@@ -1,4 +1,4 @@
-from geonames.search_lat_lng import search_lat_lng
+from geonames.search_lat_long import search_lat_long
 from geonames import merge_geo
 import gmpd
 from loguru import logger
@@ -22,7 +22,7 @@ def ingest_gmpd(SESSION):
         lat = row ["Latitude"]  
 
         # Return the location geonameId there is one
-        geonameId = search_lat_lng(lat, long)
+        geonameId = search_lat_long(lat, long)
 
         # If there is not geonameId, just create the Report node
         if geonameId is None:

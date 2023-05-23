@@ -77,7 +77,7 @@ def merge_geo(geoname_or_id, SESSION):
             fcode: $fcode,
             fcodeName: $fcodeName,
             lat: $lat, 
-            lng: $lng,
+            long: $long,
             elevation: $elevation
         })
     """
@@ -115,7 +115,7 @@ def merge_geo(geoname_or_id, SESSION):
                     "fcode":metadata.get("fcode","N/A"),
                     "fcodeName": metadata.get("fcodeName", "N/A"),
                     "lat": metadata.get("lat", 0),
-                    "lng": metadata.get("lng", 0),
+                    "long": metadata.get("lng", 0),
                     "elevation": metadata.get("elevation", "N/A")
                 }
                 # Get the label for this node based on its fcode value
