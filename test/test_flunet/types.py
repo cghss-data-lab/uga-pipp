@@ -84,7 +84,7 @@ class FluNetReport(pydantic.BaseModel):
     @pydantic.root_validator(pre=True)
     @classmethod
     def report_node_accuracy(cls, values):
-        if values["neo4j_point"] != values["row_point"]:
+        if values["neo4j_point"] != values["row_data"]:
             raise AccuracyError(
                 values=values, message="FluNet node and data are not equal."
             )
