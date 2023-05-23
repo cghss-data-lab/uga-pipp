@@ -1,6 +1,19 @@
 from datetime import datetime
 import pydantic
-from .errors import ZeroError, AccuracyError, DiscrepancyError, TerritoryError
+from .errors import (
+    ZeroError,
+    AccuracyError,
+    DiscrepancyError,
+    TerritoryError,
+    StrainError,
+)
+
+flunet_to_ncbi = {}
+with open("./flunet/data/flunet_to_ncbi.csv", "r") as flunet_ncbi:
+    for record in flunet_ncbi:
+        key, value = record.split(",")
+        value = value.strip()
+        flunet_to_ncbi[value] = key
 
 
 class FluNet(pydantic.BaseModel):
@@ -79,7 +92,7 @@ class FluNet(pydantic.BaseModel):
 class FluNetReport(pydantic.BaseModel):
     row_data: dict
     neo4j_point: FluNet
-    adjacent_nodes: list[tuple[dict, str]]
+    adjacent_nodes: list[tuple[dict, str, str]]
 
     @pydantic.root_validator(pre=True)
     @classmethod
@@ -93,10 +106,16 @@ class FluNetReport(pydantic.BaseModel):
     @pydantic.root_validator(pre=True)
     @classmethod
     def adjacent_node_accuracy(cls, values):
-        for node, node_type in values["adjacent_nodes"]:
-            if node_type == "REPORT":
-                pass
-            if node_type == "IN":
+        for node, edge_type, relationship in values["adjacent_nodes"]:
+            if edge_type == "REPORT" and "host" not in relationship:
+                node_strain = node["name"]
+                data_strain = values["row_data"][node_strain]
+                if data_strain == 0:
+                    raise StrainError(
+                        values=values, message="Strain does not match data."
+                    )
+
+            if edge_type == "IN":
                 node_territory = node["name"]
                 data_territory = values["row_data"]["Territory"]
                 territory = node_territory == data_territory

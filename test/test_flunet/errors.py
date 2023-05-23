@@ -24,3 +24,10 @@ class TerritoryError(Exception):
         self.values = values
         self.message = message
         super().__init__(message)
+
+
+class StrainError(Exception):
+    def __init__(self, values, message) -> None:
+        self.values = values
+        self.message = message
+        super().__init__(message)
