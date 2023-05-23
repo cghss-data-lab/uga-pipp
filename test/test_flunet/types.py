@@ -97,6 +97,9 @@ class FluNetReport(pydantic.BaseModel):
     @pydantic.root_validator(pre=True)
     @classmethod
     def report_node_accuracy(cls, values):
+        """
+        Check main flunet report node.
+        """
         if values["neo4j_point"] != values["row_data"]:
             raise AccuracyError(
                 values=values, message="FluNet node and data are not equal."
@@ -106,6 +109,9 @@ class FluNetReport(pydantic.BaseModel):
     @pydantic.root_validator(pre=True)
     @classmethod
     def adjacent_node_accuracy(cls, values):
+        """
+        Check strain and territory node accuracy.
+        """
         for node, edge_type, relationship in values["adjacent_nodes"]:
             if edge_type == "REPORT" and "host" not in relationship:
                 node_strain = node["name"]
@@ -123,5 +129,4 @@ class FluNetReport(pydantic.BaseModel):
                     raise TerritoryError(
                         values=values, message="Territory does not match data."
                     )
-
         return values
