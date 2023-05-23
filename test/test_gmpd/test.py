@@ -10,6 +10,10 @@ def validate_gmpd(neo4j_driver) -> None:
         header = next(gmpd).split(",")
 
         for row in gmpd:
+            row = row.split(",")
+            # Create a dictionary with line data
+            row_as_dictionary = {k: v for k, v in zip(header, row)}
+
             try:
                 pass
             except DetectionError as e:
