@@ -1,5 +1,4 @@
 from datetime import datetime
-from typing import Tuple
 import pydantic
 from .errors import ZeroError, AccuracyError, DiscrepancyError, TerritoryError
 
@@ -80,7 +79,7 @@ class FluNet(pydantic.BaseModel):
 class FluNetReport(pydantic.BaseModel):
     row_data: dict
     neo4j_point: FluNet
-    adjacent_nodes: list[Tuple[dict, str]]
+    adjacent_nodes: list[tuple[dict, str]]
 
     @pydantic.root_validator(pre=True)
     @classmethod
