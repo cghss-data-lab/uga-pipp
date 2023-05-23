@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Tuple
 import pydantic
-from errors import ZeroError, AccuracyError, DiscrepancyError, TerritoryError
+from .errors import ZeroError, AccuracyError, DiscrepancyError, TerritoryError
 
 
 class FluNet(pydantic.BaseModel):
@@ -16,7 +16,7 @@ class FluNet(pydantic.BaseModel):
 
     @pydantic.root_validator(pre=True)
     @classmethod
-    def consistent_collection_processing(cls, values):
+    def consistent_collection(cls, values):
         """
         Check number of collected and processed samples are equal.
         """
@@ -29,7 +29,7 @@ class FluNet(pydantic.BaseModel):
 
     @pydantic.root_validator(pre=True)
     @classmethod
-    def consistent_collection_processing(cls, values):
+    def consistent_processing(cls, values):
         """
         Check number of processed samples is equal to the sym of positive and negative samples.
         """
