@@ -7,6 +7,7 @@ from test_flunet.errors import (
     TerritoryError,
     DiscrepancyError,
 )
+from driver.create_query import create_query_line_data
 
 load_dotenv()
 
@@ -21,12 +22,14 @@ def validate_flunet(neo4j_driver) -> None:
             row = row.split(",")
             # Create a dictionary with line data
             row_as_dictionary = {k: v for k, v in zip(header, row)}
+            row_number = row_as_dictionary[""]
 
             if row_as_dictionary["Collected"] in ("", "0"):
-                logging.warning(f"{row_as_dictionary['']} empty")
+                logging.warning(f"Row {row_number} is empty")
                 continue
 
             try:
+                query = create_query_line_data("FluNet", row_number)
                 result = neo4j_driver.run_query()
                 node = FluNet(dict(result))
                 FluNetReport(row_as_dictionary, node)
