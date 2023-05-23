@@ -1,6 +1,5 @@
 import logging
-from test_flunet.flunet import FluNet, FluNetReport
-from dotenv import load_dotenv
+from test_flunet.types import FluNet, FluNetReport
 from test_flunet.errors import (
     AccuracyError,
     ZeroError,
@@ -8,8 +7,6 @@ from test_flunet.errors import (
     DiscrepancyError,
 )
 from driver.create_query import create_query_line_data
-
-load_dotenv()
 
 
 def validate_flunet(neo4j_driver) -> None:
