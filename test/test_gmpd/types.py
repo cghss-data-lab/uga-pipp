@@ -29,3 +29,9 @@ class Gmpd(pydantic.BaseModel):
     def correct_prevalence(cls, value):
         if value > 1 or value <= 0:
             raise PrevalenceError(value=value, message="Prevalence is unbounded.")
+
+
+class GmpdReport(pydantic.BaseModel):
+    row_data: dict
+    neo4j_point: Gmpd
+    adjacent_nodes: list[tuple[dict, str]]
