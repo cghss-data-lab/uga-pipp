@@ -10,6 +10,10 @@ from driver.create_query import create_query_line_data
 
 
 def split_nodes(nodes: list) -> tuple[dict, list]:
+    """
+    Query returns a list of triplets, main node is repeated.
+    This functions splits the node and the adjacent nodes
+    """
     flunet_node = None
     adjacent_nodes = []
     for node, adjacent_node, edge_type in nodes:
