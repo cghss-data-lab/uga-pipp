@@ -12,7 +12,7 @@ def create_ncbi_taxon(host_species, pathogen_species, SESSION):
     global searched_terms
     try:
         if host_species not in searched_terms:
-            # search for the TaxID that matches the host_species name
+            # search for the taxId that matches the host_species name
             host_ncbi_id = ncbi.id_search(host_species)
             searched_terms.add(host_species)
 
@@ -44,6 +44,6 @@ def create_ncbi_taxon(host_species, pathogen_species, SESSION):
 def link_host_pathogen(host_species, pathogen_species, SESSION):
     pairings_query = (
         "MATCH (t1:Taxon {name: $host_species}), (t2:Taxon {name: $pathogen_species}) "
-        "MERGE (t1)-[:CAN_CARRY]->(t2) "
+        "MERGE (t1)-[:CARRIES]->(t2) "
     )
     SESSION.run(pairings_query, host_species=host_species, pathogen_species=pathogen_species)
