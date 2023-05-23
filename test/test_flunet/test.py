@@ -9,6 +9,16 @@ from test_flunet.errors import (
 from driver.create_query import create_query_line_data
 
 
+def split_nodes(nodes: list) -> tuple[dict, list]:
+    flunet_node = None
+    adjacent_nodes = []
+    for node, adjacent_node, edge_type in nodes:
+        if not flunet_node:
+            flunet_node = node
+        adjacent_nodes.append((adjacent_node, edge_type))
+    return flunet_node, adjacent_nodes
+
+
 def validate_flunet(neo4j_driver) -> None:
     with open("./flunet/data/flunet_1995_2022.csv", "r") as flunet:
         logging.debug("Flunet main file opened.")
@@ -27,9 +37,14 @@ def validate_flunet(neo4j_driver) -> None:
 
             try:
                 query = create_query_line_data("FluNet", row_number)
-                result = neo4j_driver.run_query()
-                node = FluNet(dict(result))
-                FluNetReport(row_as_dictionary, node)
+                result = neo4j_driver.run_query(query)
+                node, adj_nodes = split_nodes(result)
+                node = FluNet(dict(node))
+                FluNetReport(
+                    row_data=row_as_dictionary,
+                    neo4j_node=node,
+                    adjacent_nodes=adj_nodes,
+                )
 
             except AccuracyError as e:
                 logging.error("Error at %d", row_as_dictionary[""], exc_info=e)
