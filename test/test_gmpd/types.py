@@ -46,3 +46,8 @@ class GmpdReport(pydantic.BaseModel):
                 values=values, message="GMPD node and data are not equal."
             )
         return values
+
+    @pydantic.root_validator(pre=True)
+    @classmethod
+    def adjacent_node_accuracy(cls, values):
+        return values
