@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Tuple
 import pydantic
-from errors import ZeroError, AccuracyError, DiscrepancyError
+from errors import ZeroError, AccuracyError, DiscrepancyError, TerritoryError
 
 
 class FluNet(pydantic.BaseModel):
@@ -90,4 +90,13 @@ class FluNetReport(pydantic.BaseModel):
         for node, node_type in values["adjacent_nodes"]:
             if node_type == "REPORT":
                 pass
+            if node_type == "IN":
+                node_territory = node["name"]
+                data_territory = values["row_data"]["Territory"]
+                territory = node_territory == data_territory
+                if not territory:
+                    raise TerritoryError(
+                        values=values, message="Territory does not match data."
+                    )
+
         return values
