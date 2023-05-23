@@ -1,5 +1,5 @@
 import pydantic
-from .errors import DetectionError, PrevalenceError
+from .errors import DetectionError, PrevalenceError, AccuracyError
 
 
 class Gmpd(pydantic.BaseModel):
@@ -37,3 +37,12 @@ class GmpdReport(pydantic.BaseModel):
     row_data: dict
     neo4j_point: Gmpd
     adjacent_nodes: list[tuple[dict, str]]
+
+    @pydantic.root_validator(pre=True)
+    @classmethod
+    def node_accuracy(cls, values):
+        if values["neo4j_point"] != values["row_data"]:
+            raise AccuracyError(
+                values=values, message="GMPD node and data are not equal."
+            )
+        return values

@@ -10,3 +10,10 @@ class PrevalenceError(Exception):
         self.value = value
         self.message = message
         super().__init__(message)
+
+
+class AccuracyError(Exception):
+    def __init__(self, values, message) -> None:
+        self.values = values
+        self.message = message
+        super().__init__(message)
