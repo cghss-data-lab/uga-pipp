@@ -1,3 +1,0 @@
-Error getting taxon: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
-Error getting taxon: 'NoneType' object has no attribute 'Taxon'
-Error getting taxon: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'

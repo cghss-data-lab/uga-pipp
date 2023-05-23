@@ -48,6 +48,8 @@ def link_gmpd_to_ncbi(row, SESSION):
             pathogen_ncbi_id = int(search_and_merge(pathogen_species, SESSION))
             if pathogen_ncbi_id:
                 return (host_ncbi_id, pathogen_ncbi_id)
+            if not pathogen_ncbi_id:
+                return (host_ncbi_id, None)
 
         elif row["HostCorrectedName"]:
             host_ncbi_id = int(search_and_merge(row["HostCorrectedName"], SESSION))
