@@ -1,5 +1,5 @@
 import pydantic
-from .errors import DetectionError
+from .errors import DetectionError, PrevalenceError
 
 
 class Gmpd(pydantic.BaseModel):
@@ -19,8 +19,13 @@ class Gmpd(pydantic.BaseModel):
             "DirectOther",
             "DirectBlood",
             "DirectFecal",
-            "Other",
             "Tissue",
             "Fecal",
         ]:
-            raise DetectionError(value=value, message="Detection type is null")
+            raise DetectionError(value=value, message="Detection type is unspecified.")
+
+    @pydantic.validator("prevalence")
+    @classmethod
+    def correct_prevalence(cls, value):
+        if value > 1 or value <= 0:
+            raise PrevalenceError(value=value, message="Prevalence is unbounded.")
