@@ -23,12 +23,14 @@ class Gmpd(pydantic.BaseModel):
             "Fecal",
         ]:
             raise DetectionError(value=value, message="Detection type is unspecified.")
+        return value
 
     @pydantic.validator("prevalence")
     @classmethod
     def correct_prevalence(cls, value):
         if value > 1 or value <= 0:
             raise PrevalenceError(value=value, message="Prevalence is unbounded.")
+        return value
 
 
 class GmpdReport(pydantic.BaseModel):
