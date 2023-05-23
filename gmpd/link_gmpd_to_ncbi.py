@@ -1,8 +1,25 @@
 import ncbi
+import pickle
+import os
+
 
 NOT_FOUND_FILE = "gmpd/species_not_found.txt"
 searched_terms = set()
 not_found_terms = set()
+
+# Path to the pickle cache file
+CACHE_FILE = "gmpd/gmpd_cache.pickle"
+
+# Load the cache from the pickle file if it exists
+cache = {}
+if os.path.exists(CACHE_FILE):
+    with open(CACHE_FILE, "rb") as f:
+        cache = pickle.load(f)
+
+# Function to save the cache to the pickle file
+def save_cache():
+    with open(CACHE_FILE, "wb") as f:
+        pickle.dump(cache, f)
 
 def write_to_not_found(term):
     global not_found_terms
@@ -13,8 +30,6 @@ def write_to_not_found(term):
 
 def search_and_merge(term, SESSION):
     global cache, searched_terms, not_found_terms
-    if term in searched_terms and term in not_found_terms:
-        return None
 
     if term in cache:
         taxon = cache[term]
@@ -29,6 +44,7 @@ def search_and_merge(term, SESSION):
             taxon = {**ncbi_metadata, "taxId": ncbi_id}
             ncbi.merge_taxon(taxon, SESSION)
             cache[term] = taxon
+            save_cache()
         else:
             not_found_terms.add(term)
             return None
