@@ -13,13 +13,19 @@ def ingest_gmpd(SESSION):
     for dataSourceRow, row in enumerate(gmpd_rows):
 
         reference = row["Citation"]
-        totalSpecimensCollected = int(row["NumSamples"])
-        prevalence = row["Prevalence"]
-        if prevalence and prevalence != "NA":
-            prevalence = float(prevalence)
-            totalSpecimensPositive = round(prevalence * totalSpecimensCollected)
-        else:
-            totalSpecimensPositive = "Unknown"
+
+        # Calculated specimens positive
+        totalSpecimensCollected = row["NumSamples"]
+        if totalSpecimensCollected and totalSpecimensCollected != "NA":
+            totalSpecimensCollected = int(totalSpecimensCollected)
+
+            prevalence = row["Prevalence"]
+            if prevalence and prevalence != "NA":
+                prevalence = float(prevalence)
+                totalSpecimensPositive = round(prevalence * totalSpecimensCollected)
+            else:
+                totalSpecimensPositive = "Unknown"
+
         detectionType = row["SamplingType"]    
         dataSource = "GMPD"
         long = row["Longitude"]
