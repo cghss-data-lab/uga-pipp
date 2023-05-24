@@ -4,6 +4,7 @@ from datetime import datetime
 from geonames import search_lat_long
 from geonames import geo_id_search
 from geonames import merge_geo
+
 from wahis import get_evolution
 from wahis import get_outbreak
 from wahis import get_report
@@ -24,13 +25,16 @@ def ingest_wahis(SESSION):
                 report = metadata['report']
                 outbreaks = metadata['outbreaks']
                 
-                # Set for use with lineage
-                previousReportId = int(report['previousReportId'])
+                # # Set for use with lineage
+                # previousReportId = int(report['previousReportId'])
 
                 # On the report node
-                reported = datetime(report['reportedOn']).strftime('%Y-%m-%d')
+                reported_str = report['reportedOn']
+                reported_strip = datetime.strptime(reported_str, '%Y-%m-%dT%H:%M:%S.%f%z')
+                reported = reported_strip.strftime('%Y-%m-%d')
                 reasonForNotification = event['reason']['translation']
-                eventDescription = event['eventComment']['translation']
+                eventComment = event['eventComment']
+                eventDescription = eventComment['translation'] if eventComment and 'translation' in eventComment else None
 
                 iso3 = event['country']['isoCode']
 
@@ -60,9 +64,9 @@ def ingest_wahis(SESSION):
                 for key in outbreaks:
 
                     #EVENT :IN GEO
-                    place = outbreaks[key]['location']
-                    long = outbreaks[key]['longitude']
-                    lat = outbreaks[key]['latitude']
+                    place = key['location']
+                    long = key['longitude']
+                    lat = key['latitude']
 
                     # Return the location geonameId there is one
                     if lat and long:
@@ -75,14 +79,15 @@ def ingest_wahis(SESSION):
                         geonameId = None #TODO: Use iso3 
 
                     # For event/outbreak node
-                    eventId = outbreaks[key]['outbreakId']
+                    eventId = key['outbreakId']
                     outbreak_metadata = get_outbreak(reportId, eventId)
                     outbreakStart = outbreak_metadata['outbreak']['startDate']
                     outbreakEnd = outbreak_metadata['outbreak']['endDate']
 
                     # Connect to NCBI using serotype if it's available
                     # Otherwise use pathogen name
-                    serotype = event['subType']['name']
+                    subtype = event['subType']
+                    serotype = event['subType']['name'] if subtype and 'name' in subtype else None
                     pathogen = event['causalAgent']['name']
                     pathogen_ncbi_id = int(search_and_merge(serotype, SESSION))
                     if not pathogen_ncbi_id:
@@ -112,10 +117,10 @@ def ingest_wahis(SESSION):
                     # Create the event / host Taxon relationship
                     species_quantities = outbreak_metadata['speciesQuantities']                    
                     for key in species_quantities:
-                        speciesName = species_quantities[key]['newQuantities']['speciesName']
-                        speciesWild = species_quantities[key]['newQuantities']['isWild']
-                        caseCount = species_quantities[key]['newQuantities']['cases']
-                        deathCount = species_quantities[key]['newQuantities']['deaths']
+                        speciesName = key['newQuantities']['speciesName']
+                        speciesWild = key['newQuantities']['isWild']
+                        caseCount = key['newQuantities']['cases']
+                        deathCount = key['newQuantities']['deaths']
 
                         host_ncbi_id = int(search_and_merge(speciesName, SESSION))
 
