@@ -7,20 +7,7 @@ from driver.errors import (
     DiscrepancyError,
 )
 from driver.create_query import create_query_line_data
-
-
-def split_nodes(nodes: list) -> tuple[dict, list]:
-    """
-    Query returns a list of triplets, main node is repeated.
-    This functions splits the node and the adjacent nodes
-    """
-    flunet_node = None
-    adjacent_nodes = []
-    for node, adjacent_node, edge_type in nodes:
-        if not flunet_node:
-            flunet_node = node
-        adjacent_nodes.append((adjacent_node, edge_type))
-    return flunet_node, adjacent_nodes
+from driver.helpers import split_nodes
 
 
 def validate_flunet(neo4j_driver) -> None:
