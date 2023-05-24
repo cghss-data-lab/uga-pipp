@@ -47,7 +47,7 @@ def ingest_worldpop(SESSION):
             # totalFertilityRate = float(row["TFR"])
             # netReproductionRate = float(row["NRR"])
             # mean_age_childbearing = float(row["MAC"])
-            deaths = float(row["Deaths"]*1000)
+            deaths = (float(row["Deaths"])*1000)
             # male_deaths = float(row["MaleDeaths"]*1000)
             # female_deaths = float(row["FemaleDeaths"]*1000)
             # crudeDeathRate = float(row["CDR"])
