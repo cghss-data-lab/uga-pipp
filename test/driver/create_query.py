@@ -11,7 +11,7 @@ def count_nodes(source: str) -> str:
 
 
 def count_row_numbers(source: str) -> str:
-    query = f" MATCH (n:{source}) WITH n.dataSourceRow as row, count(*) as count RETURN row, count"
+    query = f"MATCH (n:{source}) WITH n.dataSourceRow AS row, count(*) AS count WHERE count > 1 RETURN row, count"
     return query
 
 
