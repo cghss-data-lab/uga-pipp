@@ -1,8 +1,8 @@
 from driver.create_query import count_row_numbers, node_duplication
-from test_flunet.errors import DuplicationError
+from driver.errors import DuplicationError
 
 
-def validate_flunet_row_duplicates(neo4j_driver, source: str) -> None:
+def validate_row_duplicates(neo4j_driver, source: str) -> None:
     """
     Function validates there are no data source row number duplicates.
     """
@@ -14,7 +14,7 @@ def validate_flunet_row_duplicates(neo4j_driver, source: str) -> None:
             raise DuplicationError(values=row_number, message="Duplicated row number.")
 
 
-def validate_flunet_row_duplicates(neo4j_driver, source: str) -> None:
+def validate_row_duplicates(neo4j_driver, source: str) -> None:
     """
     Function validates there are no duplicated nodes.
     """

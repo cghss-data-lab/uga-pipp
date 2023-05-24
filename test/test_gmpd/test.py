@@ -1,6 +1,6 @@
 import logging
 from test_gmpd.types import Gmpd
-from test_gmpd.errors import DetectionError, AccuracyError, PrevalenceError
+from driver.errors import DetectionError, AccuracyError, PrevalenceError
 
 
 def validate_gmpd(neo4j_driver) -> None:

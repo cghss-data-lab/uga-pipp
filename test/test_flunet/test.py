@@ -1,6 +1,6 @@
 import logging
 from test_flunet.types import FluNet, FluNetReport
-from test_flunet.errors import (
+from driver.errors import (
     AccuracyError,
     ZeroError,
     TerritoryError,
