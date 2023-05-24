@@ -10,7 +10,7 @@ def count_nodes(source: str) -> str:
     return query
 
 
-def count_row_numbers(source: str, row_number: int) -> str:
+def count_row_numbers(source: str) -> str:
     query = f" MATCH (n:{source}) WITH n.dataSourceRow as row, count(*) as count RETURN row, count"
     return query
 
