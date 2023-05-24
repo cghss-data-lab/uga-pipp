@@ -1,5 +1,5 @@
 import pydantic
-from .errors import DetectionError, PrevalenceError, AccuracyError
+from driver.errors import DetectionError, PrevalenceError, AccuracyError
 
 
 class Gmpd(pydantic.BaseModel):
