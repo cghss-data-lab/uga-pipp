@@ -10,8 +10,8 @@ def count_nodes(source: str) -> str:
     return query
 
 
-def duplicated_row_numbers(source: str, row_number: int) -> str:
-    query = f" MATCH (n:{source}) WITH n.dataSourceRow as row, count(*) as count WHERE cnt > 1 RETURN no, count"
+def count_row_numbers(source: str, row_number: int) -> str:
+    query = f" MATCH (n:{source}) WITH n.dataSourceRow as row, count(*) as count RETURN row, count"
     return query
 
 
