@@ -31,3 +31,10 @@ class StrainError(Exception):
         self.values = values
         self.message = message
         super().__init__(message)
+
+
+class DuplicationError(Exception):
+    def __init__(self, values, message) -> None:
+        self.values = values
+        self.message = message
+        super().__init__(message)
