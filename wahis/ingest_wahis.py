@@ -198,18 +198,6 @@ def ingest_wahis(SESSION):
                             logger.info(f' MERGE host: ({speciesName})')
                             SESSION.run(host_query, host_params)
 
-
-
-                    # # Create relationship to parent, except for first report 
-                    # if i > 0:
-                    #     parent = evolution_list[i-1]
-                    #     if parent == previousReportId:
-                    #         SESSION.run("""
-                    #             MATCH (child:Report {reportId: $reportId})
-                    #             MATCH (parent:Report {reportId: $reportId})
-                    #             MERGE (child)-[:FOLLOWS]->(parent)
-                    #         """, {"reportId": reportId})
-
         except Exception as e:
             logger.error(f'An exception occurred: {e}')
             raise
