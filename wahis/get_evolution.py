@@ -7,7 +7,7 @@ def get_evolution(eventId):
     evolution_list = []
     if data:
         for key in data:
-            reportId = int(data[key]["reportId"])
+            reportId = key["reportId"]
             evolution_list.append(reportId)
 
         return evolution_list
