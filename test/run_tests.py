@@ -26,6 +26,12 @@ if __name__ == "__main__":
     except DuplicationError as e:
         logging.error("Error in %s", exc_info=e)
 
+    # Validate GMPD
     validate_gmpd(neo4j_connection)
+    try:
+        validate_node_duplicates(neo4j_connection, "GMPD")
+    except DuplicationError as e:
+        logging.error("Error in %s", exc_info=e)
 
+    # Close neo4j connection
     neo4j_connection.close()
