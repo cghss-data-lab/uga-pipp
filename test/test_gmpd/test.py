@@ -8,7 +8,7 @@ from driver.helpers import split_nodes
 def validate_gmpd(neo4j_driver) -> None:
 
     with open("./gmpd/data/GMPD_main.csv", "r") as gmpd:
-        logging.debug("Flunet main file opened.")
+        logging.debug("GMPD main file opened.")
         header = next(gmpd).split(",")
 
         for row in gmpd:
