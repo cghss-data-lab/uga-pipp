@@ -68,8 +68,7 @@ def ingest_flunet(SESSION):
                 ncbi_id = int(agent_groups[col])
                 event_rel_props = {
                     "subtype": col,
-                    "role": "pathogen",
-                    "caseCount": int(row[col])
+                    "role": "pathogen"
                 }
 
                 create_event_query = f"""
@@ -78,11 +77,7 @@ def ingest_flunet(SESSION):
                         eventId: "{eventId}",
                         startDate: date('{get_iso_date(row["Start date"])}'),
                         endDate: date('{get_iso_date(row["End date"])}'),
-                        duration: 'P7D',
-                        totalSpecimensCollected: {int(row["Collected"] or 0)},
-                        totalSpecimensProcessed: {int(row["Processed"] or 0)},
-                        totalSpecimensPositive: {int(row["Total positive"] or 0)},
-                        totalSpecimensNegative: {int(row["Total negative"] or 0)}
+                        duration: 'P7D'
                     }})
                     WITH e
                     MATCH (g:Geography {{name: "{country}"}})
@@ -92,7 +87,10 @@ def ingest_flunet(SESSION):
                     MERGE (e)-[:INVOLVES {{
                                             subtype: '{event_rel_props['subtype']}',
                                             role: '{event_rel_props['role']}',
-                                            caseCount: {event_rel_props['caseCount']}
+                                            totalSpecimensCollected: {int(row["Collected"] or 0)},
+                                            totalSpecimensProcessed: {int(row["Processed"] or 0)},
+                                            totalSpecimensPositive: {int(row["Total positive"] or 0)},
+                                            totalSpecimensNegative: {int(row["Total negative"] or 0)}
                     }}]->(t)
                 """
 
