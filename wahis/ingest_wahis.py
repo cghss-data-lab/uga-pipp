@@ -29,7 +29,6 @@ def ingest_wahis(SESSION):
                     report = metadata['report']
                     outbreaks = metadata['outbreaks']
 
-                    
                     # # Set for use with lineage
                     # previousReportId = int(report['previousReportId'])
 
@@ -73,6 +72,8 @@ def ingest_wahis(SESSION):
                         long = key['longitude']
                         lat = key['latitude']
 
+                        desc = key['description']
+
                         # Return the location geonameId there is one
                         if lat and long:
                             geonameId = search_lat_long(lat, long)
@@ -95,6 +96,7 @@ def ingest_wahis(SESSION):
                         end_strip = datetime.strptime(outbreak_end, '%Y-%m-%dT%H:%M:%S.%f%z')
                         outbreakEnd = end_strip.strftime('%Y-%m-%d')
 
+
                         # Connect to NCBI using serotype if it's available
                         # Otherwise use pathogen name
                         subtype = event['subType']
@@ -109,21 +111,14 @@ def ingest_wahis(SESSION):
                             pathogen_ncbi_id = int(pathogen_ncbi)
 
                             # MERGE an EVENT node with the Geo node and pathogen Taxon
-                            event_query = f"""
-                                MATCH (r:Report:WAHIS {{reportId: $reportId}})
-                                MERGE (r)-[:REPORTS]->(e:Event:Outbreak {{
-                                    eventID: $eventId,
+                            event_query = """
+                                MATCH (r:Report:WAHIS {reportId: $reportId})
+                                MERGE (r)-[:REPORTS]->(e:Event:Outbreak {
+                                    eventId: $eventId,
                                     startDate: $outbreakStart,
-                                    endDate: $outbreakEnd
-                                }})
-                                WITH e
-                                MATCH (g:Geography {{geonameId: $geonameId}})
-                                MERGE (e)-[:IN]->(g)
-                                WITH e
-                                MERGE (t:Taxon {{taxId: $pathogen_ncbi_id}})
-                                MERGE (e)-[:INVOLVES {{
-                                    role: "pathogen"
-                                }}]->(t)
+                                    endDate: $outbreakEnd,
+                                    description: $description
+                                })
                             """
 
                             event_params = {
@@ -131,8 +126,7 @@ def ingest_wahis(SESSION):
                                 "eventId": int(eventId),
                                 "outbreakStart": outbreakStart,
                                 "outbreakEnd": outbreakEnd,
-                                "geonameId": geonameId,
-                                "pathogen_ncbi_id": pathogen_ncbi_id
+                                "description":desc
                             }
 
                             logger.info(f' MERGE event ID: ({eventId})')
@@ -140,6 +134,8 @@ def ingest_wahis(SESSION):
 
                             
                         # Create the event / host Taxon relationship
+                        caseCount = "N/A"
+                        deathCount = "N/A"
                         species_quantities = outbreak_metadata['speciesQuantities']                    
                         if species_quantities:
                             for key in species_quantities:
@@ -147,8 +143,8 @@ def ingest_wahis(SESSION):
                                 if newQuants:
                                     speciesName = key['newQuantities']['speciesName']
                                     speciesWild = key['newQuantities']['isWild']
-                                    caseCount = key['newQuantities']['cases'] if 'cases' in key['newQuantities'] else "N/A"
-                                    deathCount = key['newQuantities']['deaths'] if 'deaths' in key['newQuantities'] else "N/A"
+                                    caseCount = key['newQuantities']['cases']
+                                    deathCount = key['newQuantities']['deaths']
                         else:
                             quantData = report['quantitativeData']
                             if quantData:
@@ -157,8 +153,8 @@ def ingest_wahis(SESSION):
                                     for key in newQuantData:
                                         speciesName = key['speciesName']
                                         speciesWild = key['isWild']
-                                        caseCount = key['cases'] if 'cases' in newQuantData else "N/A"
-                                        deathCount = key['deaths'] if 'deaths' in newQuantData else "N/A"
+                                        caseCount = key['cases']
+                                        deathCount = key['deaths']
                         
                         # Check if caseCount and deathCount are available
                         if caseCount != "N/A":
@@ -169,28 +165,40 @@ def ingest_wahis(SESSION):
                         host_ncbi = wahis.search_and_merge(speciesName, SESSION)
                         if host_ncbi:
                             host_ncbi_id = int(host_ncbi)
-                    
-                            host_event_rel = """
-                                MATCH (t:Taxon {taxId: $host_ncbi_id})
+                
+                            host_query = """
+                                MATCH (th:Taxon {taxId: $host_ncbi_id})
                                 MATCH (e:Event:Outbreak {eventId: $eventId})
                                 MERGE (e)-[:INVOLVES {
                                     caseCount: $caseCount,
                                     deathCount: $deathCount,
                                     role: 'host',
                                     speciesWild: $speciesWild
-                                }]->(t)
+                                }]->(th)
+                                WITH e
+                                MATCH (tp:Taxon {taxId: $pathogen_ncbi_id})
+                                MERGE (e)-[:INVOLVES {
+                                    role: "pathogen"
+                                }]->(tp)                           
+                                WITH e
+                                MATCH (g:Geography {geonameId: $geonameId})
+                                MERGE (e)-[:IN]->(g)
                             """
 
                             host_params = {
+                                "eventId":int(eventId),
                                 "host_ncbi_id": host_ncbi_id,
-                                "eventId": int(eventId),
                                 "caseCount": caseCount,
                                 "deathCount": deathCount,
-                                "speciesWild": speciesWild
+                                "speciesWild": speciesWild,
+                                "geonameId": geonameId,
+                                "pathogen_ncbi_id": pathogen_ncbi_id
                             }
 
                             logger.info(f' MERGE host: ({speciesName})')
-                            SESSION.run(host_event_rel, host_params)
+                            SESSION.run(host_query, host_params)
+
+
 
                     # # Create relationship to parent, except for first report 
                     # if i > 0:
