@@ -16,7 +16,14 @@ neo4j_connection = Neo4jDatabase(URI, DATABASE, AUTH, PASSWORD)
 
 
 if __name__ == "__main__":
+
+    # Validate FluNet
     validate_flunet(neo4j_connection)
+    try:
+        validate_node_duplicates(neo4j_connection, "FluNet")
+    except Exception as e:
+        print(e)
+
     validate_gmpd(neo4j_connection)
 
     neo4j_connection.close()
