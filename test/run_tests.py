@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from test_flunet.test import validate_flunet
 from test_gmpd.test import validate_gmpd
+from test_global.test import validate_row_duplicates, validate_node_duplicates
 from driver.neo4j_driver import Neo4jDatabase
 
 load_dotenv()

@@ -14,7 +14,7 @@ def validate_row_duplicates(neo4j_driver, source: str) -> None:
             raise DuplicationError(values=row_number, message="Duplicated row number.")
 
 
-def validate_row_duplicates(neo4j_driver, source: str) -> None:
+def validate_node_duplicates(neo4j_driver, source: str) -> None:
     """
     Function validates there are no duplicated nodes.
     """
