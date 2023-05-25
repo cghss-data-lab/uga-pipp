@@ -114,7 +114,8 @@ class FluNetReport(pydantic.BaseModel):
         """
         for node, edge_type, relationship in values["adjacent_nodes"]:
             if edge_type == "REPORT" and "host" not in relationship:
-                node_strain = node["name"]
+                name = node["name"]
+                node_strain = flunet_ncbi[name]
                 data_strain = values["row_data"][node_strain]
                 if data_strain == 0:
                     raise StrainError(
