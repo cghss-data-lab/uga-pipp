@@ -134,16 +134,16 @@ def merge_geo(geoname_or_id, SESSION):
                     "dataSource": "GeoNames",
                     "geonameId": int(geonameId),
                     "name": metadata.get("name"),
-                    "adminCode1": metadata.get("adminCodes1", {}).get("ISO3166_2", "N/A"),
-                    "adminType":metadata.get("adminTypeName","N/A"),
-                    "iso2":metadata.get("countryCode","N/A"),
-                    "iso3": get_iso(iso2) if metadata.get("fcode") == "PCLI" else "N/A",
-                    "fclName": metadata.get("fclName", "N/A"),
-                    "fcode":metadata.get("fcode","N/A"),
-                    "fcodeName": metadata.get("fcodeName", "N/A"),
+                    "adminCode1": metadata.get("adminCodes1", {}).get("ISO3166_2", "NA"),
+                    "adminType":metadata.get("adminTypeName","NA"),
+                    "iso2":metadata.get("countryCode","NA"),
+                    "iso3": get_iso(iso2) if metadata.get("fcode") == "PCLI" else "NA",
+                    "fclName": metadata.get("fclName", "NA"),
+                    "fcode":metadata.get("fcode","NA"),
+                    "fcodeName": metadata.get("fcodeName", "NA"),
                     "lat": metadata.get("lat", 0),
                     "long": metadata.get("lng", 0),
-                    "elevation": metadata.get("elevation", "N/A")
+                    "elevation": metadata.get("elevation", "NA")
                 }
                 # Get the label for this node based on its fcode value
                 label = fcode_to_label.get(metadata.get("fcode"))
