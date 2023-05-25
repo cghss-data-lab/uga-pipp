@@ -43,16 +43,16 @@ def get_iso(iso2):
         "maxRows": 1
     }
 
-    result = result = geo_api("countryInfoJSON", params)
-    data = result["geonames"][0]["isoAlpha3"]
+    # result = result = geo_api("countryInfoJSON", params)
+    # data = result["geonames"][0]["isoAlpha3"]
 
-    # if iso2 in iso_cache:
-    #     data = iso_cache[iso2]
-    # else:
-    #     result = geo_api("countryInfoJSON", params)
-    #     data = result["geonames"][0]["isoAlpha3"]
-    #     iso_cache[iso2] = data
-    #     save_cache()
+    if iso2 in iso_cache:
+        data = iso_cache[iso2]
+    else:
+        result = geo_api("countryInfoJSON", params)
+        data = result["geonames"][0]["isoAlpha3"]
+        iso_cache[iso2] = data
+        save_cache()
 
     return data
 
