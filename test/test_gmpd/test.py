@@ -1,12 +1,18 @@
 import logging
 from test_gmpd.types import Gmpd, GmpdReport
 from driver.create_query import create_query_line_data
-from driver.errors import DetectionError, AccuracyError, PrevalenceError
+from driver.errors import (
+    DetectionError,
+    AccuracyError,
+    PrevalenceError,
+    HostError,
+    PathogenError,
+    TerritoryError,
+)
 from driver.helpers import split_nodes
 
 
 def validate_gmpd(neo4j_driver) -> None:
-
     with open("./gmpd/data/GMPD_main.csv", "r") as gmpd:
         logging.debug("GMPD main file opened.")
         header = next(gmpd).split(",")
@@ -35,4 +41,13 @@ def validate_gmpd(neo4j_driver) -> None:
                 logging.error("Error at %d", "", exc_info=e)
 
             except AccuracyError as e:
+                logging.error("Error at %d", "", exc_info=e)
+
+            except HostError as e:
+                logging.error("Error at %d", "", exc_info=e)
+
+            except PathogenError as e:
+                logging.error("Error at %d", "", exc_info=e)
+
+            except TerritoryError as e:
                 logging.error("Error at %d", "", exc_info=e)
