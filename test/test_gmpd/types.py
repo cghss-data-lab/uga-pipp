@@ -7,6 +7,7 @@ from driver.errors import (
     PathogenError,
     TerritoryError,
 )
+from driver.helpers import retrieve_geoname
 
 
 class Gmpd(pydantic.BaseModel):
@@ -65,7 +66,13 @@ class GmpdReport(pydantic.BaseModel):
                 pathogen = node["name"]
                 raise PathogenError(values=values, message="Incorrect pathogen name.")
             if edge_type == "IN":
-                territory = node["name"]
-                raise TerritoryError(values=values, message="Incorrect territory name.")
+                territory_node = node["name"]
+                territory_data = retrieve_geoname(
+                    (values["row_data"]["Latitude"], values["row_data"]["Longitude"])
+                )
+                if territory_node != territory_data:
+                    raise TerritoryError(
+                        values=values, message="Incorrect territory name."
+                    )
 
         return values
