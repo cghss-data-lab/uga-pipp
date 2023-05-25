@@ -3,7 +3,9 @@ from driver.errors import (
     DetectionError,
     PrevalenceError,
     AccuracyError,
-    ReportError,
+    HostError,
+    PathogenError,
+    TerritoryError,
 )
 
 
@@ -58,12 +60,12 @@ class GmpdReport(pydantic.BaseModel):
         for node, edge_type, relationship in values["adjacent_nodes"]:
             if edge_type == "REPORTS" and "host" in relationship:
                 host = node["name"]
-                raise ReportError(values=values, message="Incorrect host name.")
+                raise HostError(values=values, message="Incorrect host name.")
             if edge_type == "REPORTS" and "pathogen" in relationship:
                 pathogen = node["name"]
-                raise ReportError(values=values, message="Incorrect pathogen name.")
+                raise PathogenError(values=values, message="Incorrect pathogen name.")
             if edge_type == "IN":
                 territory = node["name"]
-                raise ReportError(values=values, message="Incorrect territory name.")
+                raise TerritoryError(values=values, message="Incorrect territory name.")
 
         return values
