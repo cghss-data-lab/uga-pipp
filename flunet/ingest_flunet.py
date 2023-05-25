@@ -89,8 +89,7 @@ def ingest_flunet(SESSION):
                                             role: '{event_rel_props['role']}',
                                             totalSpecimensCollected: {int(row["Collected"] or 0)},
                                             totalSpecimensProcessed: {int(row["Processed"] or 0)},
-                                            totalSpecimensPositive: {int(row["Total positive"] or 0)},
-                                            totalSpecimensNegative: {int(row["Total negative"] or 0)}
+                                            totalSpecimensPositive: {int(row[col])}
                     }}]->(t)
                 """
 
