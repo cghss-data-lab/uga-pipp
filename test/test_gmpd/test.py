@@ -35,19 +35,19 @@ def validate_gmpd(neo4j_driver) -> None:
                 )
 
             except DetectionError as e:
-                logging.error("Error at %d", "", exc_info=e)
+                logging.error("Error at %s", row_number, exc_info=e)
 
             except PrevalenceError as e:
-                logging.error("Error at %d", "", exc_info=e)
+                logging.error("Error at %s", row_number, exc_info=e)
 
             except AccuracyError as e:
-                logging.error("Error at %d", "", exc_info=e)
+                logging.error("Error at %s", row_number, exc_info=e)
 
             except HostError as e:
-                logging.error("Error at %d", "", exc_info=e)
+                logging.error("Error at %s", row_number, exc_info=e)
 
             except PathogenError as e:
-                logging.error("Error at %d", "", exc_info=e)
+                logging.error("Error at %s", row_number, exc_info=e)
 
             except TerritoryError as e:
-                logging.error("Error at %d", "", exc_info=e)
+                logging.error("Error at %s", row_number, exc_info=e)

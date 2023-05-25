@@ -38,13 +38,13 @@ def validate_flunet(neo4j_driver) -> None:
                 )
 
             except AccuracyError as e:
-                logging.error("Error at %d", row_as_dictionary[""], exc_info=e)
+                logging.error("Error at %s", row_as_dictionary[""], exc_info=e)
 
             except ZeroError as e:
-                logging.error("Error at %d", row_as_dictionary[""], exc_info=e)
+                logging.error("Error at %s", row_as_dictionary[""], exc_info=e)
 
             except TerritoryError as e:
-                logging.error("Error at %d", row_as_dictionary[""], exc_info=e)
+                logging.error("Error at %s", row_as_dictionary[""], exc_info=e)
 
             except DiscrepancyError as e:
-                logging.error("Error at %d", row_as_dictionary[""], exc_info=e)
+                logging.error("Error at %s", row_as_dictionary[""], exc_info=e)
