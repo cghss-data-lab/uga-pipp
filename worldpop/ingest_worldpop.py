@@ -54,12 +54,12 @@ def ingest_worldpop(SESSION):
             lifeExpectancy = float(row["LEx"])
             # life_expectancy_male = float(row["LExMale"])
             # life_expectancy_female = float(row["LExFemale"])
-            infantDeaths = float(row["InfantDeaths"]*1000)
+            infantDeaths = (float(row["InfantDeaths"])*1000)
             # infantMortalityRate = float(row["IMR"])
-            underFiveDeaths = float(row["Under5Deaths"]*1000)
+            underFiveDeaths = (float(row["Under5Deaths"])*1000)
             # underFiveMortalityRate = float(row["Q5"])
             # under_40_mortality_rate = float(row["Q0040"])
-            netMigration = float(row["NetMigrations"]*1000)
+            netMigration = (float(row["NetMigrations"])*1000)
             # netMigrationRate = float(row["CNMR"])
             duration = 'P1Y' # set duration to 1 year
 
