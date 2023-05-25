@@ -113,7 +113,7 @@ class FluNetReport(pydantic.BaseModel):
         Check strain and territory node accuracy.
         """
         for node, edge_type, relationship in values["adjacent_nodes"]:
-            if edge_type == "REPORT" and "host" not in relationship:
+            if edge_type == "REPORT" and "pathogen" in relationship:
                 name = node["name"]
                 node_strain = flunet_ncbi[name]
                 data_strain = values["row_data"][node_strain]
