@@ -185,7 +185,6 @@ def ingest_wahis(SESSION):
                         # Otherwise, do the pathogen only
                         else:
                             path_query = """
-                                    MATCH (r:Report:WAHIS {reportId: $reportId})
                                     MATCH (e:Event:Outbreak {eventId: $eventId})
                                     MATCH (tp:Taxon {taxId: $pathogen_ncbi_id})
                                     MERGE (e)-[:INVOLVES {
@@ -211,7 +210,6 @@ def ingest_wahis(SESSION):
 
                             host_query = """
                                 MATCH (th:Taxon {taxId: $host_ncbi_id})
-                                MATCH (r:Report:WAHIS {reportId: $reportId})
                                 MATCH (e:Event:Outbreak {eventId: $eventId})
                                 MERGE (e)-[:INVOLVES {
                                     caseCount: $caseCount,
