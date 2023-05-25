@@ -1,5 +1,10 @@
 import pydantic
-from driver.errors import DetectionError, PrevalenceError, AccuracyError
+from driver.errors import (
+    DetectionError,
+    PrevalenceError,
+    AccuracyError,
+    ReportError,
+)
 
 
 class Gmpd(pydantic.BaseModel):
@@ -50,4 +55,15 @@ class GmpdReport(pydantic.BaseModel):
     @pydantic.root_validator(pre=True)
     @classmethod
     def adjacent_node_accuracy(cls, values):
+        for node, edge_type, relationship in values["adjacent_nodes"]:
+            if edge_type == "REPORTS" and "host" in relationship:
+                host = node["name"]
+                raise ReportError(values=values, message="Incorrect host name.")
+            if edge_type == "REPORTS" and "pathogen" in relationship:
+                pathogen = node["name"]
+                raise ReportError(values=values, message="Incorrect pathogen name.")
+            if edge_type == "IN":
+                territory = node["name"]
+                raise ReportError(values=values, message="Incorrect territory name.")
+
         return values
