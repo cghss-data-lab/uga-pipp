@@ -60,11 +60,17 @@ class GmpdReport(pydantic.BaseModel):
     def adjacent_node_accuracy(cls, values):
         for node, edge_type, relationship in values["adjacent_nodes"]:
             if edge_type == "REPORTS" and "host" in relationship:
-                host = node["name"]
-                raise HostError(values=values, message="Incorrect host name.")
+                host_node = node["name"]
+                host_data = values["row_data"]["HostCorrectedName"]
+                if host_node != host_data:
+                    raise HostError(values=values, message="Incorrect host name.")
             if edge_type == "REPORTS" and "pathogen" in relationship:
-                pathogen = node["name"]
-                raise PathogenError(values=values, message="Incorrect pathogen name.")
+                pathogen_node = node["name"]
+                pathogen_data = values["row_data"]["ParasiteCorrectedName"]
+                if pathogen_node != pathogen_data:
+                    raise PathogenError(
+                        values=values, message="Incorrect pathogen name."
+                    )
             if edge_type == "IN":
                 territory_node = node["name"]
                 territory_data = retrieve_geoname(
