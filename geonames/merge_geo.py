@@ -15,7 +15,7 @@ CACHE_FILE = "geonames/geo_cache.pickle"
 iso_cache = {}
 if os.path.exists(CACHE_FILE):
     with open(CACHE_FILE, "rb") as f:
-        cache = pickle.load(f)
+        iso_cache = pickle.load(f)
 
 # Function to save the cache to the pickle file
 def save_cache():
