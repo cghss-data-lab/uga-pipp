@@ -140,6 +140,7 @@ def ingest_wahis(SESSION):
                         deathCount = "NA"
                         species_quantities = outbreak_metadata['speciesQuantities']                    
                         if species_quantities:
+                            # iterate over each species type and retrieve metadata (name, cases, etc.)
                             for key in species_quantities:
                                 newQuants = key['newQuantities']
                                 if newQuants:
