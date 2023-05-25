@@ -1,7 +1,8 @@
 from geonames import geo_api
 from loguru import logger
+from functools import cache
 
-
+@cache
 def geo_id_search(geoname):
     """
     Searches for a location using its name 

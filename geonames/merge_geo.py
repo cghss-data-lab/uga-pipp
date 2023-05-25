@@ -1,9 +1,27 @@
 from loguru import logger
 from functools import cache
+import pickle
+import os
 
 from geonames import geo_id_search
 from geonames import geo_api
 from geonames import get_geo_data
+
+
+# Path to the pickle cache file
+CACHE_FILE = "geonames/geo_cache.pickle"
+
+# Load the cache from the pickle file if it exists
+iso_cache = {}
+if os.path.exists(CACHE_FILE):
+    with open(CACHE_FILE, "rb") as f:
+        cache = pickle.load(f)
+
+# Function to save the cache to the pickle file
+def save_cache():
+    with open(CACHE_FILE, "wb") as f:
+        pickle.dump(cache, f)
+
 
 @cache
 def get_hierarchy(geonameId):
@@ -19,17 +37,25 @@ def get_geo_data_cache(geonameId):
 
 @cache
 def get_iso(iso2):
+    global iso_cache
 
     params = {
         "country": iso2,
         "maxRows": 1
     }
 
-    result = geo_api("countryInfoJSON", params)
+    if iso2 in iso_cache:
+        data = iso_cache[iso2]
 
-    data = result["geonames"][0]["isoAlpha3"]
+    else:
+        result = geo_api("countryInfoJSON", params)
+
+        data = result["geonames"][0]["isoAlpha3"]
+        iso_cache[iso2] = data
+        save_cache()
 
     return data
+
 
 @cache
 def merge_geo(geoname_or_id, SESSION):
