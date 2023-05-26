@@ -107,15 +107,17 @@ def ingest_wahis(SESSION):
                         end_strip = datetime.strptime(outbreak_end, '%Y-%m-%dT%H:%M:%S.%f%z')
                         outbreakEnd = end_strip.strftime('%Y-%m-%d')
 
-                        # MERGE Report and Event nodes
+                        # MERGE Report and Event nodes so that events with same eventId but different reportIds are merged
                         event_query = """
-                            MATCH (r:Report:WAHIS {reportId: $reportId})
-                            MERGE (r)-[:REPORTS]->(e:Event:Outbreak {
-                                eventId: $eventId,
-                                startDate: $outbreakStart,
-                                endDate: $outbreakEnd,
-                                description: $description
-                            })
+                        MERGE (e:Event:Outbreak {
+                            eventId: $eventId,
+                            startDate: $outbreakStart,
+                            endDate: $outbreakEnd,
+                            description: $description
+                        })
+                        WITH e
+                        MATCH (r:Report:WAHIS {reportId: $reportId})
+                        MERGE (r)-[:REPORTS]->(e)
                         """
 
                         event_params = {
@@ -126,6 +128,7 @@ def ingest_wahis(SESSION):
                             "description": desc
                         }
 
+
                         logger.info(f'MERGE event ID: ({eventId})')
                         SESSION.run(event_query, event_params)
 
@@ -135,11 +138,15 @@ def ingest_wahis(SESSION):
                         subtype = event['subType']
                         pathogen_ncbi = None
                         if subtype and 'disease' in subtype:
-                            serotype = subtype['disease']['name']
-                            pathogen_ncbi = wahis.search_and_merge(serotype, SESSION)
+                            sero = subtype['disease']
+                            if sero and 'name' in sero:
+                                serotype = sero['name']
+                                pathogen_ncbi = wahis.search_and_merge(serotype, SESSION)
                         else:
-                            pathogen = event['causalAgent']['name']
-                            pathogen_ncbi = wahis.search_and_merge(pathogen, SESSION)
+                            path = event['causalAgent']
+                            if path and 'name' in path:
+                                pathogen = path['name']
+                                pathogen_ncbi = wahis.search_and_merge(pathogen, SESSION)
 
                         if pathogen_ncbi:
                             pathogen_ncbi_id = int(pathogen_ncbi)
@@ -152,7 +159,7 @@ def ingest_wahis(SESSION):
 
                         species_quantities = outbreak_metadata['speciesQuantities']
                         if species_quantities: # use data from event
-                            # iterate over each species type and retrieve metadata (name, cases, etc.)
+                            # iterate over each host species type and retrieve metadata (name, cases, etc.)
                             for key in species_quantities:
                                 newQuants = key['newQuantities']
                                 if newQuants:
@@ -173,14 +180,54 @@ def ingest_wahis(SESSION):
                                         deathCount = key['deaths']
 
                         # Check if caseCount and deathCount are available
-                        if caseCount and caseCount != "NA":
+                        if caseCount is not None and caseCount != "NA":
                             caseCount = int(caseCount)
-                        if deathCount and deathCount != "NA":
+                        else: 
+                            caseCount = "NA"
+
+                        if deathCount is not None and deathCount != "NA":
                             deathCount = int(deathCount)
+                        else:
+                            deathCount = "NA"
                         
-                        # If there's a speciesName, continue with NCBI search
+                        # If there's a speciesName for the host, continue with NCBI search
                         if speciesName:
                             host_ncbi = wahis.search_and_merge(speciesName, SESSION)
+                            if host_ncbi is not None:
+                                host_ncbi_id = int(host_ncbi)
+
+                                host_query = """
+                                    MATCH (th:Taxon {taxId: $host_ncbi_id})
+                                    MATCH (e:Event:Outbreak {eventId: $eventId})
+                                    MERGE (e)-[:INVOLVES {
+                                        caseCount: $caseCount,
+                                        deathCount: $deathCount,
+                                        role: 'host',
+                                        speciesWild: $speciesWild
+                                    }]->(th)
+                                    WITH e
+                                    MATCH (tp:Taxon {taxId: $pathogen_ncbi_id})
+                                    MERGE (e)-[:INVOLVES {
+                                        role: "pathogen"
+                                    }]->(tp)
+                                    WITH e
+                                    MATCH (g:Geography {geonameId: $geonameId})
+                                    MERGE (e)-[:IN]->(g)
+                                """
+
+                                host_params = {
+                                    "reportId": reportId,
+                                    "eventId": int(eventId),
+                                    "host_ncbi_id": host_ncbi_id,
+                                    "caseCount": caseCount,
+                                    "deathCount": deathCount,
+                                    "speciesWild": speciesWild,
+                                    "geonameId": geonameId,
+                                    "pathogen_ncbi_id": pathogen_ncbi_id
+                                }
+
+                                logger.info(f'MERGE host: {speciesName}')
+                                SESSION.run(host_query, host_params)
                         
                         # Otherwise, do the pathogen only
                         else:
@@ -205,41 +252,7 @@ def ingest_wahis(SESSION):
                             logger.info(f'MERGE pathogen only: {pathogen}')
                             SESSION.run(path_query, path_params)
 
-                        if host_ncbi:
-                            host_ncbi_id = int(host_ncbi)
 
-                            host_query = """
-                                MATCH (th:Taxon {taxId: $host_ncbi_id})
-                                MATCH (e:Event:Outbreak {eventId: $eventId})
-                                MERGE (e)-[:INVOLVES {
-                                    caseCount: $caseCount,
-                                    deathCount: $deathCount,
-                                    role: 'host',
-                                    speciesWild: $speciesWild
-                                }]->(th)
-                                WITH e
-                                MATCH (tp:Taxon {taxId: $pathogen_ncbi_id})
-                                MERGE (e)-[:INVOLVES {
-                                    role: "pathogen"
-                                }]->(tp)
-                                WITH e
-                                MATCH (g:Geography {geonameId: $geonameId})
-                                MERGE (e)-[:IN]->(g)
-                            """
-
-                            host_params = {
-                                "reportId": reportId,
-                                "eventId": int(eventId),
-                                "host_ncbi_id": host_ncbi_id,
-                                "caseCount": caseCount,
-                                "deathCount": deathCount,
-                                "speciesWild": speciesWild,
-                                "geonameId": geonameId,
-                                "pathogen_ncbi_id": pathogen_ncbi_id
-                            }
-
-                            logger.info(f'MERGE host: {speciesName}')
-                            SESSION.run(host_query, host_params)
 
         except Exception as e:
             logger.error(f'An exception occurred: {e}')
