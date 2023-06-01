@@ -103,8 +103,7 @@ def merge_geo(geoname_or_id, SESSION):
             fclName: $fclName, 
             fcode: $fcode,
             fcodeName: $fcodeName,
-            lat: $lat, 
-            long: $long,
+            location: point({latitude: $lat, longitude: $long})
             elevation: $elevation
         })
     """
