@@ -25,7 +25,7 @@ def merge_taxon_node(taxon, SESSION):
 def merge_taxon_link(parent, child, SESSION):
     logger.info(
         f'MERGE link ({parent["scientificName"]})'
-        f'-[:CONTAINS]->({child["scientificName"]})'
+        f'-[:CONTAINS_TAXON]->({child["scientificName"]})'
     )
 
     parent_taxid = int(parent["taxId"])
@@ -34,7 +34,7 @@ def merge_taxon_link(parent, child, SESSION):
     SESSION.run(
         f'MATCH (parent:Taxon {{taxId: {parent_taxid}}}), '
         f'  (child:Taxon {{taxId: {child_taxid}}}) '
-        f"MERGE (parent)-[:CONTAINS]->(child) "
+        f"MERGE (parent)-[:CONTAINS_TAXON]->(child) "
     )
 
 def merge_lineage(lineage, SESSION):
