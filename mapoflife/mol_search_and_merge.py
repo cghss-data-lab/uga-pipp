@@ -7,7 +7,7 @@ mol_searched = set()
 mol_not_found = set()
 
 # Path to the pickle cache file
-MOL_CACHE = "mol/mol_cache.pickle"
+MOL_CACHE = "mapoflife/mol_cache.pickle"
 
 # Load the cache from the pickle file if it exists
 mol_cache = {}
