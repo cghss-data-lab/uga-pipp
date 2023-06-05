@@ -17,17 +17,17 @@ def ingest_mol(SESSION):
         # Get NCBI ID from sciname
         scientificName = row['sciname']
         taxon_ncbi = mol_search_and_merge(scientificName, SESSION)
-
-        params = {
-            "reference": reference,
-            "taxon_ncbi_id": None,
-            "wkt_polygon":wkt_polygon
-        }
-        
-        # Create taxon (or merge) if there's a match 
-        # Taxon species :SPANS over the species range (a type of geography node)
         if taxon_ncbi:
             taxon_ncbi_id = int(taxon_ncbi)
+
+            params = {
+                "reference": reference,
+                "taxon_ncbi_id": taxon_ncbi_id,
+                "wkt_polygon":wkt_polygon
+            }
+
+            # Create taxon (or merge) if there's a match 
+            # Taxon species :SPANS over the species range (a type of geography node)
             query = """
                 MERGE (t:Taxon {taxId: $taxon_ncbi_id})
                 MERGE (g:Geography:speciesRange {polygon: $wkt_polygon})
@@ -36,7 +36,7 @@ def ingest_mol(SESSION):
             logger.info(f'MERGE taxon: {scientificName}')
             SESSION.run(query, params)
 
-            
+
 
 
 
