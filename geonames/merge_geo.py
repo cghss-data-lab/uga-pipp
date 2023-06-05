@@ -162,5 +162,5 @@ def merge_geo(geoname_or_id, SESSION):
                         SESSION.run("""
                             MATCH (child:Geography {name: $child_name})
                             MATCH (parent:Geography {name: $parent_name})
-                            MERGE (parent)-[:CONTAINS]->(child)
+                            MERGE (parent)-[:CONTAINS_GEO]->(child)
                         """, {"child_name": metadata["name"], "parent_name": parent["name"]})
