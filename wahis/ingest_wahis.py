@@ -70,7 +70,7 @@ def ingest_wahis(SESSION):
 
                     # For each outbreak event listed in the report, grab metadata
                     for key in outbreaks:
-                        # EVENT :IN GEO
+                        # EVENT :OCCURS_IN GEO
                         place = key['location']
                         long = key['longitude']
                         lat = key['latitude']
@@ -212,7 +212,7 @@ def ingest_wahis(SESSION):
                                     }]->(tp)
                                     WITH e
                                     MATCH (g:Geography {geonameId: $geonameId})
-                                    MERGE (e)-[:IN]->(g)
+                                    MERGE (e)-[:OCCURS_IN]->(g)
                                 """
 
                                 host_params = {
@@ -239,7 +239,7 @@ def ingest_wahis(SESSION):
                                     }]->(tp)
                                     WITH e
                                     MATCH (g:Geography {geonameId: $geonameId})
-                                    MERGE (e)-[:IN]->(g)
+                                    MERGE (e)-[:OCCURS_IN]->(g)
                                 """
 
                             path_params = {

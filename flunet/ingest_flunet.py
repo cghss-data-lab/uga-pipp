@@ -81,7 +81,7 @@ def ingest_flunet(SESSION):
                     }})
                     WITH e
                     MATCH (g:Geography {{name: "{country}"}})
-                    MERGE (e)-[:IN]->(g)
+                    MERGE (e)-[:OCCURS_IN]->(g)
                     WITH e
                     MERGE (t:Taxon {{taxId: {ncbi_id}}})
                     MERGE (e)-[:INVOLVES {{

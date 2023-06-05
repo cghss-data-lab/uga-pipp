@@ -62,7 +62,7 @@ def ingest_gmpd(SESSION):
                 MERGE (r:GMPD:Report {dataSource: $dataSource, 
                                             dataSourceRow: $dataSourceRow,
                                             reference: $reference})
-                MERGE (r)-[:IN]->(g)
+                MERGE (r)-[:ABOUT]->(g)
                 RETURN r
             """
 
