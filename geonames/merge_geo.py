@@ -90,7 +90,7 @@ def merge_geo(geoname_or_id, SESSION):
     # Use the ID to get the location's hierarchy
     hierarchy_list = get_hierarchy(geonameId)
 
-    # Define query
+    # Query
     geo_query = """
         MERGE (g:Geography {
             dataSource: $dataSource,
@@ -103,7 +103,9 @@ def merge_geo(geoname_or_id, SESSION):
             fclName: $fclName, 
             fcode: $fcode,
             fcodeName: $fcodeName,
-            location: point({latitude: $lat, longitude: $long})
+            lat: $lat,
+            long: $long,
+            location: point({latitude: toFloat($lat), longitude: toFloat($long)}),
             elevation: $elevation
         })
     """
@@ -129,21 +131,23 @@ def merge_geo(geoname_or_id, SESSION):
             if geonameId:
                 metadata = get_geo_data_cache(geonameId)
 
+                # Modify the latitude and longitude parameters
                 params = {
                     "dataSource": "GeoNames",
                     "geonameId": int(geonameId),
                     "name": metadata.get("name"),
                     "adminCode1": metadata.get("adminCodes1", {}).get("ISO3166_2", "NA"),
-                    "adminType":metadata.get("adminTypeName","NA"),
-                    "iso2":metadata.get("countryCode","NA"),
+                    "adminType": metadata.get("adminTypeName", "NA"),
+                    "iso2": metadata.get("countryCode", "NA"),
                     "iso3": get_iso(iso2) if metadata.get("fcode") == "PCLI" else "NA",
                     "fclName": metadata.get("fclName", "NA"),
-                    "fcode":metadata.get("fcode","NA"),
+                    "fcode": metadata.get("fcode", "NA"),
                     "fcodeName": metadata.get("fcodeName", "NA"),
-                    "lat": metadata.get("lat", 0),
-                    "long": metadata.get("lng", 0),
+                    "lat": float(metadata.get("lat")),
+                    "long": float(metadata.get("lng")),
                     "elevation": metadata.get("elevation", "NA")
                 }
+
                 # Get the label for this node based on its fcode value
                 label = fcode_to_label.get(metadata.get("fcode"))
 
