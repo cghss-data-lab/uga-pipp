@@ -2,10 +2,13 @@ from loguru import logger
 import glob
 import os
 import geopandas as gpd
-
+import pickle
 
 def get_rows():
     shapefile_folder = '/Users/haileyrobertson/Desktop/HPAI/MDD_Mammalia'
+
+    # Get the directory path of the current script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
 
     # For each folder, get the path
     for folder in os.listdir(shapefile_folder):
@@ -28,6 +31,15 @@ def get_rows():
                     rows.append(row_dict)
                 
                 logger.info(f'APPEND rows from {folder_path}')
+            
+            # Save the rows to a pickle file in the script directory
+            pickle_file = os.path.join(script_dir, 'rows.pickle')
+            
+            with open(pickle_file, 'wb') as f:
+                pickle.dump(rows, f)
+            
+            logger.info(f'SAVE rows to {pickle_file}')
                 
     return rows
+
 

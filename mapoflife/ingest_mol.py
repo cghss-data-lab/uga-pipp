@@ -20,7 +20,7 @@ def ingest_mol(SESSION):
 
         params = {
             "reference": reference,
-            "taxon_ncbi_id": taxon_ncbi_id,
+            "taxon_ncbi_id": None,
             "wkt_polygon":wkt_polygon
         }
         
@@ -35,6 +35,8 @@ def ingest_mol(SESSION):
             """
             logger.info(f'MERGE taxon: {scientificName}')
             SESSION.run(query, params)
+
+            
 
 
 
