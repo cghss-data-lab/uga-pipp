@@ -8,6 +8,7 @@ from flunet import ingest_flunet
 from gmpd import ingest_gmpd
 from worldpop import ingest_worldpop
 from wahis import ingest_wahis
+from mapoflife import ingest_mol
 
 load_dotenv()
 
@@ -27,7 +28,8 @@ if __name__ == "__main__":
     # ingest_gmpd(SESSION)
     # ingest_flunet(SESSION)
     # ingest_worldpop(SESSION)
-    ingest_wahis(SESSION)
+    # ingest_wahis(SESSION)
+    ingest_mol(SESSION)
 
 
 
