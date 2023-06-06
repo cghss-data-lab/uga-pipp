@@ -2,7 +2,7 @@ from loguru import logger
 import os
 import pickle
 from functools import cache
-from geonames import geo_api, get_geo_data, geo_id_search, get_iso
+from geonames import geo_api, get_geo_data, geo_id_search
 
 # Path to the pickle cache file
 ISO_CACHE_FILE = "geonames/iso_cache.pickle"
