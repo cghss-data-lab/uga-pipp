@@ -6,19 +6,30 @@ from functools import cache
 from geonames import geo_api, get_geo_data, geo_id_search
 
 # Path to the pickle cache file
-CACHE_FILE = "geonames/iso_cache.pickle"
+ISO_CACHE_FILE = "geonames/iso_cache.pickle"
+GEO_CACHE_FILE = "geonames/geo_cache.pickle"
 
 # Load the cache from the pickle file if it exists
-if os.path.exists(CACHE_FILE):
-    with open(CACHE_FILE, "rb") as f:
+if os.path.exists(ISO_CACHE_FILE):
+    with open(ISO_CACHE_FILE, "rb") as f:
         iso_cache = pickle.load(f)
 else:
     iso_cache = {}
 
+if os.path.exists(GEO_CACHE_FILE):
+    with open(GEO_CACHE_FILE, "rb") as f:
+        geo_cache = pickle.load(f)
+else:
+    geo_cache = {}
+
 # Function to save the cache to the pickle file
-def save_cache():
-    with open(CACHE_FILE, "wb") as f:
+def save_iso_cache():
+    with open(ISO_CACHE_FILE, "wb") as f:
         pickle.dump(iso_cache, f)
+
+def save_geo_cache():
+    with open (GEO_CACHE_FILE, "wb") as f:
+        pickle.dump(geo_cache, f)
 
 
 @cache
@@ -31,7 +42,11 @@ def get_hierarchy(geonameId):
 
 @cache
 def get_geo_data_cache(geonameId):
+    global geo_cache
+    if geonameId in geo_cache:
+        return geo_cache[geonameId]
     return get_geo_data(geonameId)
+
 
 
 @cache
@@ -52,7 +67,7 @@ def get_iso(iso2):
         result = geo_api("countryInfoJSON", params)
         data = result["geonames"][0]["isoAlpha3"]
         iso_cache[iso2] = data
-        save_cache()
+        save_iso_cache()
 
     return data
 
@@ -168,3 +183,25 @@ def merge_geo(geoname_or_id, SESSION):
                             MATCH (parent:Geography {name: $parent_name})
                             MERGE (parent)-[:CONTAINS_GEO]->(child)
                         """, {"child_name": metadata["name"], "parent_name": parent["name"]})
+
+                        # Create a dictionary to store the geo node data
+                    
+                    geo_node = {
+                        "geonameId": int(geonameId),
+                        "name": metadata.get("name"),
+                        "adminCode1": metadata.get("adminCodes1", {}).get("ISO3166_2", "NA"),
+                        "adminType": metadata.get("adminTypeName", "NA"),
+                        "iso2": metadata.get("countryCode", "NA"),
+                        "iso3": get_iso(iso2) if metadata.get("fcode") == "PCLI" else "NA",
+                        "fclName": metadata.get("fclName", "NA"),
+                        "fcode": metadata.get("fcode", "NA"),
+                        "fcodeName": metadata.get("fcodeName", "NA"),
+                        "lat": float(metadata.get("lat")),
+                        "long": float(metadata.get("lng")),
+                        "elevation": metadata.get("elevation", "NA"),
+                        "label": fcode_to_label.get(metadata.get("fcode"))
+                    }
+
+                    if geo_node["name"] is not None:
+                        geo_cache.append(geo_node)
+                        save_geo_cache()
