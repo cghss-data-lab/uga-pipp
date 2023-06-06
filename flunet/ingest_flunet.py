@@ -45,13 +45,14 @@ def ingest_flunet(SESSION):
 
             # eventId is disease, report date, country
             eventId = "Flu-" + str(country) + "-" + str(row["Start date"])
+            reportId = "FluNet-" + str(index)
 
             # Create the report node
             create_report_query = f"""
                 MATCH(g:Geography {{name: "{country}"}})
                 MERGE (r:Report:FluNet {{
                     dataSource: '{"FluNet"}',
-                    dataSourceRow: {index},
+                    reportId: {reportId},
                     reportDate: date('{get_iso_date(row["Start date"])}')
                 }})
 
@@ -72,7 +73,7 @@ def ingest_flunet(SESSION):
                 }
 
                 create_event_query = f"""
-                    MATCH (r:Report:FluNet {{dataSourceRow: {index}}})
+                    MATCH (r:Report:FluNet {{reportId: {reportId}}})
                     MERGE (r)-[:REPORTS]->(e:Event:Outbreak {{
                         eventId: "{eventId}",
                         startDate: date('{get_iso_date(row["Start date"])}'),
