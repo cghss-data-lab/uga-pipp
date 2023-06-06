@@ -1,6 +1,6 @@
 import flunet
 import ncbi
-from geonames import merge_geo
+from geonames import merge_geo, country_shp
 from loguru import logger
 from datetime import datetime
 
@@ -103,7 +103,8 @@ def ingest_flunet(SESSION):
                 """
 
             SESSION.run(create_human_query)
-
+        
+        country_shp(SESSION)
 
     except Exception as e:
         logger.error(f"An exception occurred: {e}")
