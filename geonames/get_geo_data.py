@@ -1,10 +1,8 @@
-from geonames import geo_id_search
+import dill
 from geonames import geo_api
 from loguru import logger
 from functools import cache
-import time
 
-TIME_SLEEP = 3
 
 @cache
 def get_geo_data(geonameId):
