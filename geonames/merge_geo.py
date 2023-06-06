@@ -6,7 +6,7 @@ from functools import cache
 from geonames import geo_api, get_geo_data, geo_id_search
 
 # Path to the pickle cache file
-CACHE_FILE = "geonames/geo_cache.pickle"
+CACHE_FILE = "geonames/iso_cache.pickle"
 
 # Load the cache from the pickle file if it exists
 if os.path.exists(CACHE_FILE):
