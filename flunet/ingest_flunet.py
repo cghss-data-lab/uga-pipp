@@ -43,7 +43,7 @@ def ingest_flunet(SESSION):
             country = row["Territory"]
             merge_geo(country, SESSION)
 
-            # eventId is disease, report date, country
+            # eventId is disease, country, reportdate
             eventId = "Flu-" + str(country) + "-" + str(row["Start date"])
             reportId = "FluNet-" + str(index)
 
