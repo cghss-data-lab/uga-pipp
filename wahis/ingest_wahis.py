@@ -18,6 +18,8 @@ def ingest_wahis(SESSION):
                 # for each report in the evolution list of reports, create a report
                 for x in range(len(evolution_list)):
                     reportId = evolution_list[x]
+                    uqReportId = "WAHIS-" + str(reportId)
+
                     logger.info(f'GETTING report id {reportId}')
                     metadata = wahis.get_report(reportId)
 
@@ -43,7 +45,7 @@ def ingest_wahis(SESSION):
                     # MERGE a REPORT node
                     report_params = {
                         "dataSource": "WAHIS",
-                        "reportId": reportId,
+                        "uqReportId": uqReportId,
                         "reportDate": reported,
                         "reasonForReport": reasonForNotification,
                         "description": eventDescription
@@ -52,7 +54,7 @@ def ingest_wahis(SESSION):
                     report_query = """
                         MERGE (r:Report:WAHIS {
                             dataSource: $dataSource,
-                            reportId: $reportId,
+                            uqReportId: $uqReportId,
                             reportDate: $reportDate,
                             reasonForReport: $reasonForReport,
                             description: $description
@@ -116,12 +118,12 @@ def ingest_wahis(SESSION):
                             description: $description
                         })
                         WITH e
-                        MATCH (r:Report:WAHIS {reportId: $reportId})
+                        MATCH (r:Report:WAHIS {uqReportId: $uqReportId})
                         MERGE (r)-[:REPORTS]->(e)
                         """
 
                         event_params = {
-                            "reportId": reportId,
+                            "uqReportId": uqReportId,
                             "eventId": int(eventId),
                             "outbreakStart": outbreakStart,
                             "outbreakEnd": outbreakEnd,
@@ -216,7 +218,7 @@ def ingest_wahis(SESSION):
                                 """
 
                                 host_params = {
-                                    "reportId": reportId,
+                                    "uqReportId": uqReportId,
                                     "eventId": int(eventId),
                                     "host_ncbi_id": host_ncbi_id,
                                     "caseCount": caseCount,
@@ -243,7 +245,7 @@ def ingest_wahis(SESSION):
                                 """
 
                             path_params = {
-                                "reportId": reportId,
+                                "uqReportId": uqReportId,
                                 "eventId": int(eventId),
                                 "geonameId": geonameId,
                                 "pathogen_ncbi_id": pathogen_ncbi_id
