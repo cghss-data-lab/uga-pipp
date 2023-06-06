@@ -35,21 +35,21 @@ def ingest_mol(SESSION):
             logger.info(f'MERGE taxon: {scientificName}')
             SESSION.run(query, params)
 
-            # Load the country shapefile from Natural Earth dataset
-            countries = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
+            # Spatial query for intersecting points
+            intersects_query = """
+                MATCH (g1:Geography:speciesRange)
+                WHERE exists(g1.polygon)
+                MATCH (g2:Geography)
+                WHERE NOT (g2:speciesRange) AND exists(g2.location)
+                WITH g1, g2, ST_Contains(ST_GeomFromText(g1.polygon), ST_PointFromText(g2.location)) AS contains
+                WHERE contains = true
+                MERGE (g1)-[r:INTERSECTS]->(g2)
+                SET r.intersecting_area = ST_Area(ST_Intersection(ST_GeomFromText(g1.polygon), ST_PointFromText(g2.location)))
+            """
 
-            # Check for intersections with countries
-            for index, country in countries.iterrows():
-                if wkt_polygon.intersects(country['geometry']):
-                    intersecting_area = wkt_polygon.intersection(country['geometry']).area
-                    iso3 = country['iso_a3']
-                    
-                    intersect_query = """
-                        MATCH (g1:Geography:speciesRange {polygon: $wkt_polygon}
-                        MATCH (g2:Geography {iso3: $iso3})
-                        MERGE (g1)-[:INTERSECTS {intersecting_area: $intersecting_area}]->(g2)
-                    """
-                    SESSION.run(intersect_query, {"wkt_polygon":wkt_polygon,"iso3": iso3, "intersecting_area": intersecting_area})
+            # Execute the query
+            SESSION.run(intersects_query)
+
 
 
         
