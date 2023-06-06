@@ -1,8 +1,7 @@
+import geopandas as gpd
 from loguru import logger
-
 from shapely.geometry import Polygon, MultiPolygon
 from mapoflife import get_rows, mol_search_and_merge
-
 
 def ingest_mol(SESSION):
     mol_rows = get_rows()
@@ -23,7 +22,7 @@ def ingest_mol(SESSION):
             params = {
                 "reference": reference,
                 "taxon_ncbi_id": taxon_ncbi_id,
-                "wkt_polygon":wkt_polygon
+                "wkt_polygon": wkt_polygon
             }
 
             # Create taxon (or merge) if there's a match 
@@ -35,6 +34,28 @@ def ingest_mol(SESSION):
             """
             logger.info(f'MERGE taxon: {scientificName}')
             SESSION.run(query, params)
+
+            # Load the country shapefile from Natural Earth dataset
+            countries = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
+
+            # Check for intersections with countries
+            for index, country in countries.iterrows():
+                if wkt_polygon.intersects(country['geometry']):
+                    intersecting_area = wkt_polygon.intersection(country['geometry']).area
+                    iso3 = country['iso_a3']
+                    
+                    intersect_query = """
+                        MATCH (g1:Geography:speciesRange {polygon: $wkt_polygon}
+                        MATCH (g2:Geography {iso3: $iso3})
+                        MERGE (g1)-[:INTERSECTS {intersecting_area: $intersecting_area}]->(g2)
+                    """
+                    SESSION.run(intersect_query, {"wkt_polygon":wkt_polygon,"iso3": iso3, "intersecting_area": intersecting_area})
+
+
+        
+        
+
+        
 
 
 
