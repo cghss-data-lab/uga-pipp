@@ -160,7 +160,8 @@ def merge_geo(geoname_or_id, SESSION):
                     "fcodeName": metadata.get("fcodeName", "NA"),
                     "lat": float(metadata.get("lat")),
                     "long": float(metadata.get("lng")),
-                    "elevation": metadata.get("elevation", "NA")
+                    "elevation": metadata.get("elevation", "NA"),
+                    "polygon": metadata.get("polygon","NA")
                 }
 
                 # Get the label for this node based on its fcode value
