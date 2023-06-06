@@ -93,26 +93,7 @@ def merge_geo(geoname_or_id, SESSION):
     # Use the ID to get the location's hierarchy
     hierarchy_list = get_hierarchy(geonameId)
 
-    # Query
-    geo_query = """
-        MERGE (g:Geography {
-            dataSource: $dataSource,
-            geonameId: $geonameId,
-            name: $name, 
-            adminCode1: $adminCode1,
-            adminType: $adminType,
-            iso2: $iso2,
-            iso3: $iso3,
-            fclName: $fclName, 
-            fcode: $fcode,
-            fcodeName: $fcodeName,
-            lat: $lat,
-            long: $long,
-            location: point({latitude: toFloat($lat), longitude: toFloat($long)}),
-            elevation: $elevation,
-            polygon: $polygon
-        })
-    """
+
 
     # Define a dictionary mapping fcode values to node labels
     fcode_to_label = {
@@ -136,6 +117,50 @@ def merge_geo(geoname_or_id, SESSION):
                 metadata = get_geo_data_cache(geonameId)
 
                 # Modify the latitude and longitude parameters
+                lat = metadata.get("lat")
+                long = metadata.get("long")
+                if lat is not None and long is not None:
+                    # Query
+                    geo_query = """
+                        MERGE (g:Geography {
+                            dataSource: $dataSource,
+                            geonameId: $geonameId,
+                            name: $name, 
+                            adminCode1: $adminCode1,
+                            adminType: $adminType,
+                            iso2: $iso2,
+                            iso3: $iso3,
+                            fclName: $fclName, 
+                            fcode: $fcode,
+                            fcodeName: $fcodeName,
+                            lat: $lat,
+                            long: $long,
+                            location: point({latitude: toFloat($lat), longitude: toFloat($long)}),
+                            elevation: $elevation,
+                            polygon: $polygon
+                        })
+                    """
+                
+                else: 
+                    geo_query = """
+                        MERGE (g:Geography {
+                            dataSource: $dataSource,
+                            geonameId: $geonameId,
+                            name: $name, 
+                            adminCode1: $adminCode1,
+                            adminType: $adminType,
+                            iso2: $iso2,
+                            iso3: $iso3,
+                            fclName: $fclName, 
+                            fcode: $fcode,
+                            fcodeName: $fcodeName,
+                            lat: $lat,
+                            long: $long,
+                            elevation: $elevation,
+                            polygon: $polygon
+                        })
+                    """
+                
                 params = {
                     "dataSource": "GeoNames",
                     "geonameId": int(geonameId),
@@ -147,8 +172,8 @@ def merge_geo(geoname_or_id, SESSION):
                     "fclName": metadata.get("fclName", "NA"),
                     "fcode": metadata.get("fcode", "NA"),
                     "fcodeName": metadata.get("fcodeName", "NA"),
-                    "lat": float(metadata.get("lat")),
-                    "long": float(metadata.get("lng")),
+                    "lat": float(lat) if lat is not None else "NA",
+                    "long": float(long) if long is not None else "NA",
                     "elevation": metadata.get("elevation", "NA"),
                     "polygon": metadata.get("polygon","NA")
                 }
@@ -174,5 +199,4 @@ def merge_geo(geoname_or_id, SESSION):
                             MERGE (parent)-[:CONTAINS_GEO]->(child)
                         """, {"child_name": metadata["name"], "parent_name": parent["name"]})
 
-                        # Create a dictionary to store the geo node data
                     
