@@ -25,11 +25,11 @@ if __name__ == "__main__":
     # # Would not recommend using both
     # ingest_carnivoreGMPD(SESSION)
 
-    # ingest_gmpd(SESSION)
-    # ingest_flunet(SESSION)
-    # ingest_worldpop(SESSION)
+    ingest_gmpd(SESSION)
+    ingest_flunet(SESSION)
+    ingest_worldpop(SESSION)
     # ingest_wahis(SESSION)
-    ingest_mol(SESSION)
+    # ingest_mol(SESSION)
 
 
 
