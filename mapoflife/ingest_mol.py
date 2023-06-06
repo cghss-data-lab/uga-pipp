@@ -46,9 +46,26 @@ def ingest_mol(SESSION):
                 MERGE (g1)-[r:INTERSECTS]->(g2)
                 SET r.intersecting_area = ST_Area(ST_Intersection(ST_GeomFromText(g1.polygon), ST_PointFromText(g2.location)))
             """
+            batch_size = 1000
 
-            # Execute the query
-            SESSION.run(intersects_query)
+            # Get the total count of intersecting points
+            count_query = """
+                MATCH (g1:Geography:speciesRange)
+                WHERE exists(g1.polygon)
+                MATCH (g2:Geography)
+                WHERE NOT (g2:speciesRange) AND exists(g2.location)
+                WITH g1, g2, ST_Contains(ST_GeomFromText(g1.polygon), ST_PointFromText(g2.location)) AS contains
+                WHERE contains = true
+                RETURN count(*) AS count
+            """
+
+            result = SESSION.run(count_query)
+            total_count = result.single()["count"]
+
+            # Execute the query in batches
+            for offset in range(0, total_count, batch_size):
+                batch_query = intersects_query + f"\nSKIP {offset} LIMIT {batch_size}"
+                SESSION.run(batch_query)
 
 
 
