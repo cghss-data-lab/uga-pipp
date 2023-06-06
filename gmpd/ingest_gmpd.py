@@ -10,7 +10,7 @@ def ingest_gmpd(SESSION):
     
     # Make sure taxons exist in the database
     # Cast variables for properties
-    for dataSourceRow, row in enumerate(gmpd_rows):
+    for index, row in enumerate(gmpd_rows):
 
         reference = row["Citation"]
 

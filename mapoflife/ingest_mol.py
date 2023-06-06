@@ -6,7 +6,7 @@ from mapoflife import get_rows, mol_search_and_merge
 def ingest_mol(SESSION):
     mol_rows = get_rows()
 
-    for dataSourceRow, row in enumerate(mol_rows):
+    for index, row in enumerate(mol_rows):
         reference = row['citation']
 
         # Access the polygon/multipolygon and convert to wkt representation

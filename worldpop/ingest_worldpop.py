@@ -22,7 +22,7 @@ def ingest_worldpop(SESSION):
             # Fields in thousands were multiplied
             # Rates are per 1000
             dataSource = "UN World Population Prospects 2022"
-            dataSourceRow = index
+            reportId = "WorldPop-" + str(index)
             year = int(row["Time"])
             # Assume year is an integer variable containing the year value
             if year >= 2022:
@@ -65,7 +65,7 @@ def ingest_worldpop(SESSION):
 
             pop_query = """
                 MERGE (p:Population {dataSource: $dataSource, 
-                                dataSourceRow:$dataSourceRow,
+                                reportId:$reportId,
                                 date:$date,
                                 duration:$duration,
                                 totalPopulation:$totalPopulation, 
@@ -84,7 +84,7 @@ def ingest_worldpop(SESSION):
             
             parameters = {
                 "dataSource":dataSource,
-                "dataSourceRow":dataSourceRow,
+                "reportId":reportId,
                 "date":date,
                 "duration":duration,
                 "totalPopulation":totalPopulation,
