@@ -1,13 +1,11 @@
 from loguru import logger
 import os
 import pickle
-import functools
 from functools import cache
-from geonames import geo_api, get_geo_data, geo_id_search
+from geonames import geo_api, get_geo_data, geo_id_search, get_iso, get_hierarchy
 
 # Path to the pickle cache file
 ISO_CACHE_FILE = "geonames/iso_cache.pickle"
-GEO_CACHE_FILE = "geonames/geo_cache.pickle"
 
 # Load the cache from the pickle file if it exists
 if os.path.exists(ISO_CACHE_FILE):
@@ -22,43 +20,12 @@ def save_iso_cache():
         pickle.dump(iso_cache, f)
 
 
-
-@cache
-def get_hierarchy(geonameId):
-    params = {"geonameId": geonameId}
-    hierarchy = geo_api("hierarchyJSON", params)
-    hierarchy_list = hierarchy.get("geonames")
-    return hierarchy_list
-
-
 @cache
 def get_geo_data_cache(geonameId):
-    return get_geo_data(geonameId)
 
-
-
-@cache
-def get_iso(iso2):
-    global iso_cache
-
-    params = {
-        "country": iso2,
-        "maxRows": 1
-    }
-
-    # result = result = geo_api("countryInfoJSON", params)
-    # data = result["geonames"][0]["isoAlpha3"]
-
-    if iso2 in iso_cache:
-        data = iso_cache[iso2]
-    else:
-        result = geo_api("countryInfoJSON", params)
-        data = result["geonames"][0]["isoAlpha3"]
-        iso_cache[iso2] = data
-        save_iso_cache()
-
-    return data
-
+    get_geo_cache = get_geo_data(geonameId)
+    
+    return get_geo_cache
 
 
 @cache
@@ -67,6 +34,7 @@ def merge_geo(geoname_or_id, SESSION):
     Search for a location by name and return ID, obtain its hierarchy,
     and create nodes and relationships for each parent.
     """
+
 
     # Dictionary to cache the results of geo_id_search
     id_cache = {}
@@ -92,8 +60,6 @@ def merge_geo(geoname_or_id, SESSION):
 
     # Use the ID to get the location's hierarchy
     hierarchy_list = get_hierarchy(geonameId)
-
-
 
     # Define a dictionary mapping fcode values to node labels
     fcode_to_label = {
