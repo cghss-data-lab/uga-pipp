@@ -99,4 +99,13 @@ def ingest_gmpd(SESSION):
             parameters = {"dataSourceRow": dataSourceRow, "pathogen_ncbi_id": pathogen_ncbi_id, "role":role, "detectionType":detectionType,"totalSpecimensCollected":totalSpecimensCollected, "totalSpecimensPositive":totalSpecimensPositive}
             SESSION.run(query, parameters)
 
+        # if host_ncbi_id is not None and pathogen_ncbi_id is not None:
+
+        #     pairings_query = (
+        #         "MATCH (t1:Taxon {taxId: $host_ncbi_id}), (t2:Taxon {taxId: $pathogen_ncbi_id}) "
+        #         "MERGE (t2)-[:IDENTIFIED_IN]->(t1) "
+        #     )
+        #     pairings_params = {"host_ncbi_id": host_ncbi_id, "pathogen_ncbi_id":pathogen_ncbi_id}
+        #     SESSION.run(pairings_query, pairings_params)
+
 
