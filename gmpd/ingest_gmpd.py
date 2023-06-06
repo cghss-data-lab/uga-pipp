@@ -30,6 +30,8 @@ def ingest_gmpd(SESSION):
         dataSource = "GMPD"
         long = row["Longitude"]
         lat = row ["Latitude"]  
+        reportId = "GMPD-" + str(row["dataSourceRow"])
+
 
         # Return the location geonameId there is one
         geonameId = search_lat_long(lat, long)
@@ -39,14 +41,14 @@ def ingest_gmpd(SESSION):
             logger.warning(f"No location found for lat: {lat}, long: {long}")
             query = """
                 MERGE (r:GMPD:Report {dataSource: $dataSource, 
-                                            dataSourceRow:$dataSourceRow,
+                                            reportId:$reportId,
                                             reference:$reference})
                 RETURN r
                 """
 
             parameters = {
                 "dataSource": dataSource,
-                "dataSourceRow": dataSourceRow, 
+                "reportId": reportId, 
                 "reference": reference
             }
             result = SESSION.run(query, parameters)
@@ -60,7 +62,7 @@ def ingest_gmpd(SESSION):
             query = """
                 MATCH (g:Geography {geonameId: $geonameId})
                 MERGE (r:GMPD:Report {dataSource: $dataSource, 
-                                            dataSourceRow: $dataSourceRow,
+                                            reportId: $reportId,
                                             reference: $reference})
                 MERGE (r)-[:ABOUT]->(g)
                 RETURN r
@@ -69,7 +71,7 @@ def ingest_gmpd(SESSION):
             parameters = {
                 "geonameId": geonameId,
                 "dataSource": dataSource,
-                "dataSourceRow": dataSourceRow, 
+                "reportId": reportId, 
                 "reference": reference
             }
 
@@ -82,10 +84,10 @@ def ingest_gmpd(SESSION):
             role = "host"
             # Create the relationships between the Report node and the host taxon
             query = """
-            MATCH (r:GMPD:Report {dataSourceRow: $dataSourceRow}), (h:Taxon {taxId: $host_ncbi_id})
+            MATCH (r:GMPD:Report {reportId: $reportId}), (h:Taxon {taxId: $host_ncbi_id})
             MERGE (r)-[hr:ASSOCIATES {role: $role}]->(h)
             """
-            parameters = {"dataSourceRow": dataSourceRow, "host_ncbi_id": host_ncbi_id, "role":role}
+            parameters = {"reportId": reportId, "host_ncbi_id": host_ncbi_id, "role":role}
             SESSION.run(query, parameters)
 
         if pathogen_ncbi_id:
@@ -93,10 +95,10 @@ def ingest_gmpd(SESSION):
             role = "pathogen"
             # Create the relationships between the Report node and the pathogen taxon
             query = """
-            MATCH (r:GMPD:Report {dataSourceRow: $dataSourceRow}), (p:Taxon {taxId: $pathogen_ncbi_id})
+            MATCH (r:GMPD:Report {reportId: $reportId}), (p:Taxon {taxId: $pathogen_ncbi_id})
             MERGE (r)-[pr:ASSOCIATES {role: $role, detectionType: $detectionType, totalSpecimensCollected: $totalSpecimensCollected, totalSpecimensPositive: $totalSpecimensPositive}]->(p)
             """
-            parameters = {"dataSourceRow": dataSourceRow, "pathogen_ncbi_id": pathogen_ncbi_id, "role":role, "detectionType":detectionType,"totalSpecimensCollected":totalSpecimensCollected, "totalSpecimensPositive":totalSpecimensPositive}
+            parameters = {"reportId": reportId, "pathogen_ncbi_id": pathogen_ncbi_id, "role":role, "detectionType":detectionType,"totalSpecimensCollected":totalSpecimensCollected, "totalSpecimensPositive":totalSpecimensPositive}
             SESSION.run(query, parameters)
 
         # if host_ncbi_id is not None and pathogen_ncbi_id is not None:
