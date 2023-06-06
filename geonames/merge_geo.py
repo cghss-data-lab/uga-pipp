@@ -109,7 +109,8 @@ def merge_geo(geoname_or_id, SESSION):
             lat: $lat,
             long: $long,
             location: point({latitude: toFloat($lat), longitude: toFloat($long)}),
-            elevation: $elevation
+            elevation: $elevation,
+            polygon: $polygon
         })
     """
 
