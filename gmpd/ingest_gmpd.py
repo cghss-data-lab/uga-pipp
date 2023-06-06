@@ -30,7 +30,7 @@ def ingest_gmpd(SESSION):
         dataSource = "GMPD"
         long = row["Longitude"]
         lat = row ["Latitude"]  
-        reportId = "GMPD-" + str(row["dataSourceRow"])
+        reportId = "GMPD-" + str(index)
 
 
         # Return the location geonameId there is one
