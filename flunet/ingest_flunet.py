@@ -39,7 +39,8 @@ def ingest_flunet(SESSION):
                 continue
 
             logger.info(f"Creating FluNet Report {index}")
-
+            
+            dataSource = "FluNet"
             country = row["Territory"]
             merge_geo(country, SESSION)
 
@@ -48,17 +49,23 @@ def ingest_flunet(SESSION):
             reportId = "FluNet-" + str(index)
 
             # Create the report node
-            create_report_query = f"""
-                MATCH(g:Geography {{name: "{country}"}})
-                MERGE (r:Report:FluNet {{
-                    dataSource: '{"FluNet"}',
-                    reportId: "{reportId}",
-                    reportDate: date('{get_iso_date(row["Start date"])}')
-                }})
+            create_report_query = """
+                MATCH (g:Geography {name: $name})
+                MERGE (r:Report:FluNet {dataSource: $dataSource, 
+                                            reportId: $reportId,
+                                            reportDate: date($reportDate)
+                                            })
+                RETURN r
+                """
 
-            """
+            parameters = {
+                "name":country,
+                "dataSource": dataSource,
+                "reportId": reportId, 
+                "reportDate": get_iso_date(row["Start date"])
+            }
 
-            SESSION.run(create_report_query)
+            SESSION.run(create_report_query, parameters)
 
             for col in agent_groups.keys():
                 # skip detection columns with no values
@@ -73,7 +80,7 @@ def ingest_flunet(SESSION):
                 }
 
                 create_event_query = f"""
-                    MATCH (r:Report:FluNet {{reportId: {reportId}}})
+                    MATCH (r:Report:FluNet {{reportId: '{reportId}'}})
                     MERGE (r)-[:REPORTS]->(e:Event:Outbreak {{
                         eventId: "{eventId}",
                         startDate: date('{get_iso_date(row["Start date"])}'),
@@ -86,13 +93,14 @@ def ingest_flunet(SESSION):
                     WITH e
                     MERGE (t:Taxon {{taxId: {ncbi_id}}})
                     MERGE (e)-[:INVOLVES {{
-                                            subtype: '{event_rel_props['subtype']}',
-                                            role: '{event_rel_props['role']}',
-                                            totalSpecimensCollected: {int(row["Collected"] or 0)},
-                                            totalSpecimensProcessed: {int(row["Processed"] or 0)},
-                                            totalSpecimensPositive: {int(row[col])}
+                        subtype: '{event_rel_props['subtype']}',
+                        role: '{event_rel_props['role']}',
+                        totalSpecimensCollected: {int(row["Collected"] or 0)},
+                        totalSpecimensProcessed: {int(row["Processed"] or 0)},
+                        totalSpecimensPositive: {int(row[col])}
                     }}]->(t)
                 """
+
 
                 SESSION.run(create_event_query)
 
