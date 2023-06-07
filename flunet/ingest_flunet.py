@@ -52,7 +52,7 @@ def ingest_flunet(SESSION):
                 MATCH(g:Geography {{name: "{country}"}})
                 MERGE (r:Report:FluNet {{
                     dataSource: '{"FluNet"}',
-                    reportId: {reportId},
+                    reportId: "{reportId}",
                     reportDate: date('{get_iso_date(row["Start date"])}')
                 }})
 
