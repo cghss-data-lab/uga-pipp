@@ -144,13 +144,15 @@ def ingest_wahis(SESSION):
                         # Connect to NCBI using serotype if it's available
                         # Otherwise use pathogen name
                         subtype = event['subType']
+                        serotype = "NA"
                         pathogen_ncbi = None
                         if subtype and 'disease' in subtype:
                             sero = subtype['disease']
                             if sero and 'name' in sero:
                                 serotype = sero['name']
                                 pathogen_ncbi = wahis.search_and_merge(serotype, SESSION)
-                        else:
+                        
+                        if not pathogen_ncbi:
                             path = event['causalAgent']
                             if path and 'name' in path:
                                 pathogen = path['name']
@@ -219,7 +221,8 @@ def ingest_wahis(SESSION):
                                     MATCH (tp:Taxon {taxId: $pathogen_ncbi_id})
                                     MERGE (e)-[:INVOLVES {
                                         role: "pathogen",
-                                        detectionDate: $detectionDate
+                                        detectionDate: $detectionDate,
+                                        subtype: $subtype
                                     }]->(tp)
                                     WITH e
                                     MATCH (g:Geography {geonameId: $geonameId})
@@ -236,7 +239,8 @@ def ingest_wahis(SESSION):
                                     "geonameId": geonameId,
                                     "pathogen_ncbi_id": pathogen_ncbi_id,
                                     "detectionDate": outbreakStart,
-                                    "detectionDateDetails":"Outbreak start date"
+                                    "detectionDateDetails":"Outbreak start date",
+                                    "subtype":serotype
                                 }
 
                                 logger.info(f'MERGE host: {speciesName}')
@@ -249,7 +253,8 @@ def ingest_wahis(SESSION):
                                     MATCH (tp:Taxon {taxId: $pathogen_ncbi_id})
                                     MERGE (e)-[:INVOLVES {
                                         role: "pathogen",
-                                        detectionDate: $detectionDate
+                                        detectionDate: $detectionDate,
+                                        subtype: $subtype
                                     }]->(tp)
                                     WITH e
                                     MATCH (g:Geography {geonameId: $geonameId})
@@ -262,7 +267,8 @@ def ingest_wahis(SESSION):
                                 "geonameId": geonameId,
                                 "pathogen_ncbi_id": pathogen_ncbi_id,
                                 "detectionDate": outbreakStart,
-                                "detectionDateDetails": "Outbreak start date"
+                                "detectionDateDetails": "Outbreak start date",
+                                "subtype": serotype
                             }
 
                             logger.info(f'MERGE pathogen only: {pathogen}')
