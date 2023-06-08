@@ -10,7 +10,7 @@ import wahis
 from wahis import search_and_merge
 
 def ingest_wahis(SESSION):
-    for i in range(1, 5064):  # as of 5/24/22
+    for i in range(1, 5080):  # events as of 6/8/23
         try:
             listId = i
             evolution_list = wahis.get_evolution(listId)
