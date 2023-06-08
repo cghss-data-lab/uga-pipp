@@ -108,6 +108,10 @@ def ingest_wahis(SESSION):
                         outbreak_end = outbreak_metadata['outbreak']['endDate']
                         end_strip = datetime.strptime(outbreak_end, '%Y-%m-%dT%H:%M:%S.%f%z')
                         outbreakEnd = end_strip.strftime('%Y-%m-%d')
+                        
+                        if outbreakEnd:
+                            dur = (end_strip - start_strip)
+                            duration = "P"+str(dur.days)+"D"
 
                         # MERGE Report and Event nodes so that events with same eventId but different reportIds are merged
                         event_query = """
@@ -115,7 +119,8 @@ def ingest_wahis(SESSION):
                             eventId: $eventId,
                             startDate: $outbreakStart,
                             endDate: $outbreakEnd,
-                            description: $description
+                            description: $description,
+                            duration: $duration
                         })
                         WITH e
                         MATCH (r:Report:WAHIS {uqReportId: $uqReportId})
@@ -127,7 +132,8 @@ def ingest_wahis(SESSION):
                             "eventId": int(eventId),
                             "outbreakStart": outbreakStart,
                             "outbreakEnd": outbreakEnd,
-                            "description": desc
+                            "description": desc,
+                            "duration": duration
                         }
 
 
@@ -180,6 +186,7 @@ def ingest_wahis(SESSION):
                                         speciesWild = key['isWild']
                                         caseCount = key['cases']
                                         deathCount = key['deaths']
+                                        
 
                         # Check if caseCount and deathCount are available
                         if caseCount is not None and caseCount != "NA":
@@ -205,7 +212,8 @@ def ingest_wahis(SESSION):
                                         caseCount: $caseCount,
                                         deathCount: $deathCount,
                                         role: 'host',
-                                        speciesWild: $speciesWild
+                                        speciesWild: $speciesWild,
+                                        detectionDate: $detectionDate
                                     }]->(th)
                                     WITH e
                                     MATCH (tp:Taxon {taxId: $pathogen_ncbi_id})
@@ -225,7 +233,9 @@ def ingest_wahis(SESSION):
                                     "deathCount": deathCount,
                                     "speciesWild": speciesWild,
                                     "geonameId": geonameId,
-                                    "pathogen_ncbi_id": pathogen_ncbi_id
+                                    "pathogen_ncbi_id": pathogen_ncbi_id,
+                                    "detectionDate": outbreakStart,
+                                    "detectionDateDetails":"Outbreak start date"
                                 }
 
                                 logger.info(f'MERGE host: {speciesName}')
@@ -237,7 +247,8 @@ def ingest_wahis(SESSION):
                                     MATCH (e:Event:Outbreak {eventId: $eventId})
                                     MATCH (tp:Taxon {taxId: $pathogen_ncbi_id})
                                     MERGE (e)-[:INVOLVES {
-                                        role: "pathogen"
+                                        role: "pathogen",
+                                        detectionDate: $detectionDate
                                     }]->(tp)
                                     WITH e
                                     MATCH (g:Geography {geonameId: $geonameId})
@@ -248,7 +259,9 @@ def ingest_wahis(SESSION):
                                 "uqReportId": uqReportId,
                                 "eventId": int(eventId),
                                 "geonameId": geonameId,
-                                "pathogen_ncbi_id": pathogen_ncbi_id
+                                "pathogen_ncbi_id": pathogen_ncbi_id,
+                                "detectionDate": outbreakStart,
+                                "detectionDateDetails": "Outbreak start date"
                             }
 
                             logger.info(f'MERGE pathogen only: {pathogen}')
