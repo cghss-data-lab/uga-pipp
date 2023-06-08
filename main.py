@@ -26,8 +26,8 @@ if __name__ == "__main__":
     # ingest_carnivoreGMPD(SESSION)
 
     # ingest_gmpd(SESSION)
-    ingest_flunet(SESSION)
-    ingest_worldpop(SESSION)
+    # ingest_flunet(SESSION)
+    # ingest_worldpop(SESSION)
     # ingest_wahis(SESSION)
     # ingest_mol(SESSION)
 
