@@ -179,7 +179,7 @@ def ingest_wahis(SESSION):
                                     deathCount = key['newQuantities']['deaths']
 
                         else: # get the stuff from the report (could be duplicative?)
-                            quantData = report['quantitativeData']
+                            quantData = report['quantitativeData'] or report['quantityUnit']
                             if quantData:
                                 newQuantData = quantData['news']
                                 if newQuantData:
