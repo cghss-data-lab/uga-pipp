@@ -218,7 +218,8 @@ def ingest_wahis(SESSION):
                                     WITH e
                                     MATCH (tp:Taxon {taxId: $pathogen_ncbi_id})
                                     MERGE (e)-[:INVOLVES {
-                                        role: "pathogen"
+                                        role: "pathogen",
+                                        detectionDate: $detectionDate
                                     }]->(tp)
                                     WITH e
                                     MATCH (g:Geography {geonameId: $geonameId})
