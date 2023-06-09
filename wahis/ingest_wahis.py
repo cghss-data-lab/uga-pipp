@@ -168,18 +168,17 @@ def ingest_wahis(SESSION):
                         speciesWild = "NA"
 
                         species_quantities = outbreak_metadata['speciesQuantities']
-                        if species_quantities: # use data from event
+                        if species_quantities:
                             # iterate over each host species type and retrieve metadata (name, cases, etc.)
-                            for key in species_quantities:
-                                newQuants = key['newQuantities']
-                                if newQuants:
-                                    speciesName = key['newQuantities']['speciesName']
-                                    speciesWild = key['newQuantities']['isWild']
-                                    caseCount = key['newQuantities']['cases']
-                                    deathCount = key['newQuantities']['deaths']
-
-                        else: # get the stuff from the report (could be duplicative?)
-                            quantData = report['quantitativeData'] or report['quantityUnit']
+                            for item in species_quantities:
+                                newQuantities = item['newQuantities']
+                                if newQuantities:
+                                    speciesName = newQuantities['speciesName']
+                                    speciesWild = newQuantities['isWild']
+                                    caseCount = newQuantities['cases']
+                                    deathCount = newQuantities['deaths']
+                        else:
+                            quantData = metadata['quantitativeData']
                             if quantData:
                                 newQuantData = quantData['news']
                                 if newQuantData:
@@ -188,6 +187,10 @@ def ingest_wahis(SESSION):
                                         speciesWild = key['isWild']
                                         caseCount = key['cases']
                                         deathCount = key['deaths']
+                            else:
+                                quantData = None
+                                logger.info(f'No quant data for outbreak {eventId} or report {reportId}')
+
                                         
 
                         # Check if caseCount and deathCount are available
