@@ -279,7 +279,7 @@ def ingest_wahis(SESSION):
                                 "subtype": serotype
                             }
 
-                            logger.info(f'MERGE pathogen only: {pathogen}')
+                            logger.info(f'MERGE pathogen only, taxId: {pathogen_ncbi_id}')
                             SESSION.run(path_query, path_params)
 
 
