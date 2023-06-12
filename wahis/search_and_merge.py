@@ -35,6 +35,9 @@ def search_and_merge(term, SESSION):
         ncbi.merge_taxon(taxon, SESSION)
         ncbi_id = taxon["taxId"]
 
+    elif term in wahis_not_found:
+        return None
+
     else:
         wahis_searched.add(term)
         ncbi_id = ncbi.id_search(term)

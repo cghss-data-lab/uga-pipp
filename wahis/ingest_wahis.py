@@ -10,7 +10,7 @@ import wahis
 from wahis import search_and_merge
 
 def ingest_wahis(SESSION):
-    for i in range(1, 5080):  # events as of 6/8/23
+    for i in range(50, 5080):  # events as of 6/8/23
         try:
             listId = i
             evolution_list = wahis.get_evolution(listId)
@@ -38,7 +38,12 @@ def ingest_wahis(SESSION):
                     reported = reported_strip.strftime('%Y-%m-%d')
                     reasonForNotification = event['reason']['translation']
                     eventComment = event['eventComment']
-                    eventDescription = eventComment['translation'] if eventComment and 'translation' in eventComment else 'NA'
+                    if eventComment and eventComment['translation'] is not None:
+                        eventDescription = eventComment['translation'] 
+                    elif eventComment and eventComment['original'] is not None:
+                        eventDescription = eventComment['original'] 
+                    else: 
+                        eventDescription = 'NA'
 
                     iso3 = event['country']['isoCode']
 
