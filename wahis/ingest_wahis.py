@@ -10,7 +10,7 @@ import wahis
 from wahis import search_and_merge
 
 def ingest_wahis(SESSION):
-    for i in range(50, 5080):  # events as of 6/8/23
+    for i in range(78, 5080):  # events as of 6/8/23
         try:
             listId = i
             evolution_list = wahis.get_evolution(listId)
@@ -76,7 +76,12 @@ def ingest_wahis(SESSION):
                     processed_event_ids = set()  
 
                     # For each outbreak event listed in the report, grab metadata
-                    for key in outbreaks:
+                    for index, key in enumerate(outbreaks):
+
+                        # if i == 76:
+                        #     if index < 139:
+                        #         continue
+
                         # EVENT :OCCURS_IN GEO
                         place = key['location']
                         long = key['longitude']
@@ -111,12 +116,18 @@ def ingest_wahis(SESSION):
                         outbreakStart = start_strip.strftime('%Y-%m-%d')
 
                         outbreak_end = outbreak_metadata['outbreak']['endDate']
-                        end_strip = datetime.strptime(outbreak_end, '%Y-%m-%dT%H:%M:%S.%f%z')
-                        outbreakEnd = end_strip.strftime('%Y-%m-%d')
-                        
-                        if outbreakEnd:
-                            dur = (end_strip - start_strip)
-                            duration = "P"+str(dur.days)+"D"
+                        if outbreak_end:
+                            end_strip = datetime.strptime(outbreak_end, '%Y-%m-%dT%H:%M:%S.%f%z')
+                            outbreakEnd = end_strip.strftime('%Y-%m-%d')
+                        else:
+                            outbreakEnd = "Ongoing"
+
+                        if outbreakEnd != "Ongoing":
+                            dur = end_strip - start_strip
+                            duration = f"P{dur.days}D"
+                        else:
+                            duration = "NA"
+
 
                         # MERGE Report and Event nodes so that events with same eventId but different reportIds are merged
                         event_query = """
