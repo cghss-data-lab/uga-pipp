@@ -109,7 +109,7 @@ def merge_geo(geoname_or_id, SESSION):
 
                 # Modify the latitude and longitude parameters
                 lat = metadata.get("lat")
-                long = metadata.get("long")
+                long = metadata.get("lng")
                 if lat is not None and long is not None:
                     # Query
                     geo_query = """
