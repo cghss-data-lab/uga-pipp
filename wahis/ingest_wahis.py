@@ -2,18 +2,21 @@ from loguru import logger
 from datetime import datetime
 
 from geonames import search_lat_long
-from geonames import geo_id_search
 from geonames import merge_geo
 
 import wahis
 
 from wahis import search_and_merge
+import time 
+
+TIME_SLEEP = 0.3
 
 def ingest_wahis(SESSION):
-    for i in range(78, 5080):  # events as of 6/8/23
+    for i in range(260, 5080):  # events as of 6/8/23
         try:
             listId = i
             evolution_list = wahis.get_evolution(listId)
+            time.sleep(TIME_SLEEP)
             if evolution_list:
                 # for each report in the evolution list of reports, create a report
                 for x in range(len(evolution_list)):
@@ -78,10 +81,6 @@ def ingest_wahis(SESSION):
                     # For each outbreak event listed in the report, grab metadata
                     for index, key in enumerate(outbreaks):
 
-                        # if i == 76:
-                        #     if index < 139:
-                        #         continue
-
                         # EVENT :OCCURS_IN GEO
                         place = key['location']
                         long = key['longitude']
@@ -110,6 +109,7 @@ def ingest_wahis(SESSION):
                         processed_event_ids.add(eventId)
 
                         outbreak_metadata = wahis.get_outbreak(reportId, eventId)
+                        time.sleep(TIME_SLEEP)
 
                         outbreak_str = outbreak_metadata['outbreak']['startDate']
                         start_strip = datetime.strptime(outbreak_str, '%Y-%m-%dT%H:%M:%S.%f%z')
@@ -172,7 +172,11 @@ def ingest_wahis(SESSION):
                             path = event['causalAgent']
                             if path and 'name' in path:
                                 pathogen = path['name']
-                                pathogen_ncbi = wahis.search_and_merge(pathogen, SESSION)
+                                if pathogen == "Equine infectious anaemia virus  ":
+                                    fixed_path = "Equine infectious anemia virus"
+                                    pathogen_ncbi = wahis.search_and_merge(fixed_path, SESSION)
+                                else:
+                                    pathogen_ncbi = wahis.search_and_merge(pathogen, SESSION)
 
                         if pathogen_ncbi:
                             pathogen_ncbi_id = int(pathogen_ncbi)
