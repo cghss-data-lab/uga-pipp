@@ -11,15 +11,10 @@ def get_metadata(ncbi_id):
     params = {"db": "Taxonomy", "id": ncbi_id}
     soup = ncbi.api_soup("efetch", params)
 
-    if not soup.TaxaSet:
-        raise ValueError("TaxaSet object not found in the API response.")
+    taxon = soup.TaxaSet.Taxon
 
-    taxon_set = soup.TaxaSet
-
-    if not taxon_set.Taxon:
+    if not taxon:
         raise ValueError("Taxon object not found in the API response.")
-
-    taxon = taxon_set.Taxon
 
     taxon_metadata = {
         "scientificName": taxon.ScientificName.getText(),
