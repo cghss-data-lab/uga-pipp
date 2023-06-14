@@ -4,19 +4,23 @@ import time
 
 SLEEP_TIME = 0.4 #3 requests/second
 
-
 def id_search(name):
     """Get ID from text search, using NCBI esearch eutil"""
 
-    logger.info(f"Searching ncbi for term {name}")
+    logger.info(f"Searching NCBI for term {name}")
 
     params = {"db": "Taxonomy", "term": name}
 
     soup = ncbi.api_soup("esearch", params)
 
     try:
-        ncbi_id = soup.find("Id").getText()
-        time.sleep(SLEEP_TIME)
+        ncbi_id = soup.find("Id")
+        if ncbi_id is not None:
+            ncbi_id = ncbi_id.getText()
+            time.sleep(SLEEP_TIME)
+        else:
+            logger.warning("NCBI ID not found for the given term.")
+            return None
 
     except AttributeError:
         errors = soup.find("ErrorList")

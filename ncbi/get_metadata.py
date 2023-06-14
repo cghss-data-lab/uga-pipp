@@ -11,7 +11,15 @@ def get_metadata(ncbi_id):
     params = {"db": "Taxonomy", "id": ncbi_id}
     soup = ncbi.api_soup("efetch", params)
 
-    taxon = soup.TaxaSet.Taxon
+    if not soup.TaxaSet:
+        raise ValueError("TaxaSet object not found in the API response.")
+
+    taxon_set = soup.TaxaSet
+
+    if not taxon_set.Taxon:
+        raise ValueError("Taxon object not found in the API response.")
+
+    taxon = taxon_set.Taxon
 
     taxon_metadata = {
         "scientificName": taxon.ScientificName.getText(),
@@ -27,11 +35,11 @@ def get_metadata(ncbi_id):
         "createDate": taxon.CreateDate.getText(),
         "updateDate": taxon.UpdateDate.getText(),
         "pubDate": taxon.PubDate.getText(),
-        "dataSource":"NCBI Taxonomy"
+        "dataSource": "NCBI Taxonomy"
     }
 
-    if taxon.otherNames:
-        taxon["otherNames"] = (taxon.OtherNames.getText(),)
+    if taxon.OtherNames:
+        taxon_metadata["otherNames"] = (taxon.OtherNames.getText(),)
 
     # parse lineage
     lineage_ex = []
@@ -42,7 +50,7 @@ def get_metadata(ncbi_id):
                     "taxId": taxon.TaxId.getText(),
                     "scientificName": taxon.ScientificName.getText(),
                     "rank": taxon.Rank.getText(),
-                    "dataSource":"NCBI Taxonomy"
+                    "dataSource": "NCBI Taxonomy"
                 }
             )
         time.sleep(SLEEP_TIME)
