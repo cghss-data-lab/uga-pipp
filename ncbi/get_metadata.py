@@ -11,10 +11,15 @@ def get_metadata(ncbi_id):
     params = {"db": "Taxonomy", "id": ncbi_id}
     soup = ncbi.api_soup("efetch", params)
 
-    taxon = soup.TaxaSet.Taxon
+    if not soup.TaxaSet:
+        raise ValueError("TaxaSet object not found in the API response.")
 
-    if not taxon:
+    taxon_set = soup.TaxaSet
+
+    if not taxon_set.Taxon:
         raise ValueError("Taxon object not found in the API response.")
+
+    taxon = taxon_set.Taxon
 
     taxon_metadata = {
         "scientificName": taxon.ScientificName.getText(),
@@ -38,17 +43,18 @@ def get_metadata(ncbi_id):
 
     # parse lineage
     lineage_ex = []
-    for taxon in taxon.LineageEx.children:
-        if isinstance(taxon, Tag):
-            lineage_ex.append(
-                {
-                    "taxId": taxon.TaxId.getText(),
-                    "scientificName": taxon.ScientificName.getText(),
-                    "rank": taxon.Rank.getText(),
-                    "dataSource": "NCBI Taxonomy"
-                }
-            )
-        time.sleep(SLEEP_TIME)
+    if taxon.LineageEx and taxon.LineageEx.children:
+        for taxon_child in taxon.LineageEx.children:
+            if isinstance(taxon_child, Tag):
+                lineage_ex.append(
+                    {
+                        "taxId": taxon_child.TaxId.getText(),
+                        "scientificName": taxon_child.ScientificName.getText(),
+                        "rank": taxon_child.Rank.getText(),
+                        "dataSource": "NCBI Taxonomy"
+                    }
+                )
+            time.sleep(SLEEP_TIME)
     taxon_metadata["lineageEx"] = lineage_ex
 
     return taxon_metadata
