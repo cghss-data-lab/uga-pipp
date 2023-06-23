@@ -4,8 +4,9 @@ from neo4j import GraphDatabase
 import pandas as pd
 import torch
 from torch_geometric.data import Dataset, Data
-from numpy import append, unique
+import numpy as np
 from sklearn import preprocessing
+from sklearn.model_selection import train_test_split
 
 
 load_dotenv()
@@ -22,7 +23,7 @@ class Triples(Dataset):
 
     def __init__(
         self,
-        root="./analysis/data",
+        root="./analysis/triples_data",
         transform=None,
         pre_transform=None,
         pre_filter=None,
@@ -35,7 +36,10 @@ class Triples(Dataset):
 
     @property
     def processed_file_names(self) -> str:
-        return ["triple_data_0.pt"]
+        return [
+            "triple_data_train.pt",
+            "triple_data_test.pt",
+        ]
 
     def download(self):
         pass
@@ -44,22 +48,37 @@ class Triples(Dataset):
         self.data = self._run_query(
             "MATCH (s)-[r]->(t) RETURN id(s) as source,  id(t) as target, type(r) as relationship"
         )
-
-        edge_type, edge_name = self._create_type_tensor()
-        data = Data(
-            edge_index=self._create_coo(),
-            edge_type=edge_type,
-            num_nodes=self._number_nodes(),
-            num_edge_types=self._number_edges(),
-            edge_names=edge_name,
+        number_nodes = self._label_nodes()
+        edge_type = self._label_edges()
+        train_dataset, test_dataset = train_test_split(
+            self.data, train_size=0.9, test_size=0.1, random_state=1001
         )
-        torch.save(data, os.path.join(self.processed_dir, "triple_data_0.pt"))
+        
+        train = Data(
+            edge_index=self._create_coo(train_dataset),
+            edge_type=self._create_type_tensor(train_dataset),
+            num_nodes=number_nodes,
+            num_edge_types=len(edge_type),
+            edge_names=edge_type,
+        )
+
+        
+        test = Data(
+            edge_index=self._create_coo(test_dataset),
+            edge_type=self._create_type_tensor(test_dataset),
+            num_nodes=number_nodes,
+            num_edge_types=len(edge_type),
+            edge_names=edge_type,
+        )
+        
+        torch.save(train, os.path.join(self.processed_dir, "triple_data_train.pt"))
+        torch.save(test, os.path.join(self.processed_dir, "triple_data_test.pt"))
 
     def len(self) -> int:
         return len(self.processed_file_names)
 
-    def get(self, idx):
-        data = torch.load(os.path.join(self.processed_dir, f"triple_data_{idx}.pt"))
+    def get(self, dataset):
+        data = torch.load(os.path.join(self.processed_dir, f"triple_data_{dataset}.pt"))
         return data
 
     @classmethod
@@ -68,23 +87,29 @@ class Triples(Dataset):
             result = session.run(query)
             return pd.DataFrame([r.values() for r in result], columns=result.keys())
 
-    def _create_coo(self) -> torch.Tensor:
+    ## Preprocess results from Neo4j
+    def _label_nodes(self) -> None:
         label_encoder = preprocessing.LabelEncoder()
-        source = torch.as_tensor(
-            label_encoder.fit_transform(self.data["source"])
-        ).unsqueeze(1)
-        target = torch.as_tensor(
-            label_encoder.fit_transform(self.data["target"])
-        ).unsqueeze(1)
+        concatenated_values = np.concatenate(
+            [self.data.source.values, self.data.target.values]
+        )
+        label_encoder.fit(concatenated_values)
+
+        self.data["le_source"] = label_encoder.transform(self.data["source"])
+        self.data["le_target"] = label_encoder.transform(self.data["target"])
+        return len(label_encoder.classes_)
+
+    def _label_edges(self) -> torch.Tensor:
+        label_encoder = preprocessing.LabelEncoder()
+        self.data["le_relationship"] = label_encoder.fit_transform(
+            self.data["relationship"]
+        )
+        return label_encoder.classes_
+
+    def _create_coo(self, dataset) -> torch.Tensor:
+        source = torch.as_tensor(dataset["le_source"].values).unsqueeze(1)
+        target = torch.as_tensor(dataset["le_target"].values).unsqueeze(1)
         return torch.cat((source, target), 1).T
 
-    def _create_type_tensor(self) -> torch.Tensor:
-        label_encoder = preprocessing.LabelEncoder()
-        edge_type = label_encoder.fit_transform(self.data["relationship"])
-        return torch.as_tensor(edge_type), label_encoder.classes_
-
-    def _number_nodes(self) -> int:
-        return len(unique(append(self.data.source.values, self.data.target.values)))
-
-    def _number_edges(self) -> int:
-        return len(pd.unique(self.data["relationship"]))
+    def _create_type_tensor(self, dataset) -> torch.Tensor:
+        return torch.as_tensor(dataset["le_relationship"].values)
