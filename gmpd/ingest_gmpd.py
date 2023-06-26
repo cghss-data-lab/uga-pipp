@@ -85,7 +85,7 @@ def ingest_gmpd(SESSION):
             # Create the relationships between the Report node and the host taxon
             query = """
             MATCH (r:GMPD:Report {reportId: $reportId}), (h:Taxon {taxId: $host_ncbi_id})
-            MERGE (r)-[hr:ASSOCIATES {role: $role}]->(h)
+            MERGE (r)-[hr:MENTIONS {role: $role}]->(h)
             """
             parameters = {"reportId": reportId, "host_ncbi_id": host_ncbi_id, "role":role}
             SESSION.run(query, parameters)
@@ -96,7 +96,7 @@ def ingest_gmpd(SESSION):
             # Create the relationships between the Report node and the pathogen taxon
             query = """
             MATCH (r:GMPD:Report {reportId: $reportId}), (p:Taxon {taxId: $pathogen_ncbi_id})
-            MERGE (r)-[pr:ASSOCIATES {role: $role, detectionType: $detectionType, totalSpecimensCollected: $totalSpecimensCollected, totalSpecimensPositive: $totalSpecimensPositive}]->(p)
+            MERGE (r)-[pr:MENTIONS {role: $role, detectionType: $detectionType, totalSpecimensCollected: $totalSpecimensCollected, totalSpecimensPositive: $totalSpecimensPositive}]->(p)
             """
             parameters = {"reportId": reportId, "pathogen_ncbi_id": pathogen_ncbi_id, "role":role, "detectionType":detectionType,"totalSpecimensCollected":totalSpecimensCollected, "totalSpecimensPositive":totalSpecimensPositive}
             SESSION.run(query, parameters)
