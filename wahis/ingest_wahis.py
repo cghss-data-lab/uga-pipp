@@ -9,14 +9,12 @@ import wahis
 from wahis import search_and_merge
 import time 
 
-TIME_SLEEP = 0.3
 
 def ingest_wahis(SESSION):
-    for i in range(260, 5080):  # events as of 6/8/23
+    for i in range(1309, 5080):  # events as of 6/8/23
         try:
             listId = i
             evolution_list = wahis.get_evolution(listId)
-            time.sleep(TIME_SLEEP)
             if evolution_list:
                 # for each report in the evolution list of reports, create a report
                 for x in range(len(evolution_list)):
@@ -81,6 +79,10 @@ def ingest_wahis(SESSION):
                     # For each outbreak event listed in the report, grab metadata
                     for index, key in enumerate(outbreaks):
 
+                        if i == 1309:
+                            if index < 49:
+                                continue
+
                         # EVENT :OCCURS_IN GEO
                         place = key['location']
                         long = key['longitude']
@@ -109,7 +111,6 @@ def ingest_wahis(SESSION):
                         processed_event_ids.add(eventId)
 
                         outbreak_metadata = wahis.get_outbreak(reportId, eventId)
-                        time.sleep(TIME_SLEEP)
 
                         outbreak_str = outbreak_metadata['outbreak']['startDate']
                         start_strip = datetime.strptime(outbreak_str, '%Y-%m-%dT%H:%M:%S.%f%z')
@@ -175,6 +176,10 @@ def ingest_wahis(SESSION):
                                 if pathogen == "Equine infectious anaemia virus  ":
                                     fixed_path = "Equine infectious anemia virus"
                                     pathogen_ncbi = wahis.search_and_merge(fixed_path, SESSION)
+                                elif pathogen == "Eastern equine encephalomyelitis and Western equine encephalomyelitis viruses ":
+                                    fixed_path = "Alphavirus"
+                                    pathogen_ncbi = wahis.search_and_merge(fixed_path, SESSION)
+
                                 else:
                                     pathogen_ncbi = wahis.search_and_merge(pathogen, SESSION)
 
@@ -300,6 +305,10 @@ def ingest_wahis(SESSION):
 
 
         except Exception as e:
+            if eventId is not None:
+                if reportId is not None: 
+                        logger.info(f'Stopped at eventId {eventId} and reportId {reportId}')
+
             logger.error(f'An exception occurred: {e}')
             raise
 
