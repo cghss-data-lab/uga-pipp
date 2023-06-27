@@ -11,7 +11,7 @@ import time
 
 
 def ingest_wahis(SESSION):
-    for i in range(1406, 5080):  # events as of 6/8/23
+    for i in range(1484, 5080):  # events as of 6/8/23
         try:
             listId = i
             evolution_list = wahis.get_evolution(listId)
@@ -79,8 +79,8 @@ def ingest_wahis(SESSION):
                     # For each outbreak event listed in the report, grab metadata
                     for index, key in enumerate(outbreaks):
 
-                        if i == 1406:
-                            if index < 281:
+                        if i == 1484:
+                            if index < 14:
                                 continue
 
                         # EVENT :OCCURS_IN GEO
@@ -169,17 +169,19 @@ def ingest_wahis(SESSION):
                                 serotype = sero['name']
                                 pathogen_ncbi = wahis.search_and_merge(serotype, SESSION)
                         
+                        pathogen_mapping = {
+                            "Equine infectious anaemia virus  ": "Equine infectious anemia virus",
+                            "Eastern equine encephalomyelitis and Western equine encephalomyelitis viruses ": "Alphavirus",
+                            "Paramyxovirus type 1 (PMV-1)": "Pigeon paramyxovirus 1"
+                        }
+
                         if not pathogen_ncbi:
                             path = event['causalAgent']
                             if path and 'name' in path:
                                 pathogen = path['name']
-                                if pathogen == "Equine infectious anaemia virus  ":
-                                    fixed_path = "Equine infectious anemia virus"
+                                if pathogen in pathogen_mapping:
+                                    fixed_path = pathogen_mapping[pathogen]
                                     pathogen_ncbi = wahis.search_and_merge(fixed_path, SESSION)
-                                elif pathogen == "Eastern equine encephalomyelitis and Western equine encephalomyelitis viruses ":
-                                    fixed_path = "Alphavirus"
-                                    pathogen_ncbi = wahis.search_and_merge(fixed_path, SESSION)
-
                                 else:
                                     pathogen_ncbi = wahis.search_and_merge(pathogen, SESSION)
 
