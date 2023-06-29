@@ -128,4 +128,5 @@ g = sns.clustermap(
     figsize=(16, 13),
     xticklabels=False,
 )
+sns.set(font_scale=5)
 g.ax_row_dendrogram.remove()
