@@ -11,7 +11,7 @@ import time
 
 
 def ingest_wahis(SESSION):
-    for i in range(1484, 5080):  # events as of 6/8/23
+    for i in range(3036, 5080):  # events as of 6/8/23
         try:
             listId = i
             evolution_list = wahis.get_evolution(listId)
@@ -79,8 +79,8 @@ def ingest_wahis(SESSION):
                     # For each outbreak event listed in the report, grab metadata
                     for index, key in enumerate(outbreaks):
 
-                        if i == 1484:
-                            if index < 14:
+                        if i == 3029:
+                            if index < 770:
                                 continue
 
                         # EVENT :OCCURS_IN GEO
@@ -111,6 +111,9 @@ def ingest_wahis(SESSION):
                         processed_event_ids.add(eventId)
 
                         outbreak_metadata = wahis.get_outbreak(reportId, eventId)
+
+                        if outbreak_metadata['outbreak'] == None:
+                            continue
 
                         outbreak_str = outbreak_metadata['outbreak']['startDate']
                         start_strip = datetime.strptime(outbreak_str, '%Y-%m-%dT%H:%M:%S.%f%z')
