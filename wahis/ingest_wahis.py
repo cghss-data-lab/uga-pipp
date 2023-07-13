@@ -11,7 +11,7 @@ import time
 
 
 def ingest_wahis(SESSION):
-    for i in range(3036, 5080):  # events as of 6/8/23
+    for i in range(3380, 5080):  # events as of 6/8/23
         try:
             listId = i
             evolution_list = wahis.get_evolution(listId)
@@ -79,8 +79,8 @@ def ingest_wahis(SESSION):
                     # For each outbreak event listed in the report, grab metadata
                     for index, key in enumerate(outbreaks):
 
-                        if i == 3029:
-                            if index < 770:
+                        if i == 3379:
+                            if index < 101:
                                 continue
 
                         # EVENT :OCCURS_IN GEO
@@ -112,7 +112,7 @@ def ingest_wahis(SESSION):
 
                         outbreak_metadata = wahis.get_outbreak(reportId, eventId)
 
-                        if outbreak_metadata['outbreak'] == None:
+                        if outbreak_metadata is  None:
                             continue
 
                         outbreak_str = outbreak_metadata['outbreak']['startDate']
@@ -175,7 +175,8 @@ def ingest_wahis(SESSION):
                         pathogen_mapping = {
                             "Equine infectious anaemia virus  ": "Equine infectious anemia virus",
                             "Eastern equine encephalomyelitis and Western equine encephalomyelitis viruses ": "Alphavirus",
-                            "Paramyxovirus type 1 (PMV-1)": "Pigeon paramyxovirus 1"
+                            "Paramyxovirus type 1 (PMV-1)": "Pigeon paramyxovirus 1",
+                            "H5N8":"H5N8 subtype"
                         }
 
                         if not pathogen_ncbi:
