@@ -12,7 +12,7 @@ import requests
 
 
 def ingest_wahis(SESSION):
-    for i in range(3670, 5080):  # events as of 6/8/23
+    for i in range(4714, 5097):  # events as of 7/18/23
         try:
             listId = i
             evolution_list = wahis.get_evolution(listId)
@@ -85,8 +85,8 @@ def ingest_wahis(SESSION):
                 # For each outbreak event listed in the report, grab metadata
                 for index, key in enumerate(outbreaks):
                     try: 
-                        if i == 3427:
-                            if index < 2:
+                        if i == 3721:
+                            if index < 596:
                                 continue
 
                         # EVENT :OCCURS_IN GEO
