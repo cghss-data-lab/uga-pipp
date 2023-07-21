@@ -1,0 +1,150 @@
+﻿yearMonth,species,monthlyCases
+"""2020-01""","""Aves""",9244
+"""2020-02""","""Aves""",16670
+"""2020-03""","""Aves""",7871
+"""2020-04""","""Aves""",6140
+"""2020-07""","""Aves""",4000
+"""2020-08""","""Aves""",4969
+"""2020-09""","""Aves""",2302
+"""2020-10""","""Aves""",1320
+"""2020-10""","""Anser anser""",9
+"""2020-11""","""Cygnus olor""",8
+"""2020-12""","""Aves""",175263
+"""2020-12""","""Cygnus olor""",74
+"""2020-12""","""Branta canadensis""",25
+"""2020-12""","""Anser anser""",2
+"""2021-01""","""Aves""",31894
+"""2021-01""","""Cygnus olor""",89
+"""2021-02""","""Aves""",1315638
+"""2021-03""","""Aves""",2249265
+"""2021-04""","""Aves""",575541
+"""2021-05""","""Aves""",3311370
+"""2021-05""","""Phalacrocorax capensis""",4746
+"""2021-05""","""Spheniscus demersus""",3772
+"""2021-05""","""Larus argentatus""",1
+"""2021-06""","""Aves""",1179153
+"""2021-06""","""Phalacrocorax capensis""",455
+"""2021-06""","""Larus argentatus""",40
+"""2021-06""","""Anas platyrhynchos""",37
+"""2021-06""","""Cygnus olor""",1
+"""2021-07""","""Aves""",1105121
+"""2021-07""","""Larus argentatus""",39
+"""2021-08""","""Aves""",518998
+"""2021-08""","""Cygnus olor""",52
+"""2021-08""","""Larus argentatus""",15
+"""2021-09""","""Aves""",2109376
+"""2021-09""","""Phalacrocorax capensis""",76841
+"""2021-09""","""Phasianus colchicus""",267
+"""2021-09""","""Spheniscus demersus""",48
+"""2021-10""","""Aves""",525002
+"""2021-10""","""Phalacrocorax capensis""",223881
+"""2021-10""","""Spheniscus demersus""",5175
+"""2021-10""","""Phasianus colchicus""",20
+"""2021-11""","""Aves""",948391
+"""2021-11""","""Phalacrocorax capensis""",38847
+"""2021-11""","""Cygnus olor""",5
+"""2021-11""","""Larus argentatus""",4
+"""2021-12""","""Aves""",471852
+"""2021-12""","""Phalacrocorax capensis""",659
+"""2022-01""","""Aves""",1463575
+"""2022-01""","""Grus monacha""",13
+"""2022-01""","""Anas platyrhynchos""",12
+"""2022-02""","""Aves""",176709
+"""2022-02""","""Cygnus olor""",12
+"""2022-03""","""Aves""",413848
+"""2022-03""","""Vulpes vulpes""",3
+"""2022-04""","""Aves""",358712
+"""2022-04""","""Vulpes vulpes""",404
+"""2022-04""","""Anser anser""",8
+"""2022-04""","""Anas platyrhynchos""",5
+"""2022-04""","""Chroicocephalus ridibundus""",4
+"""2022-05""","""Aves""",295005
+"""2022-05""","""Vulpes vulpes""",615
+"""2022-05""","""Larus argentatus""",6
+"""2022-06""","""Aves""",66892
+"""2022-06""","""Chroicocephalus ridibundus""",100
+"""2022-06""","""Vulpes vulpes""",58
+"""2022-06""","""Anas platyrhynchos""",36
+"""2022-07""","""Aves""",210413
+"""2022-07""","""Larus argentatus""",28
+"""2022-07""","""Spheniscus demersus""",6
+"""2022-08""","""Aves""",243292
+"""2022-08""","""Anas platyrhynchos""",4
+"""2022-09""","""Aves""",1124582
+"""2022-09""","""Chroicocephalus ridibundus""",1124
+"""2022-09""","""Branta canadensis""",293
+"""2022-09""","""Cygnus olor""",260
+"""2022-09""","""Anser anser""",171
+"""2022-09""","""Larus argentatus""",87
+"""2022-09""","""Vulpes vulpes""",62
+"""2022-10""","""Aves""",6497019
+"""2022-10""","""Chroicocephalus ridibundus""",1556
+"""2022-10""","""Branta canadensis""",1228
+"""2022-10""","""Cygnus olor""",875
+"""2022-10""","""Anas platyrhynchos""",860
+"""2022-10""","""Anser anser""",840
+"""2022-10""","""Phasianus colchicus""",726
+"""2022-10""","""Larus argentatus""",113
+"""2022-10""","""Vulpes vulpes""",13
+"""2022-11""","""Aves""",10032905
+"""2022-11""","""Grus monacha""",9891
+"""2022-11""","""Cygnus olor""",1779
+"""2022-11""","""Anser anser""",764
+"""2022-11""","""Branta canadensis""",707
+"""2022-11""","""Spheniscus demersus""",453
+"""2022-11""","""Chroicocephalus ridibundus""",432
+"""2022-11""","""Larus argentatus""",283
+"""2022-11""","""Phasianus colchicus""",171
+"""2022-11""","""Anas platyrhynchos""",103
+"""2022-11""","""Phalacrocorax capensis""",6
+"""2022-12""","""Aves""",9340939
+"""2022-12""","""Grus monacha""",2423
+"""2022-12""","""Cygnus olor""",1143
+"""2022-12""","""Branta canadensis""",724
+"""2022-12""","""Chroicocephalus ridibundus""",475
+"""2022-12""","""Anser anser""",376
+"""2022-12""","""Larus argentatus""",136
+"""2022-12""","""Anas platyrhynchos""",36
+"""2022-12""","""Vulpes vulpes""",25
+"""2023-01""","""Aves""",10981331
+"""2023-01""","""Cygnus olor""",1507
+"""2023-01""","""Chroicocephalus ridibundus""",752
+"""2023-01""","""Larus argentatus""",176
+"""2023-01""","""Anas platyrhynchos""",143
+"""2023-01""","""Branta canadensis""",143
+"""2023-01""","""Anser anser""",71
+"""2023-01""","""Vulpes vulpes""",69
+"""2023-01""","""Grus monacha""",41
+"""2023-02""","""Aves""",2259099
+"""2023-02""","""Chroicocephalus ridibundus""",4675
+"""2023-02""","""Cygnus olor""",429
+"""2023-02""","""Anas platyrhynchos""",14
+"""2023-02""","""Vulpes vulpes""",10
+"""2023-02""","""Larus argentatus""",9
+"""2023-02""","""Anser anser""",7
+"""2023-03""","""Aves""",1495877
+"""2023-03""","""Chroicocephalus ridibundus""",2655
+"""2023-03""","""Cygnus olor""",910
+"""2023-03""","""Larus argentatus""",43
+"""2023-03""","""Vulpes vulpes""",24
+"""2023-03""","""Anser anser""",15
+"""2023-03""","""Anas platyrhynchos""",1
+"""2023-04""","""Aves""",3507170
+"""2023-04""","""Chroicocephalus ridibundus""",854
+"""2023-04""","""Vulpes vulpes""",114
+"""2023-04""","""Larus argentatus""",43
+"""2023-04""","""Branta canadensis""",12
+"""2023-04""","""Cygnus olor""",8
+"""2023-05""","""Aves""",341303
+"""2023-05""","""Chroicocephalus ridibundus""",1794
+"""2023-05""","""Larus argentatus""",88
+"""2023-05""","""Vulpes vulpes""",13
+"""2023-05""","""Cygnus olor""",8
+"""2023-05""","""Anas platyrhynchos""",7
+"""2023-06""","""Aves""",302820
+"""2023-06""","""Chroicocephalus ridibundus""",465
+"""2023-06""","""Larus argentatus""",24
+"""2023-06""","""Vulpes vulpes""",2
+"""2023-07""","""Aves""",2672
+"""2023-07""","""Chroicocephalus ridibundus""",98
+"""2023-07""","""Larus argentatus""",2
