@@ -31,6 +31,6 @@ def ingest_combine(session) -> None:
                     WHERE t.name = "{data['iucn2020_binomial']}"
                     SET t += {{ {create_properties(properties)} }}
                     MERGE (g:BioGeographicalRealm:Geography {{name : "{realm}" }})
-                    MERGE (t)-[:ABOUT]->(g)
+                    MERGE (t)-[:INHABITS]->(g)
                 """
                 session.run(add_properties_query, properties)
