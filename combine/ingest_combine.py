@@ -1,4 +1,5 @@
 import re
+from loguru import logger
 from combine.extract_properties import extract_properties
 
 
@@ -11,6 +12,11 @@ def preprocess_biogeographical_realms(biogeographical_realms: str) -> list:
     realms = biogeographical_realms.replace('"', "").split(",")
     realms = [realm for realm in realms if realm != "NA"]
     return realms
+
+
+def log_taxons_without_match(result: list, row: dict) -> None:
+    if len(result) == 0:
+        logger.warning(row["iucn2020_binomial"] + " doesn't have a match")
 
 
 def ingest_combine(session) -> None:
@@ -32,5 +38,7 @@ def ingest_combine(session) -> None:
                     SET t += {{ {create_properties(properties)} }}
                     MERGE (g:BioGeographicalRealm:Geography {{name : "{realm}" }})
                     MERGE (t)-[:INHABITS]->(g)
+                    RETURN t
                 """
-                session.run(add_properties_query, properties)
+                result = session.run(add_properties_query, properties)
+                log_taxons_without_match(list(result))
