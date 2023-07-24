@@ -41,4 +41,4 @@ def ingest_combine(session) -> None:
                     RETURN t
                 """
                 result = session.run(add_properties_query, properties)
-                log_taxons_without_match(list(result, data))
+                log_taxons_without_match(list(result), data)
