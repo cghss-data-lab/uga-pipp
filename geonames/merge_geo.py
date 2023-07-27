@@ -1,193 +1,139 @@
+import string
 from loguru import logger
-import os
-import pickle
-from functools import cache
+
+# from functools import cache
 from geonames import geo_api, get_geo_data, geo_id_search
+from geonames.cache import cache
 
 # Path to the pickle cache file
-ISO_CACHE_FILE = "geonames/iso_cache.pickle"
+ISO_CACHE_FILE = "geonames/iso_cache2.pickle"
+GEO_DATA_CACHE_FILE = "geonames/geo_data_cache.pickle"
+HIERARCHY_CACHE_FILE = "geonames/hierarchy_cache.pickle"
+GEONAMEID_CACHE = "geonames/geonameid_cache.pickle"
+FCODE_TO_LABEL = {
+    "CONT": "Continent",
+    "PCLI": "Country",
+    "ADM1": "ADM1",
+    "ADM2": "ADM2",
+    "ADM3": "ADM3",
+    "ADM4": "ADM4",
+    "ADM5": "ADM5",
+}
 
-# Load the cache from the pickle file if it exists
-if os.path.exists(ISO_CACHE_FILE):
-    with open(ISO_CACHE_FILE, "rb") as f:
-        iso_cache = pickle.load(f)
-else:
-    iso_cache = {}
 
-# Function to save the cache to the pickle file
-def save_iso_cache():
-    with open(ISO_CACHE_FILE, "wb") as f:
-        pickle.dump(iso_cache, f)
-        
-@cache
+@cache(ISO_CACHE_FILE)
 def get_iso(iso2):
-    global iso_cache
+    parameters = {"country": iso2, "maxRows": 1}
+    result = geo_api("countryInfoJSON", parameters)
+    return result["geonames"][0]["isoAlpha3"]
 
-    params = {
-        "country": iso2,
-        "maxRows": 1
-    }
 
-    if iso2 in iso_cache:
-        data = iso_cache[iso2]
-
-    else:
-        result = geo_api("countryInfoJSON", params)
-        data = result["geonames"][0]["isoAlpha3"]
-        iso_cache[iso2] = data
-        save_iso_cache()
-
-    return data
-
-@cache
-def get_geo_data_cache(geonameId):
-
-    get_geo_cache = get_geo_data(geonameId)
-    
+@cache(GEO_DATA_CACHE_FILE)
+def get_geo_data_cache(geoname_id):
+    get_geo_cache = get_geo_data(geoname_id)
     return get_geo_cache
 
-@cache
-def get_hierarchy(geonameId):
-    params = {"geonameId": geonameId}
-    hierarchy = geo_api("hierarchyJSON", params)
+
+@cache(HIERARCHY_CACHE_FILE)
+def get_hierarchy(geoname_id):
+    parameters = {"geonameId": geoname_id}
+    hierarchy = geo_api("hierarchyJSON", parameters)
     hierarchy_list = hierarchy.get("geonames")
     return hierarchy_list
 
-@cache
-def merge_geo(geoname_or_id, SESSION):
+
+@cache(GEONAMEID_CACHE)
+def get_geonameid(geoname_id):
+    return geo_id_search(geoname_id)
+
+
+def process_parameters(geonameId, metadata, lat, long, iso2) -> dict:
+    parameters = {
+        "dataSource": "GeoNames",
+        "geonameId": int(geonameId),
+        "name": metadata.get("name"),
+        "adminCode1": metadata.get("adminCodes1", {}).get("ISO3166_2", "NA"),
+        "adminType": metadata.get("adminTypeName", "NA"),
+        "iso2": metadata.get("countryCode", "NA"),
+        "fclName": metadata.get("fclName", "NA"),
+        "fcodeName": metadata.get("fcodeName", "NA"),
+        "lat": float(lat) if lat is not None else "NA",
+        "long": float(long) if long is not None else "NA",
+        "elevation": metadata.get("elevation", "NA"),
+        "polygon": metadata.get("polygon", "NA"),
+    }
+    if metadata.get("fcode") == "PCLI":
+        parameters["iso3"] = get_iso(iso2)
+    if metadata.get("fcode") not in FCODE_TO_LABEL:
+        parameters["fcode"] = metadata.get("fcode")
+    return parameters
+
+
+def format_value(value):
+    if isinstance(value, str):
+        return f'"{value}"'
+    if value is None:
+        return "NULL"
+    return value
+
+
+def create_properties(parameters: dict) -> str:
+    properties = ", ".join(f"{k}: {format_value(v)}" for k, v in parameters.items())
+    return properties
+
+
+# @cache
+def merge_geo(geoname_id, session):
     """
     Search for a location by name and return ID, obtain its hierarchy,
     and create nodes and relationships for each parent.
     """
-
-
-    # Dictionary to cache the results of geo_id_search
-    id_cache = {}
-
-    # Determine whether geoname_or_id is a geoname or a geonameId
-    if isinstance(geoname_or_id, str):
-        # Check if we have the geoname ID cached
-        if geoname_or_id in id_cache:
-            geonameId = id_cache[geoname_or_id]
-        else:
-            # Search for the location by name and get its ID
-            geonameId = geo_id_search(geoname_or_id)
-            # Cache the result
-            id_cache[geoname_or_id] = geonameId
-        if not geonameId:
-            logger.warning(f"Cannot find geoname ID for {geoname_or_id}")
-            return
-    elif isinstance(geoname_or_id, int):
-        geonameId = geoname_or_id
-    else:
-        logger.warning(f"{geoname_or_id} is not a valid geoname or geoname ID")
-        return
+    if isinstance(geoname_id, str):
+        geoname_id = get_geonameid(geoname_id)
 
     # Use the ID to get the location's hierarchy
-    hierarchy_list = get_hierarchy(geonameId)
+    hierarchy_list = get_hierarchy(geoname_id)
 
-    # Define a dictionary mapping fcode values to node labels
-    fcode_to_label = {
-        "CONT":"Continent",
-        "PCLI": "Country",
-        "ADM1": "ADM1",
-        "ADM2": "ADM2",
-        "ADM3":"ADM3",
-        "ADM4":"ADM4",
-        "ADM5":"ADM5"
-    }
+    if not hierarchy_list:
+        return
 
+    nodes = []
     # Create nodes and CONTAINS relationships for each level in the hierarchy
-    if hierarchy_list:
-        for i in range(len(hierarchy_list)):
-            place = hierarchy_list[i]
-            geonameId = place.get("geonameId", None)
-            iso2 = place.get("countryCode",None)
+    for i, place in zip(string.ascii_lowercase, hierarchy_list):
+        # place = hierarchy_list[i]
+        geonameId = place.get("geonameId", None)
+        iso2 = place.get("countryCode", None)
 
-            if geonameId:
-                metadata = get_geo_data_cache(geonameId)
+        if not geonameId:
+            return
+        metadata = get_geo_data_cache(geonameId)
 
-                # Modify the latitude and longitude parameters
-                lat = metadata.get("lat")
-                long = metadata.get("lng")
-                if lat is not None and long is not None:
-                    # Query
-                    geo_query = """
-                        MERGE (g:Geography {
-                            dataSource: $dataSource,
-                            geonameId: $geonameId,
-                            name: $name, 
-                            adminCode1: $adminCode1,
-                            adminType: $adminType,
-                            iso2: $iso2,
-                            iso3: $iso3,
-                            fclName: $fclName, 
-                            fcode: $fcode,
-                            fcodeName: $fcodeName,
-                            lat: $lat,
-                            long: $long,
-                            location: point({latitude: toFloat($lat), longitude: toFloat($long)}),
-                            elevation: $elevation,
-                            polygon: $polygon
-                        })
-                    """
-                
-                else: 
-                    geo_query = """
-                        MERGE (g:Geography {
-                            dataSource: $dataSource,
-                            geonameId: $geonameId,
-                            name: $name, 
-                            adminCode1: $adminCode1,
-                            adminType: $adminType,
-                            iso2: $iso2,
-                            iso3: $iso3,
-                            fclName: $fclName, 
-                            fcode: $fcode,
-                            fcodeName: $fcodeName,
-                            lat: $lat,
-                            long: $long,
-                            elevation: $elevation,
-                            polygon: $polygon
-                        })
-                    """
-                
-                params = {
-                    "dataSource": "GeoNames",
-                    "geonameId": int(geonameId),
-                    "name": metadata.get("name"),
-                    "adminCode1": metadata.get("adminCodes1", {}).get("ISO3166_2", "NA"),
-                    "adminType": metadata.get("adminTypeName", "NA"),
-                    "iso2": metadata.get("countryCode", "NA"),
-                    "iso3": get_iso(iso2) if metadata.get("fcode") == "PCLI" else "NA",
-                    "fclName": metadata.get("fclName", "NA"),
-                    "fcode": metadata.get("fcode", "NA"),
-                    "fcodeName": metadata.get("fcodeName", "NA"),
-                    "lat": float(lat) if lat is not None else "NA",
-                    "long": float(long) if long is not None else "NA",
-                    "elevation": metadata.get("elevation", "NA"),
-                    "polygon": metadata.get("polygon","NA")
-                }
+        # Modify the latitude and longitude parameters
+        lat = metadata.get("lat")
+        long = metadata.get("lng")
+        parameters = process_parameters(geonameId, metadata, lat, long, iso2)
 
-                # Get the label for this node based on its fcode value
-                label = fcode_to_label.get(metadata.get("fcode"))
+        if lat is not None and long is not None:
+            parameters[
+                "location"
+            ] = "point({latitude: toFloat($lat), longitude: toFloat($long)})"
 
-                if params["name"] is not None:
-                    if label in fcode_to_label:
-                        # Add the label to the node creation query
-                        geo_query_with_label = f"{geo_query}\nSET g:{label}"
-                        SESSION.run(geo_query_with_label, params)
-                    else:
-                        SESSION.run(geo_query, params)
+        # Get the label for this node based on its fcode value
+        fcode = parameters.get("fcode", None)
+        label = "Geography"
+        if fcode:
+            label += f":{fcode}"
+        parameters = create_properties(parameters)
 
+        # Query
+        geo_query = f"MERGE ({i}:{label} {{ {parameters} }})"
+        nodes.append(geo_query)
 
-                    # Create relationship to parent, except for first item (Earth)
-                    if i > 0:
-                        parent = hierarchy_list[i-1]
-                        SESSION.run("""
-                            MATCH (child:Geography {name: $child_name})
-                            MATCH (parent:Geography {name: $parent_name})
-                            MERGE (parent)-[:CONTAINS_GEO]->(child)
-                        """, {"child_name": metadata["name"], "parent_name": parent["name"]})
-
-                    
+    merge_all_nodes_query = "\n".join(nodes) + "\nMERGE "
+    merge_all_nodes_query += "-[:CONTAINS_GEO]-".join(
+        f"({k})" for k, v in zip(string.ascii_lowercase, nodes)
+    )
+    logger.info(f"Creating geographical nodes {merge_all_nodes_query}")
+    session.run(
+        merge_all_nodes_query,
+    )
