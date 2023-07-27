@@ -120,9 +120,9 @@ def merge_geo(geoname_id, session):
             ] = "point({latitude: toFloat($lat), longitude: toFloat($long)})"
 
         # Get the label for this node based on its fcode value
-        fcode = parameters.get("fcode", None)
+        fcode = metadata.get("fcode")
         label = "Geography"
-        if fcode:
+        if fcode in FCODE_TO_LABEL:
             label += f":{fcode}"
         parameters = create_properties(parameters)
 
