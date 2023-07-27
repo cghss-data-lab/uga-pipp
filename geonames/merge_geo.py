@@ -1,3 +1,4 @@
+import re
 import string
 from loguru import logger
 
@@ -129,11 +130,17 @@ def merge_geo(geoname_id, session):
         geo_query = f"MERGE ({i}:{label} {{ {parameters} }})"
         nodes.append(geo_query)
 
-    merge_all_nodes_query = "\n".join(nodes) + "\nMERGE "
-    merge_all_nodes_query += "-[:CONTAINS_GEO]-".join(
+    create_all_nodes_query = "\n".join(nodes)
+    merge_all_nodes_query = "-[:CONTAINS_GEO]-".join(
         f"({k})" for k, v in zip(string.ascii_lowercase, nodes)
     )
     logger.info(f"Creating geographical nodes {merge_all_nodes_query}")
-    session.run(
-        merge_all_nodes_query,
+    merge_all_nodes_query = re.findall(
+        r"(?=(\([a-z]\).*?\([a-z]\)))", merge_all_nodes_query
     )
+    merge_all_nodes_query = ["MERGE " + merge for merge in merge_all_nodes_query]
+    merge_all_nodes_query = "\n".join(merge_all_nodes_query)
+
+    query = create_all_nodes_query + merge_all_nodes_query
+
+    session.run(query)
