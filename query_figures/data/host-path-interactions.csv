@@ -1,0 +1,574 @@
+﻿hostSpecies,pathogenSpecies,caseload
+"""Aves""","""H5N1 subtype""",34309555
+"""Aves""","""unidentified influenza virus""",17532224
+"""Homo sapiens""","""Influenza A virus""",7250558
+"""Homo sapiens""","""Influenza B virus""",6713112
+"""Homo sapiens""","""H1N1 subtype""",3571776
+"""Oreochromis niloticus""","""Infectious spleen and kidney necrosis virus""",1902886
+"""Oncorhynchus mykiss""","""Viral hemorrhagic septicemia virus""",1857352
+"""Salmo salar""","""Infectious salmon anemia virus""",1568893
+"""Sus scrofa""","""African swine fever virus""",805324
+"""Aves""","""Aphanomyces astaci""",487392
+"""Aves""","""Rift Valley fever virus""",465913
+"""Cyprinus carpio""","""Cyprinid herpesvirus 3""",371739
+"""Aves""","""Pigeon paramyxovirus 1""",302107
+"""Penaeus monodon""","""White spot syndrome virus""",281550
+"""Equidae""","""Influenza A virus""",268682
+"""Aves""","""Porcine reproductive and respiratory syndrome virus""",237311
+"""Bos taurus""","""Foot-and-mouth disease virus""",150962
+"""Aves""","""Classical swine fever virus""",142172
+"""Aves""","""Foot-and-mouth disease virus""",138770
+"""Sus scrofa""","""Porcine reproductive and respiratory syndrome virus""",134537
+"""Aves""","""Bacillus anthracis""",132544
+"""Aves""","""Rabbit hemorrhagic disease virus""",127094
+"""Neogale vison""","""Influenza A virus""",120874
+"""Aves""","""Influenza A virus""",93096
+"""Bos taurus""","""Lumpy skin disease virus""",86828
+"""Ovis aries""","""Foot-and-mouth disease virus""",74270
+"""Micropterus salmoides""","""Aphanomyces invadans""",60000
+"""Tilapia""","""Tilapia lake virus""",45800
+"""Aves""","""Gallid alphaherpesvirus 1""",41342
+"""Aves""","""Lumpy skin disease virus""",41000
+"""Aves""","""West Nile virus""",40872
+"""Oryctolagus cuniculus""","""Rabbit hemorrhagic disease virus""",37798
+"""Ovis aries""","""Bluetongue virus""",30628
+"""Sus scrofa""","""Influenza A virus""",29728
+"""Aves""","""Peste des petits ruminants virus""",22204
+"""Sus scrofa""","""Foot-and-mouth disease virus""",20565
+"""Lithobates catesbeianus""","""Ranavirus""",20000
+"""Penaeus monodon""","""Pigeon paramyxovirus 1""",20000
+"""Ovis aries""","""Rift Valley fever virus""",17513
+"""Phalacrocorax capensis""","""H5N1 subtype""",16771
+"""Aves""","""Infectious bronchitis virus""",16700
+"""Mustelidae""","""Severe acute respiratory syndrome coronavirus 2""",16006
+"""Aves""","""H7N9 subtype""",15921
+"""Sus scrofa""","""Classical swine fever virus""",14294
+"""Aves""","""Bluetongue virus""",13005
+"""Aves""","""Infectious bursal disease virus""",11886
+"""Labrus mixtus""","""Viral hemorrhagic septicemia virus""",10563
+"""Capra hircus""","""Peste des petits ruminants virus""",10173
+"""Ovis aries""","""Peste des petits ruminants virus""",10167
+"""Aves""","""Theileria equi""",10050
+"""Equidae""","""African horse sickness virus""",9909
+"""Aves""","""Paenibacillus larvae""",9624
+"""Bos taurus""","""Rift Valley fever virus""",8819
+"""Aves""","""Bonamia ostreae""",7907
+"""Capra hircus""","""Foot-and-mouth disease virus""",7815
+"""Astacoidea""","""Pigeon paramyxovirus 1""",7807
+"""Bos taurus""","""Bluetongue virus""",7201
+"""Haliotis discus hannai""","""Candidatus Xenohaliotis californiensis""",6600
+"""Aves""","""Burkholderia mallei""",6366
+"""Capra hircus""","""Rift Valley fever virus""",6360
+"""Oncorhynchus mykiss""","""Infectious hematopoietic necrosis virus""",5549
+"""Aves""","""Vesicular stomatitis virus""",5001
+"""Lates calcarifer""","""Red seabream iridovirus""",5000
+"""Capra hircus""","""Capripoxvirus""",4358
+"""Podiceps nigricollis""","""unidentified influenza virus""",4287
+"""Aves""","""Avihepatovirus A""",4000
+"""Oncorhynchus mykiss""","""H5N1 subtype""",3000
+"""Ovis aries""","""Goatpox virus""",2999
+"""Aves""","""Severe acute respiratory syndrome coronavirus 2""",2846
+"""Ovis aries""","""Capripoxvirus""",2834
+"""Ovis aries""","""Schmallenberg virus""",2631
+"""Chroicocephalus ridibundus""","""H5N1 subtype""",1959
+"""Sus scrofa""","""Brucella suis""",1926
+"""Aves""","""African swine fever virus""",1871
+"""Bos taurus""","""Lyssavirus rabies""",1647
+"""Apoidea""","""Paenibacillus larvae""",1626
+"""Equidae""","""West Nile virus""",1470
+"""Aves""","""Suid alphaherpesvirus 1""",1400
+"""Aves""","""Bovine alphaherpesvirus 1""",1232
+"""Grus monacha""","""H5N1 subtype""",1125
+"""Oryctolagus cuniculus""","""Myxoma virus""",975
+"""Bos taurus""","""Bovine alphaherpesvirus 1""",952
+"""Bos taurus""","""Capripoxvirus""",874
+"""Capra hircus""","""Mycoplasma capricolum subsp. capripneumoniae""",858
+"""Cygnus olor""","""unidentified influenza virus""",848
+"""Equidae""","""Theileria equi""",795
+"""Cygnus olor""","""H5N1 subtype""",781
+"""Capra hircus""","""Goatpox virus""",773
+"""Sus scrofa""","""Transmissible gastroenteritis virus""",738
+"""Aves""","""African horse sickness virus""",714
+"""Bos taurus""","""Epizootic hemorrhagic disease virus""",682
+"""Aves""","""Infectious salmon anemia virus""",641
+"""Sus scrofa""","""Streptococcus suis""",639
+"""Equidae""","""Vesicular stomatitis virus""",617
+"""Spheniscus demersus""","""H5N1 subtype""",539
+"""Neogale vison""","""Severe acute respiratory syndrome coronavirus 2""",538
+"""Anser indicus""","""unidentified influenza virus""",536
+"""Equidae""","""Burkholderia mallei""",517
+"""Aves""","""Taylorella equigenitalis""",494
+"""Ovis aries""","""Orbivirus""",475
+"""Apoidea""","""Melissococcus plutonius""",458
+"""Ovis aries""","""Brucella melitensis""",450
+"""Cyprinus carpio haematopterus""","""Cyprinid herpesvirus 3""",448
+"""Bos taurus""","""Bacillus anthracis""",427
+"""Apoidea""","""Aethina tumida""",423
+"""Corvus splendens""","""unidentified influenza virus""",416
+"""Bos taurus""","""Schmallenberg virus""",415
+"""Sus scrofa""","""Suid alphaherpesvirus 1""",408
+"""Bos taurus""","""unidentified influenza virus""",401
+"""Ovis aries""","""Visna-maedi virus""",391
+"""Melogale moschata""","""Lyssavirus""",367
+"""Thalasseus maximus""","""H5N1 subtype""",360
+"""Capra hircus""","""Bluetongue virus""",358
+"""Equidae""","""Equine arteritis virus""",353
+"""Equidae""","""Equid alphaherpesvirus 1""",352
+"""Chroicocephalus brunnicephalus""","""H5N1 subtype""",352
+"""Bos taurus""","""Orbivirus""",349
+"""Aves""","""Aphanomyces invadans""",330
+"""Bos taurus""","""Mycobacterium tuberculosis complex""",306
+"""Aves""","""Equine arteritis virus""",302
+"""Ichthyaetus ichthyaetus""","""H5N1 subtype""",301
+"""Capra hircus""","""Ehrlichia ruminantium""",300
+"""Cyprinus carpio""","""Severe acute respiratory syndrome coronavirus 2""",300
+"""Bos taurus""","""Brucella abortus""",295
+"""Canis lupus familiaris""","""Lyssavirus rabies""",293
+"""Bos taurus""","""Vesicular stomatitis virus""",281
+"""Sterna hirundo""","""H5N1 subtype""",261
+"""Equidae""","""Equine infectious anemia virus""",258
+"""Branta canadensis""","""H5N1 subtype""",240
+"""Corvus splendens""","""H5N1 subtype""",238
+"""Apoidea""","""Infectious hematopoietic necrosis virus""",221
+"""Pelecanus crispus""","""unidentified influenza virus""",218
+"""Bos taurus""","""Brucella melitensis""",217
+"""Sus barbatus""","""African swine fever virus""",216
+"""Bos taurus""","""Influenza A virus""",204
+"""Anser anser""","""H5N1 subtype""",199
+"""Bos taurus""","""Babesia bovis""",174
+"""Bos taurus""","""Brucella suis""",173
+"""Ovis aries""","""Bacillus anthracis""",172
+"""Camelidae""","""Rift Valley fever virus""",169
+"""Equidae""","""Taylorella equigenitalis""",162
+"""Vulpes vulpes""","""H5N1 subtype""",161
+"""Lepus californicus""","""Rabbit hemorrhagic disease virus""",160
+"""Sus scrofa""","""unidentified influenza virus""",158
+"""Equidae""","""Equine encephalosis virus""",150
+"""Anser albifrons""","""unidentified influenza virus""",150
+"""Lepus capensis""","""Rabbit hemorrhagic disease virus""",144
+"""Capra hircus""","""Coxiella burnetii""",137
+"""Sus scrofa""","""Gammacoronavirus""",136
+"""Ovis aries""","""Epizootic hemorrhagic disease virus""",134
+"""Capra hircus""","""Caprine arthritis encephalitis virus""",130
+"""Cygnus melancoryphus""","""H5N1 subtype""",130
+"""Pelecanus crispus""","""H5N1 subtype""",124
+"""Spatula discors""","""H5N1 subtype""",121
+"""Larus argentatus""","""H5N1 subtype""",118
+"""Mephitis mephitis""","""H5N1 subtype""",114
+"""Canis lupus familiaris""","""Severe acute respiratory syndrome coronavirus 2""",112
+"""Felis catus""","""Severe acute respiratory syndrome coronavirus 2""",108
+"""Branta leucopsis""","""unidentified influenza virus""",103
+"""Clarias gariepinus""","""Aphanomyces invadans""",102
+"""Bos taurus""","""Classical swine fever virus""",100
+"""Anas platyrhynchos""","""H5N1 subtype""",99
+"""Ovis aries""","""prion""",96
+"""Canis lupus familiaris""","""Ehrlichia canis""",96
+"""Anser brachyrhynchus""","""H5N1 subtype""",92
+"""Anser anser""","""unidentified influenza virus""",91
+"""Anas platyrhynchos""","""unidentified influenza virus""",91
+"""Branta leucopsis""","""H5N1 subtype""",90
+"""Cygnus atratus""","""unidentified influenza virus""",80
+"""Anas crecca""","""H5N1 subtype""",77
+"""Vulpes vulpes""","""Lyssavirus""",76
+"""Sula variegata""","""H5N1 subtype""",76
+"""Phasianus colchicus""","""H5N1 subtype""",74
+"""Capra hircus""","""Orbivirus""",72
+"""Sus scrofa""","""Alcelaphine gammaherpesvirus 1""",71
+"""Oryx gazella""","""Rift Valley fever virus""",69
+"""Aves""","""Cyprinid herpesvirus 3""",66
+"""Cygnus melancoryphus""","""unidentified influenza virus""",66
+"""Apoidea""","""African swine fever virus""",64
+"""Vulpes vulpes""","""Lyssavirus rabies""",63
+"""Aix galericulata""","""unidentified influenza virus""",63
+"""Corvus macrorhynchos""","""H5N1 subtype""",63
+"""Loxodonta""","""Pasteurella multocida""",60
+"""Thalasseus sandvicensis""","""H5N1 subtype""",60
+"""Sylvilagus audubonii""","""Rabbit hemorrhagic disease virus""",60
+"""Larus dominicanus""","""H5N1 subtype""",55
+"""Cyprinus carpio""","""Sprivivirus cyprinus""",53
+"""Rissa tridactyla""","""H5N1 subtype""",50
+"""Antigone vipio""","""H5N1 subtype""",50
+"""Equidae""","""Alphavirus""",48
+"""Capra hircus""","""Schmallenberg virus""",46
+"""Austropotamobius pallipes""","""Aphanomyces astaci""",45
+"""Capra hircus""","""Chlamydia abortus""",44
+"""Bos taurus""","""African swine fever virus""",43
+"""Bos taurus""","""[Eubacterium] cellulosolvens""",42
+"""Aves""","""Capripoxvirus""",42
+"""Haliaeetus albicilla""","""unidentified influenza virus""",41
+"""Equidae""","""Venezuelan equine encephalitis virus""",41
+"""Bos taurus""","""H5N1 subtype""",39
+"""Bos taurus""","""Picornaviridae""",38
+"""Aves""","""Brucella melitensis""",38
+"""Uria aalge""","""H5N1 subtype""",37
+"""Equidae""","""Bacillus anthracis""",36
+"""Phalacrocorax carbo""","""H5N1 subtype""",35
+"""Bufotes viridis""","""Batrachochytrium dendrobatidis""",34
+"""Otaria byronia""","""unidentified influenza virus""",33
+"""Laridae""","""H5N1 subtype""",33
+"""Bagrus docmak""","""Aphanomyces invadans""",32
+"""Apoidea""","""Foot-and-mouth disease virus""",32
+"""Sula variegata""","""unidentified influenza virus""",31
+"""Morus bassanus""","""H5N1 subtype""",31
+"""Aves""","""Alcelaphine gammaherpesvirus 1""",30
+"""Phasianus colchicus""","""unidentified influenza virus""",30
+"""Ovis aries""","""Chlamydia abortus""",29
+"""Egretta garzetta""","""H5N1 subtype""",29
+"""Ovis aries""","""Rabbit hemorrhagic disease virus""",29
+"""Larus argentatus""","""unidentified influenza virus""",28
+"""Mareca penelope""","""unidentified influenza virus""",28
+"""Bubo scandiacus""","""West Nile virus""",28
+"""Larus fuscus graellsii""","""H5N1 subtype""",28
+"""Branta canadensis""","""unidentified influenza virus""",27
+"""Phoca vitulina""","""H5N1 subtype""",27
+"""Corvus macrorhynchos""","""unidentified influenza virus""",25
+"""Sturnus vulgaris""","""unidentified influenza virus""",25
+"""Morus capensis""","""H5N1 subtype""",25
+"""Ovis aries""","""Vesicular stomatitis virus""",25
+"""Pelophylax lessonae""","""Ranavirus""",25
+"""Anas crecca""","""unidentified influenza virus""",24
+"""Accipiter nisus""","""H5N1 subtype""",24
+"""Grus monacha""","""unidentified influenza virus""",23
+"""Ardea cinerea""","""unidentified influenza virus""",22
+"""Anser brachyrhynchus""","""unidentified influenza virus""",22
+"""Haliaeetus albicilla""","""H5N1 subtype""",22
+"""Threskiornis aethiopicus""","""H5N1 subtype""",22
+"""Vulpes vulpes""","""unidentified influenza virus""",21
+"""Mareca penelope""","""H5N1 subtype""",20
+"""Chlidonias hybrida""","""H5N1 subtype""",19
+"""Puma""","""H5N1 subtype""",19
+"""Vicugna pacos""","""Bluetongue virus""",18
+"""Accipiter gentilis""","""unidentified influenza virus""",18
+"""Ardea alba""","""unidentified influenza virus""",18
+"""Anser fabalis""","""unidentified influenza virus""",18
+"""Chroicocephalus genei""","""H5N1 subtype""",18
+"""Stercorarius skua""","""H5N1 subtype""",18
+"""Aves""","""Brucella suis""",18
+"""Bos taurus""","""prion""",17
+"""Leucophaeus modestus""","""H5N1 subtype""",17
+"""Columba livia""","""H5N1 subtype""",17
+"""Bos taurus""","""Orthonairovirus haemorrhagiae""",17
+"""Nasua nasua""","""unidentified influenza virus""",16
+"""Ciconia ciconia""","""H5N1 subtype""",16
+"""Accipiter gentilis""","""H5N1 subtype""",16
+"""Enicognathus leptorhynchus""","""H5N1 subtype""",16
+"""Ateles sp.""","""Severe acute respiratory syndrome coronavirus 2""",16
+"""Panthera tigris""","""Severe acute respiratory syndrome coronavirus 2""",16
+"""Canis lupus familiaris""","""Suid alphaherpesvirus 1""",14
+"""Hippopotamus amphibius""","""Bacillus anthracis""",14
+"""Bubo bubo""","""unidentified influenza virus""",14
+"""Equidae""","""Eastern equine encephalitis virus""",14
+"""Larus canus""","""H5N1 subtype""",14
+"""Larus michahellis atlantis""","""H5N1 subtype""",14
+"""Equidae""","""Trypanosoma equiperdum""",14
+"""Capra hircus""","""Bacillus anthracis""",13
+"""Passer domesticus""","""unidentified influenza virus""",13
+"""Ovis aries""","""Coxiella burnetii""",13
+"""Cygnus atratus""","""H5N1 subtype""",13
+"""Larosterna inca""","""H5N1 subtype""",13
+"""Gallinula chloropus""","""H5N1 subtype""",13
+"""Anser caerulescens caerulescens""","""H5N1 subtype""",13
+"""Cervidae""","""Foot-and-mouth disease virus""",12
+"""Somateria mollissima""","""unidentified influenza virus""",12
+"""Felis catus""","""unidentified influenza virus""",12
+"""Canis lupus familiaris""","""Lyssavirus""",11
+"""Bos taurus""","""Mycobacterium tuberculosis variant bovis""",11
+"""Bos taurus""","""Alcelaphine gammaherpesvirus 1""",11
+"""Anser sp.""","""unidentified influenza virus""",11
+"""Alopochen aegyptiaca""","""H5N1 subtype""",11
+"""Capra hircus""","""Brucella melitensis""",11
+"""Apoidea""","""Brucella suis""",11
+"""Felis catus""","""Lyssavirus rabies""",10
+"""Gazella dorcas""","""Rift Valley fever virus""",10
+"""Bos taurus""","""Cochliomyia hominivorax""",10
+"""Numenius arquata""","""unidentified influenza virus""",10
+"""Quiscalus quiscula""","""unidentified influenza virus""",10
+"""Bos taurus""","""Coxiella burnetii""",10
+"""Netta rufina""","""H5N1 subtype""",10
+"""Ardea cinerea""","""H5N1 subtype""",10
+"""Falco tinnunculus""","""H5N1 subtype""",10
+"""Equidae""","""Babesia caballi""",10
+"""Equidae""","""Lyssavirus rabies""",9
+"""Cairina moschata""","""unidentified influenza virus""",9
+"""Corvus corone""","""H5N1 subtype""",9
+"""Camelidae""","""Classical swine fever virus""",9
+"""Apoidea""","""Acarapis woodi""",9
+"""Panthera leo""","""Severe acute respiratory syndrome coronavirus 2""",9
+"""Ciconia ciconia""","""unidentified influenza virus""",8
+"""Larus marinus""","""unidentified influenza virus""",8
+"""Larus marinus""","""H5N1 subtype""",8
+"""Capra ibex""","""Brucella melitensis""",8
+"""Odocoileus virginianus""","""Severe acute respiratory syndrome coronavirus 2""",8
+"""Bos taurus""","""Infectious hematopoietic necrosis virus""",7
+"""Canis lupus familiaris""","""prion""",7
+"""Ostrea edulis""","""Bonamia exitiosa""",7
+"""Accipiter nisus""","""unidentified influenza virus""",7
+"""Sterna hirundo""","""unidentified influenza virus""",7
+"""Corvus corone""","""unidentified influenza virus""",7
+"""Podiceps cristatus""","""unidentified influenza virus""",7
+"""Felis catus""","""H5N1 subtype""",7
+"""Cathartes aura""","""H5N1 subtype""",7
+"""Coscoroba coscoroba""","""H5N1 subtype""",7
+"""Milvus milvus""","""H5N1 subtype""",7
+"""Strix aluco""","""H5N1 subtype""",7
+"""Fulmarus glacialis""","""H5N1 subtype""",7
+"""Phalacrocorax lucidus""","""H5N1 subtype""",7
+"""Harpactes erythrocephalus""","""H5N1 subtype""",7
+"""Sus scrofa""","""Vesicular stomatitis virus""",7
+"""Ovis aries""","""Brucella ovis""",6
+"""Ovis aries musimon""","""Bluetongue virus""",6
+"""Columba livia""","""Chlamydia psittaci""",6
+"""Cervus elaphus""","""Epizootic hemorrhagic disease virus""",6
+"""Mustelidae""","""unidentified influenza virus""",6
+"""Chroicocephalus ridibundus""","""unidentified influenza virus""",6
+"""Tadorna tadorna""","""unidentified influenza virus""",6
+"""Corvus brachyrhynchos""","""unidentified influenza virus""",6
+"""Spilornis cheela""","""unidentified influenza virus""",6
+"""Falco tinnunculus""","""unidentified influenza virus""",6
+"""Fulica atra""","""unidentified influenza virus""",6
+"""Phoenicopterus ruber""","""West Nile virus""",6
+"""Corvus cornix""","""West Nile virus""",6
+"""Parus major""","""West Nile virus""",6
+"""Sterna hirundinacea""","""H5N1 subtype""",6
+"""Canis lupus familiaris""","""H5N1 subtype""",6
+"""Anser albifrons""","""H5N1 subtype""",6
+"""Quiscalus mexicanus""","""H5N1 subtype""",6
+"""Anser sp.""","""H5N1 subtype""",6
+"""Lynx rufus""","""H5N1 subtype""",6
+"""Aves""","""Mycoplasmoides gallisepticum""",6
+"""Apoidea""","""Goatpox virus""",5
+"""Stercorarius skua""","""unidentified influenza virus""",5
+"""Phoca vitulina""","""unidentified influenza virus""",5
+"""Phalacrocorax brasilianus""","""H5N1 subtype""",5
+"""Bubo bubo""","""H5N1 subtype""",5
+"""Passer montanus""","""H5N1 subtype""",5
+"""Stercorarius chilensis""","""H5N1 subtype""",5
+"""Corvus corax""","""H5N1 subtype""",5
+"""Cygnus columbianus""","""H5N1 subtype""",5
+"""Sylvilagus nuttallii""","""Rabbit hemorrhagic disease virus""",5
+"""Aves""","""Aethina tumida""",5
+"""Bos taurus""","""Campylobacter fetus subsp. venerealis""",4
+"""Bos taurus""","""Equine infectious anemia virus""",4
+"""Canis lupus familiaris""","""Influenza A virus""",4
+"""Felis catus""","""Lyssavirus""",4
+"""Bos taurus""","""Lyssavirus""",4
+"""Capreolus capreolus""","""Bluetongue virus""",4
+"""Dama dama""","""Bluetongue virus""",4
+"""Bos taurus""","""Trypanosoma vivax""",4
+"""Chloephaga melanoptera""","""unidentified influenza virus""",4
+"""Corvus corax""","""unidentified influenza virus""",4
+"""Pica pica""","""unidentified influenza virus""",4
+"""Haliaeetus pelagicus""","""unidentified influenza virus""",4
+"""Tachybaptus ruficollis""","""unidentified influenza virus""",4
+"""Falco vespertinus""","""unidentified influenza virus""",4
+"""Mareca strepera""","""unidentified influenza virus""",4
+"""Corvus corone""","""West Nile virus""",4
+"""Podiceps cristatus""","""H5N1 subtype""",4
+"""Haematopus ostralegus""","""H5N1 subtype""",4
+"""Platalea minor""","""H5N1 subtype""",4
+"""Ardea alba""","""H5N1 subtype""",4
+"""Chloephaga picta""","""H5N1 subtype""",4
+"""Leucophaeus pipixcan""","""H5N1 subtype""",4
+"""Larus cachinnans""","""H5N1 subtype""",4
+"""Corvus frugilegus""","""H5N1 subtype""",4
+"""Numenius arquata""","""H5N1 subtype""",4
+"""Tyto alba""","""H5N1 subtype""",4
+"""Tyto longimembris""","""H5N1 subtype""",4
+"""Camelidae""","""Camelpox virus""",4
+"""Aonyx cinereus""","""Severe acute respiratory syndrome coronavirus 2""",4
+"""Sus scrofa""","""Lyssavirus rabies""",3
+"""Equidae""","""Foot-and-mouth disease virus""",3
+"""Aepyceros melampus""","""Foot-and-mouth disease virus""",3
+"""Tragelaphus strepsiceros""","""Foot-and-mouth disease virus""",3
+"""Cervus elaphus""","""Bluetongue virus""",3
+"""Alopochen aegyptiaca""","""unidentified influenza virus""",3
+"""Larus dominicanus""","""unidentified influenza virus""",3
+"""Bucephala clangula""","""unidentified influenza virus""",3
+"""Mergus merganser""","""unidentified influenza virus""",3
+"""Calidris canutus""","""unidentified influenza virus""",3
+"""Aythya fuligula""","""unidentified influenza virus""",3
+"""Larus canus""","""unidentified influenza virus""",3
+"""Anas acuta""","""unidentified influenza virus""",3
+"""Spatula querquedula""","""unidentified influenza virus""",3
+"""Buteo lagopus""","""unidentified influenza virus""",3
+"""Falco naumanni""","""unidentified influenza virus""",3
+"""Lepus timidus""","""Francisella tularensis""",3
+"""Nasua nasua""","""H5N1 subtype""",3
+"""Sula nebouxii""","""H5N1 subtype""",3
+"""Sternula albifrons""","""H5N1 subtype""",3
+"""Phoenicopterus roseus""","""H5N1 subtype""",3
+"""Charadrius hiaticula""","""H5N1 subtype""",3
+"""Dendrocopos major""","""H5N1 subtype""",3
+"""Streptopelia decaocto""","""H5N1 subtype""",3
+"""Pekania pennanti""","""H5N1 subtype""",3
+"""Ursus arctos""","""H5N1 subtype""",3
+"""Didelphis virginiana""","""H5N1 subtype""",3
+"""Sterna paradisaea""","""H5N1 subtype""",3
+"""Falco naumanni""","""Pigeon paramyxovirus 1""",3
+"""Puma""","""Severe acute respiratory syndrome coronavirus 2""",3
+"""Gorilla beringei""","""Severe acute respiratory syndrome coronavirus 2""",3
+"""Panthera uncia""","""Severe acute respiratory syndrome coronavirus 2""",3
+"""Capra hircus""","""prion""",2
+"""Capra hircus""","""Mycoplasma mycoides subsp. capri""",2
+"""Pacifastacus leniusculus""","""Aphanomyces astaci""",2
+"""Loxodonta""","""Bacillus anthracis""",2
+"""Apoidea""","""Bacillus anthracis""",2
+"""Capreolus capreolus""","""Lyssavirus rabies""",2
+"""Sus scrofa""","""Cochliomyia hominivorax""",2
+"""Spheniscus demersus""","""unidentified influenza virus""",2
+"""Mustela putorius""","""unidentified influenza virus""",2
+"""Lontra felina""","""unidentified influenza virus""",2
+"""Phalacrocorax carbo""","""unidentified influenza virus""",2
+"""Spatula discors""","""unidentified influenza virus""",2
+"""Larus hyperboreus""","""unidentified influenza virus""",2
+"""Morus bassanus""","""unidentified influenza virus""",2
+"""Milvus migrans""","""unidentified influenza virus""",2
+"""Strix aluco""","""unidentified influenza virus""",2
+"""Strix uralensis""","""unidentified influenza virus""",2
+"""Coloeus monedula""","""unidentified influenza virus""",2
+"""Larus fuscus graellsii""","""unidentified influenza virus""",2
+"""Anas carolinensis""","""unidentified influenza virus""",2
+"""Coloeus monedula""","""West Nile virus""",2
+"""Equus quagga""","""African horse sickness virus""",2
+"""Somateria mollissima""","""H5N1 subtype""",2
+"""Caracara plancus""","""H5N1 subtype""",2
+"""Chroicocephalus cirrocephalus""","""H5N1 subtype""",2
+"""Halichoerus grypus""","""H5N1 subtype""",2
+"""Coragyps atratus""","""H5N1 subtype""",2
+"""Enicognathus ferrugineus""","""H5N1 subtype""",2
+"""Phalacrocorax gaimardi""","""H5N1 subtype""",2
+"""Thalasseus elegans""","""H5N1 subtype""",2
+"""Falco rusticolus""","""H5N1 subtype""",2
+"""Falco sparverius""","""H5N1 subtype""",2
+"""Alectoris rufa""","""H5N1 subtype""",2
+"""Anas acuta""","""H5N1 subtype""",2
+"""Grus japonensis""","""H5N1 subtype""",2
+"""Larus schistisagus""","""H5N1 subtype""",2
+"""Strix uralensis""","""H5N1 subtype""",2
+"""Ara ararauna""","""H5N1 subtype""",2
+"""Bostrychia hagedash""","""H5N1 subtype""",2
+"""Plectropterus gambensis""","""H5N1 subtype""",2
+"""Grus paradisea""","""H5N1 subtype""",2
+"""Lepus alleni""","""Rabbit hemorrhagic disease virus""",2
+"""Ovis aries""","""Streptococcus suis""",2
+"""Porcula salvania""","""African swine fever virus""",2
+"""Bos gaurus""","""Lumpy skin disease virus""",2
+"""Canis lupus familiaris""","""Lumpy skin disease virus""",2
+"""Bufo bufo""","""Batrachochytrium dendrobatidis""",2
+"""Vulpes vulpes""","""Severe acute respiratory syndrome coronavirus 2""",2
+"""Nasua nasua""","""Severe acute respiratory syndrome coronavirus 2""",2
+"""Trichechus manatus""","""Severe acute respiratory syndrome coronavirus 2""",2
+"""Canis lupus familiaris""","""Infectious hematopoietic necrosis virus""",1
+"""Canis lupus familiaris""","""Peste des petits ruminants virus""",1
+"""Ostrea edulis""","""Bonamia ostreae""",1
+"""Cyprinus carpio""","""Aphanomyces invadans""",1
+"""Lepomis macrochirus""","""Aphanomyces invadans""",1
+"""Ovis aries""","""[Eubacterium] cellulosolvens""",1
+"""Mytilus edulis""","""Marteilia refringens""",1
+"""Bubalus bubalis""","""Bacillus anthracis""",1
+"""Martes flavigula""","""Lyssavirus rabies""",1
+"""Marmota marmota marmota""","""Lyssavirus rabies""",1
+"""Suncus murinus""","""Lyssavirus""",1
+"""Gazella gazella""","""Foot-and-mouth disease virus""",1
+"""Dama dama""","""Foot-and-mouth disease virus""",1
+"""Canis lupus familiaris""","""Foot-and-mouth disease virus""",1
+"""Equidae""","""Bluetongue virus""",1
+"""Hippotragus equinus""","""Rift Valley fever virus""",1
+"""Aves""","""Chlamydia psittaci""",1
+"""Mephitis mephitis""","""unidentified influenza virus""",1
+"""Sula nebouxii""","""unidentified influenza virus""",1
+"""Grus leucogeranus""","""unidentified influenza virus""",1
+"""Buteo jamaicensis""","""unidentified influenza virus""",1
+"""Tringa semipalmata""","""unidentified influenza virus""",1
+"""Rissa tridactyla""","""unidentified influenza virus""",1
+"""Corvus cornix""","""unidentified influenza virus""",1
+"""Aquila audax""","""unidentified influenza virus""",1
+"""Larus michahellis atlantis""","""unidentified influenza virus""",1
+"""Antigone vipio""","""unidentified influenza virus""",1
+"""Circus aeruginosus""","""unidentified influenza virus""",1
+"""Chroicocephalus cirrocephalus""","""unidentified influenza virus""",1
+"""Garrulus glandarius""","""unidentified influenza virus""",1
+"""Scolopax rusticola""","""unidentified influenza virus""",1
+"""Milvus milvus""","""unidentified influenza virus""",1
+"""Dendrocygna eytoni""","""unidentified influenza virus""",1
+"""Platalea leucorodia""","""unidentified influenza virus""",1
+"""Asio flammeus""","""unidentified influenza virus""",1
+"""Spatula clypeata""","""unidentified influenza virus""",1
+"""Aquila fasciata""","""unidentified influenza virus""",1
+"""Hirundo rustica""","""unidentified influenza virus""",1
+"""Vicugna pacos""","""Japanese encephalitis virus""",1
+"""Chroicocephalus maculipennis""","""H5N1 subtype""",1
+"""Buteogallus urubitinga""","""H5N1 subtype""",1
+"""Rupornis magnirostris""","""H5N1 subtype""",1
+"""Megascops choliba""","""H5N1 subtype""",1
+"""Sula leucogaster""","""H5N1 subtype""",1
+"""Martes martes""","""H5N1 subtype""",1
+"""Pica pica""","""H5N1 subtype""",1
+"""Coloeus monedula""","""H5N1 subtype""",1
+"""Gelochelidon nilotica""","""H5N1 subtype""",1
+"""Buteo lagopus""","""H5N1 subtype""",1
+"""Ursus maritimus""","""H5N1 subtype""",1
+"""Spatula clypeata""","""H5N1 subtype""",1
+"""Calidris alpina""","""H5N1 subtype""",1
+"""Passer domesticus""","""H5N1 subtype""",1
+"""Caracara""","""H5N1 subtype""",1
+"""Calidris alba""","""H5N1 subtype""",1
+"""Rynchops niger""","""H5N1 subtype""",1
+"""Tringa flavipes""","""H5N1 subtype""",1
+"""Sterna dougallii""","""H5N1 subtype""",1
+"""Tachybaptus ruficollis""","""H5N1 subtype""",1
+"""Fringilla coelebs""","""H5N1 subtype""",1
+"""Circus cyaneus""","""H5N1 subtype""",1
+"""Pandion haliaetus""","""H5N1 subtype""",1
+"""Ichthyaetus melanocephalus""","""H5N1 subtype""",1
+"""Aix galericulata""","""H5N1 subtype""",1
+"""Phoenicopterus chilensis""","""H5N1 subtype""",1
+"""Ciconia boyciana""","""H5N1 subtype""",1
+"""Milvus migrans""","""H5N1 subtype""",1
+"""Haliaeetus pelagicus""","""H5N1 subtype""",1
+"""Aythya marila""","""H5N1 subtype""",1
+"""Garrulus glandarius""","""H5N1 subtype""",1
+"""Martes americana""","""H5N1 subtype""",1
+"""Lontra canadensis""","""H5N1 subtype""",1
+"""Panthera pardus orientalis""","""H5N1 subtype""",1
+"""Canis latrans""","""H5N1 subtype""",1
+"""Neogale vison""","""H5N1 subtype""",1
+"""Nyctereutes procyonoides""","""H5N1 subtype""",1
+"""Stercorarius lonnbergi""","""H5N1 subtype""",1
+"""Pterodroma macroptera""","""H5N1 subtype""",1
+"""Haematopus bachmani""","""H5N1 subtype""",1
+"""Mergus merganser""","""H5N1 subtype""",1
+"""Anser indicus""","""H5N1 subtype""",1
+"""Circus aeruginosus""","""H5N1 subtype""",1
+"""Sylvilagus floridanus""","""Rabbit hemorrhagic disease virus""",1
+"""Lepus timidus""","""Rabbit hemorrhagic disease virus""",1
+"""Capra hircus""","""Rabbit hemorrhagic disease virus""",1
+"""Rupicapra rupicapra""","""Brucella melitensis""",1
+"""Equidae""","""African swine fever virus""",1
+"""Canis lupus familiaris""","""African swine fever virus""",1
+"""Canis lupus familiaris""","""Classical swine fever virus""",1
+"""Canis lupus familiaris""","""Taylorella equigenitalis""",1
+"""Canis lupus familiaris""","""Capripoxvirus""",1
+"""Rana temporaria""","""Ranavirus""",1
+"""Canis lupus familiaris""","""Schmallenberg virus""",1
+"""Capra hircus""","""Chrysomya bezziana""",1
+"""Bos taurus""","""Chrysomya bezziana""",1
+"""Ovis aries""","""Chrysomya bezziana""",1
+"""Lagothrix lagotricha""","""Severe acute respiratory syndrome coronavirus 2""",1
+"""Bos taurus""","""Severe acute respiratory syndrome coronavirus 2""",1
+"""Mustela putorius furo""","""Severe acute respiratory syndrome coronavirus 2""",1
+"""Mico melanurus""","""Severe acute respiratory syndrome coronavirus 2""",1
+"""Myrmecophaga tridactyla""","""Severe acute respiratory syndrome coronavirus 2""",1
+"""Penaeus stylirostris""","""White spot syndrome virus""",0
+"""Sus scrofa""","""Bacillus anthracis""",0
+"""Ovis aries""","""Lyssavirus rabies""",0
+"""Aves""","""Cochliomyia hominivorax""",0
+"""Ara chloropterus""","""unidentified influenza virus""",0
+"""Chenonetta jubata""","""unidentified influenza virus""",0
+"""Serinus canaria""","""unidentified influenza virus""",0
+"""Camelidae""","""West Nile virus""",0
+"""Equidae""","""Brucella melitensis""",0
+"""Canis lupus familiaris""","""Brucella melitensis""",0
+"""Capra hircus""","""Vesicular stomatitis virus""",0
+"""Carassius auratus""","""Sprivivirus cyprinus""",0
+"""Panthera pardus orientalis""","""Severe acute respiratory syndrome coronavirus 2""",0

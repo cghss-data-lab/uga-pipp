@@ -1,0 +1,161 @@
+﻿country,iso3,reportCount,eventCount
+"""Afghanistan""","""AFG""",10,17
+"""Albania""","""ALB""",21,35
+"""Algeria""","""DZA""",105,209
+"""Angola""","""AGO""",12,4
+"""Argentina""","""ARG""",677,768
+"""Armenia""","""ARM""",44,53
+"""Australia""","""AUS""",258,730
+"""Austria""","""AUT""",101,220
+"""Azerbaijan""","""AZE""",30,17
+"""Bahrain""","""BHR""",7,11
+"""Bangladesh""","""BGD""",2663,4733
+"""Belarus""","""BLR""",136,12
+"""Belgium""","""BEL""",291,1648
+"""Belize""","""BLZ""",214,212
+"""Benin""","""BEN""",7,4
+"""Bhutan""","""BTN""",38,40
+"""Bolivia""","""BOL""",24,65
+"""Bosnia and Herzegovina""","""BIH""",20,13
+"""Botswana""","""BWA""",169,73
+"""Brazil""","""BRA""",214,297
+"""Brunei""","""BRN""",3,3
+"""Bulgaria""","""BGR""",302,512
+"""Burkina Faso""","""BFA""",1,1
+"""Burundi""","""BDI""",1,3
+"""Cabo Verde""","""CPV""",1,1
+"""Cambodia""","""KHM""",87,122
+"""Cameroon""","""CMR""",95,16
+"""Canada""","""CAN""",458,396
+"""Central African Republic""","""CAF""",4,3
+"""Chad""","""TCD""",5,8
+"""Chile""","""CHL""",365,400
+"""China""","""CHN""",534,681
+"""Colombia""","""COL""",1013,1059
+"""Comoros""","""COM""",2,6
+"""Congo Republic""","""COG""",4,6
+"""Costa Rica""","""CRI""",46,21
+"""Croatia""","""HRV""",162,196
+"""Cuba""","""CUB""",630,581
+"""Cyprus""","""CYP""",98,103
+"""Czechia""","""CZE""",136,161
+"""DR Congo""","""COD""",7,15
+"""Denmark""","""DNK""",124,371
+"""Djibouti""","""DJI""",2,1
+"""Dominican Republic""","""DOM""",187,302
+"""Ecuador""","""ECU""",79,87
+"""Egypt""","""EGY""",107,1167
+"""El Salvador""","""SLV""",14,17
+"""Estonia""","""EST""",27,37
+"""Eswatini""","""SWZ""",21,7
+"""Ethiopia""","""ETH""",2,30
+"""Finland""","""FIN""",110,94
+"""France""","""FRA""",329,2195
+"""Gabon""","""GAB""",3,4
+"""Georgia""","""GEO""",41,73
+"""Germany""","""DEU""",842,4106
+"""Ghana""","""GHA""",20,13
+"""Greece""","""GRC""",285,1205
+"""Guatemala""","""GTM""",531,526
+"""Guinea""","""GIN""",9,15
+"""Guyana""","""GUY""",1,1
+"""Haiti""","""HTI""",3,5
+"""Honduras""","""HND""",26,12
+"""Hungary""","""HUN""",851,1909
+"""Iceland""","""ISL""",139,67
+"""India""","""IND""",132,287
+"""Indonesia""","""IDN""",22,143
+"""Iran""","""IRN""",42,60
+"""Iraq""","""IRQ""",32,57
+"""Ireland""","""IRL""",110,226
+"""Israel""","""ISR""",361,961
+"""Italy""","""ITA""",2166,3792
+"""Ivory Coast""","""CIV""",12,17
+"""Jamaica""","""JAM""",5,3
+"""Japan""","""JPN""",195,1158
+"""Jordan""","""JOR""",18,14
+"""Kazakhstan""","""KAZ""",98,64
+"""Kenya""","""KEN""",21,56
+"""Kuwait""","""KWT""",18,37
+"""Kyrgyzstan""","""KGZ""",15,10
+"""Laos""","""LAO""",78,181
+"""Latvia""","""LVA""",262,576
+"""Lebanon""","""LBN""",24,53
+"""Lesotho""","""LSO""",29,14
+"""Liberia""","""LBR""",3,2
+"""Libya""","""LBY""",91,135
+"""Lithuania""","""LTU""",104,145
+"""Luxembourg""","""LUX""",433,682
+"""Madagascar""","""MDG""",722,744
+"""Malawi""","""MWI""",37,22
+"""Malaysia""","""MYS""",129,779
+"""Mali""","""MLI""",11,17
+"""Malta""","""MLT""",59,38
+"""Mauritania""","""MRT""",11,14
+"""Mauritius""","""MUS""",13,16
+"""Mexico""","""MEX""",282,561
+"""Moldova""","""MDA""",513,122
+"""Mongolia""","""MNG""",91,83
+"""Montenegro""","""MNE""",5,7
+"""Morocco""","""MAR""",82,787
+"""Mozambique""","""MOZ""",17,8
+"""Myanmar""","""MMR""",87,147
+"""Namibia""","""NAM""",73,123
+"""Nepal""","""NPL""",124,238
+"""Netherlands""","""NLD""",342,1133
+"""New Zealand""","""NZL""",51,11
+"""Nicaragua""","""NIC""",7,3
+"""Niger""","""NER""",12,14
+"""Nigeria""","""NGA""",92,179
+"""North Korea""","""PRK""",11,147
+"""North Macedonia""","""MKD""",107,419
+"""Norway""","""NOR""",279,263
+"""Oman""","""OMN""",1,1
+"""Pakistan""","""PAK""",6,7
+"""Panama""","""PAN""",87,72
+"""Papua New Guinea""","""PNG""",10,4
+"""Paraguay""","""PRY""",40,28
+"""Peru""","""PER""",730,664
+"""Philippines""","""PHL""",1318,2725
+"""Poland""","""POL""",369,4284
+"""Portugal""","""PRT""",42,53
+"""Qatar""","""QAT""",5,3
+"""Romania""","""ROU""",588,1553
+"""Russia""","""RUS""",747,1529
+"""Rwanda""","""RWA""",25,29
+"""Saudi Arabia""","""SAU""",16,36
+"""Senegal""","""SEN""",42,71
+"""Serbia""","""SRB""",204,744
+"""Sierra Leone""","""SLE""",18,21
+"""Singapore""","""SGP""",742,739
+"""Slovakia""","""SVK""",106,95
+"""Slovenia""","""SVN""",32,34
+"""South Africa""","""ZAF""",2819,6001
+"""South Korea""","""KOR""",338,1382
+"""South Sudan""","""SSD""",3,6
+"""Spain""","""ESP""",305,395
+"""Sri Lanka""","""LKA""",23,41
+"""Sudan""","""SDN""",32,54
+"""Sweden""","""SWE""",261,248
+"""Switzerland""","""CHE""",231,345
+"""Syria""","""SYR""",19,11
+"""Taiwan""","""TWN""",348,997
+"""Tajikistan""","""TJK""",6,5
+"""Tanzania""","""TZA""",8,4
+"""Thailand""","""THA""",74,165
+"""The Gambia""","""GMB""",1,1
+"""Timor-Leste""","""TLS""",3,26
+"""Togo""","""TGO""",9,4
+"""Tunisia""","""TUN""",28,87
+"""Turkey""","""TUR""",145,637
+"""Turkmenistan""","""TKM""",2,1
+"""Uganda""","""UGA""",26,17
+"""Ukraine""","""UKR""",214,167
+"""United Arab Emirates""","""ARE""",3,2
+"""United Kingdom""","""GBR""",1456,1795
+"""United States""","""USA""",4613,7387
+"""Uruguay""","""URY""",153,96
+"""Venezuela""","""VEN""",17,6
+"""Vietnam""","""VNM""",179,639
+"""Zambia""","""ZMB""",28,50
+"""Zimbabwe""","""ZWE""",1056,2933

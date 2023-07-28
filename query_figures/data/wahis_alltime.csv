@@ -1,0 +1,399 @@
+﻿iso3,species,flua,fluCases
+"""CRI""","""Aves""","""Influenza A virus""",69492
+"""CZE""","""Aves""","""Influenza A virus""",36
+"""USA""","""Aves""","""Influenza A virus""",0
+"""CHN""","""Aves""","""Influenza A virus""",2136
+"""MMR""","""Aves""","""Influenza A virus""",683460
+"""FIN""","""Sterna hirundo""","""Influenza A virus""",6
+"""FIN""","""Chroicocephalus ridibundus""","""Influenza A virus""",42
+"""RUS""","""Aves""","""Influenza A virus""",2239982
+"""LUX""","""Chroicocephalus ridibundus""","""Influenza A virus""",2
+"""CHL""","""Aves""","""Influenza A virus""",7076910
+"""PRY""","""Aves""","""Influenza A virus""",694
+"""USA""","""Bos taurus""","""Influenza A virus""",4
+"""ISL""","""Anas platyrhynchos""","""Influenza A virus""",2
+"""EST""","""Sterna hirundo""","""Influenza A virus""",2
+"""EST""","""Larus canus""","""Influenza A virus""",2
+"""EST""","""Chroicocephalus ridibundus""","""Influenza A virus""",14
+"""EST""","""Phalacrocorax carbo""","""Influenza A virus""",78
+"""SVN""","""Sterna hirundo""","""Influenza A virus""",146
+"""SVN""","""Chroicocephalus ridibundus""","""Influenza A virus""",1032
+"""BRA""","""Aves""","""Influenza A virus""",320
+"""BRA""","""Chroicocephalus maculipennis""","""Influenza A virus""",6
+"""BRA""","""Thalasseus maximus""","""Influenza A virus""",234
+"""BRA""","""Caracara plancus""","""Influenza A virus""",16
+"""BRA""","""Buteogallus urubitinga""","""Influenza A virus""",12
+"""BRA""","""Sterna hirundinacea""","""Influenza A virus""",22
+"""BRA""","""Rupornis magnirostris""","""Influenza A virus""",10
+"""BRA""","""Sterna hirundo""","""Influenza A virus""",16
+"""BRA""","""Megascops choliba""","""Influenza A virus""",16
+"""BRA""","""Cygnus melancoryphus""","""Influenza A virus""",1616
+"""BRA""","""Phalacrocorax brasilianus""","""Influenza A virus""",14
+"""BRA""","""Chroicocephalus cirrocephalus""","""Influenza A virus""",14
+"""BRA""","""Sula leucogaster""","""Influenza A virus""",2
+"""ITA""","""Canis lupus familiaris""","""Influenza A virus""",20
+"""CZE""","""Aves""","""Influenza A virus""",87766
+"""DEU""","""Vulpes vulpes""","""Influenza A virus""",32
+"""DEU""","""Halichoerus grypus""","""Influenza A virus""",4
+"""DEU""","""Nasua nasua""","""Influenza A virus""",12
+"""DEU""","""Martes martes""","""Influenza A virus""",2
+"""DNK""","""Aves""","""Influenza A virus""",376
+"""NOR""","""Larus argentatus""","""Influenza A virus""",2
+"""NOR""","""Larus marinus""","""Influenza A virus""",2
+"""NOR""","""Rissa tridactyla""","""Influenza A virus""",80
+"""NOR""","""Aves""","""Influenza A virus""",90524
+"""JPN""","""Vulpes vulpes""","""Influenza A virus""",12
+"""LTU""","""Chroicocephalus ridibundus""","""Influenza A virus""",870
+"""LTU""","""Sterna hirundo""","""Influenza A virus""",18
+"""LTU""","""Chroicocephalus brunnicephalus""","""Influenza A virus""",1252
+"""DEU""","""Aves""","""Influenza A virus""",456096
+"""GMB""","""Thalasseus maximus""","""Influenza A virus""",672
+"""SWE""","""Larus canus""","""Influenza A virus""",4
+"""SWE""","""Chroicocephalus ridibundus""","""Influenza A virus""",262
+"""SWE""","""Uria aalge""","""Influenza A virus""",8
+"""SWE""","""Larus argentatus""","""Influenza A virus""",8
+"""SWE""","""Larus fuscus graellsii""","""Influenza A virus""",26
+"""SWE""","""Thalasseus sandvicensis""","""Influenza A virus""",8
+"""SWE""","""Bubo bubo""","""Influenza A virus""",40
+"""SWE""","""Pica pica""","""Influenza A virus""",14
+"""SWE""","""Haematopus ostralegus""","""Influenza A virus""",36
+"""SWE""","""Ciconia ciconia""","""Influenza A virus""",22
+"""SWE""","""Anser anser""","""Influenza A virus""",36
+"""SWE""","""Cygnus olor""","""Influenza A virus""",50
+"""SWE""","""Branta leucopsis""","""Influenza A virus""",44
+"""BGR""","""Aves""","""Influenza A virus""",5048
+"""BTN""","""Aves""","""Influenza A virus""",7762
+"""ITA""","""Aves""","""Influenza A virus""",5036964
+"""IND""","""Aves""","""Influenza A virus""",3319228
+"""EST""","""Aves""","""Influenza A virus""",48
+"""FRA""","""Vulpes vulpes""","""Influenza A virus""",2
+"""BRA""","""Bos taurus""","""Influenza A virus""",4
+"""TWN""","""Gelochelidon nilotica""","""Influenza A virus""",2
+"""TWN""","""Platalea minor""","""Influenza A virus""",2
+"""TWN""","""Chlidonias hybrida""","""Influenza A virus""",40
+"""TWN""","""Aves""","""Influenza A virus""",2549302
+"""BOL""","""Aves""","""Influenza A virus""",1604984
+"""CUB""","""Aves""","""Influenza A virus""",0
+"""SVK""","""Aves""","""Influenza A virus""",464
+"""NPL""","""Aves""","""Influenza A virus""",2401898
+"""TUR""","""Aves""","""Influenza A virus""",4251686
+"""NLD""","""Bos taurus""","""Influenza A virus""",2
+"""ECU""","""Sula nebouxii""","""Influenza A virus""",12
+"""ECU""","""Chroicocephalus ridibundus""","""Influenza A virus""",8
+"""ROU""","""Aves""","""Influenza A virus""",1471564
+"""SVK""","""Cygnus olor""","""Influenza A virus""",30
+"""POL""","""Aves""","""Influenza A virus""",7687198
+"""PAN""","""Aves""","""Influenza A virus""",356
+"""ESP""","""Aves""","""Influenza A virus""",49600
+"""HUN""","""Aves""","""Influenza A virus""",5590818
+"""ISR""","""Spatula clypeata""","""Influenza A virus""",2
+"""ISR""","""Anas platyrhynchos""","""Influenza A virus""",4
+"""ISR""","""Calidris alpina""","""Influenza A virus""",6
+"""CHL""","""Passer domesticus""","""Influenza A virus""",2
+"""CHL""","""Cygnus melancoryphus""","""Influenza A virus""",80
+"""CHL""","""Enicognathus leptorhynchus""","""Influenza A virus""",32
+"""CHL""","""Leucophaeus modestus""","""Influenza A virus""",156
+"""CHL""","""Sula variegata""","""Influenza A virus""",794
+"""CHL""","""Larus dominicanus""","""Influenza A virus""",240
+"""CHL""","""Laridae""","""Influenza A virus""",104
+"""CHL""","""Sterna hirundinacea""","""Influenza A virus""",32
+"""CHL""","""Phalacrocorax carbo""","""Influenza A virus""",220
+"""CHL""","""Cathartes aura""","""Influenza A virus""",76
+"""CHL""","""Coragyps atratus""","""Influenza A virus""",14
+"""CHL""","""Phalacrocorax brasilianus""","""Influenza A virus""",42
+"""CHL""","""Stercorarius chilensis""","""Influenza A virus""",40
+"""CHL""","""Larosterna inca""","""Influenza A virus""",112
+"""CHL""","""Leucophaeus pipixcan""","""Influenza A virus""",28
+"""CHL""","""Enicognathus ferrugineus""","""Influenza A virus""",10
+"""CHL""","""Netta rufina""","""Influenza A virus""",50
+"""CHL""","""Coscoroba coscoroba""","""Influenza A virus""",58
+"""CHL""","""Caracara""","""Influenza A virus""",4
+"""CHL""","""Chloephaga picta""","""Influenza A virus""",12
+"""CHL""","""Phalacrocorax gaimardi""","""Influenza A virus""",14
+"""CHL""","""Calidris alba""","""Influenza A virus""",14
+"""CHL""","""Thalasseus elegans""","""Influenza A virus""",30
+"""CHL""","""Rynchops niger""","""Influenza A virus""",14
+"""CHL""","""Tringa flavipes""","""Influenza A virus""",14
+"""CYP""","""Anas platyrhynchos""","""Influenza A virus""",6
+"""CYP""","""Aves""","""Influenza A virus""",24
+"""MEX""","""Aves""","""Influenza A virus""",12886996
+"""ECU""","""Aves""","""Influenza A virus""",10599212
+"""PRT""","""Ardea cinerea""","""Influenza A virus""",2
+"""ISR""","""Aves""","""Influenza A virus""",269800
+"""IRL""","""Sterna dougallii""","""Influenza A virus""",4
+"""IRL""","""Sternula albifrons""","""Influenza A virus""",8
+"""IRL""","""Sterna hirundo""","""Influenza A virus""",24
+"""IRL""","""Milvus milvus""","""Influenza A virus""",4
+"""IRL""","""Phoenicopterus chilensis""","""Influenza A virus""",0
+"""IRL""","""Chroicocephalus ridibundus""","""Influenza A virus""",120
+"""IRL""","""Cygnus olor""","""Influenza A virus""",100
+"""IRL""","""Larus argentatus""","""Influenza A virus""",22
+"""CHE""","""Chroicocephalus ridibundus""","""Influenza A virus""",4864
+"""CHE""","""Sterna hirundo""","""Influenza A virus""",112
+"""CHE""","""Larus cachinnans""","""Influenza A virus""",140
+"""CHE""","""Larus michahellis atlantis""","""Influenza A virus""",132
+"""CHE""","""Cygnus olor""","""Influenza A virus""",588
+"""CHE""","""Tachybaptus ruficollis""","""Influenza A virus""",34
+"""CHE""","""Podiceps cristatus""","""Influenza A virus""",58
+"""CHE""","""Ciconia ciconia""","""Influenza A virus""",114
+"""CHE""","""Milvus milvus""","""Influenza A virus""",28
+"""CHE""","""Ardea cinerea""","""Influenza A virus""",48
+"""CHE""","""Aves""","""Influenza A virus""",33580
+"""AUT""","""Sterna hirundo""","""Influenza A virus""",34
+"""AUT""","""Anas platyrhynchos""","""Influenza A virus""",244
+"""AUT""","""Chroicocephalus ridibundus""","""Influenza A virus""",970
+"""AUT""","""Podiceps cristatus""","""Influenza A virus""",8
+"""AUT""","""Accipiter gentilis""","""Influenza A virus""",14
+"""DEU""","""Chroicocephalus ridibundus""","""Influenza A virus""",70
+"""AUT""","""Gallinula chloropus""","""Influenza A virus""",10
+"""AUT""","""Phalacrocorax carbo""","""Influenza A virus""",20
+"""AUT""","""Cygnus olor""","""Influenza A virus""",2660
+"""AUT""","""Ardea cinerea""","""Influenza A virus""",112
+"""AUT""","""Ardea alba""","""Influenza A virus""",68
+"""AUT""","""Accipiter nisus""","""Influenza A virus""",102
+"""AUT""","""Aves""","""Influenza A virus""",1852
+"""AUT""","""Anser anser""","""Influenza A virus""",34
+"""AUT""","""Fringilla coelebs""","""Influenza A virus""",34
+"""AUT""","""Larus argentatus""","""Influenza A virus""",152
+"""SRB""","""Cygnus olor""","""Influenza A virus""",12
+"""SRB""","""Aves""","""Influenza A virus""",434
+"""JPN""","""Aves""","""Influenza A virus""",218398
+"""MEX""","""Spatula discors""","""Influenza A virus""",242
+"""MEX""","""Anser caerulescens caerulescens""","""Influenza A virus""",26
+"""MEX""","""Quiscalus mexicanus""","""Influenza A virus""",12
+"""MEX""","""Anas platyrhynchos""","""Influenza A virus""",30
+"""NGA""","""Caprimulgus fossii""","""Influenza A virus""",0
+"""NGA""","""Dendrocygna viduata""","""Influenza A virus""",0
+"""SVN""","""Cygnus olor""","""Influenza A virus""",84
+"""COL""","""Aves""","""Influenza A virus""",15154
+"""MEX""","""Falco rusticolus""","""Influenza A virus""",2
+"""GBR""","""Aves""","""Influenza A virus""",13748562
+"""GBR""","""Chroicocephalus ridibundus""","""Influenza A virus""",9362
+"""GBR""","""Larus argentatus""","""Influenza A virus""",1564
+"""GBR""","""Larus fuscus graellsii""","""Influenza A virus""",340
+"""GBR""","""Sterna hirundo""","""Influenza A virus""",1220
+"""GBR""","""Larus canus""","""Influenza A virus""",158
+"""NAM""","""Rissa tridactyla""","""Influenza A virus""",4
+"""GBR""","""Rissa tridactyla""","""Influenza A virus""",16
+"""GBR""","""Uria aalge""","""Influenza A virus""",1926
+"""GBR""","""Anser anser""","""Influenza A virus""",4242
+"""GBR""","""Cygnus olor""","""Influenza A virus""",7330
+"""GBR""","""Egretta garzetta""","""Influenza A virus""",156
+"""GBR""","""Branta leucopsis""","""Influenza A virus""",916
+"""GBR""","""Branta canadensis""","""Influenza A virus""",6264
+"""GBR""","""Thalasseus sandvicensis""","""Influenza A virus""",24
+"""GBR""","""Passer domesticus""","""Influenza A virus""",0
+"""GBR""","""Haliaeetus albicilla""","""Influenza A virus""",12
+"""GBR""","""Anser brachyrhynchus""","""Influenza A virus""",1638
+"""GBR""","""Corvus corone""","""Influenza A virus""",70
+"""GBR""","""Accipiter nisus""","""Influenza A virus""",872
+"""GBR""","""Charadrius hiaticula""","""Influenza A virus""",64
+"""GBR""","""Falco sparverius""","""Influenza A virus""",54
+"""GBR""","""Gallinula chloropus""","""Influenza A virus""",124
+"""GBR""","""Strix aluco""","""Influenza A virus""",288
+"""GBR""","""Milvus milvus""","""Influenza A virus""",168
+"""GBR""","""Columba livia""","""Influenza A virus""",328
+"""GBR""","""Dendrocopos major""","""Influenza A virus""",64
+"""GBR""","""Numenius arquata""","""Influenza A virus""",48
+"""GBR""","""Accipiter gentilis""","""Influenza A virus""",60
+"""GBR""","""Tyto alba""","""Influenza A virus""",30
+"""GBR""","""Falco tinnunculus""","""Influenza A virus""",200
+"""GBR""","""Anas platyrhynchos""","""Influenza A virus""",138
+"""GBR""","""Alectoris rufa""","""Influenza A virus""",78
+"""GBR""","""Phasianus colchicus""","""Influenza A virus""",1794
+"""GBR""","""Anser sp.""","""Influenza A virus""",172
+"""GBR""","""Fulmarus glacialis""","""Influenza A virus""",78
+"""GBR""","""Morus bassanus""","""Influenza A virus""",508
+"""GBR""","""Circus cyaneus""","""Influenza A virus""",6
+"""GBR""","""Pandion haliaetus""","""Influenza A virus""",78
+"""NAM""","""Bos taurus""","""Influenza A virus""",52
+"""DZA""","""Aves""","""Influenza A virus""",108800
+"""ITA""","""Thalasseus sandvicensis""","""Influenza A virus""",226
+"""ITA""","""Ichthyaetus melanocephalus""","""Influenza A virus""",4
+"""ITA""","""Larus michahellis atlantis""","""Influenza A virus""",152
+"""ITA""","""Chroicocephalus genei""","""Influenza A virus""",72
+"""ITA""","""Chroicocephalus ridibundus""","""Influenza A virus""",9592
+"""ITA""","""Corvus corone""","""Influenza A virus""",12
+"""ITA""","""Haematopus ostralegus""","""Influenza A virus""",28
+"""ITA""","""Falco tinnunculus""","""Influenza A virus""",88
+"""ITA""","""Ichthyaetus ichthyaetus""","""Influenza A virus""",4
+"""ITA""","""Egretta garzetta""","""Influenza A virus""",14
+"""ITA""","""Ardea cinerea""","""Influenza A virus""",60
+"""ITA""","""Streptopelia decaocto""","""Influenza A virus""",72
+"""ITA""","""Cygnus olor""","""Influenza A virus""",386
+"""ITA""","""Strix aluco""","""Influenza A virus""",30
+"""ITA""","""Mareca penelope""","""Influenza A virus""",392
+"""ITA""","""Anas platyrhynchos""","""Influenza A virus""",1808
+"""ITA""","""Anas crecca""","""Influenza A virus""",2230
+"""ITA""","""Aix galericulata""","""Influenza A virus""",32
+"""ITA""","""Anser albifrons""","""Influenza A virus""",12
+"""ITA""","""Phoenicopterus roseus""","""Influenza A virus""",64
+"""ITA""","""Anser anser""","""Influenza A virus""",74
+"""ITA""","""Anas acuta""","""Influenza A virus""",4
+"""ITA""","""Dendrocopos major""","""Influenza A virus""",34
+"""ITA""","""Ciconia ciconia""","""Influenza A virus""",70
+"""IRL""","""Vulpes vulpes""","""Influenza A virus""",0
+"""JPN""","""Phoenicopterus chilensis""","""Influenza A virus""",2
+"""JPN""","""Corvus macrorhynchos""","""Influenza A virus""",742
+"""JPN""","""Accipiter gentilis""","""Influenza A virus""",58
+"""JPN""","""Corvus corone""","""Influenza A virus""",28
+"""JPN""","""Haliaeetus albicilla""","""Influenza A virus""",92
+"""JPN""","""Grus japonensis""","""Influenza A virus""",22
+"""JPN""","""Mareca penelope""","""Influenza A virus""",34
+"""JPN""","""Anas platyrhynchos""","""Influenza A virus""",74
+"""JPN""","""Larus schistisagus""","""Influenza A virus""",44
+"""JPN""","""Cygnus columbianus""","""Influenza A virus""",78
+"""JPN""","""Grus monacha""","""Influenza A virus""",24736
+"""JPN""","""Antigone vipio""","""Influenza A virus""",1062
+"""JPN""","""Ciconia boyciana""","""Influenza A virus""",22
+"""JPN""","""Milvus migrans""","""Influenza A virus""",20
+"""JPN""","""Cygnus olor""","""Influenza A virus""",120
+"""JPN""","""Ardea cinerea""","""Influenza A virus""",16
+"""JPN""","""Haliaeetus pelagicus""","""Influenza A virus""",16
+"""JPN""","""Aythya marila""","""Influenza A virus""",14
+"""JPN""","""Strix uralensis""","""Influenza A virus""",14
+"""JPN""","""Platalea minor""","""Influenza A virus""",14
+"""JPN""","""Anser albifrons""","""Influenza A virus""",70
+"""JPN""","""Garrulus glandarius""","""Influenza A virus""",10
+"""JPN""","""Anas acuta""","""Influenza A virus""",24
+"""BEL""","""Aves""","""Influenza A virus""",1311750
+"""PRT""","""Aves""","""Influenza A virus""",208084
+"""IRL""","""Aves""","""Influenza A virus""",78
+"""IRL""","""Uria aalge""","""Influenza A virus""",0
+"""IRL""","""Phasianus colchicus""","""Influenza A virus""",0
+"""IRL""","""Morus bassanus""","""Influenza A virus""",0
+"""IRL""","""Corvus corax""","""Influenza A virus""",0
+"""PRT""","""Morus bassanus""","""Influenza A virus""",2
+"""HRV""","""Aves""","""Influenza A virus""",28
+"""RUS""","""Columba livia""","""Influenza A virus""",10
+"""RUS""","""Pelecanus crispus""","""Influenza A virus""",130
+"""RUS""","""Ichthyaetus ichthyaetus""","""Influenza A virus""",1800
+"""GIN""","""Aves""","""Influenza A virus""",234170
+"""GAB""","""Aves""","""Influenza A virus""",31000
+"""CZE""","""Anas platyrhynchos""","""Influenza A virus""",24
+"""MDA""","""Aves""","""Influenza A virus""",4540
+"""USA""","""Vulpes vulpes""","""Influenza A virus""",2518
+"""USA""","""Puma""","""Influenza A virus""",348
+"""USA""","""Pekania pennanti""","""Influenza A virus""",40
+"""USA""","""Mephitis mephitis""","""Influenza A virus""",800
+"""USA""","""Felis catus""","""Influenza A virus""",118
+"""USA""","""Martes americana""","""Influenza A virus""",20
+"""USA""","""Lontra canadensis""","""Influenza A virus""",6
+"""USA""","""Lynx rufus""","""Influenza A virus""",196
+"""USA""","""Ursus arctos""","""Influenza A virus""",58
+"""USA""","""Didelphis virginiana""","""Influenza A virus""",106
+"""USA""","""Panthera pardus orientalis""","""Influenza A virus""",28
+"""USA""","""Phoca vitulina""","""Influenza A virus""",536
+"""USA""","""Halichoerus grypus""","""Influenza A virus""",34
+"""USA""","""Canis latrans""","""Influenza A virus""",40
+"""CAN""","""Mephitis mephitis""","""Influenza A virus""",406
+"""CAN""","""Vulpes vulpes""","""Influenza A virus""",208
+"""CAN""","""Neogale vison""","""Influenza A virus""",2
+"""CAN""","""Phoca vitulina""","""Influenza A virus""",22
+"""RUS""","""Corvus corone""","""Influenza A virus""",2
+"""ISL""","""Haliaeetus albicilla""","""Influenza A virus""",2
+"""MNE""","""Pelecanus crispus""","""Influenza A virus""",20
+"""JPN""","""Nyctereutes procyonoides""","""Influenza A virus""",4
+"""MLI""","""Aves""","""Influenza A virus""",1075880
+"""PHL""","""Aves""","""Influenza A virus""",23520
+"""ALB""","""Pelecanus crispus""","""Influenza A virus""",6
+"""NPL""","""Corvus splendens""","""Influenza A virus""",174
+"""MKD""","""Phalacrocorax carbo""","""Influenza A virus""",4
+"""LTU""","""Ciconia ciconia""","""Influenza A virus""",24
+"""LTU""","""Cygnus olor""","""Influenza A virus""",24
+"""LTU""","""Anas platyrhynchos""","""Influenza A virus""",10
+"""GHA""","""Aves""","""Influenza A virus""",414520
+"""SWE""","""Phasianus colchicus""","""Influenza A virus""",20
+"""SWE""","""Haliaeetus albicilla""","""Influenza A virus""",28
+"""EST""","""Anser albifrons""","""Influenza A virus""",10
+"""EST""","""Cygnus olor""","""Influenza A virus""",10
+"""EST""","""Larus marinus""","""Influenza A virus""",10
+"""EST""","""Larus argentatus""","""Influenza A virus""",26
+"""EST""","""Accipiter gentilis""","""Influenza A virus""",18
+"""EST""","""Haliaeetus albicilla""","""Influenza A virus""",50
+"""LVA""","""Larus argentatus""","""Influenza A virus""",62
+"""LSO""","""Aves""","""Influenza A virus""",19942
+"""ZAF""","""Phalacrocorax capensis""","""Influenza A virus""",690870
+"""ZAF""","""Morus capensis""","""Influenza A virus""",636
+"""ZAF""","""Spheniscus demersus""","""Influenza A virus""",18908
+"""ZAF""","""Laridae""","""Influenza A virus""",1324
+"""ZAF""","""Phalacrocorax neglectus""","""Influenza A virus""",0
+"""ZAF""","""Larus dominicanus""","""Influenza A virus""",1456
+"""ZAF""","""Sterna hirundo""","""Influenza A virus""",246
+"""ZAF""","""Aves""","""Influenza A virus""",8041938
+"""ZAF""","""Ara ararauna""","""Influenza A virus""",84
+"""ZAF""","""Tyto alba""","""Influenza A virus""",84
+"""ZAF""","""Ciconia ciconia""","""Influenza A virus""",76
+"""ZAF""","""Alopochen aegyptiaca""","""Influenza A virus""",402
+"""ZAF""","""Bostrychia hagedash""","""Influenza A virus""",64
+"""ZAF""","""Phalacrocorax lucidus""","""Influenza A virus""",324
+"""ZAF""","""Cygnus atratus""","""Influenza A virus""",492
+"""ZAF""","""Plectropterus gambensis""","""Influenza A virus""",84
+"""ZAF""","""Threskiornis aethiopicus""","""Influenza A virus""",1188
+"""ZAF""","""Grus paradisea""","""Influenza A virus""",72
+"""EGY""","""Aves""","""Influenza A virus""",251408240
+"""ZAF""","""Stercorarius lonnbergi""","""Influenza A virus""",70
+"""ZAF""","""Thalasseus sandvicensis""","""Influenza A virus""",72
+"""ZAF""","""Pterodroma macroptera""","""Influenza A virus""",76
+"""ZAF""","""Haematopus bachmani""","""Influenza A virus""",76
+"""ZAF""","""Chroicocephalus cirrocephalus""","""Influenza A virus""",76
+"""ZAF""","""Anas platyrhynchos""","""Influenza A virus""",74
+"""FIN""","""Phasianus colchicus""","""Influenza A virus""",554
+"""FIN""","""Strix uralensis""","""Influenza A virus""",12
+"""FIN""","""Accipiter gentilis""","""Influenza A virus""",72
+"""FIN""","""Branta leucopsis""","""Influenza A virus""",748
+"""FIN""","""Haliaeetus albicilla""","""Influenza A virus""",220
+"""FIN""","""Cygnus olor""","""Influenza A virus""",104
+"""FIN""","""Bubo bubo""","""Influenza A virus""",32
+"""FIN""","""Larus argentatus""","""Influenza A virus""",108
+"""FIN""","""Larus canus""","""Influenza A virus""",34
+"""FIN""","""Mergus merganser""","""Influenza A virus""",36
+"""FRA""","""Anser sp.""","""Influenza A virus""",22
+"""NER""","""Aves""","""Influenza A virus""",65152
+"""NGA""","""Aves""","""Influenza A virus""",11454808
+"""SEN""","""Aves""","""Influenza A virus""",348000
+"""NLD""","""Aves""","""Influenza A virus""",600
+"""GBR""","""Stercorarius skua""","""Influenza A virus""",34
+"""GBR""","""Corvus frugilegus""","""Influenza A virus""",120
+"""LAO""","""Aves""","""Influenza A virus""",184348
+"""NLD""","""Sterna hirundo""","""Influenza A virus""",12
+"""NLD""","""Cygnus olor""","""Influenza A virus""",18
+"""NLD""","""Branta leucopsis""","""Influenza A virus""",130
+"""NLD""","""Uria aalge""","""Influenza A virus""",8
+"""NLD""","""Haliaeetus albicilla""","""Influenza A virus""",6
+"""NLD""","""Circus aeruginosus""","""Influenza A virus""",6
+"""NLD""","""Larus fuscus graellsii""","""Influenza A virus""",10
+"""NLD""","""Mareca penelope""","""Influenza A virus""",72
+"""NLD""","""Anser anser""","""Influenza A virus""",18
+"""NLD""","""Anas crecca""","""Influenza A virus""",18
+"""VNM""","""Aves""","""Influenza A virus""",15875646
+"""IND""","""Tyto longimembris""","""Influenza A virus""",16
+"""IND""","""Corvus splendens""","""Influenza A virus""",798
+"""IND""","""Harpactes erythrocephalus""","""Influenza A virus""",28
+"""CHN""","""Aves""","""Influenza A virus""",460848
+"""KHM""","""Aves""","""Influenza A virus""",237690
+"""PRK""","""Aves""","""Influenza A virus""",664000
+"""BGD""","""Aves""","""Influenza A virus""",21508854
+"""IRN""","""Aves""","""Influenza A virus""",40452
+"""IDN""","""Aves""","""Influenza A virus""",6332
+"""PER""","""Aves""","""Influenza A virus""",72
+"""THA""","""Aves""","""Influenza A virus""",74480
+"""TGO""","""Aves""","""Influenza A virus""",67934
+"""PAK""","""Aves""","""Influenza A virus""",16000
+"""FIN""","""Bos taurus""","""Influenza A virus""",4
+"""KOR""","""Aves""","""Influenza A virus""",294442
+"""UKR""","""Aves""","""Influenza A virus""",3300044
+"""SAU""","""Aves""","""Influenza A virus""",76424
+"""KAZ""","""Aves""","""Influenza A virus""",0
+"""DJI""","""Aves""","""Influenza A virus""",16
+"""SVN""","""Oncorhynchus mykiss""","""Influenza A virus""",12000
+"""KWT""","""Aves""","""Influenza A virus""",792
+"""AFG""","""Aves""","""Influenza A virus""",486
+"""SWE""","""Aves""","""Influenza A virus""",212
+"""CMR""","""Aves""","""Influenza A virus""",100
+"""MYS""","""Aves""","""Influenza A virus""",464
+"""BFA""","""Aves""","""Influenza A virus""",0
+"""SDN""","""Aves""","""Influenza A virus""",952560
+"""SSD""","""Aves""","""Influenza A virus""",0
+"""CIV""","""Aves""","""Influenza A virus""",10954
+"""ALB""","""Aves""","""Influenza A virus""",1422
