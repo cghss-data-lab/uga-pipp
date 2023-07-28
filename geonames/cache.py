@@ -22,11 +22,9 @@ def cache(file: str, is_class=False) -> Callable:
             key = args
             if is_class:
                 key = args[1:]
-                print(args)
             try:
                 return function.cache[key]
             except KeyError:
-                print(args)
                 function.cache[key] = result = function(*args)
                 save_cache(function.cache, file)
                 return result
