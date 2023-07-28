@@ -3,7 +3,7 @@ from functools import wraps
 from typing import Callable
 
 
-def cache(file: str) -> Callable:
+def cache(file: str, is_class=False) -> Callable:
     """
     Simple cache implementation.
     It caches results and allows O(1) access to cache.
@@ -14,13 +14,20 @@ def cache(file: str) -> Callable:
             function.cache = load_cache(file)
         except FileNotFoundError:
             function.cache = {}
+        except EOFError:
+            function.cache = {}
 
         @wraps(function)
         def memoize(*args):
+            key = args
+            if is_class:
+                key = args[1:]
+                print(args)
             try:
-                return function.cache[args]
+                return function.cache[key]
             except KeyError:
-                function.cache[args] = result = function(*args)
+                print(args)
+                function.cache[key] = result = function(*args)
                 save_cache(function.cache, file)
                 return result
 
