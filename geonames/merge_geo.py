@@ -51,6 +51,13 @@ def create_properties(parameters: dict) -> str:
     return properties
 
 
+def multiline_merge_queries(merge_nodes: str) -> str:
+    merge_all_nodes_query = re.findall(r"(?=(\([a-z]\).*?\([a-z]\)))", merge_nodes)
+    merge_all_nodes_query = ["MERGE " + merge for merge in merge_all_nodes_query]
+    merge_all_nodes_query = "\n".join(merge_all_nodes_query)
+    return merge_all_nodes_query
+
+
 def merge_geo(geoname_id, session):
     """
     Search for a location by name and return ID, obtain its hierarchy,
@@ -103,12 +110,6 @@ def merge_geo(geoname_id, session):
         f"({k})" for k, v in zip(string.ascii_lowercase, nodes)
     )
     logger.info(f"Creating geographical nodes {merge_all_nodes_query}")
-    merge_all_nodes_query = re.findall(
-        r"(?=(\([a-z]\).*?\([a-z]\)))", merge_all_nodes_query
-    )
-    merge_all_nodes_query = ["MERGE " + merge for merge in merge_all_nodes_query]
-    merge_all_nodes_query = "\n".join(merge_all_nodes_query)
-
+    merge_all_nodes_query = multiline_merge_queries(merge_all_nodes_query)
     query = create_all_nodes_query + merge_all_nodes_query
-
     session.run(query)
