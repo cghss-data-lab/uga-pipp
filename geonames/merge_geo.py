@@ -2,6 +2,7 @@ import re
 import string
 from loguru import logger
 from geonames.geo_api import GeonamesApi
+from geonames.polygons import search_for_polygon
 
 FCODE_TO_LABEL = {
     "CONT": "Continent",
@@ -29,7 +30,7 @@ def process_parameters(geonameId, metadata, lat, long, iso2) -> dict:
         "lat": float(lat) if lat is not None else "NA",
         "long": float(long) if long is not None else "NA",
         "elevation": metadata.get("elevation", "NA"),
-        "polygon": metadata.get("polygon", "NA"),
+        "polygon": search_for_polygon(geonameId),
     }
     if metadata.get("fcode") == "PCLI":
         parameters["iso3"] = geonames_api.get_iso(iso2)
@@ -40,7 +41,7 @@ def process_parameters(geonameId, metadata, lat, long, iso2) -> dict:
 
 def format_value(value):
     if isinstance(value, str):
-        return f'"{value}"'
+        return f"'{value}'"
     if value is None:
         return "NULL"
     return value
@@ -76,7 +77,7 @@ def merge_geo(geoname_id, session):
     # Create nodes and CONTAINS relationships for each level in the hierarchy
     for i, place in zip(string.ascii_lowercase, hierarchy_list):
         # place = hierarchy_list[i]
-        geonameId = place.get("geonameId", None)
+        geonameId = place.get("geonameId", None)  # maybe garbage
         iso2 = place.get("countryCode", None)
 
         if not geonameId:
@@ -92,14 +93,13 @@ def merge_geo(geoname_id, session):
             parameters[
                 "location"
             ] = "point({latitude: toFloat($lat), longitude: toFloat($long)})"
-
+        parameters = create_properties(parameters)
         # Get the label for this node based on its fcode value
         fcode = metadata.get("fcode")
         label = "Geography"
         if fcode in FCODE_TO_LABEL:
             fcode = FCODE_TO_LABEL[fcode]
             label += f":{fcode}"
-        parameters = create_properties(parameters)
 
         # Query
         geo_query = f"MERGE ({i}:{label} {{ {parameters} }})"
