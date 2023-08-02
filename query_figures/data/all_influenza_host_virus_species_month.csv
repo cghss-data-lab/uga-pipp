@@ -1,0 +1,1122 @@
+﻿yearMonth,species,virus,monthlyCases
+"""2004-12""","""Homo sapiens""","""Influenza A virus""",1225
+"""2005-1""","""Homo sapiens""","""Influenza A virus""",21287
+"""2005-1""","""Aves""","""Influenza A virus""",1
+"""2005-10""","""Aves""","""H5N1 subtype""",15556
+"""2005-10""","""Homo sapiens""","""Influenza A virus""",3456
+"""2005-11""","""Homo sapiens""","""Influenza A virus""",6030
+"""2005-11""","""Aves""","""H5N1 subtype""",2878
+"""2005-12""","""Aves""","""H5N1 subtype""",149204
+"""2005-12""","""Homo sapiens""","""Influenza A virus""",8370
+"""2005-2""","""Homo sapiens""","""Influenza A virus""",29924
+"""2005-3""","""Homo sapiens""","""Influenza A virus""",19008
+"""2005-4""","""Homo sapiens""","""Influenza A virus""",8663
+"""2005-5""","""Homo sapiens""","""Influenza A virus""",15067
+"""2005-5""","""Equidae""","""Influenza A virus""",4
+"""2005-6""","""Homo sapiens""","""Influenza A virus""",15841
+"""2005-7""","""Homo sapiens""","""Influenza A virus""",6673
+"""2005-7""","""Aves""","""H5N1 subtype""",3628
+"""2005-8""","""Aves""","""H5N1 subtype""",29513
+"""2005-8""","""Homo sapiens""","""Influenza A virus""",2661
+"""2005-9""","""Homo sapiens""","""Influenza A virus""",1162
+"""2005-9""","""Aves""","""H5N1 subtype""",44
+"""2006-1""","""Aves""","""H5N1 subtype""",141743
+"""2006-1""","""Homo sapiens""","""Influenza A virus""",19201
+"""2006-10""","""Homo sapiens""","""Influenza A virus""",2432
+"""2006-11""","""Aves""","""H5N1 subtype""",6652
+"""2006-11""","""Homo sapiens""","""Influenza A virus""",1518
+"""2006-12""","""Aves""","""H5N1 subtype""",295884
+"""2006-12""","""Homo sapiens""","""Influenza A virus""",6766
+"""2006-2""","""Aves""","""H5N1 subtype""",2416568
+"""2006-2""","""Homo sapiens""","""Influenza A virus""",20869
+"""2006-3""","""Aves""","""H5N1 subtype""",13876790
+"""2006-3""","""Homo sapiens""","""Influenza A virus""",20620
+"""2006-4""","""Aves""","""H5N1 subtype""",100864
+"""2006-4""","""Homo sapiens""","""Influenza A virus""",6131
+"""2006-5""","""Aves""","""H5N1 subtype""",145748
+"""2006-5""","""Homo sapiens""","""Influenza A virus""",4172
+"""2006-6""","""Homo sapiens""","""Influenza A virus""",7468
+"""2006-6""","""Aves""","""H5N1 subtype""",1940
+"""2006-7""","""Aves""","""H5N1 subtype""",21295
+"""2006-7""","""Homo sapiens""","""Influenza A virus""",9909
+"""2006-8""","""Homo sapiens""","""Influenza A virus""",4470
+"""2006-8""","""Aves""","""H5N1 subtype""",2358
+"""2006-9""","""Homo sapiens""","""Influenza A virus""",3583
+"""2007-1""","""Aves""","""H5N1 subtype""",398856
+"""2007-1""","""Homo sapiens""","""Influenza A virus""",28776
+"""2007-1""","""Oncorhynchus mykiss""","""H5N1 subtype""",3000
+"""2007-10""","""Equidae""","""Influenza A virus""",30320
+"""2007-10""","""Aves""","""H5N1 subtype""",11535
+"""2007-10""","""Homo sapiens""","""Influenza A virus""",3343
+"""2007-11""","""Aves""","""H5N1 subtype""",41518
+"""2007-11""","""Homo sapiens""","""Influenza A virus""",5470
+"""2007-11""","""Equidae""","""Influenza A virus""",36
+"""2007-12""","""Aves""","""H5N1 subtype""",101494
+"""2007-12""","""Homo sapiens""","""Influenza A virus""",13171
+"""2007-12""","""Equidae""","""Influenza A virus""",38
+"""2007-2""","""Aves""","""H5N1 subtype""",497899
+"""2007-2""","""Homo sapiens""","""Influenza A virus""",39452
+"""2007-3""","""Aves""","""H5N1 subtype""",216839
+"""2007-3""","""Homo sapiens""","""Influenza A virus""",28816
+"""2007-4""","""Aves""","""H5N1 subtype""",306110
+"""2007-4""","""Homo sapiens""","""Influenza A virus""",8557
+"""2007-5""","""Aves""","""H5N1 subtype""",34068
+"""2007-5""","""Homo sapiens""","""Influenza A virus""",5716
+"""2007-6""","""Aves""","""H5N1 subtype""",21362
+"""2007-6""","""Homo sapiens""","""Influenza A virus""",8778
+"""2007-6""","""Bos taurus""","""Influenza A virus""",102
+"""2007-7""","""Aves""","""H5N1 subtype""",136091
+"""2007-7""","""Homo sapiens""","""Influenza A virus""",18715
+"""2007-8""","""Homo sapiens""","""Influenza A virus""",7085
+"""2007-8""","""Aves""","""H5N1 subtype""",5541
+"""2007-8""","""Equidae""","""Influenza A virus""",4218
+"""2007-9""","""Aves""","""H5N1 subtype""",11439
+"""2007-9""","""Homo sapiens""","""Influenza A virus""",5221
+"""2007-9""","""Equidae""","""Influenza A virus""",1562
+"""2007-9""","""Aves""","""Influenza A virus""",540
+"""2008-1""","""Aves""","""H5N1 subtype""",266729
+"""2008-1""","""Homo sapiens""","""Influenza A virus""",32240
+"""2008-1""","""Equidae""","""Influenza A virus""",821
+"""2008-1""","""Bos taurus""","""H5N1 subtype""",1
+"""2008-10""","""Homo sapiens""","""Influenza A virus""",4370
+"""2008-10""","""Aves""","""H5N1 subtype""",1417
+"""2008-10""","""Equidae""","""Influenza A virus""",722
+"""2008-11""","""Homo sapiens""","""Influenza A virus""",7138
+"""2008-11""","""Aves""","""H5N1 subtype""",1148
+"""2008-11""","""Equidae""","""Influenza A virus""",503
+"""2008-12""","""Homo sapiens""","""Influenza A virus""",25364
+"""2008-12""","""Aves""","""H5N1 subtype""",2626
+"""2008-12""","""Equidae""","""Influenza A virus""",32
+"""2008-2""","""Aves""","""H5N1 subtype""",150625
+"""2008-2""","""Homo sapiens""","""Influenza A virus""",38888
+"""2008-2""","""Equidae""","""Influenza A virus""",18
+"""2008-3""","""Aves""","""H5N1 subtype""",92661
+"""2008-3""","""Homo sapiens""","""Influenza A virus""",46306
+"""2008-3""","""Equidae""","""Influenza A virus""",46
+"""2008-4""","""Aves""","""H5N1 subtype""",23061
+"""2008-4""","""Homo sapiens""","""Influenza A virus""",19718
+"""2008-4""","""Aves""","""Influenza A virus""",2380
+"""2008-4""","""Equidae""","""Influenza A virus""",88
+"""2008-5""","""Aves""","""H5N1 subtype""",36587
+"""2008-5""","""Homo sapiens""","""Influenza A virus""",6376
+"""2008-5""","""Equidae""","""Influenza A virus""",12
+"""2008-6""","""Aves""","""H5N1 subtype""",16503
+"""2008-6""","""Homo sapiens""","""Influenza A virus""",6520
+"""2008-6""","""Equidae""","""Influenza A virus""",5613
+"""2008-7""","""Equidae""","""Influenza A virus""",12663
+"""2008-7""","""Homo sapiens""","""Influenza A virus""",9576
+"""2008-7""","""Aves""","""H5N1 subtype""",2856
+"""2008-8""","""Homo sapiens""","""Influenza A virus""",9976
+"""2008-8""","""Aves""","""H5N1 subtype""",2557
+"""2008-8""","""Equidae""","""Influenza A virus""",555
+"""2008-9""","""Homo sapiens""","""Influenza A virus""",8004
+"""2008-9""","""Aves""","""H5N1 subtype""",5778
+"""2008-9""","""Equidae""","""Influenza A virus""",49
+"""2009-1""","""Homo sapiens""","""Influenza A virus""",58938
+"""2009-1""","""Aves""","""H5N1 subtype""",1883
+"""2009-10""","""Homo sapiens""","""Influenza A virus""",267318
+"""2009-10""","""Homo sapiens""","""H1N1 subtype""",144844
+"""2009-10""","""Neogale vison""","""Influenza A virus""",51987
+"""2009-10""","""Sus scrofa""","""Influenza A virus""",429
+"""2009-10""","""Aves""","""Influenza A virus""",42
+"""2009-11""","""Homo sapiens""","""Influenza A virus""",427192
+"""2009-11""","""Homo sapiens""","""H1N1 subtype""",270024
+"""2009-11""","""Sus scrofa""","""Influenza A virus""",1265
+"""2009-11""","""Aves""","""H5N1 subtype""",635
+"""2009-11""","""Canis lupus familiaris""","""Influenza A virus""",2
+"""2009-12""","""Homo sapiens""","""Influenza A virus""",128724
+"""2009-12""","""Homo sapiens""","""H1N1 subtype""",81800
+"""2009-12""","""Sus scrofa""","""Influenza A virus""",1559
+"""2009-12""","""Aves""","""H5N1 subtype""",641
+"""2009-2""","""Homo sapiens""","""Influenza A virus""",52698
+"""2009-2""","""Aves""","""H5N1 subtype""",8551
+"""2009-2""","""Homo sapiens""","""H1N1 subtype""",466
+"""2009-2""","""Aves""","""H7N9 subtype""",6
+"""2009-3""","""Homo sapiens""","""Influenza A virus""",45348
+"""2009-3""","""Aves""","""H5N1 subtype""",1550
+"""2009-3""","""Homo sapiens""","""H1N1 subtype""",978
+"""2009-3""","""Equidae""","""Influenza A virus""",84
+"""2009-4""","""Homo sapiens""","""Influenza A virus""",47568
+"""2009-4""","""Homo sapiens""","""H1N1 subtype""",11568
+"""2009-4""","""Aves""","""H5N1 subtype""",1760
+"""2009-4""","""Sus scrofa""","""Influenza A virus""",452
+"""2009-5""","""Homo sapiens""","""Influenza A virus""",65036
+"""2009-5""","""Homo sapiens""","""H1N1 subtype""",20876
+"""2009-5""","""Aves""","""H5N1 subtype""",373
+"""2009-5""","""Equidae""","""Influenza A virus""",166
+"""2009-6""","""Homo sapiens""","""Influenza A virus""",221080
+"""2009-6""","""Homo sapiens""","""H1N1 subtype""",89804
+"""2009-6""","""Sus scrofa""","""Influenza A virus""",2455
+"""2009-6""","""Aves""","""H5N1 subtype""",650
+"""2009-7""","""Homo sapiens""","""Influenza A virus""",185518
+"""2009-7""","""Homo sapiens""","""H1N1 subtype""",85444
+"""2009-7""","""Aves""","""Influenza A virus""",36585
+"""2009-7""","""Sus scrofa""","""Influenza A virus""",100
+"""2009-8""","""Homo sapiens""","""Influenza A virus""",220712
+"""2009-8""","""Homo sapiens""","""H1N1 subtype""",100936
+"""2009-8""","""Sus scrofa""","""Influenza A virus""",1950
+"""2009-9""","""Homo sapiens""","""Influenza A virus""",275926
+"""2009-9""","""Homo sapiens""","""H1N1 subtype""",118822
+"""2009-9""","""Neogale vison""","""Influenza A virus""",8450
+"""2009-9""","""Sus scrofa""","""Influenza A virus""",4609
+"""2010-1""","""Homo sapiens""","""Influenza A virus""",66486
+"""2010-1""","""Aves""","""H5N1 subtype""",41327
+"""2010-1""","""Homo sapiens""","""H1N1 subtype""",40646
+"""2010-1""","""Aves""","""Influenza A virus""",7000
+"""2010-1""","""Sus scrofa""","""Influenza A virus""",1855
+"""2010-10""","""Homo sapiens""","""Influenza A virus""",28290
+"""2010-10""","""Homo sapiens""","""H1N1 subtype""",10850
+"""2010-10""","""Aves""","""H5N1 subtype""",66
+"""2010-11""","""Homo sapiens""","""Influenza A virus""",25450
+"""2010-11""","""Homo sapiens""","""H1N1 subtype""",9774
+"""2010-11""","""Aves""","""H5N1 subtype""",301
+"""2010-12""","""Homo sapiens""","""Influenza A virus""",53705
+"""2010-12""","""Homo sapiens""","""H1N1 subtype""",30783
+"""2010-12""","""Aves""","""H5N1 subtype""",33
+"""2010-2""","""Homo sapiens""","""Influenza A virus""",38812
+"""2010-2""","""Homo sapiens""","""H1N1 subtype""",22770
+"""2010-2""","""Aves""","""H5N1 subtype""",11420
+"""2010-3""","""Homo sapiens""","""Influenza A virus""",53142
+"""2010-3""","""Homo sapiens""","""H1N1 subtype""",23826
+"""2010-3""","""Aves""","""H5N1 subtype""",5923
+"""2010-4""","""Homo sapiens""","""Influenza A virus""",22586
+"""2010-4""","""Homo sapiens""","""H1N1 subtype""",10404
+"""2010-4""","""Aves""","""H5N1 subtype""",2350
+"""2010-4""","""Sus scrofa""","""Influenza A virus""",36
+"""2010-5""","""Homo sapiens""","""Influenza A virus""",18886
+"""2010-5""","""Homo sapiens""","""H1N1 subtype""",9100
+"""2010-5""","""Aves""","""H5N1 subtype""",261
+"""2010-6""","""Homo sapiens""","""Influenza A virus""",9520
+"""2010-6""","""Homo sapiens""","""H1N1 subtype""",6124
+"""2010-6""","""Aves""","""H5N1 subtype""",5933
+"""2010-7""","""Homo sapiens""","""Influenza A virus""",16908
+"""2010-7""","""Homo sapiens""","""H1N1 subtype""",10272
+"""2010-7""","""Aves""","""H5N1 subtype""",760
+"""2010-8""","""Homo sapiens""","""Influenza A virus""",42166
+"""2010-8""","""Homo sapiens""","""H1N1 subtype""",22998
+"""2010-8""","""Sus scrofa""","""Influenza A virus""",150
+"""2010-9""","""Homo sapiens""","""Influenza A virus""",39548
+"""2010-9""","""Homo sapiens""","""H1N1 subtype""",18944
+"""2010-9""","""Sus scrofa""","""Influenza A virus""",4
+"""2011-1""","""Homo sapiens""","""Influenza A virus""",176539
+"""2011-1""","""Homo sapiens""","""H1N1 subtype""",110222
+"""2011-1""","""Aves""","""H5N1 subtype""",93116
+"""2011-10""","""Homo sapiens""","""Influenza A virus""",12492
+"""2011-10""","""Homo sapiens""","""H1N1 subtype""",7950
+"""2011-10""","""Aves""","""H5N1 subtype""",1250
+"""2011-11""","""Homo sapiens""","""Influenza A virus""",9118
+"""2011-11""","""Aves""","""H5N1 subtype""",5138
+"""2011-11""","""Homo sapiens""","""H1N1 subtype""",4052
+"""2011-12""","""Homo sapiens""","""Influenza A virus""",19499
+"""2011-12""","""Homo sapiens""","""H1N1 subtype""",6440
+"""2011-12""","""Aves""","""H5N1 subtype""",516
+"""2011-12""","""Equidae""","""Influenza A virus""",4
+"""2011-2""","""Homo sapiens""","""Influenza A virus""",93177
+"""2011-2""","""Homo sapiens""","""H1N1 subtype""",64909
+"""2011-2""","""Aves""","""H5N1 subtype""",26814
+"""2011-3""","""Aves""","""H5N1 subtype""",44624
+"""2011-3""","""Homo sapiens""","""Influenza A virus""",37906
+"""2011-3""","""Homo sapiens""","""H1N1 subtype""",26918
+"""2011-3""","""Bos taurus""","""H5N1 subtype""",2
+"""2011-4""","""Homo sapiens""","""Influenza A virus""",13908
+"""2011-4""","""Homo sapiens""","""H1N1 subtype""",9144
+"""2011-4""","""Aves""","""H5N1 subtype""",8370
+"""2011-5""","""Homo sapiens""","""Influenza A virus""",7227
+"""2011-5""","""Homo sapiens""","""H1N1 subtype""",4071
+"""2011-5""","""Aves""","""H5N1 subtype""",2258
+"""2011-6""","""Homo sapiens""","""Influenza A virus""",5933
+"""2011-6""","""Homo sapiens""","""H1N1 subtype""",4469
+"""2011-7""","""Equidae""","""Influenza A virus""",75208
+"""2011-7""","""Homo sapiens""","""Influenza A virus""",10469
+"""2011-7""","""Homo sapiens""","""H1N1 subtype""",7132
+"""2011-7""","""Aves""","""H5N1 subtype""",5298
+"""2011-8""","""Homo sapiens""","""Influenza A virus""",13703
+"""2011-8""","""Homo sapiens""","""H1N1 subtype""",8058
+"""2011-8""","""Aves""","""H5N1 subtype""",4642
+"""2011-9""","""Homo sapiens""","""Influenza A virus""",11504
+"""2011-9""","""Homo sapiens""","""H1N1 subtype""",5997
+"""2011-9""","""Aves""","""H5N1 subtype""",2820
+"""2012-1""","""Homo sapiens""","""Influenza A virus""",75875
+"""2012-1""","""Homo sapiens""","""H1N1 subtype""",32110
+"""2012-1""","""Aves""","""H5N1 subtype""",14613
+"""2012-1""","""Equidae""","""Influenza A virus""",190
+"""2012-10""","""Homo sapiens""","""Influenza A virus""",14468
+"""2012-10""","""Homo sapiens""","""H1N1 subtype""",7864
+"""2012-10""","""Aves""","""H5N1 subtype""",4725
+"""2012-11""","""Homo sapiens""","""Influenza A virus""",14953
+"""2012-11""","""Homo sapiens""","""H1N1 subtype""",6962
+"""2012-12""","""Homo sapiens""","""Influenza A virus""",77848
+"""2012-12""","""Homo sapiens""","""H1N1 subtype""",39409
+"""2012-12""","""Aves""","""H5N1 subtype""",6097
+"""2012-12""","""Bos taurus""","""H5N1 subtype""",1
+"""2012-2""","""Homo sapiens""","""Influenza A virus""",124476
+"""2012-2""","""Homo sapiens""","""H1N1 subtype""",55666
+"""2012-2""","""Aves""","""H5N1 subtype""",13736
+"""2012-2""","""Equidae""","""Influenza A virus""",27
+"""2012-3""","""Homo sapiens""","""Influenza A virus""",102652
+"""2012-3""","""Aves""","""H5N1 subtype""",46577
+"""2012-3""","""Homo sapiens""","""H1N1 subtype""",43773
+"""2012-3""","""Equidae""","""Influenza A virus""",3
+"""2012-4""","""Homo sapiens""","""Influenza A virus""",42676
+"""2012-4""","""Aves""","""H5N1 subtype""",27053
+"""2012-4""","""Homo sapiens""","""H1N1 subtype""",19410
+"""2012-4""","""Bos taurus""","""H5N1 subtype""",2
+"""2012-5""","""Homo sapiens""","""Influenza A virus""",22880
+"""2012-5""","""Homo sapiens""","""H1N1 subtype""",10721
+"""2012-5""","""Aves""","""H5N1 subtype""",564
+"""2012-6""","""Homo sapiens""","""Influenza A virus""",19690
+"""2012-6""","""Homo sapiens""","""H1N1 subtype""",8126
+"""2012-6""","""Aves""","""H5N1 subtype""",6201
+"""2012-7""","""Homo sapiens""","""Influenza A virus""",35192
+"""2012-7""","""Homo sapiens""","""H1N1 subtype""",18059
+"""2012-7""","""Aves""","""H5N1 subtype""",5537
+"""2012-8""","""Homo sapiens""","""Influenza A virus""",21552
+"""2012-8""","""Homo sapiens""","""H1N1 subtype""",8812
+"""2012-8""","""Aves""","""H5N1 subtype""",2500
+"""2012-8""","""Bos taurus""","""H5N1 subtype""",18
+"""2012-9""","""Aves""","""H5N1 subtype""",14050
+"""2012-9""","""Homo sapiens""","""Influenza A virus""",13004
+"""2012-9""","""Homo sapiens""","""H1N1 subtype""",8003
+"""2013-1""","""Homo sapiens""","""Influenza A virus""",159170
+"""2013-1""","""Homo sapiens""","""H1N1 subtype""",87348
+"""2013-1""","""Aves""","""H5N1 subtype""",3569
+"""2013-1""","""Chroicocephalus ridibundus""","""H5N1 subtype""",1
+"""2013-10""","""Homo sapiens""","""Influenza A virus""",13384
+"""2013-10""","""Homo sapiens""","""H1N1 subtype""",7022
+"""2013-10""","""Aves""","""H5N1 subtype""",370
+"""2013-10""","""Bos taurus""","""H5N1 subtype""",1
+"""2013-11""","""Homo sapiens""","""Influenza A virus""",19526
+"""2013-11""","""Homo sapiens""","""H1N1 subtype""",10818
+"""2013-12""","""Homo sapiens""","""Influenza A virus""",97334
+"""2013-12""","""Homo sapiens""","""H1N1 subtype""",48249
+"""2013-12""","""Aves""","""H7N9 subtype""",1355
+"""2013-2""","""Homo sapiens""","""Influenza A virus""",159483
+"""2013-2""","""Homo sapiens""","""H1N1 subtype""",86282
+"""2013-2""","""Aves""","""H5N1 subtype""",4973
+"""2013-2""","""Bos taurus""","""H5N1 subtype""",1
+"""2013-3""","""Homo sapiens""","""Influenza A virus""",84211
+"""2013-3""","""Homo sapiens""","""H1N1 subtype""",46562
+"""2013-3""","""Aves""","""H5N1 subtype""",3885
+"""2013-3""","""Aves""","""H7N9 subtype""",1566
+"""2013-4""","""Aves""","""H5N1 subtype""",205582
+"""2013-4""","""Homo sapiens""","""Influenza A virus""",39866
+"""2013-4""","""Homo sapiens""","""H1N1 subtype""",23481
+"""2013-4""","""Aves""","""H7N9 subtype""",51
+"""2013-4""","""Corvus splendens""","""H5N1 subtype""",1
+"""2013-5""","""Homo sapiens""","""Influenza A virus""",15935
+"""2013-5""","""Homo sapiens""","""H1N1 subtype""",10946
+"""2013-5""","""Aves""","""H5N1 subtype""",3214
+"""2013-5""","""Aves""","""H7N9 subtype""",2
+"""2013-6""","""Homo sapiens""","""Influenza A virus""",23861
+"""2013-6""","""Homo sapiens""","""H1N1 subtype""",15328
+"""2013-6""","""Aves""","""H7N9 subtype""",8068
+"""2013-6""","""Aves""","""H5N1 subtype""",886
+"""2013-7""","""Aves""","""H5N1 subtype""",74608
+"""2013-7""","""Homo sapiens""","""Influenza A virus""",30616
+"""2013-7""","""Homo sapiens""","""H1N1 subtype""",20634
+"""2013-7""","""Equidae""","""Influenza A virus""",10
+"""2013-7""","""Corvus splendens""","""H5N1 subtype""",1
+"""2013-8""","""Aves""","""H5N1 subtype""",48987
+"""2013-8""","""Homo sapiens""","""Influenza A virus""",17810
+"""2013-8""","""Homo sapiens""","""H1N1 subtype""",11500
+"""2013-8""","""Aves""","""H7N9 subtype""",4423
+"""2013-9""","""Homo sapiens""","""Influenza A virus""",20028
+"""2013-9""","""Homo sapiens""","""H1N1 subtype""",12584
+"""2013-9""","""Aves""","""H5N1 subtype""",4529
+"""2013-9""","""Aves""","""H7N9 subtype""",415
+"""2014-1""","""Homo sapiens""","""Influenza A virus""",175881
+"""2014-1""","""Homo sapiens""","""H1N1 subtype""",92307
+"""2014-1""","""Aves""","""H5N1 subtype""",3895
+"""2014-1""","""Aves""","""H7N9 subtype""",14
+"""2014-10""","""Homo sapiens""","""Influenza A virus""",9319
+"""2014-10""","""Homo sapiens""","""H1N1 subtype""",3837
+"""2014-11""","""Homo sapiens""","""Influenza A virus""",23186
+"""2014-11""","""Homo sapiens""","""H1N1 subtype""",8567
+"""2014-12""","""Homo sapiens""","""Influenza A virus""",122461
+"""2014-12""","""Homo sapiens""","""H1N1 subtype""",50471
+"""2014-2""","""Homo sapiens""","""Influenza A virus""",149442
+"""2014-2""","""Homo sapiens""","""H1N1 subtype""",80524
+"""2014-2""","""Aves""","""H5N1 subtype""",37006
+"""2014-2""","""Aves""","""H7N9 subtype""",8
+"""2014-3""","""Homo sapiens""","""Influenza A virus""",99853
+"""2014-3""","""Homo sapiens""","""H1N1 subtype""",56209
+"""2014-3""","""Aves""","""H5N1 subtype""",23136
+"""2014-3""","""Aves""","""H7N9 subtype""",6
+"""2014-4""","""Homo sapiens""","""Influenza A virus""",32316
+"""2014-4""","""Homo sapiens""","""H1N1 subtype""",17548
+"""2014-4""","""Aves""","""H7N9 subtype""",5
+"""2014-5""","""Homo sapiens""","""Influenza A virus""",18435
+"""2014-5""","""Homo sapiens""","""H1N1 subtype""",10094
+"""2014-6""","""Homo sapiens""","""Influenza A virus""",27963
+"""2014-6""","""Homo sapiens""","""H1N1 subtype""",14198
+"""2014-6""","""Aves""","""H7N9 subtype""",2
+"""2014-7""","""Homo sapiens""","""Influenza A virus""",37880
+"""2014-7""","""Homo sapiens""","""H1N1 subtype""",18595
+"""2014-8""","""Homo sapiens""","""Influenza A virus""",33994
+"""2014-8""","""Homo sapiens""","""H1N1 subtype""",15775
+"""2014-9""","""Homo sapiens""","""Influenza A virus""",22608
+"""2014-9""","""Homo sapiens""","""H1N1 subtype""",10300
+"""2015-1""","""Homo sapiens""","""Influenza A virus""",209712
+"""2015-1""","""Homo sapiens""","""H1N1 subtype""",106030
+"""2015-10""","""Homo sapiens""","""Influenza A virus""",8996
+"""2015-10""","""Homo sapiens""","""H1N1 subtype""",6648
+"""2015-11""","""Homo sapiens""","""Influenza A virus""",17492
+"""2015-11""","""Homo sapiens""","""H1N1 subtype""",13121
+"""2015-12""","""Homo sapiens""","""Influenza A virus""",31698
+"""2015-12""","""Homo sapiens""","""H1N1 subtype""",21298
+"""2015-2""","""Homo sapiens""","""Influenza A virus""",270716
+"""2015-2""","""Homo sapiens""","""H1N1 subtype""",142148
+"""2015-3""","""Homo sapiens""","""Influenza A virus""",162152
+"""2015-3""","""Homo sapiens""","""H1N1 subtype""",93430
+"""2015-4""","""Homo sapiens""","""Influenza A virus""",40358
+"""2015-4""","""Homo sapiens""","""H1N1 subtype""",24072
+"""2015-5""","""Homo sapiens""","""Influenza A virus""",19626
+"""2015-5""","""Homo sapiens""","""H1N1 subtype""",10778
+"""2015-6""","""Homo sapiens""","""Influenza A virus""",37837
+"""2015-6""","""Homo sapiens""","""H1N1 subtype""",25384
+"""2015-7""","""Homo sapiens""","""Influenza A virus""",41978
+"""2015-7""","""Homo sapiens""","""H1N1 subtype""",20410
+"""2015-8""","""Homo sapiens""","""Influenza A virus""",38103
+"""2015-8""","""Homo sapiens""","""H1N1 subtype""",20618
+"""2015-9""","""Homo sapiens""","""Influenza A virus""",16272
+"""2015-9""","""Homo sapiens""","""H1N1 subtype""",8354
+"""2016-1""","""Homo sapiens""","""Influenza A virus""",130506
+"""2016-1""","""Homo sapiens""","""H1N1 subtype""",84480
+"""2016-10""","""Homo sapiens""","""Influenza A virus""",30424
+"""2016-10""","""Homo sapiens""","""H1N1 subtype""",15160
+"""2016-11""","""Homo sapiens""","""Influenza A virus""",47851
+"""2016-11""","""Homo sapiens""","""H1N1 subtype""",20224
+"""2016-12""","""Homo sapiens""","""Influenza A virus""",172902
+"""2016-12""","""Homo sapiens""","""H1N1 subtype""",58344
+"""2016-2""","""Homo sapiens""","""Influenza A virus""",331136
+"""2016-2""","""Homo sapiens""","""H1N1 subtype""",184594
+"""2016-3""","""Homo sapiens""","""Influenza A virus""",227552
+"""2016-3""","""Homo sapiens""","""H1N1 subtype""",134175
+"""2016-4""","""Homo sapiens""","""Influenza A virus""",85508
+"""2016-4""","""Homo sapiens""","""H1N1 subtype""",54060
+"""2016-5""","""Homo sapiens""","""Influenza A virus""",36576
+"""2016-5""","""Homo sapiens""","""H1N1 subtype""",27050
+"""2016-6""","""Homo sapiens""","""Influenza A virus""",19464
+"""2016-6""","""Homo sapiens""","""H1N1 subtype""",14299
+"""2016-7""","""Homo sapiens""","""Influenza A virus""",15374
+"""2016-7""","""Homo sapiens""","""H1N1 subtype""",9825
+"""2016-8""","""Homo sapiens""","""Influenza A virus""",27103
+"""2016-8""","""Homo sapiens""","""H1N1 subtype""",14147
+"""2016-9""","""Homo sapiens""","""Influenza A virus""",21960
+"""2016-9""","""Homo sapiens""","""H1N1 subtype""",12576
+"""2017-1""","""Homo sapiens""","""Influenza A virus""",298221
+"""2017-1""","""Homo sapiens""","""H1N1 subtype""",115624
+"""2017-10""","""Homo sapiens""","""Influenza A virus""",31013
+"""2017-10""","""Homo sapiens""","""H1N1 subtype""",21370
+"""2017-11""","""Homo sapiens""","""Influenza A virus""",53155
+"""2017-11""","""Homo sapiens""","""H1N1 subtype""",33354
+"""2017-12""","""Homo sapiens""","""Influenza A virus""",187991
+"""2017-12""","""Homo sapiens""","""H1N1 subtype""",104956
+"""2017-2""","""Homo sapiens""","""Influenza A virus""",154190
+"""2017-2""","""Homo sapiens""","""H1N1 subtype""",62690
+"""2017-3""","""Homo sapiens""","""Influenza A virus""",83728
+"""2017-3""","""Homo sapiens""","""H1N1 subtype""",37070
+"""2017-4""","""Homo sapiens""","""Influenza A virus""",43572
+"""2017-4""","""Homo sapiens""","""H1N1 subtype""",22268
+"""2017-5""","""Homo sapiens""","""Influenza A virus""",50400
+"""2017-5""","""Homo sapiens""","""H1N1 subtype""",23634
+"""2017-6""","""Homo sapiens""","""Influenza A virus""",44882
+"""2017-6""","""Homo sapiens""","""H1N1 subtype""",16310
+"""2017-7""","""Homo sapiens""","""Influenza A virus""",81820
+"""2017-7""","""Homo sapiens""","""H1N1 subtype""",43698
+"""2017-8""","""Homo sapiens""","""Influenza A virus""",53166
+"""2017-8""","""Homo sapiens""","""H1N1 subtype""",29934
+"""2017-9""","""Homo sapiens""","""Influenza A virus""",41318
+"""2017-9""","""Homo sapiens""","""H1N1 subtype""",21768
+"""2018-1""","""Homo sapiens""","""Influenza A virus""",455308
+"""2018-1""","""Homo sapiens""","""H1N1 subtype""",258758
+"""2018-10""","""Homo sapiens""","""Influenza A virus""",29749
+"""2018-10""","""Homo sapiens""","""H1N1 subtype""",19011
+"""2018-10""","""Equidae""","""Influenza A virus""",188
+"""2018-11""","""Homo sapiens""","""Influenza A virus""",44912
+"""2018-11""","""Homo sapiens""","""H1N1 subtype""",26421
+"""2018-12""","""Homo sapiens""","""Influenza A virus""",176328
+"""2018-12""","""Homo sapiens""","""H1N1 subtype""",94770
+"""2018-2""","""Homo sapiens""","""Influenza A virus""",384492
+"""2018-2""","""Homo sapiens""","""H1N1 subtype""",197598
+"""2018-3""","""Homo sapiens""","""Influenza A virus""",208734
+"""2018-3""","""Homo sapiens""","""H1N1 subtype""",110486
+"""2018-4""","""Homo sapiens""","""Influenza A virus""",67686
+"""2018-4""","""Homo sapiens""","""H1N1 subtype""",37794
+"""2018-5""","""Homo sapiens""","""Influenza A virus""",12986
+"""2018-5""","""Homo sapiens""","""H1N1 subtype""",10927
+"""2018-6""","""Homo sapiens""","""Influenza A virus""",12196
+"""2018-6""","""Homo sapiens""","""H1N1 subtype""",11292
+"""2018-7""","""Homo sapiens""","""Influenza A virus""",19558
+"""2018-7""","""Homo sapiens""","""H1N1 subtype""",14854
+"""2018-8""","""Homo sapiens""","""Influenza A virus""",19760
+"""2018-8""","""Homo sapiens""","""H1N1 subtype""",12699
+"""2018-9""","""Homo sapiens""","""Influenza A virus""",18634
+"""2018-9""","""Homo sapiens""","""H1N1 subtype""",14000
+"""2019-1""","""Homo sapiens""","""Influenza A virus""",390936
+"""2019-1""","""Homo sapiens""","""H1N1 subtype""",208126
+"""2019-10""","""Homo sapiens""","""Influenza A virus""",25798
+"""2019-10""","""Homo sapiens""","""H1N1 subtype""",17456
+"""2019-11""","""Homo sapiens""","""Influenza A virus""",39552
+"""2019-11""","""Homo sapiens""","""H1N1 subtype""",26035
+"""2019-12""","""Homo sapiens""","""Influenza A virus""",227436
+"""2019-12""","""Homo sapiens""","""H1N1 subtype""",155621
+"""2019-12""","""Aves""","""H5N1 subtype""",5634
+"""2019-2""","""Homo sapiens""","""Influenza A virus""",358240
+"""2019-2""","""Homo sapiens""","""H1N1 subtype""",199832
+"""2019-2""","""Equidae""","""Influenza A virus""",129
+"""2019-3""","""Homo sapiens""","""Influenza A virus""",178154
+"""2019-3""","""Homo sapiens""","""H1N1 subtype""",100025
+"""2019-4""","""Homo sapiens""","""Influenza A virus""",91476
+"""2019-4""","""Homo sapiens""","""H1N1 subtype""",53327
+"""2019-4""","""Equidae""","""Influenza A virus""",699
+"""2019-5""","""Homo sapiens""","""Influenza A virus""",47016
+"""2019-5""","""Homo sapiens""","""H1N1 subtype""",32164
+"""2019-6""","""Homo sapiens""","""Influenza A virus""",53580
+"""2019-6""","""Homo sapiens""","""H1N1 subtype""",33988
+"""2019-6""","""Aves""","""H5N1 subtype""",1754
+"""2019-7""","""Homo sapiens""","""Influenza A virus""",47344
+"""2019-7""","""Homo sapiens""","""H1N1 subtype""",31381
+"""2019-8""","""Homo sapiens""","""Influenza A virus""",26874
+"""2019-8""","""Homo sapiens""","""H1N1 subtype""",18060
+"""2019-8""","""Aves""","""H5N1 subtype""",195
+"""2019-9""","""Homo sapiens""","""Influenza A virus""",29395
+"""2019-9""","""Homo sapiens""","""H1N1 subtype""",17964
+"""2020-1""","""Homo sapiens""","""Influenza A virus""",700352
+"""2020-1""","""Homo sapiens""","""H1N1 subtype""",437500
+"""2020-1""","""Aves""","""H5N1 subtype""",6872
+"""2020-10""","""Homo sapiens""","""Influenza A virus""",666
+"""2020-10""","""Aves""","""H5N1 subtype""",330
+"""2020-10""","""Homo sapiens""","""H1N1 subtype""",124
+"""2020-10""","""Mareca penelope""","""H5N1 subtype""",4
+"""2020-10""","""Anser anser""","""H5N1 subtype""",1
+"""2020-11""","""Homo sapiens""","""Influenza A virus""",784
+"""2020-11""","""Homo sapiens""","""H1N1 subtype""",304
+"""2020-11""","""Mareca penelope""","""H5N1 subtype""",1
+"""2020-11""","""Cygnus olor""","""H5N1 subtype""",1
+"""2020-11""","""Anas crecca""","""H5N1 subtype""",1
+"""2020-12""","""Aves""","""H5N1 subtype""",58487
+"""2020-12""","""Homo sapiens""","""Influenza A virus""",884
+"""2020-12""","""Homo sapiens""","""H1N1 subtype""",390
+"""2020-12""","""Mareca penelope""","""H5N1 subtype""",4
+"""2020-12""","""Cygnus olor""","""H5N1 subtype""",3
+"""2020-12""","""Anas crecca""","""H5N1 subtype""",2
+"""2020-12""","""Anser anser""","""H5N1 subtype""",1
+"""2020-12""","""Branta canadensis""","""H5N1 subtype""",1
+"""2020-2""","""Homo sapiens""","""Influenza A virus""",429455
+"""2020-2""","""Homo sapiens""","""H1N1 subtype""",232769
+"""2020-2""","""Aves""","""H5N1 subtype""",7990
+"""2020-2""","""Tyto longimembris""","""H5N1 subtype""",4
+"""2020-2""","""Corvus splendens""","""H5N1 subtype""",4
+"""2020-3""","""Homo sapiens""","""Influenza A virus""",111320
+"""2020-3""","""Homo sapiens""","""H1N1 subtype""",58546
+"""2020-3""","""Aves""","""H5N1 subtype""",2665
+"""2020-3""","""Corvus splendens""","""H5N1 subtype""",197
+"""2020-3""","""Harpactes erythrocephalus""","""H5N1 subtype""",7
+"""2020-4""","""Aves""","""H5N1 subtype""",3070
+"""2020-4""","""Homo sapiens""","""Influenza A virus""",1222
+"""2020-4""","""Homo sapiens""","""H1N1 subtype""",596
+"""2020-5""","""Homo sapiens""","""Influenza A virus""",160
+"""2020-5""","""Homo sapiens""","""H1N1 subtype""",102
+"""2020-5""","""Equidae""","""Influenza A virus""",2
+"""2020-6""","""Homo sapiens""","""Influenza A virus""",118
+"""2020-6""","""Homo sapiens""","""H1N1 subtype""",78
+"""2020-7""","""Aves""","""H5N1 subtype""",500
+"""2020-7""","""Homo sapiens""","""Influenza A virus""",82
+"""2020-7""","""Homo sapiens""","""H1N1 subtype""",70
+"""2020-7""","""Equidae""","""Influenza A virus""",1
+"""2020-8""","""Aves""","""H5N1 subtype""",1105
+"""2020-8""","""Homo sapiens""","""Influenza A virus""",272
+"""2020-8""","""Homo sapiens""","""H1N1 subtype""",82
+"""2020-9""","""Aves""","""H5N1 subtype""",862
+"""2020-9""","""Homo sapiens""","""Influenza A virus""",602
+"""2020-9""","""Homo sapiens""","""H1N1 subtype""",42
+"""2021-1""","""Aves""","""H5N1 subtype""",15944
+"""2021-1""","""Homo sapiens""","""Influenza A virus""",1600
+"""2021-1""","""Homo sapiens""","""H1N1 subtype""",1452
+"""2021-1""","""Cygnus olor""","""H5N1 subtype""",4
+"""2021-1""","""Anser indicus""","""H5N1 subtype""",1
+"""2021-10""","""Aves""","""H5N1 subtype""",72150
+"""2021-10""","""Phalacrocorax capensis""","""H5N1 subtype""",10576
+"""2021-10""","""Homo sapiens""","""Influenza A virus""",10250
+"""2021-10""","""Homo sapiens""","""H1N1 subtype""",6412
+"""2021-10""","""Spheniscus demersus""","""H5N1 subtype""",207
+"""2021-10""","""Morus capensis""","""H5N1 subtype""",20
+"""2021-10""","""Phasianus colchicus""","""H5N1 subtype""",5
+"""2021-10""","""Haliaeetus albicilla""","""H5N1 subtype""",3
+"""2021-10""","""Accipiter gentilis""","""H5N1 subtype""",3
+"""2021-10""","""Alopochen aegyptiaca""","""H5N1 subtype""",2
+"""2021-10""","""Phalacrocorax lucidus""","""H5N1 subtype""",2
+"""2021-10""","""Strix uralensis""","""H5N1 subtype""",1
+"""2021-11""","""Aves""","""H5N1 subtype""",141055
+"""2021-11""","""Homo sapiens""","""Influenza A virus""",25760
+"""2021-11""","""Homo sapiens""","""H1N1 subtype""",12104
+"""2021-11""","""Phalacrocorax capensis""","""H5N1 subtype""",2701
+"""2021-11""","""Anser albifrons""","""H5N1 subtype""",1
+"""2021-11""","""Cygnus olor""","""H5N1 subtype""",1
+"""2021-11""","""Larus marinus""","""H5N1 subtype""",1
+"""2021-11""","""Larus argentatus""","""H5N1 subtype""",1
+"""2021-11""","""Accipiter gentilis""","""H5N1 subtype""",1
+"""2021-11""","""Sterna hirundo""","""H5N1 subtype""",1
+"""2021-12""","""Aves""","""H5N1 subtype""",140564
+"""2021-12""","""Homo sapiens""","""Influenza A virus""",72994
+"""2021-12""","""Homo sapiens""","""H1N1 subtype""",7410
+"""2021-12""","""Phalacrocorax capensis""","""H5N1 subtype""",33
+"""2021-12""","""Sterna hirundo""","""H5N1 subtype""",2
+"""2021-12""","""Accipiter gentilis""","""H5N1 subtype""",1
+"""2021-12""","""Phalacrocorax lucidus""","""H5N1 subtype""",1
+"""2021-2""","""Aves""","""H5N1 subtype""",141402
+"""2021-2""","""Homo sapiens""","""H1N1 subtype""",600
+"""2021-2""","""Homo sapiens""","""Influenza A virus""",520
+"""2021-2""","""Branta leucopsis""","""H5N1 subtype""",1
+"""2021-3""","""Aves""","""H5N1 subtype""",306838
+"""2021-3""","""Homo sapiens""","""H1N1 subtype""",1468
+"""2021-3""","""Homo sapiens""","""Influenza A virus""",1368
+"""2021-3""","""Branta leucopsis""","""H5N1 subtype""",4
+"""2021-3""","""Anser sp.""","""H5N1 subtype""",1
+"""2021-3""","""Milvus milvus""","""H5N1 subtype""",1
+"""2021-3""","""Uria aalge""","""H5N1 subtype""",1
+"""2021-3""","""Larus fuscus graellsii""","""H5N1 subtype""",1
+"""2021-4""","""Aves""","""H5N1 subtype""",124713
+"""2021-4""","""Homo sapiens""","""Influenza A virus""",982
+"""2021-4""","""Homo sapiens""","""H1N1 subtype""",786
+"""2021-4""","""Equidae""","""Influenza A virus""",290
+"""2021-4""","""Branta leucopsis""","""H5N1 subtype""",9
+"""2021-4""","""Corvus frugilegus""","""H5N1 subtype""",3
+"""2021-4""","""Ciconia ciconia""","""H5N1 subtype""",1
+"""2021-4""","""Haliaeetus albicilla""","""H5N1 subtype""",1
+"""2021-5""","""Aves""","""H5N1 subtype""",206523
+"""2021-5""","""Homo sapiens""","""H1N1 subtype""",1520
+"""2021-5""","""Homo sapiens""","""Influenza A virus""",540
+"""2021-5""","""Phalacrocorax capensis""","""H5N1 subtype""",223
+"""2021-5""","""Spheniscus demersus""","""H5N1 subtype""",178
+"""2021-5""","""Equidae""","""Influenza A virus""",27
+"""2021-5""","""Branta leucopsis""","""H5N1 subtype""",15
+"""2021-5""","""Threskiornis aethiopicus""","""H5N1 subtype""",14
+"""2021-5""","""Laridae""","""H5N1 subtype""",13
+"""2021-5""","""Alopochen aegyptiaca""","""H5N1 subtype""",9
+"""2021-5""","""Haliaeetus albicilla""","""H5N1 subtype""",7
+"""2021-5""","""Sterna hirundo""","""H5N1 subtype""",4
+"""2021-5""","""Ara ararauna""","""H5N1 subtype""",2
+"""2021-5""","""Tyto alba""","""H5N1 subtype""",2
+"""2021-5""","""Plectropterus gambensis""","""H5N1 subtype""",2
+"""2021-5""","""Larus dominicanus""","""H5N1 subtype""",2
+"""2021-5""","""Pterodroma macroptera""","""H5N1 subtype""",1
+"""2021-5""","""Haematopus bachmani""","""H5N1 subtype""",1
+"""2021-5""","""Chroicocephalus cirrocephalus""","""H5N1 subtype""",1
+"""2021-5""","""Larus argentatus""","""H5N1 subtype""",1
+"""2021-5""","""Circus aeruginosus""","""H5N1 subtype""",1
+"""2021-6""","""Aves""","""H5N1 subtype""",126187
+"""2021-6""","""Homo sapiens""","""Influenza A virus""",1168
+"""2021-6""","""Homo sapiens""","""H1N1 subtype""",298
+"""2021-6""","""Pelecanus crispus""","""H5N1 subtype""",78
+"""2021-6""","""Larus dominicanus""","""H5N1 subtype""",29
+"""2021-6""","""Equidae""","""Influenza A virus""",13
+"""2021-6""","""Phalacrocorax capensis""","""H5N1 subtype""",13
+"""2021-6""","""Cygnus atratus""","""H5N1 subtype""",12
+"""2021-6""","""Threskiornis aethiopicus""","""H5N1 subtype""",8
+"""2021-6""","""Laridae""","""H5N1 subtype""",7
+"""2021-6""","""Phalacrocorax carbo""","""H5N1 subtype""",3
+"""2021-6""","""Larus argentatus""","""H5N1 subtype""",2
+"""2021-6""","""Grus paradisea""","""H5N1 subtype""",2
+"""2021-6""","""Stercorarius lonnbergi""","""H5N1 subtype""",1
+"""2021-6""","""Thalasseus sandvicensis""","""H5N1 subtype""",1
+"""2021-6""","""Anas platyrhynchos""","""H5N1 subtype""",1
+"""2021-6""","""Haliaeetus albicilla""","""H5N1 subtype""",1
+"""2021-6""","""Branta leucopsis""","""H5N1 subtype""",1
+"""2021-6""","""Cygnus olor""","""H5N1 subtype""",1
+"""2021-7""","""Aves""","""H5N1 subtype""",176456
+"""2021-7""","""Homo sapiens""","""Influenza A virus""",2874
+"""2021-7""","""Homo sapiens""","""H1N1 subtype""",1158
+"""2021-7""","""Pelecanus crispus""","""H5N1 subtype""",7
+"""2021-7""","""Larus argentatus""","""H5N1 subtype""",2
+"""2021-7""","""Stercorarius skua""","""H5N1 subtype""",2
+"""2021-8""","""Aves""","""H5N1 subtype""",69964
+"""2021-8""","""Homo sapiens""","""Influenza A virus""",6496
+"""2021-8""","""Homo sapiens""","""H1N1 subtype""",5026
+"""2021-8""","""Cygnus olor""","""H5N1 subtype""",3
+"""2021-8""","""Phalacrocorax carbo""","""H5N1 subtype""",2
+"""2021-8""","""Bostrychia hagedash""","""H5N1 subtype""",2
+"""2021-8""","""Bubo bubo""","""H5N1 subtype""",1
+"""2021-8""","""Larus argentatus""","""H5N1 subtype""",1
+"""2021-8""","""Larus canus""","""H5N1 subtype""",1
+"""2021-8""","""Mergus merganser""","""H5N1 subtype""",1
+"""2021-8""","""Accipiter gentilis""","""H5N1 subtype""",1
+"""2021-9""","""Aves""","""H5N1 subtype""",301535
+"""2021-9""","""Homo sapiens""","""Influenza A virus""",6058
+"""2021-9""","""Homo sapiens""","""H1N1 subtype""",3298
+"""2021-9""","""Phalacrocorax capensis""","""H5N1 subtype""",3223
+"""2021-9""","""Phasianus colchicus""","""H5N1 subtype""",42
+"""2021-9""","""Phalacrocorax lucidus""","""H5N1 subtype""",4
+"""2021-9""","""Branta leucopsis""","""H5N1 subtype""",3
+"""2021-9""","""Spheniscus demersus""","""H5N1 subtype""",2
+"""2021-9""","""Sterna hirundo""","""H5N1 subtype""",1
+"""2022-1""","""Aves""","""H5N1 subtype""",517486
+"""2022-1""","""Homo sapiens""","""Influenza A virus""",43390
+"""2022-1""","""Homo sapiens""","""H1N1 subtype""",4934
+"""2022-1""","""Anas platyrhynchos""","""H5N1 subtype""",12
+"""2022-1""","""Grus monacha""","""H5N1 subtype""",1
+"""2022-10""","""Aves""","""H5N1 subtype""",1087475
+"""2022-10""","""Homo sapiens""","""Influenza A virus""",133751
+"""2022-10""","""Homo sapiens""","""H1N1 subtype""",66543
+"""2022-10""","""Chroicocephalus ridibundus""","""H5N1 subtype""",276
+"""2022-10""","""Branta canadensis""","""H5N1 subtype""",135
+"""2022-10""","""Sterna hirundo""","""H5N1 subtype""",96
+"""2022-10""","""Anser anser""","""H5N1 subtype""",65
+"""2022-10""","""Cygnus olor""","""H5N1 subtype""",58
+"""2022-10""","""Anas crecca""","""H5N1 subtype""",49
+"""2022-10""","""Anser brachyrhynchus""","""H5N1 subtype""",46
+"""2022-10""","""Anas platyrhynchos""","""H5N1 subtype""",45
+"""2022-10""","""Egretta garzetta""","""H5N1 subtype""",28
+"""2022-10""","""Phasianus colchicus""","""H5N1 subtype""",22
+"""2022-10""","""Larus argentatus""","""H5N1 subtype""",12
+"""2022-10""","""Morus bassanus""","""H5N1 subtype""",6
+"""2022-10""","""Mephitis mephitis""","""H5N1 subtype""",6
+"""2022-10""","""Anser sp.""","""H5N1 subtype""",5
+"""2022-10""","""Morus capensis""","""H5N1 subtype""",5
+"""2022-10""","""Corvus corone""","""H5N1 subtype""",4
+"""2022-10""","""Numenius arquata""","""H5N1 subtype""",4
+"""2022-10""","""Branta leucopsis""","""H5N1 subtype""",4
+"""2022-10""","""Columba livia""","""H5N1 subtype""",4
+"""2022-10""","""Accipiter nisus""","""H5N1 subtype""",3
+"""2022-10""","""Falco tinnunculus""","""H5N1 subtype""",3
+"""2022-10""","""Mareca penelope""","""H5N1 subtype""",3
+"""2022-10""","""Falco rusticolus""","""H5N1 subtype""",2
+"""2022-10""","""Alectoris rufa""","""H5N1 subtype""",2
+"""2022-10""","""Anser albifrons""","""H5N1 subtype""",2
+"""2022-10""","""Corvus corax""","""H5N1 subtype""",2
+"""2022-10""","""Spatula discors""","""H5N1 subtype""",1
+"""2022-10""","""Corvus frugilegus""","""H5N1 subtype""",1
+"""2022-10""","""Strix aluco""","""H5N1 subtype""",1
+"""2022-10""","""Milvus milvus""","""H5N1 subtype""",1
+"""2022-10""","""Larus fuscus graellsii""","""H5N1 subtype""",1
+"""2022-10""","""Pandion haliaetus""","""H5N1 subtype""",1
+"""2022-10""","""Bos taurus""","""H5N1 subtype""",1
+"""2022-10""","""Ciconia ciconia""","""H5N1 subtype""",1
+"""2022-10""","""Ursus arctos""","""H5N1 subtype""",1
+"""2022-10""","""Didelphis virginiana""","""H5N1 subtype""",1
+"""2022-10""","""Vulpes vulpes""","""H5N1 subtype""",1
+"""2022-10""","""Haliaeetus albicilla""","""H5N1 subtype""",1
+"""2022-11""","""Aves""","""H5N1 subtype""",2676430
+"""2022-11""","""Homo sapiens""","""Influenza A virus""",278190
+"""2022-11""","""Homo sapiens""","""H1N1 subtype""",142594
+"""2022-11""","""Grus monacha""","""H5N1 subtype""",860
+"""2022-11""","""Spheniscus demersus""","""H5N1 subtype""",151
+"""2022-11""","""Spatula discors""","""H5N1 subtype""",120
+"""2022-11""","""Cygnus olor""","""H5N1 subtype""",105
+"""2022-11""","""Anser anser""","""H5N1 subtype""",53
+"""2022-11""","""Branta leucopsis""","""H5N1 subtype""",37
+"""2022-11""","""Antigone vipio""","""H5N1 subtype""",35
+"""2022-11""","""Branta canadensis""","""H5N1 subtype""",34
+"""2022-11""","""Chroicocephalus ridibundus""","""H5N1 subtype""",27
+"""2022-11""","""Anas platyrhynchos""","""H5N1 subtype""",21
+"""2022-11""","""Anas crecca""","""H5N1 subtype""",20
+"""2022-11""","""Mephitis mephitis""","""H5N1 subtype""",15
+"""2022-11""","""Larus argentatus""","""H5N1 subtype""",12
+"""2022-11""","""Anser brachyrhynchus""","""H5N1 subtype""",11
+"""2022-11""","""Corvus macrorhynchos""","""H5N1 subtype""",7
+"""2022-11""","""Sterna hirundo""","""H5N1 subtype""",6
+"""2022-11""","""Accipiter nisus""","""H5N1 subtype""",6
+"""2022-11""","""Quiscalus mexicanus""","""H5N1 subtype""",5
+"""2022-11""","""Phasianus colchicus""","""H5N1 subtype""",5
+"""2022-11""","""Columba livia""","""H5N1 subtype""",3
+"""2022-11""","""Anser caerulescens caerulescens""","""H5N1 subtype""",3
+"""2022-11""","""Charadrius hiaticula""","""H5N1 subtype""",3
+"""2022-11""","""Dendrocopos major""","""H5N1 subtype""",3
+"""2022-11""","""Ardea cinerea""","""H5N1 subtype""",2
+"""2022-11""","""Phoenicopterus roseus""","""H5N1 subtype""",2
+"""2022-11""","""Falco tinnunculus""","""H5N1 subtype""",2
+"""2022-11""","""Mareca penelope""","""H5N1 subtype""",2
+"""2022-11""","""Anas acuta""","""H5N1 subtype""",2
+"""2022-11""","""Grus japonensis""","""H5N1 subtype""",2
+"""2022-11""","""Larus schistisagus""","""H5N1 subtype""",2
+"""2022-11""","""Cygnus columbianus""","""H5N1 subtype""",2
+"""2022-11""","""Phalacrocorax capensis""","""H5N1 subtype""",2
+"""2022-11""","""Calidris alpina""","""H5N1 subtype""",1
+"""2022-11""","""Platalea minor""","""H5N1 subtype""",1
+"""2022-11""","""Uria aalge""","""H5N1 subtype""",1
+"""2022-11""","""Milvus milvus""","""H5N1 subtype""",1
+"""2022-11""","""Strix aluco""","""H5N1 subtype""",1
+"""2022-11""","""Tyto alba""","""H5N1 subtype""",1
+"""2022-11""","""Streptopelia decaocto""","""H5N1 subtype""",1
+"""2022-11""","""Ciconia boyciana""","""H5N1 subtype""",1
+"""2022-11""","""Milvus migrans""","""H5N1 subtype""",1
+"""2022-11""","""Haliaeetus albicilla""","""H5N1 subtype""",1
+"""2022-11""","""Lontra canadensis""","""H5N1 subtype""",1
+"""2022-11""","""Ursus arctos""","""H5N1 subtype""",1
+"""2022-12""","""Aves""","""H5N1 subtype""",2040776
+"""2022-12""","""Homo sapiens""","""Influenza A virus""",558465
+"""2022-12""","""Homo sapiens""","""H1N1 subtype""",292847
+"""2022-12""","""Grus monacha""","""H5N1 subtype""",258
+"""2022-12""","""Cygnus olor""","""H5N1 subtype""",68
+"""2022-12""","""Sula variegata""","""H5N1 subtype""",58
+"""2022-12""","""Chroicocephalus ridibundus""","""H5N1 subtype""",35
+"""2022-12""","""Branta canadensis""","""H5N1 subtype""",35
+"""2022-12""","""Anser anser""","""H5N1 subtype""",29
+"""2022-12""","""Anser brachyrhynchus""","""H5N1 subtype""",22
+"""2022-12""","""Antigone vipio""","""H5N1 subtype""",15
+"""2022-12""","""Laridae""","""H5N1 subtype""",12
+"""2022-12""","""Sterna hirundo""","""H5N1 subtype""",12
+"""2022-12""","""Larus argentatus""","""H5N1 subtype""",11
+"""2022-12""","""Leucophaeus modestus""","""H5N1 subtype""",10
+"""2022-12""","""Anser caerulescens caerulescens""","""H5N1 subtype""",10
+"""2022-12""","""Phalacrocorax carbo""","""H5N1 subtype""",8
+"""2022-12""","""Columba livia""","""H5N1 subtype""",6
+"""2022-12""","""Corvus macrorhynchos""","""H5N1 subtype""",6
+"""2022-12""","""Larus dominicanus""","""H5N1 subtype""",5
+"""2022-12""","""Mareca penelope""","""H5N1 subtype""",5
+"""2022-12""","""Branta leucopsis""","""H5N1 subtype""",4
+"""2022-12""","""Accipiter gentilis""","""H5N1 subtype""",4
+"""2022-12""","""Cathartes aura""","""H5N1 subtype""",4
+"""2022-12""","""Phalacrocorax brasilianus""","""H5N1 subtype""",4
+"""2022-12""","""Larosterna inca""","""H5N1 subtype""",4
+"""2022-12""","""Accipiter nisus""","""H5N1 subtype""",4
+"""2022-12""","""Anas crecca""","""H5N1 subtype""",4
+"""2022-12""","""Felis catus""","""H5N1 subtype""",3
+"""2022-12""","""Anas platyrhynchos""","""H5N1 subtype""",3
+"""2022-12""","""Stercorarius chilensis""","""H5N1 subtype""",3
+"""2022-12""","""Haliaeetus albicilla""","""H5N1 subtype""",3
+"""2022-12""","""Vulpes vulpes""","""H5N1 subtype""",3
+"""2022-12""","""Platalea minor""","""H5N1 subtype""",2
+"""2022-12""","""Sterna hirundinacea""","""H5N1 subtype""",2
+"""2022-12""","""Coragyps atratus""","""H5N1 subtype""",2
+"""2022-12""","""Phalacrocorax gaimardi""","""H5N1 subtype""",2
+"""2022-12""","""Thalasseus elegans""","""H5N1 subtype""",2
+"""2022-12""","""Falco sparverius""","""H5N1 subtype""",2
+"""2022-12""","""Larus fuscus graellsii""","""H5N1 subtype""",2
+"""2022-12""","""Falco tinnunculus""","""H5N1 subtype""",2
+"""2022-12""","""Sula nebouxii""","""H5N1 subtype""",1
+"""2022-12""","""Calidris alba""","""H5N1 subtype""",1
+"""2022-12""","""Quiscalus mexicanus""","""H5N1 subtype""",1
+"""2022-12""","""Tyto alba""","""H5N1 subtype""",1
+"""2022-12""","""Aix galericulata""","""H5N1 subtype""",1
+"""2022-12""","""Anser albifrons""","""H5N1 subtype""",1
+"""2022-12""","""Phoenicopterus roseus""","""H5N1 subtype""",1
+"""2022-12""","""Phoenicopterus chilensis""","""H5N1 subtype""",1
+"""2022-12""","""Ardea cinerea""","""H5N1 subtype""",1
+"""2022-12""","""Haliaeetus pelagicus""","""H5N1 subtype""",1
+"""2022-12""","""Aythya marila""","""H5N1 subtype""",1
+"""2022-12""","""Lynx rufus""","""H5N1 subtype""",1
+"""2022-12""","""Mephitis mephitis""","""H5N1 subtype""",1
+"""2022-12""","""Ursus arctos""","""H5N1 subtype""",1
+"""2022-2""","""Aves""","""H5N1 subtype""",172036
+"""2022-2""","""Homo sapiens""","""Influenza A virus""",79775
+"""2022-2""","""Homo sapiens""","""H1N1 subtype""",21516
+"""2022-2""","""Corvus splendens""","""H5N1 subtype""",15
+"""2022-2""","""Cygnus olor""","""H5N1 subtype""",2
+"""2022-2""","""Ciconia ciconia""","""H5N1 subtype""",2
+"""2022-2""","""Phalacrocorax carbo""","""H5N1 subtype""",1
+"""2022-3""","""Aves""","""H5N1 subtype""",375173
+"""2022-3""","""Homo sapiens""","""Influenza A virus""",271130
+"""2022-3""","""Homo sapiens""","""H1N1 subtype""",92860
+"""2022-3""","""Pelecanus crispus""","""H5N1 subtype""",3
+"""2022-3""","""Uria aalge""","""H5N1 subtype""",2
+"""2022-3""","""Vulpes vulpes""","""H5N1 subtype""",1
+"""2022-3""","""Sterna hirundo""","""H5N1 subtype""",1
+"""2022-4""","""Homo sapiens""","""Influenza A virus""",213940
+"""2022-4""","""Aves""","""H5N1 subtype""",128753
+"""2022-4""","""Homo sapiens""","""H1N1 subtype""",75720
+"""2022-4""","""Vulpes vulpes""","""H5N1 subtype""",39
+"""2022-4""","""Pelecanus crispus""","""H5N1 subtype""",10
+"""2022-4""","""Morus bassanus""","""H5N1 subtype""",8
+"""2022-4""","""Mephitis mephitis""","""H5N1 subtype""",5
+"""2022-4""","""Anser brachyrhynchus""","""H5N1 subtype""",3
+"""2022-4""","""Ciconia ciconia""","""H5N1 subtype""",3
+"""2022-4""","""Larus marinus""","""H5N1 subtype""",2
+"""2022-4""","""Anser anser""","""H5N1 subtype""",2
+"""2022-4""","""Puma""","""H5N1 subtype""",1
+"""2022-4""","""Pekania pennanti""","""H5N1 subtype""",1
+"""2022-4""","""Lynx rufus""","""H5N1 subtype""",1
+"""2022-4""","""Corvus corax""","""H5N1 subtype""",1
+"""2022-4""","""Branta leucopsis""","""H5N1 subtype""",1
+"""2022-4""","""Chroicocephalus ridibundus""","""H5N1 subtype""",1
+"""2022-4""","""Stercorarius skua""","""H5N1 subtype""",1
+"""2022-4""","""Neogale vison""","""H5N1 subtype""",1
+"""2022-4""","""Corvus corone""","""H5N1 subtype""",1
+"""2022-4""","""Nyctereutes procyonoides""","""H5N1 subtype""",1
+"""2022-4""","""Anas platyrhynchos""","""H5N1 subtype""",1
+"""2022-5""","""Homo sapiens""","""Influenza A virus""",126657
+"""2022-5""","""Aves""","""H5N1 subtype""",99755
+"""2022-5""","""Homo sapiens""","""H1N1 subtype""",39134
+"""2022-5""","""Ichthyaetus ichthyaetus""","""H5N1 subtype""",300
+"""2022-5""","""Vulpes vulpes""","""H5N1 subtype""",50
+"""2022-5""","""Mephitis mephitis""","""H5N1 subtype""",28
+"""2022-5""","""Pelecanus crispus""","""H5N1 subtype""",26
+"""2022-5""","""Chlidonias hybrida""","""H5N1 subtype""",18
+"""2022-5""","""Stercorarius skua""","""H5N1 subtype""",9
+"""2022-5""","""Didelphis virginiana""","""H5N1 subtype""",2
+"""2022-5""","""Larus argentatus""","""H5N1 subtype""",2
+"""2022-5""","""Canis latrans""","""H5N1 subtype""",1
+"""2022-5""","""Lynx rufus""","""H5N1 subtype""",1
+"""2022-5""","""Larus fuscus graellsii""","""H5N1 subtype""",1
+"""2022-6""","""Homo sapiens""","""Influenza A virus""",77650
+"""2022-6""","""Aves""","""H5N1 subtype""",21272
+"""2022-6""","""Homo sapiens""","""H1N1 subtype""",21233
+"""2022-6""","""Chroicocephalus ridibundus""","""H5N1 subtype""",100
+"""2022-6""","""Phoca vitulina""","""H5N1 subtype""",17
+"""2022-6""","""Vulpes vulpes""","""H5N1 subtype""",7
+"""2022-6""","""Uria aalge""","""H5N1 subtype""",6
+"""2022-6""","""Morus bassanus""","""H5N1 subtype""",5
+"""2022-6""","""Mephitis mephitis""","""H5N1 subtype""",3
+"""2022-6""","""Stercorarius skua""","""H5N1 subtype""",2
+"""2022-6""","""Sterna hirundo""","""H5N1 subtype""",2
+"""2022-6""","""Anas platyrhynchos""","""H5N1 subtype""",1
+"""2022-6""","""Columba livia""","""H5N1 subtype""",1
+"""2022-7""","""Aves""","""H5N1 subtype""",124836
+"""2022-7""","""Homo sapiens""","""Influenza A virus""",45745
+"""2022-7""","""Homo sapiens""","""H1N1 subtype""",8877
+"""2022-7""","""Chroicocephalus brunnicephalus""","""H5N1 subtype""",273
+"""2022-7""","""Uria aalge""","""H5N1 subtype""",25
+"""2022-7""","""Phoca vitulina""","""H5N1 subtype""",10
+"""2022-7""","""Morus bassanus""","""H5N1 subtype""",5
+"""2022-7""","""Larus argentatus""","""H5N1 subtype""",4
+"""2022-7""","""Sterna paradisaea""","""H5N1 subtype""",3
+"""2022-7""","""Columba livia""","""H5N1 subtype""",2
+"""2022-7""","""Sterna hirundo""","""H5N1 subtype""",2
+"""2022-7""","""Larus michahellis atlantis""","""H5N1 subtype""",1
+"""2022-7""","""Halichoerus grypus""","""H5N1 subtype""",1
+"""2022-7""","""Mephitis mephitis""","""H5N1 subtype""",1
+"""2022-7""","""Spheniscus demersus""","""H5N1 subtype""",1
+"""2022-8""","""Aves""","""H5N1 subtype""",140931
+"""2022-8""","""Homo sapiens""","""Influenza A virus""",44531
+"""2022-8""","""Homo sapiens""","""H1N1 subtype""",10710
+"""2022-8""","""Bos taurus""","""H5N1 subtype""",4
+"""2022-8""","""Ursus maritimus""","""H5N1 subtype""",1
+"""2022-8""","""Anas platyrhynchos""","""H5N1 subtype""",1
+"""2022-8""","""Morus bassanus""","""H5N1 subtype""",1
+"""2022-9""","""Aves""","""H5N1 subtype""",265634
+"""2022-9""","""Homo sapiens""","""Influenza A virus""",44707
+"""2022-9""","""Homo sapiens""","""H1N1 subtype""",18242
+"""2022-9""","""Chroicocephalus ridibundus""","""H5N1 subtype""",196
+"""2022-9""","""Cygnus olor""","""H5N1 subtype""",39
+"""2022-9""","""Anser anser""","""H5N1 subtype""",38
+"""2022-9""","""Branta canadensis""","""H5N1 subtype""",23
+"""2022-9""","""Larus argentatus""","""H5N1 subtype""",22
+"""2022-9""","""Larus fuscus graellsii""","""H5N1 subtype""",21
+"""2022-9""","""Gallinula chloropus""","""H5N1 subtype""",12
+"""2022-9""","""Fulmarus glacialis""","""H5N1 subtype""",7
+"""2022-9""","""Larus canus""","""H5N1 subtype""",6
+"""2022-9""","""Morus bassanus""","""H5N1 subtype""",6
+"""2022-9""","""Bos taurus""","""H5N1 subtype""",5
+"""2022-9""","""Vulpes vulpes""","""H5N1 subtype""",5
+"""2022-9""","""Stercorarius skua""","""H5N1 subtype""",4
+"""2022-9""","""Nasua nasua""","""H5N1 subtype""",3
+"""2022-9""","""Larus marinus""","""H5N1 subtype""",3
+"""2022-9""","""Circus cyaneus""","""H5N1 subtype""",1
+"""2022-9""","""Anas crecca""","""H5N1 subtype""",1
+"""2022-9""","""Columba livia""","""H5N1 subtype""",1
+"""2022-9""","""Corvus corax""","""H5N1 subtype""",1
+"""2022-9""","""Panthera pardus orientalis""","""H5N1 subtype""",1
+"""2023-1""","""Aves""","""H5N1 subtype""",2365775
+"""2023-1""","""Cygnus olor""","""H5N1 subtype""",104
+"""2023-1""","""Chroicocephalus ridibundus""","""H5N1 subtype""",55
+"""2023-1""","""Mephitis mephitis""","""H5N1 subtype""",42
+"""2023-1""","""Sula variegata""","""H5N1 subtype""",14
+"""2023-1""","""Corvus macrorhynchos""","""H5N1 subtype""",14
+"""2023-1""","""Phalacrocorax carbo""","""H5N1 subtype""",13
+"""2023-1""","""Larus dominicanus""","""H5N1 subtype""",13
+"""2023-1""","""Vulpes vulpes""","""H5N1 subtype""",13
+"""2023-1""","""Larus argentatus""","""H5N1 subtype""",11
+"""2023-1""","""Branta canadensis""","""H5N1 subtype""",11
+"""2023-1""","""Anas platyrhynchos""","""H5N1 subtype""",9
+"""2023-1""","""Larosterna inca""","""H5N1 subtype""",9
+"""2023-1""","""Accipiter nisus""","""H5N1 subtype""",9
+"""2023-1""","""Anser anser""","""H5N1 subtype""",8
+"""2023-1""","""Larus michahellis atlantis""","""H5N1 subtype""",7
+"""2023-1""","""Leucophaeus modestus""","""H5N1 subtype""",7
+"""2023-1""","""Branta leucopsis""","""H5N1 subtype""",6
+"""2023-1""","""Sterna hirundo""","""H5N1 subtype""",6
+"""2023-1""","""Grus monacha""","""H5N1 subtype""",6
+"""2023-1""","""Leucophaeus pipixcan""","""H5N1 subtype""",4
+"""2023-1""","""Cathartes aura""","""H5N1 subtype""",3
+"""2023-1""","""Strix aluco""","""H5N1 subtype""",3
+"""2023-1""","""Accipiter gentilis""","""H5N1 subtype""",2
+"""2023-1""","""Ardea cinerea""","""H5N1 subtype""",2
+"""2023-1""","""Puma""","""H5N1 subtype""",2
+"""2023-1""","""Felis catus""","""H5N1 subtype""",2
+"""2023-1""","""Bubo bubo""","""H5N1 subtype""",1
+"""2023-1""","""Bos taurus""","""H5N1 subtype""",1
+"""2023-1""","""Ciconia ciconia""","""H5N1 subtype""",1
+"""2023-1""","""Buteo lagopus""","""H5N1 subtype""",1
+"""2023-1""","""Larus canus""","""H5N1 subtype""",1
+"""2023-1""","""Spatula clypeata""","""H5N1 subtype""",1
+"""2023-1""","""Sterna hirundinacea""","""H5N1 subtype""",1
+"""2023-1""","""Rynchops niger""","""H5N1 subtype""",1
+"""2023-1""","""Cygnus melancoryphus""","""H5N1 subtype""",1
+"""2023-1""","""Tringa flavipes""","""H5N1 subtype""",1
+"""2023-1""","""Ardea alba""","""H5N1 subtype""",1
+"""2023-1""","""Anser brachyrhynchus""","""H5N1 subtype""",1
+"""2023-1""","""Cygnus columbianus""","""H5N1 subtype""",1
+"""2023-1""","""Strix uralensis""","""H5N1 subtype""",1
+"""2023-1""","""Haliaeetus albicilla""","""H5N1 subtype""",1
+"""2023-1""","""Corvus corone""","""H5N1 subtype""",1
+"""2023-1""","""Mareca penelope""","""H5N1 subtype""",1
+"""2023-1""","""Lynx rufus""","""H5N1 subtype""",1
+"""2023-2""","""Aves""","""H5N1 subtype""",625222
+"""2023-2""","""Chroicocephalus ridibundus""","""H5N1 subtype""",304
+"""2023-2""","""Cygnus olor""","""H5N1 subtype""",47
+"""2023-2""","""Corvus splendens""","""H5N1 subtype""",20
+"""2023-2""","""Netta rufina""","""H5N1 subtype""",10
+"""2023-2""","""Corvus macrorhynchos""","""H5N1 subtype""",8
+"""2023-2""","""Vulpes vulpes""","""H5N1 subtype""",7
+"""2023-2""","""Puma""","""H5N1 subtype""",7
+"""2023-2""","""Larus dominicanus""","""H5N1 subtype""",6
+"""2023-2""","""Coscoroba coscoroba""","""H5N1 subtype""",5
+"""2023-2""","""Ardea cinerea""","""H5N1 subtype""",5
+"""2023-2""","""Anser brachyrhynchus""","""H5N1 subtype""",5
+"""2023-2""","""Mephitis mephitis""","""H5N1 subtype""",5
+"""2023-2""","""Phalacrocorax carbo""","""H5N1 subtype""",4
+"""2023-2""","""Sula variegata""","""H5N1 subtype""",4
+"""2023-2""","""Ardea alba""","""H5N1 subtype""",3
+"""2023-2""","""Branta leucopsis""","""H5N1 subtype""",3
+"""2023-2""","""Anser albifrons""","""H5N1 subtype""",2
+"""2023-2""","""Anas platyrhynchos""","""H5N1 subtype""",2
+"""2023-2""","""Enicognathus ferrugineus""","""H5N1 subtype""",2
+"""2023-2""","""Larus cachinnans""","""H5N1 subtype""",2
+"""2023-2""","""Larus michahellis atlantis""","""H5N1 subtype""",2
+"""2023-2""","""Sterna hirundo""","""H5N1 subtype""",2
+"""2023-2""","""Strix aluco""","""H5N1 subtype""",2
+"""2023-2""","""Streptopelia decaocto""","""H5N1 subtype""",2
+"""2023-2""","""Cygnus columbianus""","""H5N1 subtype""",2
+"""2023-2""","""Accipiter gentilis""","""H5N1 subtype""",2
+"""2023-2""","""Lynx rufus""","""H5N1 subtype""",2
+"""2023-2""","""Ciconia ciconia""","""H5N1 subtype""",1
+"""2023-2""","""Chlidonias hybrida""","""H5N1 subtype""",1
+"""2023-2""","""Bos taurus""","""H5N1 subtype""",1
+"""2023-2""","""Anser anser""","""H5N1 subtype""",1
+"""2023-2""","""Larus argentatus""","""H5N1 subtype""",1
+"""2023-2""","""Cygnus atratus""","""H5N1 subtype""",1
+"""2023-2""","""Bubo bubo""","""H5N1 subtype""",1
+"""2023-2""","""Laridae""","""H5N1 subtype""",1
+"""2023-2""","""Cygnus melancoryphus""","""H5N1 subtype""",1
+"""2023-2""","""Corvus corax""","""H5N1 subtype""",1
+"""2023-2""","""Fringilla coelebs""","""H5N1 subtype""",1
+"""2023-2""","""Garrulus glandarius""","""H5N1 subtype""",1
+"""2023-3""","""Aves""","""H5N1 subtype""",218499
+"""2023-3""","""Cygnus olor""","""H5N1 subtype""",343
+"""2023-3""","""Thalasseus maximus""","""H5N1 subtype""",336
+"""2023-3""","""Chroicocephalus ridibundus""","""H5N1 subtype""",267
+"""2023-3""","""Corvus macrorhynchos""","""H5N1 subtype""",22
+"""2023-3""","""Puma""","""H5N1 subtype""",6
+"""2023-3""","""Mephitis mephitis""","""H5N1 subtype""",6
+"""2023-3""","""Ciconia ciconia""","""H5N1 subtype""",5
+"""2023-3""","""Passer montanus""","""H5N1 subtype""",5
+"""2023-3""","""Anser brachyrhynchus""","""H5N1 subtype""",4
+"""2023-3""","""Vulpes vulpes""","""H5N1 subtype""",4
+"""2023-3""","""Larus argentatus""","""H5N1 subtype""",3
+"""2023-3""","""Corvus corone""","""H5N1 subtype""",3
+"""2023-3""","""Branta leucopsis""","""H5N1 subtype""",2
+"""2023-3""","""Larus cachinnans""","""H5N1 subtype""",2
+"""2023-3""","""Podiceps cristatus""","""H5N1 subtype""",2
+"""2023-3""","""Accipiter nisus""","""H5N1 subtype""",2
+"""2023-3""","""Haematopus ostralegus""","""H5N1 subtype""",2
+"""2023-3""","""Falco tinnunculus""","""H5N1 subtype""",2
+"""2023-3""","""Larus michahellis atlantis""","""H5N1 subtype""",2
+"""2023-3""","""Haliaeetus albicilla""","""H5N1 subtype""",2
+"""2023-3""","""Felis catus""","""H5N1 subtype""",2
+"""2023-3""","""Anas platyrhynchos""","""H5N1 subtype""",1
+"""2023-3""","""Halichoerus grypus""","""H5N1 subtype""",1
+"""2023-3""","""Anser anser""","""H5N1 subtype""",1
+"""2023-3""","""Coloeus monedula""","""H5N1 subtype""",1
+"""2023-3""","""Bubo bubo""","""H5N1 subtype""",1
+"""2023-3""","""Coscoroba coscoroba""","""H5N1 subtype""",1
+"""2023-3""","""Caracara""","""H5N1 subtype""",1
+"""2023-3""","""Sterna hirundinacea""","""H5N1 subtype""",1
+"""2023-3""","""Stercorarius chilensis""","""H5N1 subtype""",1
+"""2023-3""","""Sterna hirundo""","""H5N1 subtype""",1
+"""2023-3""","""Tachybaptus ruficollis""","""H5N1 subtype""",1
+"""2023-3""","""Milvus milvus""","""H5N1 subtype""",1
+"""2023-3""","""Phalacrocorax carbo""","""H5N1 subtype""",1
+"""2023-3""","""Ichthyaetus ichthyaetus""","""H5N1 subtype""",1
+"""2023-3""","""Egretta garzetta""","""H5N1 subtype""",1
+"""2023-3""","""Accipiter gentilis""","""H5N1 subtype""",1
+"""2023-3""","""Pekania pennanti""","""H5N1 subtype""",1
+"""2023-3""","""Martes americana""","""H5N1 subtype""",1
+"""2023-3""","""Canis lupus familiaris""","""H5N1 subtype""",1
+"""2023-4""","""Aves""","""H5N1 subtype""",682223
+"""2023-4""","""Chroicocephalus ridibundus""","""H5N1 subtype""",121
+"""2023-4""","""Cygnus melancoryphus""","""H5N1 subtype""",27
+"""2023-4""","""Vulpes vulpes""","""H5N1 subtype""",23
+"""2023-4""","""Enicognathus leptorhynchus""","""H5N1 subtype""",16
+"""2023-4""","""Chroicocephalus brunnicephalus""","""H5N1 subtype""",15
+"""2023-4""","""Corvus macrorhynchos""","""H5N1 subtype""",6
+"""2023-4""","""Canis lupus familiaris""","""H5N1 subtype""",5
+"""2023-4""","""Chloephaga picta""","""H5N1 subtype""",4
+"""2023-4""","""Larus argentatus""","""H5N1 subtype""",4
+"""2023-4""","""Puma""","""H5N1 subtype""",3
+"""2023-4""","""Ciconia ciconia""","""H5N1 subtype""",1
+"""2023-4""","""Bubo bubo""","""H5N1 subtype""",1
+"""2023-4""","""Gelochelidon nilotica""","""H5N1 subtype""",1
+"""2023-4""","""Platalea minor""","""H5N1 subtype""",1
+"""2023-4""","""Cygnus olor""","""H5N1 subtype""",1
+"""2023-4""","""Passer domesticus""","""H5N1 subtype""",1
+"""2023-4""","""Coscoroba coscoroba""","""H5N1 subtype""",1
+"""2023-4""","""Stercorarius chilensis""","""H5N1 subtype""",1
+"""2023-4""","""Accipiter gentilis""","""H5N1 subtype""",1
+"""2023-4""","""Branta canadensis""","""H5N1 subtype""",1
+"""2023-4""","""Milvus milvus""","""H5N1 subtype""",1
+"""2023-4""","""Falco tinnunculus""","""H5N1 subtype""",1
+"""2023-4""","""Pekania pennanti""","""H5N1 subtype""",1
+"""2023-4""","""Mephitis mephitis""","""H5N1 subtype""",1
+"""2023-5""","""Aves""","""H5N1 subtype""",123825
+"""2023-5""","""Chroicocephalus ridibundus""","""H5N1 subtype""",386
+"""2023-5""","""Cygnus melancoryphus""","""H5N1 subtype""",101
+"""2023-5""","""Sterna hirundo""","""H5N1 subtype""",93
+"""2023-5""","""Chroicocephalus brunnicephalus""","""H5N1 subtype""",64
+"""2023-5""","""Larus argentatus""","""H5N1 subtype""",19
+"""2023-5""","""Vulpes vulpes""","""H5N1 subtype""",6
+"""2023-5""","""Podiceps cristatus""","""H5N1 subtype""",2
+"""2023-5""","""Haematopus ostralegus""","""H5N1 subtype""",2
+"""2023-5""","""Sula nebouxii""","""H5N1 subtype""",2
+"""2023-5""","""Anas platyrhynchos""","""H5N1 subtype""",2
+"""2023-5""","""Thalasseus sandvicensis""","""H5N1 subtype""",2
+"""2023-5""","""Bos taurus""","""H5N1 subtype""",1
+"""2023-5""","""Thalasseus maximus""","""H5N1 subtype""",1
+"""2023-5""","""Megascops choliba""","""H5N1 subtype""",1
+"""2023-5""","""Phalacrocorax brasilianus""","""H5N1 subtype""",1
+"""2023-5""","""Chroicocephalus cirrocephalus""","""H5N1 subtype""",1
+"""2023-5""","""Sula leucogaster""","""H5N1 subtype""",1
+"""2023-5""","""Larus canus""","""H5N1 subtype""",1
+"""2023-5""","""Cygnus olor""","""H5N1 subtype""",1
+"""2023-5""","""Martes martes""","""H5N1 subtype""",1
+"""2023-5""","""Pica pica""","""H5N1 subtype""",1
+"""2023-5""","""Larus fuscus graellsii""","""H5N1 subtype""",1
+"""2023-5""","""Larus michahellis atlantis""","""H5N1 subtype""",1
+"""2023-5""","""Gallinula chloropus""","""H5N1 subtype""",1
+"""2023-5""","""Mephitis mephitis""","""H5N1 subtype""",1
+"""2023-6""","""Aves""","""H5N1 subtype""",296466
+"""2023-6""","""Chroicocephalus ridibundus""","""H5N1 subtype""",139
+"""2023-6""","""Thalasseus sandvicensis""","""H5N1 subtype""",57
+"""2023-6""","""Rissa tridactyla""","""H5N1 subtype""",42
+"""2023-6""","""Sterna hirundo""","""H5N1 subtype""",30
+"""2023-6""","""Thalasseus maximus""","""H5N1 subtype""",21
+"""2023-6""","""Chroicocephalus genei""","""H5N1 subtype""",18
+"""2023-6""","""Larus argentatus""","""H5N1 subtype""",9
+"""2023-6""","""Larus canus""","""H5N1 subtype""",4
+"""2023-6""","""Phalacrocorax carbo""","""H5N1 subtype""",3
+"""2023-6""","""Sternula albifrons""","""H5N1 subtype""",3
+"""2023-6""","""Somateria mollissima""","""H5N1 subtype""",2
+"""2023-6""","""Caracara plancus""","""H5N1 subtype""",2
+"""2023-6""","""Sterna hirundinacea""","""H5N1 subtype""",2
+"""2023-6""","""Larus marinus""","""H5N1 subtype""",2
+"""2023-6""","""Vulpes vulpes""","""H5N1 subtype""",2
+"""2023-6""","""Milvus milvus""","""H5N1 subtype""",2
+"""2023-6""","""Haliaeetus albicilla""","""H5N1 subtype""",2
+"""2023-6""","""Chroicocephalus maculipennis""","""H5N1 subtype""",1
+"""2023-6""","""Buteogallus urubitinga""","""H5N1 subtype""",1
+"""2023-6""","""Rupornis magnirostris""","""H5N1 subtype""",1
+"""2023-6""","""Ciconia ciconia""","""H5N1 subtype""",1
+"""2023-6""","""Uria aalge""","""H5N1 subtype""",1
+"""2023-6""","""Larus fuscus graellsii""","""H5N1 subtype""",1
+"""2023-6""","""Sterna dougallii""","""H5N1 subtype""",1
+"""2023-6""","""Ichthyaetus melanocephalus""","""H5N1 subtype""",1
+"""2023-6""","""Larus michahellis atlantis""","""H5N1 subtype""",1
+"""2023-6""","""Passer domesticus""","""H5N1 subtype""",0
+"""2023-7""","""Aves""","""H5N1 subtype""",2672
+"""2023-7""","""Chroicocephalus ridibundus""","""H5N1 subtype""",51
+"""2023-7""","""Rissa tridactyla""","""H5N1 subtype""",8
+"""2023-7""","""Thalasseus maximus""","""H5N1 subtype""",2
+"""2023-7""","""Sterna hirundo""","""H5N1 subtype""",2
+"""2023-7""","""Larus canus""","""H5N1 subtype""",1
+"""2023-7""","""Larus argentatus""","""H5N1 subtype""",1
+"""2023-7""","""Uria aalge""","""H5N1 subtype""",1

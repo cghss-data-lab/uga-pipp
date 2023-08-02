@@ -1,0 +1,669 @@
+﻿yearMonth,species,class,monthlyCases
+"""2005-10""","""Aves""",null,15556
+"""2005-11""","""Aves""",null,2878
+"""2005-12""","""Aves""",null,149204
+"""2005-7""","""Aves""",null,3628
+"""2005-8""","""Aves""",null,29513
+"""2005-9""","""Aves""",null,44
+"""2006-1""","""Aves""",null,141743
+"""2006-11""","""Aves""",null,6652
+"""2006-12""","""Aves""",null,295884
+"""2006-2""","""Aves""",null,2416568
+"""2006-3""","""Aves""",null,13876790
+"""2006-4""","""Aves""",null,100864
+"""2006-5""","""Aves""",null,145748
+"""2006-6""","""Aves""",null,1940
+"""2006-7""","""Aves""",null,21295
+"""2006-8""","""Aves""",null,2358
+"""2007-1""","""Aves""",null,398856
+"""2007-1""","""Oncorhynchus mykiss""","""Actinopteri""",3000
+"""2007-10""","""Aves""",null,11535
+"""2007-11""","""Aves""",null,41518
+"""2007-12""","""Aves""",null,101494
+"""2007-2""","""Aves""",null,497899
+"""2007-3""","""Aves""",null,216839
+"""2007-4""","""Aves""",null,306110
+"""2007-5""","""Aves""",null,34068
+"""2007-6""","""Aves""",null,21362
+"""2007-7""","""Aves""",null,136091
+"""2007-8""","""Aves""",null,5541
+"""2007-9""","""Aves""",null,11439
+"""2008-1""","""Aves""",null,266729
+"""2008-1""","""Bos taurus""","""Mammalia""",1
+"""2008-10""","""Aves""",null,1417
+"""2008-11""","""Aves""",null,1148
+"""2008-12""","""Aves""",null,2626
+"""2008-2""","""Aves""",null,150625
+"""2008-3""","""Aves""",null,92661
+"""2008-4""","""Aves""",null,23061
+"""2008-5""","""Aves""",null,36587
+"""2008-6""","""Aves""",null,16503
+"""2008-7""","""Aves""",null,2856
+"""2008-8""","""Aves""",null,2557
+"""2008-9""","""Aves""",null,5778
+"""2009-1""","""Aves""",null,1883
+"""2009-11""","""Aves""",null,635
+"""2009-12""","""Aves""",null,641
+"""2009-2""","""Aves""",null,8551
+"""2009-3""","""Aves""",null,1550
+"""2009-4""","""Aves""",null,1760
+"""2009-5""","""Aves""",null,373
+"""2009-6""","""Aves""",null,650
+"""2010-1""","""Aves""",null,41327
+"""2010-10""","""Aves""",null,66
+"""2010-11""","""Aves""",null,301
+"""2010-12""","""Aves""",null,33
+"""2010-2""","""Aves""",null,11420
+"""2010-3""","""Aves""",null,5923
+"""2010-4""","""Aves""",null,2350
+"""2010-5""","""Aves""",null,261
+"""2010-6""","""Aves""",null,5933
+"""2010-7""","""Aves""",null,760
+"""2011-1""","""Aves""",null,93116
+"""2011-10""","""Aves""",null,1250
+"""2011-11""","""Aves""",null,5138
+"""2011-12""","""Aves""",null,516
+"""2011-2""","""Aves""",null,26814
+"""2011-3""","""Aves""",null,44624
+"""2011-3""","""Bos taurus""","""Mammalia""",2
+"""2011-4""","""Aves""",null,8370
+"""2011-5""","""Aves""",null,2258
+"""2011-7""","""Aves""",null,5298
+"""2011-8""","""Aves""",null,4642
+"""2011-9""","""Aves""",null,2820
+"""2012-1""","""Aves""",null,14613
+"""2012-10""","""Aves""",null,4725
+"""2012-12""","""Aves""",null,6097
+"""2012-12""","""Bos taurus""","""Mammalia""",1
+"""2012-2""","""Aves""",null,13736
+"""2012-3""","""Aves""",null,46577
+"""2012-4""","""Aves""",null,27053
+"""2012-4""","""Bos taurus""","""Mammalia""",2
+"""2012-5""","""Aves""",null,564
+"""2012-6""","""Aves""",null,6201
+"""2012-7""","""Aves""",null,5537
+"""2012-8""","""Aves""",null,2500
+"""2012-8""","""Bos taurus""","""Mammalia""",18
+"""2012-9""","""Aves""",null,14050
+"""2013-1""","""Aves""",null,3569
+"""2013-1""","""Chroicocephalus ridibundus""","""Aves""",1
+"""2013-10""","""Aves""",null,370
+"""2013-10""","""Bos taurus""","""Mammalia""",1
+"""2013-2""","""Aves""",null,4973
+"""2013-2""","""Bos taurus""","""Mammalia""",1
+"""2013-3""","""Aves""",null,3885
+"""2013-4""","""Aves""",null,205582
+"""2013-4""","""Corvus splendens""","""Aves""",1
+"""2013-5""","""Aves""",null,3214
+"""2013-6""","""Aves""",null,886
+"""2013-7""","""Aves""",null,74608
+"""2013-7""","""Corvus splendens""","""Aves""",1
+"""2013-8""","""Aves""",null,48987
+"""2013-9""","""Aves""",null,4529
+"""2014-1""","""Aves""",null,3895
+"""2014-2""","""Aves""",null,37006
+"""2014-3""","""Aves""",null,23136
+"""2019-12""","""Aves""",null,5634
+"""2019-6""","""Aves""",null,1754
+"""2019-8""","""Aves""",null,195
+"""2020-1""","""Aves""",null,6872
+"""2020-10""","""Aves""",null,330
+"""2020-10""","""Mareca penelope""","""Aves""",4
+"""2020-10""","""Anser anser""","""Aves""",1
+"""2020-11""","""Mareca penelope""","""Aves""",1
+"""2020-11""","""Cygnus olor""","""Aves""",1
+"""2020-11""","""Anas crecca""","""Aves""",1
+"""2020-12""","""Aves""",null,58487
+"""2020-12""","""Mareca penelope""","""Aves""",4
+"""2020-12""","""Cygnus olor""","""Aves""",3
+"""2020-12""","""Anas crecca""","""Aves""",2
+"""2020-12""","""Anser anser""","""Aves""",1
+"""2020-12""","""Branta canadensis""","""Aves""",1
+"""2020-2""","""Aves""",null,7990
+"""2020-2""","""Tyto longimembris""","""Aves""",4
+"""2020-2""","""Corvus splendens""","""Aves""",4
+"""2020-3""","""Aves""",null,2665
+"""2020-3""","""Corvus splendens""","""Aves""",197
+"""2020-3""","""Harpactes erythrocephalus""","""Aves""",7
+"""2020-4""","""Aves""",null,3070
+"""2020-7""","""Aves""",null,500
+"""2020-8""","""Aves""",null,1105
+"""2020-9""","""Aves""",null,862
+"""2021-1""","""Aves""",null,15944
+"""2021-1""","""Cygnus olor""","""Aves""",4
+"""2021-1""","""Anser indicus""","""Aves""",1
+"""2021-10""","""Aves""",null,72150
+"""2021-10""","""Phalacrocorax capensis""","""Aves""",10576
+"""2021-10""","""Spheniscus demersus""","""Aves""",207
+"""2021-10""","""Morus capensis""","""Aves""",20
+"""2021-10""","""Phasianus colchicus""","""Aves""",5
+"""2021-10""","""Haliaeetus albicilla""","""Aves""",3
+"""2021-10""","""Accipiter gentilis""","""Aves""",3
+"""2021-10""","""Alopochen aegyptiaca""","""Aves""",2
+"""2021-10""","""Phalacrocorax lucidus""","""Aves""",2
+"""2021-10""","""Strix uralensis""","""Aves""",1
+"""2021-11""","""Aves""",null,141055
+"""2021-11""","""Phalacrocorax capensis""","""Aves""",2701
+"""2021-11""","""Anser albifrons""","""Aves""",1
+"""2021-11""","""Cygnus olor""","""Aves""",1
+"""2021-11""","""Larus marinus""","""Aves""",1
+"""2021-11""","""Larus argentatus""","""Aves""",1
+"""2021-11""","""Accipiter gentilis""","""Aves""",1
+"""2021-11""","""Sterna hirundo""","""Aves""",1
+"""2021-12""","""Aves""",null,140564
+"""2021-12""","""Phalacrocorax capensis""","""Aves""",33
+"""2021-12""","""Sterna hirundo""","""Aves""",2
+"""2021-12""","""Accipiter gentilis""","""Aves""",1
+"""2021-12""","""Phalacrocorax lucidus""","""Aves""",1
+"""2021-2""","""Aves""",null,141402
+"""2021-2""","""Branta leucopsis""","""Aves""",1
+"""2021-3""","""Aves""",null,306838
+"""2021-3""","""Branta leucopsis""","""Aves""",4
+"""2021-3""","""Anser sp.""","""Aves""",1
+"""2021-3""","""Milvus milvus""","""Aves""",1
+"""2021-3""","""Uria aalge""","""Aves""",1
+"""2021-3""","""Larus fuscus graellsii""","""Aves""",1
+"""2021-4""","""Aves""",null,124713
+"""2021-4""","""Branta leucopsis""","""Aves""",9
+"""2021-4""","""Corvus frugilegus""","""Aves""",3
+"""2021-4""","""Ciconia ciconia""","""Aves""",1
+"""2021-4""","""Haliaeetus albicilla""","""Aves""",1
+"""2021-5""","""Aves""",null,206523
+"""2021-5""","""Phalacrocorax capensis""","""Aves""",223
+"""2021-5""","""Spheniscus demersus""","""Aves""",178
+"""2021-5""","""Branta leucopsis""","""Aves""",15
+"""2021-5""","""Threskiornis aethiopicus""","""Aves""",14
+"""2021-5""","""Laridae""","""Aves""",13
+"""2021-5""","""Alopochen aegyptiaca""","""Aves""",9
+"""2021-5""","""Haliaeetus albicilla""","""Aves""",7
+"""2021-5""","""Sterna hirundo""","""Aves""",4
+"""2021-5""","""Ara ararauna""","""Aves""",2
+"""2021-5""","""Tyto alba""","""Aves""",2
+"""2021-5""","""Plectropterus gambensis""","""Aves""",2
+"""2021-5""","""Larus dominicanus""","""Aves""",2
+"""2021-5""","""Pterodroma macroptera""","""Aves""",1
+"""2021-5""","""Haematopus bachmani""","""Aves""",1
+"""2021-5""","""Chroicocephalus cirrocephalus""","""Aves""",1
+"""2021-5""","""Larus argentatus""","""Aves""",1
+"""2021-5""","""Circus aeruginosus""","""Aves""",1
+"""2021-6""","""Aves""",null,126187
+"""2021-6""","""Pelecanus crispus""","""Aves""",78
+"""2021-6""","""Larus dominicanus""","""Aves""",29
+"""2021-6""","""Phalacrocorax capensis""","""Aves""",13
+"""2021-6""","""Cygnus atratus""","""Aves""",12
+"""2021-6""","""Threskiornis aethiopicus""","""Aves""",8
+"""2021-6""","""Laridae""","""Aves""",7
+"""2021-6""","""Phalacrocorax carbo""","""Aves""",3
+"""2021-6""","""Larus argentatus""","""Aves""",2
+"""2021-6""","""Grus paradisea""","""Aves""",2
+"""2021-6""","""Stercorarius lonnbergi""","""Aves""",1
+"""2021-6""","""Thalasseus sandvicensis""","""Aves""",1
+"""2021-6""","""Anas platyrhynchos""","""Aves""",1
+"""2021-6""","""Haliaeetus albicilla""","""Aves""",1
+"""2021-6""","""Branta leucopsis""","""Aves""",1
+"""2021-6""","""Cygnus olor""","""Aves""",1
+"""2021-7""","""Aves""",null,176456
+"""2021-7""","""Pelecanus crispus""","""Aves""",7
+"""2021-7""","""Larus argentatus""","""Aves""",2
+"""2021-7""","""Stercorarius skua""","""Aves""",2
+"""2021-8""","""Aves""",null,69964
+"""2021-8""","""Cygnus olor""","""Aves""",3
+"""2021-8""","""Phalacrocorax carbo""","""Aves""",2
+"""2021-8""","""Bostrychia hagedash""","""Aves""",2
+"""2021-8""","""Bubo bubo""","""Aves""",1
+"""2021-8""","""Larus argentatus""","""Aves""",1
+"""2021-8""","""Larus canus""","""Aves""",1
+"""2021-8""","""Mergus merganser""","""Aves""",1
+"""2021-8""","""Accipiter gentilis""","""Aves""",1
+"""2021-9""","""Aves""",null,301535
+"""2021-9""","""Phalacrocorax capensis""","""Aves""",3223
+"""2021-9""","""Phasianus colchicus""","""Aves""",42
+"""2021-9""","""Phalacrocorax lucidus""","""Aves""",4
+"""2021-9""","""Branta leucopsis""","""Aves""",3
+"""2021-9""","""Spheniscus demersus""","""Aves""",2
+"""2021-9""","""Sterna hirundo""","""Aves""",1
+"""2022-1""","""Aves""",null,517486
+"""2022-1""","""Anas platyrhynchos""","""Aves""",12
+"""2022-1""","""Grus monacha""","""Aves""",1
+"""2022-10""","""Aves""",null,1087475
+"""2022-10""","""Chroicocephalus ridibundus""","""Aves""",276
+"""2022-10""","""Branta canadensis""","""Aves""",135
+"""2022-10""","""Sterna hirundo""","""Aves""",96
+"""2022-10""","""Anser anser""","""Aves""",65
+"""2022-10""","""Cygnus olor""","""Aves""",58
+"""2022-10""","""Anas crecca""","""Aves""",49
+"""2022-10""","""Anser brachyrhynchus""","""Aves""",46
+"""2022-10""","""Anas platyrhynchos""","""Aves""",45
+"""2022-10""","""Egretta garzetta""","""Aves""",28
+"""2022-10""","""Phasianus colchicus""","""Aves""",22
+"""2022-10""","""Larus argentatus""","""Aves""",12
+"""2022-10""","""Morus bassanus""","""Aves""",6
+"""2022-10""","""Mephitis mephitis""","""Mammalia""",6
+"""2022-10""","""Anser sp.""","""Aves""",5
+"""2022-10""","""Morus capensis""","""Aves""",5
+"""2022-10""","""Corvus corone""","""Aves""",4
+"""2022-10""","""Numenius arquata""","""Aves""",4
+"""2022-10""","""Branta leucopsis""","""Aves""",4
+"""2022-10""","""Columba livia""","""Aves""",4
+"""2022-10""","""Accipiter nisus""","""Aves""",3
+"""2022-10""","""Falco tinnunculus""","""Aves""",3
+"""2022-10""","""Mareca penelope""","""Aves""",3
+"""2022-10""","""Falco rusticolus""","""Aves""",2
+"""2022-10""","""Alectoris rufa""","""Aves""",2
+"""2022-10""","""Anser albifrons""","""Aves""",2
+"""2022-10""","""Corvus corax""","""Aves""",2
+"""2022-10""","""Spatula discors""","""Aves""",1
+"""2022-10""","""Corvus frugilegus""","""Aves""",1
+"""2022-10""","""Strix aluco""","""Aves""",1
+"""2022-10""","""Milvus milvus""","""Aves""",1
+"""2022-10""","""Larus fuscus graellsii""","""Aves""",1
+"""2022-10""","""Pandion haliaetus""","""Aves""",1
+"""2022-10""","""Bos taurus""","""Mammalia""",1
+"""2022-10""","""Ciconia ciconia""","""Aves""",1
+"""2022-10""","""Ursus arctos""","""Mammalia""",1
+"""2022-10""","""Didelphis virginiana""","""Mammalia""",1
+"""2022-10""","""Vulpes vulpes""","""Mammalia""",1
+"""2022-10""","""Haliaeetus albicilla""","""Aves""",1
+"""2022-11""","""Aves""",null,2676430
+"""2022-11""","""Grus monacha""","""Aves""",860
+"""2022-11""","""Spheniscus demersus""","""Aves""",151
+"""2022-11""","""Spatula discors""","""Aves""",120
+"""2022-11""","""Cygnus olor""","""Aves""",105
+"""2022-11""","""Anser anser""","""Aves""",53
+"""2022-11""","""Branta leucopsis""","""Aves""",37
+"""2022-11""","""Antigone vipio""","""Aves""",35
+"""2022-11""","""Branta canadensis""","""Aves""",34
+"""2022-11""","""Chroicocephalus ridibundus""","""Aves""",27
+"""2022-11""","""Anas platyrhynchos""","""Aves""",21
+"""2022-11""","""Anas crecca""","""Aves""",20
+"""2022-11""","""Mephitis mephitis""","""Mammalia""",15
+"""2022-11""","""Larus argentatus""","""Aves""",12
+"""2022-11""","""Anser brachyrhynchus""","""Aves""",11
+"""2022-11""","""Corvus macrorhynchos""","""Aves""",7
+"""2022-11""","""Sterna hirundo""","""Aves""",6
+"""2022-11""","""Accipiter nisus""","""Aves""",6
+"""2022-11""","""Quiscalus mexicanus""","""Aves""",5
+"""2022-11""","""Phasianus colchicus""","""Aves""",5
+"""2022-11""","""Columba livia""","""Aves""",3
+"""2022-11""","""Anser caerulescens caerulescens""","""Aves""",3
+"""2022-11""","""Charadrius hiaticula""","""Aves""",3
+"""2022-11""","""Dendrocopos major""","""Aves""",3
+"""2022-11""","""Ardea cinerea""","""Aves""",2
+"""2022-11""","""Phoenicopterus roseus""","""Aves""",2
+"""2022-11""","""Falco tinnunculus""","""Aves""",2
+"""2022-11""","""Mareca penelope""","""Aves""",2
+"""2022-11""","""Anas acuta""","""Aves""",2
+"""2022-11""","""Grus japonensis""","""Aves""",2
+"""2022-11""","""Larus schistisagus""","""Aves""",2
+"""2022-11""","""Cygnus columbianus""","""Aves""",2
+"""2022-11""","""Phalacrocorax capensis""","""Aves""",2
+"""2022-11""","""Calidris alpina""","""Aves""",1
+"""2022-11""","""Platalea minor""","""Aves""",1
+"""2022-11""","""Uria aalge""","""Aves""",1
+"""2022-11""","""Milvus milvus""","""Aves""",1
+"""2022-11""","""Strix aluco""","""Aves""",1
+"""2022-11""","""Tyto alba""","""Aves""",1
+"""2022-11""","""Streptopelia decaocto""","""Aves""",1
+"""2022-11""","""Ciconia boyciana""","""Aves""",1
+"""2022-11""","""Milvus migrans""","""Aves""",1
+"""2022-11""","""Haliaeetus albicilla""","""Aves""",1
+"""2022-11""","""Lontra canadensis""","""Mammalia""",1
+"""2022-11""","""Ursus arctos""","""Mammalia""",1
+"""2022-12""","""Aves""",null,2040776
+"""2022-12""","""Grus monacha""","""Aves""",258
+"""2022-12""","""Cygnus olor""","""Aves""",68
+"""2022-12""","""Sula variegata""","""Aves""",58
+"""2022-12""","""Chroicocephalus ridibundus""","""Aves""",35
+"""2022-12""","""Branta canadensis""","""Aves""",35
+"""2022-12""","""Anser anser""","""Aves""",29
+"""2022-12""","""Anser brachyrhynchus""","""Aves""",22
+"""2022-12""","""Antigone vipio""","""Aves""",15
+"""2022-12""","""Laridae""","""Aves""",12
+"""2022-12""","""Sterna hirundo""","""Aves""",12
+"""2022-12""","""Larus argentatus""","""Aves""",11
+"""2022-12""","""Leucophaeus modestus""","""Aves""",10
+"""2022-12""","""Anser caerulescens caerulescens""","""Aves""",10
+"""2022-12""","""Phalacrocorax carbo""","""Aves""",8
+"""2022-12""","""Columba livia""","""Aves""",6
+"""2022-12""","""Corvus macrorhynchos""","""Aves""",6
+"""2022-12""","""Larus dominicanus""","""Aves""",5
+"""2022-12""","""Mareca penelope""","""Aves""",5
+"""2022-12""","""Branta leucopsis""","""Aves""",4
+"""2022-12""","""Accipiter gentilis""","""Aves""",4
+"""2022-12""","""Cathartes aura""","""Aves""",4
+"""2022-12""","""Phalacrocorax brasilianus""","""Aves""",4
+"""2022-12""","""Larosterna inca""","""Aves""",4
+"""2022-12""","""Accipiter nisus""","""Aves""",4
+"""2022-12""","""Anas crecca""","""Aves""",4
+"""2022-12""","""Felis catus""","""Mammalia""",3
+"""2022-12""","""Anas platyrhynchos""","""Aves""",3
+"""2022-12""","""Stercorarius chilensis""","""Aves""",3
+"""2022-12""","""Haliaeetus albicilla""","""Aves""",3
+"""2022-12""","""Vulpes vulpes""","""Mammalia""",3
+"""2022-12""","""Platalea minor""","""Aves""",2
+"""2022-12""","""Sterna hirundinacea""","""Aves""",2
+"""2022-12""","""Coragyps atratus""","""Aves""",2
+"""2022-12""","""Phalacrocorax gaimardi""","""Aves""",2
+"""2022-12""","""Thalasseus elegans""","""Aves""",2
+"""2022-12""","""Falco sparverius""","""Aves""",2
+"""2022-12""","""Larus fuscus graellsii""","""Aves""",2
+"""2022-12""","""Falco tinnunculus""","""Aves""",2
+"""2022-12""","""Sula nebouxii""","""Aves""",1
+"""2022-12""","""Calidris alba""","""Aves""",1
+"""2022-12""","""Quiscalus mexicanus""","""Aves""",1
+"""2022-12""","""Tyto alba""","""Aves""",1
+"""2022-12""","""Aix galericulata""","""Aves""",1
+"""2022-12""","""Anser albifrons""","""Aves""",1
+"""2022-12""","""Phoenicopterus roseus""","""Aves""",1
+"""2022-12""","""Phoenicopterus chilensis""","""Aves""",1
+"""2022-12""","""Ardea cinerea""","""Aves""",1
+"""2022-12""","""Haliaeetus pelagicus""","""Aves""",1
+"""2022-12""","""Aythya marila""","""Aves""",1
+"""2022-12""","""Lynx rufus""","""Mammalia""",1
+"""2022-12""","""Mephitis mephitis""","""Mammalia""",1
+"""2022-12""","""Ursus arctos""","""Mammalia""",1
+"""2022-2""","""Aves""",null,172036
+"""2022-2""","""Corvus splendens""","""Aves""",15
+"""2022-2""","""Cygnus olor""","""Aves""",2
+"""2022-2""","""Ciconia ciconia""","""Aves""",2
+"""2022-2""","""Phalacrocorax carbo""","""Aves""",1
+"""2022-3""","""Aves""",null,375173
+"""2022-3""","""Pelecanus crispus""","""Aves""",3
+"""2022-3""","""Uria aalge""","""Aves""",2
+"""2022-3""","""Vulpes vulpes""","""Mammalia""",1
+"""2022-3""","""Sterna hirundo""","""Aves""",1
+"""2022-4""","""Aves""",null,128753
+"""2022-4""","""Vulpes vulpes""","""Mammalia""",39
+"""2022-4""","""Pelecanus crispus""","""Aves""",10
+"""2022-4""","""Morus bassanus""","""Aves""",8
+"""2022-4""","""Mephitis mephitis""","""Mammalia""",5
+"""2022-4""","""Anser brachyrhynchus""","""Aves""",3
+"""2022-4""","""Ciconia ciconia""","""Aves""",3
+"""2022-4""","""Larus marinus""","""Aves""",2
+"""2022-4""","""Anser anser""","""Aves""",2
+"""2022-4""","""Puma""","""Mammalia""",1
+"""2022-4""","""Pekania pennanti""","""Mammalia""",1
+"""2022-4""","""Lynx rufus""","""Mammalia""",1
+"""2022-4""","""Corvus corax""","""Aves""",1
+"""2022-4""","""Branta leucopsis""","""Aves""",1
+"""2022-4""","""Chroicocephalus ridibundus""","""Aves""",1
+"""2022-4""","""Stercorarius skua""","""Aves""",1
+"""2022-4""","""Neogale vison""","""Mammalia""",1
+"""2022-4""","""Corvus corone""","""Aves""",1
+"""2022-4""","""Nyctereutes procyonoides""","""Mammalia""",1
+"""2022-4""","""Anas platyrhynchos""","""Aves""",1
+"""2022-5""","""Aves""",null,99755
+"""2022-5""","""Ichthyaetus ichthyaetus""","""Aves""",300
+"""2022-5""","""Vulpes vulpes""","""Mammalia""",50
+"""2022-5""","""Mephitis mephitis""","""Mammalia""",28
+"""2022-5""","""Pelecanus crispus""","""Aves""",26
+"""2022-5""","""Chlidonias hybrida""","""Aves""",18
+"""2022-5""","""Stercorarius skua""","""Aves""",9
+"""2022-5""","""Didelphis virginiana""","""Mammalia""",2
+"""2022-5""","""Larus argentatus""","""Aves""",2
+"""2022-5""","""Canis latrans""","""Mammalia""",1
+"""2022-5""","""Lynx rufus""","""Mammalia""",1
+"""2022-5""","""Larus fuscus graellsii""","""Aves""",1
+"""2022-6""","""Aves""",null,21272
+"""2022-6""","""Chroicocephalus ridibundus""","""Aves""",100
+"""2022-6""","""Phoca vitulina""","""Mammalia""",17
+"""2022-6""","""Vulpes vulpes""","""Mammalia""",7
+"""2022-6""","""Uria aalge""","""Aves""",6
+"""2022-6""","""Morus bassanus""","""Aves""",5
+"""2022-6""","""Mephitis mephitis""","""Mammalia""",3
+"""2022-6""","""Stercorarius skua""","""Aves""",2
+"""2022-6""","""Sterna hirundo""","""Aves""",2
+"""2022-6""","""Anas platyrhynchos""","""Aves""",1
+"""2022-6""","""Columba livia""","""Aves""",1
+"""2022-7""","""Aves""",null,124836
+"""2022-7""","""Chroicocephalus brunnicephalus""","""Aves""",273
+"""2022-7""","""Uria aalge""","""Aves""",25
+"""2022-7""","""Phoca vitulina""","""Mammalia""",10
+"""2022-7""","""Morus bassanus""","""Aves""",5
+"""2022-7""","""Larus argentatus""","""Aves""",4
+"""2022-7""","""Sterna paradisaea""","""Aves""",3
+"""2022-7""","""Columba livia""","""Aves""",2
+"""2022-7""","""Sterna hirundo""","""Aves""",2
+"""2022-7""","""Larus michahellis atlantis""","""Aves""",1
+"""2022-7""","""Halichoerus grypus""","""Mammalia""",1
+"""2022-7""","""Mephitis mephitis""","""Mammalia""",1
+"""2022-7""","""Spheniscus demersus""","""Aves""",1
+"""2022-8""","""Aves""",null,140931
+"""2022-8""","""Bos taurus""","""Mammalia""",4
+"""2022-8""","""Ursus maritimus""","""Mammalia""",1
+"""2022-8""","""Anas platyrhynchos""","""Aves""",1
+"""2022-8""","""Morus bassanus""","""Aves""",1
+"""2022-9""","""Aves""",null,265634
+"""2022-9""","""Chroicocephalus ridibundus""","""Aves""",196
+"""2022-9""","""Cygnus olor""","""Aves""",39
+"""2022-9""","""Anser anser""","""Aves""",38
+"""2022-9""","""Branta canadensis""","""Aves""",23
+"""2022-9""","""Larus argentatus""","""Aves""",22
+"""2022-9""","""Larus fuscus graellsii""","""Aves""",21
+"""2022-9""","""Gallinula chloropus""","""Aves""",12
+"""2022-9""","""Fulmarus glacialis""","""Aves""",7
+"""2022-9""","""Larus canus""","""Aves""",6
+"""2022-9""","""Morus bassanus""","""Aves""",6
+"""2022-9""","""Bos taurus""","""Mammalia""",5
+"""2022-9""","""Vulpes vulpes""","""Mammalia""",5
+"""2022-9""","""Stercorarius skua""","""Aves""",4
+"""2022-9""","""Nasua nasua""","""Mammalia""",3
+"""2022-9""","""Larus marinus""","""Aves""",3
+"""2022-9""","""Circus cyaneus""","""Aves""",1
+"""2022-9""","""Anas crecca""","""Aves""",1
+"""2022-9""","""Columba livia""","""Aves""",1
+"""2022-9""","""Corvus corax""","""Aves""",1
+"""2022-9""","""Panthera pardus orientalis""","""Mammalia""",1
+"""2023-1""","""Aves""",null,2365775
+"""2023-1""","""Cygnus olor""","""Aves""",104
+"""2023-1""","""Chroicocephalus ridibundus""","""Aves""",55
+"""2023-1""","""Mephitis mephitis""","""Mammalia""",42
+"""2023-1""","""Sula variegata""","""Aves""",14
+"""2023-1""","""Corvus macrorhynchos""","""Aves""",14
+"""2023-1""","""Phalacrocorax carbo""","""Aves""",13
+"""2023-1""","""Larus dominicanus""","""Aves""",13
+"""2023-1""","""Vulpes vulpes""","""Mammalia""",13
+"""2023-1""","""Larus argentatus""","""Aves""",11
+"""2023-1""","""Branta canadensis""","""Aves""",11
+"""2023-1""","""Anas platyrhynchos""","""Aves""",9
+"""2023-1""","""Larosterna inca""","""Aves""",9
+"""2023-1""","""Accipiter nisus""","""Aves""",9
+"""2023-1""","""Anser anser""","""Aves""",8
+"""2023-1""","""Larus michahellis atlantis""","""Aves""",7
+"""2023-1""","""Leucophaeus modestus""","""Aves""",7
+"""2023-1""","""Branta leucopsis""","""Aves""",6
+"""2023-1""","""Sterna hirundo""","""Aves""",6
+"""2023-1""","""Grus monacha""","""Aves""",6
+"""2023-1""","""Leucophaeus pipixcan""","""Aves""",4
+"""2023-1""","""Cathartes aura""","""Aves""",3
+"""2023-1""","""Strix aluco""","""Aves""",3
+"""2023-1""","""Accipiter gentilis""","""Aves""",2
+"""2023-1""","""Ardea cinerea""","""Aves""",2
+"""2023-1""","""Puma""","""Mammalia""",2
+"""2023-1""","""Felis catus""","""Mammalia""",2
+"""2023-1""","""Bubo bubo""","""Aves""",1
+"""2023-1""","""Bos taurus""","""Mammalia""",1
+"""2023-1""","""Ciconia ciconia""","""Aves""",1
+"""2023-1""","""Buteo lagopus""","""Aves""",1
+"""2023-1""","""Larus canus""","""Aves""",1
+"""2023-1""","""Spatula clypeata""","""Aves""",1
+"""2023-1""","""Sterna hirundinacea""","""Aves""",1
+"""2023-1""","""Rynchops niger""","""Aves""",1
+"""2023-1""","""Cygnus melancoryphus""","""Aves""",1
+"""2023-1""","""Tringa flavipes""","""Aves""",1
+"""2023-1""","""Ardea alba""","""Aves""",1
+"""2023-1""","""Anser brachyrhynchus""","""Aves""",1
+"""2023-1""","""Cygnus columbianus""","""Aves""",1
+"""2023-1""","""Strix uralensis""","""Aves""",1
+"""2023-1""","""Haliaeetus albicilla""","""Aves""",1
+"""2023-1""","""Corvus corone""","""Aves""",1
+"""2023-1""","""Mareca penelope""","""Aves""",1
+"""2023-1""","""Lynx rufus""","""Mammalia""",1
+"""2023-2""","""Aves""",null,625222
+"""2023-2""","""Chroicocephalus ridibundus""","""Aves""",304
+"""2023-2""","""Cygnus olor""","""Aves""",47
+"""2023-2""","""Corvus splendens""","""Aves""",20
+"""2023-2""","""Netta rufina""","""Aves""",10
+"""2023-2""","""Corvus macrorhynchos""","""Aves""",8
+"""2023-2""","""Vulpes vulpes""","""Mammalia""",7
+"""2023-2""","""Puma""","""Mammalia""",7
+"""2023-2""","""Larus dominicanus""","""Aves""",6
+"""2023-2""","""Coscoroba coscoroba""","""Aves""",5
+"""2023-2""","""Ardea cinerea""","""Aves""",5
+"""2023-2""","""Anser brachyrhynchus""","""Aves""",5
+"""2023-2""","""Mephitis mephitis""","""Mammalia""",5
+"""2023-2""","""Phalacrocorax carbo""","""Aves""",4
+"""2023-2""","""Sula variegata""","""Aves""",4
+"""2023-2""","""Ardea alba""","""Aves""",3
+"""2023-2""","""Branta leucopsis""","""Aves""",3
+"""2023-2""","""Anser albifrons""","""Aves""",2
+"""2023-2""","""Anas platyrhynchos""","""Aves""",2
+"""2023-2""","""Enicognathus ferrugineus""","""Aves""",2
+"""2023-2""","""Larus cachinnans""","""Aves""",2
+"""2023-2""","""Larus michahellis atlantis""","""Aves""",2
+"""2023-2""","""Sterna hirundo""","""Aves""",2
+"""2023-2""","""Strix aluco""","""Aves""",2
+"""2023-2""","""Streptopelia decaocto""","""Aves""",2
+"""2023-2""","""Cygnus columbianus""","""Aves""",2
+"""2023-2""","""Accipiter gentilis""","""Aves""",2
+"""2023-2""","""Lynx rufus""","""Mammalia""",2
+"""2023-2""","""Ciconia ciconia""","""Aves""",1
+"""2023-2""","""Chlidonias hybrida""","""Aves""",1
+"""2023-2""","""Bos taurus""","""Mammalia""",1
+"""2023-2""","""Anser anser""","""Aves""",1
+"""2023-2""","""Larus argentatus""","""Aves""",1
+"""2023-2""","""Cygnus atratus""","""Aves""",1
+"""2023-2""","""Bubo bubo""","""Aves""",1
+"""2023-2""","""Laridae""","""Aves""",1
+"""2023-2""","""Cygnus melancoryphus""","""Aves""",1
+"""2023-2""","""Corvus corax""","""Aves""",1
+"""2023-2""","""Fringilla coelebs""","""Aves""",1
+"""2023-2""","""Garrulus glandarius""","""Aves""",1
+"""2023-3""","""Aves""",null,218499
+"""2023-3""","""Cygnus olor""","""Aves""",343
+"""2023-3""","""Thalasseus maximus""","""Aves""",336
+"""2023-3""","""Chroicocephalus ridibundus""","""Aves""",267
+"""2023-3""","""Corvus macrorhynchos""","""Aves""",22
+"""2023-3""","""Puma""","""Mammalia""",6
+"""2023-3""","""Mephitis mephitis""","""Mammalia""",6
+"""2023-3""","""Ciconia ciconia""","""Aves""",5
+"""2023-3""","""Passer montanus""","""Aves""",5
+"""2023-3""","""Anser brachyrhynchus""","""Aves""",4
+"""2023-3""","""Vulpes vulpes""","""Mammalia""",4
+"""2023-3""","""Larus argentatus""","""Aves""",3
+"""2023-3""","""Corvus corone""","""Aves""",3
+"""2023-3""","""Branta leucopsis""","""Aves""",2
+"""2023-3""","""Larus cachinnans""","""Aves""",2
+"""2023-3""","""Podiceps cristatus""","""Aves""",2
+"""2023-3""","""Accipiter nisus""","""Aves""",2
+"""2023-3""","""Haematopus ostralegus""","""Aves""",2
+"""2023-3""","""Falco tinnunculus""","""Aves""",2
+"""2023-3""","""Larus michahellis atlantis""","""Aves""",2
+"""2023-3""","""Haliaeetus albicilla""","""Aves""",2
+"""2023-3""","""Felis catus""","""Mammalia""",2
+"""2023-3""","""Anas platyrhynchos""","""Aves""",1
+"""2023-3""","""Halichoerus grypus""","""Mammalia""",1
+"""2023-3""","""Anser anser""","""Aves""",1
+"""2023-3""","""Coloeus monedula""","""Aves""",1
+"""2023-3""","""Bubo bubo""","""Aves""",1
+"""2023-3""","""Coscoroba coscoroba""","""Aves""",1
+"""2023-3""","""Caracara""","""Aves""",1
+"""2023-3""","""Sterna hirundinacea""","""Aves""",1
+"""2023-3""","""Stercorarius chilensis""","""Aves""",1
+"""2023-3""","""Sterna hirundo""","""Aves""",1
+"""2023-3""","""Tachybaptus ruficollis""","""Aves""",1
+"""2023-3""","""Milvus milvus""","""Aves""",1
+"""2023-3""","""Phalacrocorax carbo""","""Aves""",1
+"""2023-3""","""Ichthyaetus ichthyaetus""","""Aves""",1
+"""2023-3""","""Egretta garzetta""","""Aves""",1
+"""2023-3""","""Accipiter gentilis""","""Aves""",1
+"""2023-3""","""Pekania pennanti""","""Mammalia""",1
+"""2023-3""","""Martes americana""","""Mammalia""",1
+"""2023-3""","""Canis lupus familiaris""","""Mammalia""",1
+"""2023-4""","""Aves""",null,682223
+"""2023-4""","""Chroicocephalus ridibundus""","""Aves""",121
+"""2023-4""","""Cygnus melancoryphus""","""Aves""",27
+"""2023-4""","""Vulpes vulpes""","""Mammalia""",23
+"""2023-4""","""Enicognathus leptorhynchus""","""Aves""",16
+"""2023-4""","""Chroicocephalus brunnicephalus""","""Aves""",15
+"""2023-4""","""Corvus macrorhynchos""","""Aves""",6
+"""2023-4""","""Canis lupus familiaris""","""Mammalia""",5
+"""2023-4""","""Chloephaga picta""","""Aves""",4
+"""2023-4""","""Larus argentatus""","""Aves""",4
+"""2023-4""","""Puma""","""Mammalia""",3
+"""2023-4""","""Ciconia ciconia""","""Aves""",1
+"""2023-4""","""Bubo bubo""","""Aves""",1
+"""2023-4""","""Gelochelidon nilotica""","""Aves""",1
+"""2023-4""","""Platalea minor""","""Aves""",1
+"""2023-4""","""Cygnus olor""","""Aves""",1
+"""2023-4""","""Passer domesticus""","""Aves""",1
+"""2023-4""","""Coscoroba coscoroba""","""Aves""",1
+"""2023-4""","""Stercorarius chilensis""","""Aves""",1
+"""2023-4""","""Accipiter gentilis""","""Aves""",1
+"""2023-4""","""Branta canadensis""","""Aves""",1
+"""2023-4""","""Milvus milvus""","""Aves""",1
+"""2023-4""","""Falco tinnunculus""","""Aves""",1
+"""2023-4""","""Pekania pennanti""","""Mammalia""",1
+"""2023-4""","""Mephitis mephitis""","""Mammalia""",1
+"""2023-5""","""Aves""",null,123825
+"""2023-5""","""Chroicocephalus ridibundus""","""Aves""",386
+"""2023-5""","""Cygnus melancoryphus""","""Aves""",101
+"""2023-5""","""Sterna hirundo""","""Aves""",93
+"""2023-5""","""Chroicocephalus brunnicephalus""","""Aves""",64
+"""2023-5""","""Larus argentatus""","""Aves""",19
+"""2023-5""","""Vulpes vulpes""","""Mammalia""",6
+"""2023-5""","""Podiceps cristatus""","""Aves""",2
+"""2023-5""","""Haematopus ostralegus""","""Aves""",2
+"""2023-5""","""Sula nebouxii""","""Aves""",2
+"""2023-5""","""Anas platyrhynchos""","""Aves""",2
+"""2023-5""","""Thalasseus sandvicensis""","""Aves""",2
+"""2023-5""","""Bos taurus""","""Mammalia""",1
+"""2023-5""","""Thalasseus maximus""","""Aves""",1
+"""2023-5""","""Megascops choliba""","""Aves""",1
+"""2023-5""","""Phalacrocorax brasilianus""","""Aves""",1
+"""2023-5""","""Chroicocephalus cirrocephalus""","""Aves""",1
+"""2023-5""","""Sula leucogaster""","""Aves""",1
+"""2023-5""","""Larus canus""","""Aves""",1
+"""2023-5""","""Cygnus olor""","""Aves""",1
+"""2023-5""","""Martes martes""","""Mammalia""",1
+"""2023-5""","""Pica pica""","""Aves""",1
+"""2023-5""","""Larus fuscus graellsii""","""Aves""",1
+"""2023-5""","""Larus michahellis atlantis""","""Aves""",1
+"""2023-5""","""Gallinula chloropus""","""Aves""",1
+"""2023-5""","""Mephitis mephitis""","""Mammalia""",1
+"""2023-6""","""Aves""",null,296466
+"""2023-6""","""Chroicocephalus ridibundus""","""Aves""",139
+"""2023-6""","""Thalasseus sandvicensis""","""Aves""",57
+"""2023-6""","""Rissa tridactyla""","""Aves""",42
+"""2023-6""","""Sterna hirundo""","""Aves""",30
+"""2023-6""","""Thalasseus maximus""","""Aves""",21
+"""2023-6""","""Chroicocephalus genei""","""Aves""",18
+"""2023-6""","""Larus argentatus""","""Aves""",9
+"""2023-6""","""Larus canus""","""Aves""",4
+"""2023-6""","""Phalacrocorax carbo""","""Aves""",3
+"""2023-6""","""Sternula albifrons""","""Aves""",3
+"""2023-6""","""Somateria mollissima""","""Aves""",2
+"""2023-6""","""Caracara plancus""","""Aves""",2
+"""2023-6""","""Sterna hirundinacea""","""Aves""",2
+"""2023-6""","""Larus marinus""","""Aves""",2
+"""2023-6""","""Vulpes vulpes""","""Mammalia""",2
+"""2023-6""","""Milvus milvus""","""Aves""",2
+"""2023-6""","""Haliaeetus albicilla""","""Aves""",2
+"""2023-6""","""Chroicocephalus maculipennis""","""Aves""",1
+"""2023-6""","""Buteogallus urubitinga""","""Aves""",1
+"""2023-6""","""Rupornis magnirostris""","""Aves""",1
+"""2023-6""","""Ciconia ciconia""","""Aves""",1
+"""2023-6""","""Uria aalge""","""Aves""",1
+"""2023-6""","""Larus fuscus graellsii""","""Aves""",1
+"""2023-6""","""Sterna dougallii""","""Aves""",1
+"""2023-6""","""Ichthyaetus melanocephalus""","""Aves""",1
+"""2023-6""","""Larus michahellis atlantis""","""Aves""",1
+"""2023-6""","""Passer domesticus""","""Aves""",0
+"""2023-7""","""Aves""",null,2672
+"""2023-7""","""Chroicocephalus ridibundus""","""Aves""",51
+"""2023-7""","""Rissa tridactyla""","""Aves""",8
+"""2023-7""","""Thalasseus maximus""","""Aves""",2
+"""2023-7""","""Sterna hirundo""","""Aves""",2
+"""2023-7""","""Larus canus""","""Aves""",1
+"""2023-7""","""Larus argentatus""","""Aves""",1
+"""2023-7""","""Uria aalge""","""Aves""",1
