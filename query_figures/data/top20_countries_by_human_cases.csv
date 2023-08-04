@@ -1,58 +1,60 @@
-﻿rankByHumanCases,country,hostScientificName,hostCommonName,influenzaCases
-1,China,"""Homo sapiens""",Humans,1966947
-1,China,"""Equidae""",Horses,11851
-1,China,"""Sus scrofa""",Wild boar,4
-1,China,"""Canis lupus familiaris""",Dog,2
-2,Canada,"""Homo sapiens""",Humans,885596
-2,Canada,"""Sus scrofa""",Wild boar,450
-2,Canada,"""Mephitis mephitis""",Striped skunk,80
-2,Canada,"""Vulpes vulpes""",Red fox,55
-2,Canada,"""Phoca vitulina""",Harbor seal,11
-2,Canada,"""Neogale vison""",American mink,1
-3,France,"""Homo sapiens""",Humans,731139
-3,France,"""Vulpes vulpes""",Red fox,1
-4,Sweden,"""Homo sapiens""",Humans,373476
-5,South Africa,"""Homo sapiens""",Humans,367217
-6,Switzerland,"""Homo sapiens""",Humans,290763
-7,Mexico,"""Homo sapiens""",Humans,289022
-8,Spain,"""Homo sapiens""",Humans,254626
-9,United States,"""Homo sapiens""",Humans,248048
-9,United States,"""Vulpes vulpes""",Red fox,87
-9,United States,"""Mephitis mephitis""",Striped skunk,34
-9,United States,"""Puma""",Puma,19
-9,United States,"""Phoca vitulina""",Harbor seal,16
-9,United States,"""Lynx rufus""",Bobcat,6
-9,United States,"""Felis catus""",Cat,6
-9,United States,"""Ursus arctos""",Brown bear,3
-9,United States,"""Pekania pennanti""",Fisher cat,3
-9,United States,"""Didelphis virginiana""",Virginia opposum,3
-9,United States,"""Panthera pardus orientalis""",Amur leopard,1
-9,United States,"""Martes americana""",American marten,1
-9,United States,"""Lontra canadensis""",North American river otter,1
-9,United States,"""Halichoerus grypus""",Grey seal,1
-9,United States,"""Canis latrans""",Coyote,1
-9,United States,"""Bos taurus""",Cattle,1
-10,Zimbabwe,"""Homo sapiens""",Humans,243745
-11,Japan,"""Homo sapiens""",Humans,229434
-11,Japan,"""Equidae""",Horses,4995
-11,Japan,"""Sus scrofa""",Wild boar,174
-11,Japan,"""Vulpes vulpes""",Red fox,3
-11,Japan,"""Nyctereutes procyonoides""",Raccoon,1
-12,Italy,"""Homo sapiens""",Humans,227957
-12,Italy,"""Sus scrofa""",Wild boar,384
-12,Italy,"""Equidae""",Horses,35
-12,Italy,"""Canis lupus familiaris""",Dog,5
-13,Argentina,"""Homo sapiens""",Humans,173566
-13,Argentina,"""Sus scrofa""",Wild boar,2455
-14,Qatar,"""Homo sapiens""",Humans,162816
-15,Denmark,"""Homo sapiens""",Humans,145156
-15,Denmark,"""Neogale vison""",American mink,60437
-15,Denmark,"""Sus scrofa""",Wild boar,1670
-16,Norway,"""Homo sapiens""",Humans,137532
-16,Norway,"""Sus scrofa""",Wild boar,279
-17,Mexico,"""Sus scrofa""",Wild boar,2
-18,Portugal,"""Homo sapiens""",Humans,134823
-19,Philippines,"""Homo sapiens""",Humans,134138
-20,Australia,"""Homo sapiens""",Humans,97912
-20,Australia,"""Equidae""",Horses,1454
-20,Australia,"""Sus scrofa""",Wild boar,100
+iso2,name,iso3,commonName,species,monthlyCases,region
+JP,Japan,JPN,Red fox,Vulpes vulpes,3,WPR
+FR,France,FRA,Red fox,Vulpes vulpes,1,EUR
+US,United States,USA,Red fox,Vulpes vulpes,87,AMR
+CA,Canada,CAN,Red fox,Vulpes vulpes,55,AMR
+US,United States,USA,Brown bear,Ursus arctos,3,AMR
+JP,Japan,JPN,Wild boar,Sus scrofa,174,WPR
+AU,Australia,AUS,Wild boar,Sus scrofa,100,WPR
+CN,China,CHN,Wild boar,Sus scrofa,4,WPR
+DK,Denmark,DNK,Wild boar,Sus scrofa,1670,EUR
+IT,Italy,ITA,Wild boar,Sus scrofa,384,EUR
+NO,Norway,NOR,Wild boar,Sus scrofa,279,EUR
+AR,Argentina,ARG,Wild boar,Sus scrofa,2455,AMR
+CA,Canada,CAN,Wild boar,Sus scrofa,450,AMR
+MX,Mexico,MEX,Wild boar,Sus scrofa,2,AMR
+US,United States,USA,Wild boar,Sus scrofa,0,AMR
+US,United States,USA,Cougar,Puma,19,AMR
+US,United States,USA,Harbor seal,Phoca vitulina,16,AMR
+CA,Canada,CAN,Harbor seal,Phoca vitulina,11,AMR
+US,United States,USA,Fisher cat,Pekania pennanti,3,AMR
+US,United States,USA,Amur leopard,Panthera pardus orientalis,1,AMR
+JP,Japan,JPN,Raccoon,Nyctereutes procyonoides,1,WPR
+DK,Denmark,DNK,American mink,Neogale vison,60437,EUR
+CA,Canada,CAN,American mink,Neogale vison,1,AMR
+CA,Canada,CAN,Striped skunk,Mephitis mephitis,80,AMR
+US,United States,USA,Striped skunk,Mephitis mephitis,34,AMR
+US,United States,USA,American marten,Martes americana,1,AMR
+US,United States,USA,Bobcat,Lynx rufus,6,AMR
+US,United States,USA,North American river ottter ,Lontra canadensis,1,AMR
+CN,China,CHN,Human,Homo sapiens,7822956,WPR
+PH,Philippines,PHL,Human,Homo sapiens,623178,WPR
+JP,Japan,JPN,Human,Homo sapiens,580752,WPR
+AU,Australia,AUS,Human,Homo sapiens,433178,WPR
+FR,France,FRA,Human,Homo sapiens,2415543,EUR
+SE,Sweden,SWE,Human,Homo sapiens,1116810,EUR
+CH,Switzerland,CHE,Human,Homo sapiens,864657,EUR
+ES,Spain,ESP,Human,Homo sapiens,853128,EUR
+IT,Italy,ITA,Human,Homo sapiens,677110,EUR
+NO,Norway,NOR,Human,Homo sapiens,578741,EUR
+DK,Denmark,DNK,Human,Homo sapiens,477868,EUR
+PT,Portugal,PRT,Human,Homo sapiens,382899,EUR
+AT,Austria,AUT,Human,Homo sapiens,283764,EUR
+QA,Qatar,QAT,Human,Homo sapiens,552800,EMR
+CA,Canada,CAN,Human,Homo sapiens,3398062,AMR
+MX,Mexico,MEX,Human,Homo sapiens,906746,AMR
+US,United States,USA,Human,Homo sapiens,784189,AMR
+AR,Argentina,ARG,Human,Homo sapiens,470402,AMR
+ZA,South Africa,ZAF,Human,Homo sapiens,1156255,AFR
+ZW,Zimbabwe,ZWE,Human,Homo sapiens,805267,AFR
+US,United States,USA,Grey seal,Halichoerus grypus,1,AMR
+US,United States,USA,Cat,Felis catus,6,AMR
+CN,China,CHN,Horse,Equidae,11851,WPR
+JP,Japan,JPN,Horse,Equidae,4995,WPR
+AU,Australia,AUS,Horse,Equidae,1454,WPR
+IT,Italy,ITA,Horse,Equidae,35,EUR
+US,United States,USA,Virginia opossum,Didelphis virginiana,3,AMR
+CN,China,CHN,Dog,Canis lupus familiaris,2,WPR
+IT,Italy,ITA,Dog,Canis lupus familiaris,5,EUR
+US,United States,USA,Coyote,Canis latrans,1,AMR
+US,United States,USA,Cow,Bos taurus,1,AMR

@@ -1,0 +1,196 @@
+,pairings,host in GMPD,pathogen in GMPD
+1,Aonyx cinereus-Severe acute respiratory syndrome coronavirus 2,no,no
+2,Ateles sp.-Severe acute respiratory syndrome coronavirus 2,yes,no
+3,Bos gaurus-Lumpy skin disease virus,yes,no
+4,Bos taurus-[Eubacterium] cellulosolvens,"no, but other bos are",no
+5,Bos taurus-African swine fever virus,"no, but other bos are",yes but not for bovidae
+6,Bos taurus-Alcelaphine gammaherpesvirus 1,"no, but other bos are",yes but not for bovidae
+7,Bos taurus-Babesia bovis,"no, but other bos are",yes but not for bovidae
+8,Bos taurus-Bacillus anthracis,"no, but other bos are",yes but not for bovidae
+9,Bos taurus-Bluetongue virus,"no, but other bos are",yes but not for bovidae
+10,Bos taurus-Bovine alphaherpesvirus 1,"no, but other bos are",yes but not for bovidae
+11,Bos taurus-Brucella abortus,"no, but other bos are",yes but not for bovidae
+12,Bos taurus-Brucella melitensis,"no, but other bos are",yes but not for bovidae
+13,Bos taurus-Brucella suis,"no, but other bos are",yes but not for bovidae
+14,Bos taurus-Capripoxvirus,"no, but other bos are",no
+15,Bos taurus-Chrysomya bezziana,"no, but other bos are",no
+16,Bos taurus-Classical swine fever virus,"no, but other bos are",yes but not for bovidae
+17,Bos taurus-Cochliomyia hominivorax,"no, but other bos are",yes but not for bovidae
+18,Bos taurus-Coxiella burnetii,"no, but other bos are",yes but not for bovidae
+19,Bos taurus-Epizootic hemorrhagic disease virus,"no, but other bos are",yes but not for bovidae
+20,Bos taurus-Equine infectious anemia virus,"no, but other bos are",no
+21,Bos taurus-Foot-and-mouth disease virus,"no, but other bos are","yes, including for bovidae"
+22,Bos taurus-H5N1 subtype,"no, but other bos are",yes but not for bovidae
+23,Bos taurus-Infectious hematopoietic necrosis virus,"no, but other bos are",no
+24,Bos taurus-Influenza A virus,"no, but other bos are",yes but not for bovidae
+25,Bos taurus-Lumpy skin disease virus,"no, but other bos are",no
+26,Bos taurus-Lyssavirus,"no, but other bos are",yes but not for bovidae
+27,Bos taurus-Lyssavirus rabies,"no, but other bos are",yes but not for bovidae
+28,Bos taurus-Mycobacterium tuberculosis complex,"no, but other bos are","yes, but other species for bovidae"
+29,Bos taurus-Mycobacterium tuberculosis variant bovis,"no, but other bos are","yes, but other species for bovidae"
+30,Bos taurus-Orbivirus,"no, but other bos are",yes but not for bovidae
+31,Bos taurus-Orthonairovirus haemorrhagiae,"no, but other bos are",no
+32,Bos taurus-Picornaviridae,"no, but other bos are",no
+33,Bos taurus-prion,"no, but other bos are",yes but not for bovidae
+34,Bos taurus-Rift Valley fever virus,"no, but other bos are",yes but not for bovidae
+35,Bos taurus-Schmallenberg virus,"no, but other bos are",no
+36,Bos taurus-Severe acute respiratory syndrome coronavirus 2,"no, but other bos are",no
+37,Bos taurus-Trypanosoma vivax,"no, but other bos are",yes but not for bovidae
+38,Bos taurus-Vesicular stomatitis virus,"no, but other bos are",yes but not for bovidae
+39,Bubalus bubalis-Bacillus anthracis,no,yes
+40,Camelidae-Camelpox virus,"yes, but at species level","yes, but not for camelidae"
+41,Camelidae-Classical swine fever virus,"yes, but at species level","yes, but not for camelidae"
+42,Camelidae-Rift Valley fever virus,"yes, but at species level","yes, but not for camelidae"
+43,Camelidae-West Nile virus,"yes, but at species level","yes, but not for camelidae"
+44,Canis latrans-H5N1 subtype,yes,"yes, but not for canis latrans"
+45,Canis lupus familiaris-African swine fever virus,"yes, but not ""familiaris""","yes, but not for canis lupus"
+46,Canis lupus familiaris-Brucella melitensis,"yes, but not ""familiaris""","yes, including for canis lupus but brucella sp."
+47,Canis lupus familiaris-Capripoxvirus,yes,no
+48,Canis lupus familiaris-Classical swine fever virus,"yes, but not ""familiaris""","yes, but not for canis lupus"
+49,Canis lupus familiaris-Ehrlichia canis,"yes, but not ""familiaris""","yes, but not for canis lupus"
+50,Canis lupus familiaris-H5N1 subtype,"yes, but not ""familiaris""","yes, but not for canis lupus"
+51,Canis lupus familiaris-Infectious hematopoietic necrosis virus,yes,no
+52,Canis lupus familiaris-Influenza A virus,"yes, but not ""familiaris""","yes, but not for canis lupus"
+53,Canis lupus familiaris-Lumpy skin disease virus,yes,no
+54,Canis lupus familiaris-Lyssavirus,"yes, but not ""familiaris""","yes, including for canis lupus"
+55,Canis lupus familiaris-Lyssavirus rabies,"yes, but not ""familiaris""","yes, including for canis lupus"
+56,Canis lupus familiaris-Peste des petits ruminants virus,yes,no
+57,Canis lupus familiaris-prion,"yes, but not ""familiaris""","yes, but not for canis lupus"
+58,Canis lupus familiaris-Severe acute respiratory syndrome coronavirus 2,yes,no
+59,Canis lupus familiaris-Suid alphaherpesvirus 1,"yes, but not ""familiaris""","yes, but not for canis lupus"
+60,Capra hircus-Bacillus anthracis,yes,"yes, but not for capra"
+61,Capra hircus-Bluetongue virus,yes,"yes, but not for capra"
+62,Capra hircus-Brucella melitensis,yes,"yes, including for capra"
+63,Capra hircus-Caprine arthritis encephalitis virus,yes,no
+64,Capra hircus-Capripoxvirus,yes,no
+65,Capra hircus-Chlamydia abortus,yes,"yes, including other chlaymida strain for capra"
+66,Capra hircus-Chrysomya bezziana,yes,no
+67,Capra hircus-Coxiella burnetii,yes,"yes, but not for capra"
+68,Capra hircus-Ehrlichia ruminantium,yes,"yes, but not for capra"
+69,Capra hircus-Foot-and-mouth disease virus,yes,"yes, but not for capra"
+70,Capra hircus-Goatpox virus,yes,no
+71,Capra hircus-Mycoplasma capricolum subsp. capripneumoniae,yes,"yes, including other mycoplasma for capra"
+72,Capra hircus-Mycoplasma mycoides subsp. capri,yes,"yes, including other mycoplasma for capra"
+73,Capra hircus-Orbivirus,yes,"yes, but not for capra"
+74,Capra hircus-Peste des petits ruminants virus,yes,no
+75,Capra hircus-prion,yes,"yes, but not for capra"
+76,Capra hircus-Rabbit hemorrhagic disease virus,yes,"yes, but not for capra"
+77,Capra hircus-Rift Valley fever virus,yes,"yes, but not for capra"
+78,Capra hircus-Schmallenberg virus,yes,no
+79,Capra hircus-Vesicular stomatitis virus,yes,"yes, but not for capra"
+80,Capreolus capreolus-Bluetongue virus,yes,"yes, but not for capreolus"
+81,Capreolus capreolus-Lyssavirus rabies,yes,"yes, but not for capreolus"
+82,Cervidae-Foot-and-mouth disease virus,no but family is,"yes, but not for cervidae"
+83,Dama dama-Foot-and-mouth disease virus,yes,"yes, but not for dama dama"
+84,Didelphis virginiana-H5N1 subtype,no,
+85,Equidae-African horse sickness virus,no but family is,"yes, including for equidae"
+86,Equidae-African swine fever virus,no but family is,yes but not for equidae
+87,Equidae-Alphavirus,no but family is,no but family is (not for equidae)
+88,Equidae-Babesia caballi,no but family is,"no, but other babesia for equidae"
+89,Equidae-Bacillus anthracis,no but family is,"yes, including for equidae"
+90,Equidae-Bluetongue virus,no but family is,yes but not for equidae
+91,Equidae-Brucella melitensis,no but family is,yes but not for equidae
+92,Equidae-Burkholderia mallei,no but family is,no but other burkholderia (still not for equidae)
+93,Equidae-Eastern equine encephalitis virus,no but family is,yes but not for equidae
+94,Equidae-Equid alphaherpesvirus 1,no but family is,"yes, including for equidae"
+95,Equidae-Equine arteritis virus,no but family is,"yes, including for equidae"
+96,Equidae-Equine encephalosis virus,no but family is,yes but not for equidae
+97,Equidae-Equine infectious anemia virus,no but family is,no
+98,Equidae-Foot-and-mouth disease virus,no but family is,yes but not for equidae
+99,Equidae-Influenza A virus,no but family is,yes but not for equidae
+100,Equidae-Lyssavirus rabies,no but family is,yes but not for equidae
+101,Equidae-Taylorella equigenitalis,no but family is,no
+102,Equidae-Theileria equi,no but family is,"yes, including for equidae"
+103,Equidae-Trypanosoma equiperdum,no but family is,no but other trypanosoma (still not for equidae)
+104,Equidae-Venezuelan equine encephalitis virus,no but family is,yes but not for equidae
+105,Equidae-Vesicular stomatitis virus,no but family is,yes but not for equidae
+106,Equidae-West Nile virus,no but family is,yes but not for equidae
+107,Equus quagga-African horse sickness virus,yes,"yes, but for other equidae (not this one)"
+108,Felis catus-H5N1 subtype,no,
+109,Felis catus-Lyssavirus,no,
+110,Felis catus-Lyssavirus rabies,no,
+111,Felis catus-Severe acute respiratory syndrome coronavirus 2,no,
+112,Gazella dorcas-Rift Valley fever virus,no but other gazella,"yes, but not for gazella"
+113,Gazella gazella-Foot-and-mouth disease virus,no but other gazella,"yes, but not for gazella"
+114,Gorilla beringei-Severe acute respiratory syndrome coronavirus 2,yes,no
+115,Halichoerus grypus-H5N1 subtype,yes,"yes, but not for halichoerus"
+116,Hippopotamus amphibius-Bacillus anthracis,yes,"yes, but not for hippopotamus"
+117,Hippotragus equinus-Rift Valley fever virus,yes,"yes, including for other hippotragus"
+118,Lagothrix lagotricha-Severe acute respiratory syndrome coronavirus 2,yes,no
+119,Lepus alleni-Rabbit hemorrhagic disease virus,no,
+120,Lepus californicus-Rabbit hemorrhagic disease virus,no,
+121,Lepus timidus-Rabbit hemorrhagic disease virus,no,
+122,Lontra canadensis-H5N1 subtype,yes,"yes, but not for lontra"
+123,Loxodonta-Bacillus anthracis,no,
+124,Loxodonta-Pasteurella multocida,no,
+125,Lynx rufus-H5N1 subtype,yes,"yes, but not for lynx"
+126,Marmota marmota marmota-Lyssavirus rabies,no,
+127,Martes americana-H5N1 subtype,yes,"yes, but for other martes (foina)"
+128,Martes martes-H5N1 subtype,yes,"yes, but for other martes (foina)"
+129,Mephitis mephitis-H5N1 subtype,yes,"yes, but not for mephitis"
+130,Mico melanurus-Severe acute respiratory syndrome coronavirus 2,no,no
+131,Mustela putorius furo-Severe acute respiratory syndrome coronavirus 2,yes,no
+132,Mustelidae-Severe acute respiratory syndrome coronavirus 2,no but family is,no
+133,Myrmecophaga tridactyla-Severe acute respiratory syndrome coronavirus 2,no,
+134,Nasua nasua-H5N1 subtype,yes,"yes, but not for nasua"
+135,Nasua nasua-Severe acute respiratory syndrome coronavirus 2,yes,no
+136,Neogale vison-H5N1 subtype,yes,"yes, but not for neogale vision"
+137,Neogale vison-Influenza A virus,yes,"yes, but not for neogale vision"
+138,Neogale vison-Severe acute respiratory syndrome coronavirus 2,yes,no
+139,Nyctereutes procyonoides-H5N1 subtype,yes,"yes, but not for nyctereutes"
+140,Odocoileus virginianus-Severe acute respiratory syndrome coronavirus 2,yes,no
+141,Oryctolagus cuniculus-Myxoma virus,no,
+142,Oryctolagus cuniculus-Rabbit hemorrhagic disease virus,no,
+143,Oryctolagus cuniculus-Severe acute respiratory syndrome coronavirus 2,no,
+144,Oryx gazella-Rift Valley fever virus,yes,"yes, but not for oryx"
+145,Ovis aries musimon-Bluetongue virus,yes,no
+146,Ovis aries-[Eubacterium] cellulosolvens,yes,no
+147,Ovis aries-Bacillus anthracis,yes,"yes, but other species for both"
+148,Ovis aries-Bluetongue virus,yes,"yes, but for other species (not ovis aries)"
+149,Ovis aries-Brucella melitensis,yes,"yes, but other brucella sp."
+150,Ovis aries-Brucella ovis,yes,no but other brucella affects ovis aries
+151,Ovis aries-Capripoxvirus,yes,no
+152,Ovis aries-Chrysomya bezziana,yes,no
+153,Ovis aries-Epizootic hemorrhagic disease virus,yes,"yes, including other species of ovis"
+154,Ovis aries-Foot-and-mouth disease virus,yes,"yes, but not for ovis "
+155,Ovis aries-Goatpox virus,yes,no
+156,Ovis aries-Lyssavirus rabies,yes,"yes, but not for ovis "
+157,Ovis aries-Peste des petits ruminants virus,yes,no
+158,Ovis aries-prion,yes,"yes, but not for ovis "
+159,Ovis aries-Rabbit hemorrhagic disease virus,yes,no
+160,Ovis aries-Rift Valley fever virus,yes,"yes, but not for ovis "
+161,Ovis aries-Schmallenberg virus,yes,no
+162,Ovis aries-Vesicular stomatitis virus,yes,"yes, but not for ovis "
+163,Ovis aries-Visna-maedi virus,yes,"yes, but not for ovis "
+164,Panthera leo-Severe acute respiratory syndrome coronavirus 2,yes,no
+165,Panthera pardus orientalis-H5N1 subtype,yes,"yes, but not for panthera"
+166,Panthera pardus orientalis-Severe acute respiratory syndrome coronavirus 2,yes,no
+167,Panthera tigris-Severe acute respiratory syndrome coronavirus 2,yes,no
+168,Panthera uncia-Severe acute respiratory syndrome coronavirus 2,yes,no
+169,Pekania pennanti-H5N1 subtype,no,
+170,Phoca vitulina-H5N1 subtype,yes,"yes, but only influenza for other species of phoca"
+171,Porcula salvania-African swine fever virus,no,
+172,Puma-H5N1 subtype,no but family is,"yes, but not for puma"
+173,Puma-Severe acute respiratory syndrome coronavirus 2,no but family is,no
+174,Suncus murinus-Lyssavirus,no,
+175,Sus barbatus-African swine fever virus,yes,"yes, but not for sus barbatus"
+176,Sus scrofa-African swine fever virus,yes,"yes, but for subspecies of sus scrofa"
+177,Sus scrofa-Alcelaphine gammaherpesvirus 1,yes,"yes, but not for sus scrofa"
+178,Sus scrofa-Bacillus anthracis,yes,"yes, but not for sus scrofa"
+179,Sus scrofa-Cochliomyia hominivorax,yes,"yes, but not for sus scrofa"
+180,Sus scrofa-Foot-and-mouth disease virus,yes,"yes, but not for sus scrofa"
+181,Sus scrofa-Gammacoronavirus,yes,no
+182,Sus scrofa-Japanese encephalitis virus,yes,"yes, but not for sus scrofa"
+183,Sus scrofa-Lyssavirus rabies,yes,"yes, but not for sus scrofa"
+184,Sus scrofa-Porcine circovirus 2,yes,no
+185,Sus scrofa-Streptococcus suis,yes,"yes, but not for sus scrofa"
+186,Sus scrofa-Transmissible gastroenteritis virus,yes,no
+187,Sylvilagus audubonii-Rabbit hemorrhagic disease virus,no,no
+188,Sylvilagus floridanus-Rabbit hemorrhagic disease virus,no,no
+189,Sylvilagus nuttallii-Rabbit hemorrhagic disease virus,no,no
+190,Trichechus manatus-Severe acute respiratory syndrome coronavirus 2,no,no
+191,Ursus arctos-H5N1 subtype,yes,"yes, but not for ursus"
+192,Ursus maritimus-H5N1 subtype,yes,"yes, but not for ursus"
+193,Vicugna pacos-Japanese encephalitis virus,no,yes
+194,Vulpes vulpes-H5N1 subtype,yes,"yes, but not for vulpes"
+195,Vulpes vulpes-Severe acute respiratory syndrome coronavirus 2,yes,no
