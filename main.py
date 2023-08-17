@@ -10,6 +10,7 @@ from worldpop import ingest_worldpop
 from wahis import ingest_wahis
 from mapoflife import ingest_mol
 from combine.ingest_combine import ingest_combine
+from virion.ingest_virion import ingest_virion
 
 load_dotenv()
 
@@ -21,7 +22,6 @@ SESSION = NEO4J_DRIVER.session()
 
 
 if __name__ == "__main__":
-    
     # # carnivoreGMPD is a subset of GMPD which has host-pathogen pairings, instead of :REPORTS relationship
     # # Would not recommend using both
     # ingest_carnivoreGMPD(SESSION)
@@ -31,11 +31,7 @@ if __name__ == "__main__":
     # ingest_worldpop(SESSION)
     # ingest_wahis(SESSION)
     # ingest_mol(SESSION)
-    ingest_combine(SESSION)
+    # ingest_combine(SESSION)
+    ingest_virion(SESSION)
 
-
-
-
-
-    NEO4J_DRIVER.close()      
- 
+    NEO4J_DRIVER.close()
