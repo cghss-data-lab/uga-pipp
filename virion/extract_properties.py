@@ -10,7 +10,7 @@ def process_dates(year, month, day):
             f"{year}-{month}-{day}",
             "%Y-%m-%d",
         )
-        return date
+        return date.date()
     except ValueError:
         logger.warning("Incomplete date")
         return "null"
