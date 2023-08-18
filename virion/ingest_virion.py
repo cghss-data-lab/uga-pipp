@@ -1,6 +1,6 @@
 from loguru import logger
 from ncbi import merge_taxon
-from virion.extract_properties import taxon_metadata, process_dates, process_metadata
+from virion.extract_properties import taxon_metadata, process_dates, process_accession
 
 
 def ingest_virion(session):
@@ -23,6 +23,8 @@ def ingest_virion(session):
 
             host_metadata = taxon_metadata(virion_dict["HostTaxID"])
             pathogen_metadata = taxon_metadata(virion_dict["VirusTaxID"])
+
+            ncbi_accession = process_accession(virion_dict["NCBIAccession"])
 
             collection_date = process_dates(
                 virion_dict["CollectionYear"],

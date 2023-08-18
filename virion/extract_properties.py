@@ -23,3 +23,8 @@ def taxon_metadata(taxon_id: str) -> dict:
     return {**metadata, "taxId": taxon_id}
 
 
+def process_accession(accession: str) -> list:
+    if accession != "":
+        ncbi_accession = accession.split(",")
+        return ncbi_accession
+    return []
