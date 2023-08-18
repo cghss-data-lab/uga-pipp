@@ -42,10 +42,11 @@ def ingest_virion(session):
             merge_taxon(pathogen_metadata, session)
 
             query = f"""
-            MERGE (r:Virion:Report {{ dataSource : "Virion",
+            CREATE (r:Virion:Report {{ dataSource : "Virion",
                 reportId : "Virion-{idx}",
                 reportDate : "{report_date}",
-                collectionDate : "{collection_date}"}})
+                collectionDate : "{collection_date}",
+                ncbiAccession : {ncbi_accession} }})
             MERGE (h:Taxon {{ taxId: {virion_dict["HostTaxID"]} }})
             MERGE (p:Taxon {{ taxId : {virion_dict["VirusTaxID"]} }})
             MERGE (r)-[:ASSOCIATES {{role : "host"}} ]-(h)
