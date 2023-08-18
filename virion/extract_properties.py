@@ -23,6 +23,3 @@ def taxon_metadata(taxon_id: str) -> dict:
     return {**metadata, "taxId": taxon_id}
 
 
-def process_metadata(metadata: dict) -> str:
-    properties = ", ".join(f'{k} : "{v}"' for k, v in metadata.items())
-    return properties
