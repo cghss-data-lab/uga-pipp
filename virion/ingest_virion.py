@@ -14,6 +14,9 @@ def ingest_virion(session):
 
             virion_dict = dict(zip(header, row))
 
+            if virion_dict["Database"] == "GLOBI":
+                continue
+
             if virion_dict["HostTaxID"] == "":
                 logger.warning(f"NCBI ID missing for host in row {idx}")
                 continue
