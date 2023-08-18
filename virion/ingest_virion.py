@@ -8,6 +8,7 @@ def ingest_virion(session):
         header = next(virion).strip().split("\t")
 
         for idx, line in enumerate(virion):
+            logger.info(f"Ingesting row: {idx}")
             row = line.split("\t")
             row[-1] = row[-1].strip()
 
@@ -54,5 +55,3 @@ def ingest_virion(session):
                 detectionType : "{virion_dict['DetectionMethod']}"}} ]-(p)
             """
             session.run(query)
-
-            logger.info(f"Ingesting row: {idx}")
