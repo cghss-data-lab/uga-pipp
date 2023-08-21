@@ -1,196 +1,568 @@
-,pairings,host in GMPD,pathogen in GMPD
-1,Aonyx cinereus-Severe acute respiratory syndrome coronavirus 2,no,no
-2,Ateles sp.-Severe acute respiratory syndrome coronavirus 2,yes,no
-3,Bos gaurus-Lumpy skin disease virus,yes,no
-4,Bos taurus-[Eubacterium] cellulosolvens,"no, but other bos are",no
-5,Bos taurus-African swine fever virus,"no, but other bos are",yes but not for bovidae
-6,Bos taurus-Alcelaphine gammaherpesvirus 1,"no, but other bos are",yes but not for bovidae
-7,Bos taurus-Babesia bovis,"no, but other bos are",yes but not for bovidae
-8,Bos taurus-Bacillus anthracis,"no, but other bos are",yes but not for bovidae
-9,Bos taurus-Bluetongue virus,"no, but other bos are",yes but not for bovidae
-10,Bos taurus-Bovine alphaherpesvirus 1,"no, but other bos are",yes but not for bovidae
-11,Bos taurus-Brucella abortus,"no, but other bos are",yes but not for bovidae
-12,Bos taurus-Brucella melitensis,"no, but other bos are",yes but not for bovidae
-13,Bos taurus-Brucella suis,"no, but other bos are",yes but not for bovidae
-14,Bos taurus-Capripoxvirus,"no, but other bos are",no
-15,Bos taurus-Chrysomya bezziana,"no, but other bos are",no
-16,Bos taurus-Classical swine fever virus,"no, but other bos are",yes but not for bovidae
-17,Bos taurus-Cochliomyia hominivorax,"no, but other bos are",yes but not for bovidae
-18,Bos taurus-Coxiella burnetii,"no, but other bos are",yes but not for bovidae
-19,Bos taurus-Epizootic hemorrhagic disease virus,"no, but other bos are",yes but not for bovidae
-20,Bos taurus-Equine infectious anemia virus,"no, but other bos are",no
-21,Bos taurus-Foot-and-mouth disease virus,"no, but other bos are","yes, including for bovidae"
-22,Bos taurus-H5N1 subtype,"no, but other bos are",yes but not for bovidae
-23,Bos taurus-Infectious hematopoietic necrosis virus,"no, but other bos are",no
-24,Bos taurus-Influenza A virus,"no, but other bos are",yes but not for bovidae
-25,Bos taurus-Lumpy skin disease virus,"no, but other bos are",no
-26,Bos taurus-Lyssavirus,"no, but other bos are",yes but not for bovidae
-27,Bos taurus-Lyssavirus rabies,"no, but other bos are",yes but not for bovidae
-28,Bos taurus-Mycobacterium tuberculosis complex,"no, but other bos are","yes, but other species for bovidae"
-29,Bos taurus-Mycobacterium tuberculosis variant bovis,"no, but other bos are","yes, but other species for bovidae"
-30,Bos taurus-Orbivirus,"no, but other bos are",yes but not for bovidae
-31,Bos taurus-Orthonairovirus haemorrhagiae,"no, but other bos are",no
-32,Bos taurus-Picornaviridae,"no, but other bos are",no
-33,Bos taurus-prion,"no, but other bos are",yes but not for bovidae
-34,Bos taurus-Rift Valley fever virus,"no, but other bos are",yes but not for bovidae
-35,Bos taurus-Schmallenberg virus,"no, but other bos are",no
-36,Bos taurus-Severe acute respiratory syndrome coronavirus 2,"no, but other bos are",no
-37,Bos taurus-Trypanosoma vivax,"no, but other bos are",yes but not for bovidae
-38,Bos taurus-Vesicular stomatitis virus,"no, but other bos are",yes but not for bovidae
-39,Bubalus bubalis-Bacillus anthracis,no,yes
-40,Camelidae-Camelpox virus,"yes, but at species level","yes, but not for camelidae"
-41,Camelidae-Classical swine fever virus,"yes, but at species level","yes, but not for camelidae"
-42,Camelidae-Rift Valley fever virus,"yes, but at species level","yes, but not for camelidae"
-43,Camelidae-West Nile virus,"yes, but at species level","yes, but not for camelidae"
-44,Canis latrans-H5N1 subtype,yes,"yes, but not for canis latrans"
-45,Canis lupus familiaris-African swine fever virus,"yes, but not ""familiaris""","yes, but not for canis lupus"
-46,Canis lupus familiaris-Brucella melitensis,"yes, but not ""familiaris""","yes, including for canis lupus but brucella sp."
-47,Canis lupus familiaris-Capripoxvirus,yes,no
-48,Canis lupus familiaris-Classical swine fever virus,"yes, but not ""familiaris""","yes, but not for canis lupus"
-49,Canis lupus familiaris-Ehrlichia canis,"yes, but not ""familiaris""","yes, but not for canis lupus"
-50,Canis lupus familiaris-H5N1 subtype,"yes, but not ""familiaris""","yes, but not for canis lupus"
-51,Canis lupus familiaris-Infectious hematopoietic necrosis virus,yes,no
-52,Canis lupus familiaris-Influenza A virus,"yes, but not ""familiaris""","yes, but not for canis lupus"
-53,Canis lupus familiaris-Lumpy skin disease virus,yes,no
-54,Canis lupus familiaris-Lyssavirus,"yes, but not ""familiaris""","yes, including for canis lupus"
-55,Canis lupus familiaris-Lyssavirus rabies,"yes, but not ""familiaris""","yes, including for canis lupus"
-56,Canis lupus familiaris-Peste des petits ruminants virus,yes,no
-57,Canis lupus familiaris-prion,"yes, but not ""familiaris""","yes, but not for canis lupus"
-58,Canis lupus familiaris-Severe acute respiratory syndrome coronavirus 2,yes,no
-59,Canis lupus familiaris-Suid alphaherpesvirus 1,"yes, but not ""familiaris""","yes, but not for canis lupus"
-60,Capra hircus-Bacillus anthracis,yes,"yes, but not for capra"
-61,Capra hircus-Bluetongue virus,yes,"yes, but not for capra"
-62,Capra hircus-Brucella melitensis,yes,"yes, including for capra"
-63,Capra hircus-Caprine arthritis encephalitis virus,yes,no
-64,Capra hircus-Capripoxvirus,yes,no
-65,Capra hircus-Chlamydia abortus,yes,"yes, including other chlaymida strain for capra"
-66,Capra hircus-Chrysomya bezziana,yes,no
-67,Capra hircus-Coxiella burnetii,yes,"yes, but not for capra"
-68,Capra hircus-Ehrlichia ruminantium,yes,"yes, but not for capra"
-69,Capra hircus-Foot-and-mouth disease virus,yes,"yes, but not for capra"
-70,Capra hircus-Goatpox virus,yes,no
-71,Capra hircus-Mycoplasma capricolum subsp. capripneumoniae,yes,"yes, including other mycoplasma for capra"
-72,Capra hircus-Mycoplasma mycoides subsp. capri,yes,"yes, including other mycoplasma for capra"
-73,Capra hircus-Orbivirus,yes,"yes, but not for capra"
-74,Capra hircus-Peste des petits ruminants virus,yes,no
-75,Capra hircus-prion,yes,"yes, but not for capra"
-76,Capra hircus-Rabbit hemorrhagic disease virus,yes,"yes, but not for capra"
-77,Capra hircus-Rift Valley fever virus,yes,"yes, but not for capra"
-78,Capra hircus-Schmallenberg virus,yes,no
-79,Capra hircus-Vesicular stomatitis virus,yes,"yes, but not for capra"
-80,Capreolus capreolus-Bluetongue virus,yes,"yes, but not for capreolus"
-81,Capreolus capreolus-Lyssavirus rabies,yes,"yes, but not for capreolus"
-82,Cervidae-Foot-and-mouth disease virus,no but family is,"yes, but not for cervidae"
-83,Dama dama-Foot-and-mouth disease virus,yes,"yes, but not for dama dama"
-84,Didelphis virginiana-H5N1 subtype,no,
-85,Equidae-African horse sickness virus,no but family is,"yes, including for equidae"
-86,Equidae-African swine fever virus,no but family is,yes but not for equidae
-87,Equidae-Alphavirus,no but family is,no but family is (not for equidae)
-88,Equidae-Babesia caballi,no but family is,"no, but other babesia for equidae"
-89,Equidae-Bacillus anthracis,no but family is,"yes, including for equidae"
-90,Equidae-Bluetongue virus,no but family is,yes but not for equidae
-91,Equidae-Brucella melitensis,no but family is,yes but not for equidae
-92,Equidae-Burkholderia mallei,no but family is,no but other burkholderia (still not for equidae)
-93,Equidae-Eastern equine encephalitis virus,no but family is,yes but not for equidae
-94,Equidae-Equid alphaherpesvirus 1,no but family is,"yes, including for equidae"
-95,Equidae-Equine arteritis virus,no but family is,"yes, including for equidae"
-96,Equidae-Equine encephalosis virus,no but family is,yes but not for equidae
-97,Equidae-Equine infectious anemia virus,no but family is,no
-98,Equidae-Foot-and-mouth disease virus,no but family is,yes but not for equidae
-99,Equidae-Influenza A virus,no but family is,yes but not for equidae
-100,Equidae-Lyssavirus rabies,no but family is,yes but not for equidae
-101,Equidae-Taylorella equigenitalis,no but family is,no
-102,Equidae-Theileria equi,no but family is,"yes, including for equidae"
-103,Equidae-Trypanosoma equiperdum,no but family is,no but other trypanosoma (still not for equidae)
-104,Equidae-Venezuelan equine encephalitis virus,no but family is,yes but not for equidae
-105,Equidae-Vesicular stomatitis virus,no but family is,yes but not for equidae
-106,Equidae-West Nile virus,no but family is,yes but not for equidae
-107,Equus quagga-African horse sickness virus,yes,"yes, but for other equidae (not this one)"
-108,Felis catus-H5N1 subtype,no,
-109,Felis catus-Lyssavirus,no,
-110,Felis catus-Lyssavirus rabies,no,
-111,Felis catus-Severe acute respiratory syndrome coronavirus 2,no,
-112,Gazella dorcas-Rift Valley fever virus,no but other gazella,"yes, but not for gazella"
-113,Gazella gazella-Foot-and-mouth disease virus,no but other gazella,"yes, but not for gazella"
-114,Gorilla beringei-Severe acute respiratory syndrome coronavirus 2,yes,no
-115,Halichoerus grypus-H5N1 subtype,yes,"yes, but not for halichoerus"
-116,Hippopotamus amphibius-Bacillus anthracis,yes,"yes, but not for hippopotamus"
-117,Hippotragus equinus-Rift Valley fever virus,yes,"yes, including for other hippotragus"
-118,Lagothrix lagotricha-Severe acute respiratory syndrome coronavirus 2,yes,no
-119,Lepus alleni-Rabbit hemorrhagic disease virus,no,
-120,Lepus californicus-Rabbit hemorrhagic disease virus,no,
-121,Lepus timidus-Rabbit hemorrhagic disease virus,no,
-122,Lontra canadensis-H5N1 subtype,yes,"yes, but not for lontra"
-123,Loxodonta-Bacillus anthracis,no,
-124,Loxodonta-Pasteurella multocida,no,
-125,Lynx rufus-H5N1 subtype,yes,"yes, but not for lynx"
-126,Marmota marmota marmota-Lyssavirus rabies,no,
-127,Martes americana-H5N1 subtype,yes,"yes, but for other martes (foina)"
-128,Martes martes-H5N1 subtype,yes,"yes, but for other martes (foina)"
-129,Mephitis mephitis-H5N1 subtype,yes,"yes, but not for mephitis"
-130,Mico melanurus-Severe acute respiratory syndrome coronavirus 2,no,no
-131,Mustela putorius furo-Severe acute respiratory syndrome coronavirus 2,yes,no
-132,Mustelidae-Severe acute respiratory syndrome coronavirus 2,no but family is,no
-133,Myrmecophaga tridactyla-Severe acute respiratory syndrome coronavirus 2,no,
-134,Nasua nasua-H5N1 subtype,yes,"yes, but not for nasua"
-135,Nasua nasua-Severe acute respiratory syndrome coronavirus 2,yes,no
-136,Neogale vison-H5N1 subtype,yes,"yes, but not for neogale vision"
-137,Neogale vison-Influenza A virus,yes,"yes, but not for neogale vision"
-138,Neogale vison-Severe acute respiratory syndrome coronavirus 2,yes,no
-139,Nyctereutes procyonoides-H5N1 subtype,yes,"yes, but not for nyctereutes"
-140,Odocoileus virginianus-Severe acute respiratory syndrome coronavirus 2,yes,no
-141,Oryctolagus cuniculus-Myxoma virus,no,
-142,Oryctolagus cuniculus-Rabbit hemorrhagic disease virus,no,
-143,Oryctolagus cuniculus-Severe acute respiratory syndrome coronavirus 2,no,
-144,Oryx gazella-Rift Valley fever virus,yes,"yes, but not for oryx"
-145,Ovis aries musimon-Bluetongue virus,yes,no
-146,Ovis aries-[Eubacterium] cellulosolvens,yes,no
-147,Ovis aries-Bacillus anthracis,yes,"yes, but other species for both"
-148,Ovis aries-Bluetongue virus,yes,"yes, but for other species (not ovis aries)"
-149,Ovis aries-Brucella melitensis,yes,"yes, but other brucella sp."
-150,Ovis aries-Brucella ovis,yes,no but other brucella affects ovis aries
-151,Ovis aries-Capripoxvirus,yes,no
-152,Ovis aries-Chrysomya bezziana,yes,no
-153,Ovis aries-Epizootic hemorrhagic disease virus,yes,"yes, including other species of ovis"
-154,Ovis aries-Foot-and-mouth disease virus,yes,"yes, but not for ovis "
-155,Ovis aries-Goatpox virus,yes,no
-156,Ovis aries-Lyssavirus rabies,yes,"yes, but not for ovis "
-157,Ovis aries-Peste des petits ruminants virus,yes,no
-158,Ovis aries-prion,yes,"yes, but not for ovis "
-159,Ovis aries-Rabbit hemorrhagic disease virus,yes,no
-160,Ovis aries-Rift Valley fever virus,yes,"yes, but not for ovis "
-161,Ovis aries-Schmallenberg virus,yes,no
-162,Ovis aries-Vesicular stomatitis virus,yes,"yes, but not for ovis "
-163,Ovis aries-Visna-maedi virus,yes,"yes, but not for ovis "
-164,Panthera leo-Severe acute respiratory syndrome coronavirus 2,yes,no
-165,Panthera pardus orientalis-H5N1 subtype,yes,"yes, but not for panthera"
-166,Panthera pardus orientalis-Severe acute respiratory syndrome coronavirus 2,yes,no
-167,Panthera tigris-Severe acute respiratory syndrome coronavirus 2,yes,no
-168,Panthera uncia-Severe acute respiratory syndrome coronavirus 2,yes,no
-169,Pekania pennanti-H5N1 subtype,no,
-170,Phoca vitulina-H5N1 subtype,yes,"yes, but only influenza for other species of phoca"
-171,Porcula salvania-African swine fever virus,no,
-172,Puma-H5N1 subtype,no but family is,"yes, but not for puma"
-173,Puma-Severe acute respiratory syndrome coronavirus 2,no but family is,no
-174,Suncus murinus-Lyssavirus,no,
-175,Sus barbatus-African swine fever virus,yes,"yes, but not for sus barbatus"
-176,Sus scrofa-African swine fever virus,yes,"yes, but for subspecies of sus scrofa"
-177,Sus scrofa-Alcelaphine gammaherpesvirus 1,yes,"yes, but not for sus scrofa"
-178,Sus scrofa-Bacillus anthracis,yes,"yes, but not for sus scrofa"
-179,Sus scrofa-Cochliomyia hominivorax,yes,"yes, but not for sus scrofa"
-180,Sus scrofa-Foot-and-mouth disease virus,yes,"yes, but not for sus scrofa"
-181,Sus scrofa-Gammacoronavirus,yes,no
-182,Sus scrofa-Japanese encephalitis virus,yes,"yes, but not for sus scrofa"
-183,Sus scrofa-Lyssavirus rabies,yes,"yes, but not for sus scrofa"
-184,Sus scrofa-Porcine circovirus 2,yes,no
-185,Sus scrofa-Streptococcus suis,yes,"yes, but not for sus scrofa"
-186,Sus scrofa-Transmissible gastroenteritis virus,yes,no
-187,Sylvilagus audubonii-Rabbit hemorrhagic disease virus,no,no
-188,Sylvilagus floridanus-Rabbit hemorrhagic disease virus,no,no
-189,Sylvilagus nuttallii-Rabbit hemorrhagic disease virus,no,no
-190,Trichechus manatus-Severe acute respiratory syndrome coronavirus 2,no,no
-191,Ursus arctos-H5N1 subtype,yes,"yes, but not for ursus"
-192,Ursus maritimus-H5N1 subtype,yes,"yes, but not for ursus"
-193,Vicugna pacos-Japanese encephalitis virus,no,yes
-194,Vulpes vulpes-H5N1 subtype,yes,"yes, but not for vulpes"
-195,Vulpes vulpes-Severe acute respiratory syndrome coronavirus 2,yes,no
+,pairings
+0,Haliaeetus albicilla-unidentified influenza virus
+1,Alopochen aegyptiaca-unidentified influenza virus
+2,Rupicapra rupicapra-Brucella melitensis
+3,Fulmarus glacialis-H5N1 subtype
+4,Felis catus-Lyssavirus rabies
+5,Harpactes erythrocephalus-H5N1 subtype
+6,Columba livia-Peste des petits ruminants virus
+7,Camelidae-Camelpox virus
+8,Nasua nasua-Severe acute respiratory syndrome coronavirus 2
+9,Canis lupus familiaris-Ehrlichia canis
+10,Aves-Peste des petits ruminants virus
+11,Ovis aries-Capripoxvirus
+12,Bos taurus-Classical swine fever virus
+13,Bos taurus-Cochliomyia hominivorax
+14,Stercorarius skua-H5N1 subtype
+15,Mytilus galloprovincialis-Marteilia refringens
+16,Corvus corone-West Nile virus
+17,Lepus californicus-Rabbit hemorrhagic disease virus
+18,Melogale moschata-Lyssavirus
+19,Ciconia ciconia-H5N1 subtype
+20,Pacifastacus leniusculus-Aphanomyces astaci
+21,Aves-Taylorella equigenitalis
+22,Ovis aries-[Eubacterium] cellulosolvens
+23,Aves-Epizootic hemorrhagic disease virus
+24,Penaeus monodon-Infectious hematopoietic necrosis virus
+25,Aves-Foot-and-mouth disease virus
+26,Bos taurus-Babesia bovis
+27,Bos taurus-Brucella suis
+28,Chroicocephalus brunnicephalus-H5N1 subtype
+29,Dendrocopos major-H5N1 subtype
+30,Ichthyaetus ichthyaetus-H5N1 subtype
+31,Panthera leo-Severe acute respiratory syndrome coronavirus 2
+32,Porcula salvania-African swine fever virus
+33,Bos taurus-Infectious hematopoietic necrosis virus
+34,Bos taurus-prion
+35,Anas platyrhynchos-H5N1 subtype
+36,Chenonetta jubata-unidentified influenza virus
+37,Lates calcarifer-Red seabream iridovirus
+38,Larus michahellis atlantis-unidentified influenza virus
+39,Morone chrysops-Viral hemorrhagic septicemia virus
+40,Phalacrocorax capensis-H5N1 subtype
+41,Aves-Lumpy skin disease virus
+42,Camelidae-Classical swine fever virus
+43,Aves-unidentified influenza virus
+44,Sus barbatus-African swine fever virus
+45,Haematopus bachmani-H5N1 subtype
+46,Quiscalus mexicanus-H5N1 subtype
+47,Pelecanus crispus-unidentified influenza virus
+48,Phoca vitulina-H5N1 subtype
+49,Puma-Severe acute respiratory syndrome coronavirus 2
+50,Mephitis mephitis-unidentified influenza virus
+51,Homo sapiens-Influenza A virus
+52,Aves-Mycoplasmoides gallisepticum
+53,Milvus migrans-H5N1 subtype
+54,Capra hircus-Goatpox virus
+55,Cervidae-Foot-and-mouth disease virus
+56,Grus monacha-unidentified influenza virus
+57,Pterois volitans-Red seabream iridovirus
+58,Capra hircus-Bluetongue virus
+59,Passer domesticus-unidentified influenza virus
+60,Canis latrans-H5N1 subtype
+61,Ameiurus nebulosus-Aphanomyces invadans
+62,Sylvilagus audubonii-Rabbit hemorrhagic disease virus
+63,Equidae-West Nile virus
+64,Tadorna tadorna-unidentified influenza virus
+65,Ovis aries musimon-Bluetongue virus
+66,Phalacrocorax lucidus-H5N1 subtype
+67,Cygnus atratus-unidentified influenza virus
+68,Gorilla beringei-Severe acute respiratory syndrome coronavirus 2
+69,Larus canus-H5N1 subtype
+70,Ardea alba-unidentified influenza virus
+71,Capreolus capreolus-Bluetongue virus
+72,Anser anser-H5N1 subtype
+73,Corvus brachyrhynchos-unidentified influenza virus
+74,Capra hircus-Caprine arthritis encephalitis virus
+75,Equidae-Burkholderia mallei
+76,Mareca penelope-unidentified influenza virus
+77,Aves-Porcine reproductive and respiratory syndrome virus
+78,Anser brachyrhynchus-H5N1 subtype
+79,Sylvilagus floridanus-Rabbit hemorrhagic disease virus
+80,Bos taurus-Lumpy skin disease virus
+81,Bubo bubo-H5N1 subtype
+82,Ovis aries-Schmallenberg virus
+83,Anas crecca-H5N1 subtype
+84,Anser sp.-H5N1 subtype
+85,Larus schistisagus-H5N1 subtype
+86,Stercorarius skua-unidentified influenza virus
+87,Coragyps atratus-H5N1 subtype
+88,Bos taurus-Influenza A virus
+89,Anas acuta-unidentified influenza virus
+90,Canis lupus familiaris-Lyssavirus rabies
+91,Phalacrocorax brasilianus-H5N1 subtype
+92,Larus dominicanus-unidentified influenza virus
+93,Vicugna pacos-Japanese encephalitis virus
+94,Leucophaeus pipixcan-H5N1 subtype
+95,Perca flavescens-Viral hemorrhagic septicemia virus
+96,Serinus canaria-unidentified influenza virus
+97,Apoidea-African swine fever virus
+98,Megascops choliba-H5N1 subtype
+99,Anser brachyrhynchus-unidentified influenza virus
+100,Pterodroma macroptera-H5N1 subtype
+101,Bos taurus-Orbivirus
+102,Dendrocygna eytoni-unidentified influenza virus
+103,Netta rufina-H5N1 subtype
+104,Aves-Rift Valley fever virus
+105,Mareca strepera-unidentified influenza virus
+106,Aythya marila-H5N1 subtype
+107,Threskiornis aethiopicus-H5N1 subtype
+108,Tringa semipalmata-unidentified influenza virus
+109,Branta leucopsis-H5N1 subtype
+110,Buteo lagopus-unidentified influenza virus
+111,Ovis aries-Orbivirus
+112,Ciconia boyciana-H5N1 subtype
+113,Grus paradisea-H5N1 subtype
+114,Canis lupus familiaris-Infectious hematopoietic necrosis virus
+115,Anser albifrons-unidentified influenza virus
+116,Bos taurus-[Eubacterium] cellulosolvens
+117,Thalasseus sandvicensis-H5N1 subtype
+118,Lontra canadensis-H5N1 subtype
+119,Capra hircus-Chlamydia abortus
+120,Puma-H5N1 subtype
+121,Aves-African horse sickness virus
+122,Apoidea-Bacillus anthracis
+123,Suncus murinus-Lyssavirus
+124,Ovis aries-Brucella ovis
+125,Capra hircus-Rift Valley fever virus
+126,Aves-Cyprinid herpesvirus 3
+127,Larus canus-unidentified influenza virus
+128,Canis lupus familiaris-Lumpy skin disease virus
+129,Capra hircus-Vesicular stomatitis virus
+130,Odocoileus virginianus-Severe acute respiratory syndrome coronavirus 2
+131,Homo sapiens-Influenza B virus
+132,Aves-Pigeon paramyxovirus 1
+133,Lagothrix lagotricha-Severe acute respiratory syndrome coronavirus 2
+134,Ostrea edulis-Bonamia ostreae
+135,Calidris alpina-H5N1 subtype
+136,Canis lupus familiaris-Classical swine fever virus
+137,Aves-Aphanomyces astaci
+138,Circus cyaneus-H5N1 subtype
+139,Spatula clypeata-H5N1 subtype
+140,Capra hircus-prion
+141,Bubo bubo-unidentified influenza virus
+142,Aves-Classical swine fever virus
+143,Penaeus stylirostris-White spot syndrome virus
+144,Bubalus bubalis-Bacillus anthracis
+145,Equidae-Babesia caballi
+146,Egretta garzetta-H5N1 subtype
+147,Sus scrofa-Bacillus anthracis
+148,Hippotragus equinus-Rift Valley fever virus
+149,Larus marinus-unidentified influenza virus
+150,Circus aeruginosus-H5N1 subtype
+151,Mustela putorius furo-Severe acute respiratory syndrome coronavirus 2
+152,Bos taurus-H5N1 subtype
+153,Capra ibex-Brucella melitensis
+154,Bos taurus-Trypanosoma vivax
+155,Streptopelia decaocto-H5N1 subtype
+156,Capra hircus-Ehrlichia ruminantium
+157,Phoenicopterus roseus-H5N1 subtype
+158,Cyprinus carpio-Severe acute respiratory syndrome coronavirus 2
+159,Somateria mollissima-unidentified influenza virus
+160,Ovis aries-Goatpox virus
+161,Calidris alba-H5N1 subtype
+162,Columba livia-Chlamydia psittaci
+163,Coloeus monedula-unidentified influenza virus
+164,Cyprinus carpio haematopterus-Cyprinid herpesvirus 3
+165,Spatula querquedula-unidentified influenza virus
+166,Chroicocephalus cirrocephalus-H5N1 subtype
+167,Tyto longimembris-H5N1 subtype
+168,Bos taurus-unidentified influenza virus
+169,Pekania pennanti-H5N1 subtype
+170,Sus scrofa-unidentified influenza virus
+171,Bagrus docmak-Aphanomyces invadans
+172,Anas acuta-H5N1 subtype
+173,Apoidea-Brucella suis
+174,Chroicocephalus cirrocephalus-unidentified influenza virus
+175,Cygnus columbianus-H5N1 subtype
+176,Sula variegata-H5N1 subtype
+177,Uria aalge-H5N1 subtype
+178,Numenius arquata-H5N1 subtype
+179,Oncorhynchus mykiss-H5N1 subtype
+180,Phasianus colchicus-H5N1 subtype
+181,Stercorarius lonnbergi-H5N1 subtype
+182,Capra hircus-Capripoxvirus
+183,Felis catus-unidentified influenza virus
+184,Carassius auratus-Sprivivirus cyprinus
+185,Gazella dorcas-Rift Valley fever virus
+186,Coloeus monedula-West Nile virus
+187,Cygnus olor-H5N1 subtype
+188,Falco tinnunculus-H5N1 subtype
+189,Canis lupus familiaris-Severe acute respiratory syndrome coronavirus 2
+190,Aves-Bacillus anthracis
+191,Grus monacha-H5N1 subtype
+192,Mico melanurus-Severe acute respiratory syndrome coronavirus 2
+193,Platalea minor-H5N1 subtype
+194,Anser fabalis-unidentified influenza virus
+195,Rissa tridactyla-unidentified influenza virus
+196,Tragelaphus strepsiceros-Foot-and-mouth disease virus
+197,Lynx rufus-H5N1 subtype
+198,Capra hircus-Orbivirus
+199,Branta canadensis-unidentified influenza virus
+200,Equidae-Eastern equine encephalitis virus
+201,Canis lupus familiaris-Influenza A virus
+202,Phalacrocorax gaimardi-H5N1 subtype
+203,Ovis aries-Bluetongue virus
+204,Pica pica-H5N1 subtype
+205,Oryctolagus cuniculus-Severe acute respiratory syndrome coronavirus 2
+206,Aves-African swine fever virus
+207,Spheniscus demersus-H5N1 subtype
+208,Strix aluco-unidentified influenza virus
+209,Morus bassanus-H5N1 subtype
+210,Capra hircus-Coxiella burnetii
+211,Sus scrofa-Gammacoronavirus
+212,Bos taurus-Picornaviridae
+213,Spatula discors-H5N1 subtype
+214,Capra hircus-Bacillus anthracis
+215,Martes martes-H5N1 subtype
+216,Equidae-Venezuelan equine encephalitis virus
+217,Aves-Infectious bursal disease virus
+218,Hirundo rustica-unidentified influenza virus
+219,Bos taurus-Brucella melitensis
+220,Bos taurus-Equine infectious anemia virus
+221,Apoidea-Infectious hematopoietic necrosis virus
+222,Canis lupus familiaris-Lyssavirus
+223,Bos taurus-Bluetongue virus
+224,Canis lupus familiaris-Brucella melitensis
+225,Accipiter nisus-unidentified influenza virus
+226,Sus scrofa-Foot-and-mouth disease virus
+227,Somateria mollissima-H5N1 subtype
+228,Platalea leucorodia-unidentified influenza virus
+229,Capra hircus-Rabbit hemorrhagic disease virus
+230,Spatula discors-unidentified influenza virus
+231,Aix galericulata-H5N1 subtype
+232,Pelecanus crispus-H5N1 subtype
+233,Mephitis mephitis-H5N1 subtype
+234,Leucophaeus modestus-H5N1 subtype
+235,Ovis aries-Bacillus anthracis
+236,Aves-H5N1 subtype
+237,Aves-Severe acute respiratory syndrome coronavirus 2
+238,Anas platyrhynchos-unidentified influenza virus
+239,Portunus trituberculatus-White spot syndrome virus
+240,Canis lupus familiaris-H5N1 subtype
+241,Aves-Brucella suis
+242,Ardea cinerea-unidentified influenza virus
+243,Equidae-Equine arteritis virus
+244,Bos taurus-Coxiella burnetii
+245,Corvus corone-unidentified influenza virus
+246,Corvus corone-H5N1 subtype
+247,Sylvilagus nuttallii-Rabbit hemorrhagic disease virus
+248,Fringilla coelebs-H5N1 subtype
+249,Sterna hirundo-unidentified influenza virus
+250,Aves-Gallid alphaherpesvirus 1
+251,Tachybaptus ruficollis-unidentified influenza virus
+252,Nyctereutes procyonoides-H5N1 subtype
+253,Aix galericulata-unidentified influenza virus
+254,Bos taurus-Vesicular stomatitis virus
+255,Accipiter gentilis-unidentified influenza virus
+256,Anas carolinensis-unidentified influenza virus
+257,Asio flammeus-unidentified influenza virus
+258,Sus scrofa-Streptococcus suis
+259,Ara chloropterus-unidentified influenza virus
+260,Equidae-African horse sickness virus
+261,Aves-Chlamydia psittaci
+262,Canis lupus familiaris-Capripoxvirus
+263,Ovis aries-Chrysomya bezziana
+264,Larus marinus-H5N1 subtype
+265,Pelophylax lessonae-Ranavirus
+266,Corvus macrorhynchos-unidentified influenza virus
+267,Sula nebouxii-unidentified influenza virus
+268,Larus cachinnans-H5N1 subtype
+269,Caracara-H5N1 subtype
+270,Morus capensis-H5N1 subtype
+271,Vulpes vulpes-Severe acute respiratory syndrome coronavirus 2
+272,Apoidea-Aethina tumida
+273,Clarias gariepinus-Aphanomyces invadans
+274,Nasua nasua-H5N1 subtype
+275,Bufotes viridis-Batrachochytrium dendrobatidis
+276,Equidae-Theileria equi
+277,Equidae-Brucella melitensis
+278,Corvus frugilegus-H5N1 subtype
+279,Halichoerus grypus-H5N1 subtype
+280,Haematopus ostralegus-H5N1 subtype
+281,Dama dama-Foot-and-mouth disease virus
+282,Accipiter gentilis-H5N1 subtype
+283,Homo sapiens-H1N1 subtype
+284,Passer domesticus-H5N1 subtype
+285,Panthera tigris-Severe acute respiratory syndrome coronavirus 2
+286,Dama dama-Bluetongue virus
+287,Sus scrofa-Alcelaphine gammaherpesvirus 1
+288,Bos taurus-Lyssavirus
+289,Bos taurus-Mycobacterium tuberculosis complex
+290,Equidae-Vesicular stomatitis virus
+291,Bos taurus-Rift Valley fever virus
+292,Alectoris rufa-H5N1 subtype
+293,Garrulus glandarius-H5N1 subtype
+294,Aquila audax-unidentified influenza virus
+295,Sula variegata-unidentified influenza virus
+296,Camelidae-West Nile virus
+297,Rana temporaria-Ranavirus
+298,Chroicocephalus maculipennis-H5N1 subtype
+299,Capra hircus-Mycoplasma mycoides subsp. capri
+300,Ovis aries-Lyssavirus rabies
+301,Equidae-Equid alphaherpesvirus 1
+302,Haliaeetus pelagicus-unidentified influenza virus
+303,Quiscalus quiscula-unidentified influenza virus
+304,Cygnus melancoryphus-unidentified influenza virus
+305,Mustelidae-Severe acute respiratory syndrome coronavirus 2
+306,Ovis aries-Coxiella burnetii
+307,Bos taurus-African swine fever virus
+308,Austropotamobius pallipes-Aphanomyces astaci
+309,Gazella gazella-Foot-and-mouth disease virus
+310,Aves-Bovine alphaherpesvirus 1
+311,Aonyx cinereus-Severe acute respiratory syndrome coronavirus 2
+312,Aves-Capripoxvirus
+313,Sterna dougallii-H5N1 subtype
+314,Larosterna inca-H5N1 subtype
+315,Podiceps cristatus-H5N1 subtype
+316,Aves-Avihepatovirus A
+317,Capra hircus-Schmallenberg virus
+318,Milvus milvus-H5N1 subtype
+319,Antigone vipio-H5N1 subtype
+320,Bucephala clangula-unidentified influenza virus
+321,Alopochen aegyptiaca-H5N1 subtype
+322,Ovis aries-Brucella melitensis
+323,Accipiter nisus-H5N1 subtype
+324,Ovis aries-Rift Valley fever virus
+325,Ovis aries-Visna-maedi virus
+326,Aves-Influenza A virus
+327,Bos taurus-Orthonairovirus haemorrhagiae
+328,Pandion haliaetus-H5N1 subtype
+329,Rissa tridactyla-H5N1 subtype
+330,Mytilus edulis-Marteilia refringens
+331,Aves-Equine infectious anemia virus
+332,Chlidonias hybrida-H5N1 subtype
+333,Apoidea-Acarapis woodi
+334,Chloephaga melanoptera-unidentified influenza virus
+335,Labrus mixtus-Viral hemorrhagic septicemia virus
+336,Falco sparverius-H5N1 subtype
+337,Anas crecca-unidentified influenza virus
+338,Cygnus melancoryphus-H5N1 subtype
+339,Larus fuscus graellsii-H5N1 subtype
+340,Ursus arctos-H5N1 subtype
+341,Capra hircus-Mycoplasma capricolum subsp. capripneumoniae
+342,Cairina moschata-unidentified influenza virus
+343,Strix uralensis-unidentified influenza virus
+344,Felis catus-Lyssavirus
+345,Mergus merganser-unidentified influenza virus
+346,Didelphis virginiana-H5N1 subtype
+347,Aves-Alcelaphine gammaherpesvirus 1
+348,Trichechus manatus-Severe acute respiratory syndrome coronavirus 2
+349,Neogale vison-H5N1 subtype
+350,Equus quagga-African horse sickness virus
+351,Strix aluco-H5N1 subtype
+352,Mustela putorius-unidentified influenza virus
+353,Anser albifrons-H5N1 subtype
+354,Aves-Brucella melitensis
+355,Bos taurus-Alcelaphine gammaherpesvirus 1
+356,Myrmecophaga tridactyla-Severe acute respiratory syndrome coronavirus 2
+357,Bubo scandiacus-West Nile virus
+358,Neogobius melanostomus-Viral hemorrhagic septicemia virus
+359,Ostrea edulis-Bonamia exitiosa
+360,Equidae-Equine encephalosis virus
+361,Chloephaga picta-H5N1 subtype
+362,Ovis aries-Foot-and-mouth disease virus
+363,Oncorhynchus mykiss-Viral hemorrhagic septicemia virus
+364,Lontra felina-unidentified influenza virus
+365,Equidae-Bacillus anthracis
+366,Corvus macrorhynchos-H5N1 subtype
+367,Tilapia-Tilapia lake virus
+368,Charadrius hiaticula-H5N1 subtype
+369,Podiceps nigricollis-unidentified influenza virus
+370,Buteo jamaicensis-unidentified influenza virus
+371,Bos taurus-Bacillus anthracis
+372,Capra hircus-Peste des petits ruminants virus
+373,Ovis aries-Epizootic hemorrhagic disease virus
+374,Sus scrofa-Cochliomyia hominivorax
+375,Aves-Mycoplasma capricolum subsp. capripneumoniae
+376,Pica pica-unidentified influenza virus
+377,Calidris canutus-unidentified influenza virus
+378,Felis catus-H5N1 subtype
+379,Numenius arquata-unidentified influenza virus
+380,Vulpes vulpes-H5N1 subtype
+381,Aves-Theileria equi
+382,Aves-Bluetongue virus
+383,Ichthyaetus melanocephalus-H5N1 subtype
+384,Falco naumanni-unidentified influenza virus
+385,Larus argentatus-unidentified influenza virus
+386,Oreochromis niloticus-Infectious spleen and kidney necrosis virus
+387,Chroicocephalus ridibundus-unidentified influenza virus
+388,Aves-Aphanomyces invadans
+389,Fulica atra-unidentified influenza virus
+390,Cathartes aura-H5N1 subtype
+391,Panthera pardus orientalis-H5N1 subtype
+392,Aves-prion
+393,Phoenicopterus chilensis-H5N1 subtype
+394,Aves-Burkholderia mallei
+395,Bos taurus-Bovine alphaherpesvirus 1
+396,Hippopotamus amphibius-Bacillus anthracis
+397,Pica hudsonia-unidentified influenza virus
+398,Anser caerulescens caerulescens-H5N1 subtype
+399,Cyprinus carpio-Aphanomyces invadans
+400,Aves-Infectious salmon anemia virus
+401,Phalacrocorax carbo-H5N1 subtype
+402,Falco rusticolus-H5N1 subtype
+403,Aves-Paenibacillus larvae
+404,Sterna hirundinacea-H5N1 subtype
+405,Micropterus salmoides-Aphanomyces invadans
+406,Larus fuscus graellsii-unidentified influenza virus
+407,Equidae-Equine infectious anemia virus
+408,Larus argentatus-H5N1 subtype
+409,Phasianus colchicus-unidentified influenza virus
+410,Oryctolagus cuniculus-Rabbit hemorrhagic disease virus
+411,Bostrychia hagedash-H5N1 subtype
+412,Ovis aries-Chlamydia abortus
+413,Bos taurus-Chrysomya bezziana
+414,Rupornis magnirostris-H5N1 subtype
+415,Corvus splendens-H5N1 subtype
+416,Cygnus olor-unidentified influenza virus
+417,Falco tinnunculus-unidentified influenza virus
+418,Bos taurus-Mycobacterium tuberculosis variant bovis
+419,Panthera uncia-Severe acute respiratory syndrome coronavirus 2
+420,Gelochelidon nilotica-H5N1 subtype
+421,Parus major-West Nile virus
+422,Aquila fasciata-unidentified influenza virus
+423,Aves-Infectious bronchitis virus
+424,Lepomis macrochirus-Aphanomyces invadans
+425,Anser indicus-unidentified influenza virus
+426,Ursus maritimus-H5N1 subtype
+427,Chroicocephalus ridibundus-H5N1 subtype
+428,Milvus milvus-unidentified influenza virus
+429,Bos taurus-Foot-and-mouth disease virus
+430,Ardea alba-H5N1 subtype
+431,Phoca vitulina-unidentified influenza virus
+432,Vulpes vulpes-unidentified influenza virus
+433,Oryx gazella-Rift Valley fever virus
+434,Ovis aries-Vesicular stomatitis virus
+435,Corvus splendens-unidentified influenza virus
+436,Ovis aries-prion
+437,Panthera pardus orientalis-Severe acute respiratory syndrome coronavirus 2
+438,Tachybaptus ruficollis-H5N1 subtype
+439,Morus bassanus-unidentified influenza virus
+440,Tyto alba-H5N1 subtype
+441,Haliaeetus albicilla-H5N1 subtype
+442,Caprimulgus fossii-H5N1 subtype
+443,Coscoroba coscoroba-H5N1 subtype
+444,Milvus migrans-unidentified influenza virus
+445,Vulpes vulpes-Lyssavirus
+446,Enicognathus leptorhynchus-H5N1 subtype
+447,Otaria byronia-unidentified influenza virus
+448,Corvus cornix-West Nile virus
+449,Bos taurus-Lyssavirus rabies
+450,Grus japonensis-H5N1 subtype
+451,Equidae-Lyssavirus rabies
+452,Astacoidea-Pigeon paramyxovirus 1
+453,Larus dominicanus-H5N1 subtype
+454,Neogale vison-Influenza A virus
+455,Sturnus vulgaris-unidentified influenza virus
+456,Oncorhynchus mykiss-Infectious hematopoietic necrosis virus
+457,Loxodonta-Bacillus anthracis
+458,Branta leucopsis-unidentified influenza virus
+459,Aves-Rabbit hemorrhagic disease virus
+460,Cyprinus carpio-Cyprinid herpesvirus 3
+461,Haliotis rubra-Bluetongue virus
+462,Equidae-Foot-and-mouth disease virus
+463,Corvus corax-H5N1 subtype
+464,Caracara plancus-H5N1 subtype
+465,Equidae-Trypanosoma equiperdum
+466,Branta canadensis-H5N1 subtype
+467,Aves-West Nile virus
+468,Rynchops niger-H5N1 subtype
+469,Bos taurus-Capripoxvirus
+470,Neogale vison-Severe acute respiratory syndrome coronavirus 2
+471,Equidae-Bluetongue virus
+472,Plectropterus gambensis-H5N1 subtype
+473,Oryctolagus cuniculus-Myxoma virus
+474,Laridae-H5N1 subtype
+475,Bos taurus-Brucella abortus
+476,Dorosoma cepedianum-Viral hemorrhagic septicemia virus
+477,Corvus cornix-unidentified influenza virus
+478,Sternula albifrons-H5N1 subtype
+479,Ara ararauna-H5N1 subtype
+480,Loxodonta-Pasteurella multocida
+481,Strix uralensis-H5N1 subtype
+482,Ardea cinerea-H5N1 subtype
+483,Chroicocephalus genei-H5N1 subtype
+484,Bos gaurus-Lumpy skin disease virus
+485,Anser sp.-unidentified influenza virus
+486,Buteogallus urubitinga-H5N1 subtype
+487,Phoenicopterus ruber-West Nile virus
+488,Cygnus atratus-H5N1 subtype
+489,Aves-Bonamia ostreae
+490,Phalacrocorax carbo-unidentified influenza virus
+491,Ovis aries-Rabbit hemorrhagic disease virus
+492,Capra hircus-Chrysomya bezziana
+493,Spilornis cheela-unidentified influenza virus
+494,Haliaeetus leucocephalus-unidentified influenza virus
+495,Ovis aries-Peste des petits ruminants virus
+496,Falco naumanni-Pigeon paramyxovirus 1
+497,Camelidae-Rift Valley fever virus
+498,Aythya fuligula-unidentified influenza virus
+499,Tringa flavipes-H5N1 subtype
+500,Podiceps cristatus-unidentified influenza virus
+501,Aves-Vesicular stomatitis virus
+502,Astacoidea-Aphanomyces astaci
+503,Thalasseus maximus-H5N1 subtype
+504,Equidae-African swine fever virus
+505,Canis lupus familiaris-Suid alphaherpesvirus 1
+506,Lepus alleni-Rabbit hemorrhagic disease virus
+507,Apoidea-Melissococcus plutonius
+508,Aves-Cochliomyia hominivorax
+509,Canis lupus familiaris-African swine fever virus
+510,Bos taurus-Epizootic hemorrhagic disease virus
+511,Haliotis tuberculata-Candidatus Xenohaliotis californiensis
+512,Ciconia ciconia-unidentified influenza virus
+513,Capreolus capreolus-Lyssavirus rabies
+514,Columba livia-H5N1 subtype
+515,Gallinula chloropus-H5N1 subtype
+516,Bos taurus-Schmallenberg virus
+517,Bos taurus-Severe acute respiratory syndrome coronavirus 2
+518,Apoidea-Paenibacillus larvae
+519,Salmo salar-Infectious salmon anemia virus
+520,Aves-H7N9 subtype
+521,Corvus corax-unidentified influenza virus
+522,Cyprinus carpio-Sprivivirus cyprinus
+523,Falco vespertinus-unidentified influenza virus
+524,Phalacrocorax neglectus-H5N1 subtype
+525,Martes americana-H5N1 subtype
+526,Larus hyperboreus-unidentified influenza virus
+527,Penaeus monodon-White spot syndrome virus
+528,Micropterus dolomieu-Viral hemorrhagic septicemia virus
+529,Canis lupus familiaris-prion
+530,Sus scrofa-Influenza A virus
+531,Ateles sp.-Severe acute respiratory syndrome coronavirus 2
+532,Sus scrofa-Porcine circovirus 2
+533,Dendrocygna viduata-H5N1 subtype
+534,Equidae-Influenza A virus
+535,Grus leucogeranus-unidentified influenza virus
+536,Sterna hirundo-H5N1 subtype
+537,Lepus timidus-Rabbit hemorrhagic disease virus
+538,Marmota marmota marmota-Lyssavirus rabies
+539,Penaeus monodon-Pigeon paramyxovirus 1
+540,Circus aeruginosus-unidentified influenza virus
+541,Aves-Orbivirus
+542,Felis catus-Severe acute respiratory syndrome coronavirus 2
+543,Sus scrofa-Lyssavirus rabies
+544,Antigone vipio-unidentified influenza virus
+545,Spatula clypeata-unidentified influenza virus
+546,Sus scrofa-Transmissible gastroenteritis virus
+547,Anser anser-unidentified influenza virus
+548,Equidae-Taylorella equigenitalis
+549,Sus scrofa-Japanese encephalitis virus
+550,Stercorarius chilensis-H5N1 subtype
+551,Canis lupus familiaris-Peste des petits ruminants virus
+552,Mergus merganser-H5N1 subtype
+553,Thalasseus elegans-H5N1 subtype
+554,Sula nebouxii-H5N1 subtype
+555,Sula leucogaster-H5N1 subtype
+556,Mareca penelope-H5N1 subtype
+557,Mustelidae-unidentified influenza virus
+558,Equidae-Alphavirus
+559,Garrulus glandarius-unidentified influenza virus
+560,Apoidea-Foot-and-mouth disease virus
+561,Capra hircus-Brucella melitensis
+562,Capra hircus-Foot-and-mouth disease virus
+563,Sus scrofa-African swine fever virus
+564,Larus michahellis atlantis-H5N1 subtype
+565,Enicognathus ferrugineus-H5N1 subtype
+566,Haliaeetus pelagicus-H5N1 subtype
