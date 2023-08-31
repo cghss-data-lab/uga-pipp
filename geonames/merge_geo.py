@@ -2,8 +2,9 @@ import re
 import string
 from loguru import logger
 from geonames.geo_api import GeonamesApi
-from geonames.polygons import search_for_polygon
 
+# from geonames.polygons import search_for_polygon
+LABEL = "Geography"
 FCODE_TO_LABEL = {
     "CONT": "Continent",
     "PCLI": "Country",
@@ -17,10 +18,14 @@ FCODE_TO_LABEL = {
 geonames_api = GeonamesApi()
 
 
-def process_parameters(geonameId, metadata, lat, long, iso2) -> dict:
+def process_parameters(geoname_id, metadata) -> dict:
+    lat = metadata.get("lat")
+    long = metadata.get("lng")
+    iso2 = metadata.get("countryCode", None)
+
     parameters = {
         "dataSource": "GeoNames",
-        "geonameId": int(geonameId),
+        "geonameId": int(geoname_id),
         "name": metadata.get("name"),
         "adminCode1": metadata.get("adminCodes1", {}).get("ISO3166_2", "NA"),
         "adminType": metadata.get("adminTypeName", "NA"),
@@ -59,15 +64,40 @@ def multiline_merge_queries(merge_nodes: str) -> str:
     return merge_all_nodes_query
 
 
-def merge_geo(geoname, session):
+def process_node(geoname_id, label=LABEL):
+    metadata = geonames_api.get_geo_data(geoname_id)
+    parameters = process_parameters(geoname_id, metadata)
+    parameters = create_properties(parameters)
+
+    fcode = metadata.get("fcode")
+    if fcode in FCODE_TO_LABEL:
+        fcode = FCODE_TO_LABEL[fcode]
+        label += f":{fcode}"
+
+    return parameters, label
+
+
+def merge_geo(geoname, session, node_id=None):
     """
     Search for a location by name and return ID, obtain its hierarchy,
     and create nodes and relationships for each parent.
     """
-
     geoname_id = geonames_api.geo_id_search(geoname)
     if not geoname_id:
         return
+
+    if node_id:
+        # Set properties for original node
+        parameters, label = process_node(geoname_id)
+        query = f"""
+            MATCH(g:Geography)
+            WHERE id(g) = {node_id}
+            REMOVE g:Geography
+            SET g:{label}
+            SET g = {{ {parameters} }}
+            RETURN g
+        """
+        session.run(query)
 
     # Use the ID to get the location's hierarchy
     hierarchy_list = geonames_api.get_hierarchy(geoname_id)
@@ -75,34 +105,17 @@ def merge_geo(geoname, session):
     nodes = []
     # Create nodes and CONTAINS relationships for each level in the hierarchy
     for i, place in zip(string.ascii_lowercase, hierarchy_list):
-        iso2 = place.get("countryCode", None)
+        geoid = place.get("geonameId", None)
+        if not geoid:
+            return
 
-        metadata = geonames_api.get_geo_data(geoname_id)
-
-        # Modify the latitude and longitude parameters
-        lat = metadata.get("lat")
-        long = metadata.get("lng")
-        parameters = process_parameters(geoname_id, metadata, lat, long, iso2)
-
-        if lat is not None and long is not None:
-            parameters[
-                "location"
-            ] = "point({latitude: toFloat($lat), longitude: toFloat($long)})"
-        parameters = create_properties(parameters)
-        # Get the label for this node based on its fcode value
-        fcode = metadata.get("fcode")
-        label = "Geography"
-        if fcode in FCODE_TO_LABEL:
-            fcode = FCODE_TO_LABEL[fcode]
-            label += f":{fcode}"
-
-        # Query
+        parameters, label = process_node(geoid)
         geo_query = f"MERGE ({i}:{label} {{ {parameters} }})"
         nodes.append(geo_query)
 
     create_all_nodes_query = "\n".join(nodes)
     merge_all_nodes_query = "-[:CONTAINS_GEO]-".join(
-        f"({k})" for k, v in zip(string.ascii_lowercase, nodes)
+        f"({k})" for k, _ in zip(string.ascii_lowercase, nodes)
     )
     logger.info(f"Creating geographical nodes {merge_all_nodes_query}")
     merge_all_nodes_query = multiline_merge_queries(merge_all_nodes_query)
