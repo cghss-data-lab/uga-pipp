@@ -12,7 +12,6 @@ INFB_TAXID = 11520
 def process_geographies(session) -> None:
     unrevised_geographies = """
     MATCH (g:Geography)
-    WHERE g.geonameId IS NULL
     RETURN id(g) AS id, g.name AS name
     """
     result = session.run(unrevised_geographies)
