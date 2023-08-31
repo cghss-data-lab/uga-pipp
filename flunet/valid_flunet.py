@@ -50,15 +50,15 @@ def extract_row(string: str) -> list:
 def split_influenza_type(valid: list[dict]) -> tuple[list[dict]]:
     logger.info("Splitting influenza types")
     influenza_a = [data for data in valid if data["A (total)"] not in ["", "0"]]
-    influenza_a = [dict(data, **{"type": "Influenza A Virus"}) for data in influenza_a]
+    influenza_a = [dict(data, **{"type": 11320}) for data in influenza_a]
     influenza_b = [data for data in valid if data["B (total)"] not in ["", "0"]]
-    influenza_b = [dict(data, **{"type": "Influenza B Virus"}) for data in influenza_b]
+    influenza_b = [dict(data, **{"type": 11520}) for data in influenza_b]
     return influenza_a, influenza_b
 
 
 def valid_flunet(file: str = "flunet/data/flunet_1995_2022.csv") -> list[dict]:
     logger.info("Validating flunet data")
-    with open(file, "r", encoding="latin-1") as flunet:
+    with open(file, "r", encoding="utf-8") as flunet:
         flunet_valid = []
         header = next(flunet)
         header = process_header(header)

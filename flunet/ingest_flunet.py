@@ -16,24 +16,24 @@ def process_geographies(session) -> None:
     """
     result = session.run(unrevised_geographies)
     result = {data[0]: data[1] for data in result}
-    for _, name in result.items():
-        merge_geo(name, session)
+    for node_id, name in result.items():
+        merge_geo(name, session, node_id)
+
+
+def process_taxons(session, tax_id) -> None:
+    tax_metadata = get_metadata(tax_id)
+    tax_metadata = {**tax_metadata, "taxId": tax_id}
+    merge_taxon(tax_metadata, session)
 
 
 def ingest_flunet(session) -> None:
     logger.info("Initializing flunet ingest")
-    # NCBI taxonomy
-    human_metadata = get_metadata(HUMAN_TAXID)
-    human_metadata = {**human_metadata, "taxId": HUMAN_TAXID}
-    merge_taxon(human_metadata, session)
+    # # NCBI taxonomy
+    process_taxons(session, HUMAN_TAXID)
     logger.info("Creating taxa human")
-    influenza_a_metadata = get_metadata(INFA_TAXID)
-    influenza_a_metadata = {**influenza_a_metadata, "taxId": INFA_TAXID}
-    merge_taxon(influenza_a_metadata, session)
+    process_taxons(session, INFA_TAXID)
     logger.info("Creating taxa influenza a")
-    influenza_b_metadata = get_metadata(INFB_TAXID)
-    influenza_b_metadata = {**influenza_b_metadata, "taxId": INFB_TAXID}
-    merge_taxon(influenza_b_metadata, session)
+    process_taxons(session, INFB_TAXID)
     logger.info("Creating taxa influenza b")
 
     influenza_a, influenza_b = valid_flunet()
@@ -41,21 +41,20 @@ def ingest_flunet(session) -> None:
     UNWIND $Mapping AS mapping
     CREATE (flunet:FluNet:Report {reportId : mapping.reportId})
     CREATE (event:Event {eventId : mapping.eventId,
-        startDate : mapping.startDate, 
+        startDate : mapping.startDate,
         endDate : mapping.endDate})
     MERGE (host:Taxon {dataSource : 'NCBI Taxonomy',
         name : 'Homo sapiens',
         rank : 'Species',
         taxId : 9606})
-    MERGE (pathogen:Taxon {role : 'pathogen', 
-        name : mapping.type})
+    MERGE (pathogen:NoRank:Taxon {taxId : mapping.type})
     MERGE (territory:Geography {name : mapping.Territory})
     MERGE (flunet)-[:REPORTS]->(event)
     MERGE (event)-[:INVOLVES {role : 'host',
         caseCount:mapping.caseCount}]->(host)
-    MERGE (event)-[:INVOLVES {role : 'pathogen',   
-        collected : mapping.Collected, 
-        processed : mapping.Processed, 
+    MERGE (event)-[:INVOLVES {role : 'pathogen',
+        collected : mapping.Collected,
+        processed : mapping.Processed,
         positive : mapping.caseCount}]->(pathogen)
     MERGE (event)-[:OCCURS_IN]->(territory)
     """
