@@ -59,35 +59,30 @@ def multiline_merge_queries(merge_nodes: str) -> str:
     return merge_all_nodes_query
 
 
-def merge_geo(geoname_id, session):
+def merge_geo(geoname, session):
     """
     Search for a location by name and return ID, obtain its hierarchy,
     and create nodes and relationships for each parent.
     """
-    if isinstance(geoname_id, str):
-        geoname_id = geonames_api.geo_id_search(geoname_id)
+
+    geoname_id = geonames_api.geo_id_search(geoname)
+    if not geoname_id:
+        return
 
     # Use the ID to get the location's hierarchy
     hierarchy_list = geonames_api.get_hierarchy(geoname_id)
 
-    if not hierarchy_list:
-        return
-
     nodes = []
     # Create nodes and CONTAINS relationships for each level in the hierarchy
     for i, place in zip(string.ascii_lowercase, hierarchy_list):
-        # place = hierarchy_list[i]
-        geonameId = place.get("geonameId", None)  # maybe garbage
         iso2 = place.get("countryCode", None)
 
-        if not geonameId:
-            return
-        metadata = geonames_api.get_geo_data(geonameId)
+        metadata = geonames_api.get_geo_data(geoname_id)
 
         # Modify the latitude and longitude parameters
         lat = metadata.get("lat")
         long = metadata.get("lng")
-        parameters = process_parameters(geonameId, metadata, lat, long, iso2)
+        parameters = process_parameters(geoname_id, metadata, lat, long, iso2)
 
         if lat is not None and long is not None:
             parameters[
