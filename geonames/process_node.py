@@ -1,5 +1,3 @@
-import re
-
 LABEL = "Geography"
 FCODE_TO_LABEL = {
     "CONT": "Continent",
