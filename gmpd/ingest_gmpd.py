@@ -1,17 +1,20 @@
-from geonames.search_lat_long import search_lat_long
-from geonames import merge_geo
-import gmpd
-from loguru import logger
 from datetime import datetime
 from functools import cache
+from loguru import logger
+import gmpd
+from geonames import merge_geo
+from geonames.geo_api import GeonamesApi
+
+
+search_lat_long = GeonamesApi().search_lat_long
+
 
 def ingest_gmpd(SESSION):
     gmpd_rows = gmpd.get_rows()
-    
+
     # Make sure taxons exist in the database
     # Cast variables for properties
     for index, row in enumerate(gmpd_rows):
-
         reference = row["Citation"]
 
         # Calculated specimens positive
@@ -26,19 +29,19 @@ def ingest_gmpd(SESSION):
             else:
                 totalSpecimensPositive = "Unknown"
 
-        detectionType = row["SamplingType"]    
+        detectionType = row["SamplingType"]
         dataSource = "GMPD"
-        long = row["Longitude"]
-        lat = row ["Latitude"]  
+
+        point = (row["Latitude"], row["Longitude"])
+
         reportId = "GMPD-" + str(index)
 
-
         # Return the location geonameId there is one
-        geonameId = search_lat_long(lat, long)
+        geonameId = search_lat_long(point)
 
         # If there is not geonameId, just create the Report node
         if geonameId is None:
-            logger.warning(f"No location found for lat: {lat}, long: {long}")
+            logger.warning(f"No location found for lat: {point[0]}, long: {point[1]}")
             query = """
                 MERGE (r:GMPD:Report {dataSource: $dataSource, 
                                             reportId:$reportId,
@@ -48,8 +51,8 @@ def ingest_gmpd(SESSION):
 
             parameters = {
                 "dataSource": dataSource,
-                "reportId": reportId, 
-                "reference": reference
+                "reportId": reportId,
+                "reference": reference,
             }
             result = SESSION.run(query, parameters)
 
@@ -71,8 +74,8 @@ def ingest_gmpd(SESSION):
             parameters = {
                 "geonameId": geonameId,
                 "dataSource": dataSource,
-                "reportId": reportId, 
-                "reference": reference
+                "reportId": reportId,
+                "reference": reference,
             }
 
             SESSION.run(query, parameters)
@@ -87,7 +90,11 @@ def ingest_gmpd(SESSION):
             MATCH (r:GMPD:Report {reportId: $reportId}), (h:Taxon {taxId: $host_ncbi_id})
             MERGE (r)-[hr:MENTIONS {role: $role}]->(h)
             """
-            parameters = {"reportId": reportId, "host_ncbi_id": host_ncbi_id, "role":role}
+            parameters = {
+                "reportId": reportId,
+                "host_ncbi_id": host_ncbi_id,
+                "role": role,
+            }
             SESSION.run(query, parameters)
 
         if pathogen_ncbi_id:
@@ -98,7 +105,14 @@ def ingest_gmpd(SESSION):
             MATCH (r:GMPD:Report {reportId: $reportId}), (p:Taxon {taxId: $pathogen_ncbi_id})
             MERGE (r)-[pr:MENTIONS {role: $role, detectionType: $detectionType, totalSpecimensCollected: $totalSpecimensCollected, totalSpecimensPositive: $totalSpecimensPositive}]->(p)
             """
-            parameters = {"reportId": reportId, "pathogen_ncbi_id": pathogen_ncbi_id, "role":role, "detectionType":detectionType,"totalSpecimensCollected":totalSpecimensCollected, "totalSpecimensPositive":totalSpecimensPositive}
+            parameters = {
+                "reportId": reportId,
+                "pathogen_ncbi_id": pathogen_ncbi_id,
+                "role": role,
+                "detectionType": detectionType,
+                "totalSpecimensCollected": totalSpecimensCollected,
+                "totalSpecimensPositive": totalSpecimensPositive,
+            }
             SESSION.run(query, parameters)
 
         if host_ncbi_id is not None and pathogen_ncbi_id is not None:
@@ -109,7 +123,8 @@ def ingest_gmpd(SESSION):
                 "MERGE (t1)-[:ASSOCIATED_WITH]->(t2) "
             )
 
-            pairings_params = {"host_ncbi_id": host_ncbi_id, "pathogen_ncbi_id":pathogen_ncbi_id}
+            pairings_params = {
+                "host_ncbi_id": host_ncbi_id,
+                "pathogen_ncbi_id": pathogen_ncbi_id,
+            }
             SESSION.run(pairings_query, pairings_params)
-
-

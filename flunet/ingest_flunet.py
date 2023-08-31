@@ -1,120 +1,66 @@
-import flunet
-import ncbi
-from geonames import merge_geo, country_shp
 from loguru import logger
-from datetime import datetime
-
-def search_and_merge(taxId, SESSION):
-    logger.info(f'CREATING node {taxId}')
-    ncbi_metadata = ncbi.get_metadata(taxId)
-    taxon = {**ncbi_metadata, "taxId":taxId}
-    ncbi.merge_taxon(taxon, SESSION)
-
-# Define function to format date string into ISO format
-def get_iso_date(date_str):
-    date_obj = datetime.strptime(date_str, '%m/%d/%y')
-    return date_obj.strftime('%Y-%m-%d')
-
-def ingest_flunet(SESSION):
-    try:
-        flunet_rows = flunet.get_rows()
-
-        # get mapping from flunet columns
-        # to agents or agent groups
-        columns = flunet_rows[0].keys()
-        agent_groups = flunet.get_agent_groups(columns)
-
-        # Make sure the agent groups and their
-        # taxons exist in the database
-        flunet.merge_agent_groups(agent_groups, SESSION)
-
-        human = 9606 # Tax ID for humans
-        # Create human node
-        search_and_merge(human, SESSION)
-
-        for index, row in enumerate(flunet_rows):
-            
-            # Skip rows where no data
-            if row["Collected"] == "" and row["Processed"] == "" and row["Total positive"] == "" and row["Total negative"] == "":
-                continue
-
-            logger.info(f"Creating FluNet Report {index}")
-            
-            dataSource = "FluNet"
-            country = row["Territory"]
-            merge_geo(country, SESSION)
-
-            # eventId is disease, country, reportdate
-            eventId = "Flu-" + str(country) + "-" + str(row["Start date"])
-            reportId = "FluNet-" + str(index)
-
-            # Create the report node
-            create_report_query = """
-                MATCH (g:Geography {name: $name})
-                MERGE (r:Report:FluNet {dataSource: $dataSource, 
-                                            reportId: $reportId,
-                                            reportDate: date($reportDate)
-                                            })
-                RETURN r
-                """
-
-            parameters = {
-                "name":country,
-                "dataSource": dataSource,
-                "reportId": reportId, 
-                "reportDate": get_iso_date(row["Start date"])
-            }
-
-            SESSION.run(create_report_query, parameters)
-
-            for col in agent_groups.keys():
-                # skip detection columns with no values
-                # or with zero specimens detected
-                if not row[col] or row[col] == "0":
-                    continue
-
-                ncbi_id = int(agent_groups[col])
-                event_rel_props = {
-                    "subtype": col,
-                    "role": "pathogen"
-                }
-
-                create_event_query = f"""
-                    MATCH (r:Report:FluNet {{reportId: '{reportId}'}})
-                    MERGE (r)-[:REPORTS]->(e:Event:Outbreak {{
-                        eventId: "{eventId}",
-                        startDate: date('{get_iso_date(row["Start date"])}'),
-                        endDate: date('{get_iso_date(row["End date"])}'),
-                        duration: 'P7D'
-                    }})
-                    WITH e
-                    MATCH (g:Geography {{name: "{country}"}})
-                    MERGE (e)-[:OCCURS_IN]->(g)
-                    WITH e
-                    MERGE (t:Taxon {{taxId: {ncbi_id}}})
-                    MERGE (e)-[:INVOLVES {{
-                        subtype: '{event_rel_props['subtype']}',
-                        role: '{event_rel_props['role']}',
-                        totalSpecimensCollected: {int(row["Collected"] or 0)},
-                        totalSpecimensProcessed: {int(row["Processed"] or 0)},
-                        totalSpecimensPositive: {int(row[col])}
-                    }}]->(t)
-                """
+from flunet.valid_flunet import valid_flunet
+from geonames.merge_geo import merge_geo
+from ncbi import get_metadata, merge_taxon
 
 
-                SESSION.run(create_event_query)
+HUMAN_TAXID = 9606
+INFA_TAXID = 11320
+INFB_TAXID = 11520
 
-            # Create the INVOLVES relationships for humans
-            create_human_query = f"""
-                    MATCH (t:Taxon {{taxId: {human}}})
-                    MATCH (e:Event:Outbreak {{eventId: "{eventId}"}})
-                    MERGE (e)-[:INVOLVES {{caseCount: {int(row['Total positive'] or 0)}, role: 'host'}}]->(t)
-                """
 
-            SESSION.run(create_human_query)
-        
-        country_shp(SESSION)
+def process_geographies(session) -> None:
+    unrevised_geographies = """
+    MATCH (g:Geography)
+    RETURN id(g) AS id, g.name AS name
+    """
+    result = session.run(unrevised_geographies)
+    result = {data[0]: data[1] for data in result}
+    for node_id, name in result.items():
+        merge_geo(name, session, node_id)
 
-    except Exception as e:
-        logger.error(f"An exception occurred: {e}")
-        raise
+
+def process_taxons(session, tax_id) -> None:
+    tax_metadata = get_metadata(tax_id)
+    tax_metadata = {**tax_metadata, "taxId": tax_id}
+    merge_taxon(tax_metadata, session)
+
+
+def ingest_flunet(session) -> None:
+    logger.info("Initializing flunet ingest")
+    # # NCBI taxonomy
+    process_taxons(session, HUMAN_TAXID)
+    logger.info("Creating taxa human")
+    process_taxons(session, INFA_TAXID)
+    logger.info("Creating taxa influenza a")
+    process_taxons(session, INFB_TAXID)
+    logger.info("Creating taxa influenza b")
+
+    influenza_a, influenza_b = valid_flunet()
+    query = """
+    UNWIND $Mapping AS mapping
+    CREATE (flunet:FluNet:Report {reportId : mapping.reportId})
+    CREATE (event:Event {eventId : mapping.eventId,
+        startDate : mapping.startDate,
+        endDate : mapping.endDate})
+    MERGE (host:Taxon {dataSource : 'NCBI Taxonomy',
+        name : 'Homo sapiens',
+        rank : 'Species',
+        taxId : 9606})
+    MERGE (pathogen:NoRank:Taxon {taxId : mapping.type})
+    MERGE (territory:Geography {name : mapping.Territory})
+    MERGE (flunet)-[:REPORTS]->(event)
+    MERGE (event)-[:INVOLVES {role : 'host',
+        caseCount:mapping.caseCount}]->(host)
+    MERGE (event)-[:INVOLVES {role : 'pathogen',
+        collected : mapping.Collected,
+        processed : mapping.Processed,
+        positive : mapping.caseCount}]->(pathogen)
+    MERGE (event)-[:OCCURS_IN]->(territory)
+    """
+
+    logger.info("Running on influenza A nodes")
+    session.run(query, Mapping=influenza_a)
+    logger.info("Running on influenza B nodes")
+    session.run(query, Mapping=influenza_b)
+    process_geographies(session)

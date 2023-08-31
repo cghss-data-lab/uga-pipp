@@ -49,7 +49,7 @@ class GeonamesApi:
         Returns integer Geonames ID
         """
         logger.info(f"Searching geonames for term {geoname}")
-        params = {"q": geoname, "maxRows": 1, "fuzzy": 0.8}
+        params = {"q": geoname, "maxRows": 1}
         data = self._geo_api("searchJSON", params)
 
         if data.get("totalResultsCount") == 0:
