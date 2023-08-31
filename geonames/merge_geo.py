@@ -30,7 +30,7 @@ def process_parameters(geonameId, metadata, lat, long, iso2) -> dict:
         "lat": float(lat) if lat is not None else "NA",
         "long": float(long) if long is not None else "NA",
         "elevation": metadata.get("elevation", "NA"),
-        "polygon": search_for_polygon(geonameId),
+        # "polygon": search_for_polygon(geonameId),
     }
     if metadata.get("fcode") == "PCLI":
         parameters["iso3"] = geonames_api.get_iso(iso2)
