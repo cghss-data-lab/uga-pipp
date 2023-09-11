@@ -1,12 +1,15 @@
 from loguru import logger
 from flunet.valid_flunet import valid_flunet
 from geonames.merge_geo import merge_geo
-from ncbi import get_metadata, merge_taxon
+from ncbi.merge_taxon import merge_taxon
+from ncbi.ncbi_api import NCBI
 
 
 HUMAN_TAXID = 9606
 INFA_TAXID = 11320
 INFB_TAXID = 11520
+
+ncbi_api = NCBI()
 
 
 def process_geographies(session) -> None:
@@ -21,7 +24,7 @@ def process_geographies(session) -> None:
 
 
 def process_taxons(session, tax_id) -> None:
-    tax_metadata = get_metadata(tax_id)
+    tax_metadata = ncbi_api.get_metadata(tax_id)
     tax_metadata = {**tax_metadata, "taxId": tax_id}
     merge_taxon(tax_metadata, session)
 
