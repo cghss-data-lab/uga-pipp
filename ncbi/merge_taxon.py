@@ -10,13 +10,13 @@ def merge_taxon_node(taxon, SESSION):
 
     rank = sanitize_rank(taxon["rank"])
     taxon_id = int(taxon["taxId"])
-    dataSource = "NCBI Taxonomy"
+    data_source = "NCBI Taxonomy"
 
     # Use rank, TaxID, dataSource, and name as merge conditions
     SESSION.run(
         f'MERGE (n:Taxon:{rank} {{name: "{taxon["scientificName"]}", '
         f'  rank: "{rank}", '
-        f'  dataSource: "{dataSource}", '
+        f'  dataSource: "{data_source}", '
         f'  taxId: {taxon_id} '
         f"}})"
     )
