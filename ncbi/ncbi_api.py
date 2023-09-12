@@ -136,7 +136,6 @@ class NCBI:
         Retrieve NCBI Eutils response XML, and
         parse it into a beautifulsoup object
         """
-
         url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/{eutil}.fcgi"
         response = requests.get(url, params, timeout=timeout)
         soup = BeautifulSoup(response.content, features="xml")
@@ -150,7 +149,4 @@ class NCBI:
             for orig, ncbi in csv.reader(terms):
                 term_map[orig] = ncbi
 
-        if term in term_map:
-            return term_map[term]
-
-        return None
+        return term_map.get(term, None)
