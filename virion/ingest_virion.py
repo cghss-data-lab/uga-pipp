@@ -1,5 +1,5 @@
 from loguru import logger
-from ncbi import merge_taxon
+from ncbi.merge_taxon import merge_taxon
 from virion.extract_properties import taxon_metadata, process_dates, process_accession
 
 
