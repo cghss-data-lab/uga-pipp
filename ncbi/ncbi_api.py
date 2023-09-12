@@ -147,8 +147,7 @@ class NCBI:
     def column_to_ncbi_name(term):
         term_map = {}
         with open("ncbi/data/terms_to_ncbi.csv", encoding="utf-8") as terms:
-            for row in csv.reader(terms):
-                orig, ncbi = row
+            for orig, ncbi in csv.reader(terms):
                 term_map[orig] = ncbi
 
         if term in term_map:
