@@ -44,7 +44,7 @@ class NCBI:
         return ncbi_id
 
     @cache(METADATA_CACHE_FILE, is_class=True)
-    def get_metadata(self, ncbi_id):
+    def get_metadata(self, ncbi_id, source: str = "NCBI Taxonomy"):
         """Request metadata by NCBI taxonomy ID, and return cleaned object"""
 
         params = {"db": "Taxonomy", "id": ncbi_id}
@@ -77,7 +77,7 @@ class NCBI:
             "createDate": taxon.CreateDate.getText(),
             "updateDate": taxon.UpdateDate.getText(),
             "pubDate": taxon.PubDate.getText(),
-            "dataSource": "NCBI Taxonomy",
+            "dataSource": source,
         }
 
         if taxon.OtherNames:
@@ -93,7 +93,7 @@ class NCBI:
                             "taxId": taxon_child.TaxId.getText(),
                             "scientificName": taxon_child.ScientificName.getText(),
                             "rank": taxon_child.Rank.getText(),
-                            "dataSource": "NCBI Taxonomy",
+                            "dataSource": source,
                         }
                     )
                 time.sleep(SLEEP_TIME)
