@@ -3,7 +3,7 @@ import time
 import requests
 from bs4 import BeautifulSoup, Tag
 from loguru import logger
-from ncbi.cache import cache
+from cache.cache import cache
 
 ID_SEARCH_CACHE_FILE = "ncbi/cache/id_search.pickle"
 METADATA_CACHE_FILE = "ncbi/cache/metadata.pickle"
