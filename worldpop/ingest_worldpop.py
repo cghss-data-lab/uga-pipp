@@ -63,25 +63,6 @@ def ingest_worldpop(SESSION):
             # netMigrationRate = float(row["CNMR"])
             duration = 'P1Y' # set duration to 1 year
 
-            pop_query = """
-                MERGE (p:Population {dataSource: $dataSource, 
-                                reportId:$reportId,
-                                date:$date,
-                                duration:$duration,
-                                totalPopulation:$totalPopulation, 
-                                medianAge: $medianAge,
-                                naturalChange: $naturalChange,
-                                populationChange: $populationChange,
-                                births: $births,
-                                deaths: $deaths,
-                                lifeExpectancy: $lifeExpectancy,
-                                infantDeaths: $infantDeaths,
-                                underFiveDeaths: $underFiveDeaths,
-                                netMigration: $netMigration,
-                                estimate: $estimate})
-                RETURN p
-                """
-            
             parameters = {
                 "dataSource":dataSource,
                 "reportId":reportId,
