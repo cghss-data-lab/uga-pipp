@@ -141,12 +141,3 @@ class NCBI:
         soup = BeautifulSoup(response.content, features="xml")
         time.sleep(SLEEP_TIME)
         return soup
-
-    @staticmethod
-    def column_to_ncbi_name(term):
-        term_map = {}
-        with open("ncbi/data/terms_to_ncbi.csv", encoding="utf-8") as terms:
-            for orig, ncbi in csv.reader(terms):
-                term_map[orig] = ncbi
-
-        return term_map.get(term, None)
