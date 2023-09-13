@@ -91,12 +91,13 @@ def ingest_worldpop(session, estimate=False):
 
             # Match Taxon node to population on TaxId and connect to Geo through Pop
             session.run(
-                f"MATCH (t:Taxon {{taxId: {HUMAN_TAXID}}}) "
-                f"MERGE (p:Population {{taxId: {HUMAN_TAXID}}}) "
-                f"ON CREATE SET p = $props "
-                f"ON MATCH SET p += $props "
-                f"MERGE (p)-[:COMPRISES]->(t) "
-                f'MERGE (g:Geography {{iso2: "{iso2}"}}) '
-                f"MERGE (p)-[:INHABITS]->(g)",
+                f"""
+                MATCH (t:Taxon {{taxId: {HUMAN_TAXID}}}) 
+                MERGE (p:Population {{taxId: {HUMAN_TAXID}}}) 
+                ON CREATE SET p = $props
+                ON MATCH SET p += $props
+                MERGE (p)-[:COMPRISES]->(t)
+                MERGE (g:Geography {{iso2: "{iso2}"}})
+                MERGE (p)-[:INHABITS]->(g)""",
                 props=parameters,
             )
