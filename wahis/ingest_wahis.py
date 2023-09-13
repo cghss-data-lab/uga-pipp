@@ -1,9 +1,8 @@
-import time
 from datetime import datetime
 from loguru import logger
 import requests
 from geonames.geo_api import GeonamesApi
-from geonames import merge_geo
+from geonames.merge_geo import merge_geo
 import wahis
 from wahis import search_and_merge
 

@@ -1,5 +1,5 @@
 import re
-from geonames.cache import cache
+from cache.cache import cache
 
 POLYGON_CACHE = "geonames/cache/polygon.pickle"
 

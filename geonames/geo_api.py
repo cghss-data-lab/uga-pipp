@@ -2,7 +2,7 @@ import os
 import requests
 from dotenv import load_dotenv
 from loguru import logger
-from geonames.cache import cache
+from cache.cache import cache
 
 load_dotenv()
 

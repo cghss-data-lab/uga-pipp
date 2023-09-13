@@ -1,7 +1,10 @@
 from datetime import datetime
 from functools import cache
 from loguru import logger
-from ncbi import get_metadata
+from ncbi.ncbi_api import NCBI
+
+
+ncbi_api = NCBI()
 
 
 def process_dates(year, month, day):
@@ -19,7 +22,7 @@ def process_dates(year, month, day):
 @cache
 def taxon_metadata(taxon_id: str) -> dict:
     logger.info(f"Getting metadata for {taxon_id}")
-    metadata = get_metadata(taxon_id)
+    metadata = ncbi_api.get_metadata(taxon_id)
     return {**metadata, "taxId": taxon_id}
 
 

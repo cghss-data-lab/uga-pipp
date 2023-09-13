@@ -2,7 +2,7 @@ from datetime import datetime
 from functools import cache
 from loguru import logger
 import gmpd
-from geonames import merge_geo
+from geonames.merge_geo import merge_geo
 from geonames.geo_api import GeonamesApi
 
 
