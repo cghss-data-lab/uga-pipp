@@ -1,6 +1,6 @@
 import os
 import asyncio
-from neo4j import GraphDatabase
+from neo4j import AsyncGraphDatabase
 
 
 NEO4J_URI = os.environ["NEO4J_URI"]
@@ -17,12 +17,12 @@ class Neo4jHandler:
         password: str = NEO4J_PASSWORD,
         database: str = NEO4J_DATABASE,
     ) -> None:
-        self.driver = GraphDatabase.driver(uri, auth=(user, password))
+        self.driver = AsyncGraphDatabase.driver(uri, auth=(user, password))
         self.database = database
 
     async def execute_query(self, query_file: str, properties: dict) -> bool:
         with open(query_file, "r", encoding="utf-8") as file:
             query = file.read()
 
-            with self.driver.session(database=self.database) as session:
+            async with self.driver.session(database=self.database) as session:
                 await session.run(query, properties)
