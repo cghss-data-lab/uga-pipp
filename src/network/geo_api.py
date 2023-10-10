@@ -84,5 +84,4 @@ class GeonamesApi:
 
         async with aiohttp.ClientSession() as request:
             response = request.get(base_url, params=parameters, timeout=1000)
-            data = response.json()
-        return data
+            return await response.json()
