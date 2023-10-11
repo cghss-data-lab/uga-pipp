@@ -8,11 +8,11 @@ from cache.cache import cache
 load_dotenv()
 
 GEO_AUTH = os.getenv("GEO_USER")
-ISO_CACHE_FILE = "geonames/cache/iso_cache.pickle"
-GEO_DATA_CACHE_FILE = "geonames/cache/geo_data_cache.pickle"
-HIERARCHY_CACHE_FILE = "geonames/cache/hierarchy_cache.pickle"
-GEONAMEID_CACHE = "geonames/cache/geonameid_cache.pickle"
-POINT_CACHE = "geonames/cache/point_cache.pickle"
+ISO_CACHE_FILE = "src/network/cache/iso_cache.pickle"
+GEO_DATA_CACHE_FILE = "src/network/cache/geo_data_cache.pickle"
+HIERARCHY_CACHE_FILE = "src/network/cache/hierarchy_cache.pickle"
+GEONAMEID_CACHE = "src/network/cache/geonameid_cache.pickle"
+POINT_CACHE = "src/network/cache/point_cache.pickle"
 
 
 class GeonamesApi:
