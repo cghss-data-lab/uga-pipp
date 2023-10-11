@@ -20,14 +20,14 @@ class GeonamesApi:
         self.user = geo_auth
 
     @cache(ISO_CACHE_FILE, is_class=True)
-    async def get_iso(self, iso2: str) -> str:
+    async def search_iso(self, iso2: str) -> str:
         logger.info(f"Searching metadata for iso2 {iso2}")
         parameters = {"country": iso2, "maxRows": 1}
         result = await self._geo_api("countryInfoJSON", parameters)
         return result["geonames"][0]["isoAlpha3"]
 
     @cache(GEO_DATA_CACHE_FILE, is_class=True)
-    async def get_geo_data(self, geoname_id: str) -> dict:
+    async def search_geo_data(self, geoname_id: str) -> dict:
         """Search by Geonames ID
         Return location metadata"""
         logger.info(f"Searching metadata for ID {geoname_id}")
@@ -36,7 +36,7 @@ class GeonamesApi:
         return data
 
     @cache(HIERARCHY_CACHE_FILE, is_class=True)
-    async def get_hierarchy(self, geoname_id) -> dict:
+    async def search_hierarchy(self, geoname_id) -> dict:
         logger.info(f"Searching hierarchy for ID {geoname_id}")
         parameters = {"geonameId": geoname_id}
         hierarchy = await self._geo_api("hierarchyJSON", parameters)
@@ -44,7 +44,7 @@ class GeonamesApi:
         return hierarchy_list
 
     @cache(GEONAMEID_CACHE, is_class=True)
-    async def geo_id_search(self, geoname) -> int:
+    async def search_geonameid(self, geoname) -> int:
         """
         Searches for a location using its name
         Returns integer Geonames ID
