@@ -1,7 +1,9 @@
 import os
 import asyncio
+from dotenv import load_dotenv
 from neo4j import AsyncGraphDatabase
 
+load_dotenv()
 
 NEO4J_URI = os.environ["NEO4J_URI"]
 NEO4J_USER = os.environ["NEO4J_USER"]
