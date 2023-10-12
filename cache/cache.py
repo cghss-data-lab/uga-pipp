@@ -23,9 +23,9 @@ def cache(file: str, is_class=False) -> Callable:
             if is_class:
                 key = args[1:]
             try:
-                return function.cache[key]
+                return function.cache[key[0]]
             except KeyError:
-                function.cache[key] = result = await function(*args)
+                function.cache[key[0]] = result = await function(*args)
                 await save_cache(function.cache, file)
                 return result
 
