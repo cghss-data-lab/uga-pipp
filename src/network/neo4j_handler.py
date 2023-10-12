@@ -1,6 +1,7 @@
 import os
 import asyncio
 from dotenv import load_dotenv
+from loguru import logger
 from neo4j import AsyncGraphDatabase
 
 load_dotenv()
@@ -22,9 +23,9 @@ class Neo4jHandler:
         self.driver = AsyncGraphDatabase.driver(uri, auth=(user, password))
         self.database = database
 
-    async def execute_query(self, query_file: str, properties: dict) -> bool:
+    async def execute_query(self, query_file: str, properties: list) -> None:
         with open(query_file, "r", encoding="utf-8") as file:
             query = file.read()
-
             async with self.driver.session(database=self.database) as session:
-                await session.run(query, properties)
+                logger.info("Ingesting into neo4j")
+                await session.run(query, Mapping=properties)
