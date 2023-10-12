@@ -2,7 +2,6 @@ import asyncio
 from loguru import logger
 from src.flunet.process_flunet import valid_flunet, split_influenza_type
 
-DATASET = "./data/flunet_1995_2022.csv"
 QUERY = "./src/flunet/flunet.cypher"
 
 
