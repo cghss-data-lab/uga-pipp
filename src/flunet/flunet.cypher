@@ -8,8 +8,24 @@ MERGE (host:Taxon {dataSource : 'NCBI Taxonomy',
     rank : 'Species',
     taxId : 9606})
 MERGE (pathogen:NoRank:Taxon {taxId : mapping.type})
-MERGE (territory:Geography {name : mapping.Territory})
-ON CREATE SET territory.geonameId = mapping.geonameId
+
+FOREACH (map in (CASE WHEN mapping.geonames.geonameId IS NOT NULL THEN [1] ELSE [] END) |
+    MERGE (territory:Geography {geonameId : mapping.geonames.geonameId})
+    ON CREATE SET 
+        territory.dataSource = 'GeoNames',
+        territory.geonameId = mapping.geonames.geonameId,
+        territory.name = mapping.geonames.name,
+        territory.adminType = mapping.geonames.adminType,
+        territory.iso2 = mapping.geonames.iso2,
+        territory.fclName = mapping.geonames.fclName,
+        territory.fcodeName = mapping.geonames.fcodeName,
+        territory.lat = toFloat(mapping.geonames.lat),
+        territory.lng = toFloat(mapping.geonames.lng),
+        territory.fcode = mapping.geonames.fcode)
+
+FOREACH (map in (CASE WHEN mapping.geonames.geonameId IS NULL THEN [1] ELSE [] END) |  
+    MERGE (territory:Geography {name : mapping.Territory}))
+
 MERGE (flunet)-[:REPORTS]->(event)
 MERGE (event)-[:INVOLVES {role : 'host',
     caseCount:mapping.caseCount}]->(host)
