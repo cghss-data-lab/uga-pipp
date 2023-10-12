@@ -76,12 +76,11 @@ class GeonamesApi:
 
     async def _geo_api(self, service, parameters):
         """
-        Retrieve GeoNames API response, and
-        parse it into a beautifulsoup object
+        Retrieve GeoNames API response
         """
         base_url = f"http://api.geonames.org/{service}"
         parameters["username"] = self.user
 
-        async with aiohttp.ClientSession() as request:
-            response = await request.get(base_url, params=parameters, timeout=1000)
-            return await response.json()
+        async with aiohttp.ClientSession(trust_env=True) as session:
+            async with session.get(base_url, params=parameters) as response:
+                return await response.json()
