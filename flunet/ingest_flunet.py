@@ -1,3 +1,5 @@
+import asyncio
+import aiohttp
 from loguru import logger
 from flunet.valid_flunet import valid_flunet
 from geonames.merge_geo import merge_geo
