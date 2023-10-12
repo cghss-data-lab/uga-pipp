@@ -80,7 +80,7 @@ def valid_flunet(geo_api, file: str = "flunet/data/flunet_1995_2022.csv") -> lis
             # Process territories
             data["Territory"] = territory = data["Territory"].lower()
             if territory not in geonames and territory is not None:
-                geoname_ids.append(geo_api.geo_id_search(territory))
+                geoname_ids.append(geo_api.search_geonameid(territory))
 
             geonames.add(territory)
 
