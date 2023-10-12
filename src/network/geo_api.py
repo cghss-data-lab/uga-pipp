@@ -56,8 +56,9 @@ class GeonamesApi:
         if data.get("totalResultsCount") == 0:
             return None
 
-        geoname_id = int(data["geonames"][0]["geonameId"])
-        return geoname_id
+        # geoname_id = int(data["geonames"][0]["geonameId"])
+        data = data["geonames"][0]
+        return data  # geoname_id
 
     @cache(POINT_CACHE, is_class=True)
     async def search_lat_long(self, point: tuple[float, float]):
