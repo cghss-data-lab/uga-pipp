@@ -40,3 +40,14 @@ class Neo4jHandler:
             async with self.driver.session(database=self.database) as session:
                 logger.info("Ingesting geonames hierarchy")
                 await session.run(query, Mapping=hierarchy_list)
+
+    async def build_ncbi_hierarchy(
+        self,
+        hierarchy_list: list,
+        hierarchy_query: str = "./src/network/build_ncbi_hierarchy.cypher",
+    ) -> None:
+        with open(hierarchy_query, "r", encoding="utf-8") as file:
+            query = file.read()
+            async with self.driver.session(database=self.database) as session:
+                logger.info("Ingesting ncbi hierarchy")
+                await session.run(query, Mapping=hierarchy_list)
