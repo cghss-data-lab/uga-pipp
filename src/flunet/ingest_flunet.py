@@ -43,9 +43,15 @@ async def ingest_flunet(
     await handle_concurrency(
         *[database_handler.build_geohierarchy(hierarchy) for hierarchy in hierarchies]
     )
-    #         await database_handler.merge_geo(geoid, hierarchy)
-    #         for geoid, hierarchy in zip(geoids, hierarchies)
-    #     ]
-    # )
 
-    return tasks
+    await handle_concurrency(
+        *[
+            ncbiapi.get_metadata(HUMAN_TAXID),
+            ncbiapi.get_metadata(INFA_TAXID),
+            ncbiapi.get_metadata(INFB_TAXID),
+        ]
+    )
+
+    await handle_concurrency(
+        *[database_handler.build_ncbi_hierarchy(hierarchy) for hierarchy in hierarchies]
+    )
