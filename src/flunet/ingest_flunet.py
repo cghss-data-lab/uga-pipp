@@ -9,7 +9,9 @@ def append_geoname(processed: dict, geonames: dict) -> None:
     processed["geonames"] = geonames[territory]
 
 
-async def ingest_flunet(database_handler, geoapi, batch_size: int = 1000) -> list:
+async def ingest_flunet(
+    database_handler, geoapi, ncbiapi, batch_size: int = 1000, query_path=QUERY
+) -> None:
     flunet, geonames, geoids = valid_flunet(geoapi)
     geoids = await asyncio.gather(*geoids)
 
