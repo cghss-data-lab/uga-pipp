@@ -29,3 +29,14 @@ class Neo4jHandler:
             async with self.driver.session(database=self.database) as session:
                 logger.info("Ingesting into neo4j")
                 await session.run(query, Mapping=properties)
+
+    async def build_geohierarchy(
+        self,
+        hierarchy_list: list,
+        hierarchy_query: str = "./src/network/build_geohierarchy.cypher",
+    ) -> None:
+        with open(hierarchy_query, "r", encoding="utf-8") as file:
+            query = file.read()
+            async with self.driver.session(database=self.database) as session:
+                logger.info("Ingesting geonames hierarchy")
+                await session.run(query, Mapping=hierarchy_list)
