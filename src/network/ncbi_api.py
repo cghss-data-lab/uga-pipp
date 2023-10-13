@@ -1,5 +1,6 @@
 import asyncio
 import aiohttp
+from bs4 import BeautifulSoup, Tag
 from loguru import logger
 from cache.cache import cache
 
@@ -8,7 +9,7 @@ METADATA_CACHE_FILE = "ncbi/cache/metadata.pickle"
 SUBTREE_CACHE_FILE = "ncbi/cache/subtree.pickle"
 
 
-class NCBI:
+class NCBIApi:
     @cache(ID_SEARCH_CACHE_FILE, is_class=True)
     async def id_search(self, name):
         """Get ID from text search, using NCBI esearch eutil"""
@@ -134,4 +135,4 @@ class NCBI:
 
         async with aiohttp.ClientSession(trust_env=True) as session:
             async with session.get(base_url, params=parameters) as response:
-                return await response.json()
+                return BeautifulSoup(await response.text(), features="xml")
