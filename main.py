@@ -1,37 +1,15 @@
-import os
+import asyncio
+from network.neo4j_handler import Neo4jHandler
+from network.geo_api import GeonamesApi
+from network.ncbi_api import NCBIApi
+from src.flunet.ingest_flunet import ingest_flunet
 
-from neo4j import GraphDatabase
-from dotenv import load_dotenv
 
-# from carnivoreGMPD import ingest_carnivoreGMPD
-from flunet import ingest_flunet
-from gmpd import ingest_gmpd
-from worldpop import ingest_worldpop
-from wahis import ingest_wahis
-from mapoflife import ingest_mol
-from combine.ingest_combine import ingest_combine
-from virion.ingest_virion import ingest_virion
+async def main() -> None:
+    database_handler, geonames_api, ncbi_api = Neo4jHandler(), GeonamesApi(), NCBIApi()
 
-load_dotenv()
-
-# Pull env vars for auth and create neo4j driver
-NEO4J_AUTH = (os.getenv("NEO4J_USER"), os.getenv("NEO4J_PASS"))
-NEO4J_URI = os.getenv("NEO4J_URI")
-NEO4J_DRIVER = GraphDatabase.driver(NEO4J_URI, auth=NEO4J_AUTH)
-SESSION = NEO4J_DRIVER.session()
+    await ingest_flunet(database_handler, geonames_api, ncbi_api)
 
 
 if __name__ == "__main__":
-    # # carnivoreGMPD is a subset of GMPD which has host-pathogen pairings, instead of :REPORTS relationship
-    # # Would not recommend using both
-    # ingest_carnivoreGMPD(SESSION)
-
-    # ingest_gmpd(SESSION)
-    # ingest_flunet(SESSION)
-    # ingest_worldpop(SESSION)
-    # ingest_wahis(SESSION)
-    # ingest_mol(SESSION)
-    # ingest_combine(SESSION)
-    ingest_virion(SESSION)
-
-    NEO4J_DRIVER.close()
+    asyncio.run(main())
