@@ -6,7 +6,6 @@ from cache.cache import cache
 ID_SEARCH_CACHE_FILE = "ncbi/cache/id_search.pickle"
 METADATA_CACHE_FILE = "ncbi/cache/metadata.pickle"
 SUBTREE_CACHE_FILE = "ncbi/cache/subtree.pickle"
-SLEEP_TIME = 0.4
 
 
 class NCBI:
@@ -93,7 +92,6 @@ class NCBI:
                             "dataSource": source,
                         }
                     )
-                time.sleep(SLEEP_TIME)
         taxon_metadata["lineageEx"] = lineage_ex
 
         return taxon_metadata
@@ -112,7 +110,6 @@ class NCBI:
             id_elements = soup.find_all("Id")
             for id_element in id_elements:
                 id_list.append(id_element.getText())
-                time.sleep(SLEEP_TIME)
 
             return id_list
 
