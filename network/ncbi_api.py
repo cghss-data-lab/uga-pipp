@@ -1,4 +1,3 @@
-import asyncio
 import aiohttp
 from bs4 import BeautifulSoup, Tag
 from loguru import logger

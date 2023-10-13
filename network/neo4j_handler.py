@@ -1,5 +1,4 @@
 import os
-import asyncio
 from dotenv import load_dotenv
 from loguru import logger
 from neo4j import AsyncGraphDatabase

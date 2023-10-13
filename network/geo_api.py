@@ -26,7 +26,7 @@ class GeonamesApi:
         result = await self._geo_api("countryInfoJSON", parameters)
         return result["geonames"][0]["isoAlpha3"]
 
-    @cache(GEO_DATA_CACHE_FILE, is_class=True)
+    @cache(GEO_DATA_CACHE_FILE, is_class=True)  # unnecessary?
     async def search_geo_data(self, geoname_id: str) -> dict:
         """Search by Geonames ID
         Return location metadata"""
@@ -41,7 +41,7 @@ class GeonamesApi:
         parameters = {"geonameId": geoname_id}
         hierarchy = await self._geo_api("hierarchyJSON", parameters)
         hierarchy_list = hierarchy.get("geonames")
-        return hierarchy_list
+        return await hierarchy_list
 
     @cache(GEONAMEID_CACHE, is_class=True)
     async def search_geonameid(self, geoname) -> int:
