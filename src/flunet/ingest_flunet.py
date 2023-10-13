@@ -1,6 +1,10 @@
 import asyncio
+from src.network.sempahore import handle_concurrency
 from src.flunet.process_flunet import valid_flunet, split_influenza_type
 
+HUMAN_TAXID = 9606
+INFA_TAXID = 11320
+INFB_TAXID = 11520
 QUERY = "./src/flunet/flunet.cypher"
 
 
@@ -21,26 +25,24 @@ async def ingest_flunet(
 
     infa, infb = split_influenza_type(flunet)
 
-    tasks = []
-
     batches_infa = (len(infa) - 1) // batch_size + 1
     for i in range(batches_infa):
         batch = infa[i * batch_size : (i + 1) * batch_size]
-        tasks.append(await database_handler.execute_query(QUERY, properties=batch))
+        await database_handler.execute_query(query_path, properties=batch)
 
     batches_infb = (len(infb) - 1) // batch_size + 1
     for i in range(batches_infb):
         batch = infa[i * batch_size : (i + 1) * batch_size]
-        tasks.append(await database_handler.execute_query(QUERY, properties=batch))
+        await database_handler.execute_query(query_path, properties=batch)
 
     geoids = [x for x in geoids if x is not None]
-    hierarchies = [
-        await geoapi.search_hierarchy(geoid["geonameId"]) for geoid in geoids
-    ]
-    tasks.extend(hierarchies)
+    hierarchies = await handle_concurrency(
+        *[geoapi.search_hierarchy(geoid["geonameId"]) for geoid in geoids]
+    )
 
-    # tasks.extend(
-    #     [
+    await handle_concurrency(
+        *[database_handler.build_geohierarchy(hierarchy) for hierarchy in hierarchies]
+    )
     #         await database_handler.merge_geo(geoid, hierarchy)
     #         for geoid, hierarchy in zip(geoids, hierarchies)
     #     ]
