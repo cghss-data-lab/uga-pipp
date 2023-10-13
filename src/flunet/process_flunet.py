@@ -56,7 +56,7 @@ def split_influenza_type(valid: list[dict]) -> tuple[list[dict]]:
     return influenza_a, influenza_b
 
 
-def valid_flunet(geo_api, file: str = "flunet/data/flunet_1995_2022.csv") -> list[dict]:
+def valid_flunet(geo_api, file: str = "data/flunet_1995_2022.csv") -> list[dict]:
     logger.info("Validating flunet data")
     flunet_valid = list()
     geonames = set()
