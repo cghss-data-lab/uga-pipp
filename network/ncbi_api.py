@@ -10,7 +10,7 @@ SUBTREE_CACHE_FILE = "ncbi/cache/subtree.pickle"
 
 class NCBIApi:
     @cache(ID_SEARCH_CACHE_FILE, is_class=True)
-    async def search_id(self, name):
+    async def search_id(self, name: str) -> int:
         """Get ID from text search, using NCBI esearch eutil"""
         logger.info(f"Searching NCBI for term {name}")
 
@@ -40,7 +40,9 @@ class NCBIApi:
         return ncbi_id
 
     @cache(METADATA_CACHE_FILE, is_class=True)
-    async def search_hierarchy(self, ncbi_id, source: str = "NCBI Taxonomy"):
+    async def search_hierarchy(
+        self, ncbi_id: int, source: str = "NCBI Taxonomy"
+    ) -> list:
         """Request metadata by NCBI taxonomy ID, and return cleaned object"""
 
         def extract_metadata(taxon: Tag) -> dict:
@@ -62,7 +64,7 @@ class NCBIApi:
 
         return taxon_set.append(taxon)
 
-    async def _api_soup(self, eutil, parameters):
+    async def _api_soup(self, eutil: str, parameters: dict) -> BeautifulSoup:
         """
         Retrieve NCBI Eutils response XML, and
         parse it into a beautifulsoup object
