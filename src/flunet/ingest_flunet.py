@@ -1,6 +1,6 @@
 import asyncio
 from network.sempahore import handle_concurrency
-from src.flunet.process_flunet import valid_flunet, split_influenza_type
+from src.flunet.valid_flunet import valid_flunet, split_influenza_type
 
 HUMAN_TAXID = 9606
 INFA_TAXID = 11320
