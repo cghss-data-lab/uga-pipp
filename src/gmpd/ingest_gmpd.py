@@ -1,7 +1,7 @@
 import asyncio
 from loguru import logger
 from network.sempahore import handle_concurrency
-from gmpd.valid_gmpd import valid_gmpd
+from src.gmpd.valid_gmpd import valid_gmpd
 
 QUERY = "./src/gmpd/gmpd.cypher"
 
