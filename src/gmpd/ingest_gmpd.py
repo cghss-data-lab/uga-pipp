@@ -9,4 +9,7 @@ QUERY = "./src/gmpd/gmpd.cypher"
 async def ingest_gmpd(
     database_handler, geoapi, ncbiapi, batch_size: int = 1000, query_path=QUERY
 ) -> None:
-    gmpd = valid_gmpd()
+    gmpd, geonames, geoids, taxnames, taxids = valid_gmpd(geoapi, ncbiapi)
+
+    geoids = await asyncio.gather(*geoids)
+    taxids = await asyncio.gather(*taxids)
