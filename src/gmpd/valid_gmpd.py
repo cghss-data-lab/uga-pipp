@@ -23,7 +23,8 @@ def extract_row(string: str) -> list:
 
 def process_geographies(geographies: str) -> list[str]:
     geographies = geographies.strip('"')
-    return re.split(r",\s*|and\s*", geographies)
+    geographies = re.split(r",\s*|\sand\s*", geographies)
+    return [geo.lower() for geo in geographies]
 
 
 def valid_gmpd(geoapi, ncbi_api, file: str = "/data/GMPD_main.csv") -> list[dict]:
