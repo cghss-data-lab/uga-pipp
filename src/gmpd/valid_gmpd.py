@@ -27,7 +27,7 @@ def process_geographies(geographies: str) -> list[str]:
     return [geo.lower() for geo in geographies]
 
 
-def valid_gmpd(geoapi, ncbi_api, file: str = "/data/GMPD_main.csv") -> list[dict]:
+def valid_gmpd(geoapi, ncbi_api, file: str = "data/GMPD_main.csv") -> list[dict]:
     geonames = set()
     tax_names = set()
 
