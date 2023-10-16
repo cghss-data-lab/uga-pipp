@@ -10,7 +10,7 @@ SUBTREE_CACHE_FILE = "ncbi/cache/subtree.pickle"
 
 class NCBIApi:
     @cache(ID_SEARCH_CACHE_FILE, is_class=True)
-    async def id_search(self, name):
+    async def search_id(self, name):
         """Get ID from text search, using NCBI esearch eutil"""
         logger.info(f"Searching NCBI for term {name}")
 
@@ -40,7 +40,7 @@ class NCBIApi:
         return ncbi_id
 
     @cache(METADATA_CACHE_FILE, is_class=True)
-    async def get_metadata(self, ncbi_id, source: str = "NCBI Taxonomy"):
+    async def search_metadata(self, ncbi_id, source: str = "NCBI Taxonomy"):
         """Request metadata by NCBI taxonomy ID, and return cleaned object"""
 
         params = {"db": "Taxonomy", "id": ncbi_id}
@@ -97,7 +97,7 @@ class NCBIApi:
         return taxon_metadata
 
     @cache(SUBTREE_CACHE_FILE, is_class=True)
-    async def subtree_search(self, ncbi_id):
+    async def search_subtree(self, ncbi_id):
         """Get Subtree from text search, using NCBI esearch eutil"""
         logger.info(f"Searching NCBI for ID {ncbi_id}")
 
