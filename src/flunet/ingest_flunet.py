@@ -36,15 +36,18 @@ async def ingest_flunet(
         await database_handler.execute_query(query_path, properties=batch)
 
     geoids = [x for x in geoids if x is not None]
-    hierarchies = await handle_concurrency(
+    geo_hierarchies = await handle_concurrency(
         *[geoapi.search_hierarchy(geoid["geonameId"]) for geoid in geoids]
     )
 
     await handle_concurrency(
-        *[database_handler.build_geohierarchy(hierarchy) for hierarchy in hierarchies]
+        *[
+            database_handler.build_geohierarchy(hierarchy)
+            for hierarchy in geo_hierarchies
+        ]
     )
 
-    await handle_concurrency(
+    ncbi_hierarchies = await handle_concurrency(
         *[
             ncbiapi.get_metadata(HUMAN_TAXID),
             ncbiapi.get_metadata(INFA_TAXID),
@@ -53,5 +56,8 @@ async def ingest_flunet(
     )
 
     await handle_concurrency(
-        *[database_handler.build_ncbi_hierarchy(hierarchy) for hierarchy in hierarchies]
+        *[
+            database_handler.build_ncbi_hierarchy(hierarchy)
+            for hierarchy in ncbi_hierarchies
+        ]
     )
