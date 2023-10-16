@@ -5,5 +5,6 @@ MERGE (pathogen:Taxon {name : mapping.ParasiteCorrectedName})
 MERGE (gmpd)-[:ASSOCIATES {role : 'host'}]->(host)
 MERGE (gmpd)-[:ASSOCIATES {role : 'pathogen'}]->(pathogen)
 FOREACH (geo in mapping.LocationName |
-    MERGE (gmpd)-[:ABOUT]->(g:Geography {name : geo}) 
+    MERGE (gmpd)-[:ABOUT]->(g:Geography {geonameId : geo.geonameID,
+    name : geo.name}) 
     )
