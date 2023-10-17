@@ -55,7 +55,13 @@ class GeonamesApi:
         if data.get("totalResultsCount") == 0:
             return None
 
-        # geoname_id = int(data["geonames"][0]["geonameId"])
+        if data.get("status"):
+            raise CreditLimitError(
+                value=geoname,
+                message="The hourly limit of 1000 credits for davroza has been exceeded",
+            )
+
+        geoname_id = int(data["geonames"][0]["geonameId"])
         data = data["geonames"][0]
         return data  # geoname_id
 
@@ -84,3 +90,10 @@ class GeonamesApi:
         async with aiohttp.ClientSession(trust_env=True) as session:
             async with session.get(base_url, params=parameters) as response:
                 return await response.json()
+
+
+class CreditLimitError(Exception):
+    def __init__(self, value, message):
+        self.value = value
+        self.message = message
+        super().__init__(value=value, message=message)
