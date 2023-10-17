@@ -11,8 +11,8 @@ async def ingest_gmpd(
 ) -> None:
     gmpd, geonames, geoids, taxnames, taxids = valid_gmpd(geoapi, ncbiapi)
 
-    geoids = await asyncio.gather(*geoids)
-    taxids = await asyncio.gather(*taxids)
+    geoids = await handle_concurrency(*geoids)
+    taxids = await handle_concurrency(*taxids)
 
     geographies = dict(zip(geonames, geoids))
     taxons = dict(zip(taxnames, taxids))
