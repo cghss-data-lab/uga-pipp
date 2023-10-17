@@ -1,7 +1,6 @@
 UNWIND $Mapping as mapping
-MERGE (tax:Taxon {ncbiId : mapping.ncbiId})
+MERGE (tax:Taxon {taxId : mapping.taxId})
 ON CREATE SET 
-    tax.taxId = mapping.taxId,
     tax.name = mapping.name,
     tax.rank = mapping.rank,
     tax.dataSource = mapping.dataSource
