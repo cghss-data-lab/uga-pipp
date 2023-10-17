@@ -60,8 +60,8 @@ class NCBIApi:
 
         taxon_set = soup.TaxaSet.Taxon.LineageEx.find_all("Taxon")
         taxon_set = [extract_metadata(taxon) for taxon in taxon_set]
-
-        return taxon_set.append(taxon)
+        taxon_set.append(taxon)
+        return taxon_set
 
     async def _api_soup(self, eutil: str, parameters: dict) -> BeautifulSoup:
         """
