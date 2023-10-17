@@ -1,5 +1,4 @@
 import os
-import asyncio
 import aiohttp
 from dotenv import load_dotenv
 from loguru import logger
