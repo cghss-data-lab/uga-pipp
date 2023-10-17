@@ -20,3 +20,32 @@ async def ingest_gmpd(
     for row in gmpd:
         row["locations"] = [geographies[geo] for geo in row["locations"]]
         row["HostCorrectedName"] = taxons[row["HostCorrectedName"]]
+
+    batches = (len(gmpd) - 1) // batch_size + 1
+    for i in range(batches):
+        batch = gmpd[i * batch_size : (i + 1) * batch_size]
+        await database_handler.execute_query(query_path, properties=batch)
+
+    geoids = [x for x in geoids if x is not None]
+    geo_hierarchies = await handle_concurrency(
+        *[geoapi.search_hierarchy(geoid["geonameId"]) for geoid in geoids]
+    )
+
+    await handle_concurrency(
+        *[
+            database_handler.build_geohierarchy(hierarchy)
+            for hierarchy in geo_hierarchies
+        ]
+    )
+
+    taxids = [x for x in taxids if x is not None]
+    ncbi_hierarchies = await handle_concurrency(
+        *[ncbiapi.search_hierarchy(tax) for tax in taxids]
+    )
+
+    await handle_concurrency(
+        *[
+            database_handler.build_ncbi_hierarchy(hierarchy)
+            for hierarchy in ncbi_hierarchies
+        ]
+    )
