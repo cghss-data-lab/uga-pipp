@@ -3,11 +3,14 @@ CREATE (flunet:FluNet:Report {reportId : mapping.reportId})
 CREATE (event:Event {eventId : mapping.eventId,
     startDate : mapping.startDate,
     endDate : mapping.endDate})
-MERGE (host:Taxon {dataSource : 'NCBI Taxonomy',
+MERGE (host:Taxon {taxId : 9606,
     name : 'Homo sapiens',
     rank : 'Species',
-    taxId : 9606})
-MERGE (pathogen:NoRank:Taxon {taxId : mapping.type})
+    dataSource : 'NCBI Taxonomy'})
+MERGE (pathogen:NoRank:Taxon {taxId : mapping.type,
+    name : mapping.name,
+    rank : "no rank",
+    dataSource : 'NCBI Taxonomy'})
 
 FOREACH (map in (CASE WHEN mapping.geonames.geonameId IS NOT NULL THEN [1] ELSE [] END) |
     MERGE (territory:Geography {geonameId : mapping.geonames.geonameId})
