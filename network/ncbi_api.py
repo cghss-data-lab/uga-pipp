@@ -3,9 +3,9 @@ from bs4 import BeautifulSoup, Tag
 from loguru import logger
 from cache.cache import cache
 
-ID_SEARCH_CACHE_FILE = "ncbi/cache/id_search.pickle"
-METADATA_CACHE_FILE = "ncbi/cache/metadata.pickle"
-SUBTREE_CACHE_FILE = "ncbi/cache/subtree.pickle"
+ID_SEARCH_CACHE_FILE = "src/network/cache/id_search.pickle"
+METADATA_CACHE_FILE = "src/network/cache/metadata.pickle"
+SUBTREE_CACHE_FILE = "src/network/cache/subtree.pickle"
 
 
 class NCBIApi:
