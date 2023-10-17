@@ -8,7 +8,7 @@ NCBI_HIERARCHY_CACHE_FILE = "network/cache/ncbi_hierarchy.pickle"
 
 
 class NCBIApi:
-    @cache(ID_SEARCH_CACHE_FILE, is_class=True)
+    @cache(NCBI_ID_CACHE_FILE, is_class=True)
     async def search_id(self, name: str) -> int:
         """Get ID from text search, using NCBI esearch eutil"""
         logger.info(f"Searching NCBI for term {name}")
