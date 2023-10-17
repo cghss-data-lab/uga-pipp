@@ -3,9 +3,8 @@ from bs4 import BeautifulSoup, Tag
 from loguru import logger
 from cache.cache import cache
 
-ID_SEARCH_CACHE_FILE = "src/network/cache/id_search.pickle"
-METADATA_CACHE_FILE = "src/network/cache/metadata.pickle"
-SUBTREE_CACHE_FILE = "src/network/cache/subtree.pickle"
+NCBI_ID_CACHE_FILE = "network/cache/ncbi_id.pickle"
+NCBI_HIERARCHY_CACHE_FILE = "network/cache/ncbi_hierarchy.pickle"
 
 
 class NCBIApi:
@@ -39,7 +38,7 @@ class NCBIApi:
 
         return ncbi_id
 
-    @cache(METADATA_CACHE_FILE, is_class=True)
+    @cache(NCBI_HIERARCHY_CACHE_FILE, is_class=True)
     async def search_hierarchy(
         self, ncbi_id: int, source: str = "NCBI Taxonomy"
     ) -> list:

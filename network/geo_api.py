@@ -8,18 +8,18 @@ from cache.cache import cache
 load_dotenv()
 
 GEO_AUTH = os.getenv("GEO_USER")
-ISO_CACHE_FILE = "src/network/cache/iso_cache.pickle"
-GEO_DATA_CACHE_FILE = "src/network/cache/geo_data_cache.pickle"
-HIERARCHY_CACHE_FILE = "src/network/cache/hierarchy_cache.pickle"
-GEONAMEID_CACHE = "src/network/cache/geonameid_cache.pickle"
-POINT_CACHE = "src/network/cache/point_cache.pickle"
+GEONAMES_ISO_CACHE_FILE = "network/cache/geonames_iso_cache.pickle"
+GEO_DATA_CACHE_FILE = "network/cache/geo_data_cache.pickle"
+GEONAMES_HIERARCHY_CACHE_FILE = "network/cache/geonames_hierarchy_cache.pickle"
+GEONAMES_ID_CACHE = "network/cache/geonames_id_cache.pickle"
+POINT_CACHE = "network/cache/point_cache.pickle"
 
 
 class GeonamesApi:
     def __init__(self, geo_auth=GEO_AUTH):
         self.user = geo_auth
 
-    @cache(ISO_CACHE_FILE, is_class=True)
+    @cache(GEONAMES_ISO_CACHE_FILE, is_class=True)
     async def search_iso(self, iso2: str) -> str:
         logger.info(f"Searching metadata for iso2 {iso2}")
         parameters = {"country": iso2, "maxRows": 1}
@@ -35,7 +35,7 @@ class GeonamesApi:
         data = await self._geo_api("getJSON", parameters)
         return data
 
-    @cache(HIERARCHY_CACHE_FILE, is_class=True)
+    @cache(GEONAMES_HIERARCHY_CACHE_FILE, is_class=True)
     async def search_hierarchy(self, geoname_id) -> dict:
         logger.info(f"Searching hierarchy for ID {geoname_id}")
         parameters = {"geonameId": geoname_id}
@@ -43,7 +43,7 @@ class GeonamesApi:
         hierarchy_list = hierarchy.get("geonames")
         return await hierarchy_list
 
-    @cache(GEONAMEID_CACHE, is_class=True)
+    @cache(GEONAMES_ID_CACHE, is_class=True)
     async def search_geonameid(self, geoname) -> int:
         """
         Searches for a location using its name
