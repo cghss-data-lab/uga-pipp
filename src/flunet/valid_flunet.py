@@ -50,9 +50,15 @@ def extract_row(string: str) -> list:
 def split_influenza_type(valid: list[dict]) -> tuple[list[dict]]:
     logger.info("Splitting influenza types")
     influenza_a = [data for data in valid if data["A (total)"] not in ["", "0"]]
-    influenza_a = [dict(data, **{"type": 11320}) for data in influenza_a]
+    influenza_a = [
+        dict(data, **{"type": 11320, "name": "Influenza A virus"})
+        for data in influenza_a
+    ]
     influenza_b = [data for data in valid if data["B (total)"] not in ["", "0"]]
-    influenza_b = [dict(data, **{"type": 11520}) for data in influenza_b]
+    influenza_b = [
+        dict(data, **{"type": 11520, "name": "Influenza B virus"})
+        for data in influenza_b
+    ]
     return influenza_a, influenza_b
 
 
