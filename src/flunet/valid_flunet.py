@@ -1,6 +1,32 @@
-import re
+import csv
 from datetime import datetime
 from loguru import logger
+
+FIELDNAMES = (
+    "reportId",
+    "Territory",
+    "WHO region",
+    "Transmission zone",
+    "Year",
+    "Week",
+    "startDate",
+    "endDate",
+    "Collected",
+    "Processed",
+    "A (H1)",
+    "A (H1N1)",
+    "A (H3)",
+    "A (H5)",
+    "A (not subtyped)",
+    "A (total)",
+    "B (Yamagata)",
+    "B (Victoria)",
+    "B (not subtyped)",
+    "B (total)",
+    "caseCount",
+    "Total negative",
+    "ILI activity",
+)
 
 
 def is_valid_report(data: dict) -> bool:
@@ -17,16 +43,6 @@ def is_valid_report(data: dict) -> bool:
     return True
 
 
-def process_header(header: str) -> list:
-    logger.info("Updating header")
-    header = header.strip().split(",")
-    header = ["startDate" if item == "Start date" else item for item in header]
-    header = ["endDate" if item == "End date" else item for item in header]
-    header = ["caseCount" if item == "Total positive" else item for item in header]
-    header = ["reportId" if item == "" else item for item in header]
-    return header
-
-
 def process_dates(data: dict) -> None:
     data["startDate"] = datetime.strptime(data["startDate"], "%m/%d/%y").strftime(
         "%Y-%m-%d"
@@ -34,17 +50,6 @@ def process_dates(data: dict) -> None:
     data["endDate"] = datetime.strptime(data["endDate"], "%m/%d/%y").strftime(
         "%Y-%m-%d"
     )
-
-
-def extract_row(string: str) -> list:
-    row_data = re.findall(r"(?:^|,)(\"(?:[^\"]+|\"\")*\"|[^,]*)", string)
-    if "(" in row_data[1]:
-        row_data[1] = re.match(r"([A-Za-z]*)\s(?=\(.*\))", row_data[1]).group(0)
-        return row_data
-    if "," in row_data[1]:
-        row_data[1] = row_data[1].split(",")[1]
-        return row_data
-    return row_data
 
 
 def split_influenza_type(valid: list[dict]) -> tuple[list[dict]]:
@@ -68,24 +73,21 @@ def valid_flunet(geo_api, file: str = "data/flunet_1995_2022.csv") -> list[dict]
     geonames = set()
     geoname_ids = []
 
-    with open(file, "r", encoding="utf-8") as flunet:
-        header = next(flunet)
-        header = process_header(header)
-
+    with open(file, "r", encoding="utf-8") as flunet_file:
+        flunet = csv.DictReader(flunet_file)
+        flunet.fieldnames = FIELDNAMES
+        next(flunet)
         for row in flunet:
-            row = extract_row(row.strip())
-            data = dict(zip(header, row))
-
-            if not is_valid_report(data):
+            if not is_valid_report(row):
                 continue
 
-            process_dates(data)
-            data["reportId"] = "FluNet" + "-" + data["reportId"]
-            flunet_valid.append(data)
+            process_dates(row)
+            row["reportId"] = "FluNet" + "-" + row["reportId"]
+            flunet_valid.append(row)
 
             # Process territories
-            data["Territory"] = territory = (
-                data["Territory"].lower().strip().replace('"', "")
+            row["Territory"] = territory = (
+                row["Territory"].lower().strip().replace('"', "")
             )
             if territory not in geonames and territory is not None:
                 geoname_ids.append(geo_api.search_geoname_id(territory))
