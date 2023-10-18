@@ -3,11 +3,6 @@ from loguru import logger
 from src.combine.extract_properties import extract_properties
 
 
-def create_properties(parameters: dict) -> str:
-    properties = ", ".join("{0}: ${0}".format(n) for n in parameters)
-    return properties
-
-
 def preprocess_biogeographical_realms(biogeographical_realms: str) -> list:
     realms = biogeographical_realms.replace('"', "").split(",")
     realms = [realm for realm in realms if realm != "NA"]
