@@ -1,6 +1,6 @@
 import re
 from loguru import logger
-from combine.extract_properties import extract_properties
+from src.combine.extract_properties import extract_properties
 
 
 def create_properties(parameters: dict) -> str:
@@ -20,7 +20,7 @@ def log_taxons_without_match(result: list, row: dict) -> None:
 
 
 def ingest_combine(session) -> None:
-    with open("combine/data/trait_data_imputed.csv") as combine:
+    with open("data/combine_trait_data_imputed.csv", "r", encoding="utf-8") as combine:
         header = next(combine).replace("-", "_").strip().split(",")
         for line in combine:
             line = line.strip()
