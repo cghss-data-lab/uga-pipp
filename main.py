@@ -4,6 +4,7 @@ from network.geo_api import GeonamesApi
 from network.ncbi_api import NCBIApi
 from src.flunet.ingest_flunet import ingest_flunet
 from src.gmpd.ingest_gmpd import ingest_gmpd
+from src.combine.ingest_combine import ingest_combine
 
 
 async def main() -> None:
@@ -11,6 +12,7 @@ async def main() -> None:
 
     # await ingest_flunet(database_handler, geonames_api, ncbi_api)
     await ingest_gmpd(database_handler, geonames_api, ncbi_api)
+    await ingest_combine(database_handler)
 
 
 if __name__ == "__main__":
