@@ -21,12 +21,6 @@ def extract_row(string: str) -> list:
     return row_data
 
 
-def process_geographies(geographies: str) -> list[str]:
-    geographies = geographies.strip('"')
-    geographies = re.split(r",\s*|\sand\s*", geographies)
-    return [geo.lower() for geo in geographies]
-
-
 def valid_gmpd(geoapi, ncbi_api, file: str = "data/GMPD_main.csv") -> list[dict]:
     geonames = set()
     tax_names = set()
@@ -45,15 +39,15 @@ def valid_gmpd(geoapi, ncbi_api, file: str = "data/GMPD_main.csv") -> list[dict]
                 continue
 
             data["Positive"] = float(data["Prevalence"]) * float(data["NumSamples"])
-            locations = process_geographies(data["LocationName"])
-            data["LocationName"] = locations
+            locations = (data["Latitude"], data["Longitude"])
+            data["LocationPoint"] = locations
 
-            geonames.update(locations)
+            geonames.add(data["LocationName"])
             tax_names.add(data["HostCorrectedName"])
 
             gmpd_valid.append(data)
 
-        geonames_id = [geoapi.search_geonameid(territory) for territory in geonames]
+        geonames_id = [geoapi.search_lat_long(territory) for territory in geonames]
         tax_id = [ncbi_api.search_id(tax) for tax in tax_names]
 
     return gmpd_valid, geonames, geonames_id, tax_names, tax_id
