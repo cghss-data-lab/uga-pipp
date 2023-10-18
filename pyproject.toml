@@ -1,6 +1,6 @@
 [tool.pylint.messages_control]
 # disable = "C0116, C0115, C0114, C0103, E0213, R0903"
-init-hook = "import sys; sys.path.append('src/libraries/python/')"
+# init-hook = "import sys; sys.path.append('src/')"
 extension-pkg-whitelist = "pydantic"
 
 disable = [
@@ -13,5 +13,20 @@ disable = [
   "duplicate-code",
 ]
 
+
 [tool.pylint]
 generated-members = "torch.*"
+
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q -x --cov"
+testpaths = [
+    "tests"
+]
+python_files = "test*.py"
+markers = [
+  "sanity: mark a test for minimial functionality",
+  "geonames: mark a test designed for geonames api",
+  "ncbi: mark a test designed for ncbi api",
+]
