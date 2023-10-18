@@ -29,8 +29,8 @@ class GeonamesApi:
     async def search_iso(self, iso2: str) -> str:
         logger.info(f"Searching metadata for iso2 {iso2}")
         parameters = {"country": iso2, "maxRows": 1}
-        result = await self._geo_api("countryInfoJSON", parameters)
-        return result["geonames"][0]["isoAlpha3"]
+        data = await self._geo_api("countryInfoJSON", parameters)
+        return self.first_element(data)
 
     @cache(GEO_DATA_CACHE_FILE, is_class=True)  # unnecessary?
     async def search_geo_data(self, geoname_id: str) -> dict:
@@ -45,9 +45,7 @@ class GeonamesApi:
     async def search_hierarchy(self, geoname_id) -> dict:
         logger.info(f"Searching hierarchy for ID {geoname_id}")
         parameters = {"geonameId": geoname_id}
-        hierarchy = await self._geo_api("hierarchyJSON", parameters)
-        hierarchy_list = hierarchy.get("geonames")
-        return await hierarchy_list
+        return await self._geo_api("hierarchyJSON", parameters)
 
     @cache(GEONAMES_ID_CACHE, is_class=True)
     async def search_geoname_id(self, geoname) -> int:
@@ -58,27 +56,15 @@ class GeonamesApi:
         logger.info(f"Searching geonames for term {geoname}")
         params = {"q": geoname, "maxRows": 1}
         data = await self._geo_api("searchJSON", params)
+        return self.first_element(data)
 
-        if data.get("totalResultsCount") == 0:
-            return None
-
-        data = data["geonames"][0]
-        return data
-
-    @cache(POINT_CACHE, is_class=True)
+    # @cache(POINT_CACHE, is_class=True)
     async def search_lat_long(self, point: tuple[float, float]):
         lat, long = point[0], point[1]
         # Use the lat, long to find nearest place
         parameters = {"lat": lat, "lng": long}
-        result = await self._geo_api("findNearbyJSON", parameters)
-
-        # Check if any results were found
-        if not result.get("geonames"):
-            logger.warning(f"No nearby places found for lat: {lat}, long: {long}")
-            return None
-
-        data = result["geonames"][0]
-        return data
+        data = await self._geo_api("findNearbyJSON", parameters)
+        return self.first_element(data)
 
     async def _geo_api(self, service, parameters):
         """
@@ -97,4 +83,14 @@ class GeonamesApi:
                         message="The hourly limit of 1000 credits for davroza has been exceeded",
                     )
 
-                return result
+                if result.get("totalResultsCount") == 0:
+                    return None
+
+                return result["geonames"]
+
+    @staticmethod
+    def first_element(element):
+        try:
+            return element[0]
+        except TypeError:
+            return element
