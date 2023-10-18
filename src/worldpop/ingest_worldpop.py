@@ -1,6 +1,6 @@
 from datetime import datetime
 from loguru import logger
-from worldpop import get_rows
+from src.worldpop.valid_worldpop import valid_worldpop
 from ncbi.ncbi_api import NCBI
 from ncbi.merge_taxon import merge_taxon
 from geonames.merge_geo import merge_geo
@@ -19,7 +19,7 @@ def search_and_merge(tax_id, session):
 
 
 def ingest_worldpop(session, estimate=False):
-    pop_rows = get_rows()  # Tax ID for humans
+    pop_rows = valid_worldpop()  # Tax ID for humans
     search_and_merge(HUMAN_TAXID, session)
     for index, row in enumerate(pop_rows):
         iso2 = row["ISO2_code"]
