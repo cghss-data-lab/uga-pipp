@@ -14,11 +14,6 @@ def preprocess_biogeographical_realms(biogeographical_realms: str) -> list:
     return realms
 
 
-def log_taxons_without_match(result: list, row: dict) -> None:
-    if len(result) == 0:
-        logger.warning(row["iucn2020_binomial"] + " doesn't have a match")
-
-
 def valid_combine() -> list:
     combine_valid = []
     with open("data/combine_trait_data_imputed.csv", "r", encoding="utf-8") as combine:
