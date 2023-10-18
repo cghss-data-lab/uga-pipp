@@ -22,8 +22,10 @@ ON MATCH SET
     tax. = mapping.,
     tax. = mapping.,
     tax. = mapping.,
-MERGE (g:BioGeographicalRealm:Geography {name : mapping.realm })
-MERGE (t)-[:INHABITS]->(g)
+FOREACH (realm in mapping.biogeographical_realm | 
+    MERGE (g:BioGeographicalRealm:Geography {name : realm })
+    MERGE (t)-[:INHABITS]->(g)
+)
 
 
 
