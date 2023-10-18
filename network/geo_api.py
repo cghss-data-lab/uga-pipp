@@ -14,6 +14,13 @@ GEONAMES_ID_CACHE = "network/cache/geonames_id_cache.pickle"
 POINT_CACHE = "network/cache/point_cache.pickle"
 
 
+class CreditLimitError(Exception):
+    def __init__(self, value, message):
+        self.value = value
+        self.message = message
+        super().__init__(value=value, message=message)
+
+
 class GeonamesApi:
     def __init__(self, geo_auth=GEO_AUTH):
         self.user = geo_auth
@@ -55,15 +62,8 @@ class GeonamesApi:
         if data.get("totalResultsCount") == 0:
             return None
 
-        if data.get("status"):
-            raise CreditLimitError(
-                value=geoname,
-                message="The hourly limit of 1000 credits for davroza has been exceeded",
-            )
-
-        geoname_id = int(data["geonames"][0]["geonameId"])
         data = data["geonames"][0]
-        return data  # geoname_id
+        return data
 
     @cache(POINT_CACHE, is_class=True)
     async def search_lat_long(self, point: tuple[float, float]):
@@ -89,11 +89,12 @@ class GeonamesApi:
 
         async with aiohttp.ClientSession(trust_env=True) as session:
             async with session.get(base_url, params=parameters) as response:
-                return await response.json()
+                result = await response.json()
 
+                if result.get("status"):
+                    raise CreditLimitError(
+                        value=parameters,
+                        message="The hourly limit of 1000 credits for davroza has been exceeded",
+                    )
 
-class CreditLimitError(Exception):
-    def __init__(self, value, message):
-        self.value = value
-        self.message = message
-        super().__init__(value=value, message=message)
+                return result
