@@ -77,8 +77,8 @@ class GeonamesApi:
             logger.warning(f"No nearby places found for lat: {lat}, long: {long}")
             return None
 
-        geoname_id = result["geonames"][0]["geonameId"]
-        return geoname_id
+        data = result["geonames"][0]
+        return data
 
     async def _geo_api(self, service, parameters):
         """
