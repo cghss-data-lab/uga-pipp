@@ -3,11 +3,13 @@ from network.ncbi_api import NCBIApi
 
 
 @pytest.fixture(scope="module")
-def set_up_ncbi_api():
+def ncbiapi():
     ncbi_api = NCBIApi()
     return ncbi_api
 
 
+@pytest.mark.asyncio
 @pytest.mark.ncbi
-def test_search(ncbi_api):
+@pytest.mark.parametrize()
+def test_search(ncbiapi):
     pass
