@@ -15,5 +15,5 @@ ON CREATE SET
     infantDeaths = mapping.InfantDeaths,
     underFiveDeaths = mapping.Under5Deaths,
     netMigration = mapping.NetMigrations
-MERGE (g:Geography {iso2: })
+MERGE (g:Geography {geonameId: mapping.geonameId})
 MERGE (p)-[:INHABITS]->(g)
