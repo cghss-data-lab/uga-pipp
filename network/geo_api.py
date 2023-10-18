@@ -50,7 +50,7 @@ class GeonamesApi:
         return await hierarchy_list
 
     @cache(GEONAMES_ID_CACHE, is_class=True)
-    async def search_geonameid(self, geoname) -> int:
+    async def search_geoname_id(self, geoname) -> int:
         """
         Searches for a location using its name
         Returns integer Geonames ID
