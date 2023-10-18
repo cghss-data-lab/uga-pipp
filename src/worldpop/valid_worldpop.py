@@ -5,7 +5,9 @@ from datetime import datetime
 DATA_SOURCE = "UN World Population Prospects 2022"
 
 
-def valid_worldpop():
+def valid_worldpop(geo_api) -> list:
+    iso_codes = set()
+    geonames_iso = []
     worldpop_valid = []
     with open(
         "worldpop/data/WPP2022_Demographic_Indicators_Medium.csv", "r", encoding="utf-8"
@@ -17,9 +19,13 @@ def valid_worldpop():
             if not iso2:
                 continue
 
+            if iso2 not in iso_codes:
+                iso_codes.add(iso2)
+                geonames_iso.append(geo_api.search_iso(iso2))
+
             logger.info(f"Creating Population for {iso2}")
-            # Fields in thousands were multiplied
-            # Rates are per 1000
+
+            row["dataSource"] = DATA_SOURCE
 
             row["reportId"] = "WorldPop-" + str(index)
             year = int(row["Time"])
@@ -58,4 +64,4 @@ def valid_worldpop():
             # netMigrationRate = float(row["CNMR"])
             row["duration"] = "P1Y"  # set duration to 1 year
 
-    return worldpop_valid
+    return worldpop_valid, iso_codes, geonames_iso
