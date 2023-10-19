@@ -58,7 +58,7 @@ class GeonamesApi:
         data = await self._geo_api("searchJSON", params)
         return self.first_element(data)
 
-    # @cache(POINT_CACHE, is_class=True)
+    @cache(POINT_CACHE, is_class=True)
     async def search_lat_long(self, point: tuple[float, float]):
         lat, long = point[0], point[1]
         logger.info(f"Searching geonames for location {lat}, {long}")
