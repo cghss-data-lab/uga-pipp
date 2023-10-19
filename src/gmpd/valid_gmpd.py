@@ -13,6 +13,8 @@ def is_float(number: str) -> bool:
 def is_valid_report(row: dict) -> bool:
     if not is_float(row["Prevalence"]) or not is_float(row["NumSamples"]):
         return False
+    if row["Latitude"] == "NA" or row["Longitude"] == "NA":
+        return False
     return True
 
 
