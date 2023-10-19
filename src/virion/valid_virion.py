@@ -1,7 +1,6 @@
+import csv
 from datetime import datetime
-from functools import cache
 from loguru import logger
-from ncbi.ncbi_api import NCBI
 
 
 ncbi_api = NCBI()
@@ -31,3 +30,14 @@ def process_accession(accession: str) -> list:
         ncbi_accession = accession.split(",")
         return ncbi_accession
     return []
+
+
+def valid_virion():
+    virion_valid = []
+    with open("virion/data/Virion.csv", "r", encoding="utf-8") as virion_file:
+        virion = csv.DictReader(virion_file)
+
+        for idx, row in enumerate(virion):
+            logger.info(f"Ingesting row: {idx}")
+
+            virion_valid.append(row)
