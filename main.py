@@ -5,6 +5,8 @@ from network.ncbi_api import NCBIApi
 from src.flunet.ingest_flunet import ingest_flunet
 from src.gmpd.ingest_gmpd import ingest_gmpd
 from src.combine.ingest_combine import ingest_combine
+from src.virion.ingest_virion import ingest_virion
+from src.worldpop.ingest_worldpop import ingest_worldpop
 
 
 async def main() -> None:
@@ -12,7 +14,9 @@ async def main() -> None:
 
     # await ingest_flunet(database_handler, geonames_api, ncbi_api)
     await ingest_gmpd(database_handler, geonames_api, ncbi_api)
-    await ingest_combine(database_handler)
+    # await ingest_combine(database_handler)
+    # await ingest_virion(database_handler)
+    # await ingest_worldpop(database_handler, geonames_api)
 
 
 if __name__ == "__main__":
