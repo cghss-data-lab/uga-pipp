@@ -3,9 +3,6 @@ from datetime import datetime
 from loguru import logger
 
 
-ncbi_api = NCBI()
-
-
 def process_dates(year, month, day):
     try:
         date = datetime.strptime(
