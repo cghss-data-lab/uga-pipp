@@ -8,8 +8,8 @@ class WAHISApi:
         evolution_list = []
         if data:
             for key in data:
-                reportId = key["reportId"]
-                evolution_list.append(reportId)
+                report_id = key["reportId"]
+                evolution_list.append(report_id)
 
             return evolution_list
         return None
