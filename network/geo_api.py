@@ -94,3 +94,5 @@ class GeonamesApi:
             return element[0]
         except TypeError:
             return element
+        except IndexError:
+            return None
