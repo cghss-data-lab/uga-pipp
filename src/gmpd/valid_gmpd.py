@@ -24,7 +24,7 @@ def valid_gmpd(geoapi, ncbi_api, file: str = "data/GMPD_main.csv") -> list[dict]
     with open(file, "r", encoding="utf-8-sig") as gmpd_file:
         gmpd = csv.DictReader(gmpd_file)
         for row in gmpd:
-            logger.info(f"Processing row {row['rowSourceRow']}")
+            logger.info(f"Processing row {row['dataSourceRow']}")
 
             if not is_valid_report(row):
                 continue
@@ -33,7 +33,7 @@ def valid_gmpd(geoapi, ncbi_api, file: str = "data/GMPD_main.csv") -> list[dict]
             locations = (row["Latitude"], row["Longitude"])
             row["LocationPoint"] = locations
 
-            geonames.add(row["LocationName"])
+            geonames.add(locations)
             tax_names.add(row["HostCorrectedName"])
 
             gmpd_valid.append(row)
