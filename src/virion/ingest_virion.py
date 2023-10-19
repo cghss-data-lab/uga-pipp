@@ -1,6 +1,6 @@
 from loguru import logger
 from network.handle_concurrency import handle_concurrency
-from virion.valid_virion import valid_virion
+from src.virion.valid_virion import valid_virion
 
 
 async def ingest_virion(
