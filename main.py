@@ -14,8 +14,10 @@ async def main() -> None:
 
     # await ingest_flunet(database_handler, geonames_api, ncbi_api)
     await ingest_gmpd(database_handler, geonames_api, ncbi_api)
-    # await ingest_combine(database_handler)
     # await ingest_virion(database_handler)
+
+    # Keep combien and worldpop at the end of ingestion
+    # await ingest_combine(database_handler)
     # await ingest_worldpop(database_handler, geonames_api)
 
 
