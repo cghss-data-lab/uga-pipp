@@ -1,18 +1,11 @@
 import aiohttp
+from aiohttp import ContentTypeError
 
 
 class WAHISApi:
     async def search_evolution(self, event_id):
         evolution_url = f"event/{event_id}/report-evolution?language=en"
-        data = await self._wahis_api(evolution_url)
-        evolution_list = []
-        if data:
-            for key in data:
-                report_id = key["reportId"]
-                evolution_list.append(report_id)
-
-            return evolution_list
-        return None
+        return await self._wahis_api(evolution_url)
 
     async def search_outbreak(self, report_id, event_id):
         outbreak_url = (
@@ -28,4 +21,7 @@ class WAHISApi:
         base_url = f"https://wahis.woah.org/api/v1/pi/{url}"
         async with aiohttp.ClientSession(trust_env=True) as session:
             async with session.get(base_url) as response:
-                return response.json()
+                try:
+                    response.json()
+                except ContentTypeError:
+                    return None
