@@ -11,7 +11,7 @@ GEONAMES_ISO_CACHE_FILE = "network/cache/geonames_iso_cache.pickle"
 GEO_DATA_CACHE_FILE = "network/cache/geo_data_cache.pickle"
 GEONAMES_HIERARCHY_CACHE_FILE = "network/cache/geonames_hierarchy_cache.pickle"
 GEONAMES_ID_CACHE = "network/cache/geonames_id_cache.pickle"
-POINT_CACHE = "network/cache/point_cache.pickle"
+POINT_CACHE = "network/cache/geonames_point_cache.pickle"
 
 
 class GeonamesApiError(Exception):
@@ -78,6 +78,7 @@ class GeonamesApi:
                 result = await response.json()
 
                 if result.get("status"):
+                    print(result)
                     raise GeonamesApiError(
                         value=parameters,
                         message=result["status"]["message"],
