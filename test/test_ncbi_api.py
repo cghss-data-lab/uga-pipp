@@ -10,6 +10,31 @@ def ncbiapi():
 
 @pytest.mark.asyncio
 @pytest.mark.ncbi
-@pytest.mark.parametrize()
-def test_search(ncbiapi):
-    pass
+@pytest.mark.parametrize("name, final", [()])
+async def test_success_search_id(ncbiapi, name, final):
+    result = await ncbiapi.search_id(name)
+    assert result == final
+
+
+@pytest.mark.asyncio
+@pytest.mark.ncbi
+@pytest.mark.parametrize("name, final", [()])
+async def test_fail_search_id(ncbiapi, name, final):
+    result = await ncbiapi.search_id(name)
+    assert result == final
+
+
+@pytest.mark.asyncio
+@pytest.mark.ncbi
+@pytest.mark.parametrize("taxid, final", [()])
+async def test_success_search_hierarchy(ncbiapi, taxid, final):
+    result = await ncbiapi.search_id(taxid)
+    assert result == final
+
+
+@pytest.mark.asyncio
+@pytest.mark.ncbi
+@pytest.mark.parametrize("taxid, final", [()])
+async def test_fail_search_hierarchy(ncbiapi, taxid, final):
+    result = await ncbiapi.search_id(taxid)
+    assert result == final
