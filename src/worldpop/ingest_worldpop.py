@@ -1,6 +1,6 @@
 from loguru import logger
 from src.worldpop.valid_worldpop import valid_worldpop
-from network.sempahore import handle_concurrency
+from network.handle_concurrency import handle_concurrency
 
 
 async def ingest_worldpop(
