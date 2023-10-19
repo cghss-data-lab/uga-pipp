@@ -14,11 +14,11 @@ GEONAMES_ID_CACHE = "network/cache/geonames_id_cache.pickle"
 POINT_CACHE = "network/cache/point_cache.pickle"
 
 
-class CreditLimitError(Exception):
+class GeonamesApiError(Exception):
     def __init__(self, value, message):
         self.value = value
         self.message = message
-        super().__init__(value=value, message=message)
+        super().__init__(message)
 
 
 class GeonamesApi:
@@ -78,9 +78,9 @@ class GeonamesApi:
                 result = await response.json()
 
                 if result.get("status"):
-                    raise CreditLimitError(
+                    raise GeonamesApiError(
                         value=parameters,
-                        message="The hourly limit of 1000 credits for davroza has been exceeded",
+                        message=result["status"]["message"],
                     )
 
                 if result.get("totalResultsCount") == 0:
