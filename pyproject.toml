@@ -29,4 +29,5 @@ markers = [
   "sanity: mark a test for minimial functionality",
   "geonames: mark a test designed for geonames api",
   "ncbi: mark a test designed for ncbi api",
+  "cache: mark a test designed for the cache system"
 ]
