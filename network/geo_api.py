@@ -30,7 +30,7 @@ class GeonamesApi:
         logger.info(f"Searching metadata for iso2 {iso2}")
         parameters = {"country": iso2, "maxRows": 1}
         data = await self._geo_api("countryInfoJSON", parameters)
-        return self.first_element(data)
+        return self._first_element(data)
 
     @cache(GEO_DATA_CACHE_FILE, is_class=True)  # unnecessary?
     async def search_geo_data(self, geoname_id: str) -> dict:
@@ -56,7 +56,7 @@ class GeonamesApi:
         logger.info(f"Searching geonames for term {geoname}")
         params = {"q": geoname, "maxRows": 1}
         data = await self._geo_api("searchJSON", params)
-        return self.first_element(data)
+        return self._first_element(data)
 
     @cache(POINT_CACHE, is_class=True)
     async def search_lat_long(self, point: tuple[float, float]):
@@ -64,7 +64,7 @@ class GeonamesApi:
         logger.info(f"Searching geonames for location {lat}, {long}")
         parameters = {"lat": lat, "lng": long}
         data = await self._geo_api("findNearbyJSON", parameters)
-        return self.first_element(data)
+        return self._first_element(data)
 
     async def _geo_api(self, service, parameters):
         """
@@ -90,7 +90,7 @@ class GeonamesApi:
                 return result["geonames"]
 
     @staticmethod
-    def first_element(element):
+    def _first_element(element):
         try:
             return element[0]
         except TypeError:
