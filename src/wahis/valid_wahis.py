@@ -1,7 +1,6 @@
 from datetime import datetime
-from loguru import logger
-import requests
 from src.wahis.wahis_api import WAHISApi
+from network.handle_concurrency import handle_concurrency
 
 
 def process_dates(date: str) -> str:
@@ -11,6 +10,7 @@ def process_dates(date: str) -> str:
 
 async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
     wahis_valid = []
+    lat_long = set()
 
     for event_id in range(4714, 5097):
         evolution = await wahis.search_evolution(event_id)
@@ -36,12 +36,14 @@ async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
                 )
 
             for outbreak in metadata["outbreaks"]:
-                outbreak["geoname"] = await geoapi.search_lat_long(
-                    outbreak["latitude"], outbreak["longitude"]
-                )
+                lat_long.add((outbreak["latitude"], outbreak["longitude"]))
                 outbreak["startDate"] = process_dates(outbreak["startDate"])
                 outbreak["endDate"] = process_dates(outbreak["endDate"])
 
             wahis_valid.append(metadata)
 
-    return wahis_valid
+    lat_long = handle_concurrency(
+        *[await geoapi.search_lat_long(location) for location in lat_long]
+    )
+
+    return wahis_valid, lat_long
