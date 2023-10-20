@@ -12,6 +12,12 @@ async def mock_function(n):
 
 @pytest.mark.asyncio
 @pytest.mark.cache
+def test_cache_exists():
+    assert mock_function.cache == {}
+
+
+@pytest.mark.asyncio
+@pytest.mark.cache
 async def test_save_cache():
     await save_cache({}, TEST_CACHE_FILE)
     assert os.path.isfile(TEST_CACHE_FILE)
