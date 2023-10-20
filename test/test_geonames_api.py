@@ -64,3 +64,10 @@ async def test_fail_search_lat_long(geoapi, location, final):
 async def test_error_search_lat_long(geoapi, location):
     with pytest.raises(GeonamesApiError):
         await geoapi.search_lat_long(location)
+
+
+@pytest.mark.asyncio
+@pytest.mark.geonames
+@pytest.mark.parametrize("element, final", [([], None), ([1], 1), (None, None)])
+async def test_first_element(geoapi, element, final):
+    assert geoapi.first_element(element) == final
