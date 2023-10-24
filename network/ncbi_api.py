@@ -81,6 +81,8 @@ class NCBIApi:
         async with aiohttp.ClientSession(trust_env=True) as session:
             async with session.get(base_url, params=parameters) as response:
                 result = await response.text()
+                result.replace("\n", "")
+
                 if "error" in result:
                     error = json.loads(result)
                     raise NCBIApiError(value=parameters, message=error["error"])
