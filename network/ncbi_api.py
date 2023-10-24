@@ -1,10 +1,18 @@
 import aiohttp
+import json
 from bs4 import BeautifulSoup, Tag
 from loguru import logger
 from cache.cache import cache
 
 NCBI_ID_CACHE_FILE = "network/cache/ncbi_id.pickle"
 NCBI_HIERARCHY_CACHE_FILE = "network/cache/ncbi_hierarchy.pickle"
+
+
+class NCBIApiError(Exception):
+    def __init__(self, value, message):
+        self.value = value
+        self.message = message
+        super().__init__(message)
 
 
 class NCBIApi:
@@ -72,4 +80,9 @@ class NCBIApi:
 
         async with aiohttp.ClientSession(trust_env=True) as session:
             async with session.get(base_url, params=parameters) as response:
-                return BeautifulSoup(await response.text(), features="xml")
+                result = await response.text()
+                if "error" in result:
+                    error = json.loads(result)
+                    raise NCBIApiError(value=parameters, message=error["error"])
+
+                return BeautifulSoup(result, features="xml")
