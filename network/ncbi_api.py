@@ -24,27 +24,12 @@ class NCBIApi:
         params = {"db": "Taxonomy", "term": name}
         soup = await self._api_soup("esearch", params)
 
-        try:
-            ncbi_id = soup.find("Id")
-            if ncbi_id is not None:
-                ncbi_id = ncbi_id.getText()
-            else:
-                logger.warning("NCBI ID not found for the given term.")
-                return None
+        ncbi_id = soup.Id
+        if not ncbi_id:
+            logger.warning(f"NCBI ID not found for the given {name}.")
+            return ncbi_id
 
-        except AttributeError:
-            errors = soup.find("ErrorList")
-            warnings = soup.find("WarningList")
-
-            for error in errors.children:
-                logger.error(f"{error.name}: {error.getText()}")
-
-            for warning in warnings.children:
-                logger.warning(f"{warning.name}: {warning.getText()}")
-
-            return None
-
-        return ncbi_id
+        return ncbi_id.getText()
 
     @cache(NCBI_HIERARCHY_CACHE_FILE, is_class=True)
     async def search_hierarchy(
