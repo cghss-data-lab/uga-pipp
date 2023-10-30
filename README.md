@@ -4,7 +4,7 @@
 
 This project contains source code for the ETL supporting the ingestion of data into Neo4j. Current stage: Only supports local builds
 
-## 👩‍💻 Deployment Quick start
+## Deployment
 
 1. Create a virtual environment
 
@@ -29,13 +29,13 @@ python main.py
 
 All source code is designed to stop after hitting an error. The most common are API related, usually triggered by reaching credit limits, malformatted API responses, or excess throttling.
 
-### 1. Test coverage after changes to network code
+### 1. Network coverage
 
 ```
 coverage run pytest -vm network
 ```
 
-### 2. Test coverage after changes to cache code
+### 2. Cache coverage
 
 ```
 coverage run pytest -vm cache
