@@ -32,14 +32,14 @@ def valid_gmpd(geoapi, ncbi_api, file: str = "data/GMPD_main.csv") -> list[dict]
 
             row["Positive"] = float(row["Prevalence"]) * float(row["NumSamples"])
             locations = (row["Latitude"], row["Longitude"])
-            row["LocationPoint"] = locations
 
             geonames.add(locations)
             tax_names.add(row["HostCorrectedName"])
+            tax_names.add(row["ParasiteCorrectedName"])
 
             gmpd_valid.append(row)
 
         geonames_id = [geoapi.search_lat_long(territory) for territory in geonames]
-        # tax_id = [ncbi_api.search_id(tax) for tax in tax_names]
+        tax_id = [ncbi_api.search_id(tax) for tax in tax_names]
 
-    return gmpd_valid, geonames, geonames_id  # , tax_names, tax_id
+    return gmpd_valid, geonames, geonames_id, tax_names, tax_id
