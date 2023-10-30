@@ -1,5 +1,6 @@
-import aiohttp
+import os
 import json
+import aiohttp
 from bs4 import BeautifulSoup, Tag
 from loguru import logger
 from cache.cache import cache
@@ -24,6 +25,9 @@ class NCBIApi:
         params = {"db": "Taxonomy", "term": name}
         soup = await self._api_soup("esearch", params)
 
+        if not soup:
+            return
+
         ncbi_id = soup.Id
         if not ncbi_id:
             logger.warning(f"NCBI ID not found for the given {name}.")
@@ -36,6 +40,7 @@ class NCBIApi:
         self, ncbi_id: int, source: str = "NCBI Taxonomy"
     ) -> list:
         """Request metadata by NCBI taxonomy ID, and return cleaned object"""
+        logger.info(f"Searching hierarchy for NCBI ID {ncbi_id}")
 
         def extract_metadata(taxon: Tag) -> dict:
             taxon_metadata = {
@@ -48,6 +53,9 @@ class NCBIApi:
 
         params = {"db": "Taxonomy", "id": ncbi_id}
         soup = await self._api_soup("efetch", params)
+
+        if not soup or not soup.TaxaSet or not soup.TaxaSet.Taxon:
+            return
 
         taxon = extract_metadata(soup.TaxaSet.Taxon)
 
@@ -69,7 +77,11 @@ class NCBIApi:
                 result.replace("\n", "")
 
                 if "error" in result:
-                    error = json.loads(result)
-                    raise NCBIApiError(value=parameters, message=error["error"])
+                    try:
+                        error = json.loads(result)
+                        raise NCBIApiError(value=parameters, message=error["error"])
+                    except json.JSONDecodeError:
+                        logger.warning(result)
+                        return
 
                 return BeautifulSoup(result, features="xml")
