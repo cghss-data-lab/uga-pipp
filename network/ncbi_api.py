@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup, Tag
 from loguru import logger
 from cache.cache import cache
 
+NCBI_API_KEY = os.environ["NCBI_API_KEY"]
 NCBI_ID_CACHE_FILE = "network/cache/ncbi_id.pickle"
 NCBI_HIERARCHY_CACHE_FILE = "network/cache/ncbi_hierarchy.pickle"
 
@@ -78,7 +79,9 @@ class NCBIApi:
         base_url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/{eutil}.fcgi"
 
         async with aiohttp.ClientSession(trust_env=True) as session:
-            async with session.get(base_url, params=parameters) as response:
+            async with session.get(
+                base_url, params={"api_key": NCBI_API_KEY, **parameters}
+            ) as response:
                 result = await response.text()
                 result.replace("\n", "")
 
