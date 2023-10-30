@@ -35,7 +35,7 @@ All source code is designed to stop after hitting an error. The most common are 
 coverage run pytest -vm network
 ```
 
-### 1. Test coverage after changes to cache code
+### 2. Test coverage after changes to cache code
 
 ```
 coverage run pytest -vm cache
