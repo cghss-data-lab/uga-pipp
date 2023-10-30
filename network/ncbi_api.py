@@ -22,6 +22,9 @@ class NCBIApi:
         """Get ID from text search, using NCBI esearch eutil"""
         logger.info(f"Searching NCBI for term {name}")
 
+        if not name:
+            return
+
         params = {"db": "Taxonomy", "term": name}
         soup = await self._api_soup("esearch", params)
 
@@ -41,6 +44,9 @@ class NCBIApi:
     ) -> list:
         """Request metadata by NCBI taxonomy ID, and return cleaned object"""
         logger.info(f"Searching hierarchy for NCBI ID {ncbi_id}")
+
+        if not ncbi_id:
+            return
 
         def extract_metadata(taxon: Tag) -> dict:
             taxon_metadata = {
