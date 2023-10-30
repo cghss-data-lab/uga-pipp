@@ -6,20 +6,31 @@ from src.gmpd.valid_gmpd import valid_gmpd
 QUERY = "./src/gmpd/gmpd.cypher"
 
 
+def process_taxon(name: str, mapping: dict):
+    if mapping[name] is None:
+        return
+    return mapping[name][-1]
+
+
 async def ingest_gmpd(
     database_handler, geoapi, ncbiapi, batch_size: int = 1000, query_path=QUERY
 ) -> None:
     gmpd, geonames, geoids, taxnames, taxids = valid_gmpd(geoapi, ncbiapi)
 
-    geoids = await handle_concurrency(*geoids)
-    taxids = await handle_concurrency(*taxids)
+    geoids = await handle_concurrency(*geoids, n_semaphore=5)
+
+    taxids = await handle_concurrency(*taxids, n_semaphore=1)
+    ncbi_hierarchies = await handle_concurrency(
+        *[ncbiapi.search_hierarchy(tax) for tax in taxids], n_semaphore=1
+    )
 
     geographies = dict(zip(geonames, geoids))
-    taxons = dict(zip(taxnames, taxids))
+    taxons = dict(zip(taxnames, ncbi_hierarchies))
 
     for row in gmpd:
-        row["locations"] = [geographies[geo] for geo in row["locations"]]
-        row["HostCorrectedName"] = taxons[row["HostCorrectedName"]]
+        row["location"] = geographies[(row["Latitude"], row["Longitude"])]
+        row["Host"] = process_taxon(row["HostCorrectedName"], taxons)
+        row["Parasite"] = process_taxon(row["ParasiteCorrectedName"], taxons)
 
     batches = (len(gmpd) - 1) // batch_size + 1
     for i in range(batches):
@@ -36,11 +47,6 @@ async def ingest_gmpd(
             database_handler.build_geohierarchy(hierarchy)
             for hierarchy in geo_hierarchies
         ]
-    )
-
-    taxids = [x for x in taxids if x is not None]
-    ncbi_hierarchies = await handle_concurrency(
-        *[ncbiapi.search_hierarchy(tax) for tax in taxids]
     )
 
     await handle_concurrency(
