@@ -9,6 +9,7 @@ def ncbiapi():
 
 
 @pytest.mark.asyncio
+@pytest.mark.network
 @pytest.mark.ncbi
 @pytest.mark.parametrize("name, final", [("Blastocerus dichotomus", 248133)])
 async def test_success_search_id(ncbiapi, name, final):
@@ -17,6 +18,7 @@ async def test_success_search_id(ncbiapi, name, final):
 
 
 @pytest.mark.asyncio
+@pytest.mark.network
 @pytest.mark.ncbi
 @pytest.mark.parametrize("name, final", [("fklgsd", None)])
 async def test_fail_search_id(ncbiapi, name, final):
@@ -25,6 +27,7 @@ async def test_fail_search_id(ncbiapi, name, final):
 
 
 @pytest.mark.asyncio
+@pytest.mark.network
 @pytest.mark.ncbi
 @pytest.mark.parametrize("taxid, final", [(9606, 31)])
 async def test_success_search_hierarchy(ncbiapi, taxid, final):
@@ -34,6 +37,7 @@ async def test_success_search_hierarchy(ncbiapi, taxid, final):
 
 
 @pytest.mark.asyncio
+@pytest.mark.network
 @pytest.mark.ncbi
 @pytest.mark.parametrize("taxid, final", [(96394106, None)])
 async def test_fail_search_hierarchy(ncbiapi, taxid, final):
@@ -42,6 +46,7 @@ async def test_fail_search_hierarchy(ncbiapi, taxid, final):
 
 
 @pytest.mark.asyncio
+@pytest.mark.network
 @pytest.mark.ncbi
 @pytest.mark.parametrize("taxid", [("s;dflmwg",)])
 async def test_ncbi_error(ncbiapi, taxid):

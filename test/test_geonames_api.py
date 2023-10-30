@@ -25,6 +25,7 @@ async def test_fails_search_geoname_id(geoapi, name, final):
 
 
 @pytest.mark.asyncio
+@pytest.mark.network
 @pytest.mark.geonames
 @pytest.mark.parametrize("geoid, final", [(3017382, 3), (298795, 3), (7733353, 5)])
 async def test_success_search_hierarchy(geoapi, geoid, final):
@@ -33,6 +34,7 @@ async def test_success_search_hierarchy(geoapi, geoid, final):
 
 
 @pytest.mark.asyncio
+@pytest.mark.network
 @pytest.mark.geonames
 @pytest.mark.parametrize("geoid", [("3248fn",)])
 async def test_fail_search_hierarchy(geoapi, geoid):
@@ -41,6 +43,7 @@ async def test_fail_search_hierarchy(geoapi, geoid):
 
 
 @pytest.mark.asyncio
+@pytest.mark.network
 @pytest.mark.geonames
 @pytest.mark.parametrize(
     "location, final", [((1.32, -65.21), 8458367), ((1.32, -65.21), 8458367)]
@@ -51,6 +54,7 @@ async def test_success_search_lat_long(geoapi, location, final):
 
 
 @pytest.mark.asyncio
+@pytest.mark.network
 @pytest.mark.geonames
 @pytest.mark.parametrize("location, final", [((-74.21, 34.65), None)])
 async def test_fail_search_lat_long(geoapi, location, final):
@@ -59,6 +63,7 @@ async def test_fail_search_lat_long(geoapi, location, final):
 
 
 @pytest.mark.asyncio
+@pytest.mark.network
 @pytest.mark.geonames
 @pytest.mark.parametrize("location", [(-2000.21, 484.65)])
 async def test_error_search_lat_long(geoapi, location):
@@ -67,6 +72,7 @@ async def test_error_search_lat_long(geoapi, location):
 
 
 @pytest.mark.asyncio
+@pytest.mark.network
 @pytest.mark.geonames
 @pytest.mark.parametrize("element, final", [([], None), ([1], 1), (None, None)])
 async def test_first_element(geoapi, element, final):
