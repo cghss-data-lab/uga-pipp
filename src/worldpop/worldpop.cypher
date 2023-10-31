@@ -1,5 +1,5 @@
 UNWIND $Mapping AS mapping
-MERGE (p:Population)
+MERGE (population:Population)
 ON CREATE SET
     dataSource = mapping.dataSource,
     reportId = mapping.reportId,
@@ -15,5 +15,5 @@ ON CREATE SET
     infantDeaths = mapping.InfantDeaths,
     underFiveDeaths = mapping.Under5Deaths,
     netMigration = mapping.NetMigrations
-MERGE (g:Geography {geonameId: mapping.geonameId})
-MERGE (p)-[:INHABITS]->(g)
+MERGE (geography:Geography {geonameId: mapping.geonameId})
+MERGE (population)-[:INHABITS]->(geography)
