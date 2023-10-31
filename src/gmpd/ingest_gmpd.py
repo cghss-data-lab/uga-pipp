@@ -7,8 +7,8 @@ QUERY = "./src/gmpd/gmpd.cypher"
 
 
 def process_taxon(name: str, mapping: dict):
-    if mapping[name] is None:
-        return
+    if not mapping[name]:
+        return None
     return mapping[name][-1]
 
 
