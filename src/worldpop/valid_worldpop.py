@@ -1,5 +1,4 @@
 import csv
-from loguru import logger
 from datetime import datetime
 
 DATA_SOURCE = "UN World Population Prospects 2022"
