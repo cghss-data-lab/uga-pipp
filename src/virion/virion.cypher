@@ -7,14 +7,14 @@ CREATE (virion:Virion:Report {dataSource : "Virion",
 
 MERGE (host:Taxon {taxId : mapping.HostTaxID})
 ON CREATE SET
-    host.name = mapping.Host.name,
-    host.rank = mapping.Host.rank,
+    host.name = mapping.host.name,
+    host.rank = mapping.host.rank,
     host.dataSource = "NCBI"
 
-MERGE (pathogen:Taxon {taxId : mapping.VirusTaxId})
+MERGE (pathogen:Taxon {taxId : mapping.VirusTaxID})
 ON CREATE SET
-    pathogen.name = mapping.Pathogen.name,
-    pathogen.rank = mapping.Pathogen.rank,
+    pathogen.name = mapping.pathogen.name,
+    pathogen.rank = mapping.pathogen.rank,
     pathogen.dataSource = "NCBI"
 
 MERGE (virion)-[:ASSOCIATES {role : "host"}]->(host)

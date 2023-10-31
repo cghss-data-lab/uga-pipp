@@ -18,8 +18,8 @@ async def ingest_virion(
     taxons = dict(zip(taxids, ncbi_hierarchies))
 
     for row in virion:
-        row["Host"] = process_taxon(row["HostTaxID"], taxons)
-        row["Pathogen"] = process_taxon(row["VirusTaxID"], taxons)
+        row["host"] = process_taxon(row["HostTaxID"], taxons)
+        row["pathogen"] = process_taxon(row["VirusTaxID"], taxons)
 
     batches = (len(virion) - 1) // batch_size + 1
     for i in range(batches):
