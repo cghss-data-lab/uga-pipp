@@ -32,7 +32,7 @@ class Neo4jHandler:
     async def build_geohierarchy(
         self,
         hierarchy_list: list,
-        hierarchy_query: str = "network/build_geohierarchy.cypher",
+        hierarchy_query: str = "network/build_geonames_hierarchy.cypher",
     ) -> None:
         with open(hierarchy_query, "r", encoding="utf-8") as file:
             query = file.read()
