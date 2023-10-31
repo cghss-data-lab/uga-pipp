@@ -62,4 +62,4 @@ def valid_virion(ncbiapi):
 
     ncbi_hierarchies = [ncbiapi.search_hierarchy(ncbi_id) for ncbi_id in ncbi_tax_ids]
 
-    return virion_valid, ncbi_hierarchies
+    return virion_valid, ncbi_tax_ids, ncbi_hierarchies
