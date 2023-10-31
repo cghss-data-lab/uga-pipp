@@ -36,7 +36,10 @@ async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
                 )
 
             for outbreak in metadata["outbreaks"]:
-                lat_long.add((outbreak["latitude"], outbreak["longitude"]))
+                location = (outbreak["latitude"], outbreak["longitude"])
+                outbreak["geoname"] = location
+                lat_long.add(location)
+
                 outbreak["startDate"] = process_dates(outbreak["startDate"])
                 outbreak["endDate"] = process_dates(outbreak["endDate"])
 
