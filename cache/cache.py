@@ -14,8 +14,6 @@ def cache(file: str, is_class=False) -> Callable:
             function.cache = load_cache(file)
         except FileNotFoundError:
             function.cache = {}
-        except EOFError:
-            function.cache = {}
 
         @wraps(function)
         async def memoize(*args):
