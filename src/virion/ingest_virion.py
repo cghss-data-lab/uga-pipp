@@ -2,12 +2,24 @@ from network.handle_concurrency import handle_concurrency
 from src.virion.valid_virion import valid_virion
 
 
+def process_taxon(name: str, mapping: dict):
+    if mapping[name] is None:
+        return
+    return mapping[name][-1]
+
+
 async def ingest_virion(
     database_handler, ncbiapi, batch_size=1000, query_path="src/virion/virion.cypher"
 ) -> None:
-    virion, ncbi_hierarchies = valid_virion(ncbiapi)
+    virion, taxids, ncbi_hierarchies = valid_virion(ncbiapi)
 
     ncbi_hierarchies = await handle_concurrency(*ncbi_hierarchies, n_semaphore=2)
+
+    taxons = dict(zip(taxids, ncbi_hierarchies))
+
+    for row in virion:
+        row["Host"] = process_taxon(row["HostTaxID"], taxons)
+        row["Pathogen"] = process_taxon(row["VirusTaxID"], taxons)
 
     batches = (len(virion) - 1) // batch_size + 1
     for i in range(batches):
