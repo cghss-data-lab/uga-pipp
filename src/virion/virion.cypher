@@ -5,13 +5,13 @@ CREATE (virion:Virion:Report {dataSource : "Virion",
     collectionDate : mapping.collection_date,
     ncbiAccession : mapping.ncbi_accession})
 
-MERGE (host:Taxon {taxId : mapping.Host.taxId})
+MERGE (host:Taxon {taxId : mapping.HostTaxID})
 ON CREATE SET
     host.name = mapping.Host.name,
     host.rank = mapping.Host.rank,
     host.dataSource = "NCBI"
 
-MERGE (pathogen:Taxon {taxId : mapping.Pathogen.taxId})
+MERGE (pathogen:Taxon {taxId : mapping.VirusTaxId})
 ON CREATE SET
     pathogen.name = mapping.Pathogen.name,
     pathogen.rank = mapping.Pathogen.rank,
