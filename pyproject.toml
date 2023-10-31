@@ -1,8 +1,4 @@
 [tool.pylint.messages_control]
-# disable = "C0116, C0115, C0114, C0103, E0213, R0903"
-# init-hook = "import sys; sys.path.append('src/')"
-extension-pkg-whitelist = "pydantic"
-
 disable = [
   "no-name-in-module",
   "missing-class-docstring",
