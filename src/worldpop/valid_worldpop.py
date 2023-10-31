@@ -10,7 +10,7 @@ def valid_worldpop(geo_api) -> list:
     geonames_iso = []
     worldpop_valid = []
     with open(
-        "worldpop/data/WPP2022_Demographic_Indicators_Medium.csv", "r", encoding="utf-8"
+        "data/WPP2022_Demographic_Indicators_Medium.csv", "r", encoding="utf-8"
     ) as worldpop_file:
         worldpop = csv.DictReader(worldpop_file)
 
@@ -22,8 +22,6 @@ def valid_worldpop(geo_api) -> list:
             if iso2 not in iso_codes:
                 iso_codes.add(iso2)
                 geonames_iso.append(geo_api.search_iso(iso2))
-
-            logger.info(f"Creating Population for {iso2}")
 
             row["dataSource"] = DATA_SOURCE
 
