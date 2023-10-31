@@ -1,6 +1,10 @@
+import sys
 import csv
 from datetime import datetime
 from loguru import logger
+
+
+csv.field_size_limit(sys.maxsize)
 
 
 def process_dates(year, month, day):
@@ -25,9 +29,9 @@ def process_accession(accession: str) -> list:
 def valid_virion(ncbiapi):
     ncbi_tax_ids = set()
     virion_valid = []
-    with open("virion/data/Virion.csv", "r", encoding="utf-8") as virion_file:
+    with open("data/Virion.csv", "r", encoding="latin-1") as virion_file:
         logger.info("Validating Virion")
-        virion = csv.DictReader(virion_file)
+        virion = csv.DictReader(virion_file, delimiter="\t")
 
         for idx, row in enumerate(virion):
             if row["Database"] == "GLOBI":
@@ -52,7 +56,7 @@ def valid_virion(ncbiapi):
                 row["ReleaseDay"],
             )
 
-            ncbi_tax_ids.add(row["VirusTaxID"])
+            ncbi_tax_ids.add(row["HostTaxID"])
             ncbi_tax_ids.add(row["VirusTaxID"])
             virion_valid.append(row)
 
