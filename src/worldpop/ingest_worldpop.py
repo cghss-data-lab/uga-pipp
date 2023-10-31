@@ -1,4 +1,3 @@
-from loguru import logger
 from src.worldpop.valid_worldpop import valid_worldpop
 from network.handle_concurrency import handle_concurrency
 
@@ -8,7 +7,7 @@ async def ingest_worldpop(
 ) -> None:
     worldpop, iso_codes, geoids = valid_worldpop(geoapi)
 
-    geoids = await handle_concurrency(*geoids)
+    geoids = await handle_concurrency(*geoids, n_semaphore=5)
     isos = dict(zip(iso_codes, geoids))
 
     for row in worldpop:
