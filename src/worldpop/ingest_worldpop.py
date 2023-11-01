@@ -11,7 +11,7 @@ async def ingest_worldpop(
     isos = dict(zip(iso_codes, geoids))
 
     for row in worldpop:
-        row["geonameId"] = isos[row["geonameId"]]
+        row["geonames"] = isos[row["ISO2_code"]]
 
     batches = (len(worldpop) - 1) // batch_size + 1
     for i in range(batches):
@@ -20,7 +20,7 @@ async def ingest_worldpop(
 
     geoids = [geoid for geoid in geoids if geoid is not None]
     geo_hierarchies = await handle_concurrency(
-        *[geoapi.search_hierarchy(geoid) for geoid in geoids]
+        *[geoapi.search_hierarchy(geoid["geonameId"]) for geoid in geoids]
     )
 
     await handle_concurrency(

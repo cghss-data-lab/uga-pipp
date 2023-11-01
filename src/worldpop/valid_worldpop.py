@@ -61,4 +61,6 @@ def valid_worldpop(geo_api) -> list:
             # netMigrationRate = float(row["CNMR"])
             row["duration"] = "P1Y"  # set duration to 1 year
 
+            worldpop_valid.append(row)
+
     return worldpop_valid, iso_codes, geonames_iso
