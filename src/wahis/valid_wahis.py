@@ -11,6 +11,7 @@ def process_dates(date: str) -> str:
 async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
     wahis_valid = []
     lat_long = set()
+    taxons = set()
 
     for event_id in range(4714, 5097):
         evolution = await wahis.search_evolution(event_id)
@@ -49,4 +50,4 @@ async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
         *[await geoapi.search_lat_long(location) for location in lat_long]
     )
 
-    return wahis_valid, lat_long
+    return wahis_valid, lat_long, taxons
