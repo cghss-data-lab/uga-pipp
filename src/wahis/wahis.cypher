@@ -1,16 +1,18 @@
 UNWIND $Mapping AS mapping
 MERGE (report:Report:WAHIS {uqReportId: mapping.report.uqReportId})
 ON CREATE SET 
-        dataSource = "WAHIS",
-        reportDate = mapping.report.reportedOn,
-        reasonForReport = mapping.event.reason.translation,
-        description = mapping.event.eventComment
+        report.dataSource = "WAHIS",
+        report.reportDate = mapping.report.reportedOn,
+        report.reasonForReport = mapping.event.reason.translation,
+        report.reportDescription = mapping.event.eventComment
 FOREACH (outbreak in mapping.outbreaks | 
         MERGE (event:Event:Outbreak {eventId : outbreak.outbreakId})
         ON CREATE SET
-                startDate = outbreak.startDate,
-                endDate = outbreak.endDate,
-                description = outbreak.description
+                event.startDate = outbreak.startDate,
+                event.endDate = outbreak.endDate,
+                event.description = outbreak.description
+
+        MERGE (report)-[:REPORTS]->(event)
         
         // Set geographical information
         MERGE (territory:Geography {geonameId : outbreak.geonames.geonameId})
@@ -28,23 +30,23 @@ FOREACH (outbreak in mapping.outbreaks |
         MERGE (event)-[:OCCURS_IN]->(territory)
 
         // Set host information
-        MERGE (host:Taxon {taxId : mapping})
+        MERGE (host:Taxon {taxId : mapping.host.taxId})
                 ON CREATE SET
                 host.dataSource = "NCBI Taxonomy",
-                host.name = mapping.,
-                host.rank = mapping.
+                host.name = mapping.host.name,
+                host.rank = mapping.host.rank
         MERGE (event)-[:INVOLVES {role : 'host',
-                caseCount : mapping.,
-                deathCount : mapping.,
-                detectionDate : mapping.
-                isWild : mapping}]->(host)
+                caseCount : mapping.quantitativeData.totals.cases,
+                deathCount : mapping.quantitativeData.totals.deaths,
+                //detectionDate : mapping.quantitativeData.totals
+                isWild : mapping.quantitativeData.totals.isWild}]->(host)
 
         // Set pathogen informtion
-        MERGE (pathogen:Taxon {taxId : mapping})
+        MERGE (pathogen:Taxon {taxId : mapping.pathogen.taxId})
                 ON CREATE SET
                 pathogen.dataSource = "NCBI Taxonomy",
-                pathogen.name = mapping.,
-                pathogen.rank = mapping.
+                pathogen.name = mapping.pathogen.name,
+                pathogen.rank = mapping.pathogen.rank
         MERGE (event)-[:INVOLVES {role : 'pathogen'} ]->(pathogen)
 )
 

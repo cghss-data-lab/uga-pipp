@@ -41,6 +41,10 @@ async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
             tax_names.add(metadata["event"]["disease"]["group"])
             tax_names.add(metadata["event"]["causalAgent"]["name"])
 
+            metadata["quantitativeData"]["totals"] = metadata["quantitativeData"][
+                "totals"
+            ][0]
+
             for outbreak in metadata["outbreaks"]:
                 location = (outbreak["latitude"], outbreak["longitude"])
                 outbreak["geonames"] = location
