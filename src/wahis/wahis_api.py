@@ -22,6 +22,6 @@ class WAHISApi:
         async with aiohttp.ClientSession(trust_env=True) as session:
             async with session.get(base_url) as response:
                 try:
-                    response.json()
+                    return await response.json()
                 except ContentTypeError:
                     return None
