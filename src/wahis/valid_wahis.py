@@ -11,6 +11,16 @@ def process_dates(date: str) -> str:
     return date_strip.strftime("%Y-%m-%d")
 
 
+def remove_unneded_keys(row: dict) -> None:
+    row.pop("sources", None)
+    row.pop("measures", None)
+    row.pop("methods", None)
+    row.pop("strategy", None)
+    row.pop("laboratoryTests", None)
+    row.pop("quantitativeData", None)
+    row.pop("selfDeclaration", None)
+
+
 async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
     wahis_valid = []
     lat_long = set()
@@ -53,6 +63,7 @@ async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
                 outbreak["startDate"] = process_dates(outbreak["startDate"])
                 outbreak["endDate"] = process_dates(outbreak["endDate"])
 
+            remove_unneded_keys(metadata)
             wahis_valid.append(metadata)
 
     geoname_ids = await handle_concurrency(
