@@ -5,6 +5,12 @@ from network.handle_concurrency import handle_concurrency
 QUERY = "src/wahis/wahis.cypher"
 
 
+def process_taxon(name: str, mapping: dict):
+    if not mapping[name]:
+        return None
+    return mapping[name][-1]
+
+
 async def ingest_wahis(
     database_handler,
     geoapi,
@@ -12,14 +18,22 @@ async def ingest_wahis(
     batch_size=1000,
     query_path=QUERY,
 ) -> None:
-    wahis, lat_long, taxons = await valid_wahis(geoapi, ncbiapi)
+    wahis, geonames, tax_names, tax_ids = await valid_wahis(geoapi, ncbiapi)
 
     tax_hierarchies = await handle_concurrency(
-        *[ncbiapi.search_hierarchy(taxon) for taxon in taxons]
+        *[ncbiapi.search_hierarchy(taxon) for taxon in tax_ids]
     )
 
+    taxons = dict(zip(tax_names, tax_hierarchies))
+
+    for row in wahis:
+        row["host"] = process_taxon(row["event"]["disease"]["group"], taxons)
+        row["pathogen"] = process_taxon(row["event"]["causalAgent"]["name"], taxons)
+        for outbreak in row["outbreaks"]:
+            outbreak["geonames"] = geonames[outbreak["geonames"]]
+
     geo_hierarchies = await handle_concurrency(
-        *[geoapi.search_hierarchy(geoid) for geoid in lat_long]
+        *[geoapi.search_hierarchy(geoid["geonameId"]) for geoid in geonames.values()]
     )
 
     batches = (len(wahis) - 1) // batch_size + 1
