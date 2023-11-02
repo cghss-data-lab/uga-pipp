@@ -94,3 +94,9 @@ class NCBIApi:
                         return
 
                 return BeautifulSoup(result, features="xml")
+
+    @staticmethod
+    def process_taxon(name: str, mapping: dict):
+        if not mapping[name]:
+            return None
+        return mapping[name][-1]

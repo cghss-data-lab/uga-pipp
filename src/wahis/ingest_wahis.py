@@ -5,12 +5,6 @@ from network.handle_concurrency import handle_concurrency
 QUERY = "src/wahis/wahis.cypher"
 
 
-def process_taxon(name: str, mapping: dict):
-    if not mapping[name]:
-        return None
-    return mapping[name][-1]
-
-
 async def ingest_wahis(
     database_handler,
     geoapi,
@@ -27,8 +21,10 @@ async def ingest_wahis(
     taxons = dict(zip(tax_names, tax_hierarchies))
 
     for row in wahis:
-        row["host"] = process_taxon(row["event"]["disease"]["group"], taxons)
-        row["pathogen"] = process_taxon(row["event"]["causalAgent"]["name"], taxons)
+        row["host"] = ncbiapi.process_taxon(row["event"]["disease"]["group"], taxons)
+        row["pathogen"] = ncbiapi.process_taxon(
+            row["event"]["causalAgent"]["name"], taxons
+        )
         for outbreak in row["outbreaks"]:
             outbreak["geonames"] = geonames[outbreak["geonames"]]
 

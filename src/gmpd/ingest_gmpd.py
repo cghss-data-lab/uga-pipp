@@ -4,12 +4,6 @@ from src.gmpd.valid_gmpd import valid_gmpd
 QUERY = "./src/gmpd/gmpd.cypher"
 
 
-def process_taxon(name: str, mapping: dict):
-    if not mapping[name]:
-        return None
-    return mapping[name][-1]
-
-
 async def ingest_gmpd(
     database_handler, geoapi, ncbiapi, batch_size: int = 1000, query_path=QUERY
 ) -> None:
@@ -27,8 +21,8 @@ async def ingest_gmpd(
 
     for row in gmpd:
         row["location"] = geographies[(row["Latitude"], row["Longitude"])]
-        row["Host"] = process_taxon(row["HostCorrectedName"], taxons)
-        row["Parasite"] = process_taxon(row["ParasiteCorrectedName"], taxons)
+        row["Host"] = ncbiapi.process_taxon(row["HostCorrectedName"], taxons)
+        row["Parasite"] = ncbiapi.process_taxon(row["ParasiteCorrectedName"], taxons)
 
     batches = (len(gmpd) - 1) // batch_size + 1
     for i in range(batches):
