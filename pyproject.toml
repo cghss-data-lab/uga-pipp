@@ -25,5 +25,6 @@ markers = [
   "network: mark a test for all network functionality",
   "geonames: mark a test designed for geonames api",
   "ncbi: mark a test designed for ncbi api",
-  "cache: mark a test designed for the cache system"
+  "cache: mark a test designed for the cache system",
+  "wahis: mark a test designed for wahis api"
 ]
