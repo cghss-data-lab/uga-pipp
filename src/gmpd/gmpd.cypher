@@ -8,7 +8,7 @@ FOREACH (map in (CASE WHEN mapping.Host.taxId IS NOT NULL THEN [1] ELSE [] END) 
     ON CREATE SET
         host.name = mapping.Host.name,
         host.rank = mapping.Host.rank,
-        host.dataSource = "NCBI"
+        host.dataSource = "NCBI Taxonomy"
     MERGE (gmpd)-[:ASSOCIATES {role : 'host'}]->(host))
 
 FOREACH (map in (CASE WHEN mapping.Host.taxId IS NULL THEN [1] ELSE [] END) |
@@ -22,7 +22,7 @@ FOREACH (map in (CASE WHEN mapping.Parasite.taxId IS NOT NULL THEN [1] ELSE [] E
     ON CREATE SET
         pathogen.name = mapping.Parasite.name,
         pathogen.rank = mapping.Parasite.rank,
-        pathogen.dataSource = "NCBI"
+        pathogen.dataSource = "NCBI Taxonomy"
     MERGE (gmpd)-[:ASSOCIATES {role : 'pathogen'}]->(pathogen))
 
 FOREACH (map in (CASE WHEN mapping.Parasite.taxId IS NULL THEN [1] ELSE [] END) |

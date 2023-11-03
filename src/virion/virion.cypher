@@ -9,13 +9,13 @@ MERGE (host:Taxon {taxId : mapping.HostTaxID})
 ON CREATE SET
     host.name = mapping.host.name,
     host.rank = mapping.host.rank,
-    host.dataSource = "NCBI"
+    host.dataSource = "NCBI Taxonomy"
 
 MERGE (pathogen:Taxon {taxId : mapping.VirusTaxID})
 ON CREATE SET
     pathogen.name = mapping.pathogen.name,
     pathogen.rank = mapping.pathogen.rank,
-    pathogen.dataSource = "NCBI"
+    pathogen.dataSource = "NCBI Taxonomy"
 
 MERGE (virion)-[:ASSOCIATES {role : "host"}]->(host)
 MERGE (virion)-[:ASSOCIATES {role : "pathogen",
