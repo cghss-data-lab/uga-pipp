@@ -1,6 +1,6 @@
 UNWIND $Mapping AS mapping
-CREATE (flunet:FluNet:Report {reportId : mapping.reportId})
-CREATE (event:Event {eventId : mapping.eventId,
+MERGE (flunet:FluNet:Report {reportId : mapping.reportId})
+MERGE (event:Event {eventId : mapping.eventId,
     startDate : mapping.startDate,
     endDate : mapping.endDate})
 MERGE (host:Taxon {taxId : 9606,
