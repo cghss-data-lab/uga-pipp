@@ -71,7 +71,9 @@ async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
         *[geoapi.search_lat_long(location) for location in lat_long]
     )
 
-    tax_ids = await handle_concurrency(*[ncbiapi.search_id(tax) for tax in tax_names])
+    tax_ids = await handle_concurrency(
+        *[ncbiapi.search_id(tax) for tax in tax_names], n_semaphore=2
+    )
     geonames = dict(zip(lat_long, geoname_ids))
 
     return wahis_valid, geonames, tax_names, tax_ids
