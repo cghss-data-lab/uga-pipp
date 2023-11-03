@@ -1,6 +1,8 @@
+from cache.timer import timer
 from src.combine.valid_combine import valid_combine
 
 
+@timer
 async def ingest_combine(
     database_handler, batch_size: int = 1000, query_path="src/combine/combine.cypher"
 ) -> None:

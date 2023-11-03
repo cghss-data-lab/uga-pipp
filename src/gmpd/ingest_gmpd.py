@@ -1,9 +1,11 @@
+from cache.timer import timer
 from network.handle_concurrency import handle_concurrency
 from src.gmpd.valid_gmpd import valid_gmpd
 
 QUERY = "./src/gmpd/gmpd.cypher"
 
 
+@timer
 async def ingest_gmpd(
     database_handler, geoapi, ncbiapi, batch_size: int = 1000, query_path=QUERY
 ) -> None:

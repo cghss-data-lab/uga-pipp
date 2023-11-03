@@ -1,7 +1,9 @@
+from cache.timer import timer
 from network.handle_concurrency import handle_concurrency
 from src.virion.valid_virion import valid_virion
 
 
+@timer
 async def ingest_virion(
     database_handler, ncbiapi, batch_size=1000, query_path="src/virion/virion.cypher"
 ) -> None:

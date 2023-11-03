@@ -1,4 +1,5 @@
 import asyncio
+from cache.timer import timer
 from network.handle_concurrency import handle_concurrency
 from src.flunet.valid_flunet import valid_flunet, split_influenza_type
 
@@ -13,6 +14,7 @@ def append_geoname(processed: dict, geonames: dict) -> None:
     processed["geonames"] = geonames[territory]
 
 
+@timer
 async def ingest_flunet(
     database_handler, geoapi, ncbiapi, batch_size: int = 1000, query_path=QUERY
 ) -> None:

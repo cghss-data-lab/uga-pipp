@@ -1,3 +1,4 @@
+from cache.timer import timer
 from src.wahis.valid_wahis import valid_wahis
 from network.handle_concurrency import handle_concurrency
 
@@ -5,6 +6,7 @@ from network.handle_concurrency import handle_concurrency
 QUERY = "src/wahis/wahis.cypher"
 
 
+@timer
 async def ingest_wahis(
     database_handler,
     geoapi,

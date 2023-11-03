@@ -1,7 +1,9 @@
+from cache.timer import timer
 from src.worldpop.valid_worldpop import valid_worldpop
 from network.handle_concurrency import handle_concurrency
 
 
+@timer
 async def ingest_worldpop(
     database_handler, geoapi, batch_size=1000, query_path="src/worldpop/worldpop.cypher"
 ) -> None:
