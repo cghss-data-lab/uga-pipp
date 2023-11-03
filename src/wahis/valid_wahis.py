@@ -21,50 +21,51 @@ def remove_unneded_keys(row: dict) -> None:
     row.pop("selfDeclaration", None)
 
 
+def process_report(metadata: dict, tax_names: set, lat_long: set):
+    metadata["report"]["uqReportId"] = f"WAHIS-{metadata['report']['reportId']}"
+    metadata["report"]["reportedOn"] = process_dates(metadata["report"]["reportedOn"])
+
+    if metadata["event"]["eventComment"]:
+        metadata["event"]["eventComment"] = (
+            metadata["event"]["eventComment"]["translation"]
+            or metadata["event"]["eventComment"]["original"]
+        )
+
+    tax_names.add(metadata["event"]["disease"]["group"])
+    tax_names.add(metadata["event"]["causalAgent"]["name"])
+
+    metadata["quantitativeData"]["totals"] = metadata["quantitativeData"]["totals"][0]
+
+    for outbreak in metadata["outbreaks"]:
+        location = (outbreak["latitude"], outbreak["longitude"])
+        outbreak["geonames"] = location
+        lat_long.add(location)
+
+        outbreak["startDate"] = process_dates(outbreak["startDate"])
+        outbreak["endDate"] = process_dates(outbreak["endDate"])
+
+    remove_unneded_keys(metadata)
+    return metadata
+
+
 async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
-    wahis_valid = []
     lat_long = set()
     tax_names = set()
 
-    for event_id in range(4714, 4715):  # (4714, 5097):
-        evolution = await wahis.search_evolution(event_id)
+    evolutions = await handle_concurrency(
+        *[wahis.search_evolution(event_id) for event_id in range(4714, 5097)]
+    )
 
-        if not evolution:
-            continue
+    reports = await handle_concurrency(
+        *[
+            wahis.search_report(report["reportId"])
+            for evolution in evolutions
+            if evolution is not None
+            for report in evolution
+        ]
+    )
 
-        for report in evolution:
-            report_id = report["reportId"]
-
-            metadata = await wahis.search_report(report_id)
-
-            metadata["report"]["uqReportId"] = f"WAHIS-{str(report_id)}"
-            metadata["report"]["reportedOn"] = process_dates(
-                metadata["report"]["reportedOn"]
-            )
-
-            if metadata["event"]["eventComment"]:
-                metadata["event"]["eventComment"] = (
-                    metadata["event"]["eventComment"]["translation"]
-                    or metadata["event"]["eventComment"]["original"]
-                )
-
-            tax_names.add(metadata["event"]["disease"]["group"])
-            tax_names.add(metadata["event"]["causalAgent"]["name"])
-
-            metadata["quantitativeData"]["totals"] = metadata["quantitativeData"][
-                "totals"
-            ][0]
-
-            for outbreak in metadata["outbreaks"]:
-                location = (outbreak["latitude"], outbreak["longitude"])
-                outbreak["geonames"] = location
-                lat_long.add(location)
-
-                outbreak["startDate"] = process_dates(outbreak["startDate"])
-                outbreak["endDate"] = process_dates(outbreak["endDate"])
-
-            remove_unneded_keys(metadata)
-            wahis_valid.append(metadata)
+    wahis_valid = [process_report(report, tax_names, lat_long) for report in reports]
 
     geoname_ids = await handle_concurrency(
         *[geoapi.search_lat_long(location) for location in lat_long]
