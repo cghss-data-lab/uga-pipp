@@ -21,11 +21,16 @@ pip3 install -r requirements.txt
 
 3. Set environmental variables in file .env
 
-NEO4J_URI=<uri>
-NEO4J_USER=<user>
-NEO4J_PASSWORD=<pssword>
-NEO4J_DATABASE=<database>
-GEO_USER=<geonames>
+NEO4J_URI=<neo4j_uri>
+
+NEO4J_USER=<neo4j_user>
+
+NEO4J_PASSWORD=<neo4j_password>
+
+NEO4J_DATABASE=<neo4j_database>
+
+GEO_USER=<geonames_user>
+
 NCBI_API_KEY=<api_key>
 
 4. Create knowledge graph locally
