@@ -25,7 +25,7 @@ async def main() -> None:
     await ingest_wahis(database_handler, geonames_api, ncbi_api)
     # await ingest_virion(database_handler, ncbi_api)
 
-    # Keep combien and worldpop at the end of ingestion
+    # Keep combine and worldpop at the end of ingestion
     # await ingest_combine(database_handler)
     # await ingest_worldpop(database_handler, geonames_api)
 
