@@ -21,7 +21,7 @@ class NCBIApi:
     @cache(NCBI_ID_CACHE_FILE, is_class=True)
     async def search_id(self, name: str) -> int:
         """Get ID from text search, using NCBI esearch eutil"""
-        logger.debug(f"Searching NCBI for term {name}")
+        logger.trace(f"Searching NCBI for term {name}")
 
         if not name:
             return
@@ -44,7 +44,7 @@ class NCBIApi:
         self, ncbi_id: int, source: str = "NCBI Taxonomy"
     ) -> list:
         """Request metadata by NCBI taxonomy ID, and return cleaned object"""
-        logger.debug(f"Searching hierarchy for NCBI ID {ncbi_id}")
+        logger.trace(f"Searching hierarchy for NCBI ID {ncbi_id}")
 
         if not ncbi_id:
             return

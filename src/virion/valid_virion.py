@@ -15,7 +15,7 @@ def process_dates(year, month, day):
         )
         return date.date()
     except ValueError:
-        logger.debug("Incomplete date")
+        logger.trace("Incomplete date")
         return "null"
 
 

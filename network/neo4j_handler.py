@@ -26,7 +26,7 @@ class Neo4jHandler:
         with open(query_file, "r", encoding="utf-8") as file:
             query = file.read()
             async with self.driver.session(database=self.database) as session:
-                logger.debug("Ingesting into neo4j")
+                logger.trace("Ingesting into neo4j")
                 await session.run(query, Mapping=properties)
 
     async def build_geohierarchy(
@@ -37,7 +37,7 @@ class Neo4jHandler:
         with open(hierarchy_query, "r", encoding="utf-8") as file:
             query = file.read()
             async with self.driver.session(database=self.database) as session:
-                logger.debug("Ingesting geonames hierarchy")
+                logger.trace("Ingesting geonames hierarchy")
                 await session.run(query, Mapping=hierarchy_list)
 
     async def build_ncbi_hierarchy(
@@ -48,5 +48,5 @@ class Neo4jHandler:
         with open(hierarchy_query, "r", encoding="utf-8") as file:
             query = file.read()
             async with self.driver.session(database=self.database) as session:
-                logger.debug("Ingesting ncbi hierarchy")
+                logger.trace("Ingesting ncbi hierarchy")
                 await session.run(query, Mapping=hierarchy_list)
