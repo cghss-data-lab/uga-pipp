@@ -15,7 +15,7 @@ def process_dates(year, month, day):
         )
         return date.date()
     except ValueError:
-        logger.warning("Incomplete date")
+        logger.debug("Incomplete date")
         return "null"
 
 
@@ -30,7 +30,6 @@ def valid_virion(ncbiapi):
     ncbi_tax_ids = set()
     virion_valid = []
     with open("data/Virion.csv", "r", encoding="latin-1") as virion_file:
-        logger.info("Validating Virion")
         virion = csv.DictReader(virion_file, delimiter="\t")
 
         for idx, row in enumerate(virion):

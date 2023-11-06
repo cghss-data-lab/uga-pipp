@@ -1,3 +1,4 @@
+from loguru import logger
 from cache.timer import timer
 from network.handle_concurrency import handle_concurrency
 from src.virion.valid_virion import valid_virion
@@ -7,6 +8,7 @@ from src.virion.valid_virion import valid_virion
 async def ingest_virion(
     database_handler, ncbiapi, batch_size=1000, query_path="src/virion/virion.cypher"
 ) -> None:
+    logger.info("Ingesting Virion")
     virion, taxids, ncbi_hierarchies = valid_virion(ncbiapi)
 
     ncbi_hierarchies = await handle_concurrency(*ncbi_hierarchies, n_semaphore=2)

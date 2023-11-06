@@ -27,7 +27,7 @@ class GeonamesApi:
 
     @cache(GEONAMES_ISO_CACHE_FILE, is_class=True)
     async def search_iso(self, iso2: str) -> str:
-        logger.info(f"Searching metadata for iso2 {iso2}")
+        logger.debug(f"Searching metadata for iso2 {iso2}")
         parameters = {"country": iso2, "maxRows": 1}
         data = await self._geo_api("countryInfoJSON", parameters)
         return self._first_element(data)
@@ -36,14 +36,14 @@ class GeonamesApi:
     async def search_geo_data(self, geoname_id: str) -> dict:
         """Search by Geonames ID
         Return location metadata"""
-        logger.info(f"Searching metadata for ID {geoname_id}")
+        logger.debug(f"Searching metadata for ID {geoname_id}")
         parameters = {"geonameId": geoname_id, "maxRows": 1}
         data = await self._geo_api("getJSON", parameters)
         return data
 
     @cache(GEONAMES_HIERARCHY_CACHE_FILE, is_class=True)
     async def search_hierarchy(self, geoname_id) -> dict:
-        logger.info(f"Searching hierarchy for ID {geoname_id}")
+        logger.debug(f"Searching hierarchy for ID {geoname_id}")
         parameters = {"geonameId": geoname_id}
         return await self._geo_api("hierarchyJSON", parameters)
 
@@ -53,7 +53,7 @@ class GeonamesApi:
         Searches for a location using its name
         Returns integer Geonames ID
         """
-        logger.info(f"Searching geonames for term {geoname}")
+        logger.debug(f"Searching geonames for term {geoname}")
         params = {"q": geoname, "maxRows": 1}
         data = await self._geo_api("searchJSON", params)
         return self._first_element(data)
@@ -61,7 +61,7 @@ class GeonamesApi:
     @cache(POINT_CACHE, is_class=True)
     async def search_lat_long(self, point: tuple[float, float]):
         lat, long = point[0], point[1]
-        logger.info(f"Searching geonames for location {lat}, {long}")
+        logger.debug(f"Searching geonames for location {lat}, {long}")
         parameters = {"lat": lat, "lng": long}
         data = await self._geo_api("findNearbyJSON", parameters)
         return self._first_element(data)

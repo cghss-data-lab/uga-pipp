@@ -1,4 +1,6 @@
+import sys
 import asyncio
+from loguru import logger
 from network.neo4j_handler import Neo4jHandler
 from network.geo_api import GeonamesApi
 from network.ncbi_api import NCBIApi
@@ -8,6 +10,10 @@ from src.wahis.ingest_wahis import ingest_wahis
 from src.combine.ingest_combine import ingest_combine
 from src.virion.ingest_virion import ingest_virion
 from src.worldpop.ingest_worldpop import ingest_worldpop
+
+
+logger.remove(0)
+logger.add(sys.stderr, level="INFO")
 
 
 async def main() -> None:

@@ -1,6 +1,6 @@
 import csv
 from datetime import datetime
-from loguru import logger
+
 
 FIELDNAMES = (
     "reportId",
@@ -53,7 +53,6 @@ def process_dates(data: dict) -> None:
 
 
 def split_influenza_type(valid: list[dict]) -> tuple[list[dict]]:
-    logger.info("Splitting influenza types")
     influenza_a = [data for data in valid if data["A (total)"] not in ["", "0"]]
     influenza_a = [
         dict(data, **{"type": 11320, "name": "Influenza A virus"})
@@ -68,7 +67,6 @@ def split_influenza_type(valid: list[dict]) -> tuple[list[dict]]:
 
 
 def valid_flunet(geo_api, file: str = "data/flunet_1995_2022.csv") -> list[dict]:
-    logger.info("Validating flunet data")
     flunet_valid = list()
     geonames = set()
     geoname_ids = []
