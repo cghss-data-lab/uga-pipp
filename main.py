@@ -13,20 +13,21 @@ from src.worldpop.ingest_worldpop import ingest_worldpop
 
 
 logger.remove(0)
+# logger.add(sys.stderr, level="DEBUG")
 logger.add(sys.stderr, level="INFO")
 
 
 async def main() -> None:
     database_handler, geonames_api, ncbi_api = Neo4jHandler(), GeonamesApi(), NCBIApi()
 
-    await ingest_flunet(database_handler, geonames_api, ncbi_api)
-    await ingest_gmpd(database_handler, geonames_api, ncbi_api)
+    # await ingest_flunet(database_handler, geonames_api, ncbi_api)
+    # await ingest_gmpd(database_handler, geonames_api, ncbi_api)
     await ingest_wahis(database_handler, geonames_api, ncbi_api)
-    await ingest_virion(database_handler, ncbi_api)
+    # await ingest_virion(database_handler, ncbi_api)
 
     # Keep combien and worldpop at the end of ingestion
-    await ingest_combine(database_handler)
-    await ingest_worldpop(database_handler, geonames_api)
+    # await ingest_combine(database_handler)
+    # await ingest_worldpop(database_handler, geonames_api)
 
 
 if __name__ == "__main__":
