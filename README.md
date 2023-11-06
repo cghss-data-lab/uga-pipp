@@ -19,7 +19,16 @@ source env/bin/activate
 pip3 install -r requirements.txt
 ```
 
-3. Create knowledge graph locally
+3. Set environmental variables in file .env
+
+NEO4J_URI=<uri>
+NEO4J_USER=<user>
+NEO4J_PASSWORD=<pssword>
+NEO4J_DATABASE=<database>
+GEO_USER=<geonames>
+NCBI_API_KEY=<api_key>
+
+4. Create knowledge graph locally
 
 ```
 python main.py
@@ -27,7 +36,7 @@ python main.py
 
 ## Development and testing
 
-All source code is designed to stop after hitting an error. The most common are API related, usually triggered by reaching credit limits, malformatted API responses, or excess throttling.
+All source code is designed to stop after hitting an error. The most common are API related, usually triggered by reaching credit limits, malformatted API responses, or excess throttling. Batch sizes can trigger errors in Neo4j in rare occasions, change the batch size according to your hardware.
 
 ### Network coverage
 
@@ -43,7 +52,7 @@ coverage run pytest -vm cache
 
 ### Timing execution
 
-Set in main.py
+Set the level to DEBUG in main.py
 
 ```
 logger.add(sys.stderr, level="DEBUG")
