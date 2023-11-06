@@ -1,13 +1,12 @@
 import asyncio
 from loguru import logger
-from cache.timer import timer
+from tests.timer import timer
 from network.handle_concurrency import handle_concurrency
 from src.flunet.valid_flunet import valid_flunet, split_influenza_type
 
 HUMAN_TAXID = 9606
 INFA_TAXID = 11320
 INFB_TAXID = 11520
-QUERY = "./src/flunet/flunet.cypher"
 
 
 def append_geoname(processed: dict, geonames: dict) -> None:
@@ -17,7 +16,11 @@ def append_geoname(processed: dict, geonames: dict) -> None:
 
 @timer
 async def ingest_flunet(
-    database_handler, geoapi, ncbiapi, batch_size: int = 1000, query_path=QUERY
+    database_handler,
+    geoapi,
+    ncbiapi,
+    batch_size: int = 1000,
+    query_path="src/flunet/flunet.cypher",
 ) -> None:
     logger.info("Ingesting FluNet")
     flunet, geonames, geoids = valid_flunet(geoapi)

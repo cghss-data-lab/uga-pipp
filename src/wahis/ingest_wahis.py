@@ -1,10 +1,7 @@
 from loguru import logger
-from cache.timer import timer
+from tests.timer import timer
 from src.wahis.valid_wahis import valid_wahis
 from network.handle_concurrency import handle_concurrency
-
-
-QUERY = "src/wahis/wahis.cypher"
 
 
 @timer
@@ -13,7 +10,7 @@ async def ingest_wahis(
     geoapi,
     ncbiapi,
     batch_size=1000,
-    query_path=QUERY,
+    query_path="src/wahis/wahis.cypher",
 ) -> None:
     logger.info("Ingesting WAHIS")
     wahis, geonames, tax_names, tax_ids = await valid_wahis(geoapi, ncbiapi)

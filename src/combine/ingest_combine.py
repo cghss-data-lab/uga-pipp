@@ -1,5 +1,5 @@
 from loguru import logger
-from cache.timer import timer
+from tests.timer import timer
 from src.combine.valid_combine import valid_combine
 
 

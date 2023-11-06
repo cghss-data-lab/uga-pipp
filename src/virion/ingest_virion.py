@@ -1,5 +1,5 @@
 from loguru import logger
-from cache.timer import timer
+from tests.timer import timer
 from network.handle_concurrency import handle_concurrency
 from src.virion.valid_virion import valid_virion
 
