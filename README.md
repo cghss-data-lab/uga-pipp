@@ -29,14 +29,33 @@ python main.py
 
 All source code is designed to stop after hitting an error. The most common are API related, usually triggered by reaching credit limits, malformatted API responses, or excess throttling.
 
-### 1. Network coverage
+### Network coverage
 
 ```
 coverage run pytest -vm network
 ```
 
-### 2. Cache coverage
+### Cache coverage
 
 ```
 coverage run pytest -vm cache
 ```
+
+### Timing execution
+
+Set in main.py
+
+```
+logger.add(sys.stderr, level="DEBUG")
+```
+
+Benchmarks for MacBook Pro 2019 8-Core Intel Core i9
+
+| Dataset  | Time |
+| -------- | ---- |
+| FluNet   |      |
+| GMPD     |      |
+| WAHIS    |      |
+| Virion   |      |
+| Combine  |      |
+| WorldPop |      |
