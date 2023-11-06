@@ -10,13 +10,13 @@ from src.wahis.ingest_wahis import ingest_wahis
 from src.combine.ingest_combine import ingest_combine
 from src.virion.ingest_virion import ingest_virion
 from src.worldpop.ingest_worldpop import ingest_worldpop
-
+from tests.timer import timer
 
 logger.remove(0)
-# logger.add(sys.stderr, level="DEBUG")
-logger.add(sys.stderr, level="INFO")
+logger.add(sys.stderr, level="DEBUG")
 
 
+@timer
 async def main() -> None:
     database_handler, geonames_api, ncbi_api = Neo4jHandler(), GeonamesApi(), NCBIApi()
 

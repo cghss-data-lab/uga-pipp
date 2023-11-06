@@ -59,3 +59,4 @@ Benchmarks for MacBook Pro 2019 8-Core Intel Core i9
 | Virion   |      |
 | Combine  |      |
 | WorldPop |      |
+| Total    |      |
