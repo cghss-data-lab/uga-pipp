@@ -78,7 +78,6 @@ class GeonamesApi:
                 result = await response.json()
 
                 if result.get("status"):
-                    print(result)
                     raise GeonamesApiError(
                         value=parameters,
                         message=result["status"]["message"],
