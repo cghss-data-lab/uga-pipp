@@ -43,7 +43,7 @@ class GeonamesApi:
 
     @cache(GEONAMES_HIERARCHY_CACHE_FILE, is_class=True)
     async def search_hierarchy(self, geoname_id) -> dict:
-        logger.trace(f"Searching hierarchy for ID {geoname_id}")
+        logger.trace(f"Searching hierarchy for geoname ID {geoname_id}")
         parameters = {"geonameId": geoname_id}
         return await self._geo_api("hierarchyJSON", parameters)
 
