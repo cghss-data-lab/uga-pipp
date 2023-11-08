@@ -56,9 +56,9 @@ async def ingest_flunet(
 
     ncbi_hierarchies = await handle_concurrency(
         *[
-            ncbiapi.get_metadata(HUMAN_TAXID),
-            ncbiapi.get_metadata(INFA_TAXID),
-            ncbiapi.get_metadata(INFB_TAXID),
+            ncbiapi.search_hierarchy(HUMAN_TAXID),
+            ncbiapi.search_hierarchy(INFA_TAXID),
+            ncbiapi.search_hierarchy(INFB_TAXID),
         ]
     )
 
