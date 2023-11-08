@@ -3,8 +3,15 @@ from aiohttp import ContentTypeError
 from loguru import logger
 
 
+class WAHISApiError(Exception):
+    def __init__(self, value, message):
+        self.value = value
+        self.message = message
+        super().__init__(message)
+
+
 class WAHISApi:
-    async def search_evolution(self, event_id):
+    async def search_evolution(self, event_id) -> list:
         logger.trace(f"Searching for evolution {event_id}")
         evolution_url = f"event/{event_id}/report-evolution?language=en"
         return await self._wahis_api(evolution_url)
@@ -15,7 +22,7 @@ class WAHISApi:
         )
         return await self._wahis_api(outbreak_url)
 
-    async def search_report(self, report_id):
+    async def search_report(self, report_id) -> dict:
         logger.trace(f"Searching for report {report_id}")
         report_url = f"review/report/{report_id}/all-information?language=en"
         return await self._wahis_api(report_url)
@@ -25,6 +32,11 @@ class WAHISApi:
         async with aiohttp.ClientSession(trust_env=True) as session:
             async with session.get(base_url) as response:
                 try:
-                    return await response.json()
+                    result = await response.json()
+
+                    if "status" in result:
+                        raise WAHISApiError(value=url, message=result["status"])
+                    return result
+
                 except ContentTypeError:
                     return None
