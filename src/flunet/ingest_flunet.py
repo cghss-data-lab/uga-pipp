@@ -19,7 +19,7 @@ async def ingest_flunet(
     database_handler,
     geoapi,
     ncbiapi,
-    batch_size: int = 1000,
+    batch_size: int = 10000,
     query_path="src/flunet/flunet.cypher",
 ) -> None:
     logger.info("Ingesting FluNet")
