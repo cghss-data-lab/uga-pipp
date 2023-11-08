@@ -80,7 +80,10 @@ def valid_flunet(geo_api, file: str = "data/flunet_1995_2022.csv") -> list[dict]
                 continue
 
             process_dates(row)
-            row["reportId"] = "FluNet" + "-" + row["reportId"]
+
+            row["reportId"] = f"FluNet-{row['reportId']}"
+            row["eventId"] = f"Flu-{row['Territory']}-{str(row['startDate'])}"
+
             flunet_valid.append(row)
 
             # Process territories
