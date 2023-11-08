@@ -80,20 +80,22 @@ def to_categorical_property(data_point: str):
 
 
 def extract_properties(row_data: dict) -> dict:
-    properties = {
-        key: to_categorical_property(value)
-        for key, value in row_data.items()
-        if key in CATEGORICAL_PROPERTIES
-    }
+    row_data.update(
+        {
+            key: to_categorical_property(value)
+            for key, value in row_data.items()
+            if key in CATEGORICAL_PROPERTIES
+        }
+    )
 
-    properties.update(
+    row_data.update(
         {
             key: to_float_property(value)
             for key, value in row_data.items()
             if key in FLOAT_PROPERTIES
         }
     )
-    properties.update(
+    row_data.update(
         {
             key: to_bool_property(value)
             for key, value in row_data.items()
@@ -101,4 +103,4 @@ def extract_properties(row_data: dict) -> dict:
         }
     )
 
-    return properties
+    return row_data
