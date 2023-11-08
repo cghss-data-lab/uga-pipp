@@ -44,7 +44,7 @@ ON MATCH SET
     tax.hibernation_torpor = mapping.hibernation_torpor,
     tax.freshwater = mapping.freshwater,
     tax.marine = mapping.marine,
-    tax.terrestrial_non-volant = mapping.terrestrial_non-volant,
+    tax.terrestrial_non_volant = mapping.terrestrial_non_volant,
     tax.terrestrial_volant = mapping.terrestrial_volant,
     tax.island_dwelling = mapping.island_dwelling,
     tax.disected_by_mountains = mapping.disected_by_mountains,
