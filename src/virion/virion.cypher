@@ -19,4 +19,5 @@ ON CREATE SET
 
 MERGE (virion)-[:ASSOCIATES {role : "host"}]->(host)
 MERGE (virion)-[:ASSOCIATES {role : "pathogen",
-    detectionType : mapping.DetectionMethod}]->(pathogen)  
+    detectionType : mapping.DetectionMethod}]->(pathogen)
+ 

@@ -86,4 +86,3 @@ FOREACH (outbreak in mapping.outbreaks |
         //                 pathogen.rank = mapping.pathogen.rank
         // MERGE (event)-[:INVOLVES {role : 'pathogen'} ]->(pathogen)
 )
-

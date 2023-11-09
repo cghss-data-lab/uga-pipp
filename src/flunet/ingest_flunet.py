@@ -2,7 +2,7 @@ import asyncio
 from loguru import logger
 from tests.timer import timer
 from network.handle_concurrency import handle_concurrency
-from src.flunet.valid_flunet import valid_flunet, split_influenza_type
+from src.flunet.valid_flunet import valid_flunet
 
 HUMAN_TAXID = 9606
 INFA_TAXID = 11320
@@ -30,16 +30,9 @@ async def ingest_flunet(
     for row in flunet:
         append_geoname(row, geos)
 
-    infa, infb = split_influenza_type(flunet)
-
-    batches_infa = (len(infa) - 1) // batch_size + 1
+    batches_infa = (len(flunet) - 1) // batch_size + 1
     for i in range(batches_infa):
-        batch = infa[i * batch_size : (i + 1) * batch_size]
-        await database_handler.execute_query(query_path, properties=batch)
-
-    batches_infb = (len(infb) - 1) // batch_size + 1
-    for i in range(batches_infb):
-        batch = infa[i * batch_size : (i + 1) * batch_size]
+        batch = flunet[i * batch_size : (i + 1) * batch_size]
         await database_handler.execute_query(query_path, properties=batch)
 
     geoids = [x for x in geoids if x is not None]

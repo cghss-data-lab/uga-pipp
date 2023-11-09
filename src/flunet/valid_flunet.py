@@ -13,16 +13,16 @@ FIELDNAMES = (
     "endDate",
     "Collected",
     "Processed",
-    "A (H1)",
-    "A (H1N1)",
-    "A (H3)",
-    "A (H5)",
-    "A (not subtyped)",
-    "A (total)",
-    "B (Yamagata)",
-    "B (Victoria)",
-    "B (not subtyped)",
-    "B (total)",
+    "AH1",
+    "AH1N1",
+    "AH3",
+    "AH5",
+    "Anotsubtyped",
+    "Atotal",
+    "BYamagata",
+    "BVictoria",
+    "Bnotsubtyped",
+    "Btotal",
     "caseCount",
     "Total negative",
     "ILI activity",
@@ -50,20 +50,6 @@ def process_dates(data: dict) -> None:
     data["endDate"] = datetime.strptime(data["endDate"], "%m/%d/%y").strftime(
         "%Y-%m-%d"
     )
-
-
-def split_influenza_type(valid: list[dict]) -> tuple[list[dict]]:
-    influenza_a = [data for data in valid if data["A (total)"] not in ["", "0"]]
-    influenza_a = [
-        dict(data, **{"type": 11320, "name": "Influenza A virus"})
-        for data in influenza_a
-    ]
-    influenza_b = [data for data in valid if data["B (total)"] not in ["", "0"]]
-    influenza_b = [
-        dict(data, **{"type": 11520, "name": "Influenza B virus"})
-        for data in influenza_b
-    ]
-    return influenza_a, influenza_b
 
 
 def valid_flunet(geo_api, file: str = "data/flunet_1995_2022.csv") -> list[dict]:

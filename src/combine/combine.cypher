@@ -59,10 +59,3 @@ FOREACH (realm in mapping.biogeographical_realm |
     MERGE (geo:BioGeographicalRealm:Geography {name : realm })
     MERGE (tax)-[:INHABITS]->(geo)
 )
-
-
-
-
-
-
-
