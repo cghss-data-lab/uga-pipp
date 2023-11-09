@@ -1,6 +1,6 @@
 UNWIND $Mapping AS mapping
 CREATE (flunet:FluNet:Report {reportId : mapping.reportId})
-CREATE (event:Event:Outbreaks {eventId : mapping.eventId,
+CREATE (event:Event:Outbreak {eventId : mapping.eventId,
     startDate : mapping.startDate,
     endDate : mapping.endDate,
     collected : mapping.Collected,
