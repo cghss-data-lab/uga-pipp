@@ -54,4 +54,5 @@ class Neo4jHandler:
     async def run_query(self, query: str) -> list:
         async with self.driver.session(database=self.database) as session:
             results = await session.run(query)
+            results = await results.data()
             return results

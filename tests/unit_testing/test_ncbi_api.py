@@ -9,7 +9,7 @@ def ncbiapi():
 
 
 @pytest.mark.asyncio
-@pytest.mark.network
+@pytest.mark.unit
 @pytest.mark.ncbi
 @pytest.mark.parametrize("name, final", [("Blastocerus dichotomus", 248133)])
 async def test_success_search_id(ncbiapi, name, final):

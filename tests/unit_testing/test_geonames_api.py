@@ -9,6 +9,7 @@ def geoapi():
 
 
 @pytest.mark.asyncio
+@pytest.mark.unit
 @pytest.mark.geonames
 @pytest.mark.parametrize("name, final", [("France", 3017382), ("Turkey", 298795)])
 async def test_success_search_geoname_id(geoapi, name, final):
@@ -17,6 +18,7 @@ async def test_success_search_geoname_id(geoapi, name, final):
 
 
 @pytest.mark.asyncio
+@pytest.mark.unit
 @pytest.mark.geonames
 @pytest.mark.parametrize("name, final", [("afkbsfkb", None), ("3248fn", None)])
 async def test_fails_search_geoname_id(geoapi, name, final):
@@ -25,7 +27,7 @@ async def test_fails_search_geoname_id(geoapi, name, final):
 
 
 @pytest.mark.asyncio
-@pytest.mark.network
+@pytest.mark.unit
 @pytest.mark.geonames
 @pytest.mark.parametrize("geoid, final", [(3017382, 3), (298795, 3), (7733353, 5)])
 async def test_success_search_hierarchy(geoapi, geoid, final):
@@ -34,7 +36,7 @@ async def test_success_search_hierarchy(geoapi, geoid, final):
 
 
 @pytest.mark.asyncio
-@pytest.mark.network
+@pytest.mark.unit
 @pytest.mark.geonames
 @pytest.mark.parametrize("geoid", [("3248fn",)])
 async def test_fail_search_hierarchy(geoapi, geoid):
@@ -43,7 +45,7 @@ async def test_fail_search_hierarchy(geoapi, geoid):
 
 
 @pytest.mark.asyncio
-@pytest.mark.network
+@pytest.mark.unit
 @pytest.mark.geonames
 @pytest.mark.parametrize(
     "location, final", [((1.32, -65.21), 8458367), ((1.32, -65.21), 8458367)]
