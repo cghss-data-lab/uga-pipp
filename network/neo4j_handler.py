@@ -50,3 +50,8 @@ class Neo4jHandler:
             async with self.driver.session(database=self.database) as session:
                 logger.trace("Ingesting ncbi hierarchy")
                 await session.run(query, Mapping=hierarchy_list)
+
+    async def run_query(self, query: str) -> list:
+        async with self.driver.session(database=self.database) as session:
+            results = await session.run(query)
+            return results
