@@ -54,7 +54,7 @@ async def test_success_search_lat_long(geoapi, location, final):
 
 
 @pytest.mark.asyncio
-@pytest.mark.network
+@pytest.mark.unit
 @pytest.mark.geonames
 @pytest.mark.parametrize("location, final", [((-74.21, 34.65), None)])
 async def test_fail_search_lat_long(geoapi, location, final):
@@ -63,7 +63,7 @@ async def test_fail_search_lat_long(geoapi, location, final):
 
 
 @pytest.mark.asyncio
-@pytest.mark.network
+@pytest.mark.unit
 @pytest.mark.geonames
 @pytest.mark.parametrize("location", [(-2000.21, 484.65)])
 async def test_error_search_lat_long(geoapi, location):
@@ -72,7 +72,7 @@ async def test_error_search_lat_long(geoapi, location):
 
 
 @pytest.mark.asyncio
-@pytest.mark.network
+@pytest.mark.unit
 @pytest.mark.geonames
 @pytest.mark.parametrize("element, final", [([], None), ([1], 1), (None, None)])
 async def test_first_element(geoapi, element, final):

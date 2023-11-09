@@ -30,7 +30,14 @@ GEO_USER=<geonames_user>
 NCBI_API_KEY=<api_key>
 ```
 
-4. Create knowledge graph locally
+4. Create taxa and geographical constraints
+
+```
+CREATE CONSTRAINT taxId_UQ FOR (taxon:Taxon) REQUIRE taxon.taxId IS UNIQUE
+CREATE CONSTRAINT geonameId_UQ FOR (geography:Geography) REQUIRE geography.geonameId IS UNIQUE
+```
+
+5. Create knowledge graph locally
 
 ```
 python main.py
@@ -40,16 +47,16 @@ python main.py
 
 All source code is designed to stop after hitting an error. The most common are API related, usually triggered by reaching credit limits, malformatted API responses, or excess throttling. Batch sizes can trigger errors in Neo4j in rare occasions, change the batch size according to your hardware.
 
-### Network coverage
+### Unit tests coverage
 
 ```
-coverage run pytest -vm network
+coverage run pytest -vm unit
 ```
 
-### Cache coverage
+### Integrity tests coverage
 
 ```
-coverage run pytest -vm cache
+coverage run pytest -vm integrity
 ```
 
 ### Timing execution
@@ -64,7 +71,7 @@ Wall-clock benchmarks for MacBook Pro 2019 8-Core Intel Core i9
 
 | Dataset  | Time    |
 | -------- | ------- |
-| FluNet   | 53 sec  |
+| FluNet   | 43 sec  |
 | GMPD     | 1.1 min |
 | WAHIS    |         |
 | Virion   | 5.0 min |

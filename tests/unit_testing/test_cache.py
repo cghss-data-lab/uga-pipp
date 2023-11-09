@@ -12,12 +12,14 @@ async def mock_function(n):
 
 @pytest.mark.asyncio
 @pytest.mark.cache
+@pytest.mark.unit
 def test_cache_exists():
     assert mock_function.cache == {}
 
 
 @pytest.mark.asyncio
 @pytest.mark.cache
+@pytest.mark.unit
 async def test_save_cache():
     await save_cache({}, TEST_CACHE_FILE)
     assert os.path.isfile(TEST_CACHE_FILE)
@@ -25,6 +27,7 @@ async def test_save_cache():
 
 @pytest.mark.asyncio
 @pytest.mark.cache
+@pytest.mark.unit
 def test_load_cache():
     memoize = load_cache(TEST_CACHE_FILE)
     assert memoize == {}
@@ -32,6 +35,7 @@ def test_load_cache():
 
 @pytest.mark.asyncio
 @pytest.mark.cache
+@pytest.mark.unit
 @pytest.mark.parametrize("n, final", [(1, 2), (90, 91), (10, 11), (4, 5)])
 async def test_cache(n, final):
     await mock_function(n)
@@ -40,5 +44,6 @@ async def test_cache(n, final):
 
 # Not a test, but deletes the mock cache file
 @pytest.mark.cache
+@pytest.mark.unit
 def test_delete():
     os.remove(TEST_CACHE_FILE)
