@@ -54,7 +54,3 @@ FOREACH (map in (CASE WHEN mapping.geonames.geonameId IS NOT NULL THEN [1] ELSE 
         territory.lng = toFloat(mapping.geonames.lng),
         territory.fcode = mapping.geonames.fcode
     MERGE (event)-[:OCCURS_IN]->(territory))
-
-FOREACH (map in (CASE WHEN mapping.geonames.geonameId IS NULL THEN [1] ELSE [] END) |  
-    MERGE (territory:Geography {name : mapping.Territory})
-    MERGE (event)-[:OCCURS_IN]->(territory))

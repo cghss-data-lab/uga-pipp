@@ -11,11 +11,6 @@ FOREACH (map in (CASE WHEN mapping.Host.taxId IS NOT NULL THEN [1] ELSE [] END) 
         host.dataSource = "NCBI Taxonomy"
     MERGE (gmpd)-[:ASSOCIATES {role : 'host'}]->(host))
 
-FOREACH (map in (CASE WHEN mapping.Host.taxId IS NULL THEN [1] ELSE [] END) |
-    MERGE (host:Taxon {name : mapping.HostCorrectedName})
-    MERGE (gmpd)-[:ASSOCIATES {role : 'host'}]->(host))
-
-
 // Process pathogen information
 FOREACH (map in (CASE WHEN mapping.Parasite.taxId IS NOT NULL THEN [1] ELSE [] END) |
     MERGE (pathogen:Taxon {taxId : mapping.Parasite.taxId})
@@ -24,11 +19,6 @@ FOREACH (map in (CASE WHEN mapping.Parasite.taxId IS NOT NULL THEN [1] ELSE [] E
         pathogen.rank = mapping.Parasite.rank,
         pathogen.dataSource = "NCBI Taxonomy"
     MERGE (gmpd)-[:ASSOCIATES {role : 'pathogen'}]->(pathogen))
-
-FOREACH (map in (CASE WHEN mapping.Parasite.taxId IS NULL THEN [1] ELSE [] END) |
-    MERGE (pathogen:Taxon {name : mapping.ParasiteCorrectedName})
-    MERGE (gmpd)-[:ASSOCIATES {role : 'pathogen'}]->(pathogen))
-
 
 // Process geographical location 
 FOREACH (map in (CASE WHEN mapping.location.geonameId IS NOT NULL THEN [1] ELSE [] END) |
@@ -44,8 +34,4 @@ FOREACH (map in (CASE WHEN mapping.location.geonameId IS NOT NULL THEN [1] ELSE 
         territory.lat = toFloat(mapping.location.lat),
         territory.lng = toFloat(mapping.location.lng),
         territory.fcode = mapping.location.fcode
-    MERGE (gmpd)-[:ABOUT]->(territory))
-
-FOREACH (map in (CASE WHEN mapping.location.geonameId IS NULL THEN [1] ELSE [] END) | 
-    MERGE (territory:Geography {name : mapping.LocationName})
     MERGE (gmpd)-[:ABOUT]->(territory))
