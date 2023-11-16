@@ -69,12 +69,12 @@ logger.add(sys.stderr, level="DEBUG")
 
 Wall-clock benchmarks for MacBook Pro 2019 8-Core Intel Core i9
 
-| Dataset  | Time    |
-| -------- | ------- |
-| FluNet   | 43 sec  |
-| GMPD     | 1.1 min |
-| WAHIS    |         |
-| Virion   | 5.0 min |
-| Combine  | 1.3 min |
-| WorldPop | 1.8 min |
-| Total    |         |
+| Dataset  | Time     |
+| -------- | -------- |
+| FluNet   | 43 sec   |
+| GMPD     | 1.1 min  |
+| WAHIS    | 4.8 min  |
+| Virion   | 5.0 min  |
+| Combine  | 1.3 min  |
+| WorldPop | 1.8 min  |
+| Total    | 14.5 min |
