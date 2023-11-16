@@ -26,8 +26,7 @@ async def ingest_wahis(
         row["pathogen"] = ncbiapi.process_taxon(
             row["event"]["causalAgent"]["name"], taxons
         )
-        for outbreak in row["outbreaks"]:
-            outbreak["geonames"] = geonames[outbreak["geonames"]]
+        row["outbreak"]["geonames"] = geonames[row["outbreak"]["geonames"]]
 
     geo_hierarchies = await handle_concurrency(
         *[geoapi.search_hierarchy(geoid["geonameId"]) for geoid in geonames.values()]
