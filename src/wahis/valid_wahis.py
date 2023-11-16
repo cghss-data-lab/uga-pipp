@@ -48,6 +48,16 @@ def process_report(metadata: dict, tax_names: set, lat_long: set):
     return metadata
 
 
+def is_valid(row: dict, empty: tuple = (None, "")) -> bool:
+    if row["event"]["disease"]["group"] in empty:
+        return False
+
+    if row["event"]["causalAgent"]["name"] in empty:
+        return False
+
+    return True
+
+
 async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
     lat_long = set()
     tax_names = set()
@@ -75,5 +85,7 @@ async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
         *[ncbiapi.search_id(tax) for tax in tax_names], n_semaphore=2
     )
     geonames = dict(zip(lat_long, geoname_ids))
+
+    wahis_valid = [x for x in wahis_valid if is_valid(x)]
 
     return wahis_valid, geonames, tax_names, tax_ids
