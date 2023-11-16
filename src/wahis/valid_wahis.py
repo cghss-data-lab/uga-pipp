@@ -48,6 +48,19 @@ def process_report(metadata: dict, tax_names: set, lat_long: set):
     return metadata
 
 
+def pivot_long(wahis: list) -> list:
+    new_wahis = []
+    for row in wahis:
+        outbreaks = row["outbreaks"]
+        row.pop("outbreaks")
+        for out in outbreaks:
+            new_row = row.copy()
+            new_row["outbreak"] = out
+            new_wahis.append(new_row)
+
+    return new_wahis
+
+
 def is_valid(row: dict, empty: tuple = (None, "")) -> bool:
     if row["event"]["disease"]["group"] in empty:
         return False
@@ -87,5 +100,6 @@ async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
     geonames = dict(zip(lat_long, geoname_ids))
 
     wahis_valid = [x for x in wahis_valid if is_valid(x)]
+    wahis_valid = pivot_long(wahis_valid)
 
     return wahis_valid, geonames, tax_names, tax_ids
