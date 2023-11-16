@@ -67,14 +67,14 @@ Set the level to DEBUG in main.py
 logger.add(sys.stderr, level="DEBUG")
 ```
 
-Wall-clock benchmarks for MacBook Pro 2019 8-Core Intel Core i9
+Wall-clock benchmarks for MacBook Pro 2019 8-Core Intel Core i9, time is displayed for individual datasets (without any data in the database) and serial ingest of all datasets
 
-| Dataset  | Time     |
-| -------- | -------- |
-| FluNet   | 43 sec   |
-| GMPD     | 1.1 min  |
-| WAHIS    | 4.8 min  |
-| Virion   | 5.0 min  |
-| Combine  | 1.3 min  |
-| WorldPop | 1.8 min  |
-| Total    | 14.5 min |
+| Dataset  | Time (individual) | Time (serial) |
+| -------- | ----------------- | ------------- |
+| FluNet   | 0.67 min          | 0.61 min      |
+| GMPD     | 0.75 min          | 0.71 min      |
+| WAHIS    | 4.8 min           | 5.05 min      |
+| Virion   | 5.0 min           | 4.78 min      |
+| Combine  | 1.3 min           | 1.24 min      |
+| WorldPop | 1.8 min           | 0.35 min      |
+| Total    | 14.5 min          | 12.74 min     |
