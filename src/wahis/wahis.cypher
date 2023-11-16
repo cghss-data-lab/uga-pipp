@@ -29,6 +29,7 @@ FOREACH (outbreak in mapping.outbreaks |
                 territory.fcode = outbreak.geonames.fcode
         MERGE (event)-[:OCCURS_IN]->(territory)
 
+        // Set host information
         FOREACH (map in (CASE WHEN mapping.host.taxId IS NOT NULL THEN [1] ELSE [] END) |
                 MERGE (host:Taxon {taxId : mapping.host.taxId})
                 ON CREATE SET
@@ -63,26 +64,4 @@ FOREACH (outbreak in mapping.outbreaks |
         FOREACH (map in (CASE WHEN mapping.pathogen.taxId IS NULL THEN [1] ELSE [] END) |
                 MERGE (pathogen:Taxon {name : mapping.event.causalAgent.name})
                 MERGE (event)-[:INVOLVES {role : 'pathogen'} ]->(pathogen))
-
-
-        // // Set host information
-        // MERGE (host:Taxon {taxId : mapping.host.taxId})
-        //         ON CREATE SET
-        //         host.dataSource = "NCBI Taxonomy",
-        //         host.name = mapping.host.name,
-        //         host.rank = mapping.host.rank
-        // MERGE (event)-[involves:INVOLVES {role : 'host'}]->(host)
-        //         ON CREATE SET
-        //                 involves.caseCount = mapping.quantitativeData.totals.cases,
-        //                 involves.deathCount = mapping.quantitativeData.totals.deaths,
-        //                 //involves.detectionDate = mapping.quantitativeData.totals
-        //                 involves.isWild = mapping.quantitativeData.totals.isWild
-
-        // // Set pathogen informtion
-        // MERGE (pathogen:Taxon {taxId : mapping.pathogen.taxId})
-        //         ON CREATE SET
-        //                 pathogen.dataSource = "NCBI Taxonomy",
-        //                 pathogen.name = mapping.pathogen.name,
-        //                 pathogen.rank = mapping.pathogen.rank
-        // MERGE (event)-[:INVOLVES {role : 'pathogen'} ]->(pathogen)
 )
