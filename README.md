@@ -19,7 +19,7 @@ source env/bin/activate
 pip3 install -r requirements.txt
 ```
 
-3. Set environmental variables in file .env
+3. Set environmental variables in file .env and unzip virion
 
 ```
 NEO4J_URI=<neo4j_uri>
