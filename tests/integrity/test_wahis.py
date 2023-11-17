@@ -13,7 +13,7 @@ def neo4j_handler():
 async def test_wahis_no_single_nodes(neo4j_handler):
     query = """
     MATCH (w:WAHIS)
-    WHERE NOT (w))-[:REPORTS]-(t)
+    WHERE NOT (w))-[:REPORTS]-()
     RETURN w
     """
     result = await neo4j_handler.run_query(query)

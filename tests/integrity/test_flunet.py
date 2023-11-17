@@ -13,7 +13,7 @@ def neo4j_handler():
 async def test_flunet_no_single_nodes(neo4j_handler):
     query = """
     MATCH (f:FluNet)
-    WHERE NOT (f)-[:REPORTS]-(t)
+    WHERE NOT (f)-[:REPORTS]-()
     RETURN f
     """
     result = await neo4j_handler.run_query(query)
