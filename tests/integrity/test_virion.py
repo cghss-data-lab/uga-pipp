@@ -26,7 +26,7 @@ async def test_virion_no_single_nodes(neo4j_handler):
 async def test_virion_schema(neo4j_handler):
     query = """
     MATCH (v:Virion)-[s]-(t)
-    WITH v, COLLECT(s) AS m, COLLECT(t) AS p
+    WITH v, COLLECT(type(s)) AS m, COLLECT(labels(t)) AS p
     RETURN v, m, p
     """
     result = await neo4j_handler.run_query(query)
@@ -35,7 +35,7 @@ async def test_virion_schema(neo4j_handler):
         for rel, node in zip(graph["m"], graph["p"]):
             errors = []
 
-            if rel["type"] == "ASSOCIATES" and node["labels"] != "Taxon":
+            if rel == "ASSOCIATES" and node[0] != "Taxon":
                 errors.append("associates fails")
 
             assert len(errors) == 0

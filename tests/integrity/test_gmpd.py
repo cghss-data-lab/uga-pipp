@@ -26,7 +26,7 @@ async def test_gmpd_no_single_nodes(neo4j_handler):
 async def test_gmpd_schema(neo4j_handler):
     query = """
     MATCH (g:GMPD)-[r]-(t)
-    WITH g, COLLECT(r) AS m, COLLECT(t) AS p
+    WITH g, COLLECT(type(r)) AS m, COLLECT(labels(t)) AS p
     RETURN g, m, p
     """
     result = await neo4j_handler.run_query(query)
@@ -35,10 +35,10 @@ async def test_gmpd_schema(neo4j_handler):
         for rel, node in zip(graph["m"], graph["p"]):
             errors = []
 
-            if rel["type"] == "ASSOCIATES" and node["labels"] != "Taxon":
+            if rel == "ASSOCIATES" and node[0] != "Taxon":
                 errors.append("associates fails")
 
-            if rel["type"] == "ABOUT" and node["labels"] != "Geography":
+            if rel == "ABOUT" and node[0] != "Geography":
                 errors.append("about fails")
 
             assert len(errors) == 0

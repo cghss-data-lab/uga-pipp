@@ -26,7 +26,7 @@ async def test_wahis_no_single_nodes(neo4j_handler):
 async def test_wahis_schema(neo4j_handler):
     query = """
     MATCH (w:WAHIS)-[:REPORTS]-(:Event)-[s]-(t)
-    WITH w, COLLECT(s) AS m, COLLECT(t) AS p
+    WITH w, COLLECT(type(s)) AS m, COLLECT(labels(t)) AS p
     RETURN w, m, p
     """
     result = await neo4j_handler.run_query(query)
@@ -35,10 +35,10 @@ async def test_wahis_schema(neo4j_handler):
         for rel, node in zip(graph["m"], graph["p"]):
             errors = []
 
-            if rel["type"] == "INVOLVES" and node["labels"] != "Taxon":
+            if rel == "INVOLVES" and node[0] != "Taxon":
                 errors.append("involves fails")
 
-            if rel["type"] == "OCCURS_IN" and node["labels"] != "Geography":
+            if rel == "OCCURS_IN" and node[0] != "Geography":
                 errors.append("occurs_in fails")
 
             assert len(errors) == 0

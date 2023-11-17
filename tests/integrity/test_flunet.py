@@ -26,7 +26,7 @@ async def test_flunet_no_single_nodes(neo4j_handler):
 async def test_flunet_schema(neo4j_handler):
     query = """
     MATCH (f:FluNet)-[:REPORTS]-(:Event)-[s]-(t)
-    WITH f, COLLECT(s) AS m, COLLECT(t) AS p
+    WITH f, COLLECT(type(s)) AS m, COLLECT(labels(t)) AS p
     RETURN f, m, p
     """
     result = await neo4j_handler.run_query(query)
@@ -35,10 +35,10 @@ async def test_flunet_schema(neo4j_handler):
         for rel, node in zip(graph["m"], graph["p"]):
             errors = []
 
-            if rel["type"] == "INVOLVES" and node["labels"] != "Taxon":
+            if rel == "INVOLVES" and node[0] != "Taxon":
                 errors.append("involves fails")
 
-            if rel["type"] == "OCCURS_IN" and node["labels"] != "Geography":
+            if rel == "OCCURS_IN" and node[0] != "Geography":
                 errors.append("occurs_in fails")
 
             assert len(errors) == 0
