@@ -14,19 +14,17 @@ def cache(file: str, is_class=False) -> Callable:
             function.cache = load_cache(file)
         except FileNotFoundError:
             function.cache = {}
-        except EOFError:
-            function.cache = {}
 
         @wraps(function)
-        def memoize(*args):
+        async def memoize(*args):
             key = args
             if is_class:
                 key = args[1:]
             try:
-                return function.cache[key]
+                return function.cache[key[0]]
             except KeyError:
-                function.cache[key] = result = function(*args)
-                save_cache(function.cache, file)
+                function.cache[key[0]] = result = await function(*args)
+                await save_cache(function.cache, file)
                 return result
 
         return memoize
@@ -34,7 +32,7 @@ def cache(file: str, is_class=False) -> Callable:
     return wrapper
 
 
-def save_cache(cache_file: dict, file: str) -> None:
+async def save_cache(cache_file: dict, file: str) -> None:
     with open(file, "wb") as c:
         pickle.dump(cache_file, c)
 

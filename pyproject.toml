@@ -1,0 +1,36 @@
+[tool.pylint.messages_control]
+disable = [
+  "no-name-in-module",
+  "missing-class-docstring",
+  "missing-function-docstring",
+  "missing-module-docstring",
+  "too-few-public-methods",
+  "abstract-method",
+  "duplicate-code",
+]
+
+[tool.pylint]
+generated-members = "torch.*"
+ignore-paths = "tests/*.py"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q -x --cov"
+testpaths = [
+    "tests"
+]
+python_files = "test*.py"
+markers = [
+  "geonames: mark a test designed for geonames api",
+  "ncbi: mark a test designed for ncbi api",
+  "cache: mark a test designed for the cache system",
+  "wahis: mark a test designed for wahis api",
+  "geography: mark a test designed for geographies",
+  "taxon: mark a test designed for taxons",
+  "flunet: mark a test designed for flunet",
+  "gmpd: mark a test designed for gmpd",
+  "virion: mark a test designed for virion",
+  "wahis: mark a test designed for wahis",
+  "unit: mark a unit test",
+  "integrity: mark an integrity test"
+]

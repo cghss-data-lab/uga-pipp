@@ -1,0 +1,405 @@
+Event ID,Event Type,Public,Number Affected,Event Start Date,Event End Date,Countries,States (or equivalent),Counties (or equivalent),Species,Event Diagnosis
+203112,Mortality/Morbidity,TRUE,25,3/27/23,,United States,Massachusetts,"Bristol County, MA",Mute Swan; Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+203088,Mortality/Morbidity,TRUE,1,3/15/23,3/15/23,United States,Kansas,"Marshall County, KS",Red-tailed Hawk,Highly Pathogenic Avian Influenza (AI virus H5N1)
+203086,Mortality/Morbidity,TRUE,1,3/2/23,3/2/23,United States,Virginia,"Northampton County, VA",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+203083,Mortality/Morbidity,TRUE,1,3/2/23,3/2/23,United States,Texas,"Carson County, TX",Unidentified Skunk,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+203058,Mortality/Morbidity,TRUE,1,1/3/23,1/3/23,United States,Virginia,"Chesterfield County, VA",Bald Eagle,Blunt Trauma (not otherwise specified); Highly Pathogenic Avian Influenza (AI virus H5N1)
+203053,Mortality/Morbidity,TRUE,165,2/18/23,2/18/23,United States,Louisiana,"East Baton Rouge Parish, LA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1)
+203041,Mortality/Morbidity,TRUE,1,2/19/23,2/19/23,United States,South Carolina,"Charleston County, SC",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+203040,Mortality/Morbidity,TRUE,1,2/16/23,2/16/23,United States,Kentucky,"Henderson County, KY",Red-tailed Hawk,Blunt Trauma (not otherwise specified); Highly Pathogenic Avian Influenza (AI virus H5N1); Schistosomiasis suspect
+203039,Mortality/Morbidity,TRUE,1,12/22/22,12/22/22,United States,Kentucky,"Henderson County, KY",Red-shouldered Hawk,Blunt Trauma (not otherwise specified); Highly Pathogenic Avian Influenza (AI virus H5N1)
+203038,Mortality/Morbidity,TRUE,2,12/16/22,12/19/22,United States,North Carolina,"Chatham County, NC",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+203031,Mortality/Morbidity,TRUE,1,1/5/23,1/5/23,United States,Virginia,"Accomack County, VA",Peregrine Falcon,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+203023,Mortality/Morbidity,TRUE,1,2/8/23,2/8/23,United States,Louisiana,"Ascension Parish, LA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1)
+203022,Mortality/Morbidity,TRUE,1,2/7/23,2/7/23,United States,Louisiana,"St Tammany Parish, LA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1)
+203005,Mortality/Morbidity,TRUE,1,12/9/22,12/31/22,United States,Iowa,"Henry County, IA",Bald Eagle,Bacterial Infection (multisystemic); Highly Pathogenic Avian Influenza (AI virus H5N1); Nutritional Deficiency
+202998,Mortality/Morbidity,TRUE,50,12/13/22,12/13/22,United States,Kansas,"Finney County, KS",Great-tailed Grackle,Highly Pathogenic Avian Influenza (AI virus H5N1); Trauma (not otherwise specified) suspect
+202989,Mortality/Morbidity,TRUE,1,1/21/23,1/21/23,United States,North Carolina,"Wake County, NC",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202980,Mortality/Morbidity,TRUE,1,1/14/23,1/14/23,United States,North Carolina,"Brunswick County, NC",Brown Pelican,Cardiomyopathy; Highly Pathogenic Avian Influenza (AI virus H5N1); Nutritional Deficiency
+202973,Mortality/Morbidity,TRUE,1,1/10/23,1/10/23,United States,South Carolina,"Berkeley County, SC",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202972,Mortality/Morbidity,TRUE,1,1/9/23,1/9/23,United States,South Carolina,"Colleton County, SC",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202970,Mortality/Morbidity,TRUE,1,1/18/23,1/18/23,United States,Oregon,"Lincoln County, OR",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202969,Mortality/Morbidity,TRUE,1,1/11/23,1/12/23,United States,Massachusetts,"Hampden County, MA",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1); Trauma (predation or aggression) suspect
+202967,Mortality/Morbidity,TRUE,1,1/6/23,1/6/23,United States,Florida,"Leon County, FL",Bald Eagle,Blunt Trauma (not otherwise specified); Highly Pathogenic Avian Influenza (AI virus H5N1)
+202962,Mortality/Morbidity,TRUE,12,1/5/23,1/26/23,United States,Texas,"Carson County, TX",Cackling Goose; Red-tailed Hawk; Ross' Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202955,Mortality/Morbidity,TRUE,1,12/23/22,12/23/22,United States,Kansas,"Wabaunsee County, KS",American Crow,Highly Pathogenic Avian Influenza (AI virus H5N1); Trauma (not otherwise specified) suspect
+202945,Mortality/Morbidity,TRUE,1,1/3/23,1/3/23,United States,South Carolina,"Clarendon County, SC",American White Pelican,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202944,Mortality/Morbidity,TRUE,5,12/15/22,12/15/22,United States,North Carolina,"Brunswick County, NC",Brown Pelican,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202943,Mortality/Morbidity,TRUE,5,12/21/22,12/21/22,United States,Kansas,"Marion County, KS",Greater White-fronted Goose; Gadwall; Mallard,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202942,Mortality/Morbidity,TRUE,1,12/20/22,12/20/22,United States,North Carolina,"Hyde County, NC",Brown Pelican,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202939,Mortality/Morbidity,TRUE,1,12/28/22,12/28/22,United States,North Carolina,"Jones County, NC",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202938,Mortality/Morbidity,TRUE,2,12/21/22,12/21/22,United States,North Carolina,"Dare County, NC",Bufflehead,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202937,Mortality/Morbidity,TRUE,2,12/30/22,12/30/22,United States,North Carolina,"Dare County, NC",Brown Pelican,"Highly Pathogenic Avian Influenza (AI virus H5N1); Nutritional Deficiency; Parasitism (Nematode, not otherwise specified)"
+202936,Mortality/Morbidity,TRUE,1,12/30/22,12/30/22,United States,North Carolina,"Camden County, NC",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202935,Mortality/Morbidity,TRUE,1,12/30/22,12/30/22,United States,Kansas,"Osborne County, KS",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202934,Mortality/Morbidity,TRUE,1,12/20/22,12/20/22,United States,Wisconsin,"Wood County, WI",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202933,Mortality/Morbidity,TRUE,1,1/3/23,1/3/23,United States,Georgia,"Peach County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202932,Mortality/Morbidity,TRUE,1,12/29/22,12/29/22,United States,Tennessee,"Hamblen County, TN",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202925,Mortality/Morbidity,TRUE,1,12/10/22,12/10/22,United States,North Carolina,"Washington County, NC",Tundra Swan,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202923,Mortality/Morbidity,TRUE,125,12/14/22,1/25/23,United States,California,"Imperial County, CA",Snow Goose; Unidentified Duck or Goose; Ross' Goose; American Kestrel,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202915,Mortality/Morbidity,TRUE,1,12/4/22,12/6/22,United States,Florida,"Bay County, FL",Bufflehead,Emaciation (starvation); Highly Pathogenic Avian Influenza (AI virus H5N1)
+202914,Mortality/Morbidity,TRUE,1,12/6/22,12/6/22,United States,Kansas,"Finney County, KS",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202912,Mortality/Morbidity,TRUE,37,12/6/22,12/6/22,United States,North Carolina,"Hyde County, NC",Double-crested Cormorant; Great Black-backed Gull; Herring Gull,Aspergillosis; Highly Pathogenic Avian Influenza (AI virus H5N1)
+202909,Mortality/Morbidity,TRUE,145,11/15/22,,United States,California,"Merced County, CA; Stanislaus County, CA",Ross' Goose; Snow Goose; American White Pelican; American Coot; Greater White-fronted Goose; Unidentified Gull; Aleutian Cackling  Goose; Great Egret; Unidentified Sandhill Crane; Northern Pintail,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202905,Mortality/Morbidity,TRUE,1,12/2/22,12/2/22,United States,Kansas,"Mitchell County, KS",Cooper's Hawk,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202890,Mortality/Morbidity,TRUE,22,12/4/22,12/4/22,United States,North Carolina,"Guilford County, NC",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202889,Mortality/Morbidity,TRUE,1,11/27/22,11/27/22,United States,Kansas,"Douglas County, KS",Red-tailed Hawk,Blunt Trauma (not otherwise specified); Highly Pathogenic Avian Influenza (AI virus H5N1)
+202888,Mortality/Morbidity,TRUE,11,11/1/22,12/5/22,United States,Arkansas,"Chicot County, AR; Cleburne County, AR; Craighead County, AR; Greene County, AR; Poinsett County, AR; Lafayette County, AR; Saline County, AR",Snow Goose; Greater White-fronted Goose; Red-tailed Hawk; Northern Pintail; Ross' Goose; Wood Duck,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect; Undetermined
+202887,Mortality/Morbidity,TRUE,1,11/17/22,11/17/22,United States,Arkansas,"Grant County, AR",Bald Eagle,Blunt Trauma (not otherwise specified); Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202885,Mortality/Morbidity,TRUE,3,12/2/22,12/2/22,United States,Louisiana,"St John The Baptist Parish, LA",Wood Duck,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect; Penetrating Trauma (gunshot)
+202880,Mortality/Morbidity,TRUE,1,11/29/22,11/29/22,United States,Kansas,"Sherman County, KS",Great Horned Owl,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202879,Mortality/Morbidity,TRUE,1,11/27/22,11/27/22,United States,Tennessee,"Robertson County, TN",Ross' Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202877,Mortality/Morbidity,TRUE,1,11/25/22,11/25/22,United States,North Carolina,"Pamlico County, NC",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect; Nutritional Deficiency
+202876,Mortality/Morbidity,TRUE,22,12/2/22,,United States,New Mexico,"Socorro County, NM",Snow Goose; Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202873,Mortality/Morbidity,TRUE,800,11/28/22,11/28/22,United States,Kansas,"Mitchell County, KS",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202872,Mortality/Morbidity,TRUE,1,11/22/22,11/22/22,United States,Kansas,"Jewell County, KS",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202871,Mortality/Morbidity,TRUE,1,11/29/22,11/29/22,United States,Kansas,"Kearny County, KS",Red-tailed Hawk,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202870,Mortality/Morbidity,TRUE,3755,11/26/22,1/9/23,United States,Kansas,"Phillips County, KS",Lesser Snow Goose; Ross' Goose; Mallard; Greater White-fronted Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202869,Mortality/Morbidity,TRUE,1,11/29/22,11/29/22,United States,Kansas,"Kearny County, KS",Red-tailed Hawk,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202868,Mortality/Morbidity,TRUE,1,11/29/22,11/29/22,United States,Kansas,"Hamilton County, KS",Ross' Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202867,Mortality/Morbidity,TRUE,1,11/29/22,11/29/22,United States,Kansas,"Finney County, KS",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202865,Mortality/Morbidity,TRUE,25,11/28/22,11/28/22,United States,Tennessee,"Greene County, TN",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202864,Mortality/Morbidity,TRUE,30,11/28/22,11/28/22,United States,Tennessee,"Jefferson County, TN",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202862,Mortality/Morbidity,TRUE,5,11/28/22,11/28/22,United States,Louisiana,"Richland Parish, LA; Ouachita Parish, LA",Snow Goose; Ross' Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202861,Mortality/Morbidity,TRUE,101,11/26/22,11/26/22,United States,Louisiana,"Morehouse Parish, LA",Snow Goose; Ross' Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202860,Mortality/Morbidity,TRUE,554,11/21/22,11/29/22,United States,Washington,"Skagit County, WA",Snow Goose; Dunlin; Mallard; Glaucous-winged Gull; Trumpeter Swan; Great Blue Heron; Short-Eared (Pueo) Owl,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202859,Mortality/Morbidity,TRUE,1,11/23/22,11/23/22,United States,Kansas,"Finney County, KS",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202858,Mortality/Morbidity,TRUE,1,11/27/22,11/27/22,United States,Kansas,"Kearny County, KS",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202857,Mortality/Morbidity,TRUE,1,11/28/22,11/28/22,United States,Kansas,"Hamilton County, KS",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202851,Mortality/Morbidity,TRUE,2,11/25/22,11/25/22,United States,Arkansas,"Cross County, AR",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202850,Mortality/Morbidity,TRUE,1,11/25/22,11/25/22,United States,Arkansas,"Monroe County, AR",Ross' Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202849,Mortality/Morbidity,TRUE,1,11/25/22,11/25/22,United States,Arkansas,"Pope County, AR",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202848,Mortality/Morbidity,TRUE,1,11/25/22,11/25/22,United States,Arkansas,"Pulaski County, AR",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202847,Mortality/Morbidity,TRUE,1,11/25/22,11/25/22,United States,Arkansas,"Conway County, AR",Ross' Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202845,Mortality/Morbidity,TRUE,3,11/25/22,11/25/22,United States,Arkansas,"Prairie County, AR",Snow Goose; Ross' Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202844,Mortality/Morbidity,TRUE,1,11/25/22,11/25/22,United States,Arkansas,"Lonoke County, AR",Ross' Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202843,Mortality/Morbidity,TRUE,1235,11/22/22,,United States,Indiana,"Gibson County, IN",Snow Goose; Double-crested Cormorant; American Coot; American White Pelican,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202842,Mortality/Morbidity,TRUE,21,11/25/22,12/6/22,United States,Vermont,"Orleans County, VT",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202841,Mortality/Morbidity,TRUE,1,11/21/22,11/21/22,United States,Kansas,"Lincoln County, KS",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202840,Mortality/Morbidity,TRUE,153,11/25/22,12/15/22,United States,Louisiana,"Avoyelles Parish, LA",Snow Goose; Greater White-fronted Goose; Northern Pintail,Highly Pathogenic Avian Influenza (AI virus H5N1); Trauma (not otherwise specified); Undetermined
+202839,Mortality/Morbidity,TRUE,161,11/28/22,12/29/22,United States,Missouri,"Holt County, MO",Snow Goose; Mallard; Greater White-fronted Goose; Trumpeter Swan,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202832,Mortality/Morbidity,TRUE,2,11/22/22,11/22/22,United States,North Carolina,"Onslow County, NC",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202830,Mortality/Morbidity,TRUE,12,11/21/22,11/21/22,United States,North Carolina,"Johnston County, NC",Mallard,Duck Plague; Highly Pathogenic Avian Influenza (AI virus H5N1)
+202829,Mortality/Morbidity,TRUE,15,11/17/22,11/17/22,United States,South Carolina,"Chester County, SC",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202826,Mortality/Morbidity,TRUE,1,10/25/22,10/25/22,United States,Oregon,"Douglas County, OR",Western Snowy Plover,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202825,Mortality/Morbidity,TRUE,1000,11/21/22,12/10/22,United States,South Dakota,"Clark County, SD",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202824,Mortality/Morbidity,TRUE,1006,11/21/22,12/15/22,United States,Kansas,"Pottawatomie County, KS",Lesser Snow Goose; Common Merganser; Canada Goose; Green-winged Teal; Redhead Duck; Ring-necked Duck,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202822,Mortality/Morbidity,TRUE,8,10/25/22,10/25/22,United States,Kansas,"Jefferson County, KS",American White Pelican,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202818,Mortality/Morbidity,TRUE,1,11/16/22,11/16/22,United States,Kentucky,"Warren County, KY",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202817,Mortality/Morbidity,TRUE,2,11/13/22,11/15/22,United States,North Carolina,"Orange County, NC",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202812,Mortality/Morbidity,TRUE,8,11/4/22,11/4/22,United States,Tennessee,"Jackson County, TN",Northern Pintail,Blunt Trauma (not otherwise specified); Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202811,Mortality/Morbidity,TRUE,416,11/12/22,12/1/22,United States,Washington,"Whatcom County, WA",Snow Goose; Canada Goose; Trumpeter Swan; American Wigeon; American Crow,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202809,Mortality/Morbidity,TRUE,5,11/4/22,11/4/22,United States,Georgia,"Barrow County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202807,Mortality/Morbidity,TRUE,2,11/10/22,11/10/22,United States,Georgia,"Franklin County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect; Undetermined
+202806,Mortality/Morbidity,TRUE,2,11/2/22,11/2/22,United States,South Carolina,"Spartanburg County, SC",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202805,Mortality/Morbidity,TRUE,12,11/4/22,11/4/22,United States,North Carolina,"Rutherford County, NC",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202804,Mortality/Morbidity,TRUE,200,11/4/22,11/4/22,United States,North Carolina,"Granville County, NC",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202802,Mortality/Morbidity,TRUE,1,11/1/22,11/1/22,United States,Wisconsin,"Winnebago County, WI",River Otter,Encephalitis; Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202796,Mortality/Morbidity,TRUE,1,11/1/22,11/1/22,United States,Louisiana,"Cameron Parish, LA",Greater White-fronted Goose,Emaciation (starvation); Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202791,Mortality/Morbidity,TRUE,13,11/3/22,11/3/22,United States,Georgia,"Newton County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202790,Mortality/Morbidity,TRUE,2,11/2/22,11/2/22,United States,Georgia,"Greene County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202789,Mortality/Morbidity,TRUE,1,11/1/22,11/1/22,United States,North Carolina,"Onslow County, NC",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202788,Mortality/Morbidity,TRUE,15,10/31/22,10/31/22,United States,North Carolina,"Wake County, NC",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202769,Mortality/Morbidity,TRUE,1,10/21/22,10/21/22,United States,Georgia,"De Kalb County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202768,Mortality/Morbidity,TRUE,3,10/21/22,10/21/22,United States,Georgia,"Rockdale County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202766,Mortality/Morbidity,TRUE,1,10/31/22,10/31/22,United States,Georgia,"Houston County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202764,Mortality/Morbidity,TRUE,1,10/27/22,10/27/22,United States,Kansas,"Reno County, KS",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202763,Mortality/Morbidity,TRUE,10,10/23/22,10/30/22,United States,North Carolina,"Haywood County, NC",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202762,Mortality/Morbidity,TRUE,76,10/31/22,10/31/22,United States,North Carolina,"Durham County, NC",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect; Septicemia
+202761,Mortality/Morbidity,TRUE,6,10/30/22,10/30/22,United States,Georgia,"McDuffie County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202745,Mortality/Morbidity,TRUE,5,10/24/22,10/24/22,United States,North Carolina,"Chatham County, NC",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202744,Mortality/Morbidity,TRUE,3,10/23/22,10/23/22,United States,South Carolina,"Aiken County, SC",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202741,Mortality/Morbidity,TRUE,1,10/17/22,10/17/22,United States,Kansas,"Montgomery County, KS",American White Pelican,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202730,Mortality/Morbidity,TRUE,12,10/13/22,10/13/22,United States,Georgia,"Wilkes County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202727,Mortality/Morbidity,TRUE,10,10/20/22,11/9/22,United States,California,"Humboldt County, CA",Aleutian Cackling  Goose; Greater White-fronted Goose; Northern Pintail; Common Raven; Unidentified Duck or Goose; Turkey Vulture; Great Blue Heron,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202724,Mortality/Morbidity,TRUE,85,10/5/22,10/11/22,United States,Texas,"Chambers County, TX",Blue-winged Teal; Glossy Ibis; Black-necked Stilt; Mottled Duck; Forster's Tern; Roseate Spoonbill,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202721,Mortality/Morbidity,TRUE,16,10/5/22,10/5/22,United States,Georgia,"Lee County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202720,Mortality/Morbidity,TRUE,1,10/13/22,10/13/22,United States,Georgia,"Lamar County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202706,Mortality/Morbidity,TRUE,1,10/11/22,10/11/22,United States,Georgia,"Clarke County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202701,Mortality/Morbidity,TRUE,1,10/4/22,10/4/22,United States,Kansas,"Johnson County, KS",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202700,Mortality/Morbidity,TRUE,50,9/15/22,9/29/22,United States,Georgia,"Jenkins County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202696,Mortality/Morbidity,TRUE,5,10/4/22,10/4/22,United States,Kentucky,"Jefferson County, KY",Mallard; Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202694,Mortality/Morbidity,TRUE,1,9/27/22,9/27/22,United States,Georgia,"Peach County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202693,Mortality/Morbidity,TRUE,3,9/30/22,9/30/22,United States,Georgia,"Forsyth County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202691,Mortality/Morbidity,TRUE,10,9/23/22,9/23/22,United States,Georgia,"Forsyth County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202690,Mortality/Morbidity,TRUE,10,10/3/22,10/3/22,United States,Georgia,"Gwinnett County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202687,Mortality/Morbidity,TRUE,37,10/4/22,10/12/22,United States,Minnesota,"Aitkin County, MN",Canada Goose; Trumpeter Swan,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202686,Mortality/Morbidity,TRUE,8,3/31/22,3/31/22,United States,Florida,"Citrus County, FL",Black Vulture; Brown Pelican,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202682,Mortality/Morbidity,TRUE,25,9/21/22,12/15/22,United States,Arizona,"Maricopa County, AZ",Canada Goose; American White Pelican; Unidentified Domestic Or Hybrid Goose; Neotropic (Olivaceous) Cormorant,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202677,Mortality/Morbidity,TRUE,1,9/22/22,9/22/22,United States,Georgia,"Cherokee County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202674,Mortality/Morbidity,TRUE,1,9/16/22,9/16/22,United States,Florida,"Lee County, FL",Bald Eagle,Blunt Trauma (not otherwise specified); Highly Pathogenic Avian Influenza (AI virus H5N1)
+202670,Mortality/Morbidity,TRUE,137,9/21/22,11/9/22,United States,Wisconsin,"Marinette County, WI; Oconto County, WI",Blue-winged Teal; Green-winged Teal; American Coot; Mallard; American White Pelican; Common Goldeneye,Highly Pathogenic Avian Influenza (AI virus H5N1); Trematodiasis (Cyathocotyle bushiensis); Trematodiasis (Leyogonimus polyoon); Trematodiasis (Sphaeridiotrema sp.)
+202669,Mortality/Morbidity,TRUE,10,9/7/22,9/7/22,United States,Georgia,"De Kalb County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202668,Mortality/Morbidity,TRUE,1,9/19/22,9/19/22,United States,Georgia,"Gwinnett County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202663,Mortality/Morbidity,TRUE,1,9/10/22,9/10/22,United States,South Carolina,"Charleston County, SC",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202658,Mortality/Morbidity,TRUE,1,9/15/22,9/16/22,United States,Montana,"Ravalli County, MT",Trumpeter Swan,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202657,Mortality/Morbidity,TRUE,70,3/1/22,3/21/22,United States,Florida,"Brevard County, FL; Orange County, FL; Volusia County, FL",Black Vulture; Brown Pelican; Herring Gull; Osprey; Bald Eagle; Red-shouldered Hawk,Highly Pathogenic Avian Influenza (AI virus H5); Undetermined
+202656,Mortality/Morbidity,TRUE,27,9/17/22,9/30/22,United States,Pennsylvania,"Lackawanna County, PA",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202651,Mortality/Morbidity,TRUE,8,9/8/22,9/14/22,United States,Idaho,"Jefferson County, ID",Canada Goose; Mallard,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202647,Mortality/Morbidity,TRUE,2,9/6/22,9/6/22,United States,Virginia,"Norfolk City, VA",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202646,Mortality/Morbidity,TRUE,1,8/29/22,8/29/22,United States,Georgia,"Columbia County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202635,Mortality/Morbidity,TRUE,7,9/1/22,9/6/22,United States,Wisconsin,"Manitowoc County, WI",American White Pelican; Greater Sandhill Crane; Mallard; Great Egret,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202634,Mortality/Morbidity,TRUE,2,9/6/22,9/6/22,United States,Georgia,"Butts County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202633,Mortality/Morbidity,TRUE,15,8/25/22,9/1/22,United States,Wisconsin,"Winnebago County, WI",Canada Goose; Mallard; Unidentified Gull,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202632,Mortality/Morbidity,TRUE,3,9/1/22,9/1/22,United States,Georgia,"Clayton County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202626,Mortality/Morbidity,TRUE,7,9/1/22,9/6/22,United States,Georgia,"Forsyth County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202620,Mortality/Morbidity,TRUE,1,5/10/22,5/10/22,United States,North Carolina,"Carteret County, NC",Bald Eagle,Blunt Trauma (vehicle collision); Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202611,Mortality/Morbidity,TRUE,10,8/31/22,8/31/22,United States,Georgia,"Spaulding County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202610,Mortality/Morbidity,TRUE,3,8/30/22,8/30/22,United States,Georgia,"Henry County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202607,Mortality/Morbidity,TRUE,3,8/31/22,8/31/22,United States,Georgia,"Jasper County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202602,Mortality/Morbidity,TRUE,14,8/28/22,9/1/22,United States,Wisconsin,"Sheboygan County, WI",American White Pelican,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202597,Mortality/Morbidity,TRUE,16,8/25/22,8/25/22,United States,South Carolina,"McCormick County, SC",Black Vulture; American Crow,Highly Pathogenic Avian Influenza (AI virus H5N1); Trauma (not otherwise specified)
+202592,Mortality/Morbidity,TRUE,54,8/23/22,8/23/22,United States,Georgia,"De Kalb County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202591,Mortality/Morbidity,TRUE,1,8/24/22,8/24/22,United States,Georgia,"Clayton County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202587,Mortality/Morbidity,TRUE,55,8/18/22,8/22/22,United States,Virginia,"Fluvanna County, VA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202586,Mortality/Morbidity,TRUE,25,8/17/22,8/22/22,United States,Virginia,"Orange County, VA",Black Vulture,Blunt Trauma (not otherwise specified) suspect; Highly Pathogenic Avian Influenza (AI virus H5N1)
+202584,Mortality/Morbidity,TRUE,109,8/15/22,9/1/22,United States,Wisconsin,"Dodge County, WI",American White Pelican; Canada Goose; Double-crested Cormorant; Green-winged Teal; Mallard; Ring-billed Gull; Unidentified Gull,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202579,Mortality/Morbidity,TRUE,1,3/29/22,3/29/22,United States,Florida,"Dixie County, FL",Bottlenose Dolphin,Encephalitis; Highly Pathogenic Avian Influenza (AI virus H5N1)
+202578,Mortality/Morbidity,TRUE,35,8/15/22,1/1/23,United States,Nevada,"Washoe County, NV",Mallard; Canada Goose; American White Pelican,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202571,Mortality/Morbidity,TRUE,1,8/12/22,8/12/22,United States,South Carolina,"Charleston County, SC",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202570,Mortality/Morbidity,TRUE,50,8/15/22,8/15/22,United States,Georgia,"Henry County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202558,Mortality/Morbidity,TRUE,230,8/4/22,9/1/22,United States,South Carolina,"Richland County, SC",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202553,Mortality/Morbidity,TRUE,1,8/1/22,8/1/22,United States,Georgia,"Tattnall County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202551,Mortality/Morbidity,TRUE,1,4/10/22,4/10/22,United States,Maine,"York County, ME",Peregrine Falcon,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202539,Mortality/Morbidity,TRUE,1,4/19/22,4/19/22,United States,Missouri,"St Louis County, MO",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202538,Mortality/Morbidity,TRUE,1,4/13/22,4/13/22,United States,Missouri,"Miller County, MO",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202537,Mortality/Morbidity,TRUE,1,3/15/22,3/15/22,United States,Missouri,"Lincoln County, MO",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202536,Mortality/Morbidity,TRUE,1,4/8/22,4/8/22,United States,Missouri,"Macon County, MO",Ring-necked Duck,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202535,Mortality/Morbidity,TRUE,1,4/8/22,4/8/22,United States,Missouri,"St Charles County, MO",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202534,Mortality/Morbidity,TRUE,1,4/7/22,4/7/22,United States,Missouri,"Vernon County, MO",Red-tailed Hawk,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202533,Mortality/Morbidity,TRUE,1,4/4/22,4/4/22,United States,Missouri,"Howard County, MO",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202532,Mortality/Morbidity,TRUE,1,4/3/22,4/3/22,United States,Missouri,"Chariton County, MO",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202521,Mortality/Morbidity,TRUE,10,5/6/22,5/6/22,United States,Washington,"Pierce County, WA",Mallard,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202519,Mortality/Morbidity,TRUE,17,6/24/22,7/12/22,United States,Massachusetts,"Plymouth County, MA; Barnstable County, MA",Great Black-backed Gull; Double-crested Cormorant; Herring Gull; Willet,Highly Pathogenic Avian Influenza (AI virus H5N1); Salmonellosis; Undetermined
+202518,Mortality/Morbidity,TRUE,2,3/29/22,3/29/22,United States,Missouri,"Vernon County, MO",American White Pelican,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202517,Mortality/Morbidity,TRUE,1,3/28/22,3/28/22,United States,Missouri,"Scott County, MO",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202516,Mortality/Morbidity,TRUE,1,3/25/22,3/25/22,United States,Missouri,"Callaway County, MO",Lesser Scaup,Highly Pathogenic Avian Influenza (AI virus H5)
+202515,Mortality/Morbidity,TRUE,1,3/22/22,3/22/22,United States,Missouri,"Jackson County, MO",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202513,Mortality/Morbidity,TRUE,1,3/21/22,3/21/22,United States,Missouri,"Lewis County, MO",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202512,Mortality/Morbidity,TRUE,1,3/9/22,3/9/22,United States,Missouri,"Clay County, MO",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202511,Mortality/Morbidity,TRUE,1,3/16/22,3/16/22,United States,Missouri,"St Clair County, MO",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202509,Mortality/Morbidity,TRUE,1,7/14/22,7/14/22,United States,California,"Siskiyou County, CA",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202508,Mortality/Morbidity,TRUE,1,3/13/22,3/13/22,United States,Missouri,"Platte County, MO",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202507,Mortality/Morbidity,TRUE,1,3/15/22,3/15/22,United States,Missouri,"Monroe County, MO",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202506,Mortality/Morbidity,TRUE,1,3/4/22,3/4/22,United States,Missouri,"St Louis County, MO",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202504,Mortality/Morbidity,TRUE,32,7/18/22,9/21/22,United States,Minnesota,"Marshall County, MN",American White Pelican; Blue-winged Teal; Ring-billed Gull,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202500,Mortality/Morbidity,TRUE,2,3/12/22,3/12/22,United States,Missouri,"Chariton County, MO",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202495,Mortality/Morbidity,TRUE,200,3/12/22,3/12/22,United States,Missouri,"Holt County, MO",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202491,Mortality/Morbidity,TRUE,6,6/24/22,7/6/22,United States,Indiana,"Marion County, IN",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202490,Mortality/Morbidity,TRUE,1,4/4/22,4/4/22,United States,Florida,"Broward County, FL",Crested Caracara,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202452,Mortality/Morbidity,TRUE,1,6/6/22,6/6/22,United States,Alaska,"Nome Census Area, AK",Red Fox,Highly Pathogenic Avian Influenza (AI virus H5N1); Rabies
+202446,Mortality/Morbidity,TRUE,3,6/30/22,6/30/22,United States,Virginia,"Loudoun County, VA",Black Vulture,Aspergillosis; Highly Pathogenic Avian Influenza (AI virus H5N1)
+202438,Mortality/Morbidity,TRUE,291,6/23/22,1/5/23,United States,California,"Colusa County, CA; Glenn County, CA",American White Pelican; Canada Goose; Beaver; Mallard; Wood Duck; Muskrat; Snowy Egret; Lesser Snow Goose; Ross' Goose; Great Horned Owl; Greater White-fronted Goose; Gadwall; Ruddy Duck; Red-tailed Hawk,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202430,Mortality/Morbidity,TRUE,1326,7/1/22,,United States,Iowa,"Clinton County, IA",American White Pelican; Double-crested Cormorant,"Highly Pathogenic Avian Influenza (AI virus H5N1); Parasitism (Trematode, not otherwise specified); Undetermined"
+202429,Mortality/Morbidity,TRUE,1325,7/1/22,8/23/22,United States,Illinois,"Carroll County, IL",American White Pelican; Double-crested Cormorant,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202428,Mortality/Morbidity,TRUE,157,6/1/22,7/31/22,United States,Maine,"Cumberland County, ME; Knox County, ME; Lincoln County, ME; Sagadahoc County, ME; York County, ME",Harbor Seal; Gray Seal,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202427,Mortality/Morbidity,TRUE,20,6/30/22,6/30/22,United States,Georgia,"Dougherty County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202424,Mortality/Morbidity,TRUE,2,6/12/22,6/12/22,United States,Maine,"Sagadahoc County, ME",Common Eider,Gout; Highly Pathogenic Avian Influenza (AI virus H5N1)
+202423,Mortality/Morbidity,TRUE,2,6/23/22,6/23/22,United States,Maine,"York County, ME",Common Tern,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202384,Mortality/Morbidity,TRUE,30,6/11/22,,United States,North Dakota,"Stutsman County, ND",Eared Grebe,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202380,Mortality/Morbidity,TRUE,65,6/13/22,6/13/22,United States,Massachusetts,"Essex County, MA",Common Eider,Blunt Trauma (not otherwise specified); Highly Pathogenic Avian Influenza (AI virus H5N1)
+202355,Mortality/Morbidity,TRUE,1,6/1/22,6/1/22,United States,Georgia,"Chatham County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5)
+202350,Mortality/Morbidity,TRUE,2,5/31/22,6/1/22,United States,Georgia,"Toombs County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5)
+202347,Mortality/Morbidity,TRUE,1,5/29/22,5/29/22,United States,Georgia,"Toombs County, GA",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202345,Mortality/Morbidity,TRUE,1,5/24/22,5/24/22,United States,Kansas,"Lyon County, KS",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202343,Mortality/Morbidity,TRUE,1,4/5/22,4/5/22,United States,Kansas,"Brown County, KS",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202336,Mortality/Morbidity,TRUE,1,5/3/22,5/3/22,United States,Kentucky,"McLean County, KY",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202328,Mortality/Morbidity,TRUE,100,5/1/22,5/10/22,United States,South Carolina,"Charleston County, SC",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202325,Mortality/Morbidity,TRUE,2,5/11/22,5/11/22,United States,Florida,"Hillsborough County, FL",Muscovy Duck,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202293,Mortality/Morbidity,TRUE,4,4/15/22,4/18/22,United States,Florida,"St Johns County, FL",Muscovy Duck,Bacterial Infection (respiratory); Highly Pathogenic Avian Influenza (AI virus H5N1)
+202290,Mortality/Morbidity,TRUE,1,4/14/22,4/14/22,United States,Wisconsin,"St Croix County, WI",Fisher,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202285,Mortality/Morbidity,TRUE,1190,5/27/22,7/1/22,United States,Wisconsin,"Door County, WI",Double-crested Cormorant; Herring Gull; American White Pelican; Caspian Tern,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202278,Mortality/Morbidity,TRUE,1041,4/7/22,5/18/22,United States,Illinois,"Cook County, IL",Double-crested Cormorant; Great Egret; Ring-billed Gull; Caspian Tern,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202272,Mortality/Morbidity,TRUE,1135,5/24/22,7/20/22,United States,Wisconsin,"Door County, WI",Caspian Tern; Double-crested Cormorant; Unidentified Gull; American White Pelican,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202268,Mortality/Morbidity,TRUE,14,5/25/22,5/27/22,United States,District of Columbia,"District of Columbia, DC",Mallard,"Emaciation (not otherwise specified); Highly Pathogenic Avian Influenza (AI virus H5N1); Intestinal Coccidiosis (Coccidia, not otherwise specified)"
+202267,Mortality/Morbidity,TRUE,244,5/10/22,6/2/22,United States,Wisconsin,"Dodge County, WI",Double-crested Cormorant; American White Pelican; Common Grackle; Red-winged Blackbird,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202266,Mortality/Morbidity,TRUE,3,5/23/22,5/23/22,United States,North Dakota,"Dickey County, ND",Red Fox,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202263,Mortality/Morbidity,TRUE,10,5/17/22,6/30/22,United States,Arizona,"Maricopa County, AZ",Neotropic (Olivaceous) Cormorant,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202262,Mortality/Morbidity,TRUE,62,5/18/22,5/27/22,United States,Illinois,"Cook County, IL",Double-crested Cormorant; Unidentified Gull,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202260,Mortality/Morbidity,TRUE,1,4/15/22,4/15/22,United States,Virginia,"King George County, VA",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5)
+202243,Mortality/Morbidity,TRUE,55,5/14/22,5/17/22,United States,Illinois,"McLean County, IL",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202212,Mortality/Morbidity,TRUE,1,5/3/22,5/6/22,United States,Indiana,"Noble County, IN",Red-tailed Hawk,Highly Pathogenic Avian Influenza (AI virus H5) suspect
+202210,Mortality/Morbidity,TRUE,2,5/2/22,5/4/22,United States,Washington,"Walla Walla County, WA",Red-tailed Hawk,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202208,Mortality/Morbidity,TRUE,15,5/4/22,7/12/22,United States,Wisconsin,"Door County, WI",Herring Gull,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202205,Mortality/Morbidity,TRUE,1,5/2/22,5/2/22,United States,Washington,"Pierce County, WA",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202200,Mortality/Morbidity,TRUE,1,5/1/22,5/1/22,United States,Minnesota,"St Louis County, MN",Hooded Merganser,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202198,Mortality/Morbidity,TRUE,253,4/18/22,5/15/22,United States,Wisconsin,"Buffalo County, WI",American Coot; American White Pelican,Highly Pathogenic Avian Influenza (AI virus H5N1); Trematodiasis (Cyathocotyle bushiensis); Trematodiasis (Leyogonimus polyoon)
+202193,Mortality/Morbidity,TRUE,3,4/27/22,4/28/22,United States,Illinois,"Peoria County, IL",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202190,Mortality/Morbidity,TRUE,1,3/5/15,3/5/15,United States,South Dakota,"Butte County, SD",Bald Eagle,Electrocution (not otherwise specified); Highly Pathogenic Avian Influenza (AI virus H5)
+202188,Mortality/Morbidity,TRUE,1,3/11/22,3/11/22,United States,Missouri,"Barton County, MO",Mallard,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202187,Mortality/Morbidity,TRUE,1,3/8/22,3/8/22,United States,Missouri,"Vernon County, MO",American White Pelican,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202179,Mortality/Morbidity,TRUE,11,4/25/22,4/25/22,United States,Idaho,"Caribou County, ID",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202177,Mortality/Morbidity,TRUE,8,3/22/22,,United States,Iowa,"Cherokee County, IA",Snow Goose; Ross' Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202176,Mortality/Morbidity,TRUE,1,3/27/22,4/4/22,United States,Iowa,"Allamakee County, IA",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202175,Mortality/Morbidity,TRUE,1,4/15/22,4/15/22,United States,Iowa,"Muscatine County, IA",Peregrine Falcon,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202174,Mortality/Morbidity,TRUE,1,4/15/22,4/15/22,United States,Iowa,"Polk County, IA",Great Horned Owl,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202173,Mortality/Morbidity,TRUE,9,4/12/22,,United States,Iowa,"Lucas County, IA",American White Pelican,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202172,Mortality/Morbidity,TRUE,1,4/13/22,4/13/22,United States,Iowa,"Story County, IA",Red-tailed Hawk,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202171,Mortality/Morbidity,TRUE,2,3/28/22,3/31/22,United States,Iowa,"Boone County, IA",Great Horned Owl,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202170,Mortality/Morbidity,TRUE,1,4/19/22,4/19/22,United States,Nebraska,"Douglas County, NE",Peregrine Falcon,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202169,Mortality/Morbidity,TRUE,1,4/19/22,4/19/22,United States,Nebraska,"Lancaster County, NE",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202168,Mortality/Morbidity,TRUE,1,4/14/22,4/14/22,United States,Montana,"Gallatin County, MT",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202167,Mortality/Morbidity,TRUE,1,4/8/22,4/8/22,United States,Montana,"Lewis And Clark County, MT",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202148,Mortality/Morbidity,TRUE,10,4/21/22,6/13/22,United States,Wisconsin,"Winnebago County, WI",American White Pelican; Herring Gull,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202147,Mortality/Morbidity,TRUE,1,3/22/22,3/22/22,United States,Missouri,"Jackson County, MO",Ross' Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202146,Mortality/Morbidity,TRUE,3,4/12/22,,United States,Pennsylvania,"Franklin County, PA",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202144,Mortality/Morbidity,TRUE,1,2/3/22,2/3/22,Canada,British Columbia,"Greater Vancouver Regional District, BC",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202139,Mortality/Morbidity,TRUE,1,4/21/22,4/21/22,United States,Indiana,"Newton County, IN",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5)
+202137,Mortality/Morbidity,TRUE,1,3/7/22,3/7/22,United States,Missouri,"Pettis County, MO",Ross' Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202132,Mortality/Morbidity,TRUE,101,4/16/22,4/19/22,United States,Maryland,"Harford County, MD",Black Vulture; Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202131,Mortality/Morbidity,TRUE,1,4/11/22,4/12/22,United States,Indiana,"Shelby County, IN",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202125,Mortality/Morbidity,TRUE,3,4/12/22,4/12/22,United States,Montana,"Yellowstone County, MT",Turkey (Wild),Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202122,Mortality/Morbidity,TRUE,1,4/12/22,4/12/22,United States,Indiana,"Miami County, IN",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202121,Mortality/Morbidity,TRUE,1,4/18/22,4/18/22,United States,Idaho,"Custer County, ID",Great Horned Owl,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202120,Mortality/Morbidity,TRUE,2,4/15/22,5/15/22,United States,Idaho,"Bonneville County, ID",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202119,Mortality/Morbidity,TRUE,4,4/10/22,4/15/22,United States,Idaho,"Twin Falls County, ID",American White Pelican,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202118,Mortality/Morbidity,TRUE,1,3/5/22,3/5/22,United States,Ohio,"Auglaize County, OH",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202115,Mortality/Morbidity,TRUE,1,4/13/22,4/13/22,United States,Indiana,"Johnson County, IN",Red-tailed Hawk,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202096,Mortality/Morbidity,TRUE,1,3/25/22,3/25/22,United States,Florida,"Hillsborough County, FL",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202087,Mortality/Morbidity,TRUE,1,3/25/22,3/25/22,United States,Kansas,"Rawlins County, KS",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5) suspect
+202083,Mortality/Morbidity,TRUE,1,3/19/22,3/19/22,United States,North Carolina,"Johnston County, NC",Wood Duck,Highly Pathogenic Avian Influenza (AI virus H5) suspect
+202065,Mortality/Morbidity,TRUE,1,3/24/22,3/24/22,United States,New York,"Onondaga County, NY",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202063,Mortality/Morbidity,TRUE,1,4/4/22,4/4/22,United States,South Dakota,"Lake County, SD",Lesser Scaup,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202062,Mortality/Morbidity,TRUE,500,3/30/22,5/13/22,United States,Montana,"Teton County, MT",Lesser Snow Goose; Ross' Goose; Unidentified Avian,Aspergillosis; Highly Pathogenic Avian Influenza (AI virus H5N1)
+202059,Mortality/Morbidity,TRUE,1,3/28/22,3/28/22,United States,South Dakota,"Minnehaha County, SD",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202058,Mortality/Morbidity,TRUE,33,3/19/22,3/19/22,United States,South Dakota,"Kingsbury County, SD",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202057,Mortality/Morbidity,TRUE,6,3/18/22,3/18/22,United States,South Dakota,"Day County, SD",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202056,Mortality/Morbidity,TRUE,55,3/17/22,3/18/22,United States,South Dakota,"Aurora County, SD",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202055,Mortality/Morbidity,TRUE,10,3/16/22,3/22/22,United States,South Dakota,"Beadle County, SD",Snow Goose; Ross' Goose; Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202054,Mortality/Morbidity,TRUE,1,3/31/22,3/31/22,United States,New York,"Clinton County, NY",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202053,Mortality/Morbidity,TRUE,1,4/5/22,4/5/22,United States,New York,"Monroe County, NY",Red-tailed Hawk,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202052,Mortality/Morbidity,TRUE,1,3/30/22,3/30/22,United States,New York,"Cayuga County, NY",Cooper's Hawk,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202048,Mortality/Morbidity,TRUE,4,4/4/22,4/4/22,United States,Nebraska,"Lancaster County, NE",American White Pelican,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202045,Mortality/Morbidity,TRUE,1,4/6/22,4/6/22,United States,Indiana,"Starke County, IN",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202041,Mortality/Morbidity,TRUE,1,4/2/22,4/4/22,United States,Ohio,"Clinton County, OH",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202040,Mortality/Morbidity,TRUE,1,3/25/22,3/25/22,United States,Ohio,"Montgomery County, OH",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202033,Mortality/Morbidity,TRUE,2,4/5/22,4/5/22,United States,Wisconsin,"Juneau County, WI",Hooded Merganser,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202031,Mortality/Morbidity,TRUE,706,3/22/22,4/28/22,United States,Minnesota,"Houston County, MN",Lesser Scaup; American Coot; Canada Goose; Bufflehead; Unidentified Gull; Trumpeter Swan; Great Horned Owl,Highly Pathogenic Avian Influenza (AI virus H5N1); Trematodiasis (Cyathocotyle bushiensis); Trematodiasis (Leyogonimus polyoon); Trematodiasis (Sphaeridiotrema sp.)
+202026,Mortality/Morbidity,TRUE,1,2/18/22,2/18/22,United States,Florida,"Brevard County, FL",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5)
+202024,Mortality/Morbidity,TRUE,1,2/22/22,2/22/22,United States,North Carolina,"Dare County, NC",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5)
+202021,Mortality/Morbidity,TRUE,2,2/28/22,2/28/22,United States,Florida,"Brevard County, FL",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5)
+202020,Mortality/Morbidity,TRUE,3,2/23/22,2/25/22,United States,Florida,"Brevard County, FL",Great Horned Owl,Highly Pathogenic Avian Influenza (AI virus H5)
+202019,Mortality/Morbidity,TRUE,1,3/1/22,3/1/22,United States,Florida,"Brevard County, FL",Laughing Gull,Highly Pathogenic Avian Influenza (AI virus H5)
+202018,Mortality/Morbidity,TRUE,1,2/25/22,2/25/22,United States,Florida,"Brevard County, FL",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202017,Mortality/Morbidity,TRUE,1,2/27/22,2/27/22,United States,Florida,"Brevard County, FL",Great Blue Heron,Highly Pathogenic Avian Influenza (AI virus H5)
+202015,Mortality/Morbidity,TRUE,1,3/7/22,3/7/22,United States,Florida,"Brevard County, FL",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202014,Mortality/Morbidity,TRUE,1,3/7/22,3/7/22,United States,Florida,"Brevard County, FL",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+202013,Mortality/Morbidity,TRUE,1,2/16/22,2/16/22,United States,Florida,"Brevard County, FL",Bald Eagle,Blunt Trauma (not otherwise specified) suspect; Highly Pathogenic Avian Influenza (AI virus H5N1)
+202008,Mortality/Morbidity,TRUE,1,3/25/22,3/25/22,United States,Minnesota,"Dakota County, MN",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202007,Mortality/Morbidity,TRUE,1,3/25/22,3/25/22,United States,Minnesota,"Hennepin County, MN",Wood Duck,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202006,Mortality/Morbidity,TRUE,2,3/23/22,3/23/22,United States,Nebraska,"Scotts Bluff County, NE",Snow Goose; Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202004,Mortality/Morbidity,TRUE,4,3/31/22,4/1/22,United States,Illinois,"Will County, IL",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+202002,Mortality/Morbidity,TRUE,1,3/28/22,3/28/22,United States,Wisconsin,"Pepin County, WI",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202001,Mortality/Morbidity,TRUE,5,3/28/22,3/30/22,United States,Wisconsin,"Brown County, WI",Mute Swan,Highly Pathogenic Avian Influenza (AI virus H5N1)
+202000,Mortality/Morbidity,TRUE,152,3/19/22,3/31/22,United States,Idaho,"Canyon County, ID",Snow Goose,Aspergillosis; Emaciation (not otherwise specified); Highly Pathogenic Avian Influenza (AI virus H5); Undetermined
+201999,Mortality/Morbidity,TRUE,1,3/21/22,3/23/22,United States,South Dakota,"Aurora County, SD",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201998,Mortality/Morbidity,TRUE,1,3/22/22,3/22/22,United States,South Dakota,"Codington County, SD",Great Horned Owl,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201997,Mortality/Morbidity,TRUE,1,3/20/22,3/20/22,United States,Minnesota,"Dakota County, MN",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201996,Mortality/Morbidity,TRUE,32,3/17/22,,United States,Michigan,"St Clair County, MI",Canada Goose; Tundra Swan,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201995,Mortality/Morbidity,TRUE,2,3/16/22,3/17/22,United States,Michigan,"Macomb County, MI",Snowy Owl,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201993,Mortality/Morbidity,TRUE,6,3/21/22,3/25/22,United States,Pennsylvania,"Venango County, PA; Crawford County, PA",Hooded Merganser; Redhead Duck,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201990,Mortality/Morbidity,TRUE,50,3/21/22,3/28/22,United States,Minnesota,"Wilkin County, MN",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201989,Mortality/Morbidity,TRUE,5,3/20/22,3/24/22,United States,New York,"Wayne County, NY",Tundra Swan; Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201986,Mortality/Morbidity,TRUE,1,3/22/22,3/22/22,United States,Florida,"Brevard County, FL",Royal Tern,Highly Pathogenic Avian Influenza (AI virus H5) suspect
+201985,Mortality/Morbidity,TRUE,2,3/12/22,3/17/22,United States,Florida,"Brevard County, FL",Royal Tern,Highly Pathogenic Avian Influenza (AI virus H5N1) suspect
+201983,Mortality/Morbidity,TRUE,2,3/21/22,3/21/22,United States,Florida,"Brevard County, FL",Herring Gull,Bacterial Infection (not otherwise specified) suspect; Highly Pathogenic Avian Influenza (AI virus H5N1); Trauma (not otherwise specified) suspect
+201974,Mortality/Morbidity,TRUE,3,3/18/22,3/22/22,United States,Florida,"Dixie County, FL",Common Loon; Greater Scaup; Laughing Gull,Highly Pathogenic Avian Influenza (AI virus H5) suspect; Undetermined
+201973,Mortality/Morbidity,TRUE,1,3/25/22,3/25/22,United States,North Dakota,"Cass County, ND",Snowy Owl,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201972,Mortality/Morbidity,TRUE,1,3/12/22,3/12/22,United States,North Carolina,"Craven County, NC",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5)
+201971,Mortality/Morbidity,TRUE,1,3/17/22,3/17/22,United States,North Carolina,"Pamlico County, NC",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5) suspect
+201970,Mortality/Morbidity,TRUE,1,3/8/22,3/10/22,United States,North Carolina,"Currituck County, NC",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5); Trauma (not otherwise specified)
+201968,Mortality/Morbidity,TRUE,1,2/26/22,2/26/22,United States,North Carolina,"Durham County, NC",Great Blue Heron,Highly Pathogenic Avian Influenza (AI virus H5) suspect; Trauma (not otherwise specified)
+201963,Mortality/Morbidity,TRUE,1,3/17/22,3/18/22,United States,South Carolina,"Colleton County, SC",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5)
+201953,Mortality/Morbidity,TRUE,1,3/1/22,3/1/22,United States,South Carolina,"Lexington County, SC",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5)
+201950,Mortality/Morbidity,TRUE,1,3/1/22,3/1/22,United States,Georgia,"Liberty County, GA",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5)
+201949,Mortality/Morbidity,TRUE,1,3/28/22,3/28/22,United States,North Dakota,"Mercer County, ND",Great Horned Owl,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201947,Mortality/Morbidity,TRUE,1,3/16/22,3/16/22,United States,Wisconsin,"Vernon County, WI",Snowy Owl,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201944,Mortality/Morbidity,TRUE,1,3/27/22,3/27/22,United States,North Dakota,"Mercer County, ND",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201943,Mortality/Morbidity,TRUE,1,3/26/22,3/26/22,United States,North Dakota,"Renville County, ND",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201942,Mortality/Morbidity,TRUE,1,3/22/22,3/22/22,United States,Maine,"York County, ME",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201941,Mortality/Morbidity,TRUE,1,3/23/22,3/23/22,United States,Maine,"Lincoln County, ME",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201940,Mortality/Morbidity,TRUE,1,3/25/22,3/25/22,United States,Minnesota,"Blue Earth County, MN",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201939,Mortality/Morbidity,TRUE,1,3/19/22,3/19/22,United States,Pennsylvania,"Chester County, PA",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201938,Mortality/Morbidity,TRUE,91,3/13/22,3/14/22,United States,Iowa,"Page County, IA",Snow Goose; Ross' Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201937,Mortality/Morbidity,TRUE,1,3/16/22,3/16/22,United States,Illinois,"Champaign County, IL",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201936,Mortality/Morbidity,TRUE,4,3/8/22,3/8/22,United States,Massachusetts,"Middlesex County, MA",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201935,Mortality/Morbidity,TRUE,1,2/24/22,2/24/22,United States,New Hampshire,"Rockingham County, NH",Snowy Owl,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201934,Mortality/Morbidity,TRUE,1,3/14/22,3/14/22,United States,Illinois,"Sangamon County, IL",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201931,Mortality/Morbidity,TRUE,3,3/21/22,3/22/22,United States,New York,"Seneca County, NY",Canada Goose; Great Blue Heron; Snowy Owl,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201930,Mortality/Morbidity,TRUE,152,3/18/22,3/18/22,United States,New York,"Cayuga County, NY",Snow Goose; Ring-necked Duck; Redhead Duck,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201929,Mortality/Morbidity,TRUE,6,2/20/22,4/4/22,United States,New York,"Suffolk County, NY",Great Horned Owl; Bald Eagle; Sanderling; Fish Crow,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201926,Mortality/Morbidity,TRUE,1,3/23/22,3/23/22,United States,Wisconsin,"Grant County, WI",Red-tailed Hawk,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201925,Mortality/Morbidity,TRUE,5,3/22/22,,United States,North Dakota,"Renville County, ND",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201923,Mortality/Morbidity,TRUE,5,3/11/22,,United States,Florida,"Volusia County, FL",Black Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201922,Mortality/Morbidity,TRUE,1,3/13/22,3/13/22,United States,Nebraska,"Brown County, NE",Trumpeter Swan,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201921,Mortality/Morbidity,TRUE,2,3/4/22,3/10/22,United States,Florida,"Duval County, FL",Brown Pelican,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201920,Mortality/Morbidity,TRUE,1,3/15/22,3/15/22,United States,Nebraska,"Otoe County, NE",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201919,Mortality/Morbidity,TRUE,12,3/13/22,3/23/22,United States,Wisconsin,"Polk County, WI",Trumpeter Swan,Highly Pathogenic Avian Influenza (AI virus H5N1); Toxicosis (lead)
+201916,Mortality/Morbidity,TRUE,1,3/21/22,3/21/22,United States,North Dakota,"La Moure County, ND",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201911,Mortality/Morbidity,TRUE,1,3/21/22,3/21/22,United States,North Dakota,"Burleigh County, ND",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201909,Mortality/Morbidity,TRUE,150,3/20/22,3/21/22,United States,North Dakota,"Stutsman County, ND",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201908,Mortality/Morbidity,TRUE,1,3/10/22,3/10/22,United States,Kansas,"Jefferson County, KS",American White Pelican,Highly Pathogenic Avian Influenza (AI virus H5)
+201906,Mortality/Morbidity,TRUE,1,3/14/22,3/14/22,United States,Kansas,"Clay County, KS",Red-tailed Hawk,Highly Pathogenic Avian Influenza (AI virus H5)
+201905,Mortality/Morbidity,TRUE,1,3/14/22,3/14/22,United States,Kansas,"Riley County, KS",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5)
+201904,Mortality/Morbidity,TRUE,1,3/13/22,3/13/22,United States,Florida,"Duval County, FL",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5)
+201903,Mortality/Morbidity,TRUE,5,12/1/21,3/15/22,United States,Georgia,"Brantley County, GA; Chatham County, GA; Glynn County, GA; McIntosh County, GA",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5); Trauma (not otherwise specified)
+201901,Mortality/Morbidity,TRUE,1,3/8/22,3/8/22,United States,Florida,"Seminole County, FL",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5)
+201899,Mortality/Morbidity,TRUE,1,3/3/22,3/3/22,United States,Florida,"Seminole County, FL",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201897,Mortality/Morbidity,TRUE,1,3/7/22,3/7/22,United States,Iowa,"Polk County, IA",Mallard,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201896,Mortality/Morbidity,TRUE,1,3/20/22,3/20/22,United States,Wisconsin,"Milwaukee County, WI",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201894,Mortality/Morbidity,TRUE,1,3/16/22,3/16/22,United States,Wisconsin,"Columbia County, WI",Lesser Scaup,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201893,Mortality/Morbidity,TRUE,1,3/7/22,3/7/22,United States,Nebraska,"Douglas County, NE",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201892,Mortality/Morbidity,TRUE,1,3/7/22,3/7/22,United States,Nebraska,"Cedar County, NE",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201891,Mortality/Morbidity,TRUE,33,3/5/22,,United States,Ohio,"Cuyahoga County, OH",Canada Goose; Mallard,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201890,Mortality/Morbidity,TRUE,1,3/14/22,3/14/22,United States,Wisconsin,"Dane County, WI",Bald Eagle,Electrocution (not otherwise specified); Highly Pathogenic Avian Influenza (AI virus H5N1)
+201888,Mortality/Morbidity,TRUE,1010,3/12/22,3/27/22,United States,Kansas,"Jewell County, KS",Lesser Snow Goose; Ross' Goose,Highly Pathogenic Avian Influenza (AI virus H5)
+201887,Mortality/Morbidity,TRUE,1,3/4/22,3/4/22,United States,Nebraska,"Lancaster County, NE",Ross' Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201886,Mortality/Morbidity,TRUE,1,3/13/22,3/13/22,United States,Wisconsin,"Dane County, WI",Cooper's Hawk,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201884,Mortality/Morbidity,TRUE,31,3/7/22,3/14/22,United States,South Dakota,"Stanley County, SD",Canada Goose; Red-tailed Hawk,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201883,Mortality/Morbidity,TRUE,1,3/11/22,3/11/22,United States,Maine,"York County, ME",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201880,Mortality/Morbidity,TRUE,1,3/4/22,3/4/22,United States,Ohio,"Guernsey County, OH",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201879,Mortality/Morbidity,TRUE,3,3/9/22,3/16/22,United States,Minnesota,"Kandiyohi County, MN",Great Horned Owl; Red-tailed Hawk,Highly Pathogenic Avian Influenza (AI virus H5); Undetermined
+201872,Mortality/Morbidity,TRUE,1,3/8/22,3/8/22,United States,North Carolina,"Davidson County, NC",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201868,Mortality/Morbidity,TRUE,1,3/8/22,3/8/22,United States,North Carolina,"Beaufort County, NC",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5) suspect
+201864,Mortality/Morbidity,TRUE,1,3/4/22,3/4/22,United States,North Carolina,"Pamlico County, NC",Ruddy Duck,Highly Pathogenic Avian Influenza (AI virus H5)
+201863,Mortality/Morbidity,TRUE,2,3/4/22,3/5/22,United States,South Carolina,"Charleston County, SC",Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5)
+201860,Mortality/Morbidity,TRUE,1,2/20/22,2/20/22,United States,North Carolina,"Brunswick County, NC",Brown Pelican,Highly Pathogenic Avian Influenza (AI virus H5)
+201858,Mortality/Morbidity,TRUE,3,3/1/22,3/1/22,United States,Florida,"Charlotte County, FL",Hooded Merganser,Highly Pathogenic Avian Influenza (AI virus H5) suspect
+201850,Mortality/Morbidity,TRUE,155,3/7/22,4/1/22,United States,South Dakota,"Charles Mix County, SD",Snow Goose; Canada Goose; Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201849,Mortality/Morbidity,TRUE,1,3/1/22,3/2/22,United States,Ohio,"Ottawa County, OH",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201848,Mortality/Morbidity,TRUE,3001,3/4/22,3/23/22,United States,Kansas,"Mitchell County, KS",Lesser Snow Goose; Bald Eagle,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201847,Mortality/Morbidity,TRUE,506,3/4/22,3/23/22,United States,Kansas,"Norton County, KS",Lesser Snow Goose; Canada Goose; Unidentified Duck; American Coot; Ross' Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201845,Mortality/Morbidity,TRUE,80,3/7/22,4/4/22,United States,Missouri,"Chariton County, MO",Snow Goose,Avian Cholera; Highly Pathogenic Avian Influenza (AI virus H5N1)
+201838,Mortality/Morbidity,TRUE,7,3/1/22,3/7/22,United States,Ohio,"Ottawa County, OH",Bald Eagle; Unidentified Gull; Common Merganser; Peregrine Falcon,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201837,Mortality/Morbidity,TRUE,320,3/6/22,3/7/22,United States,Illinois,"Fulton County, IL",Snow Goose; Ross' Goose,Avian Cholera; Highly Pathogenic Avian Influenza (AI virus H5N1)
+201833,Mortality/Morbidity,TRUE,19,3/1/22,9/15/22,United States,Massachusetts,"Barnstable County, MA",Northern Gannet; Sanderling; Great Shearwater; Red-tailed Hawk; Turkey Vulture,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201831,Mortality/Morbidity,TRUE,5,2/24/22,2/24/22,United States,Georgia,"Camden County, GA",Lesser Scaup,Highly Pathogenic Avian Influenza (AI virus H5)
+201830,Mortality/Morbidity,TRUE,1,1/24/22,1/24/22,United States,Georgia,"Glynn County, GA",Lesser Scaup,Highly Pathogenic Avian Influenza (AI virus H5)
+201829,Mortality/Morbidity,TRUE,4077,3/2/22,4/11/22,United States,Missouri,"Holt County, MO",Lesser Snow Goose; Ross' Goose; American Coot,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201825,Mortality/Morbidity,TRUE,60,2/1/22,3/2/22,United States,Illinois,"Will County, IL",Canada Goose; American White Pelican,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201822,Mortality/Morbidity,TRUE,1,2/28/22,2/28/22,United States,Missouri,"Clay County, MO",American White Pelican,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201821,Mortality/Morbidity,TRUE,2,2/3/22,2/9/22,United States,Massachusetts,"Barnstable County, MA",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201820,Mortality/Morbidity,TRUE,1,2/25/22,2/26/22,United States,Ohio,"Erie County, OH",Herring Gull,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201810,Mortality/Morbidity,TRUE,1,2/14/22,2/14/22,United States,North Carolina,"Wake County, NC",Red-shouldered Hawk,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201807,Mortality/Morbidity,TRUE,1,2/28/22,2/28/22,United States,Missouri,"St Louis County, MO",Hooded Merganser,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201798,Mortality/Morbidity,TRUE,50,2/8/22,2/22/22,United States,New Hampshire,"Strafford County, NH",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201789,Mortality/Morbidity,TRUE,1036,2/7/22,3/15/22,United States,Florida,"Brevard County, FL",Lesser Scaup; Black Vulture; Bald Eagle; Great Blue Heron; Great Horned Owl; Hooded Merganser; Royal Tern; Unidentified Gull,Highly Pathogenic Avian Influenza (AI virus H5); Highly Pathogenic Avian Influenza (AI virus H5N1)
+201786,Mortality/Morbidity,TRUE,2,2/8/22,2/8/22,United States,Kentucky,"Ballard County, KY",Snow Goose,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201779,Mortality/Morbidity,TRUE,1,2/2/22,2/2/22,United States,North Carolina,"Carteret County, NC",Redhead Duck,Highly Pathogenic Avian Influenza (AI virus H5N1)
+201745,Mortality/Morbidity,TRUE,9,2/3/22,3/11/22,United States,Delaware,"Kent County, DE",Snow Goose; Unidentified Gull; Canada Goose; Great Blue Heron,Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+201739,Mortality/Morbidity,TRUE,15,1/6/22,2/4/22,United States,North Carolina,"Hyde County, NC",Snow Goose; Tundra Swan,Gout; Highly Pathogenic Avian Influenza (AI virus H5N1); Undetermined
+17332,Mortality/Morbidity,TRUE,1,6/10/15,6/10/15,United States,Minnesota,"Ramsey County, MN",Black-capped Chickadee,Highly Pathogenic Avian Influenza (AI virus H5); Undetermined
+17331,Mortality/Morbidity,TRUE,1,3/16/15,3/16/15,United States,Wyoming,"Laramie County, WY",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N2); Undetermined
+17329,Mortality/Morbidity,TRUE,1,3/13/15,3/13/15,United States,Kansas,"Lyon County, KS",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N2); Undetermined
+17302,Mortality/Morbidity,TRUE,1,4/13/15,4/13/15,United States,Wisconsin,"Oconto County, WI",Snowy Owl,Highly Pathogenic Avian Influenza (AI virus H5N2)
+17301,Mortality/Morbidity,TRUE,1,1/9/15,1/9/15,United States,Washington,"Skagit County, WA",Red-tailed Hawk,Highly Pathogenic Avian Influenza (AI virus H5N2)
+17300,Mortality/Morbidity,TRUE,1,4/14/15,4/14/15,United States,Minnesota,"Yellow Medicine County, MN",Cooper's Hawk,Highly Pathogenic Avian Influenza (AI virus H5N2)
+17299,Mortality/Morbidity,TRUE,2,1/20/15,1/20/15,United States,Idaho,"Canyon County, ID",Bald Eagle; Mallard,Highly Pathogenic Avian Influenza (AI virus H5N8)
+17253,Mortality/Morbidity,TRUE,22,5/28/15,6/15/15,United States,Michigan,"Macomb County, MI",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5) suspect; Highly Pathogenic Avian Influenza (AI virus H5N2); West Nile Virus; Trauma (not otherwise specified)
+17229,Mortality/Morbidity,TRUE,1,12/30/14,12/30/14,United States,Washington,"Jefferson County, WA",Canada Goose,Highly Pathogenic Avian Influenza (AI virus H5N2)
+17221,Mortality/Morbidity,TRUE,1,12/29/14,12/29/14,United States,Washington,"Grays Harbor County, WA",Peregrine Falcon,Highly Pathogenic Avian Influenza (AI virus H5N8); Electrocution (not otherwise specified) suspect
+17220,Mortality/Morbidity,TRUE,1,12/29/14,12/29/14,United States,Washington,"Whatcom County, WA",Cooper's Hawk,Highly Pathogenic Avian Influenza (AI virus H5N2); Trauma (predation or aggression) suspect
+17167,Mortality/Morbidity,TRUE,1,12/31/14,12/31/14,United States,Washington,"Benton County, WA",Red-tailed Hawk,Highly Pathogenic Avian Influenza (AI virus H5N2); Blunt Trauma (not otherwise specified)
+17159,Mortality/Morbidity,TRUE,216,3/10/15,3/17/15,United States,Kentucky,"McCracken County, KY",Unidentified Waterfowl; Ring-necked Duck; Lesser Snow Goose; Mallard,Avian Cholera; Highly Pathogenic Avian Influenza (AI virus H5N2)
+17120,Mortality/Morbidity,TRUE,16,3/6/15,3/11/15,United States,Missouri,"St Charles County, MO",Lesser Snow Goose; Mallard,Highly Pathogenic Avian Influenza (AI virus H5N2); Undetermined
+17055,Mortality/Morbidity,TRUE,140,12/1/14,1/15/15,United States,Washington,"Whatcom County, WA",Trumpeter Swan; Tundra Swan; American Coot; American Wigeon; Mallard; Northern Pintail; Northern Shoveler; Ruddy Duck; Unidentified Duck,Aspergillosis; Emaciation (not otherwise specified); Highly Pathogenic Avian Influenza (AI virus H5N2); Highly Pathogenic Avian Influenza (AI virus H5N8); Toxicosis (lead)
