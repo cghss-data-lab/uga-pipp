@@ -8,6 +8,7 @@ def neo4j_handler():
 
 
 @pytest.mark.asyncio
+@pytest.mark.taxon
 @pytest.mark.integrity
 async def test_duplicate_geographies(neo4j_handler):
     query = """
@@ -21,6 +22,7 @@ async def test_duplicate_geographies(neo4j_handler):
 
 
 @pytest.mark.asyncio
+@pytest.mark.taxon
 @pytest.mark.integrity
 async def test_unique_geoname_id(neo4j_handler):
     query = """

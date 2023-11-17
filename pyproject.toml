@@ -26,6 +26,12 @@ markers = [
   "ncbi: mark a test designed for ncbi api",
   "cache: mark a test designed for the cache system",
   "wahis: mark a test designed for wahis api",
+  "geography: mark a test designed for geographies",
+  "taxon: mark a test designed for taxons",
+  "flunet: mark a test designed for flunet",
+  "gmpd: mark a test designed for gmpd",
+  "virion: mark a test designed for virion",
+  "wahis: mark a test designed for wahis",
   "unit: mark a unit test",
   "integrity: mark an integrity test"
 ]
