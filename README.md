@@ -2,7 +2,7 @@
   PIPP Knowledge Graph
 </h1>
 
-This project contains source code for the ETL supporting the ingestion of data into Neo4j. Developed on Python 3.9 for local builds.
+This project contains source code for the ETL supporting the ingestion of data into Neo4j. Developed on Python 3.9 and Neo4j 5.10.
 
 ## Deployment
 
