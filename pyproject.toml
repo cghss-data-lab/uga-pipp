@@ -10,12 +10,8 @@ disable = [
 ]
 
 [tool.pylint]
-ignore-paths = "tests/*.py"
-
-
-[tool.pylint]
 generated-members = "torch.*"
-
+ignore-paths = "tests/*.py"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
