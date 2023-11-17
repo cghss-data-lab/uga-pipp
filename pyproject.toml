@@ -9,6 +9,9 @@ disable = [
   "duplicate-code",
 ]
 
+[tool.pylint]
+ignore-paths = "tests/*.py"
+
 
 [tool.pylint]
 generated-members = "torch.*"
