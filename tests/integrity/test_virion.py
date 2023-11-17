@@ -16,7 +16,7 @@ async def test_virion_no_single_nodes(neo4j_handler):
     WHERE NOT (v)-[:ASSOCIATES]-()
     RETURN v
     """
-    result = neo4j_handler.run_query(query)
+    result = await neo4j_handler.run_query(query)
     assert len(result) == 0
 
 
@@ -29,7 +29,7 @@ async def test_virion_schema(neo4j_handler):
     WITH v, COLLECT(s) AS m, COLLECT(t) AS p
     RETURN v, m, p
     """
-    result = neo4j_handler.run_query(query)
+    result = await neo4j_handler.run_query(query)
 
     for graph in result:
         for rel, node in zip(graph["m"], graph["p"]):

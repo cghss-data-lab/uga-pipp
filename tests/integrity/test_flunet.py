@@ -16,7 +16,7 @@ async def test_flunet_no_single_nodes(neo4j_handler):
     WHERE NOT (f)-[:REPORTS]-(t)
     RETURN f
     """
-    result = neo4j_handler.run_query(query)
+    result = await neo4j_handler.run_query(query)
     assert len(result) == 0
 
 
@@ -29,7 +29,7 @@ async def test_flunet_schema(neo4j_handler):
     WITH f, COLLECT(s) AS m, COLLECT(t) AS p
     RETURN f, m, p
     """
-    result = neo4j_handler.run_query(query)
+    result = await neo4j_handler.run_query(query)
 
     for graph in result:
         for rel, node in zip(graph["m"], graph["p"]):

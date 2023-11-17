@@ -16,7 +16,7 @@ async def test_gmpd_no_single_nodes(neo4j_handler):
     WHERE NOT (g)-[:ASSOCIATES]-() OR NOT (g)-[:ABOUT]-()
     RETURN g
     """
-    result = neo4j_handler.run_query(query)
+    result = await neo4j_handler.run_query(query)
     assert len(result) == 0
 
 
@@ -29,7 +29,7 @@ async def test_gmpd_schema(neo4j_handler):
     WITH g, COLLECT(r) AS m, COLLECT(t) AS p
     RETURN g, m, p
     """
-    result = neo4j_handler.run_query(query)
+    result = await neo4j_handler.run_query(query)
 
     for graph in result:
         for rel, node in zip(graph["m"], graph["p"]):

@@ -16,7 +16,7 @@ async def test_wahis_no_single_nodes(neo4j_handler):
     WHERE NOT (w))-[:REPORTS]-(t)
     RETURN w
     """
-    result = neo4j_handler.run_query(query)
+    result = await neo4j_handler.run_query(query)
     assert len(result) == 0
 
 
@@ -29,7 +29,7 @@ async def test_wahis_schema(neo4j_handler):
     WITH w, COLLECT(s) AS m, COLLECT(t) AS p
     RETURN w, m, p
     """
-    result = neo4j_handler.run_query(query)
+    result = await neo4j_handler.run_query(query)
 
     for graph in result:
         for rel, node in zip(graph["m"], graph["p"]):
