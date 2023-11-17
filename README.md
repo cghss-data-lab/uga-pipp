@@ -75,6 +75,6 @@ Wall-clock benchmarks for MacBook Pro 2019 8-Core Intel Core i9, time is display
 | GMPD     | 0.75 min          | 0.71 min      |
 | WAHIS    | 4.8 min           | 5.05 min      |
 | Virion   | 5.0 min           | 4.78 min      |
-| Combine  | 1.3 min           | 1.24 min      |
-| WorldPop | 1.8 min           | 0.35 min      |
-| Total    | 14.5 min          | 12.74 min     |
+| Combine  | --                | 1.24 min      |
+| WorldPop | --                | 0.35 min      |
+| Total    | --                | 12.74 min     |
