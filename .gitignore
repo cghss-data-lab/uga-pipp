@@ -34,3 +34,4 @@ env/
 venv/
 
 /analysis
+data/Virion.csv
