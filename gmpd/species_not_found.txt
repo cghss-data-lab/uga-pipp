@@ -1,0 +1,23 @@
+Error getting taxon: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Error getting taxon: 'NoneType' object has no attribute 'children'
+Error getting taxon: HTTPSConnectionPool(host='eutils.ncbi.nlm.nih.gov', port=443): Max retries exceeded with url: /entrez/eutils/esearch.fcgi?db=Taxonomy&term=Papio+anubis+neumanni (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x132098a50>, 'Connection to eutils.ncbi.nlm.nih.gov timed out. (connect timeout=None)'))
+Error getting taxon: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Error getting taxon: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Error getting taxon: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Error getting taxon: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Error getting taxon: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Error getting taxon: 'NoneType' object has no attribute 'children'
+Error getting taxon: HTTPSConnectionPool(host='eutils.ncbi.nlm.nih.gov', port=443): Max retries exceeded with url: /entrez/eutils/esearch.fcgi?db=Taxonomy&term=Rabies (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x1278fd510>, 'Connection to eutils.ncbi.nlm.nih.gov timed out. (connect timeout=None)'))
+Error getting taxon: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Error getting taxon: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Error getting taxon: 'NoneType' object has no attribute 'children'
+Error getting taxon: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Error getting taxon: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Error getting taxon: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Error getting taxon: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Error getting taxon: 'NoneType' object has no attribute 'children'
+Error getting taxon: 'NoneType' object has no attribute 'Taxon'
+Error getting taxon: HTTPSConnectionPool(host='eutils.ncbi.nlm.nih.gov', port=443): Max retries exceeded with url: /entrez/eutils/esearch.fcgi?db=Taxonomy&term=Trichinella+sp. (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x12d429e90>, 'Connection to eutils.ncbi.nlm.nih.gov timed out. (connect timeout=None)'))
+Error getting taxon: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Error getting taxon: 'NoneType' object has no attribute 'children'
+Error getting taxon: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
