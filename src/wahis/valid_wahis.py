@@ -11,7 +11,7 @@ def process_dates(date: str) -> str:
     return date_strip.strftime("%Y-%m-%d")
 
 
-def remove_unneded_keys(row: dict) -> None:
+def remove_unneeded_keys(row: dict) -> None:
     row.pop("sources", None)
     row.pop("measures", None)
     row.pop("methods", None)
@@ -44,7 +44,7 @@ def process_report(metadata: dict, tax_names: set, lat_long: set):
         outbreak["startDate"] = process_dates(outbreak["startDate"])
         outbreak["endDate"] = process_dates(outbreak["endDate"])
 
-    remove_unneded_keys(metadata)
+    remove_unneeded_keys(metadata)
     return metadata
 
 
