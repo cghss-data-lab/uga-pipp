@@ -23,8 +23,21 @@ async def ingest_wahis(
 
     for row in wahis:
         row["host"] = ncbiapi.process_taxon(row["event"]["disease"]["group"], taxons)
+        
+        subtype = row["subType"]
+        ncbi_search_name = None
+        if subtype and 'disease' in subtype:
+            sero = subtype['disease']
+            if sero and 'name' in sero:
+                ncbi_search_name = sero['name']
+        
+        if not ncbi_search_name:
+            path = row['causalAgent']
+            if path and 'name' in path:
+                ncbi_search_name = path['name']
+
         row["pathogen"] = ncbiapi.process_taxon(
-            row["event"]["causalAgent"]["name"], taxons
+            ncbi_search_name, taxons
         )
         row["outbreak"]["geonames"] = geonames[row["outbreak"]["geonames"]]
 
