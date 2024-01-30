@@ -22,7 +22,7 @@ def remove_unneded_keys(row: dict) -> None:
 
 
 def process_report(metadata: dict, tax_names: set, lat_long: set):
-    metadata["report"]["uqReportId"] = f"WAHIS-{metadata['report']['reportId']}"
+    metadata["report"]["reportId"] = {metadata['report']['reportId']}
     metadata["report"]["reportedOn"] = process_dates(metadata["report"]["reportedOn"])
 
     if metadata["event"]["eventComment"]:
