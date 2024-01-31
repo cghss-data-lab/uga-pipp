@@ -29,19 +29,24 @@ ON CREATE SET
         territory.fcode = mapping.outbreak.geonames.fcode
 MERGE (event)-[:OCCURS_IN]->(territory)
 
-// Set host information
-FOREACH (map in (CASE WHEN mapping.host.taxId IS NOT NULL THEN [1] ELSE [] END) |
-        MERGE (host:Taxon {taxId : mapping.host.taxId})
-        ON CREATE SET
-                host.name = mapping.host.name,
-                host.rank = mapping.host.rank,
-                host.dataSource = "NCBI Taxonomy"
-        MERGE (event)-[involves:INVOLVES {role : 'host'}]->(host)
-        ON CREATE SET
-                involves.caseCount = mapping.quantitativeData.totals.cases,
-                involves.deathCount = mapping.quantitativeData.totals.deaths,
-                //involves.detectionDate = mapping.quantitativeData.totals
-                involves.isWild = mapping.quantitativeData.totals.isWild)
+// Set host information (mapping.hosts = array of dictionaries)
+// Skip host data list if tax ID is null
+FOREACH (hostDataList in mapping.hosts |
+        FOREACH (hostData in (CASE WHEN hostDataList.taxId IS NOT NULL THEN hostDataList ELSE [] END) |
+                MERGE (host:Taxon {taxId: hostData.taxId})
+                ON CREATE SET
+                        host.name = hostData.name,
+                        host.rank = hostData.rank,
+                        host.dataSource = "NCBI Taxonomy"
+                MERGE (event)-[involves:INVOLVES {role: 'host'}]->(host)
+                ON CREATE SET
+                        involves.processed = hostData.processed,
+                        involves.positive = hostData.positive,
+                        involves.deaths = hostData.deaths,
+                        involves.observation_type = hostData.observation_type,
+                        involves.observation_date = hostData.observation_date,
+                        involves.species_wild = hostData.species_wild
+        ))
 
 // Process pathogen information
 FOREACH (map in (CASE WHEN mapping.pathogen.taxId IS NOT NULL THEN [1] ELSE [] END) |
