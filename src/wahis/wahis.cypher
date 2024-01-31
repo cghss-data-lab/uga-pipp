@@ -2,14 +2,14 @@ UNWIND $Mapping AS mapping
 MERGE (report:Report:WAHIS {reportId: mapping.report.reportId})
 ON CREATE SET 
         report.dataSource = "WAHIS",
-        report.reportDate = mapping.report.reportedOn,
+        report.reportDate = DATE(mapping.report.reportedOn),
         report.reasonForReport = mapping.event.reason.translation,
         report.reportDescription = mapping.event.eventComment
 
 MERGE (event:Event:Outbreak {eventId : mapping.outbreak.outbreakId})
 ON CREATE SET
-        event.startDate = mapping.outbreak.startDate,
-        event.endDate = mapping.outbreak.endDate,
+        event.startDate = DATE(mapping.outbreak.startDate),
+        event.endDate = DATE(mapping.outbreak.endDate),
         event.description = mapping.outbreak.description
 
 MERGE (report)-[:REPORTS]->(event)
@@ -44,7 +44,7 @@ FOREACH (hostDataList in mapping.hosts |
                         involves.positive = hostData.positive,
                         involves.deaths = hostData.deaths,
                         involves.observation_type = hostData.observation_type,
-                        involves.observation_date = hostData.observation_date,
+                        involves.observation_date = DATE(hostData.observation_date),
                         involves.species_wild = hostData.species_wild
         ))
 

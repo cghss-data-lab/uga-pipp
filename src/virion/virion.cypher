@@ -1,8 +1,8 @@
 UNWIND $Mapping AS mapping
 CREATE (virion:Virion:Report {dataSource : "Virion",
     reportId : mapping.reportId,
-    reportDate : mapping.report_date,
-    collectionDate : mapping.collection_date,
+    reportDate : DATE(mapping.report_date),
+    collectionDate : DATE(mapping.collection_date),
     ncbiAccession : mapping.ncbi_accession})
 
 MERGE (host:Taxon {taxId : mapping.HostTaxID})

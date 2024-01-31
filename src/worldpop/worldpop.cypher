@@ -2,7 +2,7 @@ UNWIND $Mapping AS mapping
 CREATE (population:Population {
     dataSource : mapping.dataSource,
     reportId : mapping.reportId,
-    date : mapping.date,
+    date : DATE(mapping.date),
     duration : mapping.duration,
     totalPopulation : mapping.TPopulation1July,
     medianAge : mapping.MedianAgePop,
