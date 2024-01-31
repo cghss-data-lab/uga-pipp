@@ -1,5 +1,5 @@
 UNWIND $Mapping AS mapping
-CREATE (virion:Virion:Report {dataSource : "Virion",
+CREATE (virion:Report {dataSource : "Virion",
     reportId : mapping.reportId,
     reportDate : DATE(mapping.report_date),
     collectionDate : DATE(mapping.collection_date),

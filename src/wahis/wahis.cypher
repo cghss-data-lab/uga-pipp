@@ -1,5 +1,5 @@
 UNWIND $Mapping AS mapping
-MERGE (report:Report:WAHIS {reportId: mapping.report.reportId})
+MERGE (report:Report {reportId: mapping.report.reportId})
 ON CREATE SET 
         report.dataSource = "WAHIS",
         report.reportDate = DATE(mapping.report.reportedOn),

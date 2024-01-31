@@ -24,12 +24,14 @@ def valid_gmpd(geoapi, ncbi_api, file: str = "data/GMPD_main.csv") -> list[dict]
 
     with open(file, "r", encoding="utf-8-sig") as gmpd_file:
         gmpd = csv.DictReader(gmpd_file)
-        for row in gmpd:
+        for idx, row in gmpd:
             if not is_valid_report(row):
                 continue
 
             row["Positive"] = float(row["Prevalence"]) * float(row["NumSamples"])
             locations = (row["Latitude"], row["Longitude"])
+            row["reportId"] = idx
+
 
             geonames.add(locations)
             tax_names.add(row["HostCorrectedName"])

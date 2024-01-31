@@ -1,5 +1,7 @@
 UNWIND $Mapping AS mapping
-MERGE (gmpd:GMPD:Report {reference : mapping.Citation})
+MERGE (gmpd:Report {dataSource: "GMPD",
+                    reference : mapping.Citation,
+                    reportId: mapping.reportId})
 
 
 // Process host information

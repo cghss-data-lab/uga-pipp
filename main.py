@@ -20,13 +20,13 @@ async def main() -> None:
     database_handler, geonames_api, ncbi_api = Neo4jHandler(), GeonamesApi(), NCBIApi()
 
     await ingest_wahis(database_handler, geonames_api, ncbi_api)
-    # await ingest_virion(database_handler, ncbi_api)
-    # await ingest_flunet(database_handler, geonames_api, ncbi_api)
-    # await ingest_gmpd(database_handler, geonames_api, ncbi_api)
+    await ingest_virion(database_handler, ncbi_api)
+    await ingest_flunet(database_handler, geonames_api, ncbi_api)
+    await ingest_gmpd(database_handler, geonames_api, ncbi_api)
 
-    # # # Keep combine and worldpop at the end of ingestion
-    # await ingest_combine(database_handler)
-    # await ingest_worldpop(database_handler, geonames_api)
+    # Keep combine and worldpop at the end of ingestion
+    await ingest_combine(database_handler)
+    await ingest_worldpop(database_handler, geonames_api)
 
 
 if __name__ == "__main__":

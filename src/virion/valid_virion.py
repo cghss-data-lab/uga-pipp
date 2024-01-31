@@ -39,7 +39,7 @@ def valid_virion(ncbiapi):
             if row["HostTaxID"] == "" or row["VirusTaxID"] == "":
                 continue
 
-            row["reportId"] = f"Virion-{idx}"
+            row["reportId"] = idx
 
             row["ncbi_accession"] = process_accession(row["NCBIAccession"])
 
