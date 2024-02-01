@@ -20,12 +20,12 @@ ON CREATE SET
         territory.data_source = 'GeoNames',
         territory.geoname_id = mapping.outbreak.geonames.geonameId,
         territory.name = mapping.outbreak.geonames.name,
-        territory.adminType = mapping.outbreak.geonames.adminType,
+        territory.admin_type = mapping.outbreak.geonames.adminType,
         territory.iso2 = mapping.outbreak.geonames.iso2,
-        territory.fclName = mapping.outbreak.geonames.fclName,
-        territory.fcodeName = mapping.outbreak.geonames.fcodeName,
+        territory.fcl_name = mapping.outbreak.geonames.fclName,
+        territory.fcode_name = mapping.outbreak.geonames.fcodeName,
         territory.lat = toFloat(mapping.outbreak.geonames.lat),
-        territory.lng = toFloat(mapping.outbreak.geonames.lng),
+        territory.long = toFloat(mapping.outbreak.geonames.lng),
         territory.fcode = mapping.outbreak.geonames.fcode
 MERGE (event)-[:OCCURS_IN]->(territory)
 
