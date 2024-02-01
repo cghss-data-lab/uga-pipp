@@ -28,7 +28,8 @@ def valid_gmpd(geoapi, ncbi_api, file: str = "data/GMPD_main.csv") -> list[dict]
             if not is_valid_report(row):
                 continue
 
-            row["Positive"] = float(row["Prevalence"]) * float(row["NumSamples"])
+            row["positive"] = float(row["Prevalence"]) * float(row["NumSamples"])
+            row["processed"] = float(row["NumSamples"])
             locations = (row["Latitude"], row["Longitude"])
             row["report_id"] = idx
 
