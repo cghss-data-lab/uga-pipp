@@ -1,5 +1,5 @@
 UNWIND $Mapping as mapping
-MERGE (tax:Taxon {taxId : mapping.taxId})
+MERGE (tax:Taxon {tax_id : mapping.taxId})
 ON CREATE SET 
     tax.name = mapping.name,
     tax.rank = mapping.rank,

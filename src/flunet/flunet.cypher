@@ -7,19 +7,19 @@ CREATE (event:Event {eventId : mapping.eventId,
     collected : mapping.Collected,
     processed : mapping.Processed})
 
-MERGE (host:Taxon {taxId : 9606,
+MERGE (host:Taxon {tax_id : 9606,
     name : 'Homo sapiens',
     rank : 'Species',
     data_source : 'NCBI Taxonomy'})
-MERGE (influenzaA:Taxon {taxId : 11320,
+MERGE (influenzaA:Taxon {tax_id : 11320,
     name : "Influenza A virus",
     rank : "Species",
     data_source : 'NCBI Taxonomy'})
-MERGE (influenzaB:Taxon {taxId : 11520,
+MERGE (influenzaB:Taxon {tax_id : 11520,
     name : "Influenza B virus",
     rank : "Species",
     data_source : 'NCBI Taxonomy'})
-MERGE (influenzaH:Taxon {taxId : 114727,
+MERGE (influenzaH:Taxon {tax_id : 114727,
     name : "H1N1 subtype",
     rank : "Serotype",
     data_source : 'NCBI Taxonomy'})
