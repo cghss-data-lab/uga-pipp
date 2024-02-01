@@ -24,7 +24,7 @@ def valid_worldpop(geo_api) -> list:
 
             row["data_source"] = DATA_SOURCE
 
-            row["reportId"] = index
+            row["report_id"] = index
             year = int(row["Time"])
 
             raw_date = datetime(year, 7, 1)

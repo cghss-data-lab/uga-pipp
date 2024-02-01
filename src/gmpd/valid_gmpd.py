@@ -30,7 +30,7 @@ def valid_gmpd(geoapi, ncbi_api, file: str = "data/GMPD_main.csv") -> list[dict]
 
             row["Positive"] = float(row["Prevalence"]) * float(row["NumSamples"])
             locations = (row["Latitude"], row["Longitude"])
-            row["reportId"] = idx
+            row["report_id"] = idx
 
 
             geonames.add(locations)

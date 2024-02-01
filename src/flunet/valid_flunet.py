@@ -2,7 +2,7 @@ import csv
 from datetime import datetime
 
 FIELDNAMES = (
-    "reportId",
+    "report_id",
     "Territory",
     "WHO region",
     "Transmission zone",
@@ -66,7 +66,7 @@ def valid_flunet(geo_api, file: str = "data/flunet_1995_2022.csv") -> list[dict]
 
             process_dates(row)
 
-            row["reportId"] = row['reportId']
+            row["report_id"] = row['report_id']
             row["eventId"] = f"Flu-{row['Territory']}-{str(row['start_date'])}"
 
             flunet_valid.append(row)
