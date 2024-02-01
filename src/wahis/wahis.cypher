@@ -1,7 +1,7 @@
 UNWIND $Mapping AS mapping
 MERGE (report:Report {reportId: mapping.report.reportId})
 ON CREATE SET 
-        report.dataSource = "WAHIS",
+        report.data_source = "WAHIS",
         report.reportDate = DATE(mapping.report.reportedOn),
         report.reasonForReport = mapping.event.reason.translation,
         report.reportDescription = mapping.event.eventComment
@@ -17,7 +17,7 @@ MERGE (report)-[:REPORTS]->(event)
 // Set geographical information
 MERGE (territory:Geography {geonameId : mapping.outbreak.geonames.geonameId})
 ON CREATE SET
-        territory.dataSource = 'GeoNames',
+        territory.data_source = 'GeoNames',
         territory.geonameId = mapping.outbreak.geonames.geonameId,
         territory.name = mapping.outbreak.geonames.name,
         territory.adminType = mapping.outbreak.geonames.adminType,
@@ -37,7 +37,7 @@ FOREACH (hostDataList in mapping.hosts |
                 ON CREATE SET
                         host.name = hostData.name,
                         host.rank = hostData.rank,
-                        host.dataSource = "NCBI Taxonomy"
+                        host.data_source = "NCBI Taxonomy"
                 MERGE (event)-[involves:INVOLVES {role: 'host'}]->(host)
                 ON CREATE SET
                         involves.processed = hostData.processed,
@@ -54,5 +54,5 @@ FOREACH (map in (CASE WHEN mapping.pathogen.taxId IS NOT NULL THEN [1] ELSE [] E
         ON CREATE SET
                 pathogen.name = mapping.pathogen.name,
                 pathogen.rank = mapping.pathogen.rank,
-                pathogen.dataSource = "NCBI Taxonomy"
+                pathogen.data_source = "NCBI Taxonomy"
         MERGE (event)-[:INVOLVES {role : 'pathogen'} ]->(pathogen))

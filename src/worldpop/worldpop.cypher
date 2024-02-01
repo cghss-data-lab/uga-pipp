@@ -1,6 +1,6 @@
 UNWIND $Mapping AS mapping
 CREATE (population:Population {
-    dataSource : mapping.dataSource,
+    data_source : mapping.data_source,
     reportId : mapping.reportId,
     date : DATE(mapping.date),
     duration : mapping.duration,

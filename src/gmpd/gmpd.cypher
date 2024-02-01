@@ -1,5 +1,5 @@
 UNWIND $Mapping AS mapping
-MERGE (gmpd:Report {dataSource: "GMPD",
+MERGE (gmpd:Report {data_source: "GMPD",
                     reference : mapping.Citation,
                     reportId: mapping.reportId})
 
@@ -10,7 +10,7 @@ FOREACH (map in (CASE WHEN mapping.Host.taxId IS NOT NULL THEN [1] ELSE [] END) 
     ON CREATE SET
         host.name = mapping.Host.name,
         host.rank = mapping.Host.rank,
-        host.dataSource = "NCBI Taxonomy"
+        host.data_source = "NCBI Taxonomy"
     MERGE (gmpd)-[:ASSOCIATES {role : 'host'}]->(host))
 
 // Process pathogen information
@@ -19,14 +19,14 @@ FOREACH (map in (CASE WHEN mapping.Parasite.taxId IS NOT NULL THEN [1] ELSE [] E
     ON CREATE SET
         pathogen.name = mapping.Parasite.name,
         pathogen.rank = mapping.Parasite.rank,
-        pathogen.dataSource = "NCBI Taxonomy"
+        pathogen.data_source = "NCBI Taxonomy"
     MERGE (gmpd)-[:ASSOCIATES {role : 'pathogen'}]->(pathogen))
 
 // Process geographical location 
 FOREACH (map in (CASE WHEN mapping.location.geonameId IS NOT NULL THEN [1] ELSE [] END) |
     MERGE (territory:Geography {geonameId : mapping.location.geonameId})
     ON CREATE SET 
-        territory.dataSource = 'GeoNames',
+        territory.data_source = 'GeoNames',
         territory.geonameId = mapping.location.geonameId,
         territory.name = mapping.location.name,
         territory.adminType = mapping.location.adminType,

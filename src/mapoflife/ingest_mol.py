@@ -30,7 +30,7 @@ def ingest_mol(SESSION):
             query = """
                 MERGE (t:Taxon {taxId: $taxon_ncbi_id})
                 MERGE (g:Geography:SpeciesRange {polygon: $wkt_polygon})
-                MERGE (t)-[:SPANS {dataSource: "Map of Life", reference: $reference}]->(g)
+                MERGE (t)-[:SPANS {data_source: "Map of Life", reference: $reference}]->(g)
             """
             logger.info(f'MERGE taxon: {scientificName}')
             SESSION.run(query, params)

@@ -54,7 +54,7 @@ class NCBIApi:
                 "taxId": taxon.TaxId.getText(),
                 "name": taxon.ScientificName.getText(),
                 "rank": taxon.Rank.getText(),
-                "dataSource": source,
+                "data_source": source,
             }
             return taxon_metadata
 

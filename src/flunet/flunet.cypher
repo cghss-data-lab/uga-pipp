@@ -10,19 +10,19 @@ CREATE (event:Event {eventId : mapping.eventId,
 MERGE (host:Taxon {taxId : 9606,
     name : 'Homo sapiens',
     rank : 'Species',
-    dataSource : 'NCBI Taxonomy'})
+    data_source : 'NCBI Taxonomy'})
 MERGE (influenzaA:Taxon {taxId : 11320,
     name : "Influenza A virus",
     rank : "Species",
-    dataSource : 'NCBI Taxonomy'})
+    data_source : 'NCBI Taxonomy'})
 MERGE (influenzaB:Taxon {taxId : 11520,
     name : "Influenza B virus",
     rank : "Species",
-    dataSource : 'NCBI Taxonomy'})
+    data_source : 'NCBI Taxonomy'})
 MERGE (influenzaH:Taxon {taxId : 114727,
     name : "H1N1 subtype",
     rank : "Serotype",
-    dataSource : 'NCBI Taxonomy'})
+    data_source : 'NCBI Taxonomy'})
 
 MERGE (flunet)-[:REPORTS]->(event)
 MERGE (event)-[:INVOLVES {role : 'host',
@@ -43,7 +43,7 @@ FOREACH (map in (CASE WHEN mapping.AH1N1 <> '' THEN [1] ELSE [] END) |
 FOREACH (map in (CASE WHEN mapping.geonames.geonameId IS NOT NULL THEN [1] ELSE [] END) |
     MERGE (territory:Geography {geonameId : mapping.geonames.geonameId})
     ON CREATE SET 
-        territory.dataSource = 'GeoNames',
+        territory.data_source = 'GeoNames',
         territory.geonameId = mapping.geonames.geonameId,
         territory.name = mapping.geonames.name,
         territory.adminType = mapping.geonames.adminType,

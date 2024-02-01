@@ -1,5 +1,5 @@
 UNWIND $Mapping AS mapping
-CREATE (virion:Report {dataSource : "Virion",
+CREATE (virion:Report {data_source : "Virion",
     reportId : mapping.reportId,
     reportDate : DATE(mapping.report_date),
     collectionDate : DATE(mapping.collection_date),
@@ -9,13 +9,13 @@ MERGE (host:Taxon {taxId : mapping.HostTaxID})
 ON CREATE SET
     host.name = mapping.host.name,
     host.rank = mapping.host.rank,
-    host.dataSource = "NCBI Taxonomy"
+    host.data_source = "NCBI Taxonomy"
 
 MERGE (pathogen:Taxon {taxId : mapping.VirusTaxID})
 ON CREATE SET
     pathogen.name = mapping.pathogen.name,
     pathogen.rank = mapping.pathogen.rank,
-    pathogen.dataSource = "NCBI Taxonomy"
+    pathogen.data_source = "NCBI Taxonomy"
 
 MERGE (virion)-[:ASSOCIATES {role : "host"}]->(host)
 MERGE (virion)-[:ASSOCIATES {role : "pathogen",
