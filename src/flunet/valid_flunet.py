@@ -9,7 +9,7 @@ FIELDNAMES = (
     "Transmission zone",
     "Year",
     "Week",
-    "startDate",
+    "start_date",
     "endDate",
     "Collected",
     "Processed",
@@ -44,7 +44,7 @@ def is_valid_report(data: dict) -> bool:
 
 
 def process_dates(data: dict) -> None:
-    data["startDate"] = datetime.strptime(data["startDate"], "%m/%d/%y").strftime(
+    data["start_date"] = datetime.strptime(data["start_date"], "%m/%d/%y").strftime(
         "%Y-%m-%d"
     )
     data["endDate"] = datetime.strptime(data["endDate"], "%m/%d/%y").strftime(
@@ -68,7 +68,7 @@ def valid_flunet(geo_api, file: str = "data/flunet_1995_2022.csv") -> list[dict]
             process_dates(row)
 
             row["reportId"] = {row['reportId']}
-            row["eventId"] = f"Flu-{row['Territory']}-{str(row['startDate'])}"
+            row["eventId"] = f"Flu-{row['Territory']}-{str(row['start_date'])}"
 
             flunet_valid.append(row)
 

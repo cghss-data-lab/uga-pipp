@@ -69,8 +69,8 @@ def process_report(metadata: dict, tax_names: set, lat_long: set):
         outbreak["geonames"] = location
         lat_long.add(location)
 
-        outbreak["startDate"] = process_dates(outbreak["startDate"])
-        outbreak["endDate"] = process_dates(outbreak["endDate"])
+        outbreak["start_date"] = process_dates(outbreak["startDate"])
+        outbreak["end_date"] = process_dates(outbreak["endDate"])
 
     remove_unneeded_keys(metadata)
     return metadata

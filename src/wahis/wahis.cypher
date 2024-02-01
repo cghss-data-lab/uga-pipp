@@ -8,7 +8,7 @@ ON CREATE SET
 
 MERGE (event:Event:Outbreak {eventId : mapping.outbreak.outbreakId})
 ON CREATE SET
-        event.startDate = DATE(mapping.outbreak.startDate),
+        event.start_date = DATE(mapping.outbreak.start_date),
         event.endDate = DATE(mapping.outbreak.endDate),
         event.description = mapping.outbreak.description
 

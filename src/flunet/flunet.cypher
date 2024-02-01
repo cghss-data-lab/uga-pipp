@@ -1,7 +1,7 @@
 UNWIND $Mapping AS mapping
 CREATE (flunet:Report {reportId : mapping.reportId})
 CREATE (event:Event {eventId : mapping.eventId,
-    startDate : DATE(mapping.startDate),
+    start_date : DATE(mapping.start_date),
     endDate : DATE(mapping.endDate),
     collected : mapping.Collected,
     processed : mapping.Processed,
