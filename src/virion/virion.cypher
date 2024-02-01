@@ -1,9 +1,8 @@
 UNWIND $Mapping AS mapping
-CREATE (virion:Report {data_source : "Virion",
-    reportId : mapping.reportId,
-    report_date : DATE(mapping.report_date),
-    collectionDate : DATE(mapping.collection_date),
-    ncbiAccession : mapping.ncbi_accession})
+CREATE (virion:Report {reportId : mapping.reportId, reportDate : mapping.report_date})
+CREATE (sample:Sample {data_source : "Virion",
+    collection_date : DATE(mapping.collection_date),
+    ncbi_accession : mapping.ncbi_accession})
 
 MERGE (host:Taxon {taxId : mapping.HostTaxID})
 ON CREATE SET
@@ -17,7 +16,8 @@ ON CREATE SET
     pathogen.rank = mapping.pathogen.rank,
     pathogen.data_source = "NCBI Taxonomy"
 
-MERGE (virion)-[:ASSOCIATES {role : "host"}]->(host)
-MERGE (virion)-[:ASSOCIATES {role : "pathogen",
-    detectionType : mapping.DetectionMethod}]->(pathogen)
+MERGE (virion)-[:REPORTS]->(sample)
+MERGE (sample)-[:INVOLVES {role : "host"}]->(host)
+MERGE (sample)-[:INVOLVES {role : "pathogen",
+    observation_type : mapping.DetectionMethod}]->(pathogen)
  
