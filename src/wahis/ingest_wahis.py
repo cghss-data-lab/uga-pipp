@@ -93,7 +93,6 @@ async def ingest_wahis(
     batches = (len(wahis) - 1) // batch_size + 1
     for i in range(batches):
         batch = wahis[i * batch_size : (i + 1) * batch_size]
-        debug(batch[0])
         await database_handler.execute_query(query_path, properties=batch)
 
     await handle_concurrency(
