@@ -15,10 +15,10 @@ ON CREATE SET
 MERGE (report)-[:REPORTS]->(event)
 
 // Set geographical information
-MERGE (territory:Geography {geonameId : mapping.outbreak.geonames.geonameId})
+MERGE (territory:Geography {geoname_id : mapping.outbreak.geonames.geonameId})
 ON CREATE SET
         territory.data_source = 'GeoNames',
-        territory.geonameId = mapping.outbreak.geonames.geonameId,
+        territory.geoname_id = mapping.outbreak.geonames.geonameId,
         territory.name = mapping.outbreak.geonames.name,
         territory.adminType = mapping.outbreak.geonames.adminType,
         territory.iso2 = mapping.outbreak.geonames.iso2,

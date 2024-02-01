@@ -24,10 +24,10 @@ FOREACH (map in (CASE WHEN mapping.Parasite.taxId IS NOT NULL THEN [1] ELSE [] E
 
 // Process geographical location 
 FOREACH (map in (CASE WHEN mapping.location.geonameId IS NOT NULL THEN [1] ELSE [] END) |
-    MERGE (territory:Geography {geonameId : mapping.location.geonameId})
+    MERGE (territory:Geography {geoname_id : mapping.location.geonameId})
     ON CREATE SET 
         territory.data_source = 'GeoNames',
-        territory.geonameId = mapping.location.geonameId,
+        territory.geoname_id = mapping.location.geonameId,
         territory.name = mapping.location.name,
         territory.adminType = mapping.location.adminType,
         territory.iso2 = mapping.location.iso2,

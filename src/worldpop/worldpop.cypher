@@ -14,5 +14,5 @@ CREATE (population:Population {
     infantDeaths : mapping.InfantDeaths,
     underFiveDeaths : mapping.Under5Deaths,
     netMigration : mapping.NetMigrations})
-MERGE (geography:Geography {geonameId: mapping.geonames.geonameId})
+MERGE (geography:Geography {geoname_id: mapping.geonames.geonameId})
 MERGE (population)-[:INHABITS]->(geography)

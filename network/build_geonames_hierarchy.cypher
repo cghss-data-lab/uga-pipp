@@ -1,5 +1,5 @@
 UNWIND $Mapping as mapping
-MERGE (geo:Geography {geonameId : mapping.geonameId})
+MERGE (geo:Geography {geoname_id : mapping.geonameId})
 ON CREATE SET 
     geo.name = mapping.name,
     geo.adminType = mapping.adminType,

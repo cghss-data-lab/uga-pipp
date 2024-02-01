@@ -60,10 +60,10 @@ FOREACH (map in (CASE WHEN mapping.Bnotsubtyped <> '' THEN [1] ELSE [] END) |
         positive : mapping.Bnotsubtyped}]->(influenzaB))
 
 FOREACH (map in (CASE WHEN mapping.geonames.geonameId IS NOT NULL THEN [1] ELSE [] END) |
-    MERGE (territory:Geography {geonameId : mapping.geonames.geonameId})
+    MERGE (territory:Geography {geoname_id : mapping.geonames.geonameId})
     ON CREATE SET 
         territory.data_source = 'GeoNames',
-        territory.geonameId = mapping.geonames.geonameId,
+        territory.geoname_id = mapping.geonames.geonameId,
         territory.name = mapping.geonames.name,
         territory.adminType = mapping.geonames.adminType,
         territory.iso2 = mapping.geonames.iso2,
