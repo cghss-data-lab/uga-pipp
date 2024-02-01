@@ -3,8 +3,8 @@ MERGE (report:Report {reportId: mapping.report.reportId})
 ON CREATE SET 
         report.data_source = "WAHIS",
         report.report_date = DATE(mapping.report.reportedOn),
-        report.reasonForReport = mapping.event.reason.translation,
-        report.reportDescription = mapping.event.eventComment
+        report.reason_for_report = mapping.event.reason.translation,
+        report.report_description = mapping.event.eventComment
 
 MERGE (event:Event:Outbreak {eventId : mapping.outbreak.outbreakId})
 ON CREATE SET
