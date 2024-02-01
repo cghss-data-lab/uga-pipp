@@ -2,12 +2,12 @@ UNWIND $Mapping as mapping
 MERGE (geo:Geography {geoname_id : mapping.geonameId})
 ON CREATE SET 
     geo.name = mapping.name,
-    geo.adminType = mapping.adminType,
+    geo.admin_type = mapping.adminType,
     geo.iso2 = mapping.iso2,
-    geo.fclName = mapping.fclName,
-    geo.fcodeName = mapping.fcodeName,
+    geo.fcl_name = mapping.fclName,
+    geo.fcode_name = mapping.fcodeName,
     geo.lat = toFloat(mapping.lat),
-    geo.lng = toFloat(mapping.lng),
+    geo.long = toFloat(mapping.lng),
     geo.fcode = mapping.fcode
 WITH COLLECT(geo) AS hierarchy
 UNWIND RANGE(0, SIZE(hierarchy) - 2) as idx

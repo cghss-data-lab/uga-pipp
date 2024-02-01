@@ -65,11 +65,11 @@ FOREACH (map in (CASE WHEN mapping.geonames.geonameId IS NOT NULL THEN [1] ELSE 
         territory.data_source = 'GeoNames',
         territory.geoname_id = mapping.geonames.geonameId,
         territory.name = mapping.geonames.name,
-        territory.adminType = mapping.geonames.adminType,
+        territory.admin_type = mapping.geonames.adminType,
         territory.iso2 = mapping.geonames.iso2,
-        territory.fclName = mapping.geonames.fclName,
-        territory.fcodeName = mapping.geonames.fcodeName,
+        territory.fcl_name = mapping.geonames.fclName,
+        territory.fcode_name = mapping.geonames.fcodeName,
         territory.lat = toFloat(mapping.geonames.lat),
-        territory.lng = toFloat(mapping.geonames.lng),
+        territory.long = toFloat(mapping.geonames.lng),
         territory.fcode = mapping.geonames.fcode
     MERGE (event)-[:OCCURS_IN]->(territory))
