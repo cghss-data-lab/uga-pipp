@@ -2,7 +2,7 @@ UNWIND $Mapping AS mapping
 MERGE (report:Report {reportId: mapping.report.reportId})
 ON CREATE SET 
         report.data_source = "WAHIS",
-        report.reportDate = DATE(mapping.report.reportedOn),
+        report.report_date = DATE(mapping.report.reportedOn),
         report.reasonForReport = mapping.event.reason.translation,
         report.reportDescription = mapping.event.eventComment
 
