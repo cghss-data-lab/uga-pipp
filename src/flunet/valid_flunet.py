@@ -35,7 +35,7 @@ def is_valid_report(data: dict) -> bool:
         data["caseCount"],
         data["Total negative"],
     ]
-    counts = [x in ["", "0"] for x in counts]
+    counts = [x in [""] for x in counts]
 
     if all(counts):
         return False
