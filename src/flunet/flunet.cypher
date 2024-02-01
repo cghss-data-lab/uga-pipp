@@ -2,10 +2,9 @@ UNWIND $Mapping AS mapping
 CREATE (flunet:Report {reportId : mapping.reportId})
 CREATE (event:Event {eventId : mapping.eventId,
     start_date : DATE(mapping.start_date),
-    endDate : DATE(mapping.endDate),
+    end_date : DATE(mapping.end_date),
     collected : mapping.Collected,
-    processed : mapping.Processed,
-    positive : mapping.caseCount})
+    processed : mapping.Processed})
 
 MERGE (host:Taxon {taxId : 9606,
     name : 'Homo sapiens',
@@ -25,20 +24,39 @@ MERGE (influenzaH:Taxon {taxId : 114727,
     data_source : 'NCBI Taxonomy'})
 
 MERGE (flunet)-[:REPORTS]->(event)
-MERGE (event)-[:INVOLVES {role : 'host',
-    caseCount:mapping.caseCount}]->(host)
+MERGE (event)-[:INVOLVES {role : 'host'}]->(host)
 
-FOREACH (map in (CASE WHEN mapping.Atotal <> '' THEN [1] ELSE [] END) |
-    MERGE (event)-[:INVOLVES {role : 'pathogen',
-        count : mapping.Atotal}]->(influenzaA))
-
-FOREACH (map in (CASE WHEN mapping.Btotal <> '' THEN [1] ELSE [] END) |
-    MERGE (event)-[:INVOLVES {role : 'pathogen',
-        count : mapping.Btotal}]->(influenzaB))
+FOREACH (map in (CASE WHEN mapping.AH1 <> '' THEN [1] ELSE [] END) |
+    MERGE (event)-[:INVOLVES {role : 'pathogen', subtype : 'A(H1)',
+        positive : mapping.AH1}]->(influenzaA))
 
 FOREACH (map in (CASE WHEN mapping.AH1N1 <> '' THEN [1] ELSE [] END) |
-    MERGE (event)-[:INVOLVES {role : 'pathogen',
-        count : mapping.AH1N1}]->(influenzaH))
+    MERGE (event)-[:INVOLVES {role : 'pathogen', 
+        positive : mapping.AH1N1}]->(influenzaH))
+
+FOREACH (map in (CASE WHEN mapping.AH3 <> '' THEN [1] ELSE [] END) |
+    MERGE (event)-[:INVOLVES {role : 'pathogen', subtype : 'A(H3)',
+        positive : mapping.AH3}]->(influenzaA))
+
+FOREACH (map in (CASE WHEN mapping.AH5 <> '' THEN [1] ELSE [] END) |
+    MERGE (event)-[:INVOLVES {role : 'pathogen', subtype : 'A(H5)',
+        positive : mapping.AH5}]->(influenzaA))
+
+FOREACH (map in (CASE WHEN mapping.Anotsubtyped <> '' THEN [1] ELSE [] END) |
+    MERGE (event)-[:INVOLVES {role : 'pathogen', subtype : 'NA',
+        positive : mapping.Anotsubtyped}]->(influenzaA))
+
+FOREACH (map in (CASE WHEN mapping.BYamagata <> '' THEN [1] ELSE [] END) |
+    MERGE (event)-[:INVOLVES {role : 'pathogen', subtype : 'Yamagata',
+        positive : mapping.BYamagata}]->(influenzaB))
+
+FOREACH (map in (CASE WHEN mapping.BVictoria <> '' THEN [1] ELSE [] END) |
+    MERGE (event)-[:INVOLVES {role : 'pathogen', subtype : 'Victoria',
+        positive : mapping.BVictoria}]->(influenzaB))
+
+FOREACH (map in (CASE WHEN mapping.Bnotsubtyped <> '' THEN [1] ELSE [] END) |
+    MERGE (event)-[:INVOLVES {role : 'pathogen', subtype : 'NA',
+        positive : mapping.Bnotsubtyped}]->(influenzaB))
 
 FOREACH (map in (CASE WHEN mapping.geonames.geonameId IS NOT NULL THEN [1] ELSE [] END) |
     MERGE (territory:Geography {geonameId : mapping.geonames.geonameId})

@@ -1,7 +1,6 @@
 import csv
 from datetime import datetime
 
-
 FIELDNAMES = (
     "reportId",
     "Territory",
@@ -10,7 +9,7 @@ FIELDNAMES = (
     "Year",
     "Week",
     "start_date",
-    "endDate",
+    "end_date",
     "Collected",
     "Processed",
     "AH1",
@@ -47,7 +46,7 @@ def process_dates(data: dict) -> None:
     data["start_date"] = datetime.strptime(data["start_date"], "%m/%d/%y").strftime(
         "%Y-%m-%d"
     )
-    data["endDate"] = datetime.strptime(data["endDate"], "%m/%d/%y").strftime(
+    data["end_date"] = datetime.strptime(data["end_date"], "%m/%d/%y").strftime(
         "%Y-%m-%d"
     )
 
@@ -67,7 +66,7 @@ def valid_flunet(geo_api, file: str = "data/flunet_1995_2022.csv") -> list[dict]
 
             process_dates(row)
 
-            row["reportId"] = {row['reportId']}
+            row["reportId"] = row['reportId']
             row["eventId"] = f"Flu-{row['Territory']}-{str(row['start_date'])}"
 
             flunet_valid.append(row)

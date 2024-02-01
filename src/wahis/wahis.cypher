@@ -9,7 +9,7 @@ ON CREATE SET
 MERGE (event:Event:Outbreak {eventId : mapping.outbreak.outbreakId})
 ON CREATE SET
         event.start_date = DATE(mapping.outbreak.start_date),
-        event.endDate = DATE(mapping.outbreak.endDate),
+        event.end_date = DATE(mapping.outbreak.end_date),
         event.description = mapping.outbreak.description
 
 MERGE (report)-[:REPORTS]->(event)
