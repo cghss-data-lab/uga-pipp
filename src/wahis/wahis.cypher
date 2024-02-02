@@ -6,7 +6,7 @@ ON CREATE SET
         report.reason_for_report = mapping.event.reason.translation,
         report.report_description = mapping.event.eventComment
 
-MERGE (event:Event {eventId : mapping.outbreak.outbreakId})
+MERGE (event:Event {event_id : mapping.outbreak.outbreakId})
 ON CREATE SET
         event.start_date = DATE(mapping.outbreak.start_date),
         event.end_date = DATE(mapping.outbreak.end_date),
