@@ -71,15 +71,22 @@ async def ingest_wahis(
         # Determine the pathogen name
         subtype = row['event']['subType']
         path_search_name = None
+
         if subtype and 'disease' in subtype:
             sero = subtype['disease']
             if sero and 'name' in sero:
                 path_search_name = sero['name']
         
         if not path_search_name:
-            path = row['causalAgent']
+            path = row['event']['causalAgent']
             if path and 'name' in path:
                 path_search_name = path['name']
+
+        if not path_search_name:
+            path = row['event']['disease']
+            if path and 'name' in path:
+                path_search_name = path['name']
+
 
         row["pathogen"] = ncbiapi.process_taxon(
             path_search_name, taxons

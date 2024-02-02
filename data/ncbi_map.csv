@@ -8,12 +8,12 @@ H7N6,H7N6 subtype
 SAT 2,Foot-and-mouth disease virus SAT 2
 Arctic Jaeger,Stercorarius parasiticus
 Dovekie,Alle alle
-White-winged parakeet,
-Rabbit/hares (mixed group),
-Manx Shearwater,
-Magnificent Frigatebird,
-Corvidae (unidentified),
-Brown hare (European Hare),
+White-winged parakeet,Brotogeris versicolurus
+Rabbit/hares (mixed group),Leporidae
+Manx Shearwater,Puffinus puffinus
+Magnificent Frigatebird,Fregata magnificens
+Corvidae (unidentified),Corvidae
+Brown hare (European Hare),Lepus europaeus
 Greate frigatebird,
 Waved albatross,
 Racoon (Northern raccoon),
@@ -50,3 +50,11 @@ Purple Sandpiper,
 Secretary bird,
 H5N2,
 Great White Pelican,
+Anatidae (unidentified),
+Whimbrel,
+RHDV2,
+Huillin,
+Buffaloes,
+Brown Pelican,
+H5N5,
+Red Rock hare,

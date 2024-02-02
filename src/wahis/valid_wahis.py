@@ -61,8 +61,11 @@ def process_report(metadata: dict, tax_names: set, lat_long: set):
             path_search_name = path['name']
             tax_names.add(path_search_name)
 
-
-    # metadata["quantitativeData"]["totals"] = metadata["quantitativeData"]["totals"][0]
+    if not path_search_name:
+        path = metadata['event']['disease']
+        if path and 'name' in path:
+            path_search_name = path['name']
+            tax_names.add(path_search_name)
 
     for outbreak in metadata["outbreaks"]:
         location = (outbreak["latitude"], outbreak["longitude"])
@@ -93,7 +96,7 @@ def is_valid(row: dict, empty: tuple = (None, "")) -> bool:
     if row["event"]["disease"]["group"] in empty:
         return False
 
-    if row["event"]["causalAgent"]["name"] in empty:
+    if row["event"]["disease"]["name"] in empty:
         return False
 
     return True
