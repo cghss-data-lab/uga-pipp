@@ -24,7 +24,7 @@ def valid_gmpd(geoapi, ncbi_api, file: str = "data/GMPD_main.csv") -> list[dict]
 
     with open(file, "r", encoding="utf-8-sig") as gmpd_file:
         gmpd = csv.DictReader(gmpd_file)
-        for idx, row in gmpd:
+        for idx, row in enumerate(gmpd):
             if not is_valid_report(row):
                 continue
 
