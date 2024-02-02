@@ -56,6 +56,6 @@ ON MATCH SET
     tax.island_endemicity = mapping.island_endemicity
 
 FOREACH (realm in mapping.biogeographical_realm | 
-    MERGE (geo:BioGeographicalRealm:Geography {name : realm })
+    MERGE (geo:Geography {name : realm, data_source : "COMBINE" })
     MERGE (tax)-[:INHABITS]->(geo)
 )
