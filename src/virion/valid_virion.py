@@ -16,7 +16,7 @@ def process_dates(year, month, day):
         return date.date()
     except ValueError:
         logger.trace("Incomplete date")
-        return "null"
+        # return "null"
 
 
 def process_accession(accession: str) -> list:
