@@ -33,6 +33,11 @@ def valid_gmpd(geoapi, ncbi_api, file: str = "data/GMPD_main.csv") -> list[dict]
             locations = (row["Latitude"], row["Longitude"])
             row["report_id"] = idx
 
+            if row["PopulationType"] == "WN":
+                row["species_wild"] = True
+
+            if row["PopulationType"] != "WN":
+                row["species_wild"] = False
 
             geonames.add(locations)
             tax_names.add(row["HostCorrectedName"])
