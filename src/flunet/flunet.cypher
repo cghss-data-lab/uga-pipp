@@ -1,27 +1,27 @@
 UNWIND $Mapping AS mapping
-CREATE (flunet:Report {report_id : mapping.report_id, data_source: 'FluNet'})
+CREATE (flunet:Report {report_id : toInteger(mapping.report_id), data_source: 'FluNet'})
 CREATE (event:Event {event_id : mapping.eventId,
     data_source : 'FluNet',
     start_date : DATE(mapping.start_date),
     end_date : DATE(mapping.end_date),
-    collected : mapping.Collected,
-    processed : mapping.Processed})
+    collected : toFloat(mapping.Collected),
+    processed : toFloat(mapping.Processed)})
 
-MERGE (host:Taxon {tax_id : 9606,
+MERGE (host:Taxon {tax_id : toInteger(9606),
     name : 'Homo sapiens',
-    rank : 'Species',
+    rank : 'species',
     data_source : 'NCBI Taxonomy'})
-MERGE (influenzaA:Taxon {tax_id : 11320,
+MERGE (influenzaA:Taxon {tax_id : toInteger(11320),
     name : "Influenza A virus",
-    rank : "Species",
+    rank : "species",
     data_source : 'NCBI Taxonomy'})
-MERGE (influenzaB:Taxon {tax_id : 11520,
+MERGE (influenzaB:Taxon {tax_id : toInteger(11520),
     name : "Influenza B virus",
-    rank : "Species",
+    rank : "species",
     data_source : 'NCBI Taxonomy'})
-MERGE (influenzaH:Taxon {tax_id : 114727,
+MERGE (influenzaH:Taxon {tax_id : toInteger(114727),
     name : "H1N1 subtype",
-    rank : "Serotype",
+    rank : "serotype",
     data_source : 'NCBI Taxonomy'})
 
 MERGE (flunet)-[:REPORTS]->(event)
@@ -29,41 +29,41 @@ MERGE (event)-[:INVOLVES {role : 'host'}]->(host)
 
 FOREACH (map in (CASE WHEN mapping.AH1 <> '' THEN [1] ELSE [] END) |
     MERGE (event)-[:INVOLVES {role : 'pathogen', subtype : 'A(H1)',
-        positive : mapping.AH1}]->(influenzaA))
+        positive : toFloat(mapping.AH1), deaths: 'NA', observation_type : "Laboratory detection"}]->(influenzaA))
 
 FOREACH (map in (CASE WHEN mapping.AH1N1 <> '' THEN [1] ELSE [] END) |
     MERGE (event)-[:INVOLVES {role : 'pathogen', 
-        positive : mapping.AH1N1}]->(influenzaH))
+        positive : toFloat(mapping.AH1N1), deaths: 'NA', observation_type : "Laboratory detection"}]->(influenzaH))
 
 FOREACH (map in (CASE WHEN mapping.AH3 <> '' THEN [1] ELSE [] END) |
     MERGE (event)-[:INVOLVES {role : 'pathogen', subtype : 'A(H3)',
-        positive : mapping.AH3}]->(influenzaA))
+        positive : toFloat(mapping.AH3), deaths: 'NA', observation_type : "Laboratory detection"}]->(influenzaA))
 
 FOREACH (map in (CASE WHEN mapping.AH5 <> '' THEN [1] ELSE [] END) |
     MERGE (event)-[:INVOLVES {role : 'pathogen', subtype : 'A(H5)',
-        positive : mapping.AH5}]->(influenzaA))
+        positive : toFloat(mapping.AH5), deaths: 'NA', observation_type : "Laboratory detection"}]->(influenzaA))
 
 FOREACH (map in (CASE WHEN mapping.Anotsubtyped <> '' THEN [1] ELSE [] END) |
     MERGE (event)-[:INVOLVES {role : 'pathogen', subtype : 'NA',
-        positive : mapping.Anotsubtyped}]->(influenzaA))
+        positive : toFloat(mapping.Anotsubtyped), deaths: 'NA', observation_type : "Laboratory detection"}]->(influenzaA))
 
 FOREACH (map in (CASE WHEN mapping.BYamagata <> '' THEN [1] ELSE [] END) |
     MERGE (event)-[:INVOLVES {role : 'pathogen', subtype : 'Yamagata',
-        positive : mapping.BYamagata}]->(influenzaB))
+        positive : toFloat(mapping.BYamagata), deaths: 'NA', observation_type : "Laboratory detection"}]->(influenzaB))
 
 FOREACH (map in (CASE WHEN mapping.BVictoria <> '' THEN [1] ELSE [] END) |
     MERGE (event)-[:INVOLVES {role : 'pathogen', subtype : 'Victoria',
-        positive : mapping.BVictoria}]->(influenzaB))
+        positive : toFloat(mapping.BVictoria), deaths: 'NA', observation_type : "Laboratory detection"}]->(influenzaB))
 
 FOREACH (map in (CASE WHEN mapping.Bnotsubtyped <> '' THEN [1] ELSE [] END) |
     MERGE (event)-[:INVOLVES {role : 'pathogen', subtype : 'NA',
-        positive : mapping.Bnotsubtyped}]->(influenzaB))
+        positive : toFloat(mapping.Bnotsubtyped), deaths: 'NA', observation_type : "Laboratory detection"}]->(influenzaB))
 
 FOREACH (map in (CASE WHEN mapping.geonames.geonameId IS NOT NULL THEN [1] ELSE [] END) |
     MERGE (territory:Geography {geoname_id : mapping.geonames.geonameId})
     ON CREATE SET 
         territory.data_source = 'GeoNames',
-        territory.geoname_id = mapping.geonames.geonameId,
+        territory.geoname_id = toInteger(mapping.geonames.geonameId),
         territory.name = mapping.geonames.name,
         territory.admin_type = mapping.geonames.adminType,
         territory.iso2 = mapping.geonames.iso2,
