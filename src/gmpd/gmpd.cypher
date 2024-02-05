@@ -1,14 +1,14 @@
 UNWIND $Mapping AS mapping
 CREATE (gmpd:Report {data_source: "GMPD",
                     reference : mapping.Citation,
-                    report_id: mapping.report_id})
+                    report_id: toInteger(mapping.report_id)})
 
-CREATE (sample:Sample {data_source: "GMPD"})
+CREATE (sample:Sample {data_source: "GMPD", processed: toFloat(mapping.processed)})
 
 MERGE (gmpd)-[:REPORTS]->(sample)
 // Process host information
 FOREACH (map in (CASE WHEN mapping.Host.taxId IS NOT NULL THEN [1] ELSE [] END) |
-    MERGE (host:Taxon {tax_id : mapping.Host.taxId})
+    MERGE (host:Taxon {tax_id : toInteger(mapping.Host.taxId)})
     ON CREATE SET
         host.name = mapping.Host.name,
         host.rank = mapping.Host.rank,
@@ -17,23 +17,24 @@ FOREACH (map in (CASE WHEN mapping.Host.taxId IS NOT NULL THEN [1] ELSE [] END) 
 
 // Process pathogen information
 FOREACH (map in (CASE WHEN mapping.Parasite.taxId IS NOT NULL THEN [1] ELSE [] END) |
-    MERGE (pathogen:Taxon {tax_id : mapping.Parasite.taxId})
+    MERGE (pathogen:Taxon {tax_id : toInteger(mapping.Parasite.taxId)})
     ON CREATE SET
         pathogen.name = mapping.Parasite.name,
         pathogen.rank = mapping.Parasite.rank,
         pathogen.data_source = "NCBI Taxonomy"
     MERGE (sample)-[:INVOLVES {role : 'pathogen', 
         observation_type : mapping.SamplingType, 
-        processed: mapping.processed, 
-        positive : mapping.positive
+        positive : toFloat(mapping.positive), 
+        deaths : "NA",
+        species_wild : toBoolean(mapping.species_wild)
     }]->(pathogen))
 
 // Process geographical location 
 FOREACH (map in (CASE WHEN mapping.location.geonameId IS NOT NULL THEN [1] ELSE [] END) |
-    MERGE (territory:Geography {geoname_id : mapping.location.geonameId})
+    MERGE (territory:Geography {geoname_id : toInteger(mapping.location.geonameId)})
     ON CREATE SET 
         territory.data_source = 'GeoNames',
-        territory.geoname_id = mapping.location.geonameId,
+        territory.geoname_id = toInteger(mapping.location.geonameId),
         territory.name = mapping.location.name,
         territory.admin_type = mapping.location.adminType,
         territory.iso2 = mapping.location.iso2,
