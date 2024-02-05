@@ -13,7 +13,7 @@ from src.worldpop.ingest_worldpop import ingest_worldpop
 
 
 logger.remove(0)
-logger.add(sys.stderr, level="INFO")
+logger.add(sys.stderr, level="TRACE")
 
 
 async def main() -> None:
