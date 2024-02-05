@@ -2,6 +2,10 @@ import aiohttp
 from aiohttp import ContentTypeError
 from loguru import logger
 
+from cache.cache import cache
+
+WAHIS_CACHE_FILE = "network/cache/wahis_cache.pickle"
+
 
 class WAHISApiError(Exception):
     def __init__(self, value, message):
@@ -27,6 +31,7 @@ class WAHISApi:
         report_url = f"review/report/{report_id}/all-information?language=en"
         return await self._wahis_api(report_url)
 
+    @cache(WAHIS_CACHE_FILE, is_class=True)
     async def _wahis_api(self, url) -> dict:
         base_url = f"https://wahis.woah.org/api/v1/pi/{url}"
         async with aiohttp.ClientSession(trust_env=True) as session:
