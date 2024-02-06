@@ -11,19 +11,19 @@ def process_dates(date: str) -> str:
     return date_strip.strftime("%Y-%m-%d")
 
 
-def remove_unneded_keys(row: dict) -> None:
+def remove_unneeded_keys(row: dict) -> None:
     row.pop("sources", None)
     row.pop("measures", None)
     row.pop("methods", None)
     row.pop("strategy", None)
     row.pop("laboratoryTests", None)
-    row.pop("quantitativeData", None)
     row.pop("selfDeclaration", None)
 
 
 def process_report(metadata: dict, tax_names: set, lat_long: set):
-    metadata["report"]["uqReportId"] = f"WAHIS-{metadata['report']['reportId']}"
+    metadata["report"]["reportId"] = metadata['report']['reportId']
     metadata["report"]["reportedOn"] = process_dates(metadata["report"]["reportedOn"])
+    metadata['event']['confirmOn'] = process_dates(metadata['event']['confirmOn'])
 
     if metadata["event"]["eventComment"]:
         metadata["event"]["eventComment"] = (
@@ -31,20 +31,51 @@ def process_report(metadata: dict, tax_names: set, lat_long: set):
             or metadata["event"]["eventComment"]["original"]
         )
 
-    tax_names.add(metadata["event"]["disease"]["group"])
-    tax_names.add(metadata["event"]["causalAgent"]["name"])
+    species_quantities = metadata['quantitativeData']['news']
+    species_totals = metadata['quantitativeData']['totals']
+    if species_quantities:
+        for species in species_quantities:
+            host_search_name = species['speciesName']
+            tax_names.add(host_search_name)
 
-    metadata["quantitativeData"]["totals"] = metadata["quantitativeData"]["totals"][0]
+            
+    elif species_totals:
+        for species in species_totals:
+            host_search_name = species['speciesName']
+            tax_names.add(host_search_name)
+    else:
+        host_search_name = metadata['event']['disease']['group']
+        tax_names.add(host_search_name)
+
+    subtype = metadata["event"]["subType"]
+    path_search_name = None
+    if subtype and 'disease' in subtype:
+        sero = subtype['disease']
+        if sero and 'name' in sero:
+            path_search_name = sero['name']
+            tax_names.add(path_search_name)
+
+    if not path_search_name:
+        path = metadata['event']['causalAgent']
+        if path and 'name' in path:
+            path_search_name = path['name']
+            tax_names.add(path_search_name)
+
+    if not path_search_name:
+        path = metadata['event']['disease']
+        if path and 'name' in path:
+            path_search_name = path['name']
+            tax_names.add(path_search_name)
 
     for outbreak in metadata["outbreaks"]:
         location = (outbreak["latitude"], outbreak["longitude"])
         outbreak["geonames"] = location
         lat_long.add(location)
 
-        outbreak["startDate"] = process_dates(outbreak["startDate"])
-        outbreak["endDate"] = process_dates(outbreak["endDate"])
+        outbreak["start_date"] = process_dates(outbreak["startDate"])
+        outbreak["end_date"] = process_dates(outbreak["endDate"])
 
-    remove_unneded_keys(metadata)
+    remove_unneeded_keys(metadata)
     return metadata
 
 
@@ -65,7 +96,7 @@ def is_valid(row: dict, empty: tuple = (None, "")) -> bool:
     if row["event"]["disease"]["group"] in empty:
         return False
 
-    if row["event"]["causalAgent"]["name"] in empty:
+    if row["event"]["disease"]["name"] in empty:
         return False
 
     return True
@@ -75,6 +106,7 @@ async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
     lat_long = set()
     tax_names = set()
 
+#5097
     evolutions = await handle_concurrency(
         *[wahis.search_evolution(event_id) for event_id in range(4714, 5097)]
     )

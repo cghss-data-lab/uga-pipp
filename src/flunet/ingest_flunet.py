@@ -3,6 +3,7 @@ from loguru import logger
 from tests.timer import timer
 from network.handle_concurrency import handle_concurrency
 from src.flunet.valid_flunet import valid_flunet
+from devtools import debug
 
 HUMAN_TAXID = 9606
 INFA_TAXID = 11320

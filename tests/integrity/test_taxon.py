@@ -27,7 +27,7 @@ async def test_duplicate_geographies(neo4j_handler):
 async def test_unique_geoname_id(neo4j_handler):
     query = """
     MATCH (t:Taxon)
-    RETURN t.taxId
+    RETURN t.tax_id
     """
     result = await neo4j_handler.run_query(query)
     assert len(result) == len(set(result))

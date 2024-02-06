@@ -2,7 +2,6 @@ import pickle
 from functools import wraps
 from typing import Callable
 
-
 def cache(file: str, is_class=False) -> Callable:
     """
     Simple cache implementation.

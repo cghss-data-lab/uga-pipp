@@ -1,16 +1,15 @@
 import csv
 from datetime import datetime
 
-
 FIELDNAMES = (
-    "reportId",
+    "report_id",
     "Territory",
     "WHO region",
     "Transmission zone",
     "Year",
     "Week",
-    "startDate",
-    "endDate",
+    "start_date",
+    "end_date",
     "Collected",
     "Processed",
     "AH1",
@@ -36,7 +35,7 @@ def is_valid_report(data: dict) -> bool:
         data["caseCount"],
         data["Total negative"],
     ]
-    counts = [x in ["", "0"] for x in counts]
+    counts = [x in [""] for x in counts]
 
     if all(counts):
         return False
@@ -44,10 +43,10 @@ def is_valid_report(data: dict) -> bool:
 
 
 def process_dates(data: dict) -> None:
-    data["startDate"] = datetime.strptime(data["startDate"], "%m/%d/%y").strftime(
+    data["start_date"] = datetime.strptime(data["start_date"], "%m/%d/%y").strftime(
         "%Y-%m-%d"
     )
-    data["endDate"] = datetime.strptime(data["endDate"], "%m/%d/%y").strftime(
+    data["end_date"] = datetime.strptime(data["end_date"], "%m/%d/%y").strftime(
         "%Y-%m-%d"
     )
 
@@ -67,8 +66,8 @@ def valid_flunet(geo_api, file: str = "data/flunet_1995_2022.csv") -> list[dict]
 
             process_dates(row)
 
-            row["reportId"] = f"FluNet-{row['reportId']}"
-            row["eventId"] = f"Flu-{row['Territory']}-{str(row['startDate'])}"
+            row["report_id"] = row['report_id']
+            row["eventId"] = f"Flu-{row['Territory']}-{str(row['start_date'])}"
 
             flunet_valid.append(row)
 

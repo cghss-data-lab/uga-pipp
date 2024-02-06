@@ -54,7 +54,7 @@ class NCBIApi:
                 "taxId": taxon.TaxId.getText(),
                 "name": taxon.ScientificName.getText(),
                 "rank": taxon.Rank.getText(),
-                "dataSource": source,
+                "data_source": source,
             }
             return taxon_metadata
 
@@ -84,7 +84,6 @@ class NCBIApi:
             ) as response:
                 result = await response.text()
                 result.replace("\n", "")
-
                 if "error" in result:
                     try:
                         error = json.loads(result)
@@ -92,7 +91,6 @@ class NCBIApi:
                     except json.JSONDecodeError:
                         logger.warning(result)
                         return
-
                 return BeautifulSoup(result, features="xml")
 
     @staticmethod

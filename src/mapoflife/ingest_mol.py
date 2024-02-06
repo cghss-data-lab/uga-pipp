@@ -28,9 +28,9 @@ def ingest_mol(SESSION):
             # Create taxon (or merge) if there's a match 
             # Taxon species :SPANS over the species range (a type of geography node)
             query = """
-                MERGE (t:Taxon {taxId: $taxon_ncbi_id})
+                MERGE (t:Taxon {tax_id: $taxon_ncbi_id})
                 MERGE (g:Geography:SpeciesRange {polygon: $wkt_polygon})
-                MERGE (t)-[:SPANS {dataSource: "Map of Life", reference: $reference}]->(g)
+                MERGE (t)-[:SPANS {data_source: "Map of Life", reference: $reference}]->(g)
             """
             logger.info(f'MERGE taxon: {scientificName}')
             SESSION.run(query, params)

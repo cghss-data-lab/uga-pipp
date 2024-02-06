@@ -1,37 +1,46 @@
 UNWIND $Mapping AS mapping
-MERGE (gmpd:GMPD:Report {reference : mapping.Citation})
+CREATE (gmpd:Report {data_source: "GMPD",
+                    reference : mapping.Citation,
+                    report_id: toInteger(mapping.report_id)})
 
+CREATE (sample:Sample {data_source: "GMPD", processed: toFloat(mapping.processed)})
 
+MERGE (gmpd)-[:REPORTS]->(sample)
 // Process host information
 FOREACH (map in (CASE WHEN mapping.Host.taxId IS NOT NULL THEN [1] ELSE [] END) |
-    MERGE (host:Taxon {taxId : mapping.Host.taxId})
+    MERGE (host:Taxon {tax_id : toInteger(mapping.Host.taxId)})
     ON CREATE SET
         host.name = mapping.Host.name,
         host.rank = mapping.Host.rank,
-        host.dataSource = "NCBI Taxonomy"
-    MERGE (gmpd)-[:ASSOCIATES {role : 'host'}]->(host))
+        host.data_source = "NCBI Taxonomy"
+    MERGE (sample)-[:INVOLVES {role : 'host'}]->(host))
 
 // Process pathogen information
 FOREACH (map in (CASE WHEN mapping.Parasite.taxId IS NOT NULL THEN [1] ELSE [] END) |
-    MERGE (pathogen:Taxon {taxId : mapping.Parasite.taxId})
+    MERGE (pathogen:Taxon {tax_id : toInteger(mapping.Parasite.taxId)})
     ON CREATE SET
         pathogen.name = mapping.Parasite.name,
         pathogen.rank = mapping.Parasite.rank,
-        pathogen.dataSource = "NCBI Taxonomy"
-    MERGE (gmpd)-[:ASSOCIATES {role : 'pathogen'}]->(pathogen))
+        pathogen.data_source = "NCBI Taxonomy"
+    MERGE (sample)-[:INVOLVES {role : 'pathogen', 
+        observation_type : mapping.SamplingType, 
+        positive : toFloat(mapping.positive), 
+        deaths : "NA",
+        species_wild : toBoolean(mapping.species_wild)
+    }]->(pathogen))
 
 // Process geographical location 
 FOREACH (map in (CASE WHEN mapping.location.geonameId IS NOT NULL THEN [1] ELSE [] END) |
-    MERGE (territory:Geography {geonameId : mapping.location.geonameId})
+    MERGE (territory:Geography {geoname_id : toInteger(mapping.location.geonameId)})
     ON CREATE SET 
-        territory.dataSource = 'GeoNames',
-        territory.geonameId = mapping.location.geonameId,
+        territory.data_source = 'GeoNames',
+        territory.geoname_id = toInteger(mapping.location.geonameId),
         territory.name = mapping.location.name,
-        territory.adminType = mapping.location.adminType,
+        territory.admin_type = mapping.location.adminType,
         territory.iso2 = mapping.location.iso2,
-        territory.fclName = mapping.location.fclName,
-        territory.fcodeName = mapping.location.fcodeName,
+        territory.fcl_name = mapping.location.fclName,
+        territory.fcode_name = mapping.location.fcodeName,
         territory.lat = toFloat(mapping.location.lat),
-        territory.lng = toFloat(mapping.location.lng),
+        territory.long = toFloat(mapping.location.lng),
         territory.fcode = mapping.location.fcode
-    MERGE (gmpd)-[:ABOUT]->(territory))
+    MERGE (sample)-[:OCCURS_IN]->(territory))

@@ -16,7 +16,7 @@ def process_dates(year, month, day):
         return date.date()
     except ValueError:
         logger.trace("Incomplete date")
-        return "null"
+        # return "null"
 
 
 def process_accession(accession: str) -> list:
@@ -39,7 +39,7 @@ def valid_virion(ncbiapi):
             if row["HostTaxID"] == "" or row["VirusTaxID"] == "":
                 continue
 
-            row["reportId"] = f"Virion-{idx}"
+            row["report_id"] = idx
 
             row["ncbi_accession"] = process_accession(row["NCBIAccession"])
 

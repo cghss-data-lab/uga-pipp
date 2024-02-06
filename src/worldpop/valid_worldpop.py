@@ -22,9 +22,9 @@ def valid_worldpop(geo_api) -> list:
                 iso_codes.add(iso2)
                 geonames_iso.append(geo_api.search_iso(iso2))
 
-            row["dataSource"] = DATA_SOURCE
+            row["data_source"] = DATA_SOURCE
 
-            row["reportId"] = "WorldPop-" + str(index)
+            row["report_id"] = index
             year = int(row["Time"])
 
             raw_date = datetime(year, 7, 1)

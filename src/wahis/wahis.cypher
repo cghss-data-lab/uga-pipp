@@ -1,53 +1,58 @@
 UNWIND $Mapping AS mapping
-MERGE (report:Report:WAHIS {uqReportId: mapping.report.uqReportId})
+MERGE (report:Report {report_id: toInteger(mapping.report.reportId)})
 ON CREATE SET 
-        report.dataSource = "WAHIS",
-        report.reportDate = mapping.report.reportedOn,
-        report.reasonForReport = mapping.event.reason.translation,
-        report.reportDescription = mapping.event.eventComment
+        report.data_source = "WAHIS",
+        report.report_date = DATE(mapping.report.reportedOn),
+        report.reason_for_report = mapping.event.reason.translation,
+        report.report_description = mapping.event.eventComment
 
-MERGE (event:Event:Outbreak {eventId : mapping.outbreak.outbreakId})
+MERGE (event:Event {event_id : mapping.outbreak.outbreakId})
 ON CREATE SET
-        event.startDate = mapping.outbreak.startDate,
-        event.endDate = mapping.outbreak.endDate,
+        event.start_date = DATE(mapping.outbreak.start_date),
+        event.end_date = DATE(mapping.outbreak.end_date),
         event.description = mapping.outbreak.description
 
 MERGE (report)-[:REPORTS]->(event)
 
 // Set geographical information
-MERGE (territory:Geography {geonameId : mapping.outbreak.geonames.geonameId})
+MERGE (territory:Geography {geoname_id : toInteger(mapping.outbreak.geonames.geonameId)})
 ON CREATE SET
-        territory.dataSource = 'GeoNames',
-        territory.geonameId = mapping.outbreak.geonames.geonameId,
+        territory.data_source = 'GeoNames',
+        territory.geoname_id = toInteger(mapping.outbreak.geonames.geonameId),
         territory.name = mapping.outbreak.geonames.name,
-        territory.adminType = mapping.outbreak.geonames.adminType,
+        territory.admin_type = mapping.outbreak.geonames.adminType,
         territory.iso2 = mapping.outbreak.geonames.iso2,
-        territory.fclName = mapping.outbreak.geonames.fclName,
-        territory.fcodeName = mapping.outbreak.geonames.fcodeName,
+        territory.fcl_name = mapping.outbreak.geonames.fclName,
+        territory.fcode_name = mapping.outbreak.geonames.fcodeName,
         territory.lat = toFloat(mapping.outbreak.geonames.lat),
-        territory.lng = toFloat(mapping.outbreak.geonames.lng),
+        territory.long = toFloat(mapping.outbreak.geonames.lng),
         territory.fcode = mapping.outbreak.geonames.fcode
 MERGE (event)-[:OCCURS_IN]->(territory)
 
-// Set host information
-FOREACH (map in (CASE WHEN mapping.host.taxId IS NOT NULL THEN [1] ELSE [] END) |
-        MERGE (host:Taxon {taxId : mapping.host.taxId})
-        ON CREATE SET
-                host.name = mapping.host.name,
-                host.rank = mapping.host.rank,
-                host.dataSource = "NCBI Taxonomy"
-        MERGE (event)-[involves:INVOLVES {role : 'host'}]->(host)
-        ON CREATE SET
-                involves.caseCount = mapping.quantitativeData.totals.cases,
-                involves.deathCount = mapping.quantitativeData.totals.deaths,
-                //involves.detectionDate = mapping.quantitativeData.totals
-                involves.isWild = mapping.quantitativeData.totals.isWild)
+// Set host information (mapping.hosts = array of dictionaries)
+// Skip host data list if tax ID is null
+FOREACH (hostDataList in mapping.hosts |
+        FOREACH (hostData in (CASE WHEN hostDataList.taxId IS NOT NULL THEN hostDataList ELSE [] END) |
+                MERGE (host:Taxon {tax_id: toInteger(hostData.taxId)})
+                ON CREATE SET
+                        host.name = hostData.name,
+                        host.rank = hostData.rank,
+                        host.data_source = "NCBI Taxonomy"
+                MERGE (event)-[involves:INVOLVES {role: 'host'}]->(host)
+                ON CREATE SET
+                        event.processed = toFloat(hostData.processed),
+                        involves.positive = toFloat(hostData.positive),
+                        involves.deaths = toFloat(hostData.deaths),
+                        involves.observation_type = hostData.observation_type,
+                        involves.observation_date = DATE(hostData.observation_date),
+                        involves.species_wild = toBoolean(hostData.species_wild)
+        ))
 
 // Process pathogen information
 FOREACH (map in (CASE WHEN mapping.pathogen.taxId IS NOT NULL THEN [1] ELSE [] END) |
-        MERGE (pathogen:Taxon {taxId : mapping.pathogen.taxId})
+        MERGE (pathogen:Taxon {tax_id : toInteger(mapping.pathogen.taxId)})
         ON CREATE SET
                 pathogen.name = mapping.pathogen.name,
                 pathogen.rank = mapping.pathogen.rank,
-                pathogen.dataSource = "NCBI Taxonomy"
+                pathogen.data_source = "NCBI Taxonomy"
         MERGE (event)-[:INVOLVES {role : 'pathogen'} ]->(pathogen))
