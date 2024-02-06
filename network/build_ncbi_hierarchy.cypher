@@ -1,5 +1,5 @@
 UNWIND $Mapping as mapping
-MERGE (tax:Taxon {tax_id : mapping.taxId})
+MERGE (tax:Taxon {tax_id : toInteger(mapping.taxId)})
 ON CREATE SET 
     tax.name = mapping.name,
     tax.rank = mapping.rank,
