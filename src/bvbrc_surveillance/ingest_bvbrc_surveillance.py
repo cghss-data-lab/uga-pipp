@@ -40,12 +40,14 @@ async def ingest_bvbrc_surveillance(
         *[
             database_handler.build_geohierarchy(hierarchy)
             for hierarchy in geo_hierarchies
-        ]
+        ],
+        n_semaphore=1
     )
 
     await handle_concurrency(
         *[
             database_handler.build_ncbi_hierarchy(hierarchy)
             for hierarchy in ncbi_hierarchies
-        ]
+        ],
+        n_semaphore=1
     )
