@@ -28,72 +28,69 @@ async def ingest_wahis(
         processed_hosts = []
 
         # Determine the host name
-        species_quantities = row['quantitativeData']['news']
-        species_totals = row['quantitativeData']['totals']
+        species_quantities = row["quantitativeData"]["news"]
+        species_totals = row["quantitativeData"]["totals"]
         if species_quantities:
             for species in species_quantities:
-                host_search_name = species['speciesName']
+                host_search_name = species["speciesName"]
                 # Process each host using ncbiapi.process_taxon and append to processed_hosts
                 processed_host = ncbiapi.process_taxon(host_search_name, taxons)
                 if processed_host:
                     # Add additional properties to the host dictionary
-                    processed_host['processed'] = "NA"
-                    processed_host['positive'] = species['cases']
-                    processed_host['deaths'] = species['deaths']
-                    processed_host['observation_type'] = "Case report"
-                    processed_host['observation_date'] = row['event']['confirmOn']
-                    processed_host['species_wild'] = species['isWild']
+                    processed_host["processed"] = "NA"
+                    processed_host["positive"] = species["cases"]
+                    processed_host["deaths"] = species["deaths"]
+                    processed_host["observation_type"] = "Case report"
+                    processed_host["observation_date"] = row["event"]["confirmOn"]
+                    processed_host["species_wild"] = species["isWild"]
                     processed_hosts.append(processed_host)
         elif species_totals:
             for species in species_totals:
-                host_search_name = species['speciesName']
+                host_search_name = species["speciesName"]
                 processed_host = ncbiapi.process_taxon(host_search_name, taxons)
                 if processed_host:
-                    processed_host['processed'] = "NA"
-                    processed_host['positive'] = species['cases']
-                    processed_host['deaths'] = species['deaths']
-                    processed_host['observation_type'] = "Case report"
-                    processed_host['observation_date'] = row['event']['confirmOn']
-                    processed_host['species_wild'] = species['isWild']
+                    processed_host["processed"] = "NA"
+                    processed_host["positive"] = species["cases"]
+                    processed_host["deaths"] = species["deaths"]
+                    processed_host["observation_type"] = "Case report"
+                    processed_host["observation_date"] = row["event"]["confirmOn"]
+                    processed_host["species_wild"] = species["isWild"]
                     processed_hosts.append(processed_host)
         else:
-            host_search_name = row['event']['disease']['group']
+            host_search_name = row["event"]["disease"]["group"]
             processed_host = ncbiapi.process_taxon(host_search_name, taxons)
             if processed_host:
-                processed_host['processed'] = "NA"
-                processed_host['positive'] = "NA"
-                processed_host['deaths'] = "NA"
-                processed_host['observation_type'] = "Case report"
-                processed_host['observation_date'] = row['event']['confirmOn']
-                processed_host['species_wild'] = "NA"
+                processed_host["processed"] = "NA"
+                processed_host["positive"] = "NA"
+                processed_host["deaths"] = "NA"
+                processed_host["observation_type"] = "Case report"
+                processed_host["observation_date"] = row["event"]["confirmOn"]
+                processed_host["species_wild"] = "NA"
                 processed_hosts.append(processed_host)
 
         # Assign the processed_hosts list to the "hosts" key in the row
         row["hosts"] = processed_hosts
-    
+
         # Determine the pathogen name
-        subtype = row['event']['subType']
+        subtype = row["event"]["subType"]
         path_search_name = None
 
-        if subtype and 'disease' in subtype:
-            sero = subtype['disease']
-            if sero and 'name' in sero:
-                path_search_name = sero['name']
-        
-        if not path_search_name:
-            path = row['event']['causalAgent']
-            if path and 'name' in path:
-                path_search_name = path['name']
+        if subtype and "disease" in subtype:
+            sero = subtype["disease"]
+            if sero and "name" in sero:
+                path_search_name = sero["name"]
 
         if not path_search_name:
-            path = row['event']['disease']
-            if path and 'name' in path:
-                path_search_name = path['name']
+            path = row["event"]["causalAgent"]
+            if path and "name" in path:
+                path_search_name = path["name"]
 
+        if not path_search_name:
+            path = row["event"]["disease"]
+            if path and "name" in path:
+                path_search_name = path["name"]
 
-        row["pathogen"] = ncbiapi.process_taxon(
-            path_search_name, taxons
-        )
+        row["pathogen"] = ncbiapi.process_taxon(path_search_name, taxons)
         row["outbreak"]["geonames"] = geonames[row["outbreak"]["geonames"]]
 
     geo_hierarchies = await handle_concurrency(
