@@ -8,7 +8,8 @@ def parse_and_format_date(date: str) -> str | None:
         date_strip = datetime.strptime(date, "%Y-%m-%dT%H:%M:%SZ")
         return date_strip.strftime("%Y-%m-%d")
     except ValueError:
-        logger.trace("Malformed date: '{}'", date)
+        if date != "":
+            logger.trace("Malformed date: '{}'", date)
         return None
 
 
@@ -22,8 +23,8 @@ def valid_bvbrc_surveillance(
     with open(file, "r", encoding="utf-8-sig") as bvbrc_file:
         bvbrc = csv.DictReader(bvbrc_file)
         for idx, row in enumerate(bvbrc):
-            if idx > 50:
-                break
+            # if idx > 50:
+            #     break
 
             row["collection_date"] = parse_and_format_date(row["Collection Date"])
 
