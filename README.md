@@ -19,7 +19,7 @@ source env/bin/activate
 pip3 install -r requirements.txt
 ```
 
-3. Set environmental variables in file .env. Some folders may need to be unzipped, and you may need to install and set up a Neo4j database (https://neo4j.com/docs/operations-manual/current/installation/) and GeoNames account (http://www.geonames.org/).
+3. Set environmental variables in file .env. Some folders may need to be unzipped, and you may need to install and set up a Neo4j database (https://neo4j.com/docs/operations-manual/current/installation/). You will also need to create an NCBI (https://account.ncbi.nlm.nih.gov/) account with an API key and a GeoNames account (http://www.geonames.org/).
 
 ```
 NEO4J_URI=<neo4j_uri>
