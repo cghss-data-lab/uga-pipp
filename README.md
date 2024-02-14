@@ -19,7 +19,7 @@ source env/bin/activate
 pip3 install -r requirements.txt
 ```
 
-3. Set environmental variables in file .env and unzip virion
+3. Set environmental variables in file .env. Some folders may need to be unzipped, and you may need to install and set up a Neo4j database (https://neo4j.com/docs/operations-manual/current/installation/). You will also need to create an NCBI (https://account.ncbi.nlm.nih.gov/) account with an API key and a GeoNames account (http://www.geonames.org/).
 
 ```
 NEO4J_URI=<neo4j_uri>
@@ -66,15 +66,3 @@ Set the level to DEBUG in main.py
 ```
 logger.add(sys.stderr, level="DEBUG")
 ```
-
-Wall-clock benchmarks for MacBook Pro 2019 8-Core Intel Core i9, time is displayed for individual datasets (without any data in the database) and serial ingest of all datasets
-
-| Dataset  | Time (individual) | Time (serial) |
-| -------- | ----------------- | ------------- |
-| FluNet   | 0.67 min          | 0.61 min      |
-| GMPD     | 0.75 min          | 0.71 min      |
-| WAHIS    | 4.8 min           | 5.05 min      |
-| Virion   | 5.0 min           | 4.78 min      |
-| Combine  | --                | 1.24 min      |
-| WorldPop | --                | 0.35 min      |
-| Total    | --                | 12.74 min     |
