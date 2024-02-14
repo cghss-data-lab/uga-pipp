@@ -1,4 +1,3 @@
-from devtools import debug
 from loguru import logger
 from tests.timer import timer
 from network.handle_concurrency import handle_concurrency
