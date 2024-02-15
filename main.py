@@ -1,3 +1,4 @@
+import pickle
 import sys
 import asyncio
 from loguru import logger
@@ -22,11 +23,17 @@ logger.add(sys.stderr, level="TRACE")
 async def main() -> None:
     database_handler, geonames_api, ncbi_api = Neo4jHandler(), GeonamesApi(), NCBIApi()
 
+    ## Code to drop NONE out of the ncbi ID cache
+    ## so that we can use an updated synonyms map
+
+    # new_cache = {}
     # with open("network/cache/ncbi_id.pickle", "rb") as c:
     #     ncbi_cache = pickle.load(c)
     #     for key, value in ncbi_cache.items():
-    #         if value is None:
-    #             print(key)
+    #         if value is not None:
+    #             new_cache[key] = value
+    # with open("network/cache/ncbi_id.pickle", "wb") as c:
+    #     pickle.dump(new_cache, c)
 
     await ingest_wahis(database_handler, geonames_api, ncbi_api)
     await ingest_virion(database_handler, ncbi_api)
