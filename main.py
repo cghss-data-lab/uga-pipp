@@ -1,3 +1,4 @@
+import csv
 import pickle
 import sys
 import asyncio
@@ -25,6 +26,17 @@ async def main() -> None:
 
     ## Code to drop NONE out of the ncbi ID cache
     ## so that we can use an updated synonyms map
+
+    # ncbi_none = {}
+    # with open("network/cache/ncbi_id.pickle", "rb") as c:
+    #     ncbi_cache = pickle.load(c)
+    #     for key, value in ncbi_cache.items():
+    #         if value is None:
+    #             ncbi_none[key] = value
+    # with open("./ncbi_none.csv", "w") as c:
+    #     writer = csv.writer(c)
+    #     for key, value in ncbi_none.items():
+    #         writer.writerow([key, value])
 
     # new_cache = {}
     # with open("network/cache/ncbi_id.pickle", "rb") as c:
