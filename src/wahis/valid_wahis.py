@@ -1,6 +1,8 @@
 from datetime import datetime
 from src.wahis.wahis_api import WAHISApi
 from network.handle_concurrency import handle_concurrency
+from .wahis_api import WAHISApiError
+
 
 
 def process_dates(date: str) -> str:
@@ -106,19 +108,22 @@ async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
     lat_long = set()
     tax_names = set()
 
-#5097
+#5097, 5569
     evolutions = await handle_concurrency(
-        *[wahis.search_evolution(event_id) for event_id in range(4714, 5097)]
+        *[wahis.search_evolution(event_id) for event_id in range(0, 5569)]
     )
 
-    reports = await handle_concurrency(
-        *[
-            wahis.search_report(report["reportId"])
-            for evolution in evolutions
-            if evolution is not None
-            for report in evolution
-        ]
-    )
+    reports = []
+    for evolution in evolutions:
+        if evolution is None:
+            continue  # Skip None values
+        for report in evolution:
+            try:
+                report_data = await wahis.search_report(report["reportId"])
+                reports.append(report_data)
+            except WAHISApiError as e:
+                print(f"Error fetching report {report['reportId']}: {e.message}")
+                continue
 
     wahis_valid = [process_report(report, tax_names, lat_long) for report in reports]
 
