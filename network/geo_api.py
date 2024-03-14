@@ -61,10 +61,13 @@ class GeonamesApi:
     @cache(POINT_CACHE, is_class=True)
     async def search_lat_long(self, point: tuple[float, float]):
         lat, long = point[0], point[1]
-        logger.trace(f"Searching geonames for location {lat}, {long}")
-        parameters = {"lat": lat, "lng": long}
+        rounded_lat = round(lat, 3)  # Round to 3 decimal places (approximately 1 km)
+        rounded_long = round(long, 3)  
+        logger.trace(f"Searching geonames for location {rounded_lat}, {rounded_long}")
+        parameters = {"lat": rounded_lat, "lng": rounded_long}
         data = await self._geo_api("findNearbyJSON", parameters)
         return self._first_element(data)
+
 
     async def _geo_api(self, service, parameters):
         """
