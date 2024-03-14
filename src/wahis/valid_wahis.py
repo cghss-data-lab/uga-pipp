@@ -2,6 +2,8 @@ from datetime import datetime
 from src.wahis.wahis_api import WAHISApi
 from network.handle_concurrency import handle_concurrency
 from .wahis_api import WAHISApiError
+from loguru import logger
+
 
 
 
@@ -23,6 +25,10 @@ def remove_unneeded_keys(row: dict) -> None:
 
 
 def process_report(metadata: dict, tax_names: set, lat_long: set):
+    if metadata is None or metadata["report"] is None:
+        logger.warning("Missing or incomplete report data: Skipping processing.")
+        return None  # Skip processing for this metadata entry
+    
     metadata["report"]["reportId"] = metadata['report']['reportId']
     metadata["report"]["reportedOn"] = process_dates(metadata["report"]["reportedOn"])
     metadata['event']['confirmOn'] = process_dates(metadata['event']['confirmOn'])
@@ -132,7 +138,7 @@ async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
     )
 
     tax_ids = await handle_concurrency(
-        *[ncbiapi.search_id(tax) for tax in tax_names], n_semaphore=2
+        *[ncbiapi.search_id(tax) for tax in tax_names], n_semaphore=1
     )
     geonames = dict(zip(lat_long, geoname_ids))
 
