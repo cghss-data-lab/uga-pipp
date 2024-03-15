@@ -101,13 +101,25 @@ def pivot_long(wahis: list) -> list:
 
 
 def is_valid(row: dict, empty: tuple = (None, "")) -> bool:
-    if row["event"]["disease"]["group"] in empty:
+    if row is None:
         return False
 
-    if row["event"]["disease"]["name"] in empty:
+    if "event" not in row or row["event"] is None:
+        return False
+
+    event = row["event"]
+    if "disease" not in event or event["disease"] is None:
+        return False
+
+    disease = event["disease"]
+    if "group" not in disease or disease["group"] in empty:
+        return False
+
+    if "name" not in disease or disease["name"] in empty:
         return False
 
     return True
+
 
 
 async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
@@ -116,7 +128,7 @@ async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
 
 #5097, 5569
     evolutions = await handle_concurrency(
-        *[wahis.search_evolution(event_id) for event_id in range(0, 5569)]
+        *[wahis.search_evolution(event_id) for event_id in range(30, 40)]
     )
 
     reports = []
