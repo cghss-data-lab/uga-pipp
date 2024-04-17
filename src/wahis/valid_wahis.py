@@ -129,9 +129,8 @@ async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
 # Set the range for the WAHIS events you'd like to ingest. 1 is the first report
 # The last report varies (always increasing), but as of 3/19 was 5569
 
-# 
     evolutions = await handle_concurrency(
-        *[wahis.search_evolution(event_id) for event_id in range(1, 5569)]
+        *[wahis.search_evolution(event_id) for event_id in range(1500, 2000)]
     )
 
     reports = []
