@@ -65,7 +65,7 @@ class NCBIApi:
         logger.trace(f"Searching hierarchy for NCBI ID {ncbi_id}")
 
         if not ncbi_id:
-            return
+            return []
 
         def extract_metadata(taxon: Tag) -> dict:
             taxon_metadata = {
@@ -80,14 +80,18 @@ class NCBIApi:
         soup = await self._api_soup("efetch", params)
 
         if not soup or not soup.TaxaSet or not soup.TaxaSet.Taxon:
-            return
+            return []
+
+        if soup.TaxaSet.Taxon.LineageEx:
+            taxon_set = soup.TaxaSet.Taxon.LineageEx.find_all("Taxon")
+            taxon_set = [extract_metadata(taxon) for taxon in taxon_set]
+        else:
+            taxon_set = []
 
         taxon = extract_metadata(soup.TaxaSet.Taxon)
-
-        taxon_set = soup.TaxaSet.Taxon.LineageEx.find_all("Taxon")
-        taxon_set = [extract_metadata(taxon) for taxon in taxon_set]
         taxon_set.append(taxon)
         return taxon_set
+
 
     async def _api_soup(self, eutil: str, parameters: dict) -> BeautifulSoup:
         """
