@@ -2,6 +2,9 @@ import pickle
 from functools import wraps
 from typing import Callable
 
+from loguru import logger
+
+
 def cache(file: str, is_class=False) -> Callable:
     """
     Simple cache implementation.
@@ -20,7 +23,12 @@ def cache(file: str, is_class=False) -> Callable:
             if is_class:
                 key = args[1:]
             try:
-                return function.cache[key[0]]
+                value = function.cache[key[0]]
+                if value is None:
+                    logger.warning(
+                        "Cached 'None' for {} with key {}", function.__name__, key[0]
+                    )
+                return value
             except KeyError:
                 function.cache[key[0]] = result = await function(*args)
                 await save_cache(function.cache, file)

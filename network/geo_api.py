@@ -11,7 +11,7 @@ GEONAMES_ISO_CACHE_FILE = "network/cache/geonames_iso_cache.pickle"
 GEO_DATA_CACHE_FILE = "network/cache/geo_data_cache.pickle"
 GEONAMES_HIERARCHY_CACHE_FILE = "network/cache/geonames_hierarchy_cache.pickle"
 GEONAMES_ID_CACHE = "network/cache/geonames_id_cache.pickle"
-POINT_CACHE = "network/cache/geonames_point_cache.pickle"
+POINT_CACHE = "network/cache/geonames_point_cache_rounded.pickle"
 
 
 class GeonamesApiError(Exception):
@@ -45,8 +45,9 @@ class GeonamesApi:
     async def search_hierarchy(self, geoname_id) -> dict:
         logger.trace(f"Searching hierarchy for geoname ID {geoname_id}")
         parameters = {"geonameId": geoname_id}
-        return await self._geo_api("hierarchyJSON", parameters)
-
+        result = await self._geo_api("hierarchyJSON", parameters)
+        return result
+    
     @cache(GEONAMES_ID_CACHE, is_class=True)
     async def search_geoname_id(self, geoname) -> int:
         """
@@ -60,11 +61,24 @@ class GeonamesApi:
 
     @cache(POINT_CACHE, is_class=True)
     async def search_lat_long(self, point: tuple[float, float]):
-        lat, long = point[0], point[1]
-        logger.trace(f"Searching geonames for location {lat}, {long}")
-        parameters = {"lat": lat, "lng": long}
+        try:
+            lat, long = point[0], point[1]
+            # Ensure lat and long are float values
+            lat = float(lat)
+            long = float(long)
+        except (ValueError, TypeError):
+            # Handle the case where lat or long is not a valid float
+            logger.error("Invalid latitude or longitude values provided.")
+            return None
+
+        rounded_lat = round(lat, 2)  # Round to 2 decimal places
+        rounded_long = round(long, 2)
+        logger.trace(f"Searching geonames for location {rounded_lat}, {rounded_long}")
+        parameters = {"lat": rounded_lat, "lng": rounded_long}
         data = await self._geo_api("findNearbyJSON", parameters)
         return self._first_element(data)
+
+
 
     async def _geo_api(self, service, parameters):
         """

@@ -45,7 +45,8 @@ async def ingest_flunet(
         *[
             database_handler.build_geohierarchy(hierarchy)
             for hierarchy in geo_hierarchies
-        ]
+        ],
+        n_semaphore=1,
     )
 
     ncbi_hierarchies = await handle_concurrency(
@@ -53,12 +54,13 @@ async def ingest_flunet(
             ncbiapi.search_hierarchy(HUMAN_TAXID),
             ncbiapi.search_hierarchy(INFA_TAXID),
             ncbiapi.search_hierarchy(INFB_TAXID),
-        ]
+        ],
     )
 
     await handle_concurrency(
         *[
             database_handler.build_ncbi_hierarchy(hierarchy)
             for hierarchy in ncbi_hierarchies
-        ]
+        ],
+        n_semaphore=1,
     )
