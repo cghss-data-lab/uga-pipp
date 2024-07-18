@@ -1,0 +1,285 @@
+﻿species,country,yearMonth,monthlyCases
+"""Phoca vitulina""","""United Kingdom""","""2020-11""",4
+"""Halichoerus grypus""","""United Kingdom""","""2020-11""",1
+"""Vulpes vulpes""","""United Kingdom""","""2020-11""",1
+"""Phoca vitulina""","""Denmark""","""2021-09""",2
+"""Vulpes vulpes""","""Estonia""","""2021-11""",1
+"""Vulpes vulpes""","""Ireland""","""2022-02""",2
+"""Sciurus aberti""","""United States""","""2022-03""",1
+"""Ursus arctos""","""United States""","""2022-03""",1
+"""Phoca vitulina""","""United States""","""2022-03""",2
+"""Mephitis mephitis""","""United States""","""2022-03""",3
+"""Procyon lotor""","""United States""","""2022-03""",1
+"""Lontra canadensis""","""United States""","""2022-03""",1
+"""Pekania pennanti""","""United States""","""2022-03""",2
+"""Martes americana""","""United States""","""2022-03""",1
+"""Nyctereutes procyonoides""","""Japan""","""2022-03""",1
+"""Vulpes vulpes""","""United States""","""2022-03""",2
+"""Vulpes vulpes""","""Japan""","""2022-03""",2
+"""Panthera pardus orientalis""","""United States""","""2022-03""",1
+"""Panthera tigris""","""United States""","""2022-03""",1
+"""Lynx rufus""","""United States""","""2022-03""",1
+"""Puma""","""United States""","""2022-03""",1
+"""Felis catus""","""United States""","""2022-03""",1
+"""Sciurus aberti""","""United States""","""2022-04""",16
+"""Ursus arctos""","""United States""","""2022-04""",16
+"""Phoca vitulina""","""United States""","""2022-04""",32
+"""Phoca vitulina""","""Canada""","""2022-04""",18
+"""Halichoerus grypus""","""Germany""","""2022-04""",2
+"""Halichoerus grypus""","""United States""","""2022-04""",14
+"""Mephitis mephitis""","""United States""","""2022-04""",48
+"""Mephitis mephitis""","""Canada""","""2022-04""",27
+"""Nasua nasua""","""Germany""","""2022-04""",32
+"""Procyon lotor""","""United States""","""2022-04""",16
+"""Procyon lotor""","""Canada""","""2022-04""",9
+"""Lontra canadensis""","""United States""","""2022-04""",16
+"""Pekania pennanti""","""United States""","""2022-04""",32
+"""Martes americana""","""United States""","""2022-04""",16
+"""Martes martes""","""Germany""","""2022-04""",2
+"""Neogale vison""","""Canada""","""2022-04""",9
+"""Nyctereutes procyonoides""","""Japan""","""2022-04""",1
+"""Vulpes vulpes""","""Germany""","""2022-04""",2
+"""Vulpes vulpes""","""United States""","""2022-04""",32
+"""Vulpes vulpes""","""Canada""","""2022-04""",18
+"""Vulpes vulpes""","""Japan""","""2022-04""",2
+"""Canis lupus familiaris""","""Canada""","""2022-04""",9
+"""Panthera pardus orientalis""","""United States""","""2022-04""",15
+"""Panthera tigris""","""United States""","""2022-04""",16
+"""Lynx rufus""","""United States""","""2022-04""",16
+"""Puma""","""United States""","""2022-04""",16
+"""Felis catus""","""United States""","""2022-04""",16
+"""Felis catus""","""Canada""","""2022-04""",9
+"""Sciurus aberti""","""United States""","""2022-05""",29
+"""Ursus arctos""","""United States""","""2022-05""",29
+"""Phoca vitulina""","""United States""","""2022-05""",58
+"""Phoca vitulina""","""Canada""","""2022-05""",24
+"""Halichoerus grypus""","""United States""","""2022-05""",29
+"""Mephitis mephitis""","""Canada""","""2022-05""",36
+"""Mephitis mephitis""","""United States""","""2022-05""",87
+"""Procyon lotor""","""United States""","""2022-05""",29
+"""Procyon lotor""","""Canada""","""2022-05""",12
+"""Lontra canadensis""","""United States""","""2022-05""",29
+"""Pekania pennanti""","""United States""","""2022-05""",58
+"""Martes americana""","""United States""","""2022-05""",29
+"""Neogale vison""","""Canada""","""2022-05""",12
+"""Vulpes vulpes""","""United States""","""2022-05""",58
+"""Vulpes vulpes""","""Canada""","""2022-05""",24
+"""Canis lupus familiaris""","""Canada""","""2022-05""",12
+"""Panthera pardus orientalis""","""United States""","""2022-05""",29
+"""Panthera tigris""","""United States""","""2022-05""",29
+"""Lynx rufus""","""United States""","""2022-05""",29
+"""Puma""","""United States""","""2022-05""",29
+"""Felis catus""","""United States""","""2022-05""",29
+"""Felis catus""","""Canada""","""2022-05""",12
+"""Sciurus aberti""","""United States""","""2022-06""",14
+"""Ursus arctos""","""United States""","""2022-06""",14
+"""Phoca vitulina""","""United States""","""2022-06""",30
+"""Phoca vitulina""","""Canada""","""2022-06""",6
+"""Halichoerus grypus""","""United States""","""2022-06""",15
+"""Mephitis mephitis""","""United States""","""2022-06""",45
+"""Mephitis mephitis""","""Canada""","""2022-06""",9
+"""Procyon lotor""","""United States""","""2022-06""",15
+"""Procyon lotor""","""Canada""","""2022-06""",3
+"""Lontra canadensis""","""United States""","""2022-06""",14
+"""Pekania pennanti""","""United States""","""2022-06""",30
+"""Martes americana""","""United States""","""2022-06""",14
+"""Neogale vison""","""Canada""","""2022-06""",3
+"""Vulpes vulpes""","""Canada""","""2022-06""",6
+"""Vulpes vulpes""","""United States""","""2022-06""",30
+"""Canis lupus familiaris""","""Canada""","""2022-06""",3
+"""Panthera pardus orientalis""","""United States""","""2022-06""",15
+"""Panthera tigris""","""United States""","""2022-06""",14
+"""Lynx rufus""","""United States""","""2022-06""",14
+"""Puma""","""United States""","""2022-06""",14
+"""Felis catus""","""United States""","""2022-06""",14
+"""Felis catus""","""Canada""","""2022-06""",3
+"""Sciurus aberti""","""United States""","""2022-07""",12
+"""Ursus arctos""","""United States""","""2022-07""",12
+"""Phoca vitulina""","""United States""","""2022-07""",24
+"""Halichoerus grypus""","""United States""","""2022-07""",4
+"""Mephitis mephitis""","""United States""","""2022-07""",36
+"""Procyon lotor""","""United States""","""2022-07""",12
+"""Lontra canadensis""","""United States""","""2022-07""",12
+"""Pekania pennanti""","""United States""","""2022-07""",24
+"""Martes americana""","""United States""","""2022-07""",12
+"""Vulpes vulpes""","""United States""","""2022-07""",24
+"""Panthera pardus orientalis""","""United States""","""2022-07""",12
+"""Panthera tigris""","""United States""","""2022-07""",12
+"""Lynx rufus""","""United States""","""2022-07""",12
+"""Puma""","""United States""","""2022-07""",12
+"""Felis catus""","""United States""","""2022-07""",12
+"""Sciurus aberti""","""United States""","""2022-09""",3
+"""Ursus arctos""","""United States""","""2022-09""",2
+"""Phoca vitulina""","""United States""","""2022-09""",6
+"""Halichoerus grypus""","""Germany""","""2022-09""",1
+"""Mephitis mephitis""","""United States""","""2022-09""",9
+"""Nasua nasua""","""Germany""","""2022-09""",16
+"""Procyon lotor""","""United States""","""2022-09""",3
+"""Lontra canadensis""","""United States""","""2022-09""",3
+"""Pekania pennanti""","""United States""","""2022-09""",6
+"""Martes americana""","""United States""","""2022-09""",3
+"""Martes martes""","""Germany""","""2022-09""",1
+"""Vulpes vulpes""","""Germany""","""2022-09""",1
+"""Vulpes vulpes""","""Ireland""","""2022-09""",1
+"""Vulpes vulpes""","""United States""","""2022-09""",6
+"""Panthera pardus orientalis""","""United States""","""2022-09""",2
+"""Panthera tigris""","""United States""","""2022-09""",2
+"""Lynx rufus""","""United States""","""2022-09""",3
+"""Puma""","""United States""","""2022-09""",3
+"""Felis catus""","""United States""","""2022-09""",3
+"""Sciurus aberti""","""United States""","""2022-10""",7
+"""Ursus arctos""","""United States""","""2022-10""",6
+"""Phoca vitulina""","""United States""","""2022-10""",14
+"""Phoca vitulina""","""Canada""","""2022-10""",2
+"""Mephitis mephitis""","""United States""","""2022-10""",21
+"""Mephitis mephitis""","""Canada""","""2022-10""",3
+"""Procyon lotor""","""United States""","""2022-10""",7
+"""Procyon lotor""","""Canada""","""2022-10""",1
+"""Lontra canadensis""","""United States""","""2022-10""",7
+"""Pekania pennanti""","""United States""","""2022-10""",14
+"""Martes americana""","""United States""","""2022-10""",7
+"""Neogale vison""","""Canada""","""2022-10""",1
+"""Vulpes vulpes""","""United States""","""2022-10""",14
+"""Vulpes vulpes""","""Canada""","""2022-10""",2
+"""Canis lupus familiaris""","""Canada""","""2022-10""",1
+"""Panthera tigris""","""United States""","""2022-10""",6
+"""Lynx rufus""","""United States""","""2022-10""",7
+"""Puma""","""United States""","""2022-10""",7
+"""Felis catus""","""United States""","""2022-10""",7
+"""Felis catus""","""Canada""","""2022-10""",1
+"""Sciurus aberti""","""United States""","""2022-11""",6
+"""Ursus arctos""","""United States""","""2022-11""",5
+"""Phoca vitulina""","""United States""","""2022-11""",12
+"""Phoca vitulina""","""Canada""","""2022-11""",4
+"""Mephitis mephitis""","""United States""","""2022-11""",21
+"""Mephitis mephitis""","""Canada""","""2022-11""",6
+"""Procyon lotor""","""United States""","""2022-11""",6
+"""Procyon lotor""","""Canada""","""2022-11""",2
+"""Lontra canadensis""","""United States""","""2022-11""",6
+"""Pekania pennanti""","""United States""","""2022-11""",12
+"""Martes americana""","""United States""","""2022-11""",6
+"""Neogale vison""","""Canada""","""2022-11""",2
+"""Vulpes vulpes""","""United States""","""2022-11""",12
+"""Vulpes vulpes""","""Canada""","""2022-11""",4
+"""Canis lupus familiaris""","""Canada""","""2022-11""",2
+"""Panthera tigris""","""United States""","""2022-11""",5
+"""Lynx rufus""","""United States""","""2022-11""",6
+"""Puma""","""United States""","""2022-11""",7
+"""Felis catus""","""United States""","""2022-11""",7
+"""Felis catus""","""Canada""","""2022-11""",2
+"""Sciurus aberti""","""United States""","""2022-12""",10
+"""Ursus arctos""","""United States""","""2022-12""",7
+"""Phoca vitulina""","""United States""","""2022-12""",20
+"""Mephitis mephitis""","""United States""","""2022-12""",30
+"""Procyon lotor""","""United States""","""2022-12""",10
+"""Lontra canadensis""","""United States""","""2022-12""",10
+"""Pekania pennanti""","""United States""","""2022-12""",20
+"""Martes americana""","""United States""","""2022-12""",10
+"""Vulpes vulpes""","""United States""","""2022-12""",20
+"""Panthera tigris""","""United States""","""2022-12""",5
+"""Lynx rufus""","""United States""","""2022-12""",10
+"""Puma""","""United States""","""2022-12""",10
+"""Felis catus""","""France""","""2022-12""",1
+"""Felis catus""","""United States""","""2022-12""",10
+"""Sciurus aberti""","""United States""","""2023-01""",9
+"""Ursus arctos""","""United States""","""2023-01""",1
+"""Phoca vitulina""","""United States""","""2023-01""",18
+"""Phoca vitulina""","""Canada""","""2023-01""",8
+"""Mephitis mephitis""","""United States""","""2023-01""",27
+"""Mephitis mephitis""","""Canada""","""2023-01""",18
+"""Procyon lotor""","""United States""","""2023-01""",9
+"""Procyon lotor""","""Canada""","""2023-01""",5
+"""Lontra canadensis""","""United States""","""2023-01""",9
+"""Pekania pennanti""","""United States""","""2023-01""",18
+"""Martes americana""","""United States""","""2023-01""",9
+"""Neogale vison""","""Canada""","""2023-01""",6
+"""Vulpes vulpes""","""United States""","""2023-01""",18
+"""Vulpes vulpes""","""Canada""","""2023-01""",12
+"""Canis lupus familiaris""","""Canada""","""2023-01""",4
+"""Lynx rufus""","""United States""","""2023-01""",9
+"""Puma""","""United States""","""2023-01""",9
+"""Felis catus""","""United States""","""2023-01""",9
+"""Felis catus""","""Canada""","""2023-01""",6
+"""Sciurus aberti""","""United States""","""2023-02""",16
+"""Phoca vitulina""","""United States""","""2023-02""",32
+"""Halichoerus grypus""","""Germany""","""2023-02""",4
+"""Mephitis mephitis""","""United States""","""2023-02""",51
+"""Nasua nasua""","""Germany""","""2023-02""",64
+"""Procyon lotor""","""United States""","""2023-02""",16
+"""Lontra canadensis""","""United States""","""2023-02""",7
+"""Pekania pennanti""","""United States""","""2023-02""",32
+"""Martes americana""","""United States""","""2023-02""",13
+"""Martes martes""","""Germany""","""2023-02""",4
+"""Vulpes vulpes""","""Germany""","""2023-02""",4
+"""Vulpes vulpes""","""Japan""","""2023-02""",1
+"""Vulpes vulpes""","""France""","""2023-02""",1
+"""Vulpes vulpes""","""United States""","""2023-02""",32
+"""Lynx rufus""","""United States""","""2023-02""",7
+"""Puma""","""United States""","""2023-02""",17
+"""Felis catus""","""United States""","""2023-02""",17
+"""Sciurus aberti""","""United States""","""2023-03""",15
+"""Phoca vitulina""","""United States""","""2023-03""",30
+"""Halichoerus grypus""","""Germany""","""2023-03""",1
+"""Mephitis mephitis""","""United States""","""2023-03""",45
+"""Mephitis mephitis""","""Canada""","""2023-03""",6
+"""Nasua nasua""","""Germany""","""2023-03""",16
+"""Procyon lotor""","""United States""","""2023-03""",15
+"""Procyon lotor""","""Canada""","""2023-03""",1
+"""Pekania pennanti""","""United States""","""2023-03""",30
+"""Martes americana""","""United States""","""2023-03""",6
+"""Martes martes""","""Germany""","""2023-03""",1
+"""Neogale vison""","""Canada""","""2023-03""",2
+"""Vulpes vulpes""","""Germany""","""2023-03""",1
+"""Vulpes vulpes""","""United States""","""2023-03""",30
+"""Vulpes vulpes""","""Canada""","""2023-03""",4
+"""Canis lupus familiaris""","""Canada""","""2023-03""",1
+"""Puma""","""United States""","""2023-03""",15
+"""Felis catus""","""United States""","""2023-03""",15
+"""Felis catus""","""Canada""","""2023-03""",2
+"""Sciurus aberti""","""United States""","""2023-04""",16
+"""Phoca vitulina""","""United States""","""2023-04""",32
+"""Mephitis mephitis""","""United States""","""2023-04""",51
+"""Mephitis mephitis""","""Canada""","""2023-04""",3
+"""Procyon lotor""","""United States""","""2023-04""",16
+"""Pekania pennanti""","""United States""","""2023-04""",30
+"""Martes martes""","""Germany""","""2023-04""",2
+"""Neogale vison""","""Canada""","""2023-04""",1
+"""Vulpes vulpes""","""Italy""","""2023-04""",3
+"""Vulpes vulpes""","""Germany""","""2023-04""",2
+"""Vulpes vulpes""","""Japan""","""2023-04""",1
+"""Vulpes vulpes""","""United States""","""2023-04""",30
+"""Vulpes vulpes""","""Canada""","""2023-04""",2
+"""Puma""","""United States""","""2023-04""",17
+"""Felis catus""","""Italy""","""2023-04""",3
+"""Felis catus""","""United States""","""2023-04""",17
+"""Felis catus""","""Canada""","""2023-04""",1
+"""Sciurus aberti""","""United States""","""2023-05""",6
+"""Phoca vitulina""","""United States""","""2023-05""",12
+"""Mephitis mephitis""","""United States""","""2023-05""",18
+"""Procyon lotor""","""United States""","""2023-05""",6
+"""Pekania pennanti""","""United States""","""2023-05""",10
+"""Martes martes""","""Germany""","""2023-05""",2
+"""Vulpes vulpes""","""Germany""","""2023-05""",2
+"""Vulpes vulpes""","""United States""","""2023-05""",12
+"""Puma""","""United States""","""2023-05""",6
+"""Felis catus""","""United States""","""2023-05""",6
+"""Sciurus aberti""","""United States""","""2023-06""",1
+"""Phoca vitulina""","""United States""","""2023-06""",2
+"""Mephitis mephitis""","""United States""","""2023-06""",3
+"""Procyon lotor""","""United States""","""2023-06""",1
+"""Martes martes""","""Germany""","""2023-06""",1
+"""Neogale vison""","""Finland""","""2023-06""",14552
+"""Nyctereutes procyonoides""","""Finland""","""2023-06""",104
+"""Vulpes lagopus""","""Finland""","""2023-06""",44084
+"""Vulpes vulpes""","""Norway""","""2023-06""",26
+"""Vulpes vulpes""","""Latvia""","""2023-06""",13
+"""Vulpes vulpes""","""Finland""","""2023-06""",52
+"""Vulpes vulpes""","""Germany""","""2023-06""",1
+"""Vulpes vulpes""","""United States""","""2023-06""",2
+"""Lynx lynx""","""Finland""","""2023-06""",4
+"""Puma""","""United States""","""2023-06""",1
+"""Felis catus""","""United States""","""2023-06""",1
+"""Mephitis mephitis""","""Canada""","""2023-07""",9
+"""Neogale vison""","""Canada""","""2023-07""",1
+"""Vulpes vulpes""","""Canada""","""2023-07""",6
+"""Felis catus""","""Canada""","""2023-07""",3
