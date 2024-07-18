@@ -8,7 +8,6 @@ from src.flunet.ingest_flunet import ingest_flunet
 from src.gmpd.ingest_gmpd import ingest_gmpd
 from src.wahis.ingest_wahis import ingest_wahis
 from src.combine.ingest_combine import ingest_combine
-from src.virion.ingest_virion import ingest_virion
 from src.worldpop.ingest_worldpop import ingest_worldpop
 
 
