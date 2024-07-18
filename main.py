@@ -54,7 +54,7 @@ async def main() -> None:
     # with open("network/cache/geonames_point_cache_rounded.pickle", "wb") as c:
     #     pickle.dump(new_cache, c)
 
-    await ingest_wahis(database_handler, geonames_api, ncbi_api)
+    # await ingest_wahis(database_handler, geonames_api, ncbi_api)
     # await ingest_virion(database_handler, ncbi_api)
     # await ingest_flunet(database_handler, geonames_api, ncbi_api)
     # await ingest_gmpd(database_handler, geonames_api, ncbi_api)
@@ -63,7 +63,7 @@ async def main() -> None:
 
     # # Keep combine and worldpop at the end of ingestion
     # await ingest_combine(database_handler)
-    # await ingest_worldpop(database_handler, geonames_api)
+    await ingest_worldpop(database_handler, geonames_api)
 
 
 if __name__ == "__main__":
