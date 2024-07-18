@@ -29,5 +29,6 @@ async def ingest_virion(
         *[
             database_handler.build_ncbi_hierarchy(hierarchy)
             for hierarchy in ncbi_hierarchies
-        ]
+        ],
+        n_semaphore=1,
     )

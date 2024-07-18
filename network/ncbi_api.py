@@ -1,4 +1,5 @@
 import os
+import csv
 import json
 import aiohttp
 from bs4 import BeautifulSoup, Tag
@@ -8,6 +9,16 @@ from cache.cache import cache
 NCBI_API_KEY = os.environ["NCBI_API_KEY"]
 NCBI_ID_CACHE_FILE = "network/cache/ncbi_id.pickle"
 NCBI_HIERARCHY_CACHE_FILE = "network/cache/ncbi_hierarchy.pickle"
+
+NCBI_SYNONYMS = "data/ncbi_map.csv"
+
+NCBI_SYNONYMS_MAP = {}
+
+with open(NCBI_SYNONYMS, "r") as file:
+    for line in file:
+        reader = csv.reader(file)
+        for row in reader:
+            NCBI_SYNONYMS_MAP[row[0]] = row[1:]
 
 
 class NCBIApiError(Exception):
@@ -21,10 +32,17 @@ class NCBIApi:
     @cache(NCBI_ID_CACHE_FILE, is_class=True)
     async def search_id(self, name: str) -> int:
         """Get ID from text search, using NCBI esearch eutil"""
-        logger.trace(f"Searching NCBI for term {name}")
 
         if not name:
             return
+
+        if name in NCBI_SYNONYMS_MAP:
+            logger.warning(
+                f"Synonym found for {name}, using {NCBI_SYNONYMS_MAP[name][0]}"
+            )
+            name = NCBI_SYNONYMS_MAP[name][0]
+
+        logger.trace(f"Searching NCBI for term {name}")
 
         params = {"db": "Taxonomy", "term": name}
         soup = await self._api_soup("esearch", params)
@@ -47,7 +65,7 @@ class NCBIApi:
         logger.trace(f"Searching hierarchy for NCBI ID {ncbi_id}")
 
         if not ncbi_id:
-            return
+            return []
 
         def extract_metadata(taxon: Tag) -> dict:
             taxon_metadata = {
@@ -62,14 +80,18 @@ class NCBIApi:
         soup = await self._api_soup("efetch", params)
 
         if not soup or not soup.TaxaSet or not soup.TaxaSet.Taxon:
-            return
+            return []
+
+        if soup.TaxaSet.Taxon.LineageEx:
+            taxon_set = soup.TaxaSet.Taxon.LineageEx.find_all("Taxon")
+            taxon_set = [extract_metadata(taxon) for taxon in taxon_set]
+        else:
+            taxon_set = []
 
         taxon = extract_metadata(soup.TaxaSet.Taxon)
-
-        taxon_set = soup.TaxaSet.Taxon.LineageEx.find_all("Taxon")
-        taxon_set = [extract_metadata(taxon) for taxon in taxon_set]
         taxon_set.append(taxon)
         return taxon_set
+
 
     async def _api_soup(self, eutil: str, parameters: dict) -> BeautifulSoup:
         """

@@ -31,5 +31,6 @@ async def ingest_worldpop(
         *[
             database_handler.build_geohierarchy(hierarchy)
             for hierarchy in geo_hierarchies
-        ]
+        ],
+        n_semaphore=1,
     )

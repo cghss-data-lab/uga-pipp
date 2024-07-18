@@ -1,6 +1,10 @@
 from datetime import datetime
 from src.wahis.wahis_api import WAHISApi
 from network.handle_concurrency import handle_concurrency
+from .wahis_api import WAHISApiError
+from loguru import logger
+
+
 
 
 def process_dates(date: str) -> str:
@@ -21,6 +25,10 @@ def remove_unneeded_keys(row: dict) -> None:
 
 
 def process_report(metadata: dict, tax_names: set, lat_long: set):
+    if metadata is None or metadata["report"] is None:
+        logger.warning("Missing or incomplete report data: Skipping processing.")
+        return None  # Skip processing for this metadata entry
+    
     metadata["report"]["reportId"] = metadata['report']['reportId']
     metadata["report"]["reportedOn"] = process_dates(metadata["report"]["reportedOn"])
     metadata['event']['confirmOn'] = process_dates(metadata['event']['confirmOn'])
@@ -93,13 +101,25 @@ def pivot_long(wahis: list) -> list:
 
 
 def is_valid(row: dict, empty: tuple = (None, "")) -> bool:
-    if row["event"]["disease"]["group"] in empty:
+    if row is None:
         return False
 
-    if row["event"]["disease"]["name"] in empty:
+    if "event" not in row or row["event"] is None:
+        return False
+
+    event = row["event"]
+    if "disease" not in event or event["disease"] is None:
+        return False
+
+    disease = event["disease"]
+    if "group" not in disease or disease["group"] in empty:
+        return False
+
+    if "name" not in disease or disease["name"] in empty:
         return False
 
     return True
+
 
 
 async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
@@ -113,14 +133,17 @@ async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
         *[wahis.search_evolution(event_id) for event_id in range(0, 5729)]
     )
 
-    reports = await handle_concurrency(
-        *[
-            wahis.search_report(report["reportId"])
-            for evolution in evolutions
-            if evolution is not None
-            for report in evolution
-        ]
-    )
+    reports = []
+    for evolution in evolutions:
+        if evolution is None:
+            continue  # Skip None values
+        for report in evolution:
+            try:
+                report_data = await wahis.search_report(report["reportId"])
+                reports.append(report_data)
+            except WAHISApiError as e:
+                print(f"Error fetching report {report['reportId']}: {e.message}")
+                continue
 
     wahis_valid = [process_report(report, tax_names, lat_long) for report in reports]
 
@@ -129,7 +152,7 @@ async def valid_wahis(geoapi, ncbiapi, wahis=WAHISApi()) -> list:
     )
 
     tax_ids = await handle_concurrency(
-        *[ncbiapi.search_id(tax) for tax in tax_names], n_semaphore=2
+        *[ncbiapi.search_id(tax) for tax in tax_names], n_semaphore=1
     )
     geonames = dict(zip(lat_long, geoname_ids))
 
