@@ -3,7 +3,7 @@
   PIPP Knowledge Graph
 </h1>
 
-This project contains source code for the ETL supporting the ingestion of data into Neo4j, and all data and analysis for the paper below. Developed on Python 3.9 and Neo4j 5.10. 
+This project contains source code for the ETL supporting the ingestion of data into Neo4j, and all data and analysis for the paper below. Developed on Python 3.9 and Neo4j 5.10. Please note that this repository makes use of data from the [WAHIS platform](https://wahis.woah.org/#/home) which requires the following statement: “WOAH bears no responsibility for the integrity or accuracy of the data contained herein, in particular due, but not limited to, any deletion, manipulation, or reformatting of data that may have occurred beyond its control.”
 
 ## Getting started
 This repository is organized into several folders: [`archive`](./archive/), [`cache`](./cache/), [`data`](./data/), [`database_dump`](./database_dump/), [`manuscript_figures`](./manuscript_figures/), [`network`](./network/),[`src`](./src/), and [`tests`](./tests/). Some of these folders contain subfolders and zipped files. All zipped files will need to be unzipped before proceedings. 
